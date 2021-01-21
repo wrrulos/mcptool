@@ -1,0 +1,9 @@
+# Nmap 7.91 scan initiated Thu Jan 21 12:59:25 2021 as: nmap -p 0-1 -T5 -v -Pn -oN temp.txt 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00s latency).
+
+PORT  STATE  SERVICE
+
+
+Read data files from: C:\Program Files (x86)\Nmap
+# Nmap done at Thu Jan 21 12:59:25 2021 -- 1 IP address (1 host up) scanned in 0.28 seconds
