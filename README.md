@@ -16,7 +16,8 @@
 
 # Instalacion 
 
-* Descargar y instalar Python 3.
+* Instalar nmap
+* Instalar Python 3.
 * Crear una cuenta en https://ngrok.com/
 * Descargar Ngrok y conectar tu cuenta con el token.
 * Mover ngrok.exe a la carpeta de MCPTool.
