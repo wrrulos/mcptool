@@ -323,7 +323,7 @@ def menu():
             elif comando == "discord":
                 try:
                     print("")
-                    webbrowser.open_new("https://discord.gg/cVXMGGcWvu")
+                    webbrowser.open_new("https://discord.gg/7qnpMj3HrY")
                     print("")
                 except:
                     print("")
