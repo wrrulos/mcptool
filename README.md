@@ -6,7 +6,7 @@
 </p>
 <br/>
 
-<img src="https://imgur.com/TAuS5PE.jpg"> <img src="https://imgur.com/4NzFbFQ.jpg"> <img src="https://imgur.com/l2vHvj8.jpg"> <img src="https://imgur.com/mCapHNr.jpg"> <img src="https://imgur.com/4mZdxc8.jpg"> <img src="https://imgur.com/x4ikBPI.jpg">
+<img src="https://github.com/wrrulos/MCPTool/blob/main/images/imagen-1.PNG"> <img src="https://imgur.com/4NzFbFQ.jpg"> <img src="https://imgur.com/l2vHvj8.jpg"> <img src="https://imgur.com/mCapHNr.jpg"> <img src="https://imgur.com/4mZdxc8.jpg"> <img src="https://imgur.com/x4ikBPI.jpg">
 <br/>
 
 ## Versiones de Windows compatibles  
@@ -29,7 +29,7 @@
 
 ## Screenshots
 
-<img src="https://github.com/wrrulos/CITTZ/blob/main/img-github/cittz-linux.png">
+<img src="https://github.com/wrrulos/MCPTool/blob/main/images/imagen-1.PNG">
 
 ## Tutorial 
 
