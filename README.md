@@ -16,7 +16,7 @@
 
 # Instalacion 
 
-* Instalar nmap
+* Instalar Nmap
 * Instalar Python 3.
 * Crear una cuenta en https://ngrok.com/
 * Descargar Ngrok y conectar tu cuenta con el token.
