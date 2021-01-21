@@ -79,7 +79,7 @@ def banner():
     print("")
     print("")
     print(Fore.RED + "    ███╗   ███╗ ██████╗██████╗     ████████╗ ██████╗  ██████╗ ██╗     " + Fore.LIGHTRED_EX + "    Telegram: " + Fore.WHITE + "wrrulos")
-    print(Fore.RED + "    ████╗ ████║██╔════╝██╔══██╗    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     " + Fore.LIGHTRED_EX + "    Discord: " + Fore.WHITE + "discord.gg/cVXMGGcWvu")
+    print(Fore.RED + "    ████╗ ████║██╔════╝██╔══██╗    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     " + Fore.LIGHTRED_EX + "    Discord: " + Fore.WHITE + "discord.gg/7qnpMj3HrY")
     print(Fore.RED + "    ██╔████╔██║██║     ██████╔╝       ██║   ██║   ██║██║   ██║██║     " + Fore.LIGHTRED_EX + "    Github: " + Fore.WHITE + "@wrrulos")
     print(Fore.WHITE + "    ██║╚██╔╝██║██║     ██╔═══╝        ██║   ██║   ██║██║   ██║██║     " )
     print(Fore.WHITE + "    ██║ ╚═╝ ██║╚██████╗██║            ██║   ╚██████╔╝╚██████╔╝███████╗" + Fore.LIGHTRED_EX + "    Minecraft Pentesting Tool " + Fore.LIGHTGREEN_EX + "v0.1")
