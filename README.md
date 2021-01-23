@@ -2,7 +2,7 @@
 <h3> Herramienta de pentesting para Minecraft </h3>
 <br/>
 <p align="center">
-<img src="https://github.com/wrrulos/MCPTool/blob/main/images/imagen-1.PNG" title="MCPTool">
+<img src="https://github.com/wrrulos/MCPTool/blob/main/images/MCPTool.png" title="MCPTool">
 </p>
 <br/>
 
