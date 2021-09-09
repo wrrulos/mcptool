@@ -1,0 +1,33 @@
+#                                   /   \       
+#  _                        )      ((   ))     (
+# (@)                      /|\      ))_((     /|\                        _
+# |-|                     / | \    (/\|/\)   / | \                      (@)
+# | | -------------------/--|-voV---\`|'/--Vov-|--\---------------------|-|
+# |-|                         '^`   (o o)  '^`                          | |
+# | |                               '\Y/'                               |-|
+# |-|                                                                   | |
+# | |                             skDragon                              |-|
+# |-|                               by Sashie                           | |
+# | |                                                                   |-|
+# |_|___________________________________________________________________| |
+# (@)              l   /\ /         ( (       \ /\   l                `\|-|
+#                  l /   V           \ \       V   \ l                  (@)
+#                  l/                _) )_          \I
+#                                    '\ /'
+#				                       v
+#
+#(Will only send a message to ops or anyone with the permission node 'skdragon.updates')
+CheckForUpdates:
+  #Should we check if updates exist? 
+  Enabled: true
+  #How many ticks between checks? (default = 12 hours = 864000(ticks))
+  UpdateTimer: 864000
+  #Should we bug ops when they join instead? (Disables the UpdateTimer)
+  JoinMessageOps: false
+
+Documentation:
+  Enabled: true
+
+
+#Changing this number will reset the config file
+version: 1

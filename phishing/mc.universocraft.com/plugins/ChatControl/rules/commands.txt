@@ -1,0 +1,34 @@
+# -------------------------------------------------------------------------------
+# This file manages rules in commands and includes rules from rules.txt.
+#
+# File by default contain examples that you can safely remove or change.
+#
+# For help, see notes in rules.txt file.
+# -------------------------------------------------------------------------------
+
+# Prevent /op command, but ignore other commands that start with /op, like /openinv
+#match ^/op\b
+#ignore perm chatcontrol.bypass.rules
+#id /op
+#then warn &bYes, we are giving away OPs. Seriously, what did you expect?!
+#then notify chatcontrol.notify.rulesalert &8[&7ID {ruleID}&8] &7{player}: &f{message}
+#then deny
+#then log
+
+#match ^/(gm|gamemode)
+#ignore perm chatcontrol.bypass.rules
+#id /gm
+#then warn &aThat would be nice, wouldn't it?
+#then notify chatcontrol.notify.rulesalert &8[&7ID {ruleID}&8] &7{player}: &f{message}
+#then deny
+#then log
+
+#match ^/(heal)
+#ignore perm essentials.heal
+#then warn &dIs the game too hard for ya?
+#then deny
+
+#match ^/trade
+#ignore gamemode survival
+#then warn &cThis command only accessible in survival mode!
+#then deny
