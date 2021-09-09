@@ -30,7 +30,7 @@
 
 ## Screenshots
 
-<img src="https://github.com/wrrulos/MCPTool/blob/main/images/2.PNG">
+<img src="https://github.com/wrrulos/MCPTool/blob/main/images/Help.PNG">
 
 ## Tutorial 
 
