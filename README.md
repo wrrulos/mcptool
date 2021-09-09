@@ -22,12 +22,11 @@
 * Crear una cuenta en https://ngrok.com/
 * Descargar Ngrok y conectar tu cuenta con el token.
 * Mover ngrok.exe a la carpeta de MCPTool.
-* Ejecutar windows-install.bat para instalar las dependencias.
+* Ejecutar Dependencias.bat para instalar las dependencias.
 
 # Ejecutar
 
 * Ejecutar MCPTool.py
-
 
 ## Screenshots
 
@@ -36,10 +35,6 @@
 ## Tutorial 
 
 <p> No disponible.</p>
-
-## Contribuidores: 
-
-- <a href="https://github.com/wrrulos/MCPTool/"> zNotDev </a>
 
 ## Licencia 
 
