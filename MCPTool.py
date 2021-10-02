@@ -1490,7 +1490,7 @@ def menu():
                             print("\n" + blanco + "    [" + verde + "+" + blanco + "] " + lverde + "El idioma fue cambiado a Español.")
 
                         elif idiomacmd == "en":
-                            archivo_idioma_cmd = open("datos/idioma", "w+")
+                            archivo_idioma_cmd = open("config/datos/idioma", "w+")
                             archivo_idioma_cmd.truncate(0)
                             archivo_idioma_cmd.write("en")
                             archivo_idioma_cmd.close()
