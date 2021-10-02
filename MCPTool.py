@@ -1008,10 +1008,12 @@ def menu():
                 except:
                     if idioma == "es":
                         print("\n" + blanco + "    Usa: scan-host [host] [puertos] [y/n]")
+                        print(blanco + "Host disponibles: " + lverde + "holy.gg - vyxterhost.com - minehost.com.ar")
                         print("\n" + blanco + "    Para ver más informacion usa " + lcyan + "help-cmd scan-host")
 
                     elif idioma == "en":
                         print("\n" + blanco + "    Usage: scan-host [host] [ports] [y/n]")
+                        print(blanco + "Host available: " + lverde + "holy.gg - vyxterhost.com - minehost.com.ar")
                         print("\n" + blanco + "    To see more information use " + lcyan + "help-cmd scan-host")
 
 
