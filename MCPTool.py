@@ -1,5 +1,5 @@
 #=============================================================================
-#                      MCPTool v0.3 www.github.com/wrrulos
+#                      MCPTool v0.1 www.github.com/wrrulos
 #                    Herramienta de Pentesting para Minecraft
 #                               Hecho por wRRulos
 #                                   @wrrulos
@@ -22,7 +22,7 @@ from colorama import Fore, init
 
 init ()
 
-os.system("title MCPTool v0.3")
+os.system("title MCPTool v0.1")
 #os.system("mode con cols=120 LINES=40")
 
 #=====================
