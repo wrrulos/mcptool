@@ -20,6 +20,11 @@
 * Crear un servidor falso (phishing)
 * La herramienta cuenta con su version en Español y Ingles
 
+## 💻 Sistemas Operativos compatibles:
+
+* ✅ Windows (8, 8.1 y 10)
+* ❌ Linux
+
 # 🔧 Instalación 
 
 * Instalar Nmap
@@ -33,14 +38,55 @@
 
 * Ejecutar MCPTool.py 
 
-## 💻 Sistemas Operativos compatibles:
-
-* ✅ Windows (8, 8.1 y 10)
-* ❌ Linux
-
 ## 📸 Screenshots
 
 <img src="https://github.com/wrrulos/MCPTool/blob/main/images/Help.PNG">
+
+## 📝 Guia de comandos
+
+```bash
+[*] server (Muestra información de un servidor)
+$ server [ip]
+
+# [ip] IP del servidor
+
+$ Ejemplo: server mc.universocraft.com
+
+[*] player (Muestra informacion de un jugador)
+$ player [nombre]
+
+# [nombre] Nombre del jugador
+
+$ Ejemplo: player Rulo
+
+[*] scan-ports (Escanea los puertos de una IP)
+$ scan-ports [ip] [puertos] [y/n]
+
+# [ip] IP del servidor
+# [puertos] Rango de puertos
+# [y/n] Mostrar servidores apagados (Y = Si y N = No)
+
+$ Ejemplo: scan-ports 127.0.0.1 25000-26000 y
+
+[*] scan-range (Escanea el rango de una IP)
+$ scan-range [ip] [rango] [puertos]
+
+
+# [ip] IP del servidor
+# [rango] Rango de IP
+# [puertos] Rango de puertos
+
+$ Ejemplo: scan-range 127.0.0 1-255 25565 y
+
+[*] scan-host (Escanea los nodos de un host)
+$ scan-host [host] [puertos] [y/n]
+
+# [host] Nombre del host
+# [puertos] Rango de puertos 
+# [y/n] Mostrar servidores apagados (Y = Si y N = No)
+
+[+]
+```
 
 ## 🎞 Video 
 
