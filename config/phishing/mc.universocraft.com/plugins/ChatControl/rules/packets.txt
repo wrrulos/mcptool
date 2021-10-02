@@ -20,9 +20,3 @@
 # -------------------------------------------------------------------------------
 
 # Hide unknown command message.
-match ^Unknown command. Type "/help" for help.*
-then deny
-
-# Rewrite message from Bukkit or Essentials.
-match ^I'm sorry, but you do not have permission to perform this.*|^You do not have access to that command.
-then deny
