@@ -1,0 +1,4 @@
+#
+#Mon May 25 18:15:27 CEST 2020
+LinkedWorlds=
+ServerName=mc.universocraft.com
