@@ -1482,7 +1482,7 @@ def menu():
 
                     try:
                         if idiomacmd == "es":
-                            archivo_idioma_cmd = open("datos/idioma", "w+")
+                            archivo_idioma_cmd = open("config/datos/idioma", "w+")
                             archivo_idioma_cmd.truncate(0)
                             archivo_idioma_cmd.write("es")
                             archivo_idioma_cmd.close()
