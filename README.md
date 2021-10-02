@@ -85,7 +85,49 @@ $ scan-host [host] [puertos] [y/n]
 # [puertos] Rango de puertos 
 # [y/n] Mostrar servidores apagados (Y = Si y N = No)
 
-[+]
+$ Ejemplo: scan-host holy.gg 25000-26000 y
+
+[*] scan-subd (Escanea los subdominios de un dominio)
+$ scan-subd [dominio] [archivo]
+
+# [dominio] Dominio
+# [archivo] Nombre del archivo que contiene la lista de subdominios // NOTA: Puedes agregar una lista personalizada en /config/subdominios
+
+$ Ejemplo: scan-subd google.com mcptool.txt
+
+[*] bungee (Crea un bungee local)
+$ bungee [ip:port]
+
+# [ip:port] IP y puerto
+
+$ Ejemplo: bungee 127.0.0.1:25567
+
+[*] phishing (Crea un servidor falso para capturar contraseñas)
+$ phishing [server]
+
+# [server] Nombre del servidor
+
+$ Ejemplo: phishing mc.universocraft.com
+
+[*] set-language (Cambia el idioma de la herramienta)
+$ set-language [idioma]
+
+# [idioma] Idioma
+
+$ Ejemplo: set-language en
+
+[*] clear (Limpia la pantalla de la herramienta)
+$ clear
+
+[*] help-cmd (Muestra ayuda especifica sobre un comando)
+$ help-cmd [comando]
+
+# [comando] Comando
+
+$ Ejemplo: help-cmd scan-ports
+
+[*] help (Muestra la lista de comandos)
+$ help
 ```
 
 ## 🎞 Video 
