@@ -3,7 +3,7 @@
 <br/>
 </br>
 <p align="center">
-<img src="https://github.com/wrrulos/MCPTool/blob/main/images/MCPTool.png" title="MCPTool">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/MCPTool.png" title="MCPTool">
 </p>
 <br/>
 
