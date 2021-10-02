@@ -1,0 +1,112 @@
+# ---------------------------------------------------------
+# This file support creating custom handlers that
+# works with rules (see files in "rules/" folder).
+# ---------------------------------------------------------
+#
+# The purpose of handlers is to group actions when message
+# is caught by a rule. This not only saves a bunch of repetitive
+# code but makes it more fail proof and future proof.
+#
+# Unicode characters are supported! Save the file in UTF-8
+# encoding. Tested on Notepad++
+# [NOTICE] WordPad/Notepad on Windows are known to not work!
+#
+# ---------------------------------------------------------
+
+# Example usage. The name is case sensitive.
+# ------------------------------------------------------------------------------------------------
+# [!] DO NOT UNCOMMENT THE LINES BELOW - THEY ARE ONLY EXAMPLES OF ALL KEYS THE PLUGIN ACCEPTS [-]
+# ------------------------------------------------------------------------------------------------
+#Advertising_Ban_Filter:
+#  
+#  # If the player has the permission their message will no be checked/handled.
+#  Bypass_With_Permission: "chatcontrol.bypass.ad"
+#  
+#  # A list of commands that will be excluded from the check. Start with a slash ('/')
+#  Ignored_In_Commands:
+#    - /auction
+#  
+#  # A message displayed to the player. Set to 'none' to disable.
+#  Player_Warn_Message: "{prefix} &cSorry, {player}, advertising is prohibited!"
+#  
+#  # A message broadcasted to everyone. Set to 'none' to disable.
+#  Broadcast_Message: "{server} &6{player} tried to &cadvertise&6, inform OP!"
+#  
+#  # A message broadcasted to players with permission specified below. Set to 'none' to disable.
+#  # Notice to the {ruleID} variable: it is replaced only if the rule specifies an ID.
+#  Staff_Alert_Message: "{prefix} &c{player} violated rule &6ID {ruleID} &cwith: &f{message}"
+#  
+#  # Players with following permission with recieve message specified above.
+#  # If set, the message must be specified and not be 'none'.
+#  Staff_Alert_Permission: "chatcontrol.notify.advertise"
+#  
+#  # A message logged into console. Set to 'none' to disable.
+#  # {handler} variable is the name of the handler, in this case "Advertising_Ban_Filter"
+#  Console_Message: "{player} violated rule ID {ruleID}, triggered {handler} filter with: {message}"
+#  
+#  # A path to file where the message will be logged. Set to 'none' to disable.
+#  Write_To_File: log/advertisements.txt
+#  
+#  # Should the message be blocked from appearing?
+#  Block_Message: true
+#  
+#  # When plugin Vault is installed, you can take money from player
+#  Fine: 10
+#  
+#  # A replacement that replaces only the part of the message that matched the rule
+#  # If set, Block_Message must be false and "Rewrite_To" must not be set.
+#  Replace_Word: "[CENSORED]"
+#  
+#  # A replacement that replaces the whole message.
+#  # If set, Block_Message must be false and "Replace_Word" must not be set.
+#  Rewrite_To: I love this filter!
+#  
+#  # A list of commands to be executed. Notice they are not handled by this plugin.
+#  Execute_Commands:
+#    - eco take {player} 10
+#    - kick {player} &cDo not advertise!
+#    - tempban {player} 1d Advertising is prohibited! \n\nMessage caught: {message}
+# -------------------------------------------------------------------------------------------------
+# [!]  DO NOT UNCOMMENT THE LINES ABOVE - THEY ARE ONLY EXAMPLES OF ALL KEYS THE PLUGIN ACCEPTS [-]
+# -------------------------------------------------------------------------------------------------
+
+advertisement:
+  Bypass_With_Permission: "chatcontrol.bypass.ad"
+  Ignored_In_Commands:
+    - // # WorldEdit
+    - /brush
+    - /auction
+    - /register
+    - /reg
+    - /login
+    - /l
+  
+  Player_Warn_Message: "&7Please do not advertise other websites or IP adresses."
+  #Broadcast_Message: "&c{player} might have advertised, alert admins!"
+  Console_Message: "{player} violated rule ID {ruleID}, triggered {handler} filter with: {message}"
+  
+  Staff_Alert_Message: "&8[&7Ad/ID {ruleID}&8] &7{player}: &f{message}"
+  Staff_Alert_Permission: chatcontrol.notify.ad
+  
+  Block_Message: true
+  Write_To_File: logs/advertisements.txt
+
+swear:
+  Bypass_With_Permission: "chatcontrol.bypass.swear"
+  Ignored_In_Commands:
+    - // # WorldEdit
+    - /brush
+    - /auction
+    - /register
+    - /reg
+    - /login
+    - /l
+
+  Player_Warn_Message: "&cPlease do not swear, otherwise an action will be taken!"
+  Console_Message: "{player} violated rule ID {ruleID}, triggered {handler} filter with: {message}"
+  
+  Staff_Alert_Message: "&8[&7Swear/ID {ruleID}&8] &7{player}: &f{message}"
+  Staff_Alert_Permission: chatcontrol.notify.swear
+
+  Replace_Word: "*****"
+  Write_To_File: logs/swears.txt

@@ -1,0 +1,343 @@
+
+-=Effects=-
+drawComplexSpiral 
+    Draws a spiral that follows the player or plays at a location. New Syntax as of v0.06.0-BETA 
+
+    [skDragon] draw[Complex]Spiral particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], clockwise %boolean%, scan %boolean%, radius %number%, density %number%, height %number%, effectMod %number%, start %number%, visibleRange %number%[, xR[otation] %number%, yR[otation] %number%, zR[otation] %number%][, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawComplexSpiral particle "redstone", center player, id "%player%", rainbowMode true, clockwise true, scan true, radius 1.5, density 50, height 6, effectMod .05, start 0, visibleRange 30
+
+drawPlanet 
+    Draws a randomized two colored planet that follows the player or plays at a location. New as of v0.07.0-Beta
+
+    [skDragon] drawPlanet particle1 %string%[[, material] %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], particle2 %string%[[, material] %itemstack%][, speed2 %number%][, ([offset]XYZ2|RGB2) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%][, rotation %boolean%,[ plane] %string%, rot[ation]Speed %number%][, orbit %boolean%, orbit[al]Radius %number%, orbit[al]Step %number%[, xR[otation] %number%, yR[otation] %number%, zR[otation] %number%]], radius %number%, density %number%, precision %number%, bumpHeight %number%, visibleRange %number%[, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawPlanet particle1 "redstone", RGB 0, 255, 10, particle2 "redstone", RGB2 0, 10, 255, center location of player, id "%player%", rotation true, plane "x", rotationSpeed 1, orbit true, orbitalRadius 2, orbitalStep 360, xRotation 45, yRotation 0, zRotation 0, radius .25, density 150, precision 100, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 0, 255, 10, particle2 "redstone", RGB2 0, 10, 255, center location of player, id "%player%", rotation true, plane "xz", rotationSpeed 5, radius .25, density 100, precision 100, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 230, 204, 255, particle2 "redstone", RGB2 46, 138, 92, center location of player, id "%player%", rotation true, plane "xz", rotationSpeed 5, radius .25, density 100, precision 100, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 224, 224, 224, particle2 "redstone", RGB2 133, 133, 133, center location of player, id "%player%-1", rotation true, plane "xz", rotationSpeed 1, orbit true, orbitalRadius 1.1, orbitalStep 180, xRotation 45, yRotation 0, zRotation 0, radius .05, density 15, precision 100, bumpHeight .05, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 153, 153, 255, particle2 "redstone", RGB2 153, 204, 255, center location of player, id "%player%-2", rotation true, plane "xz", rotationSpeed 1, orbit true, orbitalRadius 1.4, orbitalStep 180, xRotation 20, yRotation 45, zRotation 0, radius .06, density 15, precision 50, bumpHeight .05, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 204, 230, 255, particle2 "redstone", RGB2 204, 255, 255, center location of player, id "%player%-3", rotation true, plane "xz", rotationSpeed 1, orbit true, orbitalRadius 1.4, orbitalStep 180, xRotation 20, yRotation 180, zRotation 0, radius .06, density 15, precision 50, bumpHeight .05, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 0, 255, 10, particle2 "redstone", RGB2 0, 10, 255, center location of player, id "%player%", rotation true, plane "x", rotationSpeed 1, orbit true, orbitalRadius 2, orbitalStep 360, xRotation 45, yRotation 0, zRotation 0, radius .25, density 150, precision 100, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 255, 204, 51, particle2 "redstone", RGB2 255, 255, 0, center location of player, id "%player%", rotation true, plane "xz", rotationSpeed 5, radius .50, density 200, precision 50, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 224, 224, 224, particle2 "redstone", RGB2 133, 133, 133, center location of player, id "%player%-1", rotation true, plane "xz", rotationSpeed 1, orbit true, orbitalRadius 1.5, orbitalStep 350, xRotation 45, yRotation 0, zRotation 0, radius .05, density 15, precision 100, bumpHeight .05, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 0, 255, 10, particle2 "redstone", RGB2 0, 10, 255, center location of player, id "%player%-2", rotation true, plane "xz", rotationSpeed 5, orbit true, orbitalRadius 3.1, orbitalStep 290, xRotation 45, yRotation 180, zRotation 0, radius .10, density 50, precision 50, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 230, 204, 255, particle2 "redstone", RGB2 46, 138, 92, center location of player, id "%player%-3", rotation true, plane "xz", rotationSpeed 5, orbit true, orbitalRadius 4.5, orbitalStep 300, xRotation 45, yRotation 0, zRotation 0, radius .10, density 50, precision 50, bumpHeight .25, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 153, 153, 255, particle2 "redstone", RGB2 153, 204, 255, center location of player, id "%player%-4", rotation true, plane "xz", rotationSpeed 1, orbit true, orbitalRadius 5.4, orbitalStep 280, xRotation 20, yRotation 45, zRotation 0, radius .06, density 15, precision 50, bumpHeight .05, visibleRange 30, tps 1, second 2
+    drawPlanet particle1 "redstone", RGB 204, 230, 255, particle2 "redstone", RGB2 204, 255, 255, center location of player, id "%player%-5", rotation true, plane "xz", rotationSpeed 1, orbit true, orbitalRadius 6.4, orbitalStep 280, xRotation 20, yRotation 180, zRotation 0, radius .06, density 15, precision 50, bumpHeight .05, visibleRange 30, tps 1, second 2
+
+drawItemFountain 
+    Tosses items around for a preset time that follow the player or play at a location. (don't make the time too long or bad things might happen xD ) Added in 0.09.0-BETA
+    style - choose between different effects 
+    yVelocity - effects how high the item gets tossed, a value of 1 for example will toss the item fairly high 
+    radius - effects how far the item will get tossed, a value of 1 will toss it farther then you would think xD keep this in mind Together yVelocity and radius act almost like a slingshot, the farther away they are set from the center, the faster the item will fly out in that direction. 
+
+    [skDragon] drawItemFountain %itemstack%, style %number%, center %entity/location%, id %string%, itemTime %timespan%, yVelocity %number%, radius %number%, density %number%[, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    drawItemFountain arg-1, style arg-4, center location of player, id "%player%", itemTime 1 tick, yVelocity arg-2, radius arg-3, density 40, displacementXYZ 0, 0, 0, pulseDelay 3
+
+drawAtom
+    Draws an atom effect that follows the player or plays at a location. New Syntax as of v0.06.0-BETA
+
+    [skDragon] drawAtom particle1 %string%[[, material] %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], particle2 %string%[[, material] %itemstack%][, speed2 %number%][, ([offset]XYZ2|RGB2) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], innerPCount %number%, innerRadius %number%, outerPCount %number%, orbitCount %number%, start %number%, visibleRange %number%, rot[ation] %number%[, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawAtom particle1 "redstone", particle2 "flame", center location of player, id "%player%", rainbowMode true, innerPCount 10, innerRadius .5, outerPCount 2, orbitCount 5, start 0, visibleRange 30, rotation 15
+
+Custom spiral circle
+    
+
+    [skDragon] drawSpircle %number% %particlename% particle[s] [rotating] at %entity/locations% with id %string%, %number% point[s], density %number%, radius %number% and speed %number%[, offset %number%, %number%, %number%][, rotate %number%, %number%, %number%][, visibleTo %players%][, visibleRange %number%][, loop delay %number%]
+
+    
+
+drawRings 
+    Ring effect like the circles around the drawAtom that follows the player or plays at a location. Added in 0.09.0-BETA -Warning- setting animated to true will be a bit resource heavy, but produces an interesting effect. 
+
+    [skDragon] drawRings particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], randomRotation %boolean%, animated %boolean%, radius %number%, ringCount %number%, ringDensity %number%, visibleRange %number%[, rot[ation]XYZ %number%, %number%, %number%][, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    drawRings particle "redstone", RGB 80, 255, 255, center player, id "%player%", rainbowMode true, randomRotation true, animated false, radius 1, ringCount 4, ringDensity 10, visibleRange 32, pulseDelay 2
+
+drawImage2
+    Draws a image effect that follows the player or plays at a location. Image files go in the skDragon plugin folder. New Syntax as of v0.06.0-BETA
+
+    [skDragon] drawImage2 file %string%, center %entity/location%, id %string%[, isSingle %boolean%, %player%][, randomRotation %boolean%,[ plane] %string%], pixelStepX %number%, pixelStepY %number%, scale %number%, visibleRange %number%[, xR[otation] %number%, yR[otation] %number%, zR[otation] %number%][, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawImage2 file "\dancing mario.gif", center location of player, id "%player%", randomRotation true, "x", pixelStepX 1, pixelStepY 1, scale 10, visibleRange 300, tps 0, second 2
+    drawImage2 file "batman.png", center location of player, id "%player%", randomRotation true, "y", pixelStepX 5, pixelStepY 5, scale 20, visibleRange 300, tps 0, second 2
+
+Spawn colored directional particles
+    Like material based directional particles but with a color spectrum based on different block types
+    This color spectrum is spurcial... 
+    shade(1-17) - from white most to black most shaded blocks
+    red(1-13) - ends with orange
+    green(1-15) - starts with yellow
+    blue(1-24) - ends with violets
+    rainbow - simulates what is done with normal redstone particle rainbow mode
+    full(1-69) - lets you cycle between the full enum
+
+    [skDragon] draw %number% (shade|red|green|blue|rainbow|full)[ scale %number%] colo[u]red directional (blockdust|itemcrack) particle[s] at %entity/locations% with direction %vector% and speed %number%[, offset %number%, %number%, %number%][, id %string%][, visibleTo %players%][, visibleRange %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    draw 2 shade scale 9 colored directional itemcrack particles at location of player with direction {_vector} and speed .6
+    draw 2 red scale 3 colored directional itemcrack particles at location of player with direction {_vector} and speed .6
+    draw 2 green scale 6 colored directional itemcrack particles at location of player with direction {_vector} and speed .6
+    draw 2 blue scale 7 colored directional itemcrack particles at location of player with direction {_vector} and speed .6
+    draw 2 rainbow colored directional itemcrack particles at location of player with direction {_vector} and speed .6, keepfor 15 seconds
+
+Emotes - Custom
+    Using the names in the CustomEmotes.yml file you can play any custom emote or animation sequence you've made
+
+    [skDragon] custom emote %string% on %entity%[with [frame] delay %number%][ [and] repeat[ing] %number% [time[s]]]
+
+    custom emote "test" on player
+    custom emote "test" on target entity
+
+Spawn more complex directional particle patterns using colorable particles
+    Most particles react differently to this effect using their individual built in mojang nature
+    Uses any bukkit vector type as input for the direction
+
+    [skDragon] draw %number% style %number% (redstone|mobspell|mobspellambient) particle[s] at %entity/locations% with direction %vector%, speed %number% and RGB %number%, %number%, %number%[, offset %number%, %number%, %number%][, id %string%][, r[ainbow]M[ode] %boolean%][, randomColor %boolean%][, visibleTo %players%][, visibleRange %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    draw 2 style 2 redstone particles at location of player with direction {_v}, speed .4 and RGB 20, 50, 80, keepFor 1 second
+
+drawDisco
+    Draws a disco ball type thing that follows the player or plays at a location. New as of v0.13.0-Beta
+
+    [skDragon] drawDisco style %number%, particle %particlename%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], particle2 %particlename%[, material2 %itemstack%][, speed2 %number%][, ([offset]XYZ2|RGB2) %number%, %number%, %number%], center %entity/location%, id %string%[, onlyFor %players%][, r[ainbow]M[ode] %boolean%], maxLines %number%, lineLength %number%, sphereRadius %number%, sphereDensity %number%, lineDensity %number%, visibleRange %number%[, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    drawDisco style 1, particle redstone, RGB .608, 1, 1, particle2 redstone, RGB2 0, 0, 0, center location of player, id "%player%", rainbowMode true, maxLines 7, lineLength 5, sphereRadius .6, sphereDensity 70, lineDensity 40, visibleRange 32, displacementXYZ 0, 5, 0, pulseDelay 2
+    drawDisco style 2, particle redstone, RGB 0, 0, 0, particle2 redstone, RGB2 0, 0, 0, center player, id "%player%", rainbowMode true, maxLines 7, lineLength 5, sphereRadius .6, sphereDensity 30, lineDensity 30, visibleRange 32, displacementXYZ 0, 4, 0, pulseDelay 0
+
+Spawn material particles
+    Specifically spawns material particles such as items or blocks(falling dust is a special case where it displays a color based on the block type used)
+
+    [skDragon] draw %number% (blockcrack|blockdust|itemcrack|fallingdust)[ material]  particle[s] made of %itemstack% at %entity/locations%[, speed %number%][, offset %number%, %number%, %number%][, id %string%][, visibleTo %players%][, visibleRange %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    draw 1 itemcrack particle made of diamond sword at location of player
+    draw 5 blockcrack particle made of redstone block at location of player
+
+Emotes - Custom reload
+    Reloads the CustomEmotes.yml file
+
+    [skDragon] reload custom emotes
+
+    reload custom emotes
+
+Emotes - Stop
+    Stops an emote effect
+
+    [skDragon] stop emote %entity%
+
+    stop emote player
+    stop emote target entity
+
+drawSphere
+    Draws a sphere that follows the player or plays at a location. New as of v0.10.0-Beta
+
+    [skDragon] drawSphere[ style] %number%, particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], radius %number%, density %number%, visibleRange %number%[, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    drawSphere style 1, particle "redstone", center {_loc}, id "%player%", rainbowMode true, radius 1, density 100, visibleRange 32, pulseDelay 1
+
+drawNyanCat 
+    Draws a Nyan Cat (band) effect that follows the player or plays at a location. New Syntax as of v0.06.0-BETA
+
+    [skDragon] drawNyanCat center %entity/location%, id %string%[, isSingle %boolean%, %player%], visibleRange %number%[, tps %number%, second %number%]
+
+    drawNyanCat center player, id "%player%", visibleRange 30
+
+drawDot
+    placeholder
+
+    [skDragon] drawDot [count %number%,] particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/locations%[, id %string%][, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], visibleRange %number%[, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    placeholder
+
+drawImage
+    Draws a image effect that follows the player or plays at a location. Image files go in the skDragon plugin folder. New Syntax as of v0.06.0-BETA
+
+    [skDragon] drawImage file %string%, center %entity/location%, id %string%[, isSingle %boolean%, %player%][, randomRotation %boolean%,[ plane] %string%], pixelStepX %number%, pixelStepY %number%, scale %number%, visibleRange %number%[, xR[otation] %number%, yR[otation] %number%, zR[otation] %number%][, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawImage file "\dancing mario.gif", center location of player, id "%player%", randomRotation true, "x", pixelStepX 1, pixelStepY 1, scale 10, visibleRange 300, tps 0, second 2
+    drawImage file "batman.png", center location of player, id "%player%", randomRotation true, "y", pixelStepX 5, pixelStepY 5, scale 20, visibleRange 300, tps 0, second 2
+
+drawBreath 
+    Draws a 'fire breath' type effect at the players mouth or at a location. New as of v0.07.0-Beta 
+
+    [skDragon] draw[Dragon]Breath particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], arcPitch %number%, arcCount %number%, arcDensity %number%, arcSteps %number%, arcLength %number%, visibleRange %number%[, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawDragonBreath particle "redstone", RGB 102, 204, 255, center player, id "%player%", arcPitch .1, arcCount 40, arcDensity 50, arcSteps 3, arcLength 6, visibleRange 30
+    drawDragonBreath particle "flame", center player, id "%player%-1", arcPitch .05, arcCount 10, arcDensity 50, arcSteps 2, arcLength 6, visibleRange 30
+
+drawCape
+    Draws a cape on a players back using approx. 8x12 pixel images
+
+    [skDragon] drawCape file %string%, center %entity/location%, id %string%[, isClientside %boolean%, %player%][, r[ainbow]M[ode] %boolean%][, dyn[amic]Mode %boolean%][, scale %number%][, backDis[tance] %number%][, gravity %number%], visibleRange %number%[, pulseDelay %number%]
+
+    drawCape file "superman.png", center player, id "%player%", rainbowMode false, dynamicMode true, visibleRange 32, pulseDelay 1
+
+Spawn material based directional particles
+    Unlike normal directional particles this syntax allows input for the 2 compatible material type particles
+    These particles require a marterial input ie. 'diamond sword' or 'redstone block' depending on the type used
+
+    [skDragon] draw %number% directional (blockdust|itemcrack) particle[s] made of %itemstack% at %entity/locations% with direction %vector% and speed %number%[, offset %number%, %number%, %number%][, id %string%][, visibleTo %players%][, visibleRange %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    draw 2 directional blockdust particles made of redstone block at location of player with direction {_v2} and speed .6
+    draw 2 directional itemcrack particles made of diamond sword at location of player with direction {_v2} and speed .6
+
+Spawn colored particles
+    Spawns specifically colored particles with options for them including offset like regular particles
+
+    [skDragon] draw %number% colo[u]red (redstone|mobspell|mobspellambient) particle[s] at %entity/locations% with RGB %number%, %number%, %number%[, offset %number%, %number%, %number%][, id %string%][, r[ainbow]M[ode] %boolean%][, randomColor %boolean%][, visibleTo %players%][, visibleRange %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    draw 1 colored redstone particle at player with RGB 50, 80, 120, keepFor 5 seconds
+
+Emotes - Built in
+    Using the names in the CustomEmotes.yml file you can play any custom emote or animation sequence you've made
+
+    [skDragon] emote %emotetype% on %entity% [with [frame] delay %number%][ [and] repeat[ing] %number% [time[s]]]
+
+    emote smile on player
+    emote cheeky on target entity
+    emote santa wink on player with frame delay 1 and repeating 2 times
+    emote rage on player with frame delay 2
+    emote tan on player repeating 1 time
+
+drawArc
+    Draws an arc from one location or player to another. New as of v0.06.33-BETA
+
+    [skDragon] drawArc particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, target %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], density %number%, height %number%, p[itch]M[ultiplier] %number%, visibleRange %number%[, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, dis[placement]X2 %number%, dis[placement]Y2 %number%, dis[placement]Z2 %number%][, tps %number%, second %number%]
+
+    drawArc particle "redstone", center player, target location of player, id "%player%", rainbowMode true, density 50, height 2, pitchMultiplier 4, visibleRange 30
+    drawArc particle "redstone", center player, target target block, id "%player%", rainbowMode true, density 50, height 2, pitchMultiplier 4, visibleRange 30
+    drawArc particle "redstone", center player, target target block, id "%player%", rainbowMode true, density 50, height 2, pitchMultiplier 8, visibleRange 30, displacementX 0, displacementY 4, displacementZ 0
+    drawArc particle "redstone", center player, target target block, id "%player%", rainbowMode true, density 50, height -3, pitchMultiplier 4, visibleRange 30
+    drawArc particle "redstone", center player, target target block, id "%player%", rainbowMode true, density 50, height o, pitchMultiplier 4, visibleRange 30
+
+drawWarpRings 
+    An assortment of different effects with a few shapes that play certain effects, some of which may or may not actually be considered 'warp' effects. I went a little bit nuts when I created this one, there are over 35 styles in it. Added in 0.09.0-BETA
+    scan - Set to true, this effect will 'bounce' back and forth between its radius, set to false it will 'pulse' back to 0 every time it reaches its radius.
+    height - Sets how high this effect will travel with certain styles
+    ringCount - Sets how many 'steps' the effect will take before willing the radius, having a higher value will make it pulse slower
+    ringDensity - Sets how many particles per ring
+
+    [skDragon] drawWarpRings style %number%, particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], scan %boolean%, height %number%, radius %number%, ringCount %number%, ringDensity %number%, visibleRange %number%[, rot[ation]XYZ %number%, %number%, %number%][, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%][, keepFor %timespan%[, repeat %number%]]
+
+    drawWarpRings style 28, particle "redstone", RGB 80, 255, 255, center location of block at player, id "%player%", rainbowMode true, scan true, height 2, radius 2, ringCount 40, ringDensity 20, visibleRange 32
+
+drawBand 
+    Draws a band effect that follows the player or plays at a location. New Syntax as of v0.06.0-BETA 
+
+    [skDragon] drawBand particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], visibleRange %number%[, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawBand particle "redstone", RGB 0, 0, 0, center player, id "%player%", rainbowMode true, visibleRange 30
+
+drawLine
+    Draws a line from entity/location to entity/location options exist to set the length of the line as well as point with the player(it doesnt appear to follow the pitch/yaw of mobs, might require a movement update perhaps)
+
+    [skDragon] drawLine particle %particlename%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%[, target %entity/location%], id %string%[, onlyFor %players%][, r[ainbow]M[ode] %boolean%][, solid %boolean%][, density %number%][, length %number%][, zigZag count %number%, height %number%], visibleRange %number%[, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    drawLine particle redstone, RGB 0, 1, 1, center player, target location of target block, id "%player%", rainbowMode true, solid true, density 5, length 0, zigZag count 0, height 0, visibleRange 32, displacementXYZ 0, 1.2, 0, pulseDelay 1
+
+Send Red Tint
+    Sends red tint to a player. (Needs graphics set to fancy or in optifine vignettes)
+
+    [skDragon] send[ red] tint to %players%[ with fadeTime %number%, intensity %number% and damageMode %boolean%]
+
+    send red tint to player
+    send red tint to player with fadeTime 3, intensity 2 and damageMode true
+
+Send trial packet
+    Sends a fake trial packet to a player(The message CAN NOT be edited)
+
+    [skDragon] send[ fake] trial packet to %player%
+
+    send fake trial packet to player
+
+drawDot 2
+    placeholder
+
+    [skDragon] drawDot[ count %number%,] particle %particlename%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%][, colo[u]rOffset %number%, %number%, %number%], center %entity/locations%[, id %string%][, isClientside %players%][, r[ainbow]M[ode] %boolean%][, randomColor %boolean%], visibleRange %number%[, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%][, keepFor %timespan%]
+
+    placeholder
+
+drawCircle 
+    Draws a circle effect that follows the player or plays at a location. The only thing complex about this circle is its syntax. New Syntax as of v0.06.0-BETA 
+
+    [skDragon] draw[Complex]Circle particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], randomRotation %boolean%, radius %number%, density %number%, start %number%, visibleRange %number%[, xR[otation] %number%, yR[otation] %number%, zR[otation] %number%][, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawComplexCircle particle "redstone", center player, id "%player%", rainbowMode true, randomRotation true, radius 1.5, density 20, start 0, visibleRange 30
+
+Remove Red Tint
+    Removes the red tint from a player
+
+    [skDragon] remove[ red] tint from %players%
+
+    remove red tint from player
+
+drawHalo
+    Draws a simple halo effect over the players head or at a location. New Syntax as of v0.06.0-BETA
+    Added solid in v0.09.0-BETA Added density in v0.10.0-BETA
+    Added an option to make the halo solid (see examples) 
+
+    [skDragon] draw[Simple]Halo particle %string%[[, material] %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%][, solid %boolean%][, density %number%], visibleRange %number%[, tps %number%, second %number%]
+
+    drawSimpleHalo particle "redstone", center player, id "%player%", rainbowMode true, visibleRange 32
+    drawHalo particle "redstone", RGB 0, 0, 0, center player, id "%player%", rainbowMode true, solid true, visibleRange 32
+    drawHalo particle "flame", RGB 0, 0, 0, center player, id "%player%", rainbowMode true, solid true, density 10, visibleRange 32
+
+drawWings
+    4 colored version
+    Draws a wing trail that follows the player or plays them at a location. New Syntax as of v0.06.0-BETA
+    Added flapping animation in v0.10.0-BETA
+
+    [skDragon] drawWings69 particle1 %string%[[, material] %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], particle2 %string%[[, material] %itemstack%][, speed2 %number%][, ([offset]XYZ2|RGB2) %number%, %number%, %number%], particle3 %string%[[, material] %itemstack%][, speed3 %number%][, ([offset]XYZ3|RGB3) %number%, %number%, %number%], particle4 %string%[[, material] %itemstack%][, speed4 %number%][, ([offset]XYZ4|RGB4) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%][, flapSpeed %number%, flapRange %number%], angle %number%, height %number%, space %number%, visibleRange %number%[, tps %number%, second %number%]
+
+    drawWings style 12, particle1 "flame", speed 0, RGB 0, 0, 0, particle2 "redstone", speed2 0, RGB2 0, 0, 0, particle3 "redstone", speed3 0, RGB3 245, 122, 0, center player, id "%player%", isSingle false, player, rainbowMode false, angle 110, height 0, space 0.2, visibleRange 30, tps 1, second 2
+    drawWings style 17, particle1 "flame", speed 0, XYZ 0, 0, 0, particle2 "redstone", particle3 "redstone", center player, id "%player%", rainbowMode true, flapSpeed 2, flapRange 30, angle 120, height 0, space 0.2, visibleRange 30, tps 0, second 3
+
+drawHeart
+    Draws a heart shape at a player or location
+
+    [skDragon] drawHeart particle %particlename%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], ySpin %number%, width %number%, height %number%, innerSpike %number%, compress %number%, density %number%, visibleRange %number%[, rot[ation]XYZ %number%, %number%, %number%][, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    placeholder
+
+drawText
+    Draws text at a location or a player, it can also auto face where the player looks Uses system fonts(most fonts/unicodes show up as squares)
+
+    [skDragon] drawText %string%, particle %particlename%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, (only[ ]for|visible[ ]to) %players%][, r[ainbow]M[ode] %boolean%][, autoFace %boolean%][, invert %boolean%][, f[ont]Name %string%, f[ont]Style %fontstyle%, f[ont]Size %number%], scale %number%, visibleRange %number%[, rot[ation]XYZ %number%, %number%, %number%][, dis[placement]XYZ %number%, %number%, %number%][, pulseDelay %number%]
+
+    drawText "this works but ?, ?, ? doesn't", particle redstone, RGB 20, 100, 227, center location of player, id "%player%", rainbowMode false, autoFace false, invert false, fontName "Arial", fontStyle plain, fontSize 10, scale 7, visibleRange 32, RotationXYZ 0, 0, 0, displacementXYZ 0, 0, 0, pulseDelay 0
+
+Stop a particle effect
+    Stops a single particle effect or a list of them
+
+    [skDragon] stopEffect[ id] %strings%
+
+    stopEffect id "%player%"
+    stopEffect id {_list::*}
+
+drawCylinder 
+    Draws a cylinder that follows the player or plays at a location. New as of v0.07.0-Beta
+
+    [skDragon] drawCylinder particle %string%[, material %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%], randomRotation %boolean%, isSolid %boolean%, radius %number%, density %number%, height %number%, sideRatio %number%, visibleRange %number%[, xR[otation] %number%, yR[otation] %number%, zR[otation] %number%][, dis[placement]X %number%, dis[placement]Y %number%, dis[placement]Z %number%][, tps %number%, second %number%]
+
+    drawCylinder particle "redstone", RGB 102, 204, 255, center location of player, id "%player%", randomRotation false, isSolid false, radius 3, density 200, height 6, sideRatio 0, visibleRange 30
+    drawCylinder particle "flame", center location of player, id "%player%", randomRotation false, isSolid true, radius 1, density 100, height 3, sideRatio 0, visibleRange 30
+
+drawWings
+    Draws a wing trail that follows the player or plays them at a location. New Syntax as of v0.06.0-BETA Added flapping animation in v0.10.0-BETA
+
+    [skDragon] drawWings[ style] %number%, particle1 %string%[[, material] %itemstack%][, speed %number%][, ([offset]XYZ|RGB) %number%, %number%, %number%], particle2 %string%[[, material] %itemstack%][, speed2 %number%][, ([offset]XYZ2|RGB2) %number%, %number%, %number%], particle3 %string%[[, material] %itemstack%][, speed3 %number%][, ([offset]XYZ3|RGB3) %number%, %number%, %number%], center %entity/location%, id %string%[, isSingle %boolean%, %player%][, r[ainbow]M[ode] %boolean%][, flapSpeed %number%, flapRange %number%], angle %number%, height %number%, space %number%, visibleRange %number%[, tps %number%, second %number%]
+
+    drawWings style 12, particle1 "flame", speed 0, RGB 0, 0, 0, particle2 "redstone", speed2 0, RGB2 0, 0, 0, particle3 "redstone", speed3 0, RGB3 245, 122, 0, center player, id "%player%", isSingle false, player, rainbowMode false, angle 110, height 0, space 0.2, visibleRange 30, tps 1, second 2
+    drawWings style 17, particle1 "flame", speed 0, XYZ 0, 0, 0, particle2 "redstone", particle3 "redstone", center player, id "%player%", rainbowMode true, flapSpeed 2, flapRange 30, angle 120, height 0, space 0.2, visibleRange 30, tps 0, second 3
+
+Spawn basic directional particles
+    Most particles react differently to this effect using their individual built in mojang nature
+    Uses any bukkit vector type as input for the direction
+    Refer to material based directional particles for 'itemcrack' and 'blockdust' support
+
+    [skDragon] draw %number% %particlename% particle[s] at %entity/locations% with direction %vector% and speed %number%[, offset %number%, %number%, %number%][, id %string%][, visible[ ]to %players%][, visible[ ]range %number%][, [pulse][ ]delay %number%][, keep[ ][for] %timespan%]
+
+    draw 2 flame particles at {_loc} with direction {_v2} and speed .2
+

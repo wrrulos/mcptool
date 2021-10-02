@@ -1,0 +1,3 @@
+[29.09.2021 02:46:49] Uwunt23: [Handler=advertisement, Rule ID=1] 3.142.129.56:1590
+[29.09.2021 02:47:29] Uwunt23: [Handler=advertisement, Rule ID=1] 3.142.129.56:1590
+[29.09.2021 02:49:02] Uwunt23: [Handler=advertisement, Rule ID=1] 3.142.129.56:1590
