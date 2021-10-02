@@ -1084,7 +1084,7 @@ def menu():
                                             elif idioma == "en":
                                                 numsubd += 1
                                                 print (blanco + "    [" + lverde + "√" + blanco + "]" + blanco + " Subdomain found " + lnegro + "» " + verde + str(subdominio) + " " + lverde + str(ip_subdominio))
-                                                archivo_datos_subd.write(str(subddominio) + " " + str(ip_subdominio) + "\n")
+                                                archivo_datos_subd.write(str(subdominio) + " " + str(ip_subdominio) + "\n")
 
                                     except:
                                         pass
