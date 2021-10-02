@@ -10,10 +10,9 @@
 <img src="https://imgur.com/4NzFbFQ.jpg"> <img src="https://imgur.com/l2vHvj8.jpg"> <img src="https://imgur.com/mCapHNr.jpg"> <img src="https://imgur.com/4mZdxc8.jpg"> 
 <br/>
 
-## Versiones de Windows compatibles  
+## Sistemas Operativos compatibles:
 
-* Windows 10 -> Compatible
-* Windows 8 -> Compatible 
+* Windows (8, 8.1 y 10)
 
 # Instalacion 
 
