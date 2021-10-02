@@ -19,7 +19,7 @@
 
 # 🕹 Ejecutar
 
-* Ejecutar MCPTool.py ✅
+* Ejecutar MCPTool.py 
 
 ## 💻 Sistemas Operativos compatibles:
 
