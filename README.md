@@ -14,7 +14,7 @@
 
 * Windows (8, 8.1 y 10)
 
-# Instalacion 
+# 🔧 Instalacion 
 
 * Instalar Nmap
 * Instalar Python 3.
