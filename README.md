@@ -1,4 +1,4 @@
-# 🧨  MCPTool v0.3
+# 🧨  MCPTool v1.0
 
 <h3> Herramienta de pentesting para Minecraft </h3>
 <br/>
