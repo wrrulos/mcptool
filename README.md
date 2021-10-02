@@ -71,7 +71,6 @@ $ Ejemplo: scan-ports 127.0.0.1 25000-26000 y
 [*] scan-range (Escanea el rango de una IP)
 $ scan-range [ip] [rango] [puertos]
 
-
 # [ip] IP del servidor
 # [rango] Rango de IP
 # [puertos] Rango de puertos
