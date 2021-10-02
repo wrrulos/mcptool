@@ -17,7 +17,7 @@
 * Mover ngrok.exe a la carpeta de MCPTool.
 * Ejecutar Dependencias.bat para instalar las dependencias.
 
-# Ejecutar
+# 🕹 Ejecutar
 
 * Ejecutar MCPTool.py ✅
 
