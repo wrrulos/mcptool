@@ -1,4 +1,5 @@
-# Minecraft Pentesting Tool
+# 🧨  MCPTool v0.3
+
 <h3> Herramienta de pentesting para Minecraft </h3>
 <br/>
 </br>
@@ -7,14 +8,7 @@
 </p>
 <br/>
 
-<img src="https://imgur.com/4NzFbFQ.jpg"> <img src="https://imgur.com/l2vHvj8.jpg"> <img src="https://imgur.com/mCapHNr.jpg"> <img src="https://imgur.com/4mZdxc8.jpg"> 
-<br/>
-
-## Sistemas Operativos compatibles:
-
-* Windows (8, 8.1 y 10)
-
-# 🔧 Instalacion 
+# 🔧 Instalación 
 
 * Instalar Nmap
 * Instalar Python 3.
@@ -25,13 +19,18 @@
 
 # Ejecutar
 
-* Ejecutar MCPTool.py
+* Ejecutar MCPTool.py ✅
 
-## Screenshots
+## 💻 Sistemas Operativos compatibles:
+
+* ✅ Windows (8, 8.1 y 10)
+* ❌ Linux
+
+## 📸 Screenshots
 
 <img src="https://github.com/wrrulos/MCPTool/blob/main/images/Help.PNG">
 
-## Tutorial 
+## 🎞 Video 
 
 <p> No disponible.</p>
 
