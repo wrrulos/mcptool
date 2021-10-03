@@ -40,7 +40,7 @@
 
 ## 📸 Screenshots
 
-<img src="https://github.com/wrrulos/MCPTool/blob/main/images/Help.PNG">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG">
 
 ## 📝 Guia de comandos
 
