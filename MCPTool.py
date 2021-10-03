@@ -236,7 +236,7 @@ def banner():
     print(rojo + "    ████╗ ████║██╔════╝██╔══██╗    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     " + lrojo + "    Discord: " + blanco + "Rulo#9224")
     print(rojo + "    ██╔████╔██║██║     ██████╔╝       ██║   ██║   ██║██║   ██║██║     " + lrojo + "    Github: " + blanco + "@wrrulos")
     print(blanco + "    ██║╚██╔╝██║██║     ██╔═══╝        ██║   ██║   ██║██║   ██║██║     " )
-    print(blanco + "    ██║ ╚═╝ ██║╚██████╗██║            ██║   ╚██████╔╝╚██████╔╝███████╗" + lrojo + "    Minecraft Pentesting Tool " + lverde + "v0.3")
+    print(blanco + "    ██║ ╚═╝ ██║╚██████╗██║            ██║   ╚██████╔╝╚██████╔╝███████╗" + lrojo + "    Minecraft Pentesting Tool " + lverde + "v1.0")
     print(blanco + "    ╚═╝     ╚═╝ ╚═════╝╚═╝            ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝" )
     print("\n")
 
