@@ -21,7 +21,7 @@
 
 ## 💻 Supported operating systems:
 
-* ✅ Windows (8, 8.1, 10 y 11)
+* ✅ Windows (8, 8.1, 10 and 11)
 * ✅ Linux
 
 # 🔧 Installation 
