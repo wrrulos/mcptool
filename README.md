@@ -1,6 +1,6 @@
 # 🧨  MCPTool v1.1
 
-<h3> Herramienta de pentesting para Minecraft </h3>
+<h3> Pentesting tool for Minecraft </h3>
 <br/>
 </br>
 <p align="center">
@@ -8,125 +8,109 @@
 </p>
 <br/>
 
-# 🛠 Caracteristicas
+# 🛠 Characteristics
 
-* Ver informacion de un servidor
-* Ver informacion de un jugador
-* Escaneo de puertos
-* Escaneo de rango
-* Escaneo de nodos de un hosting
-* Escaneo de subdominios
-* Crear un bungee local
-* Crear un servidor falso (phishing)
-* La herramienta cuenta con su version en Español y Ingles
+* See information of a server
+* View player information
+* Port scanning
+* Range scan
+* Scanning of nodes of a hosting
+* Subdomain scan
+* Create a local bungee
+* Create a fake server (phishing)
 
-## 💻 Sistemas Operativos compatibles:
+## 💻 Supported operating systems:
 
-* ✅ Windows (8, 8.1 y 10)
-* ❌ Linux
+* ✅ Windows (8, 8.1, 10 y 11)
+* ✅ Linux
 
-# 🔧 Instalación 
+# 🔧 Installation 
 
-* Instalar Nmap
-* Instalar Python 3.
-* Crear una cuenta en https://ngrok.com/
-* Descargar Ngrok y conectar tu cuenta con el token.
-* Mover ngrok.exe a la carpeta de MCPTool.
-* Ejecutar Dependencias.bat para instalar las dependencias.
+* Install Nmap
+* Install Python 3.
+* Create an account at https://ngrok.com/
+* Download Ngrok and connect your account with the token.
+* Move ngrok to the MCPTool folder.
+* Run MCPTool.py
 
-# 🕹 Ejecutar
+# 🕹 Run
 
-* Ejecutar MCPTool.py 
+* Run MCPTool.py 
 
 ## 📸 Screenshots
 
 <img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG">
 
-## 📝 Guia de comandos
+## 📝 Commands guide
 
 ```bash
-[*] server (Muestra información de un servidor)
+[*] server (Shows information about a server)
 $ server [ip]
 
-# [ip] IP del servidor
+# [ip] server IP
 
-$ Ejemplo: server mc.universocraft.com
+$ Example: server mc.universocraft.com
 
-[*] player (Muestra informacion de un jugador)
-$ player [nombre]
+[*] player (Shows information about a player)
+$ player [name]
 
-# [nombre] Nombre del jugador
+# [name] Player name
 
-$ Ejemplo: player Rulo
+$ Example: player Rulo
 
-[*] scan-ports (Escanea los puertos de una IP)
-$ scan-ports [ip] [puertos] [y/n]
+[*] scan-ports
+$ scan-ports [ip] [ports] [y / n]
 
-# [ip] IP del servidor
-# [puertos] Rango de puertos
-# [y/n] Mostrar servidores apagados (Y = Si y N = No)
+# [ip] server IP
+# [ports] Port range
+# [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Ejemplo: scan-ports 127.0.0.1 25000-26000 y
+$ Example: scan-ports 127.0.0.1 25000-26000 y
 
-[*] scan-range (Escanea el rango de una IP)
-$ scan-range [ip] [rango] [puertos] [y/n]
+[*] scan-range (Scans the range of an IP)
+$ scan-range [ip] [range] [ports] [y / n]
 
-# [ip] IP del servidor
-# [rango] Rango de IP
-# [puertos] Rango de puertos
-# [y/n] Mostrar servidores apagados (Y = Si y N = No)
+# [ip] server IP
+# [range] IP range
+# [ports] Port range
+# [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Ejemplo: scan-range 127.0.0 1-255 25565 y
+$ Example: scan-range 127.0.0 1-255 25565 y
 
-[*] scan-host (Escanea los nodos de un host)
-$ scan-host [host] [puertos] [y/n]
+[*] scan-host (Scans the nodes of a host)
+$ scan-host [host] [ports] [y / n]
 
-# [host] Nombre del host
-# [puertos] Rango de puertos 
-# [y/n] Mostrar servidores apagados (Y = Si y N = No)
+# [host] Host name
+# [ports] Port range
+# [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Ejemplo: scan-host holy.gg 25000-26000 y
+$ Example: scan-host holy.gg 25000-26000 y
+[*] scan-subd (Scans the subdomains of a domain)
+$ scan-subd [domain] [file]
 
-[*] scan-subd (Escanea los subdominios de un dominio)
-$ scan-subd [dominio] [archivo]
+# [domain] Domain
+# [file] Name of the file that contains the list of subdomains // NOTE: You can add a custom list in / config / subdomains
 
-# [dominio] Dominio
-# [archivo] Nombre del archivo que contiene la lista de subdominios // NOTA: Puedes agregar una lista personalizada en /config/subdominios
+$ Example: scan-subd google.com mcptool.txt
 
-$ Ejemplo: scan-subd google.com mcptool.txt
+[*] bungee (Create a local bungee)
+$ bungee [ip: port]
 
-[*] bungee (Crea un bungee local)
-$ bungee [ip:port]
+# [ip: port] IP and port
 
-# [ip:port] IP y puerto
+$ Example: bungee 127.0.0.1:25567
 
-$ Ejemplo: bungee 127.0.0.1:25567
-
-[*] phishing (Crea un servidor falso para capturar contraseñas)
+[*] phishing (Create a fake server to capture passwords)
 $ phishing [server]
 
-# [server] Nombre del servidor
+# [server] Server name
 
-$ Ejemplo: phishing mc.universocraft.com
+$ Example: phishing mc.universocraft.com
 
-[*] set-language (Cambia el idioma de la herramienta)
-$ set-language [idioma]
-
-# [idioma] Idioma
-
-$ Ejemplo: set-language en
-
-[*] clear (Limpia la pantalla de la herramienta)
+[*] clear (Clears the tool screen)
 $ clear
 
-[*] help-cmd (Muestra ayuda especifica sobre un comando)
-$ help-cmd [comando]
-
-# [comando] Comando
-
-$ Ejemplo: help-cmd scan-ports
-
-[*] help (Muestra la lista de comandos)
+[*] help (Show command list)
 $ help
 ```
 
