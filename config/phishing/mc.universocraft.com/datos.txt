@@ -1,0 +1,7 @@
+    [CONECTADO] zRulos ha entrado al servidor.
+    [DESCONECTADO] zRulos ha salido del servidor.
+    [DESCONECTADO] zRulos ha salido del servidor.
+    [CONECTADO] zRulos ha entrado al servidor.
+    [REGISTER] Contraseña capturada! usuario: zRulos contraseña: asd
+    [DESCONECTADO] zRulos ha salido del servidor.
+    [DESCONECTADO] zRulos ha salido del servidor.
