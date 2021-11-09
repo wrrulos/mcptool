@@ -97,7 +97,7 @@ reset = Fore.RESET
 
 urlmcsrv = "https://api.mcsrvstat.us/2/"
 urlmojang = "https://api.mojang.com/users/profiles/minecraft/"
-urlversion = "https://raw.githubusercontent.com/wrrulos/MCPTool/main/config/datos/version"
+urlversion = "https://raw.githubusercontent.com/wrrulos/MCPTool/main/config/data/version"
 urlngrok = "http://localhost:4040/api/tunnels"
 discord = "discord.gg/ewPyW4Ghzj"
 
