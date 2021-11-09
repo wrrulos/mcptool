@@ -8,7 +8,7 @@
 </p>
 <br/>
 
-# 🛠 Characteristics
+# 🛠 Features
 
 * See information of a server
 * View player information
