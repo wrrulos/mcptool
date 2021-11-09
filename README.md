@@ -41,6 +41,7 @@
 
 <img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG.jpg">
 <img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/2.PNG.jpg">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/3.PNG.jpg">
 
 ## 📝 Commands guide
 
