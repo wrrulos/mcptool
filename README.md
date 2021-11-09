@@ -39,7 +39,8 @@
 
 ## 📸 Screenshots
 
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG.jpg">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/2.PNG.jpg">
 
 ## 📝 Commands guide
 
