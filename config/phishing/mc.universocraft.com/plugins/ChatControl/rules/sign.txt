@@ -1,5 +1,0 @@
-# -------------------------------------------------------------------------------
-# This file manages rules in signs and includes rules from rules.txt.
-#
-# For help, see notes in rules.txt file.
-# -------------------------------------------------------------------------------
