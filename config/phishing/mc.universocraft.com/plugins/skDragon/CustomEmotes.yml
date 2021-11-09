@@ -1,0 +1,65 @@
+#Custom Emotes
+
+#When you go to sites like 'http://www.minecraft-heads.com/' or 'http://www.freshcoal.com/' the skull you find will have a command that you can use, from this you will see a base64 value, copy paste that value into the frames section of the config as shown in the example and the plugin will decode it
+
+#Skulls tutorial <3
+#To make your own, new emotes you'll want to get Gimp or any other image editor that allows making a transparent background.
+#Find a skin/skull that you want to modify, to get the image link from that base64 code go here(https://www.base64decode.org/)
+#Now using the original you can create several 'frames' for the animation
+#While making the frames you could use a program like 'Minecraft Skin Viewer' to get a semi-live preview(http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-tools/1261408-minecraft-skin-viewer-1-2-supports-1-8-skins)
+#Once you're done you have to upload each image as a new skin and use a site like this(http://www.slicedlime.tv/custom-player-heads/) to retreive the base64 code that you need
+#Alterinatively you can use a site like (https://mineskin.org/) by 'inventivetalent' to somewhat automate the process for you ^.^
+#Insert those base64 codes into the Skulls section of this config and give them each a unique name
+
+
+#####-Skull Section-#####
+#						# Use this section to add shortcut names to use in the Emote section
+#Skulls:				#
+#  smile1: ""			# The registered skull name and the base64 code of each one
+#  smile2: ""
+
+Skulls:
+  smile1: "eyJ0aW1lc3RhbXAiOjE0NjM1OTI3OTA3MTYsInByb2ZpbGVJZCI6ImY1ODgyOTVlY2UyZDRhODZiMTA5YzBkMTI4MDM0YjFkIiwicHJvZmlsZU5hbWUiOiJfU2FzaGllXyIsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iN2Q1MzNlNjVmMmNhZTk3YWZlMzM0YzgxZWNjOTdlMmZhNWIzZTVkM2VjZjhiOTFiYzM5YTVhZGIyZTc5YSJ9fX0="
+  smile2: "eyJ0aW1lc3RhbXAiOjE0NjM1OTMzMTY3OTMsInByb2ZpbGVJZCI6ImY1ODgyOTVlY2UyZDRhODZiMTA5YzBkMTI4MDM0YjFkIiwicHJvZmlsZU5hbWUiOiJfU2FzaGllXyIsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kMTdlOGJhMTc0NTlkMjBmZDczNjcyYmNiOGE5ZTJhOGE0NGNmMGE1ZmYxNTQxMjJkOTZiNWRiYmQ5MTcxYSJ9fX0="
+  smile3: "eyJ0aW1lc3RhbXAiOjE0NjM1OTMzOTM4ODIsInByb2ZpbGVJZCI6ImY1ODgyOTVlY2UyZDRhODZiMTA5YzBkMTI4MDM0YjFkIiwicHJvZmlsZU5hbWUiOiJfU2FzaGllXyIsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jYzM1ZGZlOWI1YmVlMWUxMzlkNzI4YWQ4YWVhZjIzNTU2ZTJlMTlmYzc2MTViOTk2NWMwYTlhNmU1NjZjODkwIn19fQ=="
+  smile4: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJlOTgxNjVkZWVmNGVkNjIxOTUzOTIxYzFlZjgxN2RjNjM4YWY3MWMxOTM0YTQyODdiNjlkN2EzMWY2YjgifX19"
+
+
+
+#####-Emote Section-#####
+#						# 
+#Emotes:				#
+#  revsmile:			# Registered emote name
+#    Frames:			# Number of frames and the base64 code of each one
+#      1: ""		
+#      2: ""	
+#    Timings:			# How long each frame will play for in ticks (make sure there are the same amount as there are frames)
+#      1: 5			
+#      2: 5	
+
+Emotes:
+  revsmile:
+    Frames:
+      1: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTJlOTgxNjVkZWVmNGVkNjIxOTUzOTIxYzFlZjgxN2RjNjM4YWY3MWMxOTM0YTQyODdiNjlkN2EzMWY2YjgifX19"
+      2: "eyJ0aW1lc3RhbXAiOjE0NjM1OTMzOTM4ODIsInByb2ZpbGVJZCI6ImY1ODgyOTVlY2UyZDRhODZiMTA5YzBkMTI4MDM0YjFkIiwicHJvZmlsZU5hbWUiOiJfU2FzaGllXyIsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jYzM1ZGZlOWI1YmVlMWUxMzlkNzI4YWQ4YWVhZjIzNTU2ZTJlMTlmYzc2MTViOTk2NWMwYTlhNmU1NjZjODkwIn19fQ=="
+      3: "eyJ0aW1lc3RhbXAiOjE0NjM1OTMzMTY3OTMsInByb2ZpbGVJZCI6ImY1ODgyOTVlY2UyZDRhODZiMTA5YzBkMTI4MDM0YjFkIiwicHJvZmlsZU5hbWUiOiJfU2FzaGllXyIsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9kMTdlOGJhMTc0NTlkMjBmZDczNjcyYmNiOGE5ZTJhOGE0NGNmMGE1ZmYxNTQxMjJkOTZiNWRiYmQ5MTcxYSJ9fX0="
+      4: "eyJ0aW1lc3RhbXAiOjE0NjM1OTI3OTA3MTYsInByb2ZpbGVJZCI6ImY1ODgyOTVlY2UyZDRhODZiMTA5YzBkMTI4MDM0YjFkIiwicHJvZmlsZU5hbWUiOiJfU2FzaGllXyIsInRleHR1cmVzIjp7IlNLSU4iOnsidXJsIjoiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iN2Q1MzNlNjVmMmNhZTk3YWZlMzM0YzgxZWNjOTdlMmZhNWIzZTVkM2VjZjhiOTFiYzM5YTVhZGIyZTc5YSJ9fX0="
+    Timings:
+      1: 20
+      2: 20
+      3: 20
+      4: 40
+  smile2:
+    Frames:
+      1: "smile1"
+      2: "smile2"
+      3: "smile3"
+      4: "smile4"
+    Timings:
+      1: 20
+      2: 20
+      3: 20
+      4: 40
+
+#config version number
+version: 1
