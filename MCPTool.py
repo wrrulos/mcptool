@@ -104,8 +104,8 @@ discord = "discord.gg/ewPyW4Ghzj"
 animation = "|/-\\"
 animation_two = "54321"
 
-script_version = 2
-script_version_two = "1.1"
+script_version = 3
+script_version_two = "1.2"
 
 host_list = ["minehost", "holyhosting"]
 phishing_list = ["mc.universocraft.com"]
@@ -320,43 +320,43 @@ def help():
 
     if language == "en":
 
-        print("\n    ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗")
-        print("    ║                   Command                   ║                    Function                       ║")
-        print("    ║                                             ║                                                   ║")
-        print("    ║═════════════════════════════════════════════════════════════════════════════════════════════════║")
-        print("    ║ server [ip]                                 ║ Displays information about a server.              ║")
-        print("    ║ player [name]                               ║ Displays information about a player.              ║")
-        print("    ║ scan-ports [ip] [ports] [y/n]               ║ Scan the ports of an IP.                          ║")
-        print("    ║ scan-range [ip] [ports] [range] [y/n]       ║ Scan the range of an IP.                          ║")
-        print("    ║ scan-host [host] [ports] [y/n]              ║ Scans the nodes of a host.                        ║")
-        print("    ║ scan-subd [ip] [file]                       ║ Scans the nodes of a host.                        ║")
-        print("    ║ bungee [ip:port]                            ║ Start a proxy server.                             ║")
-        print("    ║ phishing [server]                           ║ Create a fake server to capture passwords.        ║")
-        print("    ║                                             ║                                                   ║")
-        print("    ║                                             ║                                                   ║")
-        print("    ║ clear                                       ║ Clean the screen.                                 ║")
+        print("\n     ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗")
+        print("     ║                   Command                   ║                    Function                       ║")
+        print("     ║                                             ║                                                   ║")
+        print("     ║═════════════════════════════════════════════════════════════════════════════════════════════════║")
+        print("     ║ server [ip]                                 ║ Displays information about a server.              ║")
+        print("     ║ player [name]                               ║ Displays information about a player.              ║")
+        print("     ║ scan-ports [ip] [ports] [y/n]               ║ Scan the ports of an IP.                          ║")
+        print("     ║ scan-range [ip] [ports] [range] [y/n]       ║ Scan the range of an IP.                          ║")
+        print("     ║ scan-host [host] [ports] [y/n]              ║ Scans the nodes of a host.                        ║")
+        print("     ║ scan-subd [ip] [file]                       ║ Scans the nodes of a host.                        ║")
+        print("     ║ bungee [ip:port]                            ║ Start a proxy server.                             ║")
+        print("     ║ phishing [server]                           ║ Create a fake server to capture passwords.        ║")
+        print("     ║                                             ║                                                   ║")
+        print("     ║                                             ║                                                   ║")
+        print("     ║ clear                                       ║ Clean the screen.                                 ║")
         #print("    ║ set-language [language]                     ║ Change the language of MCPTool.                   ║")
-        print("    ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝")
+        print("     ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝")
     
     elif language == "es":
 
-        print("\n    ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗")
-        print("    ║                   Comando                   ║                 Funcion                           ║")
-        print("    ║                                             ║                                                   ║")
-        print("    ║═════════════════════════════════════════════════════════════════════════════════════════════════║")
-        print("    ║ server [ip]                                 ║ Muestra informacion de un servidor.               ║")
-        print("    ║ player [nombre]                             ║ Muestra informacion de un jugador.                ║")
-        print("    ║ scan-ports [ip] [puertos] [y/n]             ║ Escanea los puertos de una IP.                    ║")
-        print("    ║ scan-range [ip] [rango] [puertos] [y/n]     ║ Escanea el rango de una IP.                       ║")
-        print("    ║ scan-host [host] [puertos] [y/n]            ║ Escanea los nodos de un host.                     ║")
-        print("    ║ scan-subd [ip] [archivo]                    ║ Escanea los subdominios de un servidor.           ║")
-        print("    ║ bungee [ip:puerto]                          ║ Inicia un servidor proxy.                         ║")
-        print("    ║ phishing [server]                           ║ Crea un servidor falso para capturar contraseñas. ║")
-        print("    ║                                             ║                                                   ║")
-        print("    ║                                             ║                                                   ║")
-        print("    ║ clear                                       ║ Limpia la pantalla.                               ║")
+        print("\n     ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗")
+        print("     ║                   Comando                   ║                 Funcion                           ║")
+        print("     ║                                             ║                                                   ║")
+        print("     ║═════════════════════════════════════════════════════════════════════════════════════════════════║")
+        print("     ║ server [ip]                                 ║ Muestra informacion de un servidor.               ║")
+        print("     ║ player [nombre]                             ║ Muestra informacion de un jugador.                ║")
+        print("     ║ scan-ports [ip] [puertos] [y/n]             ║ Escanea los puertos de una IP.                    ║")
+        print("     ║ scan-range [ip] [rango] [puertos] [y/n]     ║ Escanea el rango de una IP.                       ║")
+        print("     ║ scan-host [host] [puertos] [y/n]            ║ Escanea los nodos de un host.                     ║")
+        print("     ║ scan-subd [ip] [archivo]                    ║ Escanea los subdominios de un servidor.           ║")
+        print("     ║ bungee [ip:puerto]                          ║ Inicia un servidor proxy.                         ║")
+        print("     ║ phishing [server]                           ║ Crea un servidor falso para capturar contraseñas. ║")
+        print("     ║                                             ║                                                   ║")
+        print("     ║                                             ║                                                   ║")
+        print("     ║ clear                                       ║ Limpia la pantalla.                               ║")
         #print("    ║ set-language [idioma]                       ║ Cambia el idioma de MCPTool.                      ║")
-        print("    ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝")
+        print("     ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝")
 
 
 cmd_clear()
@@ -804,13 +804,13 @@ def mcptool():
 
                                                             numservers += 1
 
-                                                            print(f"\n{white}     [{lgreen}√{white}] {green} Server found:")
+                                                            print(f"\n{white}     [{lgreen}√{white}] {green}Server found:")
                                                             print(f"\n{white}        IP: {lcyan}{str(ip)}:{str(port)}")
                                                             print(f"        {white}MOTD: {lcyan}{str(motd)}")
                                                             print(f"        {white}Version: {lcyan}{str(version)}")
                                                             print(f"        {white}Players: {lcyan}{str(players)}\n")
 
-                                                            logs_file.write("[+] Server found: \n\n")
+                                                            logs_file.write("\n[+] Server found: \n\n")
                                                             logs_file.write(f"    IP: {str(ip)}:{str(port)}\n")
                                                             logs_file.write(f"    MOTD: {str(motd)}\n")
                                                             logs_file.write(f"    Version: {str(version)}\n")
@@ -1080,7 +1080,7 @@ def mcptool():
 
                                                                         numservers += 1
 
-                                                                        print(f"\n{white}     [{lgreen}√{white}] {green} Server found:")
+                                                                        print(f"\n{white}     [{lgreen}√{white}] {green}Server found:")
                                                                         print(f"\n{white}        IP: {lcyan}{str(ip_range)}:{str(port)}")
                                                                         print(f"        {white}MOTD: {lcyan}{str(motd)}")
                                                                         print(f"        {white}Version: {lcyan}{str(version)}")
@@ -1363,7 +1363,7 @@ def mcptool():
 
                                                                 numservers += 1
 
-                                                                print(f"\n{white}     [{lgreen}√{white}] {green} Server found:")
+                                                                print(f"\n{white}     [{lgreen}√{white}] {green}Server found:")
                                                                 print(f"\n{white}        IP: {lcyan}{str(ip)}:{str(port)}")
                                                                 print(f"        {white}MOTD: {lcyan}{str(motd)}")
                                                                 print(f"        {white}Version: {lcyan}{str(version)}")
@@ -1520,6 +1520,7 @@ def mcptool():
                                                     if language == "en":
                                                         num_subd += 1
                                                         print(f"     {white}[{lgreen}√{white}] Subdomain found {lblack}» {green}{str(subdomain)} {lgreen}{str(ip_subdomain)}")
+                                                        logs_file.write(f"{str(subdomain)} {str(ip_subdomain)}\n")
                                             
                                             except:
                                                 pass
