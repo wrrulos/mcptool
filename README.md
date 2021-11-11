@@ -117,7 +117,7 @@ $ help
 ```
 
 ## 🎞 Video 
-[![Watch the video](https://youtu.be/)](https://youtu.be/9m7KNd9EHBI)
+[![Watch the video](https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Miniatura.jpg?raw=true)](https://youtu.be/9m7KNd9EHBI)
 
 ## Licencia 
 
