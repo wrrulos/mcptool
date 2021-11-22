@@ -2,13 +2,13 @@ Fork info:
 MCPTool.py:
 De `pip install requests & pip install colorama` a `py -m pip install requests & py -m pip install colorama` porque por ejemplo, a mi no me reconoce el comando PIP
 Phishing/mc.universocraft.com: 
-   -MOTD editado de 1.8-1.16 a 1.8-1.17
-   -Protocol Lib actualizado (No deja entrar a nadie)
-   -Skript actualizado (No funcionaba la skript)
-   -Añadido al hablar en el chat salte el error "El chat esta deshabilitado aqui. Si no logras entrar al servidor despues de logearte, probablemente se este realizando un mantenimiento. Intenta entrar nuevamente en unos minutos" 
-   -Añadido el "¡Estas siendo verificado por nuestros servicios! Pronto te enviaremos a tu destino principal."
-   -Menor peso
-   -Mas optimizado
+   *MOTD editado de 1.8-1.16 a 1.8-1.17
+   *Protocol Lib actualizado (No deja entrar a nadie)
+   *Skript actualizado (No funcionaba la skript)
+   *Añadido al hablar en el chat salte el error "El chat esta deshabilitado aqui. Si no logras entrar al servidor despues de logearte, probablemente se este realizando un mantenimiento. Intenta entrar nuevamente en unos minutos" 
+   *Añadido el "¡Estas siendo verificado por nuestros servicios! Pronto te enviaremos a tu destino principal."
+   *Menor peso
+   *Mas optimizado
 
 # 🧨  MCPTool v1.1
 
