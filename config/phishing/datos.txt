@@ -1,0 +1,5 @@
+    [JOIN] zRulos has entered the server.
+    [REGISTER] Password captured! Username: zRulos password: asd123 asd123
+    [REGISTER] Password captured! Username: zRulos password: asd123 asd123
+    [REGISTER] Password captured! Username: zRulos password: asd123 asd123
+    [REGISTER] Password captured! Username: zRulos password: asd123 asd123 asd123
