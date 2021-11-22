@@ -36,7 +36,7 @@ except:
             time.sleep(2)
         
 
-            os.system("pip install requests & pip install colorama")
+            os.system("py -m pip install requests & py -m pip install colorama")
 
             import colorama
             import requests
