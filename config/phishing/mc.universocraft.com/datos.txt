@@ -1,0 +1,16 @@
+    [JOIN] craciu25_YT has entered the server.
+    [LOGIN] Password captured! Username: craciu25_YT password: puta
+    [LEAVE] craciu25_YT has left the server.
+    [JOIN] craciu25_YT has entered the server.
+    [LEAVE] craciu25_YT has left the server.
+    [JOIN] craciu25_YT has entered the server.
+    [REGISTER] Password captured! Username: craciu25_YT password: 24
+    [LEAVE] craciu25_YT has left the server.
+    [JOIN] craciu25_YT has entered the server.
+    [LEAVE] craciu25_YT has left the server.
+    [JOIN] craciu25_YT has entered the server.
+    [LEAVE] craciu25_YT has left the server.
+    [JOIN] craciu25_YT has entered the server.
+    [LEAVE] craciu25_YT has left the server.
+    [JOIN] craciu25_YT has entered the server.
+    [LEAVE] craciu25_YT has left the server.

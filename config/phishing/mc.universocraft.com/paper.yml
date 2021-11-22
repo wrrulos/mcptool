@@ -1,0 +1,97 @@
+# This is the main configuration file for PaperSpigot.
+# As you can see, there's tons to configure. Some options may impact gameplay, so use
+# with caution, and make sure you know what each option does before configuring.
+# 
+# If you need help with the configuration or have any questions related to PaperSpigot,
+# join us at the IRC.
+# 
+# IRC: #paperspigot @ irc.spi.gt ( http://irc.spi.gt/iris/?channels=PaperSpigot )
+
+config-version: 9
+settings:
+  limit-player-interactions: true
+  baby-zombie-movement-speed: 0.5
+warnWhenSettingExcessiveVelocity: true
+effect-modifiers:
+  strength: 1.3
+  weakness: -0.5
+stackable-buckets:
+  lava: false
+  water: false
+  milk: false
+data-value-allowed-items: []
+world-settings:
+  default:
+    verbose: true
+    allow-block-location-tab-completion: true
+    disable-explosion-knockback: false
+    all-chunks-are-slime-chunks: false
+    water-over-lava-flow-speed: 5
+    falling-blocks-collide-with-signs: false
+    tnt-entity-height-nerf: 0
+    container-update-tick-rate: 1
+    fix-cannons: false
+    falling-block-height-nerf: 0
+    player-blocking-damage-multiplier: 0.5
+    nether-ceiling-void-damage: false
+    use-hopper-check: false
+    game-mechanics:
+      disable-end-credits: false
+      boats-drop-boats: false
+      disable-player-crits: false
+      disable-chest-cat-detection: false
+    keep-spawn-loaded: true
+    disable-mood-sounds: false
+    use-async-lighting: false
+    portal-search-radius: 128
+    tick-next-tick-list-cap: 10000
+    tick-next-tick-list-cap-ignores-redstone: false
+    disable-ice-and-snow: false
+    disable-thunder: false
+    allow-undead-horse-leashing: false
+    disable-teleportation-suffocation-check: false
+    remove-invalid-mob-spawner-tile-entities: true
+    generator-settings:
+      canyon: true
+      caves: true
+      dungeon: true
+      fortress: true
+      mineshaft: true
+      monument: true
+      stronghold: true
+      temple: true
+      village: true
+      flat-bedrock: false
+    fishing-time-range:
+      MinimumTicks: 100
+      MaximumTicks: 900
+    despawn-ranges:
+      soft: 32
+      hard: 128
+    squid-spawn-height:
+      minimum: 45.0
+      maximum: 63.0
+    player-exhaustion:
+      block-break: 0.02500000037252903
+      swimming: 0.014999999664723873
+    mob-spawner-tick-rate: 1
+    optimize-explosions: false
+    tnt-explosion-volume: 4.0
+    max-growth-height:
+      cactus: 3
+      reeds: 3
+    fast-drain:
+      lava: false
+      water: false
+    remove-unloaded:
+      enderpearls: true
+      tnt-entities: true
+      falling-blocks: true
+    load-chunks:
+      enderpearls: false
+      tnt-entities: false
+      falling-blocks: false
+    lava-flow-speed:
+      normal: 30
+      nether: 10
+    cache-chunk-maps: false
