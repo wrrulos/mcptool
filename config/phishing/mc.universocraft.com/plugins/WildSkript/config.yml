@@ -1,0 +1,8 @@
+#Generate doc
+doc: false
+
+#Enable debug
+debug: false
+
+# MCStats.net
+mcstats-enable: true
