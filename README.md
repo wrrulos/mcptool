@@ -33,8 +33,8 @@
 # Clone the repository
 $ git clone https://github.com/wrrulos/RSubd
 
-# Go into the RSubd folder
-$ cd RSubd
+# Go into the MCPTool folder
+$ cd MCPTool
 
 # Create an account at https://ngrok.com/
 # Download Ngrok and connect your account with the token.
