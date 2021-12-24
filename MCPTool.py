@@ -1,12 +1,12 @@
 # =============================================================================
-#                      MCPTool v1.3 www.github.com/wrrulos
+#                      MCPTool v1.4 www.github.com/wrrulos
 #                         Pentesting Tool for Minecraft
 #                               Made by wRRulos
 #                                  @wrrulos
 # =============================================================================
 
 # Any error report it to my discord please, thank you.
-# Programmed in Python 3.10.0
+# Programmed in Python 3.10.1
 
 import os
 import time
