@@ -1,4 +1,4 @@
-# 🧨  MCPTool v1.3
+# 🧨  MCPTool v1.4
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
@@ -26,22 +26,30 @@
 
 # 🔧 Installation 
 
-* Install Nmap
-* Install Python 3.
-* Create an account at https://ngrok.com/
-* Download Ngrok and connect your account with the token.
-* Move ngrok to the MCPTool folder.
-* Run MCPTool.py
+```bash
+# Install Nmap
+# Install Python 3.
 
-# 🕹 Run
+# Clone the repository
+$ git clone https://github.com/wrrulos/RSubd
 
-* Run MCPTool.py 
+# Go into the RSubd folder
+$ cd RSubd
 
-## 📸 Screenshots
+# Create an account at https://ngrok.com/
+# Download Ngrok and connect your account with the token.
+# Move ngrok to the MCPTool folder.
 
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG.jpg">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/2.PNG.jpg">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/3.PNG.jpg">
+# Install the requirements
+$ python3 -m pip install -r requirements.txt
+
+```
+
+# 🕹 Usage
+
+```bash
+$ python3 MCPTool.py
+```
 
 ## 📝 Commands guide
 
@@ -115,6 +123,12 @@ $ clear
 [*] help (Show command list)
 $ help
 ```
+
+## 📸 Screenshots
+
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG.jpg">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/2.PNG.jpg">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/3.PNG.jpg">
 
 ## 🎞 Video 
 [![Watch the video](https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Miniatura.jpg?raw=true)](https://youtu.be/9m7KNd9EHBI)
