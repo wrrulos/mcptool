@@ -134,7 +134,6 @@ def check_port():
 
     if ports.lower() == "all":
         ports = "0-65535"
-        print(f"a: {ports}")
 
     elif ports.isdecimal():
         if int(ports) <= 65535:
