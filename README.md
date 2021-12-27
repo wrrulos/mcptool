@@ -1,4 +1,4 @@
-# 🧨  MCPTool v1.4
+# 🧨  MCPTool v1.5
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
@@ -94,7 +94,7 @@ $ scan-host [host] [ports] [y / n]
 # [ports] Port range
 # [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Example: scan-host holy.gg 25000-26000 y
+$ Example: scan-host holyhosting 25000-26000 y
 [*] scan-subd (Scans the subdomains of a domain)
 $ scan-subd [domain] [file]
 
