@@ -37,7 +37,7 @@ connection_throttle: 4000
 log_commands: false
 stats: 53d8f15d-f81f-4528-8799-a9a8fcce8f56
 online_mode: false
-forge_support: false
+forge_support: true
 disabled_commands:
 - server
 servers:
