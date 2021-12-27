@@ -95,6 +95,7 @@ $ scan-host [host] [ports] [y / n]
 # [y / n] Show shutdown servers (Y = Yes and N = No)
 
 $ Example: scan-host holyhosting 25000-26000 y
+
 [*] scan-subd (Scans the subdomains of a domain)
 $ scan-subd [domain] [file]
 
