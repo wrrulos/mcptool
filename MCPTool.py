@@ -1,5 +1,5 @@
 # =============================================================================
-#                      MCPTool v1.4 www.github.com/wrrulos
+#                      MCPTool v1.5 www.github.com/wrrulos
 #                         Pentesting Tool for Minecraft
 #                               Made by wRRulos
 #                                  @wrrulos
@@ -8,6 +8,7 @@
 # Any error report it to my discord please, thank you.
 # Programmed in Python 3.10.1
 
+import hashlib
 import os
 import time
 import shutil
@@ -15,6 +16,7 @@ import requests
 import json
 import re
 import socket
+import uuid
 
 from random import randint
 from datetime import datetime
@@ -50,6 +52,8 @@ green = Fore.GREEN
 lgreen = Fore.LIGHTGREEN_EX
 lcyan = Fore.LIGHTCYAN_EX
 lmagenta = Fore.LIGHTMAGENTA_EX
+yellow = Fore.YELLOW
+lyellow = Fore.LIGHTYELLOW_EX
 reset = Fore.RESET
 
 urlmcsrv = "https://api.mcsrvstat.us/2/"
@@ -62,10 +66,10 @@ animation = "|/-\\"
 animation_two = "54321"
 
 last_version = 0
-script_version = 5
-script_version_two = "1.4"
+script_version = 6
+script_version_two = "1.5"
 
-host_list = ["minehost", "holyhosting"]
+host_list = ["minehost", "holyhosting", "vultam"]
 phishing_list = ["mc.universocraft.com"]
 
 banner = f"""\n
@@ -93,7 +97,7 @@ help_message = """
      ║ server [ip]                                 ║ Displays information about a server.              ║
      ║ player [name]                               ║ Displays information about a player.              ║
      ║ scan-ports [ip] [ports] [y/n]               ║ Scan the ports of an IP.                          ║
-     ║ scan-range [ip] [ports] [range] [y/n]       ║ Scan the range of an IP.                          ║
+     ║ scan-range [ip] [range] [ports] [y/n]       ║ Scan the range of an IP.                          ║
      ║ scan-host [host] [ports] [y/n]              ║ Scans the nodes of a host.                        ║
      ║ scan-subd [ip] [file]                       ║ Scans the nodes of a host.                        ║
      ║ bungee [ip:port]                            ║ Start a proxy server.                             ║
@@ -502,14 +506,20 @@ def mcptool():
                             r = requests.get(urlmojang + player_name)
                             r_json = r.json()
                             name = r_json["name"]
-                            uuid = r_json["id"]
+                            player_uuid = r_json["id"]
+                            player_uuid_ = f'{player_uuid[0:8]}-{player_uuid[8:12]}-{player_uuid[12:16]}-{player_uuid[16:21]}-{player_uuid[21:32]}'
 
-                            print(f"\n{white}     [{green}+{white}] Name: {lgreen}{str(name)}")
-                            print(f"{white}     [{green}+{white}] UUID: {lgreen}{str(uuid)}")
+                            print(f"\n{white}     [{green}+{white}] Name: {lgreen}{str(name)}\n")
+                            print(f"{white}     [{green}+{white}] UUID: {lgreen}{str(player_uuid)}")
+                            print(f"{white}     [{green}+{white}] UUID: {lgreen}{str(player_uuid_)}")
 
                         except:
-                            print(f"\n{white}     [{green}+{white}] Name: {lgreen}{str(player_name)}")
-                            print(f"{white}     [{green}+{white}] UUID: {lred}None")
+                            player_uuid = str(uuid.UUID(bytes=hashlib.md5(bytes(f"OfflinePlayer:{player_name}", "utf-8")).digest()[:16], version=3))
+                            player_uuid_ = player_uuid.replace("-", "")
+
+                            print(f"\n{white}     [{green}+{white}] Name: {lgreen}{str(player_name)}\n")
+                            print(f"{white}     [{green}+{white}] UUID (No Premium): {lgreen}{player_uuid}")
+                            print(f"{white}     [{green}+{white}] UUID (No Premium): {lgreen}{player_uuid_}")
 
                     except:
                         print(f"\n     {white}[{red}-{white}] {lred}Connection error.")
@@ -598,7 +608,7 @@ def mcptool():
                                                         if show == "y":
                                                             print(f"\n{white}    [{lred}-{white}] {green}Server found: {red}(time out){green}: ")
                                                             print(f"\n        {white}IP: {lcyan}{str(ip)}:{str(port)}\n")
-                                                            logs_file.write(f"[-] Server found (Offline)     IP: {str(ip)}:{str(port)}\n\n")
+                                                            logs_file.write(f"\n[-] Server found (Offline)     IP: {str(ip)}:{str(port)}\n\n")
 
                                                     except:
                                                         pass
@@ -740,7 +750,7 @@ def mcptool():
                                                                     if show == "y":
                                                                         print(f"\n{white}     [{lred}-{white}] {green}Server found: {red}(time out){green}: ")
                                                                         print(f"\n        {white}IP: {lcyan}{str(ip_range)}:{str(port)}\n")
-                                                                        logs_file.write(f"[-] Server found (Offline)     IP: {str(ip)}:{str(port)}\n\n")
+                                                                        logs_file.write(f"\n[-] Server found (Offline)     IP: {str(ip)}:{str(port)}\n\n")
 
                                                                 except:
                                                                     pass
@@ -836,10 +846,17 @@ def mcptool():
 
                                             elif host == "holyhosting":
                                                 check_folder("scans/host/holyhosting")
-                                                nodes = ("node-premium", "node-premium1", "node-premium2", "node-ashburn", "node-newyork", "node-valdivia", "node-dallas", "node-paris", "ca", "tx", "tx2", "fr")
+                                                nodes = ("node-germany", "node-newyork", "ca", "tx2", "node-cl2", "fr", "node-ashburn", "node-premium3", "node-dallas", "premium2", "node-valdivia", "node-premium")
                                                 domain = ".holy.gg"
                                                 file = f"scans/host/holyhosting/Holyhosting_{str(date.day)}-{str(date.month)}-{str(date.year)}_{str(date.hour)}.{str(date.minute)}.{str(date.second)}.txt"
                                                 nmap_file = "holyhosting_temp.txt"
+
+                                            elif host == "vultam":
+                                                check_folder("scans/host/vultam")
+                                                nodes = ("ca", "ca02", "ca03", "ca04", "ca05", "ca06", "ca07", "mia", "mia02", "mia03", "mia04", "mia05", "mia06", "mia07", "mia08", "mia09", "mia10", "mia12", "mia13", "mia14", "mia15", "mia16", "fr01", "fr02", "fr03", "ny", "ny02", "ny04", "ny05", "ny06", "ny07", "de", "de02")
+                                                domain = ".vultam.net"
+                                                file = f"scans/host/vultam/Vultam_{str(date.day)}-{str(date.month)}-{str(date.year)}_{str(date.hour)}.{str(date.minute)}.{str(date.second)}.txt"
+                                                nmap_file = "vultam_temp.txt"
 
                                             nodes_file = f"nodes_host_{str(host)}{str(date.day)}-{str(date.month)}-{str(date.year)}_{str(date.hour)}.{str(date.minute)}.{str(date.second)}.txt"
                                             nodes_list = open(nodes_file, "w", encoding="utf8")
@@ -914,7 +931,7 @@ def mcptool():
                                                             if show == "y":
                                                                 print(f"\n{white}     [{lred}-{white}] {green}Server found: {red}(time out){green}: ")
                                                                 print(f"\n        {white}IP: {lcyan}{str(ip)}:{str(port)}\n")
-                                                                logs_file.write(f"[-] Server found (Offline)     IP: {str(ip)}:{str(port)}\n\n")
+                                                                logs_file.write(f"\n[-] Server found (Offline)     IP: {str(ip)}:{str(port)}\n\n")
 
                                                         except:
                                                             pass
@@ -1084,8 +1101,9 @@ def mcptool():
                             else:
                                 os.system('cd config/bungee && xterm -T "Proxy" -e bash iniciar.sh &')
 
-                            time.sleep(10)
+                            time.sleep(1)
                             print(f"\n     {white}[{green}+{white}] IP: {lgreen}0.0.0.0:25567")
+                            print(f"\n     {white}[{green}#{white}]{white} Commands: {lyellow}\n\n     uuid <name>\n     name <name>\n     connect <server>\n     setip <ip>")
 
                         except Exception as message_error:
                             print(f"\n     {white}[{red}ERROR{white}] {lred}Unknown error (The error was saved in the logs)")
