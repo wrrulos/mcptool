@@ -1,5 +1,5 @@
 # =============================================================================
-#                      MCPTool v1.5 www.github.com/wrrulos
+#                      MCPTool v1.6 www.github.com/wrrulos
 #                         Pentesting Tool for Minecraft
 #                               Made by wRRulos
 #                                  @wrrulos
@@ -66,8 +66,8 @@ animation = "|/-\\"
 animation_two = "54321"
 
 last_version = 0
-script_version = 6
-script_version_two = "1.5"
+script_version = 7
+script_version_two = "1.6"
 
 host_list = ["minehost", "holyhosting", "vultam"]
 phishing_list = ["mc.universocraft.com"]
@@ -96,10 +96,10 @@ help_message = """
      ║═════════════════════════════════════════════════════════════════════════════════════════════════║
      ║ server [ip]                                 ║ Displays information about a server.              ║
      ║ player [name]                               ║ Displays information about a player.              ║
-     ║ scan-ports [ip] [ports] [y/n]               ║ Scan the ports of an IP.                          ║
-     ║ scan-range [ip] [range] [ports] [y/n]       ║ Scan the range of an IP.                          ║
-     ║ scan-host [host] [ports] [y/n]              ║ Scans the nodes of a host.                        ║
-     ║ scan-subd [ip] [file]                       ║ Scans the nodes of a host.                        ║
+     ║ ports [ip] [ports] [y/n]                    ║ Scan the ports of an IP.                          ║
+     ║ range [ip] [range] [ports] [y/n]            ║ Scan the range of an IP.                          ║
+     ║ host [host] [ports] [y/n]                   ║ Scans the nodes of a host.                        ║
+     ║ subd [ip] [file]                            ║ Scans the nodes of a host.                        ║
      ║ bungee [ip:port]                            ║ Start a proxy server.                             ║
      ║ phishing [server]                           ║ Create a fake server to capture passwords.        ║
      ║                                             ║                                                   ║
@@ -527,7 +527,7 @@ def mcptool():
                 except:
                     print(f"\n{white}     Usage: player [name]")
 
-            elif command.lower() == "scan-ports":
+            elif command.lower() == "ports":
                 try:
                     ip = argument[1]
                     ports = argument[2]
@@ -656,9 +656,9 @@ def mcptool():
                         print(f"\n     {white}[{lred}Invalid arguments{white}] {white}Please enter a valid port range")
 
                 except:
-                    print(f"\n{white}     Usage: scan-ports [ip] [ports] [y/n]")
+                    print(f"\n{white}     Usage: ports [ip] [ports] [y/n]")
 
-            elif command.lower() == "scan-range":
+            elif command.lower() == "range":
                 try:
                     ip = argument[1]
                     ip_range = argument[2]
@@ -806,9 +806,9 @@ def mcptool():
                         print(f"\n     {white}[{lred}Invalid arguments{white}] {white}Please enter a valid port range")
 
                 except:
-                    print(f"\n{white}     Usage: scan-range [ip] [range] [ports] [y/n]")
+                    print(f"\n{white}     Usage: range [ip] [range] [ports] [y/n]")
 
-            elif command.lower() == "scan-host":
+            elif command.lower() == "host":
                 try:
                     host = argument[1].lower()
                     ports = argument[2]
@@ -985,9 +985,9 @@ def mcptool():
                         print(f"\n     {white}[{lred}ERROR{white}] {white}There is a problem with the variable {red}host_list {white}({str(error)})")
 
                 except:
-                    print(f"\n{white}     Usage: scan-host [host] [ports] [y/n]")
+                    print(f"\n{white}     Usage: host [host] [ports] [y/n]")
 
-            elif command.lower() == "scan-subd":
+            elif command.lower() == "subd":
                 try:
                     domain = argument[1]
                     subdomains_file = argument[2].lower()
@@ -1069,7 +1069,7 @@ def mcptool():
                         print(f"\n     {white}[{lred}Invalid arguments{white}] {white}The file ({str(subdomains_file)}) was not found")
 
                 except:
-                    print(f"{white}\n     Usage: scan-subd [domain] [file]")
+                    print(f"{white}\n     Usage: subd [domain] [file]")
 
             elif command.lower() == "bungee":
                 try:
