@@ -1,0 +1,37 @@
+[12:11:23] [main/INFO]: Using standard Java JCE cipher.
+[12:11:23] [main/INFO]: Using standard Java compressor.
+[12:11:23] [main/INFO]: Enabled Waterfall version git:Waterfall-Bootstrap:1.18-R0.1-SNAPSHOT:727780a:473
+[12:11:24] [main/INFO]: Discovered module: ModuleSpec(name=cmd_alert, file=modules\cmd_alert.jar, provider=JenkinsModuleSource())
+[12:11:24] [main/INFO]: Discovered module: ModuleSpec(name=cmd_find, file=modules\cmd_find.jar, provider=JenkinsModuleSource())
+[12:11:24] [main/INFO]: Discovered module: ModuleSpec(name=cmd_list, file=modules\cmd_list.jar, provider=JenkinsModuleSource())
+[12:11:24] [main/INFO]: Discovered module: ModuleSpec(name=cmd_send, file=modules\cmd_send.jar, provider=JenkinsModuleSource())
+[12:11:24] [main/INFO]: Discovered module: ModuleSpec(name=cmd_server, file=modules\cmd_server.jar, provider=JenkinsModuleSource())
+[12:11:24] [main/INFO]: Discovered module: ModuleSpec(name=reconnect_yaml, file=modules\reconnect_yaml.jar, provider=JenkinsModuleSource())
+[12:11:24] [main/INFO]: Loaded plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Loaded plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Loaded plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Loaded plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Loaded plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Loaded plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Loaded plugin BungeeExploit version 1 by Jutting
+[12:11:24] [main/WARN]: Forced host server pvp is not defined
+[12:11:24] [main/INFO]: Enabled plugin reconnect_yaml version git:reconnect_yaml:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Enabled plugin cmd_find version git:cmd_find:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Enabled plugin cmd_server version git:cmd_server:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Enabled plugin cmd_alert version git:cmd_alert:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Enabled plugin cmd_send version git:cmd_send:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: Enabled plugin cmd_list version git:cmd_list:1.18-R0.1-SNAPSHOT:727780a:473 by WaterfallMC
+[12:11:24] [main/INFO]: BungeeExploit has been enabled!
+[12:11:24] [main/INFO]: Made by Jutting.
+[12:11:24] [main/INFO]: Enabled plugin BungeeExploit version 1 by Jutting
+[12:11:24] [Netty Boss IO Thread #0/INFO]: Listening on /0.0.0.0:25567
+[12:11:25] [Netty Worker IO Thread #0/INFO]: [/127.0.0.1:27362] <-> InitialHandler has connected
+[12:11:26] [Netty Worker IO Thread #0/INFO]: [KiyoggMC|/127.0.0.1:27362] <-> ServerConnector [server] has connected
+[12:12:40] [Netty Worker IO Thread #0/INFO]: [/127.0.0.1:27362|KiyoggMC] -> UpstreamBridge has disconnected
+[12:12:40] [Netty Worker IO Thread #0/INFO]: [/127.0.0.1:27362|KiyoggMC] <-> DownstreamBridge <-> [server] has disconnected
+[12:12:40] [Netty Worker IO Thread #1/INFO]: [/127.0.0.1:27368] <-> InitialHandler has pinged
+[12:12:53] [Netty Worker IO Thread #2/INFO]: [/127.0.0.1:27377] <-> InitialHandler has pinged
+[12:15:16] [Netty Worker IO Thread #3/INFO]: [/127.0.0.1:1027] <-> InitialHandler has pinged
+[12:33:29] [Netty Worker IO Thread #4/INFO]: [/127.0.0.1:5763] <-> InitialHandler has pinged
+[12:42:00] [Netty Worker IO Thread #5/INFO]: [/127.0.0.1:5835] <-> InitialHandler has pinged
+[12:46:02] [Netty Worker IO Thread #6/INFO]: [/127.0.0.1:5881] <-> InitialHandler has pinged
