@@ -68,41 +68,41 @@ $ player [name]
 
 $ Example: player Rulo
 
-[*] scan-ports
-$ scan-ports [ip] [ports] [y / n]
+[*] ports
+$ ports [ip] [ports] [y / n]
 
 # [ip] server IP
 # [ports] Port range
 # [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Example: scan-ports 127.0.0.1 25000-26000 y
+$ Example: ports 127.0.0.1 25000-26000 y
 
-[*] scan-range (Scans the range of an IP)
-$ scan-range [ip] [range] [ports] [y / n]
+[*] range (Scans the range of an IP)
+$ range [ip] [range] [ports] [y / n]
 
 # [ip] server IP
 # [range] IP range
 # [ports] Port range
 # [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Example: scan-range 127.0.0 1-255 25565 y
+$ Example: range 127.0.0 1-255 25565 y
 
-[*] scan-host (Scans the nodes of a host)
-$ scan-host [host] [ports] [y / n]
+[*] host (Scans the nodes of a host)
+$ host [host] [ports] [y / n]
 
 # [host] Host name
 # [ports] Port range
 # [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Example: scan-host holyhosting 25000-26000 y
+$ Example: host holyhosting 25000-26000 y
 
-[*] scan-subd (Scans the subdomains of a domain)
-$ scan-subd [domain] [file]
+[*] subd (Scans the subdomains of a domain)
+$ subd [domain] [file]
 
 # [domain] Domain
 # [file] Name of the file that contains the list of subdomains // NOTE: You can add a custom list in / config / subdomains
 
-$ Example: scan-subd google.com mcptool.txt
+$ Example: subd google.com mcptool.txt
 
 [*] bungee (Create a local bungee)
 $ bungee [ip: port]
