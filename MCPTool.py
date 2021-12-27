@@ -1103,7 +1103,7 @@ def mcptool():
 
                             time.sleep(1)
                             print(f"\n     {white}[{green}+{white}] IP: {lgreen}0.0.0.0:25567")
-                            print(f"\n     {white}[{green}#{white}]{white} Commands: {lyellow}\n\n     uuid <name>\n     name <name>\n     connect <server>\n     setip <ip>")
+                            #print(f"\n     {white}[{green}#{white}]{white} Commands: {lyellow}\n\n     uuid <name>\n     name <name>\n     connect <server>\n     setip <ip>")
 
                         except Exception as message_error:
                             print(f"\n     {white}[{red}ERROR{white}] {lred}Unknown error (The error was saved in the logs)")
