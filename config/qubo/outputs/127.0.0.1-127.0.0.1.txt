@@ -1,0 +1,3 @@
+quboScanner by @zreply - Version 0.3.5 
+Scanner started on: Sun, 2 Jan 2022 21:38:03 -0300
+Scanner ended on: Sun, 2 Jan 2022 21:38:04 -0300
