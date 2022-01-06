@@ -1,4 +1,4 @@
-# 🧨  MCPTool v1.6
+# 🧨  MCPTool v1.7
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
@@ -57,7 +57,7 @@ $ python3 MCPTool.py
 [*] server (Shows information about a server)
 $ server [ip]
 
-# [ip] server IP
+# [ip] Server IP
 
 $ Example: server mc.universocraft.com
 
@@ -68,33 +68,21 @@ $ player [name]
 
 $ Example: player Rulo
 
-[*] ports
-$ ports [ip] [ports] [y / n]
+[*] scan
+$ ports [ip] [ports] 
 
 # [ip] server IP
 # [ports] Port range
-# [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Example: ports 127.0.0.1 25000-26000 y
-
-[*] range (Scans the range of an IP)
-$ range [ip] [range] [ports] [y / n]
-
-# [ip] server IP
-# [range] IP range
-# [ports] Port range
-# [y / n] Show shutdown servers (Y = Yes and N = No)
-
-$ Example: range 127.0.0 1-255 25565 y
+$ Example: scan 127.0.0.1 25000-26000
 
 [*] host (Scans the nodes of a host)
-$ host [host] [ports] [y / n]
+$ host [host] [ports] 
 
 # [host] Host name
 # [ports] Port range
-# [y / n] Show shutdown servers (Y = Yes and N = No)
 
-$ Example: host holyhosting 25000-26000 y
+$ Example: host holyhosting 25000-26000
 
 [*] subd (Scans the subdomains of a domain)
 $ subd [domain] [file]
@@ -111,12 +99,12 @@ $ bungee [ip: port]
 
 $ Example: bungee 127.0.0.1:25567
 
-[*] phishing (Create a fake server to capture passwords)
-$ phishing [server]
+[*] poisoning (Create a proxy connection that redirects to a server and captures commands.
+$ poisoning [ip]
 
-# [server] Server name
+# [ip] Server IP
 
-$ Example: phishing mc.universocraft.com
+$ Example: poisoning mc.universocraft.com
 
 [*] clear (Clears the tool screen)
 $ clear
