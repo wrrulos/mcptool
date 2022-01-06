@@ -17,7 +17,7 @@
 * Scanning of nodes of a hosting
 * Subdomain scan
 * Create a local bungee
-* Create a fake server (phishing)
+* MITM Attack (poisoning)
 
 ## 💻 Supported operating systems:
 
