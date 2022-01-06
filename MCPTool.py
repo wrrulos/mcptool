@@ -1319,7 +1319,9 @@ def mcptool():
                         check_java()
 
                         try:
-                            print(f"\n     {white}[{green}+{white}] {lgreen}Starting proxy...")
+                            clear()
+                            print(banner)
+                            print(f"\n     {lblack}[{green}+{lblack}] {white}Starting proxy..")
 
                             config_file = open("config/files/config_bungee.txt", "r")
                             yml_config = config_file.read()
