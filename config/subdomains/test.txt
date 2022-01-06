@@ -1,6 +1,0 @@
-www
-build
-ping
-web
-staff
-test
