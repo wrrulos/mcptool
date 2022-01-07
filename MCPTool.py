@@ -90,7 +90,7 @@ help_message = """
      ║ scan [ip] [ports]                           ║ Scan the ports of an IP. (Includes port range)    ║
      ║ qubo [ip] [ports] [th] [ti]                 ║ Scan the ports of an IP using quboscanner.        ║
      ║ host [host] [ports]                         ║ Scans the nodes of a host.                        ║
-     ║ subd [ip] [file]                            ║ Scans the nodes of a host.                        ║
+     ║ subd [ip] [file]                            ║ Scan the subdomains of a domain                   ║
      ║ bungee [ip:port]                            ║ Start a proxy server.                             ║
      ║ poisoning [server]                          ║ Create a proxy connection that redirects to a     ║
      ║                                             ║ server and captures commands                      ║
