@@ -9,7 +9,7 @@
 <br/>
 
 ## This project was created for educational purposes and should not be used in environments without legal authorization.
-
+<br/>
 # 🛠 Features
 
 * See information of a server
