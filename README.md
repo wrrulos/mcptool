@@ -6,10 +6,9 @@
 <p align="center">
 <img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/MCPTool.png" title="MCPTool">
 </p>
-<br/>
 
-## This project was created for educational purposes and should not be used in environments without legal authorization.
-<br/>
+### This project was created for educational purposes and should not be used in environments without legal authorization.
+
 # 🛠 Features
 
 * See information of a server
