@@ -25,7 +25,7 @@ from colorama import Fore, init
 
 init()
 
-DEBUG = True  # Activate DEBUG mode
+DEBUG = False  # Activate DEBUG mode
 
 # Variables
 
