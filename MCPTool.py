@@ -25,7 +25,7 @@ from colorama import Fore, init
 
 init()
 
-DEBUG = False  # Activate DEBUG mode
+DEBUG = True  # Activate DEBUG mode
 
 # Variables
 
@@ -236,13 +236,13 @@ def check_nmap():
         error()
 
 
-def check_ngrok():
+def check_ngrok(proxy_port):
     """ Check if ngrok is installed """
     global ngrok_command
 
     if os.name == "nt":
         if os.path.isfile("ngrok.exe"):
-            ngrok_command = "ngrok.exe tcp 25568"
+            ngrok_command = f"ngrok.exe tcp {proxy_port}"
             pass
 
         else:
@@ -250,12 +250,12 @@ def check_ngrok():
 
     else:
         if os.system("ngrok -v >nul 2>&1") == 0:
-            ngrok_command = "ngrok tcp 25568"
+            ngrok_command = f"ngrok tcp {proxy_port}"
             pass
 
         else:
             if os.path.isfile("ngrok"):
-                ngrok_command = "./ngrok tcp 25565"
+                ngrok_command = f"./ngrok tcp {proxy_port}"
                 pass
 
             else:
@@ -1374,13 +1374,27 @@ def mcptool():
                     file = "config/poisoning/plugins/RPoisoner/commands.txt"
                     cmd = "cd config/poisoning && java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1"
 
+                    while True:
+                        proxy_port = input(f"\n     Write the port that will be assigned to the proxy: ")
+
+                        if proxy_port.isdecimal():
+                            if int(proxy_port) > 65535:
+                                print(f"\n     {white}[{lred}Invalid arguments{white}] {white}Please enter a valid port range (The port is greater than 65535)")
+
+                            else:
+                                break
+
+                        else:
+                            continue
+
                     try:
-                        check_ngrok()
+                        check_ngrok(proxy_port)
                         try:
                             check_connection()
                             try:
                                 requests.get(urlmcsrv + server)
                                 try:
+
                                     check_folder("results")
                                     check_folder("results/poisoning")
 
@@ -1410,10 +1424,11 @@ def mcptool():
                                     config_file = open("config/files/config_poisoning.txt", "r+")
                                     yml_config = config_file.read()
                                     config_file.close()
+                                    yml_port = re.sub("0.0.0.0:[0-9][0-9][0-9][0-9][0-9]", f"0.0.0.0:{proxy_port}", yml_config)
 
                                     config_file = open("config/poisoning/config.yml", "w+", encoding="utf8")
                                     config_file.truncate(0)
-                                    config_file.write(yml_config)
+                                    config_file.write(yml_port)
                                     config_file.write(f"\n    address: {str(server)}\n")
                                     config_file.write(f"    restricted: false")
                                     config_file.close()
@@ -1468,7 +1483,7 @@ def mcptool():
                                     ip_poisoning = ipngrok2 + ":" + ipngrok[1]
 
                                     print(f"\n     {lblack}[{green}IP{lblack}] {white}{str(ip_poisoning)}")
-                                    print(f"\n     {lblack}[{green}IP{lblack}] {white}127.0.0.1:25568")
+                                    print(f"\n     {lblack}[{green}IP{lblack}] {white}127.0.0.1:{proxy_port}")
                                     print(f"\n     {lblack}[{white}#{lblack}] {white}Waiting for commands..\n")
 
                                     old_content = " "
