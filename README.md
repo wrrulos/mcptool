@@ -1,4 +1,4 @@
-# 🧨  MCPTool v1.7
+# 🧨  MCPTool v1.8
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
