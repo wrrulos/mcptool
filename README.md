@@ -32,7 +32,7 @@
 # Install Python 3.
 
 # Clone the repository
-$ git clone https://github.com/wrrulos/RSubd
+$ git clone https://github.com/wrrulos/MCPTool
 
 # Go into the MCPTool folder
 $ cd MCPTool
