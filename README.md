@@ -14,10 +14,13 @@
 * See information of a server
 * View player information
 * Port scanning
-* Range scan
+* QuboScanner
 * Scanning of nodes of a hosting
 * Subdomain scan
 * Create a local bungee
+* Listening command
+* Checker
+* Show mods on this server.
 * MITM Attack (poisoning)
 
 ## 💻 Supported operating systems:
@@ -55,29 +58,53 @@ $ python3 MCPTool.py
 ## 📝 Commands guide
 
 ```bash
-[*] server (Shows information about a server)
+
+[*] server 
+Shows information of the specified server
+
 $ server [ip]
 
 # [ip] Server IP
 
 $ Example: server mc.universocraft.com
 
-[*] player (Shows information about a player)
+
+[*] player 
+Shows information of the specified player
+
 $ player [name]
 
 # [name] Player name
 
 $ Example: player Rulo
 
-[*] scan
-$ ports [ip] [ports] 
 
-# [ip] server IP
+[*] scan
+Scan the ports of the specified IP (You can also scan an IP range)
+
+$ scan [ip] [ports] 
+
+# [ip] IP
 # [ports] Port range
 
 $ Example: scan 127.0.0.1 25000-26000
 
-[*] host (Scans the nodes of a host)
+
+[*] qubo
+Scan the ports of the specified IP using quboscanner (You can also scan a range of IPs)
+
+$ qubo [ip] [ports] [th] [ti]
+
+# [ip] IP
+# [ports] Port range
+# [th] Threads
+# [ti] Timeout
+
+$ Example: qubo 127.0.0.1 25000-26000 500 1500
+
+
+[*] host 
+This command scans all nodes of the specified hosting.
 $ host [host] [ports] 
 
 # [host] Host name
@@ -85,27 +112,33 @@ $ host [host] [ports]
 
 $ Example: host holyhosting 25000-26000
 
-[*] subd (Scans the subdomains of a domain)
-$ subd [domain] [file]
 
-# [domain] Domain
-# [file] Name of the file that contains the list of subdomains // NOTE: You can add a custom list in / config / subdomains
+[*] bungee 
+Create a local bungee.
 
-$ Example: subd google.com mcptool.txt
+$ bungee [ip:port]
 
-[*] bungee (Create a local bungee)
-$ bungee [ip: port]
-
-# [ip: port] IP and port
+# [ip:port] IP and port
 
 $ Example: bungee 127.0.0.1:25567
 
-[*] poisoning (Create a proxy connection that redirects to a server and captures commands.
+NOTE: The Bungeecord comes with my RBungeeExploit plugin which has the following commands:
+
+  - /connect [ip:port] This command sends you to the specified server
+  - /set-uuid [uuid] This command changes your UUID to the specified uuid.
+  
+  This plugin also gives you a random UUID on login.
+  
+  
+[*] poisoning 
+Create a proxy connection that redirects to a server and captures commands.
+
 $ poisoning [ip]
 
 # [ip] Server IP
 
 $ Example: poisoning mc.universocraft.com
+
 
 [*] clear (Clears the tool screen)
 $ clear
