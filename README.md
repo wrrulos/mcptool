@@ -111,6 +111,26 @@ $ host [host] [ports]
 # [ports] Port range
 
 $ Example: host holyhosting 25000-26000
+  
+  
+[*] mods
+This command displays the mods on a Forge server.
+
+$ mods [ip:port]
+
+# [ip:port] IP and port
+
+$ Example: mods 127.0.0.1:25567
+
+
+[*] checker
+This command scans the servers found in a file
+
+$ checker [file]
+
+# [file] File location
+
+$ Example: checker C:\Users\Rulo\Documents\Scan.txt
 
 
 [*] bungee 
@@ -128,6 +148,17 @@ NOTE: The Bungeecord comes with my RBungeeExploit plugin which has the following
   - /set-uuid [uuid] This command changes your UUID to the specified uuid.
   
   This plugin also gives you a random UUID on login.
+  
+  
+[*] listening
+This command shows the players connected within the server
+
+$ listening [ip:port]
+
+# [ip:port] IP and port
+
+$ Example: listening 127.0.0.1:25567
+
   
   
 [*] poisoning 
