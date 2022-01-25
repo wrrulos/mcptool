@@ -1059,7 +1059,7 @@ def main():
                         print(f"\n{white}     {lblack}[{lred}FINI{white}SHED{lblack}] {white}The scan finished and found {number_of_servers} servers")
 
                     else:
-                        print(f"\n     {lblack}[{lred}ERR{white}OR{lblack}] {white}Host not found!")
+                        print(f"\n     {lblack}[{lred}ERR{white}OR{lblack}] {white}Host not found! \n     {white}Available hosts (minehost, holyhosting, vultam){reset}")
 
             except IndexError:
                 print(f"\n{white}     Usage: host [host] [ports]")
