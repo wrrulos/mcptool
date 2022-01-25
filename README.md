@@ -162,7 +162,7 @@ $ Example: listening 127.0.0.1:25567
   
   
 [*] poisoning 
-Create a proxy connection that redirects to a server and captures commands.
+Create a proxy connection that redirects to a server and captures commands. (Only works with non-premium users)
 
 $ poisoning [ip]
 
