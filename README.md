@@ -4,7 +4,7 @@
 <br/>
 </br>
 <p align="center">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/MCPTool.png" title="MCPTool">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Logo.png" title="MCPTool">
 </p>
 
 ### This project was created for educational purposes and should not be used in environments without legal authorization.
@@ -149,9 +149,9 @@ $ help
 
 ## 📸 Screenshots
 
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/1.PNG.jpg">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Commands.PNG">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/MITM.PNG">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Load.png">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Banner.png">
+<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Help.png">
 
 ## 🎞 Video 
 [![Watch the video](https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Miniatura.jpg?raw=true)](https://youtu.be/9m7KNd9EHBI)
