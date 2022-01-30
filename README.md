@@ -16,7 +16,6 @@
 * Port scanning
 * QuboScanner
 * Scanning of nodes of a hosting
-* Subdomain scan
 * Create a local bungee
 * Listening command
 * Checker
