@@ -144,9 +144,7 @@ $ Example: bungee 127.0.0.1:25567
 NOTE: The Bungeecord comes with my RBungeeExploit plugin which has the following commands:
 
   - /connect [ip:port] This command sends you to the specified server
-  - /set-uuid [uuid] This command changes your UUID to the specified uuid.
-  
-  This plugin also gives you a random UUID on login.
+  - /set-uuid [uuid] This command changes your UUID to the specified uuid.  
   
   
 [*] listening
