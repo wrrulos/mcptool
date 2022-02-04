@@ -561,6 +561,9 @@ def get_server(ip, skip, logs_file):
 
     except UnicodeDecodeError:
         pass
+      
+    except:
+        pass
 
 
 def get_ngrok_ip():
