@@ -32,7 +32,7 @@ init()
 # CONFIG
 
 DEBUG = False
-SKIP_LOAD = True
+SKIP_LOAD = False
 
 # COLORS
 
