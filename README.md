@@ -31,7 +31,8 @@
 
 ```bash
 # Install Nmap
-# Install Python 3.
+# Install Python 3
+# Install NodeJS
 
 # Clone the repository
 $ git clone https://github.com/wrrulos/MCPTool
