@@ -1,4 +1,4 @@
-# 🧨  MCPTool v2.1
+# 🧨  MCPTool v2.2
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
@@ -131,6 +131,14 @@ $ checker [file]
 # [file] File location
 
 $ Example: checker C:\Users\Rulo\Documents\Scan.txt
+
+
+[*] bot [ip:port]
+Check if the server can be entered using a bot
+
+# [ip:port] IP and port
+
+$ Example: bot mc.ecuacraft.com
 
 
 [*] bungee 
