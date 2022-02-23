@@ -8,7 +8,7 @@ import requests
 from colorama import Fore, init
 from mcstatus import MinecraftServer
 
-script_verison = 13
+script_verison = 14
 version_link = "https://raw.githubusercontent.com/wrrulos/MCPTool/main/config/data/version"
 
 init()
