@@ -867,8 +867,7 @@ def listening_command(target):
             print(f"\n\n     {lblack}[{lred}CTRL{white}-C{lblack}] {white}Stopping..")
             return
 
-        except Exception as e:
-            print(e)
+        except:
             pass
 
 
