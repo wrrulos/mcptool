@@ -71,7 +71,6 @@ animation1 = ".."
 # OTHERS
 
 host_list = ["minehost", "holyhosting", "vultam"]
-script_verison = 14
 script__version = "2.3"
 number_of_servers = 0
 version_link = "https://raw.githubusercontent.com/wrrulos/MCPTool/main/config/data/version"
