@@ -30,23 +30,24 @@
 # 🔧 Installation 
 
 ```bash
-# Install Nmap
-# Install Python 3
-# Install NodeJS
+# Install Nmap (https://nmap.org/)
+# Install Python 3 (https://www.python.org/)
+# Install NodeJS (https://nodejs.org/es/)
 
-# Clone the repository
+# Clone the repository (Or download it from the web in the "Code button and download zip")
 $ git clone https://github.com/wrrulos/MCPTool
 
 # Go into the MCPTool folder
 $ cd MCPTool
 
-# Create an account at https://ngrok.com/
+# Create an ngrok account (https://ngrok.com/)
 # Download Ngrok and connect your account with the token.
 # Move ngrok to the MCPTool folder.
 
 # Install the requirements
 $ python3 -m pip install -r requirements.txt
 $ npm install mineflayer
+$ npm install process
 
 ```
 
