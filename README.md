@@ -22,7 +22,7 @@
 * Show mods on this server.
 * MITM Attack (poisoning)
 * Bot connect
-* Kick, kickal and block
+* Kick, kickall and block
 
 ## 💻 Supported operating systems:
 
