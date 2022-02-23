@@ -204,7 +204,7 @@ $ Example: kick 127.0.0.1:25566 Rulo
 
 
 [*] kickall
-Kick a player from the server
+Kick all players from the server
 
 $ kick [ip:port] [name]
 
