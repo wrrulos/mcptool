@@ -92,6 +92,17 @@ $ scan [ip] [ports]
 $ Example: scan 127.0.0.1 25000-26000
 
 
+[*] sfile
+Scan a list of ips addresses from a file.
+
+$ sfile [file] [ports] 
+
+# [file] File
+# [ports] Port range
+
+$ Example: sfile  D:\Proyectos\MCPTool\ips1.txt 25000-26000
+
+
 [*] qubo
 Scan the ports of the specified IP using quboscanner (You can also scan a range of IPs)
 
@@ -177,6 +188,38 @@ $ poisoning [ip]
 # [ip] Server IP
 
 $ Example: poisoning mc.universocraft.com
+
+
+[*] kick 
+Kick a player from the server
+
+$ kick [ip:port] [name]
+
+# [ip:port] IP and port
+# [name] Player name
+
+$ Example: kick 127.0.0.1:25566 Rulo
+
+
+[*] kickall
+Kick a player from the server
+
+$ kick [ip:port] [name]
+
+# [ip:port] IP and port
+
+$ Example: kickall 127.0.0.1:25566
+
+
+[*] block
+Kick a player from the server without stopping (infinite loop)
+
+$ block [ip:port] [name]
+
+# [ip:port] IP and port
+# [name] Player name
+
+$ Example: block 127.0.0.1:25566 Rulo
 
 
 [*] clear (Clears the tool screen)
