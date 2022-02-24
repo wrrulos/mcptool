@@ -149,7 +149,7 @@ $ Example: checker C:\Users\Rulo\Documents\Scan.txt
 
 
 [*] bot [ip:port]
-Check if the server can be entered using a bot
+Connect to a server using a bot
 
 # [ip:port] IP and port
 
