@@ -120,6 +120,7 @@ $ Example: qubo 127.0.0.1 25000-26000 500 1500
 
 [*] host 
 This command scans all nodes of the specified hosting.
+
 $ host [host] [ports] 
 
 # [host] Host name
