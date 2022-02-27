@@ -102,7 +102,7 @@ $ sfile [file] [ports]
 # [file] File
 # [ports] Port range
 
-$ Example: sfile  D:\Proyectos\MCPTool\ips1.txt 25000-26000
+$ Example: sfile D:\Proyectos\MCPTool\ips1.txt 25000-26000
 
 
 [*] qubo
