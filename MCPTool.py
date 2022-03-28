@@ -177,7 +177,6 @@ def connect(name, host, port, version, bot_name):
 
         if version is None:
             if bot_name is None:
-                print("a")
                 os.system(f"{py} config/files/RBot.py -host {host} -p {port} -m connect")
 
             else:
@@ -231,8 +230,7 @@ def connect(name, host, port, version, bot_name):
                                 time.sleep(5)
                             result = subprocess.run(f"{py} config/files/RBot.py -host {host} -p {port} -m kickall-mcptool -mcptool -v {version} -n {player}", stdout=subprocess.PIPE)
                             if "Kicking the player" in str(result.stdout.decode('utf-8')):
-                                print(
-                                    f"     {lblack}[{lred}KI{white}CK{lblack}] {white}Kicking the player {lgreen}{player}{white}")
+                                print(f"     {lblack}[{lred}KI{white}CK{lblack}] {white}Kicking the player {lgreen}{player}{white}")
                                 return
 
                             result = mc_replace_text_json(str(result.stdout.decode('utf-8')))
