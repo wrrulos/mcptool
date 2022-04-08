@@ -29,7 +29,6 @@ Linux:
 
 - python3 -m pip install -r requirements.txt
 
-
 10. To open MCPTool you must use the command
 
 Windows:
