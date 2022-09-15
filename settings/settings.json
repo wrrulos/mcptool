@@ -1,0 +1,13 @@
+{
+    "lang": "en",
+    "skip_loading_screen": false,
+
+    "dependencies": [
+        ["Java", "java -version"],
+        ["Nmap", "nmap --version"],
+        ["NodeJS", "npm --version"],
+        ["Ngrok", "ngrok -v"]
+    ],
+
+    "version": "1///3.0"
+}
