@@ -79,7 +79,7 @@ $ python3 MCPTool.py
 <img src="https://imgur.com/X2puYi9.png">
 
 ## 🎞 Video 
-[![Watch the video](https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Load.png)](https://youtu.be/WW_LVJOBltc)
+# Coming soon!
 
 ## Licencia 
 
