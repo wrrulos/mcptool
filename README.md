@@ -13,16 +13,21 @@
 
 * See information of a server
 * View player information
-* Port scanning
-* QuboScanner
+* Get the ip of a domain
+* Get information about an ip address
+* Search random servers with certain information (With Shodan)
+* Port scanning (with nmap and qubo). And send a bot to check if the server can be entered
 * Scanning of nodes of a hosting
-* Create a local bungee
-* Listening command
 * Checker
-* Show mods on this server.
+* Listening command
+* Create a local bungee
 * MITM Attack (poisoning)
-* Bot connect
+* Initiate a brute force attack to access the console. (via RCON)
+* Initiate a brute force attack to access the user's account. (via /login)
+* Connect to a server using a bot.
+* Connect to the RCON of a server and execute commands
 * Kick, kickall and block
+* Bots are compatible with Proxies
 
 ## 💻 Supported operating systems:
 
@@ -59,178 +64,7 @@ $ npm install process
 $ python3 MCPTool.py
 ```
 
-## 📝 Commands guide
-
-```bash
-
-[*] server 
-Shows information of the specified server
-
-$ server [ip]
-
-# [ip] Server IP
-
-$ Example: server mc.universocraft.com
-
-
-[*] player 
-Shows information of the specified player
-
-$ player [name]
-
-# [name] Player name
-
-$ Example: player Rulo
-
-
-[*] scan
-Scan the ports of the specified IP (You can also scan an IP range)
-
-$ scan [ip] [ports] 
-
-# [ip] IP
-# [ports] Port range
-
-$ Example: scan 127.0.0.1 25000-26000
-
-
-[*] sfile
-Scan a list of ips addresses from a file.
-
-$ sfile [file] [ports] 
-
-# [file] File
-# [ports] Port range
-
-$ Example: sfile D:\Proyectos\MCPTool\ips1.txt 25000-26000
-
-
-[*] qubo
-Scan the ports of the specified IP using quboscanner (You can also scan a range of IPs)
-
-$ qubo [ip] [ports] [th] [ti]
-
-# [ip] IP
-# [ports] Port range
-# [th] Threads
-# [ti] Timeout
-
-$ Example: qubo 127.0.0.1 25000-26000 500 1500
-
-
-[*] host 
-This command scans all nodes of the specified hosting.
-
-$ host [host] [ports] 
-
-# [host] Host name
-# [ports] Port range
-
-$ Example: host holyhosting 25000-26000
-  
-  
-[*] mods
-This command displays the mods on a Forge server.
-
-$ mods [ip:port]
-
-# [ip:port] IP and port
-
-$ Example: mods 127.0.0.1:25567
-
-
-[*] checker
-This command scans the servers found in a file
-
-$ checker [file]
-
-# [file] File location
-
-$ Example: checker C:\Users\Rulo\Documents\Scan.txt
-
-
-[*] bot [ip:port]
-Connect to a server using a bot
-
-# [ip:port] IP and port
-
-$ Example: bot mc.ecuacraft.com
-
-
-[*] bungee 
-Create a local bungee.
-
-$ bungee [ip:port]
-
-# [ip:port] IP and port
-
-$ Example: bungee 127.0.0.1:25567
-
-NOTE: The Bungeecord comes with my RBungeeExploit plugin which has the following commands:
-
-  - /connect [ip:port] This command sends you to the specified server
-  - /set-uuid [uuid] This command changes your UUID to the specified uuid.  
-  
-  
-[*] listening
-This command shows the players connected within the server
-
-$ listening [ip:port]
-
-# [ip:port] IP and port
-
-$ Example: listening 127.0.0.1:25567
-
-  
-  
-[*] poisoning 
-Create a proxy connection that redirects to a server and captures commands. (Only works with non-premium users)
-
-$ poisoning [ip]
-
-# [ip] Server IP
-
-$ Example: poisoning mc.universocraft.com
-
-
-[*] kick 
-Kick a player from the server
-
-$ kick [ip:port] [name]
-
-# [ip:port] IP and port
-# [name] Player name
-
-$ Example: kick 127.0.0.1:25566 Rulo
-
-
-[*] kickall
-Kick all players from the server
-
-$ kick [ip:port] [name]
-
-# [ip:port] IP and port
-
-$ Example: kickall 127.0.0.1:25566
-
-
-[*] block
-Kick a player from the server without stopping (infinite loop)
-
-$ block [ip:port] [name]
-
-# [ip:port] IP and port
-# [name] Player name
-
-$ Example: block 127.0.0.1:25566 Rulo
-
-
-[*] clear (Clears the tool screen)
-$ clear
-
-[*] help (Show command list)
-$ help
-```
+## 📝 Commands guide: https://docs.google.com/document/d/1w4difgN40KkUcHIeDu0AV_IGsKS0r6YoTrTAKpQqqPk/edit?usp=sharing
 
 ## 📸 Screenshots
 
@@ -245,7 +79,7 @@ $ help
 
 MIT License
 
-Copyright (c) 2021 Pedro Vega
+Copyright (c) 2022 Pedro Vega
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
