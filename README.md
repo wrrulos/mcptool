@@ -51,10 +51,16 @@ $ cd MCPTool
 # Download Ngrok and connect your account with the token.
 # Move ngrok to the MCPTool folder.
 
-# Install the requirements
+# Install dependencies 
+
+# Method 1 (Windows users only) -> Install dependencies automatically with the installer. (Run Installer.bat)
+# Method 2 Install the dependencies manually by running the following commands.
 $ python3 -m pip install -r requirements.txt
-$ npm install mineflayer
-$ npm install process
+$ npm install mineflayer 
+$ npm install process 
+$ npm install socks
+$ npm install proxy-agent 
+$ npm install readline
 
 ```
 
