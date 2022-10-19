@@ -1,0 +1,148 @@
+{
+    "starting_screen": true,
+    "version_check": true,
+    "bungee_port": "25570",
+    "poisoning_port": "33330",
+    "python_command": "python",
+    "ngrok_command": "ngrok tcp",
+    "proxy_command": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+    "shodan_token": "76uWNv0clygVHb8IzwYoPfWCw8MqCF8W",
+    "test_proxy_timeout": "10",
+    "auth": {
+        "command": "/login",
+        "words_to_sign_in": [
+            "/login",
+            "Wrong password"
+        ],
+        "words_at_login": [
+            "Successful login",
+            "Logueado"
+        ]
+    },
+    "qubo": {
+        "command": "java -Dfile.encoding=UTF-8 -jar qubo.jar",
+        "threads": "500",
+        "timeout": "2500"
+    },
+    "hosts": [
+        {
+            "name": "minehost",
+            "nodes": [
+                "gm",
+                "sv1",
+                "sv7",
+                "sv8",
+                "sv9",
+                "sv10",
+                "sv11",
+                "sv15",
+                "sv17",
+                "sv24"
+            ],
+            "domain": ".minehost.com.ar"
+        },
+        {
+            "name": "vultam",
+            "nodes": [
+                "ca",
+                "ca01",
+                "ca02",
+                "ca04",
+                "ca05",
+                "ca06",
+                "ca07",
+                "ca08",
+                "de",
+                "de02",
+                "mia",
+                "mia02",
+                "mia03",
+                "mia04",
+                "mia05",
+                "mia06",
+                "mia07",
+                "mia08",
+                "mia09",
+                "mia10",
+                "mia11",
+                "mia12",
+                "mia13",
+                "mia14",
+                "mia15",
+                "mia16",
+                "mia17",
+                "mia18",
+                "mia19",
+                "mia20",
+                "mia25",
+                "mia27",
+                "mia28",
+                "mia29",
+                "mia30",
+                "mia31",
+                "mia32",
+                "mia34",
+                "mia35",
+                "mia36",
+                "mia37",
+                "mia38",
+                "mia39",
+                "fr01",
+                "fr02",
+                "fr03",
+                "fr04",
+                "fr05",
+                "fr06",
+                "fr07",
+                "ny",
+                "ny02",
+                "ny04",
+                "ny05",
+                "ny06",
+                "ny07",
+                "ny09"
+            ],
+            "domain": ".vultam.net"
+        },
+        {
+            "name": "holyhosting",
+            "nodes": [
+                "node-germany",
+                "node-newyork",
+                "ca",
+                "tx2",
+                "node-cl2",
+                "node-ashburn",
+                "node-premium3",
+                "node-dallas",
+                "premium2",
+                "node-valdivia",
+                "node-premium",
+                "ar",
+                "node-premiumar",
+                "node-argentina"
+            ],
+            "domain": ".holy.gg"
+        }
+    ],
+    "dependencies": [
+        [
+            "Java",
+            "java -version"
+        ],
+        [
+            "Nmap",
+            "nmap --version"
+        ],
+        [
+            "NodeJS",
+            "npm --version"
+        ],
+        [
+            "Ngrok",
+            "ngrok -v"
+        ]
+    ],
+    "version": "1///3.0",
+    "proxy_version": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/504/downloads/waterfall-1.19-504.jar"
+}

@@ -1,0 +1,53 @@
+# This is the list of message shown when hovering over the player count.
+# Only works on Bukkit (Requires ProtocolLib)
+sample:
+  enabled: false
+
+  # Placeholders: %onlineplayers% %maxplayers%
+  samples:
+    - |-
+      &b&lCleanMOTD &f&lDefault &b&lSample
+      &7Online: &a%onlineplayers%&8/&a%maxplayers%
+    - |-
+      &aCleanMOTD Default Sample &c[Optimized]
+      &d&lNew Sample feature!
+
+# This is shown as the server version name.
+# Requires ProtocolLib on Bukkit to work.
+protocol:
+  enabled: false
+
+  # Protocol name
+  name: "FlameCord 1.7-1.16.5"
+
+maxplayers:
+  enabled: false
+
+  # Changes the max players value.
+  maxplayers: 250
+
+  # Changes the max player value depending on your onlineplayers.
+  # Example: 12/13 players online.
+  justonemore: false
+
+# Requires ProtocolLib on Bukkit to work.
+fakeplayers:
+  enabled: true
+
+  # Sets the amount of fakeplayers.
+  amount: 16
+
+  # "STATIC": Adds the value of fakeplayers to the amount of players online.
+  # "RANDOM": Adds a random amount of players between 1 and the fakeplayers value.
+  # "DIVISION": Adds the amount of players online divided by the fakeplayers value.
+  mode: "STATIC"
+
+# Using ProtocolLib will use packets instead of events.
+motd:
+  enabled: true
+
+  # Placeholders: %onlineplayers% %maxplayers%
+  motds:
+    - |-
+        §f§7§4§lFear§f§lMC §7§l|§7 §7§o(1.8-1.19.x) §7§l| §7§c§lP§a§lR§b§lI§e§lS§9§lO§4§lN§d§l-§5§lO§6§lP
+        §7>§o New prison op server ✶ §nCome to play§7 ✶

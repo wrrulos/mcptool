@@ -1,0 +1,6 @@
+colorama>=0.4.5
+requests>=2.28.1
+mcstatus>=9.4.2
+mcrcon>=0.7.0
+javascript>=1!1.0.0
+shodan>=1.28.0

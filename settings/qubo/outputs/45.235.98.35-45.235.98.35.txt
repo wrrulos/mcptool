@@ -1,0 +1,8 @@
+quboScanner by @zreply - Version 0.3.5 
+Scanner started on: Sat, 17 Sep 2022 17:57:35 -0300
+(45.235.98.35:25567)(0/10)(1.18.2)(No Se Aceptan Ratas)
+(45.235.98.35:25572)(0/42)(Paper 1.18.2)(A Minecraft Server)
+(45.235.98.35:25570)(0/60)(Mohist 1.16.5)(A Minecraft Server)
+(45.235.98.35:25569)(0/32)(Paper 1.19)(pichichis)
+(45.235.98.35:25568)(0/120)(Mohist 1.16.5)(A Minecraft Server)
+Scanner ended on: Sat, 17 Sep 2022 17:57:41 -0300
