@@ -55,6 +55,7 @@ $ cd MCPTool
 
 # Method 1 (Windows users only) -> Install dependencies automatically with the installer. (Run Installer.bat)
 # Method 2 Install the dependencies manually by running the following commands.
+
 $ python3 -m pip install -r requirements.txt
 $ npm install mineflayer 
 $ npm install process 
