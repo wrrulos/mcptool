@@ -75,9 +75,8 @@ $ python3 MCPTool.py
 
 ## 📸 Screenshots
 
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Load.png">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Banner.png">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Help.png">
+<img src="https://imgur.com/SzciCYF.png">
+<img src="https://imgur.com/X2puYi9.png">
 
 ## 🎞 Video 
 [![Watch the video](https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Load.png)](https://youtu.be/WW_LVJOBltc)
