@@ -10,7 +10,6 @@
 # Any error report it to my discord please, thank you. 
 # Programmed in Python 3.10.6
 
-from multiprocessing.sharedctypes import Value
 import shutil
 import subprocess
 import json
