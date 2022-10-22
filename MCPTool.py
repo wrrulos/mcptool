@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # =============================================================================
-#                      MCPTool v3.0 www.github.com/wrrulos
+#                      MCPTool v3.1 www.github.com/wrrulos
 #                         Pentesting Tool for Minecraft
 #                               Made by wRRulos
 #                                  @wrrulos
@@ -1682,7 +1682,7 @@ def server_command(target):
         r_json = r.json()
         target = f'{r_json["ip"]}:{r_json["port"]}'
 
-    except (requests.exceptions.ConnectionError, socket.gaierror, socket.timeout):
+    except (requests.exceptions.ConnectionError, socket.gaierror, socket.timeout, requests.exceptions.JSONDecodeError):
         target = '127.0.0.1:25565'
 
     try:
@@ -2547,7 +2547,7 @@ def main():
 
                         if check:
                             try:
-                                proxy = arguments[5]
+                                proxy = arguments[4]
                                 check = set_proxy(proxy)
 
                                 if not check:
@@ -2593,7 +2593,7 @@ def main():
 
                         if check:
                             try:
-                                proxy = arguments[5]
+                                proxy = arguments[3]
                                 check = set_proxy(proxy)
 
                                 if not check:
@@ -2621,7 +2621,7 @@ def main():
 
                         if check:
                             try:
-                                proxy = arguments[5]
+                                proxy = arguments[2]
                                 check = set_proxy(proxy)
 
                                 if not check:
@@ -2650,7 +2650,7 @@ def main():
 
                         if check:
                             try:
-                                proxy = arguments[5]
+                                proxy = arguments[3]
                                 check = set_proxy(proxy)
 
                                 if not check:
