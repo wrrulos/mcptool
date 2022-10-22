@@ -10,6 +10,7 @@
     "test_proxy_timeout": "10",
     "auth": {
         "command": "/login",
+        "reconnect": "4",
         "words_to_sign_in": [
             "/login",
             "Wrong password"
@@ -143,6 +144,6 @@
             "ngrok -v"
         ]
     ],
-    "version": "1///3.0",
+    "version": "2///3.1",
     "proxy_version": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/504/downloads/waterfall-1.19-504.jar"
 }
