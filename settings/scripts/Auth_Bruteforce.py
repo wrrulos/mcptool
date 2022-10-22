@@ -30,6 +30,7 @@ js = json.loads(content)
 words_to_sign_in = js['auth']['words_to_sign_in']
 words_at_login = js['auth']['words_at_login']
 command = js['auth']['command']
+reconnect = js['auth']['reconnect']
 
 def taskkill(node):
     if os.name == 'nt':
@@ -82,7 +83,16 @@ def Bot(ip, port, version, name, file, pid, passwords):
             global attempts
 
             if reason == 'socketClosed':
-                time.sleep(3.5)
+                try:
+                    time.sleep(int(reconnect))
+
+                except ValueError:
+                    try:
+                        time.sleep(float(reconnect))
+
+                    except ValueError:
+                        time.sleep(4)
+
                 Bot(ip, port, version, name, file, pid, passwords)
 
     except KeyboardInterrupt:
@@ -91,11 +101,11 @@ def Bot(ip, port, version, name, file, pid, passwords):
             
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('-host', help = 'Host', required = True, action = 'store', dest = 'host')
-    parser.add_argument('-p', help = 'Port', required = True, action = 'store', dest = 'port')
-    parser.add_argument('-v', help = 'Version', required = False, action = 'store', dest = 'version')
-    parser.add_argument('-n', help = 'Name', required = True, action = 'store', dest = 'name')
-    parser.add_argument('-f', help = 'Password file', required = True, action = 'store', dest = 'file')
+    parser.add_argument('-host', help='Host', required=True, action='store', dest='host')
+    parser.add_argument('-p', help='Port', required=True, action='store', dest='port')
+    parser.add_argument('-v', help='Version', required=False, action='store', dest='version')
+    parser.add_argument('-n', help='Name', required=True, action='store', dest='name')
+    parser.add_argument('-f', help='Password file', required=True, action='store', dest='file')
     args = parser.parse_args()
 
     f = open(args.file)
