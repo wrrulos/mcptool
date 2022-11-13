@@ -1,4 +1,4 @@
-# 🧨  MCPTool v3.1
+# 🧨  MCPTool v3.2
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
@@ -68,7 +68,7 @@ $ npm install readline
 # 🕹 Usage
 
 ```bash
-$ python3 MCPTool.py
+$ python3 main.py
 ```
 
 ## 📝 Commands guide: https://docs.google.com/document/d/1w4difgN40KkUcHIeDu0AV_IGsKS0r6YoTrTAKpQqqPk/edit?usp=sharing
