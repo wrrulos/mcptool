@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # =============================================================================
-#                      MCPTool v3.2 www.github.com/wrrulos
+#                      MCPTool v3.3 www.github.com/wrrulos
 #                         Pentesting Tool for Minecraft
 #                               Made by wRRulos
 #                                  @wrrulos
@@ -24,6 +24,7 @@ import hashlib
 import base64
 import random
 import shodan
+import traceback
 
 from datetime import datetime
 from colorama import Fore, init
@@ -2006,6 +2007,11 @@ def rcon_command(target, file):
                 except MCRconException:
                     pass
 
+                except:  # struct.error
+                    subprocess.run('cls || clear', shell=True)
+                    print(f'{banner}\n\n    {red}[{lred}ERR{lwhite}OR{red}] {lred}Refused Connection!')
+                    return
+
             attack_finished = True
 
         except KeyboardInterrupt:
@@ -2639,6 +2645,11 @@ def main():
 
         except IndexError:
             print(f'\n    {red}[{red}-{red}] {lred}Unknown command. {lwhite}Type {lgreen}help {lwhite}to see the available commands.')
+
+        except Exception as e:
+            check_folder('logs', 'logs/errors')
+            file = save_logs(None, 'logs/errors/ERROR_', 'error', f'Error: {e}\n\n{traceback.format_exc()}')
+            print(f'\n    {red}[{red}-{red}] {lred}Unknown error ({white}Error saved in {file}{lred}){reset}')
 
 
 if __name__ == '__main__':
