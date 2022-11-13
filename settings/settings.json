@@ -146,6 +146,6 @@
             "ngrok -v"
         ]
     ],
-    "version": "2///3.2",
+    "version": "3///3.2",
     "proxy_version": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/506/downloads/waterfall-1.19-506.jar"
 }
