@@ -173,6 +173,7 @@ help_messages_list_commands = [f'''
         {lwhite}scan {lgreen}127.0.0.1 {lmagenta}25560-25570 {lyellow}0 {lblue}n
         {lwhite}scan {lgreen}127.0.0.1 {lmagenta}25560-25570 {lyellow}0 {lblue}y
         {lwhite}scan {lgreen}127.0.0.1 {lmagenta}25560-25570 {lyellow}0 {lblue}y {lcyan}164.60.26.2:7472
+        {lwhite}scan {lgreen}127.0.0.1 {lmagenta}25560-25570 {lyellow}0 {lblue}y {lcyan}random
 ''', f'''
     {lred}Command: {lwhite}host
     {lred}Usage: {lwhite}host <host> <ports> <method> <send bot: y/n> [<proxy>]
@@ -190,6 +191,7 @@ help_messages_list_commands = [f'''
         {lwhite}host {lgreen}minehost {lmagenta}25560-25570 {lyellow}0 {lblue}n
         {lwhite}host {lgreen}vultam {lmagenta}25560-25570 {lyellow}0 {lblue}y
         {lwhite}host {lgreen}vultam {lmagenta}25560-25570 {lyellow}0 {lblue}y {lcyan}164.60.26.2:7472
+        {lwhite}host {lgreen}vultam {lmagenta}25560-25570 {lyellow}0 {lblue}y {lcyan}random
 ''', f'''
     {lred}Command: {lwhite}checker
     {lred}Usage: {lwhite}checker <file> <send bot: y/n> [<proxy>]
@@ -205,6 +207,7 @@ help_messages_list_commands = [f'''
         {lwhite}checker {lgreen}file.txt {lmagenta}n
         {lwhite}checker {lgreen}file.txt {lmagenta}y
         {lwhite}checker {lgreen}file.txt {lmagenta}y {lyellow}164.60.26.2:7472
+        {lwhite}checker {lgreen}file.txt {lmagenta}y {lyellow}random
 ''', f'''
     {lred}Command: {lwhite}listening
     {lred}Usage: {lwhite}listening <ip:port/domain>
@@ -279,6 +282,7 @@ help_messages_list_commands = [f'''
     {lred}Examples:
         {lwhite}connect {lgreen}127.0.0.1:25565 {lmagenta}wRRulos {lyellow}47
         {lwhite}connect {lgreen}127.0.0.1:25565 {lmagenta}wRRulos {lyellow}47 {lblue}164.60.26.2:7472
+        {lwhite}connect {lgreen}127.0.0.1:25565 {lmagenta}wRRulos {lyellow}47 {lblue}random
 ''', f'''
     {lred}Command: {lwhite}rconnect
     {lred}Usage: {lwhite}rconnect <ip:rcon-port> <password>
