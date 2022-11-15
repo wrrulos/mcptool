@@ -724,6 +724,19 @@ def get_host_information(hostname):
 
 # ------------ Checks ------------
 
+def check_dependencies():
+    """
+    Check if the dependencies are installed.
+    """
+
+    for dependence in dependencies:
+        if subprocess.call(f'{dependence[1]} >nul 2>&1', shell=True) != 0:
+            subprocess.run('cls || clear', shell=True)
+            print(f"{start_banner}                            {lred}You don't have {red}{dependence[0]} {lred}installed. Install it and start the tool again\n\n                                         {white}You can get help on my {lcyan}discord {white}server\n\n                                                  {lgreen}discord.gg/ewPyW4Ghzj\n", end='')
+            time.sleep(3)
+            sys.exit()
+
+
 def check_version():
     """
     Check if there is a new version of the script
@@ -2658,6 +2671,7 @@ if __name__ == '__main__':
         print(f'{start_banner}                                                    {lwhite}Starting {lred}MCP{lwhite}Tool..')
         time.sleep(0.5)
         save_settings()
+        check_dependencies()
 
         if version_check:  # If you have the 'version_check' option enabled in settings.json:
             check = check_version()  # Look for a possible update
