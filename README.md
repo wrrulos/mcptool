@@ -1,4 +1,4 @@
-# 🧨  MCPTool v3.2
+# 🧨  MCPTool v3.3
 
 <h3> Pentesting tool for Minecraft </h3>
 <br/>
@@ -15,6 +15,7 @@
 * View player information
 * Get the ip of a domain
 * Get information about an ip address
+* DNSLookup
 * Search random servers with certain information (With Shodan)
 * Port scanning (with nmap and qubo). And send a bot to check if the server can be entered
 * Scanning of nodes of a hosting
