@@ -80,7 +80,7 @@ $ python3 main.py
 <img src="https://imgur.com/X2puYi9.png">
 
 ## 🎞 Video 
-# Coming soon!
+# https://youtu.be/1ISz29mxxO4
 
 ## Licencia 
 
