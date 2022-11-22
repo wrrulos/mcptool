@@ -2296,7 +2296,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]}{lwhite} <username>')
 
-            elif command == 'ip':
+            elif command == 'ip' or command == '2':
                 try:
                     domain = arguments[1]
                     ip_address = socket.gethostbyname(domain)
@@ -2308,7 +2308,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]}{lwhite} <domain>')
 
-            elif command == 'ipinfo':
+            elif command == 'ipinfo' or command == '3':
                 try:
                     ip_address = arguments[1]
                     ipinfo_command(ip_address)
@@ -2316,7 +2316,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]}{lwhite} <ip>')
 
-            elif command == 'dnslookup':
+            elif command == 'dnslookup' or command == '4':
                 try:
                     domain = arguments[1]
                     dnslookup_command(domain)
@@ -2324,7 +2324,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]}{lwhite} <domain>')
 
-            elif command == 'search' or command == '4':
+            elif command == 'search' or command == '5':
                 try:
                     arguments[1]
                     search_command(arguments)
@@ -2332,7 +2332,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]}{lwhite} <data>')
 
-            elif command == 'scan' or command == '5':
+            elif command == 'scan' or command == '6':
                 try:
                     ip = arguments[1]
                     ports = arguments[2]
@@ -2378,7 +2378,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]}{lwhite} <ip> <ports> <method> <send bot: y/n> [<proxy>]')
 
-            elif command == 'host' or command == '6':
+            elif command == 'host' or command == '7':
                 try:
                     hostname = arguments[1]
                     ports = arguments[2]
@@ -2429,7 +2429,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<hostname> <ports> <method> <send bot: y/n> [<proxy>]')
 
-            elif command == 'checker' or command == '7':
+            elif command == 'checker' or command == '8':
                 try:
                     file = arguments[1]
                     connect_bot = arguments[2].lower()
@@ -2461,7 +2461,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<file> <send bot: y/n> [<proxy>]')
 
-            elif command == 'listening' or command == '8':
+            elif command == 'listening' or command == '9':
                 try:
                     server = arguments[1]
                     listening_command(server)
@@ -2469,7 +2469,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<domain/ip:port>')
 
-            elif command == 'bungee' or command == '9':
+            elif command == 'bungee' or command == '10':
                 try:
                     server = arguments[1]
                     start_proxy_server(server, bungee_port, 'bungee', False)
@@ -2477,7 +2477,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<domain/ip:port>')
 
-            elif command == 'poisoning' or command == '10':
+            elif command == 'poisoning' or command == '11':
                 try:
                     server = arguments[1]
                     start_proxy_server(server, poisoning_port, 'poisoning', True)
@@ -2485,7 +2485,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<domain/ip:port>')
 
-            elif command == 'rcon' or command == '11':
+            elif command == 'rcon' or command == '12':
                 try:
                     target = arguments[1]
                     password_list = arguments[2]
@@ -2494,7 +2494,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<ip:rcon-port> <file>')
 
-            elif command == 'auth' or command == '12':
+            elif command == 'auth' or command == '13':
                 try:
                     target = arguments[1]
                     username = arguments[2]
@@ -2505,7 +2505,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<ip:port> <username> <protocol> <file>')
 
-            elif command == 'connect' or command == '13':
+            elif command == 'connect' or command == '14':
                 try:
                     target = arguments[1]
                     username = arguments[2]
@@ -2534,7 +2534,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<ip:port> <username> <protocol> [<proxy>]')
 
-            elif command == 'rconnect' or command == '14':
+            elif command == 'rconnect' or command == '15':
                 try:
                     target = arguments[1]
                     password = arguments[2]
@@ -2543,7 +2543,7 @@ def main():
                 except IndexError:
                    print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<ip:rcon-port> <password>')
 
-            elif command == 'kick' or command == '15':
+            elif command == 'kick' or command == '16':
                 try:
                     target = arguments[1]
                     username = arguments[2]
@@ -2572,7 +2572,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<ip:port> <username> <protocol> [<proxy>]')
 
-            elif command == 'kickall' or command == '16':
+            elif command == 'kickall' or command == '17':
                 try:
                     target = arguments[1]
                     protocol = arguments[2]
@@ -2600,7 +2600,7 @@ def main():
                 except IndexError:
                     print(f'\n{lwhite}    [{lred}!{lwhite}] Usage: {lred}{arguments[0]} {lwhite}<ip:port> <protocol> [<proxy>]')
 
-            elif command == 'block' or command == '17':
+            elif command == 'block' or command == '18':
                 try:
                     target = arguments[1]
                     username = arguments[2]
