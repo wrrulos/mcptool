@@ -1,0 +1,28 @@
+{
+    "language": "es-ES",
+    "shodan_token": "76uWNv0clygVHb8IzwYoPfWCw8MqCF8W",
+    "show_nmap_filtered_ports": false,
+    "show_timed_out_servers": true,
+    "version": {
+        "CHECK_VERSION": true,
+        "CURRENT_VERSION": "5///3.5"
+    },
+    "waterfall": {
+        "BUNGEE_PORT": "25570",
+        "POISONING_PORT": "33330",
+        "WATERFALL_COMMAND": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+        "WATERFALL_VERSION": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/510/downloads/waterfall-1.19-510.jar"
+    },
+    "commands": {
+        "NODE": "node",
+        "NGROK": "ngrok tcp",
+        "PROXY": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+        "NMAP": "nmap -p [0] -T5 -Pn -v -oN [1] [2] >nul 2>&1"
+    },
+    "server_display_mode": {
+        "MODE": "0"
+    },
+    "test": {
+        "asd": "LOxL"
+    }
+}
