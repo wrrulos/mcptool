@@ -11,7 +11,7 @@
         "BUNGEE_PORT": "25570",
         "POISONING_PORT": "33330",
         "WATERFALL_COMMAND": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
-        "WATERFALL_VERSION": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/510/downloads/waterfall-1.19-510.jar"
+        "WATERFALL_VERSION": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/510/downloads/waterfall-1.19-512.jar"
     },
     "commands": {
         "NODE": "node",
