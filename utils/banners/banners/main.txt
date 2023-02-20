@@ -1,0 +1,7 @@
+    
+    [lred].88b  d88.  .o88b. d8888b. [lwhite]d888888b  .d88b.   .d88b.  db       
+    [lred]88'YbdP`88 d8P  Y8 88  `8D [lwhite]`~~88~~' .8P  Y8. .8P  Y8. 88         Herramienta de Pentesting para [lgreen]MC   
+    [lred]88  88  88 8P      88oodD' [lwhite]   88    88    88 88    88 88         Creado por [lcyan]@wrrulos [lblack]| [lwhite]v3.5
+    [lred]88  88  88 8b      88~~~   [lwhite]   88    88    88 88    88 88         
+    [lred]88  88  88 Y8b  d8 88      [lwhite]   88    `8b  d8' `8b  d8' 88booo.    Usa [lred]help [lwhite]para ver los comandos
+    [lred]YP  YP  YP  `Y88P' 88      [lwhite]   YP     `Y88P'   `Y88P'  Y88888P    [lgreen]https.github.com/wrrulos/mcptool

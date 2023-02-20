@@ -1,0 +1,25 @@
+
+
+
+
+
+[lgreen]                                      ,       
+[lgreen]                                 .;xxxxxxx;.    
+[lgreen]                            .;xxxxxxxx%%xxxxxxx;.            
+[lgreen]                       .;xxxxxx%%++xx%%xxxxx%%xxxxxx;.   
+[lgreen]                  .;xxxx%%xxx%%xxx%%xxxxxxxxx%++x%%xxxxxx;.                [0]
+[lwhite]                  |[green]**'*-.[lgreen]xxxxxxxxxxxxxx++xxxxxxx%%%x.-*'[green]**[lwhite]|                    
+[lwhite]                  |[green]*******`[lgreen]"-.;x%%@@%%++x%%xxx;.-"`[green]*******[lwhite]|          [1]
+[lwhite]                  |::`;[green]********`[lgreen]"-.xxxxxxx.-"`[green]*********[lwhite]:::|  
+[lwhite]                  |::::"`:::`[green]*******`[lgreen]"x"`[green]*********,***`[lwhite]:::|          [2]
+[lwhite]                  |::::::::::::[green]*******|[green]*****`***"`[lwhite]::::::::|        
+[lwhite]                  |:::::cc:::::::"'-[green]**|*`"**[lwhite]::::::::::cc::|          [3]
+[lwhite]                  |::cc:::::::::::::::|::::::::::::cc:::::|    
+[lwhite]                  |:::::::cc::::::cc::|::::::cc:::::::::::|          [4]
+[lwhite]                  |::cc:::::::::::::::|::cc:::::cc::::::::|      
+[lwhite]                  :;::::::::::cc::::::|::::::::::::::::::;:          [5]
+[lwhite]                     `":;:::::::::::::|::::cc:::::::;:"`            
+[lwhite]                          `":;::::cc::|::::::::;:`                             
+[lwhite]                               `":;:::|:::;:"`                                 
+[lwhite]                                    `":"`                                      
+                                                                               

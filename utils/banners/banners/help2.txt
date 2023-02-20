@@ -1,0 +1,23 @@
+
+    [lred]• [lwhite]Commands:
+
+      [lcyan]► [lwhite]server [ip:port/domain]
+      [lcyan]► [lwhite]player [username]
+      [lcyan]► [lwhite]ipinfo [ip]
+      [lcyan]► [lwhite]dnslookup [domain]
+      [lcyan]► [lwhite]search [data]
+      [lcyan]► [lwhite]scan [ip] [ports] [method] [bot] <proxy>
+      [lcyan]► [lwhite]host [hostname] [ports] [method] [bot] <proxy>
+      [lcyan]► [lwhite]checker [file] [bot] <proxy>
+      [lcyan]► [lwhite]listening [ip:port/domain]
+      [lcyan]► [lwhite]bungee [ip:port/domain]
+      [lcyan]► [lwhite]poisoning [ip:port/domain]
+      [lcyan]► [lwhite]connect [ip:port] [username] [version]
+      [lcyan]► [lwhite]rconnect [ip:rconPort] [password]
+      [lcyan]► [lwhite]rcon [ip:rconPort] [passwords] <delay>
+      [lcyan]► [lwhite]authme [ip:port] [passwords] <proxy>
+      [lcyan]► [lwhite]kick [ip:port] [version] [username] [loop] <proxy>
+      [lcyan]► [lwhite]kickall [ip:port] [version] [loop] <proxy>
+      [lcyan]► [lwhite]sendcmd [ip:port] [version] [username] [file] <proxy>
+      [lcyan]► [lwhite]language [language]
+      [lcyan]► [lwhite]discord
