@@ -1,8 +1,0 @@
-messages:
-  usage: |-
-    &aCleanMOTD commands:
-    &e/cleanmotd reload &7- &bReloads the plugin!
-
-  reload: "&aPlugin CleanMOTD reloaded!"
-  unknowncommand: "&cUnknown command. Use /cleanmotd help to see available commands!"
-  nopermission: "&cYou dont have permission to use this command!"
