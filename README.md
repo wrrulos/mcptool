@@ -1,10 +1,8 @@
-# 🧨  MCPTool v3.3
+# 🧨  MCPTool v3.5
 
 <h3> Pentesting tool for Minecraft </h3>
-<br/>
-</br>
 <p align="center">
-<img src="https://github.com/wrrulos/Imagenes-Github/blob/main/MCPTool/Logo.png" title="MCPTool">
+<img src="https://i.imgur.com/dJwGnAS.png" title="MCPTool" width="600" height="400">
 </p>
 
 ### This project was created for educational purposes and should not be used in environments without legal authorization.
