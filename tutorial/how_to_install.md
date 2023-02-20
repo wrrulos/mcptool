@@ -15,7 +15,8 @@
 
 ## Dependencies
 
-For the tool to work correctly you must install all the necessary dependencies.
+For the tool to work correctly you must install all the necessary dependencies. 
+If you are using another operating system than windows, you can install the dependencies through the terminal
 
 ## Python
 
