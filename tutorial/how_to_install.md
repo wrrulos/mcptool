@@ -63,6 +63,22 @@ For this, start a terminal in the MCPTool folder and run the following commands:
  - npm install socks
  - npm install readline
 
+## ONLY ON WINDOWS (OPTIONAL)
 
+If you are using a version of Windows lower than Windows 11, you are probably using the classic terminal of this operating system (the cmd).
+What is the problem with using the cmd? Well, the problem is that the new versions of MCPTool contain characters that this terminal does not support.
 
+How to solve it? You have two options
+
+## Windows Terminal
+
+You can download 'Windows Terminal' in the microsoft store and start the tool from there.
+
+<img src="https://i.imgur.com/L6RLv2y.png">
+
+## Edit the configuration file
+
+If you want to continue using the cmd you can go to the MCPTool configuration file and change the value of the "TYPE_OF_BANNERS" option from 1 to 2. By changing this option MCPTool shows other types of banners with characters that the cmd supports.
+
+<img src="https://i.imgur.com/AUjPj2W.png"
 
