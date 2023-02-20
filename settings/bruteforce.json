@@ -1,0 +1,15 @@
+{
+    "authme": {
+        "COMMAND": "/login",
+        "RECONNECT": 4000,
+        "WORDS_TO_LOGIN": [
+            "Wrong password",
+            "/login"
+        ],
+        "WORDS_AT_LOGIN": [
+            "Successful login",
+            "Logueado",
+            "El sistema de logeo ha sido todo un"
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "LANGUAGE": "english",
+    "TYPE_OF_BANNERS": "1",
+    "SHODAN_TOKEN": "76uWNv0clygVHb8IzwYoPfWCw8MqCF8W",
+    "NODE_COMMAND": "node",
+    "QUBO_COMMAND": "java -Dfile.encoding=UTF-8 -jar qubo.jar -range [0] -ports [1] -th [2] -ti [3] >nul 2>&1",
+    "NMAP_COMMAND": "nmap -p [0] -T5 -Pn -v -oN [1] [2] >nul 2>&1",
+    "NGROK_COMMAND": "ngrok tcp",
+    "PROXY_COMMAND": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+    "PYTHON_COMMAND": "python",
+    "WATERFALL_COMMAND": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+    "WATERFALL_VERSION": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/511/downloads/waterfall-1.19-511.jar",
+    "BUNGEE_PORT": "25570",
+    "POISONING_PORT": "33330",
+    "CURRENT_VERSION": "5///3.5",
+    "QUBO_THREADS": "500",
+    "QUBO_TIMEOUT": "2000",
+    "SERVER_DISPLAY_MODE": "0",
+    "CHECK_VERSION": true,
+    "RICH_PRESENCE": true,
+    "SHOW_NMAP_FILTERED_PORTS": false,
+    "SHOW_TIMED_OUT_SERVERS": true
+}
