@@ -42,13 +42,13 @@
 
 * Follow the steps in the [installation guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/how_to_install.md).
 
-# 🕹 Usage
+## 🕹 Usage
 
-```bash
-$ python3 main.py
-```
+* python3 main.py
 
-## 📝 Commands guide: https://docs.google.com/document/d/1w4difgN40KkUcHIeDu0AV_IGsKS0r6YoTrTAKpQqqPk/edit?usp=sharing
+## Guide
+
+* If you want to learn how to use the commands, see the [command guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/commands.md).
 
 ## 📸 Screenshots
 
@@ -62,7 +62,7 @@ $ python3 main.py
 
 MIT License
 
-Copyright (c) 2022 Pedro Vega
+Copyright (c) 2023 Pedro Vega
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
