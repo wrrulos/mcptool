@@ -1,151 +1,22 @@
 {
-    "version_check": true,
-    "server_display_mode": "0",
-    "bungee_port": "25570",
-    "poisoning_port": "33330",
-    "shodan_token": "76uWNv0clygVHb8IzwYoPfWCw8MqCF8W",
-    "test_proxy_timeout": "10",
-    "commands": {
-        "node_command": "node",
-        "ngrok_command": "ngrok tcp",
-        "proxy_command": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1"
-    },
-    "auth": {
-        "command": "/login",
-        "reconnect": "4",
-        "words_to_sign_in": [
-            "/login",
-            "Wrong password"
-        ],
-        "words_at_login": [
-            "Successful login",
-            "Logueado"
-        ]
-    },
-    "qubo": {
-        "command": "java -Dfile.encoding=UTF-8 -jar qubo.jar",
-        "threads": "500",
-        "timeout": "2500"
-    },
-    "hosts": [
-        {
-            "name": "minehost",
-            "nodes": [
-                "gm",
-                "sv1",
-                "sv7",
-                "sv8",
-                "sv9",
-                "sv10",
-                "sv11",
-                "sv15",
-                "sv17",
-                "sv24"
-            ],
-            "domain": ".minehost.com.ar"
-        },
-        {
-            "name": "vultam",
-            "nodes": [
-                "ca",
-                "ca01",
-                "ca02",
-                "ca04",
-                "ca05",
-                "ca06",
-                "ca07",
-                "ca08",
-                "de",
-                "de02",
-                "mia",
-                "mia02",
-                "mia03",
-                "mia04",
-                "mia05",
-                "mia06",
-                "mia07",
-                "mia08",
-                "mia09",
-                "mia10",
-                "mia11",
-                "mia12",
-                "mia13",
-                "mia14",
-                "mia15",
-                "mia16",
-                "mia17",
-                "mia18",
-                "mia19",
-                "mia20",
-                "mia25",
-                "mia27",
-                "mia28",
-                "mia29",
-                "mia30",
-                "mia31",
-                "mia32",
-                "mia34",
-                "mia35",
-                "mia36",
-                "mia37",
-                "mia38",
-                "mia39",
-                "fr01",
-                "fr02",
-                "fr03",
-                "fr04",
-                "fr05",
-                "fr06",
-                "fr07",
-                "ny",
-                "ny02",
-                "ny04",
-                "ny05",
-                "ny06",
-                "ny07",
-                "ny09"
-            ],
-            "domain": ".vultam.net"
-        },
-        {
-            "name": "holyhosting",
-            "nodes": [
-                "node-germany",
-                "node-newyork",
-                "ca",
-                "tx2",
-                "node-cl2",
-                "node-ashburn",
-                "node-premium3",
-                "node-dallas",
-                "premium2",
-                "node-valdivia",
-                "node-premium",
-                "ar",
-                "node-premiumar",
-                "node-argentina"
-            ],
-            "domain": ".holy.gg"
-        }
-    ],
-    "dependencies": [
-        [
-            "Java",
-            "java -version"
-        ],
-        [
-            "Nmap",
-            "nmap --version"
-        ],
-        [
-            "NodeJS",
-            "npm --version"
-        ],
-        [
-            "Ngrok",
-            "ngrok -v"
-        ]
-    ],
-    "version": "4///3.3",
-    "proxy_version": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/510/downloads/waterfall-1.19-510.jar"
+    "LANGUAGE": "es-ES",
+    "SHODAN_TOKEN": "76uWNv0clygVHb8IzwYoPfWCw8MqCF8W",
+    "NODE_COMMAND": "node",
+    "QUBO_COMMAND": "java -Dfile.encoding=UTF-8 -jar qubo.jar -range [0] -ports [1] -th [2] -ti [3] >nul 2>&1",
+    "NMAP_COMMAND": "nmap -p [0] -T5 -Pn -v -oN [1] [2] >nul 2>&1",
+    "NGROK_COMMAND": "ngrok tcp",
+    "PROXY_COMMAND": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+    "PYTHON_COMMAND": "python",
+    "WATERFALL_COMMAND": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+    "WATERFALL_VERSION": "https://api.papermc.io/v2/projects/waterfall/versions/1.19/builds/510/downloads/waterfall-1.19-30.jar",
+    "BUNGEE_PORT": "25570",
+    "POISONING_PORT": "33330",
+    "CURRENT_VERSION": "5///3.5",
+    "QUBO_THREADS": "500",
+    "QUBO_TIMEOUT": "2000",
+    "SERVER_DISPLAY_MODE": "0",
+    "CHECK_VERSION": true,
+    "RICH_PRESENCE": true,
+    "SHOW_NMAP_FILTERED_PORTS": false,
+    "SHOW_TIMED_OUT_SERVERS": true
 }
