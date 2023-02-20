@@ -34,7 +34,9 @@ To install Nmap you have to download the latest version on its official page. ht
 ## Ngrok
 
 To install Ngrok first you have to go to the official page and create an account. https://ngrok.com/
+
 After that, download the latest version and move the downloaded file to MCPTool folder. https://ngrok.com/download 
+
 Finally, open a terminal in the MCPTool folder and it will bind the ngrok account token. (The token appears on the page). https://dashboard.ngrok.com/get-started/setup
 
 <img src="https://i.imgur.com/S9w22Vw.png">
