@@ -36,11 +36,11 @@
 
 ## ⛏️ Supported minecraft versions
 
-* ✅ 1.8.x-1.19.x
+* 📃 1.8.x-1.19.x
 
 ## 🔧 Installation 
 
-Follow the steps in the [installation guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/how_to_install.md).
+* Follow the steps in the [installation guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/how_to_install.md).
 
 # 🕹 Usage
 
