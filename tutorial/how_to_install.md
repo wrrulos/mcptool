@@ -7,6 +7,7 @@
   - [Ngork](#ngrok)
   - [Python Modules](#python-modules)
   - [NodeJS Modules](#nodejs-modules)
+  - [ONLY ON WINDOWS](#only-on-windows)
 
 
 ## Dependencies
@@ -63,7 +64,7 @@ For this, start a terminal in the MCPTool folder and run the following commands:
  - npm install socks
  - npm install readline
 
-## ONLY ON WINDOWS (OPTIONAL)
+## ONLY ON WINDOWS
 
 If you are using a version of Windows lower than Windows 11, you are probably using the classic terminal of this operating system (the cmd).
 What is the problem with using the cmd? Well, the problem is that the new versions of MCPTool contain characters that this terminal does not support.
