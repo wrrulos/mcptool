@@ -8,6 +8,9 @@
   - [Python Modules](#python-modules)
   - [NodeJS Modules](#nodejs-modules)
   - [ONLY ON WINDOWS](#only-on-windows)
+    - [Windows Terminal](#windows-terminal)
+    - [Configuration File](#configuration-file)
+- [Start MCPTool](#start-mcptool)
 
 
 ## Dependencies
@@ -77,11 +80,13 @@ You can download 'Windows Terminal' in the microsoft store and start the tool fr
 
 <img src="https://i.imgur.com/L6RLv2y.png">
 
-## Edit the configuration file
+## Configuration File
 
 If you want to continue using the cmd you can go to the MCPTool configuration file and change the value of the "TYPE_OF_BANNERS" option from 1 to 2. By changing this option MCPTool shows other types of banners with characters that the cmd supports.
 
 <img src="https://i.imgur.com/AUjPj2W.png">
 
-## You can now start MCPTool using the python main.py command!
+## Start MCPTool
+
+You can now start MCPTool using the python main.py command!
 
