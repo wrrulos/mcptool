@@ -34,36 +34,13 @@
 * ✅ Windows (8, 8.1, 10 and 11)
 * ✅ Linux
 
-# 🔧 Installation 
+## ⛏️ Supported minecraft versions
 
-```bash
-# Install Nmap (https://nmap.org/)
-# Install Python 3 (https://www.python.org/)
-# Install NodeJS (https://nodejs.org/es/)
+* ✅ 1.8.x-1.19.x
 
-# Clone the repository (Or download it from the web in the "Code button and download zip")
-$ git clone https://github.com/wrrulos/MCPTool
+## 🔧 Installation 
 
-# Go into the MCPTool folder
-$ cd MCPTool
-
-# Create an ngrok account (https://ngrok.com/)
-# Download Ngrok and connect your account with the token.
-# Move ngrok to the MCPTool folder.
-
-# Install dependencies 
-
-# Method 1 (Windows users only) -> Install dependencies automatically with the installer. (Run Installer.bat)
-# Method 2 Install the dependencies manually by running the following commands.
-
-$ python3 -m pip install -r requirements.txt
-$ npm install mineflayer 
-$ npm install process 
-$ npm install socks
-$ npm install proxy-agent 
-$ npm install readline
-
-```
+Follow the steps in the [installation guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/how_to_install.md).
 
 # 🕹 Usage
 
