@@ -20,4 +20,4 @@
       [lcyan]► [lwhite]kickall [ip:port] [version] [loop] <proxy>                       [lyellow] ⣇⠀⢠⠀⠀⢳[lwhite]⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[lyellow]⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
       [lcyan]► [lwhite]sendcmd [ip:port] [version] [username] [file] <proxy>            [lyellow] ⢻⠀⠈⠰⠀[lwhite]⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[lyellow]⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
       [lcyan]► [lwhite]language [language]                                              [lyellow] ⠸⡆⠀⠀⠇[lwhite]⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    [lyellow]⠀⠀⠀⠀⠀⠙⠳⣄⡀⡀
-      [lcyan]► [lwhite]discord                                                          [lyellow] ⠸⡆⠀⠀⠇[lwhite]⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    [lyellow]       ⠙⠳⣄⡀⢢'''
+      [lcyan]► [lwhite]discord                                                          [lyellow] ⠸⡆⠀⠀⠇[lwhite]⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    [lyellow]       ⠙⠳⣄⡀⢢
