@@ -52,8 +52,9 @@
 
 ## 📸 Screenshots
 
-<img src="https://imgur.com/SzciCYF.png">
-<img src="https://imgur.com/X2puYi9.png">
+<img src="https://i.imgur.com/bfnthLy.png">
+<img src="https://i.imgur.com/m44uxCP.png">
+<img src="https://i.imgur.com/RHllolP.png">
 
 ## 🎞 Video 
 # https://youtu.be/1ISz29mxxO4
