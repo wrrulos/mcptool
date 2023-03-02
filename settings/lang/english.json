@@ -159,7 +159,8 @@
             "USAGE": "listening [ip:port]"
         },
         "bungee": {
-            "MISSING_ARGUMENT_1": "[lred]You need to enter a server!"
+            "MISSING_ARGUMENT_1": "[lred]You need to enter a server!",
+            "USAGE": "bungee [ip:port]"
         },
         "poisoning": {
             "MISSING_ARGUMENT_1": "[lred]You need to enter a server!",
