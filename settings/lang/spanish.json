@@ -159,7 +159,8 @@
             "USAGE": "listening [ip:port]"
         },
         "bungee": {
-            "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!"
+            "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
+            "USAGE": "bungee [ip:puerto]"
         },
         "poisoning": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
