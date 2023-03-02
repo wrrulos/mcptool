@@ -156,7 +156,7 @@
             "INVALID_SERVER": "[lwhite]El servidor ingresado se encuentra apagado o no existe.",
             "WAITING_FOR_PLAYERS": "[lwhite]Esperando jugadores..",
             "FOUND_PLAYERS": "[lwhite]Jugadores capturados:",
-            "USAGE": "listening [ip:port]"
+            "USAGE": "listening [ip:puerto]"
         },
         "bungee": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
@@ -170,7 +170,7 @@
             "IP_NGROK_ERROR": "[lwhite]No pude obtener la IP de ngrok.",
             "WAITING_FOR_COMMANDS": "[lwhite]Esperando comandos..", 
             "COMMAND_CAPTURED": "[red][[lgreen]![red]] [lwhite]Comando capturado de [lred][0][lwhite]:",
-            "USAGE": "poisoning [ip:port/domain]"
+            "USAGE": "poisoning [ip:puerto/domain]"
         },
         "connect": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
@@ -181,7 +181,7 @@
             "BOT_CONNECTED": "El bot se conecto al servidor.",
             "BOT_EXPELLED": "El bot fue expulsado del servidor por la siguiente razón: ",
             "EXIT": "§fPresiona §cCtrl C §fpara volver al menu..",
-            "USAGE": "connect [ip:port] [username] [version] <proxy>"
+            "USAGE": "connect [ip:puerto] [username] [version] <proxy>"
         },
         "rconnect": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
@@ -224,7 +224,7 @@
             "TESTING_PASSWORD": "Probando la contraseña: ",
             "PASSWORD_FOUND": "La contraseña es: ",
             "PASSWORD_NOT_FOUND": "La contraseña no se encuentra en la lista seleccionada.",
-            "USAGE": "authme [ip:port] [username] [version] [passwordFile] <proxy>"
+            "USAGE": "authme [ip:puerto] [username] [version] [passwordFile] <proxy>"
         },
         "kick": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
@@ -238,7 +238,7 @@
             "STARTING_THE_ATTACK": "[lwhite]Expulsando al usuario..",
             "BOT_CONNECTED": "§aEl usuario §b[0] §afue expulsado del servidor.",
             "BOT_EXPELLED": "§cEl bot §b[0] §cno pudo conectarse debido a la siguiente razón: §4",
-            "USAGE": "kick [ip:port] [username] [version] [loop] <proxy>"
+            "USAGE": "kick [ip:puerto] [username] [version] [loop] <proxy>"
         },
         "kickall": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
@@ -250,7 +250,7 @@
             "INVALID_PROXY": "[lwhite]¡El proxy ingresado no es valido!",
             "NO_PLAYERS": "[lwhite]No hay jugadores en el servidor.",
             "STARTING_THE_ATTACK": "[lwhite]Expulsando al usuario..",
-            "USAGE": "kickall [ip:port] [version] [loop] <proxy>"
+            "USAGE": "kickall [ip:puerto] [version] [loop] <proxy>"
         },
         "sendcommand": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un servidor!",
@@ -264,7 +264,7 @@
             "INVALID_PROXY": "[lwhite]¡El proxy ingresado no es valido!",
             "STARTING_THE_ATTACK": "[lwhite]Enviando al bot..",
             "SENDING_COMMAND": "§fEnviando el comando: §a[0]",
-            "USAGE": "sendcmd [ip:port] [username] [version] [commandFile] <proxy>"
+            "USAGE": "sendcmd [ip:puerto] [username] [version] [commandFile] <proxy>"
         },
         "language": {
             "MISSING_ARGUMENT_1": "[lred]¡Necesitas ingresar un idioma!",
