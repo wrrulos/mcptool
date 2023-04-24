@@ -1,0 +1,14 @@
+from utils.velocity.StartVelocity import start_velocity
+
+
+def velocity_command(server, mode):
+    """
+    Starts a velocity proxy that redirects 
+    to the specified server.
+
+    Parameters:
+    server (str): Server.
+    mode (str): Mode
+    """
+
+    start_velocity(server, mode)
