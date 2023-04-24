@@ -1,0 +1,308 @@
+{
+    "language": "English",
+    "script": {
+        "TITLE": "MCPTool - @wrrulos",
+        "INPUT": "&croot@mcptool:~/MCPTool/ &8&r▶ &f&l",
+        "PREFIX": "&f&l[&c#&f&l] "
+    },
+    "banners": {
+        "dependencies": {
+            "MESSAGE1": "&cMCP&f&lTool can't start because one of",
+            "MESSAGE2": "the dependencies is missing!",
+            "MESSAGE3": "Dependency Name",
+            "MESSAGE4": "Download link"
+        },
+        "update": {
+            "TITLE": "&5▶ &cMCP&f&lTool &8&r| &f&lUpdate&5 ◀&f&l",
+            "CHECKING_UPDATES": "&a• &f&lChecking for &cMCP&f&lTool updates.. &f&l",
+            "NEW_VERSION": "&a• &f&lA new version of the program was found.",
+            "NOT_FOUND": "&a• &f&lYou are using the latest version of the program.",
+            "DOWNLOADING": "&a• &f&lDownloading the new version..",
+            "EXTRACTING": "&a• &f&lExtracting files..",
+            "FINISHED": "&a• &f&lThe update was successful..",
+            "ERROR": "&c• &f&lThere was an unexpected error. Starting &cMCP&f&lTool.."
+        },
+        "presentation": {
+            "MCPTOOL": "Pentesting Tool for Minecraft",
+            "DESCRIPTION": "Perform security tests on your &aMinecraft&f&l servers!",
+            "CREDITS": "Created by &b@wrrulos"
+        },
+        "menu": {
+            "MESSAGE1": "Pentesting Tool for &aMC",
+            "MESSAGE2": "Created by &b@wrrulos &8&r| &f&lv[0]",
+            "MESSAGE3": "Use &chelp &f&lto see the commands",
+            "MESSAGE4": "&ahttps://www.mcptool.net",
+            "MESSAGE5": "&f&lTo see the list of commands use the &ahelp &f&lcommand.",
+            "MESSAGE6": "&f&lIf you want to join my discord server, use the &adiscord &f&lcommand.",
+            "MESSAGE7": "You can also visit the MCPTool page: &bwww.mcptool.net"
+        },
+        "discord": {
+            "MESSAGE1": "Enter my Discord server to",
+            "MESSAGE2": "Get help or report a bug about the tool.",
+            "MESSAGE3": "Stay up to date with my projects.",
+            "MESSAGE4": "You can also talk to me through the server.",
+            "MESSAGE5": "Server link:"
+        },
+        "rcon": {
+            "TITLE": "&f&l¡&cMCP&f&lTool is trying to guess the RCON port password!",
+            "TARGET": "&f&lTarget: &a[0]",
+            "PASSWORD_FILE": "&f&lPassword File: &a[0]",
+            "TRYING_PASSWORD": "&f&lTrying password: &c[0]",
+            "PASSWORD_FOUND": "&aThe password is: &b[0]",
+            "PASSWORD_NOT_FOUND": "&cThe password is not found in the password list.",
+            "TIMEOUT": "&cIt's been a long time and the server is not responding",
+            "CONNECTION_REFUSED": "&f&lError connecting: &cConexión Rechazada.",
+            "STOPPING": "&f&lStopping the attack..",
+            "ERROR": "&f&lUnexpected error trying to connect: &c[0]"
+        }
+    },
+    "commands": {
+        "USAGE": "[&c!&f&l] Command Usage: ",
+        "ERROR": "&4[&cERR&f&lOR&r&4] ",
+        "INVALID_ARGUMENTS": {
+            "INVALID_SERVER": "&f&lThe entered server is down or does not exist.",
+            "INVALID_IP": "&f&lThe entered IP address is not valid!",
+            "INVALID_IP_RANGE": "&f&lThe entered IP range is not valid!",
+            "INVALID_PORTS": "&f&lThe entered port range is invalid!",
+            "INVALID_DOMAIN": "&f&lThe entered domain is not valid!",
+            "INVALID_SCAN_METHOD": "&f&lThe entered scan method is not valid!",
+            "INVALID_BOT_ARGUMENT": "&f&lYou must enter a valid option for the checker! (&ay or n&f&l)",
+            "INVALID_PROXY": "&f&lThe proxy entered is not valid!",
+            "INVALID_FILE": "&f&lThe &b[0] &f&lfile does not exist!",
+            "INVALID_PAGE_ARGUMENT": "&f&lYou need to enter a valid number of pages!",
+            "INVALID_VERSION": "&f&lThe version entered is not valid.",
+            "INVALID_DELAY": "&f&lThe waiting time entered is not valid.",
+            "INVALID_LOOP_ARGUMENT": "&f&lYou must enter a valid option for the loop! (&ay or n&f&l)",
+            "INVALID_LANGUAGE": "&f&lThe language entered is not valid.",
+            "INVALID_RCON_PASSWORD": "&f&lThe RCON password entered is incorrect.",
+            "INVALID_FORWARDING_MODE": "&f&lYou must enter a valid forwarding mode! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "MESSAGE": "&f&lFor more information visit the github page: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "USAGE": "server [ip:port/domain]"
+        },
+        "player": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a username!",
+            "ONLINE_UUID": "&f&lUUID &ePremium&f&l:&e",
+            "OFFLINE_UUID": "&f&lUUID &cNo-Premium&f&l:&c",
+            "USAGE": "player [username]"
+        },
+        "ipinfo": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter an IP address!",
+            "RESULT_1": "&cConti&f&lnente",
+            "RESULT_2": "&cPa&f&lís",
+            "RESULT_3": "&cReg&f&lión",
+            "RESULT_4": "&cCiu&f&ldad",
+            "USAGE": "ipinfo [domain]"
+        },
+        "reverseip": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter an IP address!",
+            "RESULT": "&4[&cHO&f&lST&4]",
+            "USAGE": "reverseip [ip]"
+        },
+        "dnslookup": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a domain!",
+            "USAGE": "dnslookup [domain]"
+        },
+        "search": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter data for the search!",
+            "SCANNING": "&f&lSearching for servers containing the following data ►",
+            "SERVERS_NOT_FOUND": "&f&lNo servers found with the specified data.",
+            "IPS_FOUND": "&a[0] &f&lIP addresses were found containing the following data (&b[1]&f&l).",
+            "CHECKING_SERVERS": "&f&lChecking which of these IP addresses belong to a Minecraft server..",
+            "USAGE": "search [data]"
+        },
+        "websearch": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter tag for the search!",
+            "MISSING_ARGUMENT_2": "&cYou must specify if you want a bot to be sent to check if the server can be entered!",
+            "SEARCHING": "&f&lLooking for servers with the &a[0]&f&l tag in the most popular pages..",
+            "WEB_SEARCH": "&f&lLooking for servers on the page &b[0]",
+            "SERVERS_NOT_FOUND": "&f&lNo servers with the specified tag were found on the pages.",
+            "CHECKING_SERVERS": "&a[0] &f&lservers obtained from the pages.",
+            "USAGE": "websearch [tag] [bot] <proxy>"
+        },
+        "aternos": {
+            "MISSING_ARGUMENT_1": "&cYou must enter the number of pages where the servers will be searched!",
+            "MISSING_ARGUMENT_2": "&cYou must specify if you want a bot to be sent to check if the server can be entered!",
+            "GET_SERVERS": "&f&lGet the latest published aternos servers..",
+            "SERVERS_NOT_FOUND": "&f&lNo servers found..",
+            "CHECKING_SERVERS": "&a[0] &f&lservers were obtained from the aternos page.",
+            "USAGE": "aternos [pages] [bot] <proxy>"
+        },
+        "scan": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter an IP address!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a range of ports!",
+            "MISSING_ARGUMENT_3": "&cYou need to enter a scanning method!",
+            "MISSING_ARGUMENT_4": "&cYou must specify if you want a bot to be sent to check if the server can be entered!",
+            "NO_IPS_FOUND": "&f&lNo IP addresses were found in the file!",
+            "NMAP_NOT_INSTALLED": "&f&lYou must install &anmap &f&lto use this method!",
+            "SCANNING_1": "&f&lScanning the IP address &a[0]&f&l..",
+            "SCANNING_2": "&f&lScanning IP range &a[0]&f&l..",
+            "SCANNING_3": "&f&lScanning of the IP addresses found in the &a[0] &f&lfile (&a[1] &f&lIP addresses).",
+            "CHECKING_PORTS": "&a[0]&f&l open ports found! Checking which ones belong to Minecraft servers..",
+            "NO_PORTS_FOUND": "&f&lThe scan finished and no ports were found at the IP address!",
+            "USAGE": "scan [ip] [ports] [scanMethod] [bot] <proxy>"
+        },
+        "checker": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a file!",
+            "MISSING_ARGUMENT_2": "&cYou must specify if you want a bot to be sent to check if the server can be entered!",
+            "NO_SERVERS_IN_THE_FILE": "&f&lNo IP addresses found in the file!",
+            "FOUND_SERVERS": "&a[0] &f&lservers were found in the file.",
+            "CHECKING": "&f&lChecking servers..",
+            "USAGE": "checker [file] [bot] <proxy>"
+        },
+        "listening": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "WAITING_FOR_PLAYERS": "&f&lWaiting players..",
+            "FOUND_PLAYERS": "&f&lCaptured players:",
+            "USAGE": "listening [ip:port]"
+        },
+        "playerlogs": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "WAITING_FOR_PLAYERS": "&f&lWaiting players..",
+            "CONNECTED_USER": "&4[&a[0]&4] &a▲ &f&lThe user &b&l[1] &f&lhas entered the server.",
+            "DISCONNECTED_USER": "&4[&a[0]&4] &c▼ &f&lThe user &b&l[1] &f&lhas left the server.",
+            "USAGE": "playerlogs [ip:port]"
+        },
+        "bungee": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "USAGE": "bungee [ip:port]"
+        },
+        "velocity": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a forwarding mode!",
+            "USAGE": "velocity [ip:port] [forwarding-mode]"
+        },
+        "fakeproxy": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a forwarding mode!",
+            "COPYING_DATA": "&f&lCopying data from the specified server..",
+            "ERROR_WHEN_COPYING": "&f&lCould not copy the data from the specified server. Is the server entered correct?",
+            "NGROK_START": "&f&lStarting ngrok server..",
+            "IP_NGROK_ERROR": "&f&lI couldn't get the IP from ngrok.",
+            "NGROK_NOT_FOUND": "&f&lNGROK is not installed. (You can't have a Ngrok IP!)",
+            "WAITING_FOR_DATA": "&f&lWaiting for data..",
+            "CONNECTING": "[0] has entered the server.",
+            "DISCONNECTING": "[0] has been disconnected from the server.",
+            "MESSAGE_CAPTURED": "[0] has written a message:",
+            "COMMAND_CAPTURED": "[0] has executed a command:",
+            "USAGE": "fakeproxy [ip:port] [forwarding-mode]"
+        },
+        "connect": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a username for the bot!",
+            "MISSING_ARGUMENT_3": "&cYou need to enter the version that the bot will use to connect to the server!",
+            "BOT_CONNECTED": "The bot connected to the server.",
+            "BOT_EXPELLED": "The bot was kicked from the server for the following reason: ",
+            "BOT_FILE_NOT_FOUND": "§cThe file not found. §f(Make sure it is placed in the §b/files §ffolder)",
+            "EXIT": "§fPress §cCtrl C §f to return to the menu..",
+            "USAGE": "connect [ip:port] [username] [version] <proxy>"
+        },
+        "rconnect": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter the RCON password!",
+            "CONNECTING": "&f&lTrying to connect..",
+            "TIMEOUT": "&f&lThe server did not give an answer in time. (Timeout)",
+            "REFUSED_CONNECTION": "&f&lThe server rejected the connection.",
+            "ESTABLISHED_CONNECTION": "&f&lThe connection to the server was established successfully.",
+            "COMMAND": "&f&lCommand: ",
+            "STOPPING": "&f&lStopping the connection.",
+            "USAGE": "rconnect [ip:rconPort] [password]"
+        },
+        "rcon": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a password file!",
+            "EMPTY_FILE": "&f&lNo available passwords were found in the file.",
+            "PREPARING_THE_ATTACK": "&f&lPreparing the brute force attack (&cRCON&f&l)..",
+            "NUMBER_OF_PASSWORDS": "&f&lSelected file: &a[0] &f&l(&a[1] passwords&f&l)",
+            "STARTING_THE_ATTACK": "&f&lStarting the attack..",
+            "USAGE": "rcon [ip:rconPort] [passwordFile] <delay>"
+        },
+        "authme": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a username!",
+            "MISSING_ARGUMENT_3": "&cYou need to enter the version of the server!",
+            "MISSING_ARGUMENT_4": "&cYou need to enter a password file!",
+            "STARTING_THE_ATTACK": "&f&lSending the bot to initiate the attack..",
+            "BOT_CONNECTED": "The bot connected to the server.",
+            "BOT_EXPELLED": "The bot was kicked from the server for the following reason: ",
+            "TESTING_PASSWORD": "Testing the password: ",
+            "PASSWORD_FOUND": "The password is: ",
+            "PASSWORD_NOT_FOUND": "The password is not found in the selected list.",
+            "USAGE": "authme [ip:port] [username] [version] [passwordFile] <proxy>"
+        },
+        "kick": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a username!",
+            "MISSING_ARGUMENT_3": "&cYou need to enter the version of the server!", 
+            "MISSING_ARGUMENT_4": "&cYou need to specify if you want the attack to be infinite!",
+            "STARTING_THE_ATTACK": "&f&lKicking the user..",
+            "BOT_CONNECTED": "§aThe user §b[0]§a was kicked from the server.",
+            "BOT_EXPELLED": "§cThe bot §b[0] §ccould not connect due to the following reason: §4",
+            "USAGE": "kick [ip:port] [username] [version] [loop] <proxy>"
+        },
+        "kickall": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter the version of the server!", 
+            "MISSING_ARGUMENT_3": "&cYou need to specify if you want the attack to be infinite!",
+            "NO_PLAYERS": "&f&lThere are no players on the server.",
+            "STARTING_THE_ATTACK": "&f&lKicking the user..",
+            "USAGE": "kickall [ip:port] [version] [loop] <proxy>"
+        },
+        "sendcmd": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a server!",
+            "MISSING_ARGUMENT_2": "&cYou need to enter a username!",
+            "MISSING_ARGUMENT_3": "&cYou need to enter the version of the server!",
+            "MISSING_ARGUMENT_4": "&cYou have to enter a file that contains the commands that the bot will execute!",
+            "MISSING_ARGUMENT_5": "&cYou need to specify if you want the attack to be infinite!",
+            "EMPTY_FILE": "&f&lNo available commands were found in the file.",
+            "STARTING_THE_ATTACK": "&f&lSending to the bot..",
+            "SENDING_COMMAND": "§fSending the command: §a[0]",
+            "USAGE": "sendcmd [ip:port] [username] [version] [commandFile] [loop] <proxy>"
+        },
+        "language": {
+            "MISSING_ARGUMENT_1": "&cYou need to enter a language!",
+            "LANGUAGE_IN_USE": "&f&lThe language entered is already set!",
+            "LANGUAGE_LIST": "&f&lList of available languages: &aen es fr ru",
+            "CHANGE_OF_LANGUAGE": "&f&lThe language was successfully changed to &a[0]&f&l. You must restart the tool to see the changes!",
+            "USAGE": "language [language]"
+        }
+    },
+    "other_messages": {
+        "INVALID_COMMAND": "&cInvalid command. &f&lUse &ahelp&f&l to see the available commands.",
+        "SCAN_FINISHED_1": "&f&lThe command finished and &a[0]&f&l Minecraft servers were found!",
+        "SCAN_FINISHED_2": "&f&lThe command finished and &a[0]&f&l Minecraft servers were found! (&c[1]&f&l timeout)",
+        "API_CONNECTION_ERROR": "&cI was unable to establish connection to the API. Try again later.",
+        "PROXY_TIMEOUT": "The entered proxy did not give a response in time. (timeout)",
+        "STOPPING": "Stopping..",
+        "SHODAN_INVALID_API_KEY": "&f&lThe entered API key is not valid! Check the configuration file.",
+        "HACKERTARGET_INVALID_API_KEY": "&f&lThe entered API key is not valid! Check the configuration file.",
+        "HACKERTARGET_API_LIMIT_EXCEEDED": "&f&lYou no longer have daily API requests available! If you want to get more daily requests you must purchase a plan at &ahttps://hackertarget.com&f&l and enter your API key in the MCPTool configuration file"
+    },
+    "version_file_messages": {
+        "UPDATE_FAILED": "&c&lThere was an error trying to find the new version. &f&lRunning current version..",
+        "UPDATE_CHECK": "&f&lChecking for a new version of the &aVersions.json&f&l..",
+        "UPDATE_AVAILABLE": "&a¡New version found!",
+        "DOWNLOADING_UPDATE": "&f&lDownloading the new version..",
+        "UPDATE_COMPLETED": "&f&lThe new version of &bVersions.json &f&lhas been installed.",
+        "NO_UPDATES_FOUND": "&f&lNo new versions available were found."
+    },
+    "proxy_messages": {
+        "CONFIGURING": "&f&lConfiguring the proxy server..",
+        "UPDATE_FAILED": "&c&lThere was an error trying to find the new version. &f&lRunning current version..",
+        "UPDATE_CHECK": "&f&lChecking for a new version of &a[0].jar&f&l..",
+        "UPDATE_AVAILABLE": "&a¡New &b[0] &aversion found!",
+        "DOWNLOADING_UPDATE": "&f&lDownloading the new version..",
+        "UPDATE_COMPLETED": "&f&lThe new version of &b[0] &f&lhas been installed.",
+        "NO_UPDATES_FOUND": "&f&lNo new versions available were found.",
+        "STARTING": "&f&lStarting proxy server..",
+        "STOPPING": "&f&lStopping the proxy server..",
+        "PROXY_SERVER_STARTED": "&f&l[&a>&f&l] The proxy server started successfully in &a[0]&f&l."
+    },
+    "timed_out_servers": {
+        "SHOW_SERVER": "&cTimeout"
+    }
+}
