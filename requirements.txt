@@ -1,8 +1,0 @@
-colorama
-requests
-mcstatus
-shodan
-pygame
-mcrcon
-readchar
-pypresence
