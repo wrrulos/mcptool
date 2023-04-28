@@ -51,14 +51,25 @@ def aternos_command(pages, bot, proxy=None):
     for num in range(0, int(pages)):
         page = f'{url}{num}'
         headers = headers_list[random.randint(0, len(headers_list)-1)]
-        text = requests.get(page, headers=headers, cookies=cookies, timeout=5).text
+
+        try:
+            text = requests.get(page, headers=headers, cookies=cookies, timeout=5).text
+
+        except requests.exceptions.ReadTimeout:
+            continue
 
         publications = re.findall(regex, text)
         page = page.replace(f'board/90-serverlist/?pageNo={num}', 'thread')
 
         for publication in publications:
             publication = f'{page}/{publication}'
-            text = requests.get(publication, headers=headers, cookies=cookies, timeout=5).text
+
+            try:
+                text = requests.get(publication, headers=headers, cookies=cookies, timeout=5).text
+            
+            except requests.exceptions.ReadTimeout:
+                continue
+            
             results = re.findall(r'<dd>(.*?)</dd>', text)
 
             if len(results) >= 1:
