@@ -17,9 +17,9 @@
       &b► &f&lvelocity [ip:port/domain] [forwarding-mode]                      &e ⣿⠀⡇⠀⠀⠀⠀&f&l⠀⢀⡤⠤⠶⠶⠾⠤⠄&e⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
       &b► &f&lfakeproxy [ip:port/domain] [forwarding-mode]                     &e ⡇⠀⡇⠀⠀⡀⠀&f&l⡴⠋⠀⠀⠀⠀⠀⠀⠀&e⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
       &b► &f&lconnect [ip:port] [username] [version] <proxy>                   &e ⡇⠀⠇⠀⠀⡇&f&l⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠙⠮⢧⣀⣻⢂⠀⠀⠀⠀⠀⠀⢧
-      &b► &f&lrconnect [ip:rconPort] [password]                                &e ⣇⠀⢠⠀⠀⢳&f&l⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
-      &b► &f&lrcon [ip:rconPort] [passwords] <delay>                           &e ⢻⠀⠈⠰⠀&f&l⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
-      &b► &f&lauthme [ip:port] [passwords] <proxy>                             &e ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e⠀⠀⠀⠀⠀⠙⠳⣄⡀⡀
+      &b► &f&lrconnect [ip:rconPort] [passwordFile]                            &e ⣇⠀⢠⠀⠀⢳&f&l⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
+      &b► &f&lrcon [ip:rconPort] [passwordFile] <delay>                        &e ⢻⠀⠈⠰⠀&f&l⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
+      &b► &f&lauthme [ip:port] [username] [version] [passwordFile] <proxy>     &e ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e⠀⠀⠀⠀⠀⠙⠳⣄⡀⡀
       &b► &f&lkick [ip:port] [username] [version] [loop] <proxy>               &e ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e       ⠙⠳⢢
       &b► &f&lkickall [ip:port] [version] [loop] <proxy>                       &e ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e        ⠙⣄⢢
       &b► &f&lsendcmd [ip:port] [username] [version] [file] [loop] <proxy>     &e ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e         ⠙⡀⢢
