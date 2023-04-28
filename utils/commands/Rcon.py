@@ -111,8 +111,7 @@ def rcon_command(server, password_file, delay=None):
                     paint(f'\n    {language["script"]["PREFIX"]}{rcon_connection_refused}')
 
                 except Exception as e:
-                    error = error.replace('[0]', str(e))
-                    paint(f'\n    {language["script"]["PREFIX"]}{error}')
+                    paint(f'\n    {language["script"]["PREFIX"]}{language["banners"]["rcon"]["ERROR"].replace("[0]", str(e))}')
                 
                 return
 
@@ -121,5 +120,3 @@ def rcon_command(server, password_file, delay=None):
         except KeyboardInterrupt:
             paint(f'\n    {language["script"]["PREFIX"]}{rcon_stopping}')
             return
-
-    
