@@ -17,9 +17,9 @@
       &b► &f&lvelocity [ip:port/domain] [forwarding-mode]
       &b► &f&lfakeproxy [ip:port/domain] [forwarding-mode]
       &b► &f&lconnect [ip:port] [username] [version] <proxy>
-      &b► &f&lrconnect [ip:rconPort] [password]
-      &b► &f&lrcon [ip:rconPort] [passwords] <delay>
-      &b► &f&lauthme [ip:port] [passwords] <proxy>
+      &b► &f&lrconnect [ip:rconPort] [passwordFile]
+      &b► &f&lrcon [ip:rconPort] [passwordFile] <delay>
+      &b► &f&lauthme [ip:port] [username] [version] [passwordFile] <proxy>
       &b► &f&lkick [ip:port] [username] [version] [loop] <proxy>
       &b► &f&lkickall [ip:port] [version] [loop] <proxy>
       &b► &f&lsendcmd [ip:port] [username] [version] [file] [loop] <proxy>
