@@ -13,10 +13,10 @@ def player_uuid(username):
     non-premium uuid of the logged in user.
 
     Parameters:
-    username (str): Username
+        username (str): Username
 
     Returns:
-    str: UUIDs
+        str: UUIDs
     """
 
     try:
