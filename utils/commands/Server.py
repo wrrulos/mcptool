@@ -12,7 +12,7 @@ def server_command(server, *args):
     server and displays it on the screen.
 
     Parameters:
-    server (str): The IP address or domain of the server.
+        server (str): The IP address or domain of the server.
     """
 
     try:
