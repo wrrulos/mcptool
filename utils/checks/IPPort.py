@@ -7,10 +7,10 @@ def check_ip_port(ip_port):
     Check if the entered IP and port are valid. (IP:PORT)
 
     Parameters:
-    ip_port (str): IP Address and Port.
+        ip_port (str): IP Address and Port.
     
     Returns:
-    bool: Returns true if it is valid.
+        bool: Returns true if it is valid.
     """
 
     if ':' in ip_port:
