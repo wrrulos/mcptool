@@ -7,10 +7,10 @@ def check_protocol(protocol):
     compatible with Mineflayer.
 
     Parameters:
-    protocol (str): Protocol
+        protocol (str): Protocol
 
     Returns:
-    bool: True if the protocol is compatible, False if it is not.
+        bool: True if the protocol is compatible, False if it is not.
     """
 
     with open('utils/minecraft/InvalidProtocols.json', 'r') as f:
