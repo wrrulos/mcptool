@@ -17,9 +17,9 @@ def rcon_command(server, password_file, delay=None):
     RCON of the specified server.
     
     Parameters:
-    server (str): IP Address and RCON Port.
-    password_file (str): Password file.
-    delay (str): Optional delay for password entry.
+        server (str): IP Address and RCON Port.
+        password_file (str): Password file.
+        delay (str): Optional delay for password entry.
     """
 
     sm = SettingsManager()
