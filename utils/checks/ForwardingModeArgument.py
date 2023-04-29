@@ -3,10 +3,10 @@ def check_forwardingmode_argument(argument):
     Check if the forwarding-mode argument is valid.
     
     Parameters:
-    argument (str): Forwarding-mode argument.
+        argument (str): Forwarding-mode argument.
 
     Returns:
-    bool: Returns True if the argument is valid, otherwise False.
+        bool: Returns True if the argument is valid, otherwise False.
     """
 
     valid_arguments = ['none', 'legacy', 'bungeeguard', 'modern']
