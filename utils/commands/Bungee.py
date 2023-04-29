@@ -7,7 +7,7 @@ def bungee_command(server):
     to the specified server.
 
     Parameters:
-    server (str): Server.
+        server (str): Server.
     """
 
     start_waterfall(server)
