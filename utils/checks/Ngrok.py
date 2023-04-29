@@ -8,7 +8,7 @@ def check_ngrok():
     Check if ngrok is installed on the system.
 
     Returns:
-    bool: Returns true if it is installed
+        bool: Returns true if it is installed
     """
 
     sm = SettingsManager()
