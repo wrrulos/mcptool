@@ -8,7 +8,7 @@ def alert(name):
     Play an audio to use as a notification.
 
     Parameters:
-    name (str): Sound name
+        name (str): Sound name
     """
 
     try:
