@@ -7,11 +7,11 @@ def uuid_color(username, uuid):
     non-premium, or modified.
 
     Parameters:
-    username (str): Username
-    uuid (str): UUID
+        username (str): Username
+        uuid (str): UUID
 
     Returns:
-    str: UUID Color
+        str: UUID Color
     """
 
     online_uuid, offline_uuid = player_uuid(username)
