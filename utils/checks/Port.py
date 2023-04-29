@@ -3,10 +3,10 @@ def check_port(port):
     Check if the entered port is valid.
     
     Parameters:
-    port (str: Ports.
+        port (str: Ports.
     
     Returns:
-    bool: Returns true if the entered port is valid.
+        bool: Returns true if the entered port is valid.
     """
 
     try:
