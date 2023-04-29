@@ -12,7 +12,7 @@ def update_velocity(url):
     Update Velocity.jar and replace the current one 
 
     Parameters:
-    url (str): Velocity download link
+        url (str): Velocity download link
     """
 
     temp_folder = 'mcptool_temp'
