@@ -23,7 +23,7 @@ def start_velocity(server, mode, fakeproxy=False):
     Start the velocity.jar
 
     Parameters:
-    server (str): Server IP and port
+        server (str): Server IP and port
     """
 
     sm = SettingsManager()
@@ -183,5 +183,14 @@ def start_velocity(server, mode, fakeproxy=False):
                     ngrok.kill()
 
             paint(f'{t}    {language["script"]["PREFIX"]}{language["proxy_messages"]["STOPPING"]}')
+            proxy.kill()
+            return
+        
+        except FileNotFoundError:
+            if fakeproxy:
+                if check_ngrok():
+                    ngrok.kill()
+
+            paint(f'{t}    {language["script"]["PREFIX"]}{language["proxy_messages"]["PROXY_SERVER_NOT_STARTUP"]}')
             proxy.kill()
             return
