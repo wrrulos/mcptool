@@ -8,7 +8,7 @@ def language_command(lang):
     Change the language of the tool
     
     Parameters:
-    language (str): Language
+        language (str): Language
     """
 
     sm = SettingsManager()
