@@ -14,7 +14,7 @@ def dnslookup_command(domain):
     using the Hackertarget API.
     
     Parameters:
-    domain (str): Domain.
+        domain (str): Domain.
     """
 
     try:
