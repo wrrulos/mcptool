@@ -7,10 +7,10 @@ def create_file(command):
     Create the file that will be used to store data
 
     Parameters:
-    command (str): Command name
+        command (str): Command name
 
     Returns:
-    str: File
+        str: File
     """
 
     date = datetime.now()
