@@ -13,13 +13,13 @@ def send_bot(server, protocol, proxy):
     This output will show if the connection to the server was successful.
 
     Parameters:
-    server (str): Server IP address and port
-    protocol (str): Server Protocol
-    bot (bool): Indicates if a bot will be sent to verify login to the server.
-    proxy (str): Optional proxy to use for the bot.
+        server (str): Server IP address and port
+        protocol (str): Server Protocol
+        bot (bool): Indicates if a bot will be sent to verify login to the server.
+        proxy (str): Optional proxy to use for the bot.
         
     Returns:
-    str: The output of the command
+        str: The output of the command
     """
 
     sm = SettingsManager()
@@ -34,10 +34,10 @@ def send_bot(server, protocol, proxy):
 
         if proxy is not None:
             proxy = proxy.split(':')
-            result = subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Checker.js {server[0]} {server[1]} {username} {protocol} {settings["LANGUAGE"]} {proxy[0]} {proxy[1]}', stdout=subprocess.PIPE, encoding='utf-8')
+            result = subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Checker.js {server[0]} {server[1]} {username} {protocol} {settings["LANGUAGE"]} {proxy[0]} {proxy[1]}', stdout=subprocess.PIPE, encoding='utf-8', shell=True)
 
         else:
-            result = subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Checker.js {server[0]} {server[1]} {username} {protocol} {settings["LANGUAGE"]}', stdout=subprocess.PIPE, encoding='utf-8')
+            result = subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Checker.js {server[0]} {server[1]} {username} {protocol} {settings["LANGUAGE"]}', stdout=subprocess.PIPE, encoding='utf-8', shell=True)
 
         output = result.stdout
         return output
