@@ -12,10 +12,10 @@ def connect_command(server, username, version, proxy=None):
     This script allows to control a bot from the terminal
     
     Parameters:
-    server (str): IP address and port of the server
-    username (str): Bot username
-    protocol (str): Protocol number or version
-    proxy (str): Optional proxy to use for the bot.
+        server (str): IP address and port of the server
+        username (str): Bot username
+        protocol (str): Protocol number or version
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
@@ -30,10 +30,10 @@ def connect_command(server, username, version, proxy=None):
     try:
         if proxy is not None:
             proxy = proxy.split(':')
-            subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Connect.js {server[0]} {server[1]} {username} {version} {settings["LANGUAGE"]} {proxy[0]} {proxy[1]}')
+            subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Connect.js {server[0]} {server[1]} {username} {version} {settings["LANGUAGE"]} {proxy[0]} {proxy[1]}', shell=True)
 
         else:
-            subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Connect.js {server[0]} {server[1]} {username} {version} {settings["LANGUAGE"]}')
+            subprocess.run(f'{settings["NODE_COMMAND"]} utils/scripts/Connect.js {server[0]} {server[1]} {username} {version} {settings["LANGUAGE"]}', shell=True)
 
     except KeyboardInterrupt:
         return
