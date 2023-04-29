@@ -15,7 +15,7 @@ def reverseip_command(ip_address):
     specified IP address.
     
     Parameters:
-    ip_address (str): IP Address.
+        ip_address (str): IP Address.
     """
 
     try:
