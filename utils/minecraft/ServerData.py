@@ -21,10 +21,10 @@ def mcstatus(server, replace_colors=True, remove_spaces=True):
     > Player name list (If possible)
 
     Parameters:
-    server: Minecraft server
+        server: Minecraft server
 
     Returns:
-    str: The data mentioned above
+        str: The data mentioned above
     """
 
     try:
@@ -90,10 +90,10 @@ def mcsrvstatus(server):
     > Icon
 
     Parameters:
-    server: Minecraft server
+        server: Minecraft server
 
     Returns:
-    str: The data mentioned above
+        str: The data mentioned above
     """
 
     try:
