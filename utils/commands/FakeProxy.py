@@ -8,7 +8,7 @@ def fakeproxy_command(server, mode):
     commands entered by users.
 
     Parameters:
-    server (str): Server.
+        server (str): Server.
     """
 
     start_velocity(server, mode, fakeproxy=True)
