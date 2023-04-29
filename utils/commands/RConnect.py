@@ -9,8 +9,8 @@ def rconnect_command(server, password):
     Connect to a server using RCON.
 
     Parameters:
-    server (str): IP address and RCON port of the server
-    password (str): Server RCON password
+        server (str): IP address and RCON port of the server
+        password (str): Server RCON password
     """
 
     paint(f'\n    {language["script"]["PREFIX"]}{language["commands"]["rconnect"]["CONNECTING"]}')
