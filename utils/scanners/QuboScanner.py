@@ -13,11 +13,11 @@ def quboscanner(target, ports):
     Scan the specified target using QuboScanner
 
     Parameters:
-    target (str): IP address
-    ports (str): Ports Range
+        target (str): IP address
+        ports (str): Ports Range
     
     Returns:
-    list: IP list
+        list: IP list
     """
 
     sm = SettingsManager()
