@@ -18,7 +18,7 @@ def search_command(*data):
     from Minecraft, to finally show it on the screen. 
 
     Parameters:
-    data (str): Data that will be used to search for servers.
+        data (str): Data that will be used to search for servers.
     """
 
     sm = SettingsManager()
