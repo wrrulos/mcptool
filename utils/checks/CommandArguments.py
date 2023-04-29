@@ -20,12 +20,12 @@ def missing_arguments(command, number_of_arguments, arguments):
     Checks if all required arguments exist.
 
     Parameters:
-    command (str): Command name.
-    number_of_arguments (int): Number of arguments the command has.
-    arguments (list): List of arguments entered by the user.
+        command (str): Command name.
+        number_of_arguments (int): Number of arguments the command has.
+        arguments (list): List of arguments entered by the user.
 
     Returns:
-    bool: True if missing arguments otherwise false.
+        bool: True if missing arguments otherwise false.
     """
 
     for i in range(1, int(number_of_arguments)+1):
