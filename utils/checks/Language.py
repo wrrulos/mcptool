@@ -6,10 +6,10 @@ def check_language(language):
     Check if the entered language is valid.
     
     Parameters:
-    language (str): Language.
+        language (str): Language.
 
     Returns: 
-    bool: Returns true if the language is valid.
+        bool: Returns true if the language is valid.
     """
 
     valid_languages = os.listdir('settings/lang/')
