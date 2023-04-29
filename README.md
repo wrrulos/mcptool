@@ -42,15 +42,11 @@
 
 ## 🔧 Installation 
 
-* Follow the steps in the [installation guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/how_to_install.md).
+* Follow the steps in the [installation guide](https://www.mcptool.net/how-to-install).
 
 ## 🕹 Usage
 
 * python3 main.py
-
-## Guide
-
-* If you want to learn how to use the commands, see the [command guide](https://github.com/wrrulos/MCPTool/blob/main/tutorial/commands.md).
 
 ## 📸 Screenshots
 
