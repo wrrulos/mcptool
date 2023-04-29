@@ -3,10 +3,10 @@ def check_bot_argument(argument):
     Check if the bot argument is valid.
     
     Parameters:
-    argument (str): Bot argument.
+        argument (str): Bot argument.
 
     Returns:
-    bool: Returns True if the argument is valid, otherwise False.
+        bool: Returns True if the argument is valid, otherwise False.
     """
 
     valid_arguments = ['yes', 'y', 'no', 'n']
