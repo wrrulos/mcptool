@@ -15,12 +15,12 @@ def sendcommand_command(server, username, version, command_file, loop, proxy=Non
     commands with a bot.
 
     Parameters:
-    server (str): IP address and port of the server
-    username (str): Bot username
-    version (str): Minecraft server version
-    command_file (str): File where the commands that the bot will use are located
-    loop (bool): Defines if the script will run infinitely.
-    proxy (str): Optional proxy to use for the bot.
+        server (str): IP address and port of the server
+        username (str): Bot username
+        version (str): Minecraft server version
+        command_file (str): File where the commands that the bot will use are located
+        loop (bool): Defines if the script will run infinitely.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
