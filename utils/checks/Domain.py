@@ -4,10 +4,10 @@ def check_domain(server):
     Otherwise it is an IP address.
     
     Parameters:
-    server (str): Minecraft server.
+        server (str): Minecraft server.
 
     Returns:
-    bool: True if the server is a domain, false if it is an IP address.
+        bool: True if the server is a domain, false if it is an IP address.
     """
 
     for i in server:
