@@ -7,10 +7,10 @@ def check_minecraft_version(version):
     compatible with Mineflayer.
 
     Parameters:
-    version (str): Minecraft Version
+        version (str): Minecraft Version
 
     Returns:
-    bool: True if the version is compatible, False if it is not.
+        bool: True if the version is compatible, False if it is not.
     """
 
     with open('utils/minecraft/Versions.json', 'r') as f:
