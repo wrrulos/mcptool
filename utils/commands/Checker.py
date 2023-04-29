@@ -18,9 +18,9 @@ def checker_command(file, bot, proxy=None):
     file are turned on.
 
     Parameters:
-    file (str): File containing the servers
-    bot (bool): Indicates if a bot will be sent to verify login to the server.
-    proxy (str): Optional proxy to use for the bot.
+        file (str): File containing the servers
+        bot (bool): Indicates if a bot will be sent to verify login to the server.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
