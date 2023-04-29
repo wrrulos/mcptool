@@ -23,11 +23,11 @@ def scan_command(target, ports, scan_method, bot, proxy=None):
     have Minecraft servers hosted on its ports.
 
     Parameters:
-    target (str): IP Address
-    ports (str): Port range (Examples: 25560-25570)
-    scan_method (str): The scanner to use. (For example nmap)
-    bot (bool): Indicates if a bot will be sent to verify login to the server.
-    proxy (str): Optional proxy to use for the bot.
+        target (str): IP Address
+        ports (str): Port range (Examples: 25560-25570)
+        scan_method (str): The scanner to use. (For example nmap)
+        bot (bool): Indicates if a bot will be sent to verify login to the server.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
