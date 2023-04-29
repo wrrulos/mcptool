@@ -4,10 +4,10 @@ def check_loop_argument(argument):
     
 
     Parameters:
-    argument: Loop argument.
+        argument: Loop argument.
 
     Returns:
-    bool: Returns true if the argument is valid.
+        bool: Returns true if the argument is valid.
     """
 
     valid_arguments = ['yes', 'y', 'no', 'n']
