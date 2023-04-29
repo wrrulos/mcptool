@@ -12,13 +12,13 @@ def show_server(ip, motd, version, protocol, connected_players, player_limit, pl
     Show server data on screen 
 
     Parameters:
-    ip (str): IP adress
-    motd (str): MOTD
-    version (str): Server Version
-    protocol (str): Server protocol
-    connected_players (str): Players connected to the server
-    player_limit (str): Limit of players on the server
-    bot_output (str): Bot Output
+        ip (str): IP adress
+        motd (str): MOTD
+        version (str): Server Version
+        protocol (str): Server protocol
+        connected_players (str): Players connected to the server
+        player_limit (str): Limit of players on the server
+        bot_output (str): Bot Output
     """
 
     paint(f'\n     &4[&cI&f&lP&4] &f&l{ip}')
