@@ -20,9 +20,9 @@ def aternos_command(pages, bot, proxy=None):
     page HTML code.
         
     Parameters:
-    pages (str): Number of pages where servers will be searched.
-    bot (bool): Indicates if a bot will be sent to verify login to the server.
-    proxy (str): Optional proxy to use for the bot.
+        pages (str): Number of pages where servers will be searched.
+        bot (bool): Indicates if a bot will be sent to verify login to the server.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
