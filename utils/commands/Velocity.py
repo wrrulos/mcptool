@@ -7,8 +7,8 @@ def velocity_command(server, mode):
     to the specified server.
 
     Parameters:
-    server (str): Server.
-    mode (str): Mode
+        server (str): Server.
+        mode (str): Mode
     """
 
     start_velocity(server, mode)
