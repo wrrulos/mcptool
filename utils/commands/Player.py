@@ -9,7 +9,7 @@ def player_command(player):
     non-premium UUID of the specified player.
     
     Parameters:
-    player (str): Minecraft username.
+        player (str): Minecraft username.
     """
 
     try:
