@@ -20,9 +20,9 @@ def websearch_command(tag, bot, proxy=None):
     code of known pages.
         
     Parameters:
-    tag (str): Tag to use in the pages.
-    bot (bool): Indicates if a bot will be sent to verify login to the server.
-    proxy (str): Optional proxy to use for the bot.
+        tag (str): Tag to use in the pages.
+        bot (bool): Indicates if a bot will be sent to verify login to the server.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
