@@ -10,8 +10,8 @@ def paint(text, end=None):
     respective colors.
     
     Parameters:
-    text (str): Text
-    end (str): Decide if the text should end with something specific.
+        text (str): Text
+        end (str): Decide if the text should end with something specific.
     """
 
     text = mcreplace(text)
