@@ -12,7 +12,7 @@ def update_waterfall(url):
     Update waterfall.jar and replace the current one 
 
     Parameters:
-    url (str): Waterfall download link
+        url (str): Waterfall download link
     """
 
     temp_folder = 'mcptool_temp'
