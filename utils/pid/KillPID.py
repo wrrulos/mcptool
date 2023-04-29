@@ -7,7 +7,7 @@ def kill_pid(pid):
     Kills the process with the specified PID.
 
     Parameters:
-    pid (str): PID
+        pid (str): PID
     """
 
     if os.name == 'nt':
