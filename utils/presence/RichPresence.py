@@ -13,7 +13,7 @@ def get_rp_status():
     Returns the RichPresence status.
 
     Returns:
-    bool: RichPresence Status.
+        bool: RichPresence Status.
     """
 
     with open('utils/presence/RichPresence.status', 'r') as f:
@@ -29,7 +29,7 @@ def get_last_command():
     the user.
 
     Returns:
-    str: Command
+        str: Command
     """
 
     with open('utils/presence/RichPresence.command', 'r') as f:
@@ -41,7 +41,7 @@ def change_rp_status(status):
     Change the state of RichPresence.
 
     Parameters:
-    status (str): RichPresence Status.
+        status (str): RichPresence Status.
     """
 
     with open('utils/presence/RichPresence.status', 'w+') as f:
