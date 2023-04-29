@@ -17,11 +17,11 @@ def kick_command(server, username, version, loop, proxy=None):
     player when you connect from another location.
 
     Parameters:
-    server (str): IP address and port of the server
-    username (str): Bot username
-    version (str): Minecraft server version
-    loop (bool): Defines if the script will run infinitely.
-    proxy (str): Optional proxy to use for the bot.
+        server (str): IP address and port of the server
+        username (str): Bot username
+        version (str): Minecraft server version
+        loop (bool): Defines if the script will run infinitely.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
