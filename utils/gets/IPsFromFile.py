@@ -14,10 +14,10 @@ def get_ips_from_file(file):
     127.0.0.3
 
     Parameters:
-    file (str): File
+        file (str): File
 
     Returns:
-    list: IPs
+        list: IPs
     """
 
     ip_list = []
