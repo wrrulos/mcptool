@@ -13,7 +13,7 @@ def start_waterfall(server):
     Start the waterfall.jar that is necessary 
 
     Parameters:
-    server (str): Server IP and port
+        server (str): Server IP and port
     """
 
     sm = SettingsManager()
