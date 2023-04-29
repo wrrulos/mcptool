@@ -300,7 +300,8 @@
         "NO_UPDATES_FOUND": "&f&lNo se encontraron nuevas versiones disponibles.",
         "STARTING": "&f&lIniciando servidor proxy..",
         "STOPPING": "&f&lDeteniendo servidor proxy..",
-        "PROXY_SERVER_STARTED": "&f&l[&a>&f&l] El servidor proxy se inició correctamente en &a[0]&f&l."
+        "PROXY_SERVER_STARTED": "&f&l[&a>&f&l] El servidor proxy se inició correctamente en &a[0]&f&l.",
+        "PROXY_SERVER_NOT_STARTUP": "&f&l[&a>&f&l] El servidor proxy no parece iniciarse correctamente. ¿Tiene Java 17 o superior instalado en su sistema? Si lo tienes y el error persiste. Reporta esto en el servidor de discord."
     },
     "timed_out_servers": {
         "SHOW_SERVER": "&cTimeout"
