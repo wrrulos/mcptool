@@ -4,10 +4,10 @@ def check_iprange(iprange):
     Example: 127.0.0.*
     
     Parameters:
-    iprange (str): IP Range.
+        iprange (str): IP Range.
     
     Returns:
-    bool: Returns true if it is valid.
+        bool: Returns true if it is valid.
     """
 
     try:
