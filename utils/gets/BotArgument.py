@@ -6,10 +6,10 @@ def get_bot_argument(argument):
     the method by numbers or by its respective name.
 
     Parameters:
-    argument: Bot argument
+        argument: Bot argument
 
     Returns:
-    bool: Returns true if a bot should be sent.
+        bool: Returns true if a bot should be sent.
     """
 
     if argument == 'y' or argument == 'yes':
