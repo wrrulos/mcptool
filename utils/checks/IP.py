@@ -6,10 +6,10 @@ def check_ip(ip_address):
     Check if the ip address is valid.
     
     Parameters:
-    ip_address (str): IP Address.
+        ip_address (str): IP Address.
     
     Returns
-    bool: Returns True if the entered ip is valid.
+        bool: Returns True if the entered ip is valid.
     """
 
     try:
