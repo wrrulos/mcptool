@@ -14,11 +14,11 @@ def authme_command(server, username, version, password_file, proxy=None):
     authentication plugin (for example, AuthMe).
 
     Parameters:
-    server (str): IP address and port of the server.
-    username (str): Bot username.
-    version (str): Minecraft server version
-    password_file (str): Password file.
-    proxy (str): Optional proxy to use for the bot.
+        server (str): IP address and port of the server.
+        username (str): Bot username.
+        version (str): Minecraft server version
+        password_file (str): Password file.
+        proxy (str): Optional proxy to use for the bot.
     """
 
     sm = SettingsManager()
