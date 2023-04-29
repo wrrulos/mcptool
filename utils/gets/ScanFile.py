@@ -9,7 +9,7 @@ def get_scan_file():
     that will be used to store the scan data.
 
     Returns:
-    str: Scan file name
+        str: Scan file name
     """
 
     date = datetime.now()
