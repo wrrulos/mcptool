@@ -6,10 +6,10 @@ def get_loop_argument(argument):
     the method by numbers or by its respective name.
 
     Parameters:
-    loop (str): Loop argument
+        loop (str): Loop argument
 
     Returns:
-    bool: Boolean value that checks if it is positive
+        bool: Boolean value that checks if it is positive
     """
 
     if argument == 'y' or argument == 'yes':
