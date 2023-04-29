@@ -3,7 +3,7 @@ def get_headers():
     Returns a list of headers to use.
 
     Returns:
-    list: Header list
+        list: Header list
     """
 
     headers_list = [
