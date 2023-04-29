@@ -9,7 +9,7 @@ def get_bot_username(file='utils/otherfiles/usernames.txt'):
     random name for the mineflayer bot
 
     Returns:
-    str: Bot username
+        str: Bot username
     """
 
     with open(file, 'r', encoding=check_encoding(file)) as f:
