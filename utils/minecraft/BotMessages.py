@@ -3,10 +3,10 @@ def replace_messages(text):
     Replace minecraft characters from messages 
     
     Parameters:
-    text (str): Original text
+        text (str): Original text
     
     Returns:
-    str: Clean text without characters
+        str: Clean text without characters
     """
 
     messages = {
