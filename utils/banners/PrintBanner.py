@@ -9,8 +9,8 @@ def print_banner(name, *arguments):
     copy it, then replace the arguments (if necessary)
 
     Parameters:
-    name (str): Banner name
-    *arguments (list): Optional arguments
+        name (str): Banner name
+        *arguments (list): Optional arguments
     """
 
     if not 'discord' in name and not 'help' in name:
