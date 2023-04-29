@@ -6,10 +6,10 @@ def get_scan_method(method):
     the method by numbers or by its respective name.
 
     Parameters:
-    method (str): Scan method
+        method (str): Scan method
     
     Returns:
-    str: Scan method
+        str: Scan method
     """
 
     if method == '0' or method == 'nmap':
