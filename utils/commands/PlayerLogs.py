@@ -18,7 +18,7 @@ def playerlogs_command(server):
     Saves the name and uuid of the player.
 
     Parameters:
-    server (str): IP Address and Port
+        server (str): IP Address and Port
     """
 
     old_players = []
