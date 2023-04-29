@@ -1,4 +1,4 @@
-# 🧨  MCPTool v3.5
+# 🧨  MCPTool v3.7
 
 <h3> Pentesting tool for Minecraft </h3>
 <br />
@@ -10,23 +10,25 @@
 
 # 🛠 Features
 
-* See information of a server
-* View player information
-* Get the ip of a domain
-* Get information about an ip address
-* DNSLookup
+* See information of a server.
+* View player information.
+* Get information about an ip address.
+* Obtain the domains associated with an IP address.
+* Get the DNS records for a domain.
 * Search random servers with certain information (With Shodan)
+* Find minecraft servers on the most popular pages.
 * Port scanning (with nmap and qubo). And send a bot to check if the server can be entered
-* Scanning of nodes of a hosting
-* Checker
-* Listening command
-* Create a local bungee
-* MITM Attack (poisoning)
+* Get information from Minecraft servers found in a text file.
+* Get the names and uuids of all players joining a server. (You can also get the date and time of entry and exit)
+* Create a bungeecord (waterfall) and a local velocity.
+* Use plugins found on proxy servers.
+* Create a fake proxy server to capture data.
+* Connect to a server using a bot.
+* Connect to the RCON of a server and execute command.
 * Initiate a brute force attack to access the console. (via RCON)
 * Initiate a brute force attack to access the user's account. (via /login)
-* Connect to a server using a bot.
-* Connect to the RCON of a server and execute commands
-* Kick, kickall and block
+* Kick players by taking advantage of the "You logged in from a different location" error.
+* Send a bot that will execute a list of commands upon login to the server.
 * Bots are compatible with Proxies
 
 ## 💻 Supported operating systems:
