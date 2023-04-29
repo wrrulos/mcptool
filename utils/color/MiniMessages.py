@@ -4,10 +4,10 @@ def minimessage_colors(text):
     those of the MiniMessage library.
     
     Parameters:
-    text (str): Text.
+        text (str): Text.
 
     Returns:
-    str: New text.
+        str: New text.
     """
 
     codes = {
