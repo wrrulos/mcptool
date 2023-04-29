@@ -7,7 +7,7 @@ def check_folders(*folders):
     If they don't exist, create them.
 
     Parameters:
-    *folders (list): Folder list,
+        *folders (list): Folder list,
     """
 
     for folder in folders:
