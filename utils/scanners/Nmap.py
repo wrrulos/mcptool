@@ -11,12 +11,12 @@ def nmap(target, ports, file):
     Scan the specified target using Nmap 
 
     Parameters:
-    target (str): IP address
-    ports (str): Ports Range
-    file (str): Scan file
+        target (str): IP address
+        ports (str): Ports Range
+        file (str): Scan file
     
     Returns:
-    list: IP list
+        list: IP list
     """
     
     sm = SettingsManager()
