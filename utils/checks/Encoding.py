@@ -3,10 +3,10 @@ def check_encoding(file):
     Returns the encoding type of the file.
     
     Parameters:
-    file (str): File.
+        file (str): File.
 
     Returns:
-    str: File encoding mode.
+        str: File encoding mode.
     """
 
     try:
