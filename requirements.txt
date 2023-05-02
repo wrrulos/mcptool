@@ -7,3 +7,4 @@ shodan
 pygame
 mcrcon
 psutil
+dns
