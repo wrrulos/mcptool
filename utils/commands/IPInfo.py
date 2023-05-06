@@ -37,17 +37,17 @@ def ipinfo_command(ip_address):
             paint(f'    &4[{language["commands"]["ipinfo"]["RESULT_2"]}&4] &f&l{country} (&c{countryCode}&f&l)')
             paint(f'    &4[{language["commands"]["ipinfo"]["RESULT_3"]}&4] &f&l{regionName} (&c{region}&f&l)')
             paint(f'    &4[{language["commands"]["ipinfo"]["RESULT_4"]}&4] &f&l{city} (&c{timezone}&f&l)')
-            paint(f'    &4[&cIS&f&lP&4] &f&l{isp} (&c{org}&f&l)')
-            
+            paint(f'    &4[{language["commands"]["ipinfo"]["RESULT_5"]}&4] &f&l{isp} (&c{org}&f&l)')
+
             if asname != '':
-                paint(f'    &4[&cA&f&lS&4] &f&l{asname} (&c{as_}&f&l)')
+                paint(f'    &4[{language["commands"]["ipinfo"]["RESULT_6"]}&4] &f&l{asname} (&c{as_}&f&l)')
 
             if reverse != '':
-                paint(f'    &4[&cReve&f&lrse&4] &f&l{reverse}')
+                paint(f'    &4[{language["commands"]["ipinfo"]["RESULT_7"]}&4] &f&l{reverse}')
 
         else:
             paint(f'\n    {language["commands"]["ERROR"]}{language["commands"]["INVALID_ARGUMENTS"]["INVALID_IP"]}')
-                        
+        
     except requests.exceptions.ConnectionError:
         paint(f'\n    {language["commands"]["other_messages"]["API_CONNECTION_ERROR"]}')
 

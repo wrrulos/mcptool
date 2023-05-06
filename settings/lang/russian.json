@@ -1,0 +1,312 @@
+{
+    "language": "Russian",
+    "script": {
+        "TITLE": "MCPTool - @wrrulos",
+        "INPUT": "&croot@mcptool:~/MCPTool/ &8&r▶ &f&l",
+        "PREFIX": "&f&l[&c#&f&l] "
+    },
+    "banners": {
+        "dependencies": {
+            "MESSAGE1": "&cMCP&f&lTool не может запуститься:",
+            "MESSAGE2": "Отсутствует одна или более зависимостей!",
+            "MESSAGE3": "Название",
+            "MESSAGE4": "Ссылка на скачивание"
+        },
+        "update": {
+            "TITLE": "&5▶ &cMCP&f&lTool &8&r| &f&lОбновление&5 ◀&f&l",
+            "CHECKING_UPDATES": "&a• &f&lПроверка обновлений для &cMCP&f&lTool... &f&l",
+            "NEW_VERSION": "&a• &f&lНовая версия была найдена.",
+            "NOT_FOUND": "&a• &f&lУ вас последняя версия программы.",
+            "DOWNLOADING": "&a• &f&lСкачивается новая версия...",
+            "EXTRACTING": "&a• &f&lРаспаковка файлов...",
+            "FINISHED": "&a• &f&lУспешное обновление.",
+            "ERROR": "&c• &f&lОшибка обновления. Запуск &cMCP&f&lTool..."
+        },
+        "presentation": {
+            "MCPTOOL": "Утилита пентестинга для Minecraft",
+            "DESCRIPTION": "Проводи проверку на безопасность серверов &aMinecraft&f&l!",
+            "CREDITS": "Создана &b@wrrulos"
+        },
+        "menu": {
+            "MESSAGE1": "Утилита пентестинга для &aMC",
+            "MESSAGE2": "Сознана &b@wrrulos &8&r| &f&lv[0]",
+            "MESSAGE3": "Введите &chelp &f&lдля списка всех команд",
+            "MESSAGE4": "&ahttps://www.mcptool.net",
+            "MESSAGE5": "&f&lЧто-бы увидеть список доступных команд, введите &ahelp&f&l.",
+            "MESSAGE6": "&f&lЕсли вы хотите зайти на мой Discord сервер, введите &adiscord&f&l.",
+            "MESSAGE7": "Вы так-же можете посетить сайт: &bwww.mcptool.net"
+        },
+        "discord": {
+            "MESSAGE1": "Зайдите на мой Discord сервер, что-бы",
+            "MESSAGE2": "Получить помощь или сообщить о багах.",
+            "MESSAGE3": "Следить за моими проектами.",
+            "MESSAGE4": "Поговорить со мной.",
+            "MESSAGE5": "Ссылка на сервер:"
+        },
+        "rcon": {
+            "TITLE": "&f&l¡&cMCP&f&lTool пытается угадать пароль от RCON порта!",
+            "TARGET": "&f&lЦель: &a[0]",
+            "PASSWORD_FILE": "&f&lФайл с паролями: &a[0]",
+            "TRYING_PASSWORD": "&f&lПробую пароль: &c[0]",
+            "PASSWORD_FOUND": "&aПароль найден: &b[0]",
+            "PASSWORD_NOT_FOUND": "&cПароль не был найден.",
+            "TIMEOUT": "&cСервер не отвечает на запросы...",
+            "CONNECTION_REFUSED": "&f&lОшибка подключения: &cОтказано в соединении (Connection refused).",
+            "STOPPING": "&f&lАттака останавливается...",
+            "ERROR": "&f&lНепредвиденная ошибка: &c[0]"
+        }
+    },
+    "commands": {
+        "USAGE": "[&c!&f&l] Использование команды: ",
+        "ERROR": "&4[&cERR&f&lOR&r&4] ",
+        "INVALID_ARGUMENTS": {
+            "INVALID_SERVER": "&f&lСервер либо выключен, либо не существует. Проверьте его статус и правильность IP адреса.",
+            "INVALID_IP": "&f&lНеверный IP адрес!",
+            "INVALID_IP_RANGE": "&f&lНеверный диапазон IP адресов!",
+            "INVALID_PORTS": "&f&lНеверный диапазон портов!",
+            "INVALID_DOMAIN": "&f&lНеверный домен!",
+            "INVALID_SCAN_METHOD": "&f&lВведенный метод сканирования неверный!",
+            "INVALID_BOT_ARGUMENT": "&f&lВведите правильный выбор для бота проверки (&a'y' - да, 'n' - нет&f&l)",
+            "INVALID_PROXY": "&f&lНеверный прокси!",
+            "INVALID_FILE": "&f&lФайл &b[0] &f&lне найден!",
+            "INVALID_PAGE_ARGUMENT": "&f&lYou need to enter a valid number of pages!",
+            "INVALID_VERSION": "&f&lВведенная версия не верная. Либо неправильное написание, либо не поддерживается.",
+            "INVALID_DELAY": "&f&lНеверное время ожидания!",
+            "INVALID_LOOP_ARGUMENT": "&f&lВведите правильный выбор для loop (&a'y' - да, 'n' - нет&f&l)",
+            "INVALID_LANGUAGE": "&f&lНеверный язык.",
+            "INVALID_RCON_PASSWORD": "&f&lВведенный пароль RCON неверный.",
+            "INVALID_FORWARDING_MODE": "&f&lНеобходимо указать допустимый режим пересылки! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "MESSAGE": "&f&lДля подробной информации посетите репозиторий утилиты на GitHub: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "USAGE": "server [ip:порт/домен]"
+        },
+        "player": {
+            "MISSING_ARGUMENT_1": "&cВведите ник игрока!",
+            "ONLINE_UUID": "&f&lUUID &ePremium&f&l:&e",
+            "OFFLINE_UUID": "&f&lUUID &cNo-Premium&f&l:&c",
+            "USAGE": "player [ник]"
+        },
+        "ipinfo": {
+            "MISSING_ARGUMENT_1": "&cВведите IP адрес!",
+            "RESULT_1": "&cКонти&f&lнент",
+            "RESULT_2": "&cСтр&f&lана",
+            "RESULT_3": "&cРег&f&lион",
+            "RESULT_4": "&cГор&f&lод",
+            "RESULT_5": "&cПрова&f&lйдер",
+            "RESULT_6": "&cА&f&lС",
+            "RESULT_7": "&cОбратн&f&lый DNS",
+            "USAGE": "ipinfo [ip/домен]"
+        },
+        "reverseip": {
+            "MISSING_ARGUMENT_1": "&cВведите IP адрес!",
+            "RESULT": "&4[&cHO&f&lST&4]",
+            "USAGE": "reverseip [ip]"
+        },
+        "dnslookup": {
+            "MISSING_ARGUMENT_1": "&cВведите домен!",
+            "USAGE": "dnslookup [домен]"
+        },
+        "search": {
+            "MISSING_ARGUMENT_1": "&cВведите данные для поиска!",
+            "SCANNING": "&f&lПоиск серверов с указанными данными ►",
+            "SERVERS_NOT_FOUND": "&f&lНикаких серверов не найдено.",
+            "IPS_FOUND": "&a[0] &f&lНайдены IP адреса с указанными данными: (&b[1]&f&l).",
+            "CHECKING_SERVERS": "&f&lПроверка IP адресов на Minecraft сервера...",
+            "USAGE": "search [данные]"
+        },
+        "websearch": {
+            "MISSING_ARGUMENT_1": "&cНеобходимо указать тег для поиска!",
+            "MISSING_ARGUMENT_2": "&cНеобходимо указать, нужно ли отправить бота для проверки возможности подключения к серверу!",
+            "SEARCHING": "&f&lИщем сервера с тегом &a[0]&f&l на популярных страницах...",
+            "WEB_SEARCH": "&f&lИщем сервера на странице &b[0]",
+            "SERVERS_NOT_FOUND": "&f&lНа страницах не было найдено серверов с указанным тегом.",
+            "CHECKING_SERVERS": "&f&lПолучено &a[0] &f&lсерверов со страниц.",
+            "USAGE": "websearch [тег] [бот] <прокси>"
+        },
+        "aternos": {
+            "MISSING_ARGUMENT_1": "&cНеобходимо указать количество страниц, на которых нужно искать сервера!",
+            "MISSING_ARGUMENT_2": "&cНеобходимо указать, нужно ли отправить бота для проверки возможности подключения к серверу!",
+            "GET_SERVERS": "&f&lПолучение последних опубликованных серверов aternos..",
+            "SERVERS_NOT_FOUND": "&f&lСерверы не найдены..",
+            "CHECKING_SERVERS": "&f&lПолучено &a[0] &f&lсерверов со страницы aternos.",
+            "USAGE": "aternos [страницы] [бот] <прокси>"
+        },
+        "scan": {
+            "MISSING_ARGUMENT_1": "&cВведите IP адрес!",
+            "MISSING_ARGUMENT_2": "&cВведите диапазон портов!",
+            "MISSING_ARGUMENT_3": "&cВведите метод сканирования!",
+            "MISSING_ARGUMENT_4": "&cУкажите, если вы хотите использовать бота для проверки на то, если на сервер можно зайти. ('y' - да, 'n' - нет)",
+            "NO_IPS_FOUND": "&f&lIP адресов в файле не найдено!",
+            "NMAP_NOT_INSTALLED": "&f&lУстановите &anmap &f&lдля того, что-бы использовать данный метод!",
+            "SCANNING_1": "&f&lСканирую IP адрес &a[0]&f&l..",
+            "SCANNING_2": "&f&lСканирую диапазон IP адресов &a[0]&f&l..",
+            "SCANNING_3": "&f&lСканнер нашёл в файле &a[0] [1] &f&lIP адресов.",
+            "CHECKING_PORTS": "&a[0]&f&l открытых портов найдено. Проверяю, если они принадлежат Minecraft серверам...",
+            "NO_PORTS_FOUND": "&f&lСканнер не нашёл открытых портов.",
+            "USAGE": "scan [ip] [порты] [методСканирования] [бот] <прокси>"
+        },
+        "checker": {
+            "MISSING_ARGUMENT_1": "&cВведите файл!",
+            "MISSING_ARGUMENT_2": "&cУкажите, если вы хотите использовать бота для проверки на то, если на сервер можно зайти. ('y' - да, 'n' - нет)",
+            "NO_SERVERS_IN_THE_FILE": "&f&lIP адресов в файле не найдено!",
+            "FOUND_SERVERS": "&f&lНайдено &a[0] &f&lсерверов в файле.",
+            "CHECKING": "&f&lПроверяю сервера...",
+            "USAGE": "checker [файл] [бот] <прокси>"
+        },
+        "listening": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "WAITING_FOR_PLAYERS": "&f&lЖду игроков...",
+            "FOUND_PLAYERS": "&f&lОбнаруженные игроки:",
+            "USAGE": "listening [ip:порт]"
+        },
+        "playerlogs": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "WAITING_FOR_PLAYERS": "&f&lЖду игроков...",
+            "CONNECTED_USER": "&4[&a[0]&4] &a▲ &f&lИгрок &b&l[1] &f&lзашёл на сервер.",
+            "DISCONNECTED_USER": "&4[&a[0]&4] &c▼ &f&lИгрок &b&l[1] &f&lпокинул сервер.",
+            "USAGE": "playerlogs [ip:порт]"
+        },
+        "bungee": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "USAGE": "bungee [ip:порт]"
+        },
+        "velocity": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите верный режим перессылки!",
+            "USAGE": "velocity [ip:порт] [режим-перессылки]"
+        },
+        "fakeproxy": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите верный режим перессылки!",
+            "COPYING_DATA": "&f&lКопирую данные сервера...",
+            "ERROR_WHEN_COPYING": "&f&lОшибка копирования данных сервера. Проверьте сервер на его статус и правильное написание.",
+            "NGROK_START": "&f&lЗапуск ngrok сервера...",
+            "IP_NGROK_ERROR": "&f&lНе получилось получить IP от ngrok.",
+            "NGROK_NOT_FOUND": "&f&lngrok не установлен.",
+            "WAITING_FOR_DATA": "&f&lОжидание данных...",
+            "CONNECTING": "[0] зашёл на сервер.",
+            "DISCONNECTING": "[0] покинул сервер.",
+            "MESSAGE_CAPTURED": "[0] написал сообщение:",
+            "COMMAND_CAPTURED": "[0] использовал команду:",
+            "USAGE": "fakeproxy [ip:порт] [режим-перессылки]"
+        },
+        "connect": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите ник для бота!",
+            "MISSING_ARGUMENT_3": "&cВведите версию игры для бота!",
+            "BOT_CONNECTED": "Бот зашёл на сервер.",
+            "BOT_EXPELLED": "Бот был отключён от сервера с причиной: ",
+            "BOT_FILE_NOT_FOUND": "§cФайл не найден. §f(Убедитесь что он находиться в папке §b/files&f)",
+            "EXIT": "&fНажмите &cCtrl+C &fдля возврата в меню...",
+            "USAGE": "connect [ip:порт] [ник-бота] [версия] <прокси>"
+        },
+        "rconnect": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите RCON пароль!",
+            "CONNECTING": "&f&lСоединение...",
+            "TIMEOUT": "&f&lВремя ожидания истекло. (Timeout)",
+            "REFUSED_CONNECTION": "&f&lСервер отказал в соединении.",
+            "ESTABLISHED_CONNECTION": "&f&lУспешно подключено!",
+            "COMMAND": "&f&lКоманда: ",
+            "STOPPING": "&f&lОтключение...",
+            "USAGE": "rconnect [ip:порт-rcon] [пароль-rcon]"
+        },
+        "rcon": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cУкажите файл с паролями!",
+            "EMPTY_FILE": "&f&lПароли в файле не найдены.",
+            "PREPARING_THE_ATTACK": "&f&lПодготовка к подбору пароля (&cRCON&f&l)...",
+            "NUMBER_OF_PASSWORDS": "&f&lУказанный файл: &a[0] &f&l(Паролей: &a[1]&f&l)",
+            "STARTING_THE_ATTACK": "&f&lНачало аттаки...",
+            "USAGE": "rcon [ip:rconПорт] [файл-с-паролями] <время-ожидания>"
+        },
+        "authme": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите ник игрока!",
+            "MISSING_ARGUMENT_3": "&cВведите версию игры!",
+            "MISSING_ARGUMENT_4": "&cУкажите файл с паролями!",
+            "STARTING_THE_ATTACK": "&f&lБот заходит на сервер...",
+            "BOT_CONNECTED": "Бот зашёл на сервер.",
+            "BOT_EXPELLED": "Бот был отключён от сервера с причиной: ",
+            "TESTING_PASSWORD": "Пробую пароль: ",
+            "PASSWORD_FOUND": "Найденный пароль: ",
+            "PASSWORD_NOT_FOUND": "Пароль не был найден.",
+            "USAGE": "authme [ip:порт] [ник-бота] [версия] [файл-с-паролями] <прокси>"
+        },
+        "kick": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите ник игрока!",
+            "MISSING_ARGUMENT_3": "&cВведите версию игры!", 
+            "MISSING_ARGUMENT_4": "&cYou need to specify if you want the attack to be infinite!",
+            "STARTING_THE_ATTACK": "&f&lKicking the user..",
+            "BOT_CONNECTED": "§aThe user §b[0]§a was kicked from the server.",
+            "BOT_EXPELLED": "§cThe bot §b[0] §ccould not connect due to the following reason: §4",
+            "USAGE": "kick [ip:порт] [ник-бота] [версия] [начинать-по-новой] <прокси>"
+        },
+        "kickall": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите версию игры!", 
+            "MISSING_ARGUMENT_3": "&cYou need to specify if you want the attack to be infinite!",
+            "NO_PLAYERS": "&f&lThere are no players on the server.",
+            "STARTING_THE_ATTACK": "&f&lKicking the user..",
+            "USAGE": "kickall [ip:порт] [версия] [начинать-по-новой] <прокси>"
+        },
+        "sendcmd": {
+            "MISSING_ARGUMENT_1": "&cВведите сервер!",
+            "MISSING_ARGUMENT_2": "&cВведите ник игрока!",
+            "MISSING_ARGUMENT_3": "&cВведите версию игры!",
+            "MISSING_ARGUMENT_4": "&cYou have to enter a file that contains the commands that the bot will execute!",
+            "MISSING_ARGUMENT_5": "&cYou need to specify if you want the attack to be infinite!",
+            "EMPTY_FILE": "&f&lNo available commands were found in the file.",
+            "STARTING_THE_ATTACK": "&f&lSending to the bot..",
+            "SENDING_COMMAND": "§fSending the command: §a[0]",
+            "USAGE": "sendcmd [ip:порт] [ник-бота] [версия] [commandFile] [начинать-по-новой] <прокси>"
+        },
+        "language": {
+            "MISSING_ARGUMENT_1": "&cВведите язык (на английском)!",
+            "LANGUAGE_IN_USE": "&f&lВведенный язык уже стоит!",
+            "LANGUAGE_LIST": "&f&lДоступные языки: &aenglish, spanish, russian",
+            "CHANGE_OF_LANGUAGE": "&f&lЯзык успешно заменён на &a[0]&f&l. Перезапустите утилиту, чтобы увидеть изменения!",
+            "USAGE": "language [язык]"
+        }
+    },
+    "other_messages": {
+        "INVALID_COMMAND": "&cНеизвестная команда. &f&lДля списка команд введите &ahelp&f&l.",
+        "SCAN_FINISHED_1": "&f&lКоманда завершилась и было найдено &a[0]&f&l серверов!",
+        "SCAN_FINISHED_2": "&f&lКоманда завершилась и было найдено &a[0]&f&l серверов! (превышено время ожидания для &c[1]&f&l серверов)",
+        "API_CONNECTION_ERROR": "&cНе получилось связаться с API. Попытайтесь позже.",
+        "PROXY_TIMEOUT": "Превышено время ожидания для прокси.",
+        "STOPPING": "Остановка...",
+        "SHODAN_INVALID_API_KEY": "&f&lНеверный API ключ!",
+        "HACKERTARGET_INVALID_API_KEY": "&f&lНеверный API ключ!",
+        "HACKERTARGET_API_LIMIT_EXCEEDED": "&f&lПревышен лимит ежедневных API запросов! Лимит можно увеличить, купив план на &ahttps://hackertarget.com&f&l."
+    },
+    "version_file_messages": {
+        "UPDATE_FAILED": "&c&lНе получилось проверить версию. &f&lИспользую текущую версию...",
+        "UPDATE_CHECK": "&f&lПроверяю обновления для &aVersions.json&f&l..",
+        "UPDATE_AVAILABLE": "&a¡Новая версия найдена!",
+        "DOWNLOADING_UPDATE": "&f&lСкачивание новой версии...",
+        "UPDATE_COMPLETED": "&f&lНовая версия &bVersions.json &f&lустановлена.",
+        "NO_UPDATES_FOUND": "&f&lНе найдено новых доступных версий."
+    },
+    "proxy_messages": {
+        "CONFIGURING": "&f&lКонфигурирую прокси сервер...",
+        "UPDATE_FAILED": "&c&lНе получилось проверить версию. &f&lИспользую текущую версию...",
+        "UPDATE_CHECK": "&f&lПроверяю обновления для &a[0].jar&f&l...",
+        "UPDATE_AVAILABLE": "&a¡Новая версия найдена! &b[0]",
+        "DOWNLOADING_UPDATE": "&f&lСкачивание новой версии...",
+        "UPDATE_COMPLETED": "&f&lНовая версия &b[0] &f&lустановлена.",
+        "NO_UPDATES_FOUND": "&f&lНе найдено новых доступных версий.",
+        "STARTING": "&f&lЗапуск прокси сервера...",
+        "STOPPING": "&f&lОстановка прокси сервера..",
+        "PROXY_SERVER_STARTED": "&f&l[&a>&f&l] Прокси сервер запущен успешно: &a[0]&f&l.",
+        "PROXY_SERVER_NOT_STARTUP": "&f&l[&a>&f&l] Прокси сервер некорректно запускается. Проверьте наличие Java 17. Если проблема осталась, обратитесь за помощью в Discord сервер."
+    },
+    "timed_out_servers": {
+        "SHOW_SERVER": "&cПревышено время ожидания"
+    }
+}
