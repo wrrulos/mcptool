@@ -92,10 +92,13 @@
         },
         "ipinfo": {
             "MISSING_ARGUMENT_1": "&cYou need to enter an IP address!",
-            "RESULT_1": "&cConti&f&lnente",
-            "RESULT_2": "&cPa&f&lís",
-            "RESULT_3": "&cReg&f&lión",
-            "RESULT_4": "&cCiu&f&ldad",
+            "RESULT_1": "&cConti&f&lnent",
+            "RESULT_2": "&cCoun&f&ltry",
+            "RESULT_3": "&cReg&f&lion",
+            "RESULT_4": "&cCi&f&lty",
+            "RESULT_5": "&cIS&f&lP",
+            "RESULT_6": "&cA&f&lS",
+            "RESULT_7": "&cReve&f&lrse",
             "USAGE": "ipinfo [domain]"
         },
         "reverseip": {
