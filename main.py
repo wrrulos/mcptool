@@ -104,7 +104,6 @@ def menu():
             arguments = input().split()
 
             if len(arguments) > 0:
-
                 try:
                     command = arguments[0].lower()
 
