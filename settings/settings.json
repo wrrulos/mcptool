@@ -17,7 +17,7 @@
     "FAKEPROXY_PORT": "33330",
     "FAKEPROXY_UPDATE_DELAY": "2",
     "FAKEPROXY_COMMAND_PREFIX": "..",
-    "CURRENT_VERSION": "8///3.7",
+    "CURRENT_VERSION": "9///3.7.2",
     "QUBO_THREADS": "500",
     "QUBO_TIMEOUT": "2000",
     "SOUNDS": true,
