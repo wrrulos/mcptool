@@ -81,6 +81,10 @@ def check_command_arguments(command, arguments):
     """
 
     global language
+    valid_languages = os.listdir('settings/lang/')
+    valid_languages = ' '.join(valid_languages)
+    valid_languages = str(valid_languages).replace('.json', '')
+    valid_languages = valid_languages.replace(' ', ', ')
 
     if command == 'server':
         if missing_arguments(command, 1, arguments):
@@ -351,7 +355,7 @@ def check_command_arguments(command, arguments):
         
         if not check_language(arguments[1].lower()):
             paint(f'\n    {language["commands"]["INVALID_ARGUMENTS"]["INVALID_LANGUAGE"]}')
-            paint(f'\n    {language["commands"]["language"]["LANGUAGE_LIST"]}')
+            paint(f'\n    {language["commands"]["language"]["LANGUAGE_LIST"].replace("[0]", str(valid_languages))}')
             return False
 
     return True
