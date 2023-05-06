@@ -96,6 +96,9 @@
             "RESULT_2": "&cPa&f&lís",
             "RESULT_3": "&cReg&f&lión",
             "RESULT_4": "&cCiu&f&ldad",
+            "RESULT_5": "&cIS&f&lP",
+            "RESULT_6": "&cS&f&lA",
+            "RESULT_7": "&cDNS in&f&lverso",
             "USAGE": "ipinfo [dominio]"
         },
         "reverseip": {
