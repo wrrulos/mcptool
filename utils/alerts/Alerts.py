@@ -7,7 +7,7 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 
 def is_termux_api_installed():
     try:
-        subprocess.check_output(['termux-media-player', '-h'], stderr=subprocess.STDOUT)
+        subprocess.check_output(['termux-media-player'], stderr=subprocess.STDOUT)
         return True
     except subprocess.CalledProcessError:
         return False
@@ -23,7 +23,7 @@ def alert(name):
     if platform.system() == 'Linux' and 'ANDROID_ROOT' in os.environ:
         if is_termux_api_installed():
             sound_file_path = os.path.join(script_dir, f'utils/alerts/sounds/{name}.mp3')
-            subprocess.run(['termux-media-player', '-q', sound_file_path], check=True)
+            subprocess.run(['termux-media-player', sound_file_path], check=True)
         else:
             raise Exception('Termux environment detected but couldn\'t find Termux:API. Please install it.')
     else:
