@@ -1,14 +1,12 @@
 # 🧨  MCPTool v3.7.2
 
-<h3> Pentesting tool for Minecraft </h3>
-<br />
-<p align="center">
-<img src="https://i.imgur.com/GqkwN7v.png" title="MCPTool" width="850" height="500">
-</p>
+## **Pentesting tool for Minecraft**
 
-### This project was created for educational purposes and should not be used in environments without legal authorization.
+<p align="center"><img src="https://i.imgur.com/GqkwN7v.png" title="MCPTool" width="850" height="500"><p\>
 
-# 🛠 Features
+### ***This project was created for educational purposes and should not be used in environments without legal authorization.***
+
+## 🛠 Features
 
 * See information of a server.
 * View player information.
@@ -31,7 +29,7 @@
 * Send a bot that will execute a list of commands upon login to the server.
 * Bots are compatible with Proxies
 
-## 💻 Supported operating systems:
+## 💻 Supported operating systems
 
 * ✅ Windows (8, 8.1, 10 and 11)
 * ✅ Linux
@@ -40,7 +38,7 @@
 
 * 📃 1.8.x-1.19.x
 
-## 🔧 Installation 
+## 🔧 Installation
 
 * Follow the steps in the [installation guide](https://www.mcptool.net/how-to-install).
 
@@ -50,14 +48,15 @@
 
 ## 📸 Screenshots
 
-<img src="https://i.imgur.com/bfnthLy.png">
-<img src="https://i.imgur.com/m44uxCP.png">
-<img src="https://i.imgur.com/RHllolP.png">
+![image](https://i.imgur.com/bfnthLy.png)
+![image](https://i.imgur.com/m44uxCP.png)
+![image](https://i.imgur.com/RHllolP.png)
 
-## 🎞 Video 
-# https://youtu.be/1ISz29mxxO4
+## 🎞 Video
 
-## Licencia 
+![video](https://youtu.be/1ISz29mxxO4)
+
+## License
 
 MIT License
 
@@ -80,5 +79,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
- 
