@@ -1,6 +1,6 @@
 # 🧨  MCPTool v3.7.2
 
-## **Pentesting tool for Minecraft**
+### **Pentesting tool for Minecraft**
 
 <p align="center"><img src="https://i.imgur.com/GqkwN7v.png" title="MCPTool" width="850" height="500"><p\>
 
