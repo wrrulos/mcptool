@@ -103,18 +103,19 @@ def menu():
             paint(f'\n    {language["script"]["INPUT"]}', end='')
             arguments = input().split()
 
-            try:
-                command = arguments[0].lower()
+            if len(arguments) > 0:
+                try:
+                    command = arguments[0].lower()
 
-                if command not in commands:
+                    if command not in commands:
+                        paint(f'\n    {language["script"]["PREFIX"]}{language["other_messages"]["INVALID_COMMAND"]}')
+
+                    if command in commands and check_command_arguments(command, arguments):
+                        change_last_command(command)
+                        commands[command](*arguments[1:])
+
+                except IndexError:
                     paint(f'\n    {language["script"]["PREFIX"]}{language["other_messages"]["INVALID_COMMAND"]}')
-                
-                if command in commands and check_command_arguments(command, arguments):
-                    change_last_command(command)
-                    commands[command](*arguments[1:])
-
-            except IndexError:
-                paint(f'\n    {language["script"]["PREFIX"]}{language["other_messages"]["INVALID_COMMAND"]}')
 
         except EOFError:
             pass

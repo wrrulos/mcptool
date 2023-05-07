@@ -269,7 +269,7 @@
         "language": {
             "MISSING_ARGUMENT_1": "&cDebeingresar un idioma!",
             "LANGUAGE_IN_USE": "&f&lEl idioma ingresado ya está seleccionado!",
-            "LANGUAGE_LIST": "&f&lLista de idiomas disponibles: &aenglish, spanish",
+            "LANGUAGE_LIST": "&f&lLista de idiomas disponibles: &a[0]",
             "CHANGE_OF_LANGUAGE": "&f&lEl idioma fue cambiado correctamente a &a[0]&f&l. ¡Debes reiniciar el programa para ver los cambios!",
             "USAGE": "language [idioma]"
         }

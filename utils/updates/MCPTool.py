@@ -1,6 +1,7 @@
 import os
 import shutil
 import subprocess
+import requests
 import sys
 import time
 
@@ -61,6 +62,9 @@ def update_mcptool():
 
         print_banner('update', update_title, update_checking_updates, update_not_found, '', '', '')
         time.sleep(2.5)
+        return
+    
+    except requests.exceptions.InvalidURL:
         return
 
     except KeyboardInterrupt:

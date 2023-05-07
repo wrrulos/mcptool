@@ -269,7 +269,7 @@
         "language": {
             "MISSING_ARGUMENT_1": "&cYou need to enter a language!",
             "LANGUAGE_IN_USE": "&f&lThe language entered is already set!",
-            "LANGUAGE_LIST": "&f&lList of available languages: &aenglish, spanish",
+            "LANGUAGE_LIST": "&f&lList of available languages: &a[0]",
             "CHANGE_OF_LANGUAGE": "&f&lThe language was successfully changed to &a[0]&f&l. You must restart the tool to see the changes!",
             "USAGE": "language [language]"
         }
