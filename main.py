@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import psutil
 import subprocess
 import time
 
@@ -35,6 +34,7 @@ from utils.commands.Server import server_command
 from utils.commands.Velocity import velocity_command
 from utils.commands.WebSearch import websearch_command
 from utils.checks.CommandArguments import check_command_arguments
+from utils.checks.Termux import is_termux
 from utils.gets.Language import language
 from utils.managers.Dependencies import Dependencies
 from utils.managers.Settings import SettingsManager
@@ -42,6 +42,9 @@ from utils.pid.KillPID import kill_pid
 from utils.updates.Files import update_files
 from utils.updates.MCPTool import update_mcptool
 from utils.updates.Proxies import update_proxies
+
+if not is_termux():
+    import psutil
 
 # Dictionary containing the list of MCPTool commands
 commands = {
@@ -81,9 +84,10 @@ def change_last_command(command):
     RichPresence status.
 
     Parameters:
-    command (str): Command.
+        command (str): Command.
     """
 
+    if is_termux(): pass
     with open('utils/presence/RichPresence.command', 'w+') as f:
         f.truncate(0)
         f.write(command.capitalize())
@@ -96,6 +100,7 @@ def menu():
     """
 
     if settings['RICH_PRESENCE']:
+        if is_termux(): pass
         subprocess.Popen(f'{settings["PYTHON_COMMAND"]} utils/presence/RichPresence.py {settings["CURRENT_VERSION"].split("///")[1]}', stdout=subprocess.PIPE, shell=True)
 
     while True:
@@ -122,6 +127,7 @@ def menu():
 
         except KeyboardInterrupt:
             try:
+                if is_termux(): pass
                 if settings['RICH_PRESENCE']:
                     rich_presence_process = None
                     processes = [p for p in psutil.process_iter(attrs=['pid', 'name']) if 'python' in p.info['name']]
