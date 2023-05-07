@@ -54,7 +54,7 @@
 
 ## 🎞 Video
 
-![video](https://youtu.be/1ISz29mxxO4)
+https://youtu.be/1ISz29mxxO4
 
 ## License
 
