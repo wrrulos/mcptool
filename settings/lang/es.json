@@ -283,7 +283,8 @@
         "STOPPING": "Deteniendo..",
         "SHODAN_INVALID_API_KEY": "&f&l¡La clave API ingresada no es válida! Compruebe el archivo de configuración.",
         "HACKERTARGET_INVALID_API_KEY": "&f&l¡La clave API ingresada no es válida! Compruebe el archivo de configuración.",
-        "HACKERTARGET_API_LIMIT_EXCEEDED": "&f&l¡Ya no tienes solicitudes API diarias disponibles! Si desea obtener más solicitudes diarias, debe comprar un plan en &ahttps://hackertarget.com &f&le ingresar su clave API en el archivo de configuración de MCPTool"
+        "HACKERTARGET_API_LIMIT_EXCEEDED": "&f&l¡Ya no tienes solicitudes API diarias disponibles! Si desea obtener más solicitudes diarias, debe comprar un plan en &ahttps://hackertarget.com &f&le ingresar su clave API en el archivo de configuración de MCPTool",
+        "TERMUX_ONE_TIME_FIX": "&f&lSe ha detectado el entorno de Termux, se está ejecutando una corrección única para que MCPTool funcione correctamente..."
     },
     "version_file_messages": {
         "UPDATE_FAILED": "&c&lHubo un error al intentar encontrar la nueva versión. &f&lEjecutando la versión actual..",

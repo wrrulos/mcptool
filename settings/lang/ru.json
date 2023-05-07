@@ -281,9 +281,10 @@
         "API_CONNECTION_ERROR": "&cНе получилось связаться с API. Попытайтесь позже.",
         "PROXY_TIMEOUT": "Превышено время ожидания для прокси.",
         "STOPPING": "Остановка...",
-        "SHODAN_INVALID_API_KEY": "&f&lНеверный API ключ!",
-        "HACKERTARGET_INVALID_API_KEY": "&f&lНеверный API ключ!",
-        "HACKERTARGET_API_LIMIT_EXCEEDED": "&f&lПревышен лимит ежедневных API запросов! Лимит можно увеличить, купив план на &ahttps://hackertarget.com&f&l."
+        "SHODAN_INVALID_API_KEY": "&f&lНеверный API ключ Shodan!",
+        "HACKERTARGET_INVALID_API_KEY": "&f&lНеверный API ключ Hackertarget!",
+        "HACKERTARGET_API_LIMIT_EXCEEDED": "&f&lПревышен лимит ежедневных API запросов! Лимит можно увеличить, купив план на &ahttps://hackertarget.com&f&l.",
+        "TERMUX_ONE_TIME_FIX": "&f&lОбнаружена среда Termux, подготовка к первому запуску..."
     },
     "version_file_messages": {
         "UPDATE_FAILED": "&c&lНе получилось проверить версию. &f&lИспользую текущую версию...",

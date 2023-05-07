@@ -99,8 +99,7 @@ def menu():
     through inputs.
     """
 
-    if settings['RICH_PRESENCE']:
-        if is_termux(): pass
+    if settings['RICH_PRESENCE'] and not is_termux():
         subprocess.Popen(f'{settings["PYTHON_COMMAND"]} utils/presence/RichPresence.py {settings["CURRENT_VERSION"].split("///")[1]}', stdout=subprocess.PIPE, shell=True)
 
     while True:
@@ -147,6 +146,8 @@ def menu():
 
 
 if __name__ == '__main__':
+    if is_termux():
+        print(language["other_messages"]['TERMUX_ONE_TIME_FIX'])
     sm = SettingsManager()
     d = Dependencies()
     settings = sm.read('settings')
