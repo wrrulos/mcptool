@@ -127,8 +127,7 @@ def menu():
 
         except KeyboardInterrupt:
             try:
-                if settings['RICH_PRESENCE']:
-                    if is_termux(): pass
+                if settings['RICH_PRESENCE'] and not is_termux():
                     rich_presence_process = None
                     processes = [p for p in psutil.process_iter(attrs=['pid', 'name']) if 'python' in p.info['name']]
 
