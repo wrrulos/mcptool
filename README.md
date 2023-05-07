@@ -54,7 +54,7 @@
 
 ## 🎞 Video
 
-https://youtu.be/1ISz29mxxO4
+[![MCPTool](https://img.youtube.com/vi/iGYlaFsikZE/0.jpg)](https://www.youtube.com/watch?v=iGYlaFsikZE)
 
 ## License
 
