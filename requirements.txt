@@ -2,7 +2,6 @@ pypresence
 colorama
 requests
 mcstatus
-aiohttp
 shodan
 pygame
 mcrcon
