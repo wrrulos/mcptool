@@ -22,8 +22,8 @@ def alert(name):
     # detect if MCPTool is running on Termux
     if platform.system() == 'Linux' and 'ANDROID_ROOT' in os.environ:
         if is_termux_api_installed():
-            sound_file_path = os.path.join(script_dir, f'utils/alerts/sounds/{name}.mp3')
-            subprocess.run(['termux-media-player', sound_file_path], check=True)
+            sound_file_path = os.path.join(script_dir, f'sounds/{name}.mp3')
+            subprocess.run(['termux-media-player', 'play', sound_file_path], check=True)
         else:
             raise Exception('Termux environment detected but couldn\'t find Termux:API. Please install it.')
     else:
