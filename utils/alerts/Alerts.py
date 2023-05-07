@@ -23,9 +23,9 @@ def alert(name):
     if platform.system() == 'Linux' and 'ANDROID_ROOT' in os.environ:
         if is_termux_api_installed():
             sound_file_path = os.path.join(script_dir, f'sounds/{name}.mp3')
-            subprocess.run(['termux-media-player', 'play', sound_file_path], check=True)
+            subprocess.run(['termux-media-player', 'play', sound_file_path], check=True, stdout=None, stderr=None)
         else:
-            raise Exception('Termux environment detected but couldn\'t find Termux:API. Please install it.')
+            raise Exception('Termux environment detected but couldn\'t find termux-media-player, which is provided by Termux:API. Please install it.')
     else:
         import pygame
         try:
