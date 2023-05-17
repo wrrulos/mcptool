@@ -1,13 +1,13 @@
 import os
 def is_termux():
     """
-    Check if running on Termux
+    Check if MCPTool is running on Termux
     
     Returns:
         bool: True if "ANDROID_ROOT" is found in `os.environ`
     """
     return "ANDROID_ROOT" in os.environ
-def is_dnspython_fixed():
+def _is_dnspython_fixed():
     """
     Check if resolver.py has been changed so that `mcstatus` (specifically its dependency, `dnspython`) works correctly on Termux.
     
@@ -23,8 +23,8 @@ def is_dnspython_fixed():
         if '/data/data/com.termux/files/usr/etc/resolv.conf' in text:
             return True
         else: return False
-def fix_dnspython():
-    if is_dnspython_fixed(): return
+def _fix_dnspython():
+    if _is_dnspython_fixed(): return
     import sys
     import fileinput
     filepath = f'/data/data/com.termux/files/usr/lib/python{sys.version_info.major}.{sys.version_info.minor}/dns/resolver.py'

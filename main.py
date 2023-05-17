@@ -34,7 +34,7 @@ from utils.commands.Server import server_command
 from utils.commands.Velocity import velocity_command
 from utils.commands.WebSearch import websearch_command
 from utils.checks.CommandArguments import check_command_arguments
-from utils.checks.Termux import is_termux
+from utils.checks.Termux import is_termux, _fix_dnspython
 from utils.gets.Language import language
 from utils.managers.Dependencies import Dependencies
 from utils.managers.Settings import SettingsManager
@@ -148,6 +148,7 @@ def menu():
 if __name__ == '__main__':
     if is_termux():
         print(language["other_messages"]['TERMUX_ONE_TIME_FIX'])
+        _fix_dnspython()
     sm = SettingsManager()
     d = Dependencies()
     settings = sm.read('settings')
