@@ -1,0 +1,35 @@
+{
+    "lang": "es",
+    "typeOfBanners": "1",
+    "shodanApiKey": "",
+    "sounds": true,
+    "checkVersion": true,
+    "checkProxyVersions": true,
+    "richPresence": true,
+    "showServerMods": true,
+    "termuxMode": true,
+    "proxyConfig": {
+        "waterfallPort": "25570",
+        "velocityPort": "25580",
+        "fakeProxyPort": "33330",
+        "fakeProxyUpdateDelay": "2",
+        "fakeProxyCommandPrefix": ".",
+        "waterfallVersion": "https://api.papermc.io/v2/projects/waterfall/versions/1.20/builds/536/downloads/waterfall-1.20-536.jar",
+        "velocityVersion": "https://api.papermc.io/v2/projects/velocity/versions/3.2.0-SNAPSHOT/builds/260/downloads/velocity-3.2.0-SNAPSHOT-260.jar"
+    },
+    "commands": {
+        "nodejs": "node",
+        "ngrok": "ngrok",
+        "velocity": "java -Xms512M -Xmx512M -jar Velocity.jar >nul 2>&1",
+        "waterfall": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1"
+    },
+    "scannerOptions": {
+        "nmapCommand": "nmap -p [0] -n -T5 -Pn -vvv -sS [1]",
+        "oldQuboCommand": "cd utils/scanners/quboscanner && java -Dfile.encoding=UTF-8 -jar old_qubo.jar -range [0] -ports [1] -th [2] -ti [3]",
+        "masscanCommand": "masscan -p [1] [0]",
+        "quboThreads": "500",
+        "quboTimeout": "2000",
+        "showTimedOutServers": true
+    },
+    "currentVersion": "9///3.8"
+}
