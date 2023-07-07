@@ -1,0 +1,27 @@
+
+    &c• &f&lCommand list:
+                                                                                        &e ⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀⠀⠀⠀⠀⠀⠀⠀
+      &b► 01. &f&l&nserver&r <ip:port/domain>                                             &e ⠀ ⠀⠀⠀⢀⡴⠋⠁⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢦⡀⠀⠀⠀⠀
+      &b► 02. &f&l&nplayer&r <username>                                                   &e  ⠀⠀⠀⡴⠃⢀⡴⢳⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣆⠀⠀⠀
+      &b► 03. &f&l&nipinfo&r <ip>                                                         &e   ⡾⠁⣠⠋⠀⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠀
+      &b► 04. &f&l&nreverseip&r <ip>                                                      &e  ⣸⠁⢰⠃⠀⠀⠀⠈⢣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣇
+      &b► 05. &f&l&ndnslookup&r <domain>                                                  &e  ⡇⠀⡾⡀⠀⠀⠀⠀⣀⣹⣆⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠀
+      &b► 06. &f&l&nsearch&r <data>                                                       &e ⢸⠃⢀⣇⡈⠀⠀⠀⠀⠀⠀&e⢀⡑⢄⡀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+      &b► 07. &f&l&nwebsearch&r <tag> <bot> &7[<proxyFile>]                               &e ⠀⠀⢸⠀&f&l⢻⡟⡻⢶⡆⠀⠀⠀⡼⠟⡳⢿⣦&e⡑⢄⠀⠀⠀⠀ ⠀⠀⠀⠀⢸⡇
+      &b► 08. &f&l&nscan&r <ip> <ports> <method> <bot> &7[<proxyFile>]                    &e ⠀⠀⣸⠀&f&l⢸⠃⡇⢀⠇⠀⠀⠀⠀⠀⡼⠀⠀⠈⣿&e⡗⠂⠀⠀⠀⠀⠀⠀⠀⢸⠁
+      &b► 09. &f&l&nsubdomains&r <domain> <subdomainsFile>                              &e ⠀⠀⡏⠀&f&l⣼⠀⢳⠊⠀⠀⠀⠀⠀⠀⠱⣀⣀⠔&e⣸⠁⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀
+      &b► 10. &f&l&nchecker&r <file> <bot> &7[<proxyFile>]                                  &e ⡇&f&l⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀&e⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀
+      &b► 11. &f&l&nlistening&r <ip:port/domain>                                        &e  ⢸⠃&f&l⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀
+      &b► 12. &f&l&nplayerlogs&r <ip:port/domain>                                         &e⣸⠀⠀&f&l⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀&e⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀
+      &b► 13. &f&l&nbungee&r <ip:port/domain>                                             &e⡏⠀⠀⠀&f&l⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶&e⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀
+      &b► 14. &f&l&nvelocity&r <ip:port/domain> <forwarding-mode>                         &e⢰⠇⡄⠀⠀⠀⡿&f&l⢣⣀⣀⣀⡤⠴⡞⠉⠀&e⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀
+      &b► 15. &f&l&nfakeproxy&r <ip:port/domain> <forwarding-mode>                        &e ⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉&f&l⠀⠀⠀⢹⠀⠀&e⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀
+      &b► 16. &f&l&nconnect&r <ip:port> <username> <version> &7[<proxyFile>]                 &e⣿⠀⡇⠀⠀⠀⠀&f&l⠀⢀⡤⠤⠶⠶⠾⠤⠄&e⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
+      &b► 17. &f&l&nrcon&r <ip:rconPort> <rconPassword>]                                  &e ⡇⠀⡇⠀⠀⡀⠀&f&l⡴⠋⠀⠀⠀⠀⠀⠀⠀&e⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
+      &b► 18. &f&l&nrconbrute&r <ip:rconPort> <passwordFile> &7[<delay>]                  &e   ⡇⠀⠇⠀⠀⡇&f&l⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠙⠮⢧⣀⣻⢂⠀⠀⠀⠀⠀⠀⢧
+      &b► 19. &f&l&nlogin&r <ip:port> <username> <version> <passwordFile> &7[<proxyFile>] &e   ⣇⠀⢠⠀⠀⢳&f&l⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
+      &b► 20. &f&l&npinlogin&r <ip:port> <username> <version> <digits> &7[<proxyFile>]    &e   ⢻⠀⠈⠰⠀&f&l⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
+      &b► 21. &f&l&nkick&r <ip:port> <username> <version> <loop> &7[<proxyFile>]          &e   ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e⠀⠀⠀⠀⠀⠙⠳⣄⡀⡀
+      &b► 22. &f&l&nkickall&r <ip:port> <version> <loop> &7[<proxyFile>]                  &e   ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e       ⠙⠳⢢
+      &b► 23. &f&l&nsendcmd&r <ip:port> <username> <version> <file> <loop> &7[<proxyFile>]&e   ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e        ⠙⣄⢢
+      &b► 25. &f&l&ndiscord&r                                                            &e  ⠸⡆⠀⠀⠇&f&l⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀    &e         ⠙⡀⢢
