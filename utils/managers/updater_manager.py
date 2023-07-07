@@ -64,7 +64,7 @@ class Updater:
         """
 
         try:
-            js = json.loads(requests.get('https://raw.githubusercontent.com/wrrulos/MCPTool/main/settings/config.json').text)
+            js = json.loads(requests.get('https://raw.githubusercontent.com/wrrulos/MCPTool/main/config/config.json').text)
             current_version = config_manager.config['currentVersion'].split('///')[0]
             last_version = js['currentVersion'].split('///')[0]
             return int(last_version) != int(current_version)
