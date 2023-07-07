@@ -1,0 +1,313 @@
+{
+    "languageName": "Català",
+    "title": "MCPTool - @wrrulos",
+    "input": "&croot@mcptool:~/MCPTool/ &8&r▶ &f&l",
+    "termux_input": "&croot@mcptool &8&r▶ &f&l",
+    "prefix": "&f&l[&c#&f&l] ",
+    "invalidCommand": "&cOrdre invalida. &f&lUtilitza &ahelp&f&l per veure les ordres disponibles.",
+    "scanFinished1": "&f&l¡L'ordre ha acabat i s'han trobat &a[0]&f&l servidors de Minecraft!",
+    "scanFinished2": "&f&l¡L'ordre ha acabat i s'han trobat &a[0]&f&l servidors de Minecraft! (&c[1]&f&l timeout)",
+    "apiConnectionError": "&cNo s'ha pogut establir connexió amb l'API. Torna-ho a intentar més tard.",
+    "proxyTimeout": "El proxy ingressat no ha respost a temps. (timeout)",
+    "showTimedOutServer": "&cTimeout",
+    "stopping": "Detenint..",
+    "shodanInvalidApiKey": "&f&l¡La clau API ingressada no és vàlida! Comprova l'arxiu de configuració.",
+    "hackerTargetInvalidApiKey": "&f&l¡La clau API ingressada no és vàlida! Comprova l'arxiu de configuració.",
+    "hackerTargetApiLimitExceeded": "&f&l¡Ja no tens sol·licituds API diàries disponibles! Si desitges obtenir més sol·licituds diàries, has de comprar un pla a &ahttps://hackertarget.com &f&le ingressar la clau API a l'arxiu de configuració de MCPTool",
+    "banners": {
+        "dependencies": {
+            "message1": "&cMCP&f&lTool no pot iniciar-se perquè",
+            "message2": "falta una de les dependències!",
+            "message3": "Nom de la dependència",
+            "message4": "Enllaç de descàrrega"
+        },
+        "update": {
+            "title": "&5▶ &cMCP&f&lTool &8&r| &f&lUpdate&5 ◀&f&l",
+            "checkingUpdates": "&a• &f&lBuscant actualitzacions de &cMCP&f&lTool..",
+            "newVersion": "&a• &f&lS'ha trobat una nova versió del programa.",
+            "notFound": "&a• &f&lEstàs utilitzant l'última versió del programa.",
+            "downloading": "&a• &f&lDescarregant la nova versió..",
+            "extracting": "&a• &f&lExtraient arxius..",
+            "finished": "&a• &f&lL'actualització ha sigut un èxit..",
+            "error": "&c• &f&lHi ha hagut un error inesperat. Iniciant &cMCP&f&lTool.."
+        },
+        "presentation": {
+            "mcptool": "Eina de Pentesting per Minecraft",
+            "description": "Realitza proves de seguretat en els teus servidors de &aMinecraft&f&l!",
+            "credits": "Creat per &b@wrrulos"
+        },
+        "menu": {
+            "message1": "Eina de Pentesting per &aMC",
+            "message2": "Creat per &b@wrrulos &8&r| &f&lv[0]",
+            "message3": "Utilitza &chelp &f&lper veure les ordres",
+            "message4": "&ahttps://www.mcptool.net",
+            "message5": "&f&lPer veure la llista d'ordres utilitza l'ordre &ahelp&f&l.",
+            "message6": "&f&lSi vols entrar al meu servidor de Discord, utilitza l'ordre &adiscord&f&l.",
+            "message7": "&f&lTambé pots visitar la pàgina de MCPTool: &bwww.mcptool.net"
+        },
+        "discord": {
+            "message1": "Entra al meu servidor de Discord per",
+            "message2": "Aconsegueix ajuda o informa d'un error sobre el programa.",
+            "message3": "Mantenta al dia amb els meus projectes.",
+            "message4": "També pots parlar amb mi a través del servidor.",
+            "message5": "Enllaç del servidor:"
+        },
+        "rcon": {
+            "title": "&f&l¡&cMCP&f&lTool està intentant endevinar la contrasenya del port RCON!",
+            "target": "&f&lObjectiu: &a[0]",
+            "passwordFile": "&f&lArxiu de contrasenyes: &a[0]",
+            "tryingPassword": "&f&lIntentant la contrasenya: &c[0]",
+            "passwordFound": "&aLa contrasenya és: &b[0]",
+            "passwordNotFound": "&cLa contrasenya no es pot trobar a la llista de contrasenyes.",
+            "timeout": "&cHa passat molt de temps i el servidor no respon",
+            "connectionRefused": "&f&lError en connectar-se: &cConnexió Rebutjada.",
+            "stopping": "&f&lDetenen l'atac..",
+            "error": "&f&lError inesperat en intentar connectar-se: &c[0]"
+        }
+    },
+    "commands": {
+        "usage": "[&c!&f&l] Ús de les ordres: ",
+        "error": "&4[&cERR&f&lOR&r&4] ",
+        "ctrlC": "[&c!&f&l] L'ordre s'ha detingut de forma forçosa.",
+        "invalidArguments": {
+            "invalidServer": "&f&lEl servidor ingressat està apagat o no existeix.",
+            "invalidIP": "&f&lLa IP ingressada no es valida!",
+            "invalidIpRange": "&f&lEl rang d'IP (&c[0]&f&l) ingressat no és vàlid!",
+            "invalidPorts": "&f&lEl rang de ports (&c[0]&f&l) ingressats no és vàlid!",
+            "invalidDomain": "&f&lEl domini no és ingressat!",
+            "invalidScanMethod": "&f&lThe entered scan method is not valid!",
+            "invalidBotArgument": "&f&lHas d'ingressar una opció vàlida pel checker! (&ay or n&f&l)",
+            "invalidProxyFile": "&f&lL'arxiu proxy ingressat no existeix!",
+            "invalidFile": "&f&lL'arxiu &b[0] &f&lno existeix!",
+            "invalidPageArgument": "&f&lHas d'ingressar un nombre vàlid de pàgines!",
+            "invalidversió": "&f&lLa versió ingressada no es valida.",
+            "invalidDelay": "&f&lEl temps d'espera no és vàlid.",
+            "invalidLoopArgument": "&f&lHas d'ingressar una opció vàlida pel bucle! (&ay or n&f&l)",
+            "invalidLanguage": "&f&lL'idioma ingressat no és vàlid.",
+            "invalidRconPassword": "&f&lLa contrasenya de RCON és incorrecta.",
+            "invalidForwardingMode": "&f&lHas d'ingressar una manera de reenviar vàlida! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "message": "&f&lPer a més informació visita la guia: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "usage": "server <ip:port/dominio>"
+        },
+        "player": {
+            "missingArgument1": "&cHas d'ingressar un usuari!",
+            "onlineUUID": "&f&lUUID &ePremium&f&l:&e",
+            "offlineUUID": "&f&lUUID &cNo-Premium&f&l:&c",
+            "usage": "player <usuari>"
+        },
+        "ipinfo": {
+            "missingArgument1": "&cHas d'ingressar una adreça IP!",
+            "result1": "&cConti&f&lnent",
+            "result2": "&cPa&f&lís",
+            "result3": "&cReg&f&lió",
+            "result4": "&cCiu&f&ltat",
+            "result5": "&cIS&f&lP",
+            "result6": "&cA&f&lS",
+            "result7": "&cDNS in&f&lverso",
+            "usage": "ipinfo <ip>"
+        },
+        "reverseip": {
+            "missingArgument1": "&cHas d'ingressar una adreça IP!",
+            "notFound": "&f&lNo s'han trobat resultats.",
+            "result": "&4[&cHO&f&lST&4]",
+            "usage": "reverseip <ip>"
+        },
+        "dnslookup": {
+            "missingArgument1": "&cHas d'ingressar un domini!",
+            "withoutResults": "&f&lNo s'han trobat resultats.",
+            "usage": "dnslookup <domini>"
+        },
+        "search": {
+            "missingArgument1": "&cHas d'ingressar dades per la recerca!",
+            "scanning": "&f&lBuscant servidors que continguin les següents dades ►",
+            "serversNotFound": "&f&lNo s'han trobat servidors amb les dades especificades.",
+            "ipsFound": "&f&lS'han trobat &a[0] &f&ladreces IP que contenen les següents dades(&b[1]&f&l).",
+            "checkingServers": "&f&lComprovant quines d'aquestes adreces IP pertanyen a un servidor de Minecraft..",
+            "usage": "search <dades>"
+        },
+        "websearch": {
+            "missingArgument1": "&cHas d'ingressar l'etiqueta per la cerca!",
+            "missingArgument2": "&cHas d'especificar si desitges que s'enviï un bot per verificar si es pot ingressar al servidor.",
+            "searching": "&f&lBuscant servidors amb l'etiqueta &a[0]&f&l en les pàgines més populars..",
+            "webSearch": "&f&lBuscant servidors a la pàgina &b[0]",
+            "serversNotFound": "&f&lNo s'han trobat servidors amb l'etiqueta especificada en les pàgines.",
+            "checkingServers": "&a[0] &f&lservidors obtinguts de les pàgines.",
+            "usage": "websearch <tag> <bot> &7[<arxiuProxy>]"
+        },
+        "scan": {
+            "missingArgument1": "&cHas d'ingressar una adreça IP!",
+            "missingArgument2": "&cHas d'ingressar un rang de ports!",
+            "missingArgument3": "&cHas d'ingressar un mètode d'escaneig!",
+            "missingArgument4": "&cHas d'especificar si desitges que s'enviï un bot per verificar si es pot ingressar al servidor.",
+            "noIpsFound": "&f&lNo s'han trobat adreces IP a l'arxiu!",
+            "nmapNotInstalled": "&f&l¡Has d'instal·lar &anmap &f&lper utilitzar aquest mètode!",
+            "masscanNotInstalled": "&f&l¡Has d'instal·lar &amasscan &f&lper utilitzar aquest mètode!",
+            "scanning1": "&f&lEscanejant l'adreça IP &a[0]&f&l..",
+            "scanning2": "&f&lEscanejant el rang de la IP &a[0]&f&l..",
+            "scanning3": "&f&lEscanejant les adreces IP trobades a l'arxiu &a[0] &f&l(&a[1] &f&ladreces IP).",
+            "checkingPorts": "&f&lS'han trobat &a[0] &f&lports oberts! Comprovant quins pertanyen a servidors de Minecraft..",
+            "noPortsFound": "&f&lL'escaneig ha finalitzat i no s'han trobat ports en les adreces IP!",
+            "usage": "scan <ip> <ports> <mètodeD'Escaneig> <bot> &7[<arxiuProxy>]"
+        },
+        "subdomains": {
+            "missingArgument1": "&cHas d'ingressar un domini!",
+            "missingArgument2": "&cHas d'ingressar un arxiu que contingui la llista de subdominis!",
+            "lookingForSubdomains": "&f&lBuscant subdominis de [0]..",
+            "found": "&f&lSubdomain found: &a[0] &7(&f&l[1]&7)",
+            "subdomainsFound": "&f&lLa cerca ha acabat i s'han trobat &a[0] &f&lsubdominis.",
+            "subdomainsNotFound": "&f&lNo s'han trobat subdominis..",
+            "checkingServers": "&a[0] &f&lservidors obtinguts des de la pàgina d'Aternos..",
+            "usage": "subdomains <domini> <arxiuDeSubdominis>"
+        },
+        "checker": {
+            "missingArgument1": "&cHas d'ingressar un arxiu!",
+            "missingArgument2": "&cHas d'especificar si desitges que s'enviï un bot per verificar si es pot ingressar al servidor.",
+            "noServersInTheFile": "&f&lNo s'han trobat adreces IP a l'arxiu!",
+            "foundServers": "&f&lS'han trobat &a[0] &f&lservidors a l'arxiu.",
+            "checking": "&f&lComprovant servidors..",
+            "usage": "checker <arxiu> <bot> &7[<arxiuProxy>]"
+        },
+        "listening": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "waitingForPlayers": "&f&lEsperant jugadors..",
+            "foundPlayers": "&f&lJugadors capturats:",
+            "usage": "listening <ip:port/domini>"
+        },
+        "playerlogs": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "waitingForPlayers": "&f&lEsperant jugadors..",
+            "connectedUser": "&4[&a[0]&4] &a▲ &f&lL'usuari &b&l[1] &f&lha entrat al servidor.",
+            "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lL'usuari &b&l[1] &f&lha marxat del servidor.",
+            "usage": "playerlogs <ip:port/domini>"
+        },
+        "waterfall": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "usage": "waterfall <ip:port>"
+        },
+        "velocity": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&c¡Has d'ingressar un mode de enviï!",
+            "usage": "velocity <ip:port> <forwarding-mode>"
+        },
+        "fakeproxy": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&c¡Has d'ingressar un mode de enviï!",
+            "copyingData": "&f&lCopiant dades del servidor especificat..",
+            "errorWhenCopying": "&f&lNo s'han pogut copiar les dades del servidor especificat. ¿El servidor ingressat és correcte?",
+            "errorBedrockServer": "&f&lAquesta ordre només es pot utilitzar en servidors Java.",
+            "ngrokStart": "&f&lIniciant servidor de ngrok..",
+            "ipNgrokError": "&f&lNo s'ha pogut obtenir la IP de ngrok.",
+            "ngrokNotFound": "&f&lNGROK no està instal·lat. (¡No pots tenir una IP de Ngrok!)",
+            "waitingForData": "&f&lEsperant les dades..",
+            "connecting": "[0] ha entrat al servidor.",
+            "disconnecting": "[0] s'ha desconnectat del servidor.",
+            "messageCaptured": "[0] ha escrit un missatge:",
+            "commandCaptured": "[0] ha executat una ordre:",
+            "usage": "fakeproxy <ip:port> <forwarding-mode>"
+        },
+        "connect": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&c¡Has d'ingressar un nom d'usuari pel bot!",
+            "missingArgument3": "&c¡Has d'ingressar la versió que utilitzarà el bot per connectar-se al servidor!",
+            "usage": "connect <ip:port> <usuari> <versió> &7[<arxiuProxy>]"
+        },
+        "rcon": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&c¡Has d'ingressar la contrasenya RCON!",
+            "connecting": "&f&lIntentant connectar..",
+            "timeout": "&f&lEl servidor no ha donat una resposta a temps. (Timeout)",
+            "refusedConnection": "&f&lEl servidor ha rebutjat la connexió.",
+            "establishedConnection": "&f&lLa connexió amb el servidor s'ha establert correctament.",
+            "command": "&f&lOrdre: ",
+            "stopping": "&f&lDetenen la connexió..",
+            "usage": "rconnect <ip:portRcon> <contrasenya>"
+        },
+        "rconbrute": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&c¡Has d'ingressar un arxiu de contrasenya!",
+            "emptyFile": "&f&lNo s'han trobat contrasenyes disponibles a l'arxiu.",
+            "preparingTheAttack": "&f&lPreparant l'atac de força bruta (&cRCON&f&l)..",
+            "numberOfPasswords": "&f&lArxiu seleccionat: &a[0] &f&l(&a[1] contrasenyes&f&l)",
+            "startingTheAttack": "&f&lIniciant l'atac..",
+            "usage": "rcon <ip:portRcon> <arxiuDeContrasenyes> <delay>"
+        },
+        "login": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&cHas d'ingressar un usuari!",
+            "missingArgument3": "&c¡Has d'ingressar la versió del servidor!",
+            "missingArgument4": "&c¡Has d'ingressar un arxiu de contrasenya!",
+            "startingTheAttack": "&f&lEnviant el bot per iniciar l'atac..",
+            "usage": "login <ip:port> <usuari> <versió> <arxiuDeContresenyes> &7[<arxiuProxy>]"
+        },
+        "pinlogin": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&cHas d'ingressar un usuari!",
+            "missingArgument3": "&c¡Has d'ingressar la versió del servidor!",
+            "missingArgument4": "&c¡Has d'ingressar un arxiu de contrasenya!",
+            "startingTheAttack": "&f&lEnviant el bot per iniciar l'atac..",
+            "usage": "pinlogin <ip:port> <usuari> <versió> <arxiuDeContresenyes> &7[<arxiuProxy>]"
+        },
+        "kick": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&cHas d'ingressar un usuari!",
+            "missingArgument3": "&c¡Has d'ingressar la versió del servidor!",
+            "missingArgument4": "&c¡Has d'especificar si vols que l'atac sigui infinit!",
+            "startingTheAttack": "&f&lExpulsant a l'usuari..",
+            "usage": "kick <ip:port> <usuari> <versió> <loop> &7[<arxiuProxy>]"
+        },
+        "kickall": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&c¡Has d'ingressar la versió del servidor!",
+            "missingArgument3": "&c¡Has d'especificar si vols que l'atac sigui infinit!",
+            "noPlayers": "&f&lNo hi ha jugadors connectats en el servidor.",
+            "startingTheAttack": "&f&lKicking the user..",
+            "usage": "kickall <ip:port> <versió> <loop> &7[<arxiuProxy>]"
+        },
+        "sendcmd": {
+            "missingArgument1": "&cHas d'ingressar un servidor!",
+            "missingArgument2": "&cHas d'ingressar un usuari!",
+            "missingArgument3": "&c¡Has d'ingressar la versió del servidor!",
+            "missingArgument4": "&c¡Has d'ingressar un arxiu que contingui les ordres que executarà el bot!",
+            "missingArgument5": "&c¡Has d'especificar si vols que l'atac sigui infinit!",
+            "emptyFile": "&f&lNo s'han trobat ordres disponibles a l'arxiu.",
+            "startingTheAttack": "&f&lEnviant al bot..",
+            "usage": "sendcmd <ip:port> <usuari> <versió> <arxiuDeOrdres> <loop> &7[<arxiuProxy>]"
+        },
+        "reload": {
+            "reloading": "&f&lS'ha recarregat l'arxiu de configuració."
+        },
+        "language": {
+            "missingArgument1": "&cHas d'ingressar un idioma!",
+            "languageInUse": "&f&lL'idioma ingressat ja està seleccionat!",
+            "languageList": "&f&lLlista d'idiomes disponibles: &a[0]",
+            "changeOfLanguage": "&f&lL'idioma ha sigut canviat correctament a &a[0]&f&l. ¡Has de reiniciar el programa per veure els canvis!",
+            "usage": "language <idioma>"
+        }
+    },
+    "versionFileMessages": {
+        "updateFailed": "&c&lHi ha hagut un error en intentar trobar la nova versió. &f&lExecutant la versió actual..",
+        "updateCheck": "&f&lBuscant una nova versió de &aversiós.json&f&l..",
+        "updateAvailable": "&a¡Nova versió trobada!",
+        "downloadingUpdate": "&f&lDescarregant la nova versió..",
+        "updateCompleted": "&f&lS'ha instal·lat la nova versió de &bversiós.json&f&l.",
+        "noUpdatesFound": "&f&lNo s'han trobat noves versions disponibles."
+    },
+    "proxyMessages": {
+        "configuring": "&f&lConfigurant el servidor proxy..",
+        "updateFailed": "&c&lHi ha hagut un error en intentar trobar la nova versió. &f&lExecutant la versió actual..",
+        "updateCheck": "&f&lBuscant una nova versió de &a[0].jar&f&l..",
+        "updateAvailable": "&a¡Nova versió de &b[0] &atrobada!",
+        "downloadingUpdate": "&f&lDescarregant la nova versió..",
+        "updateCompleted": "&f&lS'ha instal·lat la nova versió def &b[0]&f&l",
+        "noUpdatesFound": "&f&lNo s'han trobat noves versions disponibles.",
+        "starting": "&f&lIniciant servidor proxy..",
+        "stopping": "&f&lDetenen servidor proxy..",
+        "proxyServerStarted": "&f&l[&a>&f&l] El servidor proxy s'ha iniciat correctament a &a[0]&f&l.",
+        "proxyServerNotStartup": "&f&l[&a>&f&l] El servidor proxy no sembla iniciar-se correctament. ¿Tens Java 17 o superior instal·lat en el teu sistema? Si ho tens i l'error encara hi és. Reporta això en el servidor de discord."
+    }
+}

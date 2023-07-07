@@ -1,0 +1,313 @@
+{
+    "languageName": "Slovenčina",
+    "title": "MCPTool - @wrrulos",
+    "input": "&croot@mcptool:~/MCPTool/ &8&r▶ &f&l",
+    "termux_input": "&croot@mcptool &8&r▶ &f&l",
+    "prefix": "&f&l[&c#&f&l] ",
+    "invalidCommand": "&cNeplatný príkaz. &f&lPoužite &ahelp&f&l pre zobrazenie dostupných príkazov.",
+    "scanFinished1": "&f&lPríkaz bol dokončený a &a[0]&f&l Minecraft serverov bolo nájdených!",
+    "scanFinished2": "&f&lPríkaz bol dokončený a &a[0]&f&l Minecraft serverov bolo nájdených! (&c[1]&f&l timeout)",
+    "apiConnectionError": "&cNepodarilo sa vytvoriť spojenie s API. Skúste to znova neskôr.",
+    "proxyTimeout": "Zadaný proxy server neodpovedal včas. (timeout)",
+    "showTimedOutServer": "&cTimeout",
+    "stopping": "Zastavuje sa..",
+    "shodanInvalidApiKey": "&f&lZadaný API kľúč nie je platný! Skontrolujte konfiguračný súbor.",
+    "hackerTargetInvalidApiKey": "&f&lZadaný API kľúč nie je platný! Skontrolujte konfiguračný súbor.",
+    "hackerTargetApiLimitExceeded": "&f&lUž nemáte k dispozícii žiadne požiadavky na API! Ak chcete získať viac požiadaviek, musíte si zakúpiť plán na stránke &ahttps://hackertarget.com &f&la zadať API kľúč do konfiguračného súboru programu MCPTool",
+    "banners": {
+        "dependencies": {
+            "message1": "&cMCP&f&lTool sa nemohol spustiť, pretože jeden z",
+            "message2": "balíkov potrebných pre spustenie chýba!",
+            "message3": "Názov balíka",
+            "message4": "Odkaz na stiahnutie"
+        },
+        "update": {
+            "title": "&5▶ &cMCP&f&lTool &8&r| &f&lAktualizácia&5 ◀&f&l",
+            "checkingUpdates": "&a• &f&lKontrolujú sa aktualizácie programu &cMCP&f&lTool..",
+            "newVersion": "&a• &f&lBola nájdená nová verzia programu.",
+            "notFound": "&a• &f&lPoužívate najnovšiu verziu programu.",
+            "downloading": "&a• &f&lSťahuje sa nová verzia..",
+            "extracting": "&a• &f&lExtrahujú sa archívy..",
+            "finished": "&a• &f&lAktualizácia bola úspešná..",
+            "error": "&c• &f&lVyskytla sa neočakávaná chyba. &cMCP&f&lTool sa reštartuje.."
+        },
+        "presentation": {
+            "mcptool": "Nástroj na penetračné testovanie pre Minecraft",
+            "description": "Vykonajte bezpečnostné testy na svojich &aMinecraft&f&l serveroch!",
+            "credits": "Vytvoril &b@wrrulos"
+        },
+        "menu": {
+            "message1": "Nástroj na penetračné testovanie pre &aMC",
+            "message2": "Vytvoril &b@wrrulos &8&r| &f&lv[0]",
+            "message3": "Použite &chelp&f&l pre zobrazenie dostupných príkazov.",
+            "message4": "&ahttps://www.mcptool.net",
+            "message5": "&f&lPre zobrazenie dostupných príkazov použite príkaz &ahelp&f&l.",
+            "message6": "&f&lAk sa chcete pripojiť na môj discord server, použite príkaz &adiscord&f&l.",
+            "message7": "&f&lTaktiež môžete navštíviť stránku MCPTool: &bwww.mcptool.net"
+        },
+        "discord": {
+            "message1": "Pripojte sa na môj discord server pre",
+            "message2": "Získanie pomoci alebo nahlásenie chýb v nástroji.",
+            "message3": "Informácie o mojich projektoch.",
+            "message4": "Taktiež sa môžete so mnou cez server porozprávať.",
+            "message5": "Odkaz na server:"
+        },
+        "rcon": {
+            "title": "&f&l¡&cMCP&f&lTool sa pokúša uhádnuť heslo od RCON portu!",
+            "target": "&f&lCieľ: &a[0]",
+            "passwordFile": "&f&lSúbor s heslami: &a[0]",
+            "tryingPassword": "&f&lSkúšanie hesla: &c[0]",
+            "passwordFound": "&aHeslo je: &b[0]",
+            "passwordNotFound": "&cHeslo nebolo nájdené v súbore s heslami.",
+            "timeout": "&cUž je to dlho a server stále neodpovedal",
+            "connectionRefused": "&f&lChyba pri pripájaní: &cSpojenie zamietnuté.",
+            "stopping": "&f&lÚtok sa zastavuje..",
+            "error": "&f&lPri pokuse o pripojenie sa vyskytla neočakávaná chyba: &c[0]"
+        }
+    },
+    "commands": {
+        "usage": "[&c!&f&l] Použitie: ",
+        "error": "&4[&cCHY&f&lBA&r&4] ",
+        "ctrlC": "[&c!&f&l] Príkaz bol násilne zastavený.",
+        "invalidArguments": {
+            "invalidServer": "&f&lZadaný server je offline alebo neexistuje.",
+            "invalidIP": "&f&lZadaná IP adresa nie je platná!",
+            "invalidIpRange": "&f&lZadaný rozsah IP adries (&c[0]&f&l) nie je platný!",
+            "invalidPorts": "&f&lZadaný rozsah portov (&c[0]&f&l) nie je platný!",
+            "invalidDomain": "&f&lZadaná doména nie je platná!",
+            "invalidScanMethod": "&f&lZadaná skenovacia metóda nie je platná!",
+            "invalidBotArgument": "&f&lMusíte zadať platnú možnosť pre checker! (&ay alebo n&f&l)",
+            "invalidProxyFile": "&f&lZadaný proxy server nie je platný!",
+            "invalidFile": "&f&lSúbor &b[0] &f&l neexistuje!",
+            "invalidPageArgument": "&f&lMusíte zadať platný počet stránok!",
+            "invalidVersion": "&f&lZadaná verzia nie je platná.",
+            "invalidDelay": "&f&lZadaná čakacia doba nie je platná.",
+            "invalidLoopArgument": "&f&lMusíte zadať platnú možnosť pre cyklus! (&ay alebo n&f&l)",
+            "invalidLanguage": "&f&lZadaný jazyk nie je platný.",
+            "invalidRconPassword": "&f&lZadané heslo od RCON-u je nesprávne.",
+            "invalidForwardingMode": "&f&lMusíte zadať platný režim presmerovania! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "message": "&f&lPre viac informácií navštívte sprievodcu: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "usage": "server <ip:port/doména>"
+        },
+        "player": {
+            "missingArgument1": "&cMusíte zadať používateľské meno!",
+            "onlineUUID": "&f&lUUID &ePremium&f&l:&e",
+            "offlineUUID": "&f&lUUID &cNo-Premium&f&l:&c",
+            "usage": "player <používateľské meno>"
+        },
+        "ipinfo": {
+            "missingArgument1": "&cMusíte zadať IP adresu!",
+            "result1": "&cKonti&f&lnent",
+            "result2": "&cKraj&f&lina",
+            "result3": "&cReg&f&lión",
+            "result4": "&cMes&f&lto",
+            "result5": "&cIS&f&lP",
+            "result6": "&cA&f&lS",
+            "result7": "&cSpätné &f&lDNS",
+            "usage": "ipinfo <ip>"
+        },
+        "reverseip": {
+            "missingArgument1": "&cMusíte zadať IP adresu!",
+            "notFound": "&f&lNeboli nájdené žiadne výsledky.",
+            "result": "&4[&cHOST&f&lITEĽ&4]",
+            "usage": "reverseip <ip>"
+        },
+        "dnslookup": {
+            "missingArgument1": "&cMusíte zadať doménu!",
+            "withoutResults": "&f&lNeboli nájdené žiadne výsledky.",
+            "usage": "dnslookup <doména>"
+        },
+        "search": {
+            "missingArgument1": "&cMusíte zadať údaje na vyhľadanie!",
+            "scanning": "&f&lHľadajú sa servery obsahujúce nasledujúce údaje ►",
+            "serversNotFound": "&f&lNeboli nájdené žiadne servery obsahujúce zadané údaje.",
+            "ipsFound": "&f&lBolo nájdených &a[0] &f&lIP adries obsahujúcich zadané údaje (&b[1]&f&l).",
+            "checkingServers": "&f&lKontroluje sa, ktoré z týchto IP adries patria Minecraft serverom..",
+            "usage": "search <údaje>"
+        },
+        "websearch": {
+            "missingArgument1": "&cPre vyhľadávanie musíte zadať označenie serveru!",
+            "missingArgument2": "&cMusíte určiť, či chcete poslať robota, aby skontroloval, či sa na server dá pripojiť.",
+            "searching": "&f&lHľadajú sa servery s označením &a[0]&f&l na najpopulárnejších stránkach..",
+            "webSearch": "&f&lHľadajú sa servery na stránke &b[0]",
+            "serversNotFound": "&f&lNeboli nájdené žiadne servery so zadaným označením.",
+            "checkingServers": "&f&lZo stránok bolo získaných &a[0]&f&l serverov.",
+            "usage": "websearch <označenie> <robot> &7[<proxySúbor>]"
+        },
+        "scan": {
+            "missingArgument1": "&cMusíte zadať IP adresu!",
+            "missingArgument2": "&cMusíte zadať rozsah portov!",
+            "missingArgument3": "&cMusíte zadať skenovaciu metódu!",
+            "missingArgument4": "&cMusíte určiť, či chcete poslať robota, aby skontroloval, či sa na server dá pripojiť.",
+            "noIpsFound": "&f&lV súbore neboli nájdené žiadne IP adresy!",
+            "nmapNotInstalled": "&f&lPre použitie tejto skenovacej metódy musíte nainštalovať &anmap&f&l!",
+            "masscanNotInstalled": "&f&lPre použitie tejto skenovacej metódy musíte nainštalovať &amasscan&f&l!",
+            "scanning1": "&f&lSkenuje sa IP adresa &a[0]&f&l..",
+            "scanning2": "&f&lSkenuje sa rozsah IP adries &a[0]&f&l..",
+            "scanning3": "&f&lSkenujú sa IP adresy nájdené v súbore &a[0] &f&l(&a[1] &f&lIP adries).",
+            "checkingPorts": "&f&lBolo nájdených &a[0] &f&lotvorených portov! Kontroluje sa, ktoré z nich patria Minecraft serverom..",
+            "noPortsFound": "&f&lSkenovanie bolo dokončené a na IP adrese neboli nájdené žiadne otvorené porty!",
+            "usage": "scan <ip> <porty> <skenovaciaMetóda> <robot> &7[<proxySúbor>]"
+        },
+        "subdomains": {
+            "missingArgument1": "&cMusíte zadať doménu!",
+            "missingArgument2": "&cMusíte zadať súbor so zoznamom subdomén!",
+            "lookingForSubdomains": "&f&lHľadajú sa subdomény v [0]..",
+            "found": "&f&lNájdená subdoména: &a[0] &7(&f&l[1]&7)",
+            "subdomainsFound": "&f&lHľadanie sa skončilo a bolo nájdených &a[0] &f&lsubdomén.",
+            "subdomainsNotFound": "&f&lNeboli nájdené žiadne subdomény..",
+            "checkingServers": "&a[0] &f&lservidores obtenidos desde la pagina de aternos..",
+            "usage": "subdomains <dominio> <archivoDeSubdominios>"
+        },
+        "checker": {
+            "missingArgument1": "&cMusíte zadať súbor!",
+            "missingArgument2": "&cMusíte určiť, či chcete poslať robota, aby skontroloval, či sa na server dá pripojiť..",
+            "noServersInTheFile": "&f&lV súbore neboli nájdené žiadne IP adresy!",
+            "foundServers": "&f&lV súbore bolo nájdených &a[0] &f&lserverov.",
+            "checking": "&f&lKontrola serverov..",
+            "usage": "checker <súbor> <robot> &7[<proxySúbor>]"
+        },
+        "listening": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "waitingForPlayers": "&f&lČaká sa na hráčov..",
+            "foundPlayers": "&f&lZachytení hráči:",
+            "usage": "listening <ip:port/doména>"
+        },
+        "playerlogs": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "waitingForPlayers": "&f&lČaká sa na hráčov..",
+            "connectedUser": "&4[&a[0]&4] &a▲ &f&lPopoužívateľ &b&l[1] &f&lsa pripojil na server.",
+            "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lPopoužívateľ &b&l[1] &f&lsa odpojil zo servera.",
+            "usage": "playerlogs <ip:port/doména>"
+        },
+        "bungee": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "usage": "bungee <ip:port>"
+        },
+        "velocity": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať presmerovací mód!",
+            "usage": "velocity <ip:port> <presmerovacíMód>"
+        },
+        "fakeproxy": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať presmerovací mód!",
+            "copyingData": "&f&lKopírujú sa údaje zo zadaného servera..",
+            "errorWhenCopying": "&f&lNepodarilo sa skopírovať údaje zo zadaného servera. Je server zadaný správne?",
+            "errorBedrockServer": "&f&lTento príkaz je možné použiť iba na Java servery.",
+            "ngrokStart": "&f&lSpúšťa sa ngrok server..",
+            "ipNgrokError": "&f&lNepodarilo sa získať ngrok IP adresu.",
+            "ngrokNotFound": "&f&lNGROK nie je nainštalovaný. (Nemôžete mať ngrok IP adresu!)",
+            "waitingForData": "&f&lČaká sa na údaje..",
+            "connecting": "[0] sa pripojil na server.",
+            "disconnecting": "[0] sa odpojil zo servera.",
+            "messageCaptured": "[0] napísal správu:",
+            "commandCaptured": "[0] použil príkaz:",
+            "usage": "fakeproxy <ip:port> <presmerovacíMód>"
+        },
+        "connect": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľské meno pre robota!",
+            "missingArgument3": "&cMusíte zadať verziu, ktorú robot použije pre pripojenie na server!",
+            "usage": "connect <ip:port> <používateľskéMeno> <verzia> &7[<proxySúbor>]"
+        },
+        "rcon": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať heslo od RCON-u!",
+            "connecting": "&f&lPrebieha pokus o pripojenie..",
+            "timeout": "&f&lServer neodpovedal včas. (Timeout)",
+            "refusedConnection": "&f&lServer odmietol pripojenie.",
+            "establishedConnection": "&f&lSpojenie so serverom bolo vytvorené úspešne.",
+            "command": "&f&lPríkaz: ",
+            "stopping": "&f&lPripojenie bolo zrušené..",
+            "usage": "rcon <ip:rconPort> <heslo>"
+        },
+        "rconbrute": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať súbor obsahujúci zoznam hesiel!",
+            "emptyFile": "&f&lV súbore neboli nájdené žiadne heslá.",
+            "preparingTheAttack": "&f&lPripravuje sa útok hrubou silou (&cRCON&f&l)..",
+            "numberOfPasswords": "&f&lVybraný súbor: &a[0] &f&l(&a[1] hesiel&f&l)",
+            "startingTheAttack": "&f&lSpúšťanie útoku..",
+            "usage": "rconbrute <ip:rconPort> <súborSHeslami> <oneskorenie>"
+        },
+        "login": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľské meno!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte zadať súbor obsahujúci heslá!",
+            "startingTheAttack": "&f&lPosiela sa robot pre zahájenie útoku..",
+            "usage": "login <ip:port> <používateľskéMeno> <verzia> <súborSHeslami> &7[<proxySúbor>]"
+        },
+        "pinlogin": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľské meno!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte zadať súbor obsahujúci heslá!",
+            "startingTheAttack": "&f&lPosiela sa robot pre zahájenie útoku..",
+            "usage": "pinlogin <ip:port> <používateľskéMeno> <verzia> <súborSHeslami> &7[<proxySúbor>]"
+        },
+        "kick": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľské meno!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte určiť či chcete, aby bol útok nekonečný!",
+            "startingTheAttack": "&f&lVyhadzovanie používateľa..",
+            "usage": "kick <ip:port> <používateľskéMeno> <verzia> <nekonečný?> &7[<proxySúbor>]"
+        },
+        "kickall": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať verziu servera!",
+            "missingArgument3": "&cMusíte určiť či chcere, aby bol útok nekonečný!",
+            "noPlayers": "&f&lNa serveri nie sú žiadni hráči.",
+            "startingTheAttack": "&f&lVyhadzovanie používateľa..",
+            "usage": "kickall <ip:port> <verzia> <nekonečný?> &7[<proxySúbor>]"
+        },
+        "sendcmd": {
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľské meno!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte zadať súbor obsahujúci príkazy, ktoré má robot vykonať!",
+            "missingArgument5": "&cMusíte určiť či chcete, aby bol útok nekonečný!",
+            "emptyFile": "&f&lV súbore neboli nájdené žiadne dostupné príkazy.",
+            "startingTheAttack": "&f&lPríkazy sa posielajú robotovi..",
+            "usage": "sendcmd <ip:port> <používateľskéMeno> <verzia> <súborObsahujúciPríkazy> <opakovať?> &7[<proxySúbor>]"
+        },
+        "reload": {
+            "reloading": "&f&lKonfiguračný súbor bol znovu načítaný."
+        },
+        "language": {
+            "missingArgument1": "&cMusíte zadať jazyk!",
+            "languageInUse": "&f&lZadaný jazyk sa už používa!",
+            "languageList": "&f&lZoznam dostupných jazykov: &a[0]",
+            "changeOfLanguage": "&f&lJazyk bol úspešne zmenený na &a[0]&f&l. Ak chcete vidieť zmeny, musíte nástroj reštartovať!",
+            "usage": "language <jazyk>"
+        }
+    },
+    "versionFileMessages": {
+        "updateFailed": "&c&lHubo un error al intentar encontrar la nueva versión. &f&lEjecutando la versión actual..",
+        "updateCheck": "&f&lBuscando una nueva versión de &aVersions.json&f&l..",
+        "updateAvailable": "&a¡Nueva versión encontrada!",
+        "downloadingUpdate": "&f&lDescargando la nueva versión..",
+        "updateCompleted": "&f&lSe ha instalado la nueva versión de &bVersions.json&f&l.",
+        "noUpdatesFound": "&f&lNo se encontraron nuevas versiones disponibles."
+    },
+    "proxyMessages": {
+        "configuring": "&f&lKonfigurácia proxy servera..",
+        "updateFailed": "&c&lPri pokuse o vyhľadanie novej verzie nastala chyba. &f&lSpúšťa sa aktuálna verzia..",
+        "updateCheck": "&f&lPrebieha kontrola novej verzie súboru &a[0].jar&f&l..",
+        "updateAvailable": "&aBola nájdená nová verzia súboru &b[0]&a!",
+        "downloadingUpdate": "&f&lSťahuje sa nová verzia..",
+        "updateCompleted": "&f&lNová verzia súboru &b[0]&f&l bola úspešne nainštalovaná",
+        "noUpdatesFound": "&f&lNeboli nájdené žiadne nové verzie.",
+        "starting": "&f&lSpúšťanie proxy servera..",
+        "stopping": "&f&lZastavovanie proxy servera..",
+        "proxyServerStarted": "&f&l[&a>&f&l] Proxy server bol spustený úspešne na &a[0]&f&l.",
+        "proxyServerNotStartup": "&f&l[&a>&f&l] Zdá sa, že sa proxy server nespustil správne. Máte nainštalovanú verziu Java 17 a vyššiu? Ak áno a problém pretrváva, nahláste ho na discord serveri."
+    }
+}
