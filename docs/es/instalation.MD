@@ -102,7 +102,7 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 ## Windows
 
-Para instalar *Nmap* en **Windows** debe descargar la última versión desde su página oficial: https://ngrok.com/download
+Para instalar *Ngrok* en **Windows** debe descargar la última versión desde su página oficial: https://ngrok.com/download
 
 ## Linux
 
