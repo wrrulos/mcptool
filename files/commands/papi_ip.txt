@@ -1,0 +1,2 @@
+/papi ecloud download Pinger
+/papi parse me %pinger_isonline_127.0.0.1:25565%

@@ -1,0 +1,2 @@
+//br image https://i.imgur.com 25
+//br image 127.0.0.1:25565 25

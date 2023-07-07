@@ -1,0 +1,1 @@
+/litebans sqlexec SELECT * FROM litebans_history;
