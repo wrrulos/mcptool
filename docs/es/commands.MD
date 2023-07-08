@@ -259,6 +259,8 @@ Para usar este comando debe ingresar:
 ## Rcon
 El comando **rcon** te permite conectarte a un servidor de minecraft mediante rcon (solo si esta activado).
 
+![Rcon](../images/commands/rcon.png)
+
 Para usar este comando debe ingresar:
 </br>
 `rcon <ip:rconPort> <rconPassword>`
