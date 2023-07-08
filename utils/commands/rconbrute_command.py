@@ -39,20 +39,20 @@ def rconbrute_command(server, password_file, delay=None):
             return
         
     try:
-        paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rcon"]["preparingTheAttack"]}')
+        paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rconbrute"]["preparingTheAttack"]}')
         time.sleep(1)
 
         with open(password_file, 'r', encoding=check_encoding(password_file)) as f:
             passwords = f.readlines()
 
         if len(passwords) == 0:
-            paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rcon"]["emptyFile"]}')
+            paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rconbrute"]["emptyFile"]}')
             return
 
-        paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rcon"]["numberOfPasswords"].replace("[0]", password_file).replace("[1]", str(len(passwords)))}')
+        paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rconbrute"]["numberOfPasswords"].replace("[0]", password_file).replace("[1]", str(len(passwords)))}')
         time.sleep(1)
 
-        paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rcon"]["startingTheAttack"]}')
+        paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["commands"]["rconbrute"]["startingTheAttack"]}')
         time.sleep(1.5)
 
         logs.create(server, password_file)
@@ -110,7 +110,7 @@ def rconbrute_command(server, password_file, delay=None):
                     paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{rcon_connection_refused}')
 
                 except Exception as e:
-                    paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["banners"]["rcon"]["error"].replace("[0]", str(e))}')
+                    paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["banners"]["rconbrute"]["error"].replace("[0]", str(e))}')
                 
                 return
 
