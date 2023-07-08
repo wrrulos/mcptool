@@ -47,7 +47,7 @@ def rcon_command(server, password):
         if mcr is not None:
             mcr.disconnect()
 
-        paint(f'\n{get_spaces()}{str(language_manager.language["commands"]["ctrlC"])}')
+        paint(f'\n\n{get_spaces()}{str(language_manager.language["commands"]["ctrlC"])}')
         return
 
     except MCRconException:
