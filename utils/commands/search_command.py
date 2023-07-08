@@ -1,16 +1,13 @@
 import json
 import requests
 import shodan
-import traceback
 
 from utils.minecraft.check_servers import check_servers
-from utils.sounds.play_sound import play_sound
 from utils.color.text_color import paint
 from utils.managers.language_manager import language_manager
 from utils.gets.get_log_file import create_file
 from utils.managers.logs_manager import LogsManager
 from utils.managers.config_manager import config_manager
-from utils.minecraft.check_server import check_server
 from utils.gets.get_spaces import get_spaces
 
 
@@ -72,7 +69,14 @@ def search_command(*data):
         paint(f'\n{get_spaces()}{str(language_manager.language["commands"]["ctrlC"])}')
         return
 
-    except shodan.exception.APIError:
-        print(traceback.format_exc())
-        paint(f'\n{get_spaces()}{language_manager.language["commands"]["error"]}{language_manager.language["shodanInvalidApiKey"]}')
+    except shodan.exception.APIError as e:
+        if 'Invalid API key' in str(e):
+            paint(f'\n{get_spaces()}{language_manager.language["commands"]["error"]}{language_manager.language["shodanInvalidApiKey"]}')
+
+        elif 'Access denied' in str(e):
+            paint(f'\n{get_spaces()}{language_manager.language["commands"]["error"]}{language_manager.language["shodanApiKeyNoAccess"]}')
+        
+        else:
+            paint(f'\n{get_spaces()}{language_manager.language["commands"]["error"]}&f&lThe connection to the Shodan API could not be established.')
+
         return
