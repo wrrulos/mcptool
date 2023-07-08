@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import traceback
 import subprocess
 import time
 import sys
@@ -135,7 +134,6 @@ def menu():
                         commands[command](*arguments[1:])
 
                 except IndexError:
-                    traceback.print_exc()
                     paint(f'\n{get_spaces()}{language_manager.language["prefix"]}{language_manager.language["invalidCommand"]}')
 
         except EOFError:
