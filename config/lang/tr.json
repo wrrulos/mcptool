@@ -224,7 +224,7 @@
             "establishedConnection": "&f&lSunucuyla başarılı bir şekilde bağlantı kuruldu.",
             "command": "&f&lKomut: ",
             "stopping": "&f&lBağlantı durduruluyor...",
-            "usage": "rconnect <ip:rconPort> <şifre>"
+            "usage": "rcon <ip:rconPort> <şifre>"
         },
         "rconbrute": {
             "missingArgument1": "&cBir sunucu girmelisiniz!",
@@ -233,7 +233,7 @@
             "preparingTheAttack": "&f&lBrute force saldırısı hazırlanıyor (RCON)...",
             "numberOfPasswords": "&f&lSeçilen dosya: &a[0] &f&l(&a[1] şifre&f&l)",
             "startingTheAttack": "&f&lSaldırı başlatılıyor..",
-            "usage": "rcon <ip:portRcon> <şifreDosyası> <gecikme>"
+            "usage": "rconbrute <ip:portRcon> <şifreDosyası> <gecikme>"
         },
         "login": {
             "missingArgument1": "&c¡Bir sunucu girmelisiniz!",
