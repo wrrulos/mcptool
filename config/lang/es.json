@@ -224,7 +224,7 @@
             "establishedConnection": "&f&lLa conexión con el servidor se estableció correctamente.",
             "command": "&f&lComando: ",
             "stopping": "&f&lDeteniendo la conexión..",
-            "usage": "rconnect <ip:puertoRcon> <contraseña>"
+            "usage": "rcon <ip:puertoRcon> <contraseña>"
         },
         "rconbrute": {
             "missingArgument1": "&cDebe ingresar un servidor!",
@@ -233,7 +233,7 @@
             "preparingTheAttack": "&f&lPreparando el ataque de fuerza bruta (&cRCON&f&l)..",
             "numberOfPasswords": "&f&lArchivo seleccionado: &a[0] &f&l(&a[1] contraseñas&f&l)",
             "startingTheAttack": "&f&lIniciando el ataque..",
-            "usage": "rcon <ip:puertoRcon> <archivoDeContraseñas> <delay>"
+            "usage": "rconbrute <ip:puertoRcon> <archivoDeContraseñas> <delay>"
         },
         "login": {
             "missingArgument1": "&cDebe ingresar un servidor!",
