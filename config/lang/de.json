@@ -224,7 +224,7 @@
             "establishedConnection": "&f&lDie Verbindung zum Server wurde erfolgreich hergestellt.",
             "command": "&f&lBefehl: ",
             "stopping": "&f&lVerbindung wird unterbrochen.",
-            "usage": "rconnect <ip:portRcon> <Passwort>"
+            "usage": "rcon <ip:portRcon> <Passwort>"
         },
         "rconbrute": {
             "missingArgument1": "&cSie müssen einen Server eingeben!",
@@ -233,7 +233,7 @@
             "preparingTheAttack": "&f&lVorbereitung des RCON-Brute-Force-Angriffs..",
             "numberOfPasswords": "&f&lAusgewählte Datei: &a[0] &f&l(&a[1] Passwörter&f&l)",
             "startingTheAttack": "&f&lDen Angriff starten...",
-            "usage": "rcon <ip:portRcon> <Passwortdatei> <Verzögerung>"
+            "usage": "rconbrute <ip:portRcon> <Passwortdatei> <Verzögerung>"
         },
         "login": {
             "missingArgument1": "&cSie müssen einen Server eingeben!",
