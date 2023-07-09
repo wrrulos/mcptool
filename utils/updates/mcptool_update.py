@@ -37,17 +37,17 @@ def update_mcptool():
                 if u.extracting('../New-MCPTool/MCPTool.zip', '../New-MCPTool/'):
                     print_banner(update_banner_name, update_title, update_checking_updates, update_new_version, update_downloading, update_extracting, update_finished)
                     time.sleep(1)
-                    folders = os.listdir('../New-MCPTool')
-                    folder = folders[0]
+                    shutil.copytree('../New-MCPTool/MCPTool-main', '../NewMCPTool')
+                    shutil.rmtree('../New-MCPTool')
 
                     if os.path.exists('ngrok'):
-                        shutil.copy('ngrok', f'../New-MCPTool/{folder}/ngrok')
+                        shutil.copy('ngrok', f'../NewMCPTool/ngrok')
 
                     if os.path.exists('ngrok.exe'):
-                        shutil.copy('ngrok.exe', f'../New-MCPTool/{folder}/ngrok.exe')
+                        shutil.copy('ngrok.exe', f'../NewMCPTool/ngrok.exe')
                     
                     new_script = True
-                    subprocess.run(f'cd ../New-MCPTool/{folder}/ && {sys.executable} main.py', shell=True)
+                    subprocess.run(f'cd ../NewMCPTool/ && {sys.executable} main.py', shell=True)
                     sys.exit()
 
                 print_banner(update_banner_name, update_title, update_checking_updates, update_new_version, update_downloading, update_extracting, update_error)
@@ -63,6 +63,9 @@ def update_mcptool():
         return
     
     except requests.exceptions.InvalidURL:
+        return
+    
+    except FileExistsError:
         return
 
     except KeyboardInterrupt:
