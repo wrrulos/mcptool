@@ -224,7 +224,7 @@
             "establishedConnection": "&f&lThe connection to the server was successful.",
             "command": "&f&lCommand: ",
             "stopping": "&f&lStopping the connection..",
-            "usage": "rconnect <ip:Rconport> <password>"
+            "usage": "rcon <ip:Rconport> <password>"
         },
         "rconbrute": {
             "missingArgument1": "&cYou must enter a server!",
@@ -233,7 +233,7 @@
             "preparingTheAttack": "&f&lPreparing the bruteforce attack (&cRCON&f&l)..",
             "numberOfPasswords": "&f&lSelected file: &a[0] &f&l(&a[1] passwords&f&l)",
             "startingTheAttack": "&f&lInitiating the attack..",
-            "usage": "rcon <ip:Rconport> <passwordfile> <delay>"
+            "usage": "rconbrute <ip:Rconport> <passwordfile> <delay>"
         },
         "login": {
             "missingArgument1": "&cYou must enter a server!",
