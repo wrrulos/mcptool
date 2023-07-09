@@ -224,7 +224,7 @@
             "establishedConnection": "&f&lLa connexió amb el servidor s'ha establert correctament.",
             "command": "&f&lOrdre: ",
             "stopping": "&f&lDetenen la connexió..",
-            "usage": "rconnect <ip:portRcon> <contrasenya>"
+            "usage": "rcon <ip:portRcon> <contrasenya>"
         },
         "rconbrute": {
             "missingArgument1": "&cHas d'ingressar un servidor!",
@@ -233,7 +233,7 @@
             "preparingTheAttack": "&f&lPreparant l'atac de força bruta (&cRCON&f&l)..",
             "numberOfPasswords": "&f&lArxiu seleccionat: &a[0] &f&l(&a[1] contrasenyes&f&l)",
             "startingTheAttack": "&f&lIniciant l'atac..",
-            "usage": "rcon <ip:portRcon> <arxiuDeContrasenyes> <delay>"
+            "usage": "rconbrute <ip:portRcon> <arxiuDeContrasenyes> <delay>"
         },
         "login": {
             "missingArgument1": "&cHas d'ingressar un servidor!",
