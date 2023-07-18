@@ -80,7 +80,7 @@ def minecraft_colors(text):
     }
 
     for code in codes.items():
-        text = text.replace(code[0], f'&{code[1]}').replace(code[0], f'&{code[1]}')
+        text = text.replace(code[0], f'&{code[1]}')
 
     text = text.replace('<newline>', '\n')
     return text
