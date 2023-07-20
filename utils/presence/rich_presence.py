@@ -65,7 +65,7 @@ def rich_presence(mcptool_version):
         change_rp_status('False')
 
         time.sleep(3)
-        rpc = Presence('802529947368292404')
+        rpc = Presence('1127920414383943801')
         start_time = time.time()
         rpc.connect()
         change_rp_status('True')
