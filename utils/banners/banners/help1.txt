@@ -17,7 +17,7 @@
       &b► 14. &f&l&nvelocity&r <ip:port/domain> <forwarding-mode>                         &e⢰⠇⡄⠀⠀⠀⡿&f&l⢣⣀⣀⣀⡤⠴⡞⠉⠀&e⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀
       &b► 15. &f&l&nfakeproxy&r <ip:port/domain> <forwarding-mode>                        &e ⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉&f&l⠀⠀⠀⢹⠀⠀&e⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀
       &b► 16. &f&l&nconnect&r <ip:port> <username> <version> &7[<proxyFile>]                 &e⣿⠀⡇⠀⠀⠀⠀&f&l⠀⢀⡤⠤⠶⠶⠾⠤⠄&e⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
-      &b► 17. &f&l&nrcon&r <ip:rconPort> <rconPassword>]                                  &e ⡇⠀⡇⠀⠀⡀⠀&f&l⡴⠋⠀⠀⠀⠀⠀⠀⠀&e⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
+      &b► 17. &f&l&nrcon&r <ip:rconPort> <rconPassword>                                   &e ⡇⠀⡇⠀⠀⡀⠀&f&l⡴⠋⠀⠀⠀⠀⠀⠀⠀&e⠸⡌⣵⡀⢳⡇⠀⠀⠀⠀⠀⠀⢹⡀
       &b► 18. &f&l&nrconbrute&r <ip:rconPort> <passwordFile> &7[<delay>]                  &e   ⡇⠀⠇⠀⠀⡇&f&l⡸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠙⠮⢧⣀⣻⢂⠀⠀⠀⠀⠀⠀⢧
       &b► 19. &f&l&nlogin&r <ip:port> <username> <version> <passwordFile> &7[<proxyFile>] &e   ⣇⠀⢠⠀⠀⢳&f&l⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠈⡎⣆⠀⠀⠀⠀⠀⠘
       &b► 20. &f&l&npinlogin&r <ip:port> <username> <version> <digits> &7[<proxyFile>]    &e   ⢻⠀⠈⠰⠀&f&l⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⠀⠀⠰⠘⢮⣧⡀⠀⠀⠀⠀
