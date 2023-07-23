@@ -14,7 +14,7 @@
       &b► 11. &f&l&nchecker&r <file> <bot> &7[<proxyFile>]
       &b► 12. &f&l&nlistening&r <ip:port/domain>
       &b► 13. &f&l&nplayerlogs&r <ip:port/domain>
-      &b► 14. &f&l&nbungee&r <ip:port/domain>
+      &b► 14. &f&l&nwaterfall&r <ip:port/domain>
       &b► 15. &f&l&nvelocity&r <ip:port/domain> <forwarding-mode>
       &b► 16. &f&l&nfakeproxy&r <ip:port/domain> <forwarding-mode>
       &b► 17. &f&l&nconnect&r <ip:port> <username> <version> &7[<proxyFile>]
