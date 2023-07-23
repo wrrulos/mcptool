@@ -13,7 +13,7 @@
       &b► 10. &f&l&nchecker&r <file> <bot> &7[<proxyFile>]                                  &e ⡇&f&l⢀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀&e⡇⠀⠀⠀⠀⠀⠀⠀⠀⢸⠃⠀
       &b► 11. &f&l&nlistening&r <ip:port/domain>                                        &e  ⢸⠃&f&l⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&e⢸⠁⠀⠀⢀⠀⠀⠀⠀⠀⣾⠀⠀
       &b► 12. &f&l&nplayerlogs&r <ip:port/domain>                                         &e⣸⠀⠀&f&l⠹⡄⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀&e⡞⠀⠀⠀⠸⠀⠀⠀⠀⠀⡇⠀⠀
-      &b► 13. &f&l&nbungee&r <ip:port/domain>                                             &e⡏⠀⠀⠀&f&l⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶&e⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀
+      &b► 13. &f&l&nwaterfall&r <ip:port/domain>                                          &e⡏⠀⠀⠀&f&l⠙⣆⠀⠀⠀⠀⠀⠀⠀⢀⣠⢶&e⡇⠀⠀⢰⡀⠀⠀⠀⠀⠀⡇⠀⠀
       &b► 14. &f&l&nvelocity&r <ip:port/domain> <forwarding-mode>                         &e⢰⠇⡄⠀⠀⠀⡿&f&l⢣⣀⣀⣀⡤⠴⡞⠉⠀&e⢸⠀⠀⠀⣿⡇⠀⠀⠀⠀⠀⣧⠀⠀
       &b► 15. &f&l&nfakeproxy&r <ip:port/domain> <forwarding-mode>                        &e ⣸⠀⡇⠀⠀⠀⠀⠀⠀⠉&f&l⠀⠀⠀⢹⠀⠀&e⢸⠀⠀⢀⣿⠇⠀⠀⠀⠁⠀⢸⠀⠀
       &b► 16. &f&l&nconnect&r <ip:port> <username> <version> &7[<proxyFile>]                 &e⣿⠀⡇⠀⠀⠀⠀&f&l⠀⢀⡤⠤⠶⠶⠾⠤⠄&e⢸⠀⡀⠸⣿⣀⠀⠀⠀⠀⠀⠈⣇⠀
