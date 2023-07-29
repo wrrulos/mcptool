@@ -135,8 +135,7 @@ def extracting(file, location):
 def setup():
     """ Check and install the dependencies needed to use MCPTool. """
     
-    if os.name != 'nt':
-        print('\n[#] This installer was prepared for linux systems that have a package management system called APT. If you have another package manager, I recommend installing the missing dependencies manually.')
+    if check_termux():
         subprocess.run('apt update && apt upgrade -y', shell=True)
 
     print('\n[+] Installing the necessary python modules..')
