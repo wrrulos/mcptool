@@ -7,6 +7,16 @@ from utils.gets.get_spaces import get_spaces
 
 
 def check_servers(servers, bot, proxy_file, logs):
+    """
+    Check a list of Minecraft servers and display the results.
+
+    Parameters:
+        servers (list): A list of Minecraft servers to check.
+        bot: The bot instance.
+        proxy_file (str): The path to the proxy file.
+        logs (str): The path to the logs file.
+    """
+    
     servers_found = 0
     timed_out_servers_found = 0
 
