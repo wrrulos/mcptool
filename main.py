@@ -82,11 +82,13 @@ commands = {
 
 def change_last_command(command):
     """
-    change the last command of the 
-    RichPresence status.
+    Change the last command of the RichPresence status.
 
-    Parameters:
+    Args:
         command (str): Command.
+
+    Returns:
+        None
     """
 
     with open('utils/presence/richPresence.command', 'w+') as f:
@@ -96,8 +98,7 @@ def change_last_command(command):
 
 def menu():
     """
-    Allows the user to use the commands of the tool 
-    through inputs.
+    Allows the user to use the commands of the tool through inputs.
     """
 
     if os.name == 'nt':
