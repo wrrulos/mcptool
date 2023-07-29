@@ -15,8 +15,8 @@ def get_scan_method(method):
     if method == '0' or method == 'nmap':
         return 'nmap'
 
-    if method == '1' or method == 'old_qubo' or method == 'old_quboscanner':
-        return 'old_quboscanner'
+    if method == '1' or method == 'qubo' or method == 'quboscanner':
+        return 'quboscanner'
 
     if method == '2' or method == 'masscan':
         return 'masscan'
@@ -24,5 +24,3 @@ def get_scan_method(method):
     # It is not added because the latest version is very bad.
     #if method == '2' or method == 'new_qubo' or method == 'new_quboscanner':
     #    return 'new_quboscanner'
-
-
