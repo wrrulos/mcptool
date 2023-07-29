@@ -18,7 +18,7 @@ def check(command):
     """
     Check if the command is executed correctly.
 
-    Parameters:
+    Args:
         command (str): Command to be executed.
 
     Returns:
@@ -83,7 +83,7 @@ def ask(text):
     """
     Ask the user and expect their answer to be y or n.
 
-    Parameters:
+    Args:
         text (str): Text to be displayed to the user.
     """
 
@@ -101,7 +101,7 @@ def download(url, file_name):
     """
     Downloads the specified file from the provided URL and saves it with the given file name.
 
-    Parameters:
+    Args:
         url (str): URL of the file to be downloaded.
         file_name (str): File name to save the downloaded file as.
     """
@@ -115,7 +115,7 @@ def extracting(file, location):
     """
     Extracts the specified .zip file.
 
-    Parameters:
+    Args:
         file (str): Path to the .zip file to be extracted.
         location (str): Path to the directory where the contents of the .zip file will be extracted.
 
