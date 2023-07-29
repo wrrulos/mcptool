@@ -1,0 +1,9 @@
+colorama
+requests
+dnspython
+mcstatus
+mcrcon
+shodan
+pygame
+pypresence
+psutil
