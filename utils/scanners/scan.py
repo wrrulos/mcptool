@@ -37,7 +37,7 @@ def scan(target, ports, scan_method, bot=False, proxy_file=None, logs=None):
     command = get_scan_command(scan_method, target, ports)
 
     try:
-        if os.name != 'nt' and scan_method != 'new_quboscanner' and scan_method != 'old_quboscanner' and not check_termux():
+        if os.name != 'nt' and scan_method != 'quboscanner' and not check_termux():
             command = f'sudo {command}'
 
         # Create a subprocess for running the Nmap command.
@@ -55,7 +55,7 @@ def scan(target, ports, scan_method, bot=False, proxy_file=None, logs=None):
             invalid_ip_text = ['ERROR: bad IP address/range:']
             invalid_ports_text = []
 
-        if scan_method == 'old_quboscanner' or scan_method == 'new_quboscanner':
+        if scan_method == 'quboscanner':
             text_to_search = ')('
             pattern = r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d+\b'
             invalid_ip_text = ['Invalid IP range.']
