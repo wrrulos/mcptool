@@ -1,0 +1,9 @@
+/fill ~ ~ ~ ~50 ~20 ~29 minecraft:tnt
+/fill ~ ~ ~ ~3 ~3 ~3 minecraft:redstone_block
+/gamemode creative @a
+/tp @a @p'
+/clear @a'
+/stop
+/give @a minecraft:flint_and_steel
+/give @a minecraft:tnt
+/give @a minecraft:lava_bucket

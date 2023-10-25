@@ -1,0 +1,1 @@
+/svs import ../../server.properties
