@@ -22,7 +22,7 @@ Si desea ejecutar **setup.py** en modo debug, debe agregar el siguiente parametr
 
 # Instalación manual.
 
-## ⚫ Python 3
+## Python 3
 
 ## Windows
 
@@ -40,7 +40,7 @@ Puede instalar python3 usando el gestor de paquetes **apt**.
 
 </br>
 
-## ⚫ NodeJS
+## NodeJS
 
 
 **¡IMPORTANTE!** Debe instalar la versión recomendada de NodeJS.
@@ -62,7 +62,7 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 </br>
 
-## ⚫ Java 17
+## Java 17
 
 ## Windows
 
@@ -80,7 +80,7 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 </br>
 
-## ⚫ Nmap
+## Nmap
 
 ## Windows
 
@@ -96,7 +96,7 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 `pkg install nmap -y`
 
-## ⚫ Ngrok
+## Ngrok
 
 </br>
 
@@ -116,5 +116,5 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 </br>
 
-## ⚫ Masscan
+## Masscan
 https://github.com/robertdavidgraham/masscan
