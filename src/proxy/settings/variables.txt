@@ -1,0 +1,3 @@
+[[ADDRESS]] = IP
+[[PORT]] = PORT
+[[MODE]] = Velocity forwarding
