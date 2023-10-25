@@ -1,0 +1,24 @@
+{
+    "login": {
+        "loginCommand": "/login",
+        "reconnect": 4000,
+        "wordsToLogin": [
+            "wrong password!",
+            "login failed!",
+            "/login"
+        ],
+        "wordsAtLogin": [
+            "successful login",
+            "successfully logged in.",
+            "logueado",
+            "el sistema de logeo ha sido todo un",
+            "cuenta iniciada correctamente"
+        ]
+    },
+    "pinLogin": {
+        "reconnect": 4000,
+        "titleTextOnLogin": [
+            "Welcome"
+        ]
+    }
+}
