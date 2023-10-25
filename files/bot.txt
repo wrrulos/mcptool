@@ -1,3 +1,0 @@
-/register asd123
-hi
-xd
