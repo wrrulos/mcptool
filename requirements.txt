@@ -1,0 +1,9 @@
+requests
+colorama
+dnspython
+flask
+waitress
+aiohttp
+asyncio_dgram
+shodan
+pypresence
