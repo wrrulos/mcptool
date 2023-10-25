@@ -5,7 +5,6 @@ Lista de los comandos actuales de MCPTool.
 - [Server](#server)
 - [Player](#player)
 - [IPInfo](#ipinfo)
-- [ReverseIP](#reverseip)
 - [DNSLookup](#dnslookup)
 - [Search](#search)
 - [WebSearch](#websearch)
