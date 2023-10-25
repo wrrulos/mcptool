@@ -3,7 +3,7 @@
 #### MCPTool está programada en Python y NodeJS, pero también usa otras aplicaciones para ciertas funciones. Para usar MCPTool debe instalar lo siguiente:
 
 * Python 3
-* NodeJS
+* NodeJS (Recomendado)
 * Java 17 o superior. (Recomendado)
 * Nmap (Opcional)
 * Masscan (Opcional)
