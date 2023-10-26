@@ -25,8 +25,6 @@ Lista de los comandos actuales de MCPTool.
 - [Connect](#connect)
 - [Rcon](#rcon)
 
-
-- [Reload](#reload)
 - [Discord](#discord)
 
 ## Server
@@ -56,15 +54,6 @@ Para usar este comando debe ingresar:
 </br>
 `ipinfo <ip>`
 
-## ReverseIP
-El comando **reverseip** te permite obtener los dominios asociados a una ip en especifico.
-
-![ReverseIP](../images/commands/reverseip.png)
-
-Para usar este comando debe ingresar:
-</br>
-`reverseip <ip>`
-
 ## DNSLookup
 El comando **dnslookup** te permite obtener los registros dns de un dominio en especifico.
 
@@ -74,38 +63,34 @@ Para usar este comando debe ingresar:
 </br>
 `dnslookup <dominio>`
 
-## Search
-El comando **search** usa el buscador de Shodan para buscar servidores que contengan ciertos datos.
+## Shodan
+El comando **shodan** usa el buscador de Shodan para buscar servidores que contengan ciertos datos.
 
 **¡IMPORTANTE!** Para usar este comando debe ingresar una clave api de Shodan en el archivo de configuración de MCPTool.
 
-![Search](../images/commands/search.png)
+![Shodan](../images/commands/search.png)
 
 Para usar este comando debe ingresar:
 </br>
-`search <datos>`
+`shodan <datos>`
 
 También puede ingresar varios datos en un solo comando para realizar multiples busquedas. Los datos deben estar separados por **---**. Ejemplo:
 </br>
-`search spigot 1.8.8 --- spigot 1.19`
+`shodan spigot 1.8.8 --- spigot 1.19`
 
 ## WebSearch
-El comando **websearch** te permite buscar servidores de minecraft que contengan datos especificos en multiples páginas, además, puede especificar si quiere que un bot se conecte al servidor para comprobar si se puede ingresar.
-
-Los bots pueden conectarse a traves de servidores proxys. Más información en #.
+El comando **websearch** te permite buscar servidores de minecraft que contengan datos especificos en multiples páginas.
 
 ![WebSearch](../images/commands/websearch.png)
 
 Para usar este comando debe ingresar:
 </br>
-`websearch <tag> <bot> [<proxyFile>]`
+`websearch <tag>`
 
 **NOTA** En bot debe ingresar *y* o *n*.
 
 ## Scan
-El comando **scan** te permite realizar un escaneo para buscar puertos abiertos donde se alojen servidores de Minecraft. También puede especificar si quiere que un bot se conecte al servidor para comprobar si se puede ingresar.
-
-Los bots pueden conectarse a traves de servidores proxys. Más información en #.
+El comando **scan** te permite realizar un escaneo para buscar puertos abiertos donde se alojen servidores de Minecraft.
 
 ### **Rango de IP**
 Puede ingresar una IP normal como **127.0.0.1**.
@@ -140,9 +125,7 @@ En el argumento **method** puede ingresar el nombre del escaner o su respectivo 
 
 Para usar este comando debe ingresar:
 </br>
-`scan <ip> <ports> <method> <bot> [<proxyFile>]`
-
-**NOTA** En bot debe ingresar *y* o *n*.
+`scan <ip> <ports> <method>`
 
 ## Subdomains
 El comando **subdomains** te permite obtener los subdominios de un dominio.
@@ -154,15 +137,13 @@ Para usar este comando debe ingresar:
 `subdomains <dominio> <subdomainsFile>`
 
 ## Checker
-El comando **checker** te permite obtener los datos actuales de los servidores que se encuentren en una archivo de texto especificado. También puede especificar si quiere que un bot se conecte al servidor para comprobar si se puede ingresar.
-
-Los bots pueden conectarse a traves de servidores proxys. Más información en #.
+El comando **checker** te permite obtener los datos actuales de los servidores que se encuentren en una archivo de texto especificado. 
 
 ![Checker](../images/commands/checker.png)
 
 Para usar este comando debe ingresar:
 </b>
-`checker <file> <bot> [<proxyFile>]`
+`checker <file>`
 
 **NOTA** En bot debe ingresar *y* o *n*.
 
@@ -249,13 +230,11 @@ Para usar este comando debe ingresar:
 ## Connect
 El comando **connect** te permite conectarte a un servidor de minecraft mediante la terminal.
 
-El bot puede conectarse a traves de servidores proxys. Más información en #.
-
 ![Connect](../images/commands/connect.png)
 
 Para usar este comando debe ingresar:
 </br>
-`connect <ip:puerto> <user> <version> [<proxyFile>]`
+`connect <ip:puerto> <user> <version>`
 
 ## Rcon
 El comando **rcon** te permite conectarte a un servidor de minecraft mediante rcon (solo si esta activado).
@@ -271,7 +250,7 @@ El comando **rconbrute** te permite realizar un ataque de fuerza bruta al puerto
 
 Para usar este comando debe ingresar:
 </br>
-`rconbrute <ip:rconPort> <passwordFile> [<delay>]`
+`rconbrute <ip:rconPort> <passwordFile>`
 
 ## Login
 El comando **login** te permite realizar un ataque de fuerza bruta a un usuario de minecraft dentro de un servidor no premium para intentar adivinar su contraseña. (/login)
@@ -282,11 +261,9 @@ El comando **login** te permite realizar un ataque de fuerza bruta a un usuario 
 
 [!] Si el bot no prueba ninguna contraseña o si luego de probar una no hace nada más, es porque necesitas agregar más palabras en las listas correspondientes.
 
-El bot puede conectarse a traves de servidores proxys. Más información en #.
-
 Para usar este comando debe ingresar:
 </br>
-`login <ip:port> <username> <version> <passwordFile> [<proxyFile>]`
+`login <ip:port/dominio> <username> <version> <passwordFile>`
 
 ## PinLogin
 El comando **pinlogin** te permite realizar un ataque de fuerza bruta a un usuario de minecraft dentro de un servidor que use el plugin *AdvancedLogin*, para intentar adivinar su contraseña.
@@ -295,42 +272,34 @@ El comando **pinlogin** te permite realizar un ataque de fuerza bruta a un usuar
 
 **NOTA** Este comando usa la misma logica que el comando **[login](#login)**, pero en vez de textos, son titulos.
 
-El bot puede conectarse a traves de servidores proxys. Más información en #.
-
 Para usar este comando debe ingresar:
 </br>
-`pinlogin <ip:port> <username> <version> <digits> [<proxyFile>]`
+`pinlogin <ip:port/dominio> <username> <version> <digits>`
 
 ## Kick
 El comando **kick** te permite conectar un bot con un nombre en especifico. Esto es para desconectarlo en el caso de que el servidor expulse a los jugadores que inician sesión desde otra úbicación.
 
-El bot puede conectarse a traves de servidores proxys. Más información en #.
-
 Para usar este comando debe ingresar:
 </br>
-`kick <ip:port> <username> <version> <loop> [<proxyFile>]`
+`kick <ip:port> <username> <version> <loop>`
 
 **NOTA** En loop debe ingresar *y* o *n*.
 
 ## KickAll
 El comando **kickall** te permite conectar bots con el nombre de cada jugador que se encuentra en el servidor. Esto es para desconectarlos en el caso de que el servidor expulse a los jugadores que inician sesión desde otra úbicación.
 
-Los bots pueden conectarse a traves de servidores proxys. Más información en #.
-
 Para usar este comando debe ingresar:
 </br>
-`kickall <ip:port> <version> <loop> [<proxyFile>]`
+`kickall <ip:port> <version> <loop>`
 
 **NOTA** En loop debe ingresar *y* o *n*.
 
 ## SendCMD
 El comando **sendcmd** te permite conectar un bot que enviara una lista de mensajes o comandos que se encuentran en el archivo de texto especificado.
 
-El bot puede conectarse a traves de servidores proxys. Más información en #.
-
 Para usar este comando debe ingresar:
 </br>
-`sendcmd <ip:port> <username> <version> <file> <loop> [<proxyFile>]`
+`sendcmd <ip:port> <username> <version> <file> <loop>`
 
 **NOTA** En loop debe ingresar *y* o *n*.
 
@@ -356,10 +325,3 @@ El comando **discord** muestra el enlace de mi servidor de discord.
 Para usar este comando debe ingresar:
 </br>
 `discord`
-
-## Reload
-El comando **reload** actualiza el archivo de configuración, para que no sea necesario reiniciar la herramienta.
-
-Para usar este comando debe ingresar:
-</br>
-`reload`
