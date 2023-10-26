@@ -22,11 +22,13 @@ Si desea ejecutar **setup.py** en modo debug, debe agregar el siguiente parametr
 
 # Instalación manual.
 
-## ⚫ Python 3
+## ⚫ Python 3 
 
 ## Windows
 
 Para instalar *Python 3* en **Windows** debe descargar la última versión desde su página oficial: https://www.python.org/
+
+# Version recomendada: https://www.python.org/downloads/release/python-31010/
 
 ## Linux
 
