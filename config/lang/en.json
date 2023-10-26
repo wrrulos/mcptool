@@ -45,7 +45,7 @@
         "error": "&4[&cERROR&r&4] ",
         "ctrlC": "[&c!&f&l] The command has been forcefully terminated.",
         "commandUsage": "&f&lCommand Usage:",
-        "gettingDataFromServer": "&f&lFetching data from the server...",
+        "gettingDataFromServer": "&f&lGetting data from the server...",
         "errorBedrockServer": "&f&lThis command can only be used with Java servers.",
         "serversFound": "&f&lThe command completed, and &a&l[0]&f&l servers were found.",
         "serversNotFound": "&f&lThe command completed, and no servers were found.",
