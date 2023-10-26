@@ -13,6 +13,6 @@ Esto se debe a que masscan y el comando de nmap que viene por defecto requieren 
 
 Si deseas utilizar el comando de nmap sin necesidad de permisos de administrador, puedes eliminar el argumento -sS del archivo de configuración config/config.json. Al hacerlo, nmap utilizará un escaneo diferente, como el escaneo TCP Connect (-sT), que no requiere privilegios de root.
 
-### El comando Search no está funcionando correctamente a pesar de haber ingresado una clave de API válida.
+### El comando Shodan no está funcionando correctamente a pesar de haber ingresado una clave de API válida.
 
 El problema que estás experimentando se debe a que tu clave de API de Shodan no tiene acceso a las funcionalidades de búsqueda. Es posible que necesites una clave de API con privilegios más amplios para poder realizar búsquedas.
