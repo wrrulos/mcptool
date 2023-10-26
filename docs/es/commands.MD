@@ -3,32 +3,34 @@
 Lista de los comandos actuales de MCPTool.
 
 - [Server](#server)
-- [Player](#player)
+- [Uuid](#uuid)
 - [IPInfo](#ipinfo)
 - [DNSLookup](#dnslookup)
-- [Search](#search)
+- [Shodan](#shodan)
 - [WebSearch](#websearch)
-- [Scan](#scan)
 - [Subdomains](#subdomains)
-- [Checker](#checker)
+- [Scan](#scan)
 - [Listening](#listening)
 - [PlayerLogs](#playerlogs)
-- [Waterfall](#waterfall)
-- [Velocity](#velocity)
 - [FakeProxy](#fakeproxy)
-- [Connect](#connect)
-- [Rcon](#rcon)
-- [RconBrute](#rconbrute)
 - [Login](#login)
 - [PinLogin](#pinlogin)
+- [SendCMD](#sendcmd)
 - [Kick](#kick)
 - [KickAll](#kickall)
-- [SendCMD](#sendcmd)
+- [RconBrute](#rconbrute)
+- [Checker](#checker)
+- [Waterfall](#waterfall)
+- [Velocity](#velocity)
+- [Connect](#connect)
+- [Rcon](#rcon)
+
+
 - [Reload](#reload)
 - [Discord](#discord)
 
 ## Server
-El comando **server** te permite obtener información acerca de un servidor de minecraft mediante sockets. Funciona en servidores Java Y Bedrock.
+El comando **server** te permite obtener información acerca de un servidor de minecraft. Funciona en servidores Java Y Bedrock.
 
 ![Server](../images/commands/server.png)
 
