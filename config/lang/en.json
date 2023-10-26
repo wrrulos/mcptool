@@ -23,11 +23,11 @@
             "message2": "Perform security tests on your &aMinecraft servers&f&l!"
         },
         "menu": {
-            "message1": "&f&lPenetration Testing Tool for &aMC &8&l| &f&lUse &chelp &f&lto view commands",
+            "message1": "&f&lPentesting Testing Tool for &aMC &8&l| &f&lUse &chelp &f&lto view commands",
             "message2": "&f&lJoin the Discord server using the following link: &a&lwww.mcptool.net/discord"
         },
         "menu_termux": {
-            "message1": "&f&lPenetration Testing Tool for &aMC",
+            "message1": "&f&lPentesting Testing Tool for &aMC",
             "message2": "&f&lUse &chelp &f&lto view commands",
             "message3": "&f&lJoin the Discord server: &a&lwww.mcptool.net/discord"
         },
