@@ -9,6 +9,7 @@ Las APIs desempeñan un papel fundamental en MCPTool al permitir la consulta y o
 
 # Cambiar API
 Si deseas modificar la API utilizada por MCPTool, simplemente dirígete al archivo de configuración ubicado en `./config/config.json` y actualiza el apartado 'api' con el nombre de la API que deseas emplear. 
+![API](../images/commands/api.png)
 
 ## Localhost
 El método "localhost" implementa una API local mediante Flask. Esta API local permite el envío de solicitudes GET con el propósito de obtener información acerca de los servidores de Minecraft.
