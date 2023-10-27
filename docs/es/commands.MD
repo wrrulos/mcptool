@@ -312,6 +312,10 @@ Lista de idiomas disponibles:
 - Ingles (**en**)
 - Catalan (**cat**)
 - Aleman (**de**)
+- Frances (**fr**)
+- Portugues (**pt**)
+- Eslovaco (**sk**)
+- Turco (**tr**)
 
 Debe especificar la abreviatura del lenguaje, por ejemplo, **es**.
 
