@@ -72,7 +72,7 @@ Para instalar *Java 17* en **Windows** debe descargar la última versión desde 
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+Puede instalar java usando el gestor de paquetes **apt**.
 
 `sudo apt install openjdk-17-jdk openjdk-17-jre`
 
@@ -90,7 +90,7 @@ Para instalar *Nmap* en **Windows** debe descargar la última versión desde su 
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+Puede instalar nmap usando el gestor de paquetes **apt**.
 
 `sudo apt-get install nmap`
 
@@ -108,7 +108,7 @@ Para instalar *Ngrok* en **Windows** debe descargar la última versión desde su
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+Puede instalar ngrok usando el gestor de paquetes **apt**.
 
 `curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok`
 
