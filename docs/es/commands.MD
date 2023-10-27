@@ -36,14 +36,14 @@ Para usar este comando debe ingresar:
 </br>
 `server <ip:port/dominio>`
 
-## Player
-El comando **player** te permite obtener las uuid de un usuario de Minecraft.
+## Uuid
+El comando **uuid** te permite obtener las uuid de un usuario de Minecraft.
 
-![Player](../images/commands/player.png)
+![Uuid](../images/commands/uuid.png)
 
 Para usar este comando debe ingresar:
 </br>
-`player <usuario>`
+`uuid <usuario>`
 
 ## IPInfo
 El comando **ipinfo** te permite obtener información acerca de una dirección IP.
