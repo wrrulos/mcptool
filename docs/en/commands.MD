@@ -36,10 +36,10 @@ To use this command you must enter:
 </br>
 `server <ip:port/domain>`
 
-## Player
-The **player** command allows you to obtain the uuids of a Minecraft user.
+## Uuid
+The **uuid** command allows you to obtain the uuids of a Minecraft user.
 
-![Player](../images/commands/player.png)
+![UUid](../images/commands/uuid.png)
 
 To use this command you must enter:
 </br>
