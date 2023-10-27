@@ -1,5 +1,5 @@
 
-# Guía de APIs dentro de MCPTool.
+# Guía de APIs dentro de MCPTool
 
 Las APIs desempeñan un papel fundamental en MCPTool al permitir la consulta y obtención de datos relacionados con un servidor de Minecraft. En la actualidad, contamos con las siguientes APIs disponibles:
 
