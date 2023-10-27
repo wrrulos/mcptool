@@ -43,7 +43,7 @@ The **uuid** command allows you to obtain the uuids of a Minecraft user.
 
 To use this command you must enter:
 </br>
-`player <usuario>`
+`uuid <username>`
 
 ## IPInfo
 The **ipinfo** command allows you to obtain information about an IP address.
