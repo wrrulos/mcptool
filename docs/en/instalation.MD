@@ -72,7 +72,7 @@ Para instalar *Java 17* en **Windows** debe descargar la última versión desde 
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+Puede instalar java usando el gestor de paquetes **apt**.
 
 `sudo apt install openjdk-17-jdk openjdk-17-jre`
 
