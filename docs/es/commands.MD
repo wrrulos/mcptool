@@ -87,8 +87,6 @@ Para usar este comando debe ingresar:
 </br>
 `websearch <tag>`
 
-**NOTA** En bot debe ingresar *y* o *n*.
-
 ## Scan
 El comando **scan** te permite realizar un escaneo para buscar puertos abiertos donde se alojen servidores de Minecraft.
 
@@ -144,8 +142,6 @@ El comando **checker** te permite obtener los datos actuales de los servidores q
 Para usar este comando debe ingresar:
 </b>
 `checker <file>`
-
-**NOTA** En bot debe ingresar *y* o *n*.
 
 ## Listening
 El comando **listening** te permite obtener la lista de jugadores que se conectan al servidor, junto a sus uuids.
