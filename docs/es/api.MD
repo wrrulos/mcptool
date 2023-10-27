@@ -8,7 +8,7 @@ Las APIs desempeñan un papel fundamental en MCPTool al permitir la consulta y o
 - [mcstatus.io](#mcstatus.io)
 
 ## Localhost
-El método "localhost" implementa una API local mediante Flask. Esta API local posibilita el envío de solicitudes GET con el propósito de obtener información acerca de los servidores de Minecraft.
+El método "localhost" implementa una API local mediante Flask. Esta API local permite el envío de solicitudes GET con el propósito de obtener información acerca de los servidores de Minecraft.
 
 ## MCSrvstat.us
 El metodo "mcsrvstat.us" 
