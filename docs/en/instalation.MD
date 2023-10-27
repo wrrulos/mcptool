@@ -1,38 +1,38 @@
-# Guía de instalación de MCPTool
+# MCPTool Installation Guide
 
-#### MCPTool está programada en Python y NodeJS, pero también usa otras aplicaciones para ciertas funciones. Para usar MCPTool debe instalar lo siguiente:
+#### MCPTool is programmed in Python and NodeJS, but also uses other applications for certain functions. To use MCPTool you must install the following:
 
 * Python 3
-* NodeJS (Recomendado)
-* Java 17 o superior. (Recomendado)
-* Nmap (Opcional)
-* Masscan (Opcional)
-* Ngrok (Opcional)
+* NodeJS (Recommended)
+* Java 17 or higher. (Recommended)
+* Nmap (Optional)
+*Masscan (Optional)
+* Ngrok (Optional)
 
 </br>
 
-# Instalación automatica
-Ejecuta **python setup.py**. (Tenga en cuenta que la variable de python puede variar según su sistema)
+# Automatic installation
+Run **python setup.py**. (Note that the python variable may vary depending on your system)
 
-### Modo DEBUG
+### DEBUG mode
 
-Si desea ejecutar **setup.py** en modo debug, debe agregar el siguiente parametro: *--debug*
+If you want to run **setup.py** in debug mode, you must add the following parameter: *--debug*
 
-![Alt text](../images/setup-debug.png)
+![Alt ​​text](../images/setup-debug.png)
 
-# Instalación manual.
+# Manual installation.
 
-## ⚫ Python 3 
+## ⚫ Python 3
 
 ## Windows
 
-Para instalar *Python 3* en **Windows** debe descargar la última versión desde su página oficial: https://www.python.org/
+To install *Python 3* on **Windows** you must download the latest version from its official website: https://www.python.org/
 
-# Version recomendada: https://www.python.org/downloads/release/python-31010/
+# Recommended version: https://www.python.org/downloads/release/python-31010/
 
 ## Linux
 
-Puede instalar python3 usando el gestor de paquetes **apt**.
+You can install python3 using the **apt** package manager.
 
 `sudo apt install python3-pip`
 
@@ -45,15 +45,15 @@ Puede instalar python3 usando el gestor de paquetes **apt**.
 ## ⚫ NodeJS
 
 
-**¡IMPORTANTE!** Debe instalar la versión recomendada de NodeJS.
+**IMPORTANT!** You must install the recommended version of NodeJS.
 
 ## Windows
 
-Para instalar *NodeJS* en **Windows** debe descargar la última versión desde su página oficial: https://nodejs.org/es/
+To install *NodeJS* on **Windows** you must download the latest version from its official website: https://nodejs.org/es/
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+You can install nodejs using the **apt** package manager.
 
 `sudo apt install nodejs -y`
 `sudo apt install npm -y`
@@ -68,11 +68,11 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 ## Windows
 
-Para instalar *Java 17* en **Windows** debe descargar la última versión desde su página oficial: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+To install *Java 17* on **Windows** you must download the latest version from its official website: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 
 ## Linux
 
-Puede instalar java usando el gestor de paquetes **apt**.
+You can install java using the **apt** package manager.
 
 `sudo apt install openjdk-17-jdk openjdk-17-jre`
 
@@ -86,11 +86,11 @@ Puede instalar java usando el gestor de paquetes **apt**.
 
 ## Windows
 
-Para instalar *Nmap* en **Windows** debe descargar la última versión desde su página oficial: https://nmap.org/download.html
+To install *Nmap* on **Windows** you must download the latest version from its official website: https://nmap.org/download.html
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+You can install nmap using the **apt** package manager.
 
 `sudo apt-get install nmap`
 
@@ -104,11 +104,11 @@ Puede instalar nodejs usando el gestor de paquetes **apt**.
 
 ## Windows
 
-Para instalar *Ngrok* en **Windows** debe descargar la última versión desde su página oficial: https://ngrok.com/download
+To install *Ngrok* on **Windows** you must download the latest version from its official website: https://ngrok.com/download
 
 ## Linux
 
-Puede instalar nodejs usando el gestor de paquetes **apt**.
+You can install ngrok using the **apt** package manager.
 
 `curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok`
 
