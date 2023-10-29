@@ -16,6 +16,7 @@
             "checkingUpdates": "&a• &f&lChecking for updates from &cMCP&f&lTool..",
             "newVersion": "&a• &f&lA new version of the program was found.",
             "notFound": "&a• &f&lYou are using the latest version of the program.",
+            "url": "&a• &f&lDownload the new version from:",
             "error": "&c• &f&lThere was an unexpected error. Starting &cMCP&f&lTool.."
         },
         "presentation": {
