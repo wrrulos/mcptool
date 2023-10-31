@@ -156,6 +156,13 @@
             "connectedUser": "&4[&a[0]&4] &a▲ &f&lL'utilisateur &b&l[1] &f&lest entré dans le serveur.",
             "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lL'utilisateur &b&l[1] &f&lest parti du serveur."
         },
+        "resolver": {
+            "argument1": "domaine",
+            "missingArgument1": "&cVous devez entrer un domaine !",
+            "subdomainsNotFound": "&f&lAucun sous-domaine n'a été trouvé pour le domaine spécifié.",
+            "domain": "&f&lListe des domaines trouvés :",
+            "ip": "&f&lListe des adresses IP trouvées :"
+        },
         "fakeproxy": {
             "argument1": "adresseIP:Port/domaine",
             "argument2": "mode",
