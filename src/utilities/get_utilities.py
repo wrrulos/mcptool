@@ -14,6 +14,8 @@ from src.utilities.check_utilities import CheckUtilities
 
 
 class GetUtilities:
+    cloudflare_ips = ['104.16.', '104.17.', '104.18.', '104.19.', '104.20.', '104.21.', '104.22.', '104.23.', '104.24.', '104.25.', '104.26.', '104.27.', '104.28.', '104.29.', '104.30.', '104.31.', '172.64.', '172.65.', '172.66.', '172.67.', '172.68.', '172.69.', '172.70.', '172.71.', '1.1.1.1']
+
     @staticmethod
     def get_spaces():
         """
@@ -167,6 +169,52 @@ class GetUtilities:
         # If neither the online nor offline UUIDs match, consider it modified.
         else:
             return '&5'  # Modified UUID color
+        
+    @staticmethod
+    def get_subdomains_virustotal(domain):
+        url = 'https://www.virustotal.com/vtapi/v2/domain/report'
+        params = {'apikey': JsonManager.get('virusTotalApiKey'), 'domain':domain}
+        domains = []
+        ips = []
+
+        try:
+            response = requests.get(url, params=params)
+            subdomains = sorted(response.json()['subdomains'])
+
+        except (KeyError, ValueError):
+            return None, None
+        
+        response = requests.get(f'https://api.hackertarget.com/hostsearch/?q={domain}')
+
+        for line in response.iter_lines():
+            line = str(line).split(',')
+
+            if len(line) > 1:
+                value = line[0].strip("'b")
+                ip = line[1].strip("'b")
+
+                if value != "API count exceeded - Increase Quota with Membership":
+                    if ip not in ips:
+                        ips.append(ip)
+
+                    if [value, ip] not in domains:
+                        domains.append([value, ip])
+
+        for subdomain in subdomains:
+            if subdomain not in [item[0] for item in domains]:
+                try:
+                    ip = socket.gethostbyname(subdomain)
+
+                    if ip not in ips:
+                        ips.append(ip)
+                    
+                    if [subdomain, ip] not in domains:
+                        domains.append([subdomain, ip])
+
+                except (socket.gaierror, socket.error):
+                    pass
+
+        return domains, ips
     
     @staticmethod
     def get_ms_color(ms):
@@ -233,6 +281,7 @@ class GetUtilities:
             if reverse:
                 try:
                     domains = socket.gethostbyaddr(ip_address)[0]
+
                 except socket.herror:
                     pass
 
@@ -368,3 +417,22 @@ class GetUtilities:
             str: A comma-separated list of valid language options based on available language files.
         """
         return  ', '.join([lang.replace('.json', '') for lang in os.listdir('./config/lang/')])
+    
+    @staticmethod
+    def get_separate_ips(ips):
+        cloudflare = []
+        unknowns_ip = []
+
+        for ip in ips:
+            is_cloudflare_ip = False
+            for cf_ip in GetUtilities.cloudflare_ips:
+                if ip.startswith(cf_ip):
+                    is_cloudflare_ip = True
+                    break
+
+            if is_cloudflare_ip:
+                cloudflare.append(ip)
+            else:
+                unknowns_ip.append(ip)
+
+        return unknowns_ip, cloudflare
