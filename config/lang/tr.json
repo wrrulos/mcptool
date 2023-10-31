@@ -156,6 +156,13 @@
             "connectedUser": "&4[&a[0]&4] &a▲ &f&lKullanıcı &b&l[1] &f&lsunucuya giriş yaptı.",
             "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lKullanıcı &b&l[1] &f&lsunucudan ayrıldı."
         },
+        "resolver": {
+            "argument1": "alan adı",
+            "missingArgument1": "&cBir alan adı girmelisiniz!",
+            "subdomainsNotFound": "&f&lBelirtilen alan adı için hiçbir alt alan adı bulunamadı.",
+            "domain": "&f&lBulunan alan adları listesi:",
+            "ip": "&f&lBulunan IP adresleri listesi:"
+        },
         "fakeproxy": {
             "argument1": "IP adresi:Port/Alan adı",
             "argument2": "mod",
