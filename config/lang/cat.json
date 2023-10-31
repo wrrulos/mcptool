@@ -155,6 +155,13 @@
             "connectedUser": "&4[&a[0]&4] &a▲ &f&lL'usuari &b&l[1] &f&lha entrat al servidor.",
             "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lL'usuari &b&l[1] &f&lse'n va del servidor."
         },
+        "resolver": {
+            "argument1": "domini",
+            "missingArgument1": "&cHas d'entrar un domini!",
+            "subdomainsNotFound": "&f&lNo s'han trobat subdominis per al domini especificat.",
+            "domain": "&f&lLlista de dominis trobats:",
+            "ip": "&f&lLlista d'adreces IP trobades:"
+        },
         "fakeproxy": {
             "argument1": "adreçaIP:Port/domini",
             "argument2": "mode",
