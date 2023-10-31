@@ -155,6 +155,13 @@
             "connectedUser": "&4[&a[0]&4] &a▲ &f&lHráč &b&l[1] &f&lvstúpil na server.",
             "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lHráč &b&l[1] &f&lodišiel zo servera."
         },
+        "resolver": {
+            "argument1": "doména",
+            "missingArgument1": "&cMusíte zadať doménu!",
+            "subdomainsNotFound": "&f&lPre zadanú doménu neboli nájdené žiadne poddomény.",
+            "domain": "&f&lZoznam nájdených domén:",
+            "ip": "&f&lZoznam nájdených IP adries:"
+        },
         "fakeproxy": {
             "argument1": "adresaIP:Port/domena",
             "argument2": "režim",
