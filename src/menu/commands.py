@@ -12,6 +12,7 @@ from src.commands.subdomains import subdomains_command
 from src.commands.scan import scan_command
 from src.commands.listening import listening_command
 from src.commands.playerlogs import playerlogs_command
+from src.commands.resolver import resolver_command
 from src.commands.fakeproxy import fakeproxy_command
 from src.commands.login import login_command
 from src.commands.pinlogin import pinlogin_command
@@ -40,6 +41,7 @@ commands = {
     **dict.fromkeys(['08', 'scan'], scan_command),
     **dict.fromkeys({'09', 'listening'}, listening_command),
     **dict.fromkeys(['10', 'playerlogs'], playerlogs_command),
+    **dict.fromkeys(['10', 'resolver'], resolver_command),
     **dict.fromkeys(['12', 'fakeproxy'], fakeproxy_command),
     **dict.fromkeys(['13', 'login'], login_command),
     **dict.fromkeys(['14', 'pinlogin'], pinlogin_command),
