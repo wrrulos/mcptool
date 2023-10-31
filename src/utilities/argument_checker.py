@@ -26,7 +26,7 @@ class ArgumentChecker:
         if command in ['cls', 'clear', 'discord']:
             return True
 
-        if command in ['language', 'server', 'uuid', 'ipinfo', 'dnslookup', 'websearch', 'listening', 'playerlogs', 'checker', 'waterfall', 'shodan']:
+        if command in ['language', 'server', 'uuid', 'ipinfo', 'dnslookup', 'websearch', 'listening', 'playerlogs', 'resolver', 'checker', 'waterfall', 'shodan']:
             if ArgumentChecker.missing_arguments(command, 1, arguments):
                 return False
             
