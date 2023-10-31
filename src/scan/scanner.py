@@ -18,7 +18,7 @@ class Scanner:
 
         # Prepare the scan command.
         command = Scanner.get_command(scan_method)
-        command = command.replace('[0]', target).replace('[1]', port_range)
+        command = command.replace('[TARGET]', target).replace('[PORTS]', port_range)
         servers_found = 0
         show_output = False
         first_line = True
