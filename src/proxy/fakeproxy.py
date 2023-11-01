@@ -59,8 +59,9 @@ class FakeProxy:
         if CheckUtilities.check_ngrok():
             paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "fakeproxy", "ngrokStart"])}')
             subprocess.Popen(f'{JsonManager.get(["proxyConfig", "ngrokCommand"])} tcp {JsonManager.get(["proxyConfig", "fakeProxyPort"])} >nul 2>&1', stdout=subprocess.PIPE, shell=True)
+        
         else:
-            paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "fakeproxy", "ngrokNotFound"])}\n')
+            paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "fakeproxy", "ngrokNotFound"])}')
 
         # Clear the existing data file for Fakeproxy.
         if os.path.exists('./src/proxy/jar/fakeproxy/plugins/RPoisoner/data.txt'):
