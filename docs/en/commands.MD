@@ -13,6 +13,7 @@ List of current MCPTool commands.
 - [Listening](#listening)
 - [PlayerLogs](#playerlogs)
 - [FakeProxy](#fakeproxy)
+- [Resolver](#resolver)
 - [Login](#login)
 - [PinLogin](#pinlogin)
 - [SendCMD](#sendcmd)
@@ -160,6 +161,15 @@ The **playerlogs** command is similar to the *listening* command, it allows you 
 To use this command you must enter:
 </br>
 `playerlogs <ip:port/domain>`
+
+## Resolver
+The **resolver** command allows you to obtain IP addresses and subdomains linked to the specified domain.
+
+![Resolver](../images/commands/resolver.png)
+
+To use this command you must enter:
+</br>
+`resolver <domain>`
 
 ## Waterfall
 The **waterfall** command creates a cascading proxy server that redirects to the specified server.
