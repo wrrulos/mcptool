@@ -169,7 +169,7 @@ El comando **resolver** le permite obtener direcciones IP y subdominios vinculad
 
 Para usar este comando debe ingresar:
 </br>
-`resolver <domain>`
+`resolver <dominio>`
 
 ## Waterfall
 El comando **waterfall** crea un servidor proxy waterfall que redirecciona al servidor especificado. 
