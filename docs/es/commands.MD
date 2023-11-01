@@ -12,6 +12,7 @@ Lista de los comandos actuales de MCPTool.
 - [Scan](#scan)
 - [Listening](#listening)
 - [PlayerLogs](#playerlogs)
+- [Resolver](#resolver)
 - [FakeProxy](#fakeproxy)
 - [Login](#login)
 - [PinLogin](#pinlogin)
