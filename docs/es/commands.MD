@@ -161,6 +161,15 @@ Para usar este comando debe ingresar:
 </br>
 `playerlogs <ip:port/dominio>`
 
+## Resolver
+El comando **resolver** le permite obtener direcciones IP y subdominios vinculados al dominio especificado.
+
+![Resolver](../images/commands/resolver.png)
+
+Para usar este comando debe ingresar:
+</br>
+`resolver <domain>`
+
 ## Waterfall
 El comando **waterfall** crea un servidor proxy waterfall que redirecciona al servidor especificado. 
 
