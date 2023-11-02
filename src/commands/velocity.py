@@ -14,6 +14,11 @@ def velocity_command(target, mode, *args):
     """
     
     try:
+        # Check if the specified forwarding mode is valid
+        if mode.lower() not in ['none', 'legacy', 'bungeeguard', 'modern']:
+            paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "invalidArguments", "invalidForwardingMode"])}')
+            return
+        
         # Start the Velocity proxy with the specified target and mode
         ProxyLauncher.start_proxy('velocity', target, mode)
 
