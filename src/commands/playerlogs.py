@@ -62,12 +62,13 @@ def playerlogs_command(server):
                 # Check if the server has a default player list
                 if server_data['default_player_list'] is not None:
                     for player in server_data['default_player_list']:
-                        username = player['name']
-                        uuid = player.get('uuid', player.get('id', None))
+                        if type(player) is dict:
+                            username = player['name']
+                            uuid = player.get('uuid', player.get('id', None))
 
-                        if username != '':
-                            player_found = f'{username} ({uuid})'
-                            players.append(player_found)
+                            if username != '':
+                                player_found = f'{username} ({uuid})'
+                                players.append(player_found)
 
                 else:
                     continue
