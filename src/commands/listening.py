@@ -64,31 +64,32 @@ def listening_command(server, *args):
                 # Check if the server has a default player list
                 if server_data['default_player_list'] is not None:
                     for player in server_data['default_player_list']:
-                        username = player['name']
-                        uuid = player.get('uuid', player.get('id', None))
+                        if type(player) is dict:
+                            username = player['name']
+                            uuid = player.get('uuid', player.get('id', None))
 
-                        # Skip players without a UUID
-                        if uuid is None:
-                            continue
+                            # Skip players without a UUID
+                            if uuid is None:
+                                continue
 
-                        # Check if players have been found
-                        if not found:
-                            # Display a message when players are found
-                            paint(f'{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "listening", "foundPlayers"])}\n')
-                            t = '\n'
-                            found = True
+                            # Check if players have been found
+                            if not found:
+                                # Display a message when players are found
+                                paint(f'{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "listening", "foundPlayers"])}\n')
+                                t = '\n'
+                                found = True
 
-                        # Check if this player has already been captured
-                        if f'{username} ({uuid})' not in captured_players:
-                            # Add the player to the captured list and log their data
-                            captured_players.append(f'{username} ({uuid})')
-                            log_data = f'{username} ({uuid})'
+                            # Check if this player has already been captured
+                            if f'{username} ({uuid})' not in captured_players:
+                                # Add the player to the captured list and log their data
+                                captured_players.append(f'{username} ({uuid})')
+                                log_data = f'{username} ({uuid})'
 
-                            if JsonManager.get('logs'):
-                                LogManager.write_log(log_file, 'listening', log_data)
-                            
-                            # Display the player's username and UUID
-                            paint(f'{GetUtilities.get_spaces()}&f&l{username} ({GetUtilities.get_uuid_color(username, uuid)}{uuid}&f&l)')
+                                if JsonManager.get('logs'):
+                                    LogManager.write_log(log_file, 'listening', log_data)
+                                
+                                # Display the player's username and UUID
+                                paint(f'{GetUtilities.get_spaces()}&f&l{username} ({GetUtilities.get_uuid_color(username, uuid)}{uuid}&f&l)')
 
             else:
                 # If no server data is available, wait for 30 seconds before checking again
