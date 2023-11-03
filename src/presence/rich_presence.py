@@ -119,7 +119,7 @@ class RichPresenceUpdater:
         except (pypresence.exceptions.DiscordNotFound, struct.error, pypresence.exceptions.ServerError, pypresence.exceptions.ResponseTimeout):
             return
 
-        except (KeyboardInterrupt, ValueError):
+        except (KeyboardInterrupt, ValueError, RuntimeError, OSError):
             pass
 
 
