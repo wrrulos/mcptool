@@ -72,7 +72,7 @@ See the command guide from this [link.](./docs/es/commands.MD).
 
 ## 🎞 Video 
 
-[![Watch the video](https://img.youtube.com/vi/iGYlaFsikZE/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+[![Watch the video](https://img.youtube.com/vi/iGYlaFsikZE/maxresdefault.jpg)](https://youtu.be/iGYlaFsikZE?si=22L2sQ4GgckYL9ps)
 
 ## Licencia 
 
