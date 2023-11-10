@@ -1,0 +1,324 @@
+{
+    "languageName": "Türkçe",
+    "title": "MCPTool - @wrrulos",
+    "input": "&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+    "termux_input": "&croot@mcptool &8&r▶ &f&l",
+    "prefix": "&f&l[&c#&f&l] ",
+    "invalidCommand": "&cGeçersiz komut. &f&lKullanılabilir komutları görmek için &ahelp&f&l kullanın.",
+    "apiConnectionError": "&cAPI ile bağlantı kurulamadı. Lütfen daha sonra tekrar deneyin.",
+    "stopping": "Durduruluyor..",
+    "shodanInvalidApiKey": "&f&lGirilen API anahtarı geçersiz! Yapılandırma dosyasını kontrol edin.",
+    "shodanApiKeyNoAccess": "&f&lGirilen API anahtarının Shodan aramalarına erişimi yok!",
+    "credits": "Oluşturan: &b@wrrulos",
+    "banners": {
+        "update": {
+            "title": "&5▶ &cMCP&f&lTool &8&r| &f&lGüncelleme&5 ◀&f&l",
+            "checkingUpdates": "&a• &f&l&cMCP&f&lTool güncellemeleri aranıyor..",
+            "newVersion": "&a• &f&lYeni bir program sürümü bulundu.",
+            "notFound": "&a• &f&lEn son sürümü kullanıyorsunuz.",
+            "url": "&a• &f&lYeni sürümü şuradan indirebilirsiniz:",
+            "error": "&c• &f&lBeklenmeyen bir hata oluştu. &cMCP&f&lTool başlatılıyor.."
+        },
+        "presentation": {
+            "message1": "Minecraft için Sızma Testi Aracı",
+            "message2": "Sunucularınızda güvenlik testleri yapın &aMinecraft&f&l!"
+        },
+        "menu": {
+            "message1": "&f&l&cMC için Sızma Testi Aracı &8&l| &f&lKomutları görmek için &chelp &f&lkullanın",
+            "message2": "&f&lAşağıdaki bağlantıyı kullanarak Discord sunucusuna katılın: &a&lwww.mcptool.net/discord"
+        },
+        "menu_termux": {
+            "message1": "&f&l&cMC için Sızma Testi Aracı",
+            "message2": "&f&lKomutları görmek için &chelp &f&lkullanın",
+            "message3": "&f&lDiscord sunucusuna katılın: &a&lwww.mcptool.net/discord"
+        },
+        "discord": {
+            "message1": "Program hakkında yardım almak veya hata bildirmek için",
+            "message2": "Discord sunucuma katılın.",
+            "message3": "Projelerimle ilgili güncel kalmak için kullanışlıdır.",
+            "message4": "Ayrıca benimle sunucu üzerinden iletişim kurabilirsiniz.",
+            "message5": "Sunucu Bağlantısı:",
+            "termux_message": "Yardım almak veya projelerimle ilgili güncel kalmak için Discord sunucuma katılın: &a&lwww.mcptool.net/discord"
+        }
+    },
+    "commands": {
+        "usage": "[&c!&f&l] Komut kullanımı: ",
+        "error": "&4[&cHATA&f&l&r&4] ",
+        "ctrlC": "[&c!&f&l] Komut zorla durduruldu.",
+        "commandUsage": "&f&lKomut kullanımı:",
+        "gettingDataFromServer": "&f&lSunucudan veri alınıyor..",
+        "errorBedrockServer": "&f&lBu komut sadece Java sunucularıyla kullanılabilir.",
+        "serversFound": "&f&lKomut tamamlandı ve &a&l[0]&f&l sunucu bulundu.",
+        "serversNotFound": "&f&lKomut tamamlandı ve sunucu bulunamadı.",
+        "invalidArguments": {
+            "invalidServer": "&f&lGirilen sunucu kapalı veya mevcut değil.",
+            "InvalidRconFormat": "&f&lGirilen sunucu geçersiz. IP ve rcon portunu girmelisiniz!",
+            "invalidIP": "&f&lGirilen IP adresi geçersiz! (&c[0]&f&l)",
+            "invalidIpRange": "&f&lGirilen IP aralığı geçerli değil! (&c[0]&f&l)",
+            "invalidPorts": "&f&lGirilen port aralığı geçerli değil! (&c[0]&f&l)",
+            "invalidDomain": "&f&lGirilen etki alanı geçerli değil!",
+            "invalidScanMethod": "&f&lGirilen tarama yöntemi geçerli değil.",
+            "invalidBotArgument": "&f&lChecker için geçerli bir seçenek girmelisiniz! (&ay ya da n&f&l)",
+            "invalidProxyFile": "&f&lGirilen proxy dosyası mevcut değil!",
+            "invalidFile": "&f&lDosya &b[0] &f&lmevcut değil!",
+            "invalidPageArgument": "&f&lGeçerli bir sayfa numarası girmelisiniz!",
+            "invalidVersion": "&f&lGirilen sürüm geçerli değil.",
+            "invalidDelay": "&f&lBekleme süresi geçerli değil.",
+            "invalidLoopArgument": "&f&lGeçerli bir döngü seçeneği girmelisiniz! (&ay ya da n&f&l)",
+            "invalidLanguage": "&f&lGirilen dil geçerli değil.",
+            "invalidRconPassword": "&f&lRCON şifresi yanlış.",
+            "invalidForwardingMode": "&f&lGeçerli bir yönlendirme modu girmelisiniz! (&anon, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "message": "&f&lDaha fazla bilgi için kılavuzu ziyaret edin: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "argument1": "ip:port/etki alanı",
+            "missingArgument1": "&cBir sunucu girmelisiniz!"
+        },
+        "uuid": {
+            "argument1": "oyuncu",
+            "missingArgument1": "&cBir oyuncu girmelisiniz!",
+            "onlineUUID": "&f&lUUID &ePremium&f&l:&e",
+            "offlineUUID": "&f&lUUID &cCracked&f&l:&c"
+        },
+        "ipinfo": {
+            "argument1": "IP adresi",
+            "missingArgument1": "&cBir IP adresi girmelisiniz!",
+            "result1": "&cDevam",
+            "result2": "&cÜlke",
+            "result3": "&cBölge",
+            "result4": "&cŞehir",
+            "result5": "&cISP",
+            "result6": "&cAS",
+            "result7": "&cTers DNS",
+            "reverse": "&4[&cHOS&f&lT&4]"
+        },
+        "dnslookup": {
+            "argument1": "etki alanı",
+            "missingArgument1": "&cBir etki alanı girmelisiniz!",
+            "withoutResults": "&f&lSonuç bulunamadı."
+        },
+        "shodan": {
+            "argument1": "veri",
+            "missingArgument1": "&cArama için veri girmelisiniz!",
+            "scanning": "&f&lAşağıdaki verilere sahip sunucuları aranıyor ►",
+            "serversNotFound": "&f&lBelirtilen verilere sahip sunucu bulunamadı.",
+            "ipsFound": "&f&lBelirtilen verilere sahip aşağıdaki &a[0] &f&lIP adresleri bulundu (&b[1]&f&l).",
+            "checkingServers": "&f&lBu IP adreslerinden hangisinin bir Minecraft sunucusuna ait olduğu kontrol ediliyor.."
+        },
+        "websearch": {
+            "argument1": "etiket",
+            "missingArgument1": "&cArama için etiket girmelisiniz!",
+            "searching": "&f&lPopüler sayfalarda &a[0]&f&l etiketli sunucular aranıyor..",
+            "webSearch": "&f&lŞu sayfada sunucular aranıyor &b[0]",
+            "serversNotFound": "&f&lBelirtilen etiketle sunucu bulunamadı.",
+            "checkingServers": "&f&lSayfalardan &a[0] &f&lsunucu bulundu."
+        },
+        "subdomains": {
+            "argument1": "alanadı",
+            "argument2": "dosya",
+            "missingArgument1": "&cAlan adı girmelisiniz!",
+            "missingArgument2": "&cAlt alan adı listesini içeren bir dosya girmelisiniz!",
+            "lookingForSubdomains": "&f&l[0] alt alan adının alt alan adlarını aranıyor..",
+            "found": "&f&lAlt alan adı bulundu: &a[0] &7(&f&l[1]&7)",
+            "subdomainsFound": "&f&lArama tamamlandı ve &a[0] &f&lalt alan adı bulundu.",
+            "subdomainsNotFound": "&f&lAlt alan adı bulunamadı..",
+            "checkingServers": "&a[0] &f&laternos sayfasından elde edilen sunucuların kontrolü yapılıyor.."
+        },
+        "scan": {
+            "argument1": "IP adresi/IP aralığı",
+            "argument2": "port/port aralığı",
+            "argument3": "tarama yöntemi",
+            "missingArgument1": "&cBir IP adresi girmelisiniz!",
+            "missingArgument2": "&cBir port aralığı girmelisiniz!",
+            "missingArgument3": "&cBir tarama yöntemi girmelisiniz!",
+            "scanningIpAddress": "&f&lIP adresi taranıyor &a[0]&f&l..",
+            "scanningIpRange": "&f&lIP aralığı taranıyor &a[0]&f&l..",
+            "scanningFile": "&f&lAşağıdaki dosyada bulunan IP adresleri taranıyor &a[0] &f&l(&a[1] &f&lIP adresi).",
+            "scanFinished": "&f&lKomut tamamlandı ve &a[0]&f&l Minecraft sunucusu bulundu!",
+            "noPortsFound": "&f&lTarama tamamlandı ve belirtilen IP adresinde Minecraft sunucusu bulunamadı!",
+            "noIpsFound": "&f&lDosyada IP adresi bulunamadı!",
+            "javaNotInstalled": "&f&lBu yöntemi kullanmak için &ajava &f&lyüklemelisiniz!",
+            "nmapNotInstalled": "&f&lBu yöntemi kullanmak için &anmap &f&lyüklemelisiniz!",
+            "masscanNotInstalled": "&f&lBu yöntemi kullanmak için &amasscan &f&lyüklemelisiniz!"
+        },
+        "listening": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "waitingForPlayers": "&f&lOyuncular bekleniyor..",
+            "foundPlayers": "&f&lYakalanan Oyuncular:"
+        },
+        "playerlogs": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "waitingForPlayers": "&f&lOyuncular bekleniyor..",
+            "connectedUser": "&4[&a[0]&4] &a▲ &f&lKullanıcı &b&l[1] &f&lsunucuya giriş yaptı.",
+            "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lKullanıcı &b&l[1] &f&lsunucudan ayrıldı."
+        },
+        "resolver": {
+            "argument1": "alan adı",
+            "missingArgument1": "&cBir alan adı girmelisiniz!",
+            "subdomainsNotFound": "&f&lBelirtilen alan adı için hiçbir alt alan adı bulunamadı.",
+            "domain": "&f&lBulunan alan adları listesi:",
+            "ip": "&f&lBulunan IP adresleri listesi:"
+        },
+        "fakeproxy": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "mod",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cYönlendirme modunu girmelisiniz!",
+            "copyingData": "&f&lBelirtilen sunucudan veri kopyalanıyor..",
+            "errorWhenCopying": "&f&lBelirtilen sunucudan veri kopyalanamadı. Girdiğiniz sunucu doğru mu?",
+            "ngrokStart": "&f&lngrok sunucusu başlatılıyor..",
+            "ipNgrokError": "&f&lngrok IP'si alınamadı. Bu, bir ngrok hesabına bağlı olmadığınızdan kaynaklanabilir.",
+            "ngrokNotFound": "&f&lngrok yüklü değil. (Ngrok IP'si alamazsınız!)",
+            "waitingForData": "&f&lVeriler bekleniyor..",
+            "connecting": "[0] sunucuya giriş yaptı.",
+            "disconnecting": "[0] sunucudan çıkış yaptı.",
+            "messageCaptured": "[0] bir mesaj yazdı:",
+            "commandCaptured": "[0] bir komut çalıştırdı:"
+        },
+        "login": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "kullanıcı",
+            "argument3": "sürüm",
+            "argument4": "şifre dosyası",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cBir kullanıcı girmelisiniz!",
+            "missingArgument3": "&cSunucu sürümünü girmelisiniz!",
+            "missingArgument4": "&cBir şifre dosyası girmelisiniz!",
+            "startingTheAttack": "&f&lSaldırıyı başlatmak için bot gönderiliyor..",
+            "emptyFile": "&f&lDosyada kullanılabilir şifre bulunamadı."
+        },
+        "pinlogin": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "kullanıcı",
+            "argument3": "sürüm",
+            "argument4": "şifre dosyası",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cBir kullanıcı girmelisiniz!",
+            "missingArgument3": "&cSunucu sürümünü girmelisiniz!",
+            "missingArgument4": "&cBir şifre dosyası girmelisiniz!",
+            "startingTheAttack": "&f&lSaldırıyı başlatmak için bot gönderiliyor..",
+            "emptyFile": "&f&lDosyada kullanılabilir şifre bulunamadı."
+        },
+        "sendcmd": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "kullanıcı",
+            "argument3": "sürüm",
+            "argument4": "komut dosyası",
+            "argument5": "döngü",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cBir kullanıcı girmelisiniz!",
+            "missingArgument3": "&cSunucu sürümünü girmelisiniz!",
+            "missingArgument4": "&cBotun çalıştıracağı komutları içeren bir dosya girmelisiniz!",
+            "missingArgument5": "&cSaldırının sonsuz olup olmadığını belirtmelisiniz!",
+            "emptyFile": "&f&lDosyada kullanılabilir komut bulunamadı.",
+            "startingTheAttack": "&f&lBota komut gönderiliyor.."
+        },
+        "kick": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "kullanıcı",
+            "argument3": "sürüm",
+            "argument4": "döngü",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cBir kullanıcı girmelisiniz!",
+            "missingArgument3": "&cSunucu sürümünü girmelisiniz!",
+            "missingArgument4": "&cSaldırının sonsuz olup olmadığını belirtmelisiniz!",
+            "startingTheAttack": "&f&lKullanıcı atılıyor.."
+        },
+        "kickall": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "sürüm",
+            "argument3": "döngü",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cSunucu sürümünü girmelisiniz!",
+            "missingArgument3": "&cSaldırının sonsuz olup olmadığını belirtmelisiniz!",
+            "noPlayers": "&f&lSunucuda bağlı oyuncu bulunamadı.",
+            "startingTheAttack": "&f&lAlınan oyuncular atılıyor.."
+        },
+        "rconbrute": {
+            "argument1": "IP adresi:RconPort",
+            "argument2": "dosya",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cŞifre dosyası girmelisiniz!",
+            "emptyFile": "&f&lDosyada kullanılabilir şifre bulunamadı.",
+            "preparingTheAttack": "&f&lBrute Force saldırısı hazırlanıyor (&cRCON&f&l)..",
+            "numberOfPasswords": "&f&lSeçilen dosya: &a[0] &f&l(&a[1] şifreler&f&l)",
+            "startingTheAttack": "&f&lSaldırı başlatılıyor..",
+            "tryingPassword": "&f&lŞifre denemesi: &c[0]",
+            "passwordFound": "&aŞifre: &b[0]",
+            "passwordNotFound": "&cŞifre şifre listesinde bulunamadı.",
+            "timeout": "&cÇok fazla süre geçti ve sunucu yanıt vermiyor",
+            "connectionRefused": "&f&lBağlantı hatası: &cBağlantı Reddedildi.",
+            "stopping": "&f&lSaldırı durduruluyor..",
+            "error": "&f&lBeklenmeyen bir hata oluştu: &c[0]"
+        },
+        "checker": {
+            "argument1": "dosya",
+            "missingArgument1": "&cBir dosya girmelisiniz!",
+            "noServersInTheFile": "&f&lDosyada IP adresleri bulunamadı!",
+            "foundServers": "&f&lDosyada &a[0] &f&lsunucu bulundu.",
+            "checking": "&f&lSunucular kontrol ediliyor.."
+        },
+        "waterfall": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "missingArgument1": "&cBir sunucu girmelisiniz!"
+        },
+        "velocity": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "iletim modu",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cİletim modunu girmelisiniz!"
+        },
+        "connect": {
+            "argument1": "IP adresi:Port/Alan adı",
+            "argument2": "kullanıcı",
+            "argument3": "sürüm",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cBot için bir kullanıcı adı girmelisiniz!",
+            "missingArgument3": "&cBot'un sunucuya bağlanmak için kullanacağı sürümü girmelisiniz!"
+        },
+        "rcon": {
+            "argument1": "IP adresi:RconPort",
+            "argument2": "şifre",
+            "missingArgument1": "&cBir sunucu girmelisiniz!",
+            "missingArgument2": "&cRCON şifresini girmelisiniz!",
+            "connecting": "&f&lBağlantı denemesi yapılıyor..",
+            "timeout": "&f&lSunucu zaman aşımına uğradı. (Zaman Aşımı)",
+            "refusedConnection": "&f&lSunucu bağlantıyı reddetti.",
+            "establishedConnection": "&f&lSunucu ile bağlantı başarıyla kuruldu.",
+            "command": "&f&lKomut: ",
+            "stopping": "&f&lBağlantı kapatılıyor.."
+        },
+        "language": {
+            "argument1": "dil",
+            "missingArgument1": "&cBir dil girmelisiniz!",
+            "languageInUse": "&f&lGirdiğiniz dil zaten seçili!",
+            "languageList": "&f&lKullanılabilir dillerin listesi: &a[0]",
+            "changeOfLanguage": "&f&lDil başarıyla değiştirildi: &a[0]&f&l."
+        }
+    },
+    "versionFileMessages": {
+        "updateFailed": "&c&lYeni sürümü bulma girişiminde hata oluştu. &f&lMevcut sürüm çalıştırılıyor..",
+        "updateCheck": "&f&l&cVersions.json&f&l dosyasının yeni bir sürümü aranıyor..",
+        "updateAvailable": "&aYeni sürüm bulundu!",
+        "downloadingUpdate": "&f&lYeni sürüm indiriliyor..",
+        "updateCompleted": "&f&l&bVersions.json&f&l dosyasının yeni sürümü başarıyla kuruldu.",
+        "noUpdatesFound": "&f&lYeni sürüm bulunamadı."
+    },
+    "proxyMessages": {
+        "configuring": "&f&lProxy sunucusu yapılandırılıyor..",
+        "updateFailed": "&c&lYeni sürümü bulma girişiminde hata oluştu. &f&lMevcut sürüm çalıştırılıyor..",
+        "updateCheck": "&f&l&a[0].jar&f&l dosyasının yeni bir sürümü aranıyor..",
+        "updateAvailable": "&a&b[0] &abulundu!",
+        "downloadingUpdate": "&f&lYeni sürüm indiriliyor..",
+        "updateCompleted": "&f&l&b[0]&f&l dosyasının yeni sürümü başarıyla kuruldu.",
+        "noUpdatesFound": "&f&lYeni sürüm bulunamadı.",
+        "starting": "&f&lProxy sunucu başlatılıyor..",
+        "stopping": "&f&lProxy sunucu durduruluyor..",
+        "proxyServerStarted": "&f&l[&a>&f&l] Proxy sunucusu başarıyla &a[0]&f&l üzerinde başlatıldı.",
+        "proxyServerNotStartup": "&f&l[&a>&f&l] Proxy sunucusu doğru bir şekilde başlatılmıyor gibi görünüyor. Sisteminizde Java 17 veya daha üstü yüklü mü? Eğer yüklüyse ve hata devam ediyorsa, bunu Discord sunucusunda bildirin."
+    }
+}

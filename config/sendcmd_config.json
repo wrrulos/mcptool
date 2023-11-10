@@ -1,0 +1,4 @@
+{
+  "reconnectDelay": 4000,
+  "commandDelay": 2000
+}

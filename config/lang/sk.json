@@ -1,0 +1,323 @@
+{
+    "languageName": "Slovenčina",
+    "title": "MCPTool - @wrrulos",
+    "input": "&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+    "termux_input": "&croot@mcptool &8&r▶ &f&l",
+    "prefix": "&f&l[&c#&f&l] ",
+    "invalidCommand": "&cNeplatný príkaz. &f&lPoužite &ahelp&f&l pre zobrazenie dostupných príkazov.",
+    "apiConnectionError": "&cNemohol som sa pripojiť k API. Skúste to neskôr znova.",
+    "stopping": "Zastavenie...",
+    "shodanInvalidApiKey": "&f&lZadaný API kľúč nie je platný! Skontrolujte konfiguračný súbor.",
+    "shodanApiKeyNoAccess": "&f&lZadaný API kľúč nemá prístup k Shodan vyhľadávaniu!",
+    "credits": "Vytvoril &b@wrrulos",
+    "banners": {
+        "update": {
+            "title": "&5▶ &cMCP&f&lTool &8&r| &f&lAktualizácia&5 ◀&f&l",
+            "checkingUpdates": "&a• &f&lKontrola aktualizácií pre &cMCP&f&lTool..",
+            "newVersion": "&a• &f&lNašla sa nová verzia programu.",
+            "notFound": "&a• &f&lPoužívate najnovšiu verziu programu.",
+            "url": "&a• &f&lStiahnite si novú verziu z:",
+            "error": "&c• &f&lDošlo k neočakávanému chybovému stavu. Spúšťanie &cMCP&f&lTool.."
+        },
+        "presentation": {
+            "message1": "Testovacia pomôcka pre Minecraft",
+            "message2": "Robte bezpečnostné testy na svojich serveroch &aMinecraft&f&l!"
+        },
+        "menu": {
+            "message1": "&f&lTestovacia pomôcka pre &aMC &8&l| &f&lPoužite &chelp &f&l na zobrazenie príkazov",
+            "message2": "&f&lPripojte sa k Discord serveru pomocou tohto odkazu: &a&lwww.mcptool.net/discord"
+        },
+        "menu_termux": {
+            "message1": "&f&lTestovacia pomôcka pre &aMC",
+            "message2": "&f&lPoužite &chelp &f&l na zobrazenie príkazov",
+            "message3": "&f&lPripojte sa na Discord server: &a&lwww.mcptool.net/discord"
+        },
+        "discord": {
+            "message1": "Pridajte sa na môj Discord server pre",
+            "message2": "Získanie pomoci alebo nahlásenie chýb v programe.",
+            "message3": "Buďte v obraze ohľadom mojich projektov.",
+            "message4": "Môžete so mnou komunikovať aj na serveri.",
+            "message5": "Odkaz na server:",
+            "termux_message": "Pridajte sa na môj Discord server pre získanie pomoci alebo sledovanie mojich projektov: &a&lwww.mcptool.net/discord"
+        }
+    },  "commands": {
+        "usage": "[&c!&f&l] Použitie príkazu: ",
+        "error": "&4[&cERR&f&lOR&r&4] ",
+        "ctrlC": "[&c!&f&l] Príkaz bol nútené zastavený.",
+        "commandUsage": "&f&lPoužitie príkazu:",
+        "gettingDataFromServer": "&f&lZískavanie údajov zo servera..",
+        "errorBedrockServer": "&f&lTento príkaz môžete použiť iba s javovými servermi.",
+        "serversFound": "&f&lPríkaz bol dokončený a boli nájdené &a&l[0]&f&l servery.",
+        "serversNotFound": "&f&lPríkaz bol dokončený a neboli nájdené žiadne servery.",
+        "invalidArguments": {
+            "invalidServer": "&f&lZadaný server je vypnutý alebo neexistuje.",
+            "InvalidRconFormat": "&f&lZadaný server je neplatný. Musíte zadať IP adresu a port RCON servera!",
+            "invalidIP": "&f&lZadaná IP adresa nie je platná! (&c[0]&f&l)",
+            "invalidIpRange": "&f&lZadaný rozsah IP adries nie je platný! (&c[0]&f&l)",
+            "invalidPorts": "&f&lZadaný rozsah portov nie je platný! (&c[0]&f&l)",
+            "invalidDomain": "&f&lZadaná doména nie je platná!",
+            "invalidScanMethod": "&f&lZadaná metóda skenovania nie je platná.",
+            "invalidBotArgument": "&f&lMusíte zadať platnú voľbu pre checker! (&ay or n&f&l)",
+            "invalidProxyFile": "&f&lZadaný proxy súbor neexistuje!",
+            "invalidFile": "&f&lSúbor &b[0] &f&lneexistuje!",
+            "invalidPageArgument": "&f&lMusíte zadať platné číslo stránky!",
+            "invalidVersion": "&f&lZadaná verzia nie je platná.",
+            "invalidDelay": "&f&lČasový interval nie je platný.",
+            "invalidLoopArgument": "&f&lMusíte zadať platnú voľbu pre slučku! (&ay or n&f&l)",
+            "invalidLanguage": "&f&lZadaný jazyk nie je platný.",
+            "invalidRconPassword": "&f&lHeslo RCON je nesprávne.",
+            "invalidForwardingMode": "&f&lMusíte zadať platný režim presmerovania! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "message": "&f&lPre viac informácií navštívte sprievodcu: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "argument1": "ip:port/domena",
+            "missingArgument1": "&cMusíte zadať server!"
+        },
+        "uuid": {
+            "argument1": "hráč",
+            "missingArgument1": "&cMusíte zadať hráča!",
+            "onlineUUID": "&f&lUUID &ePremium&f&l:&e",
+            "offlineUUID": "&f&lUUID &cNo-Premium&f&l:&c"
+        },
+            "ipinfo": {
+            "argument1": "IP adresa",
+            "missingArgument1": "&cMusíte zadať IP adresu!",
+            "result1": "&cPokračovať",
+            "result2": "&cKrajina",
+            "result3": "&cRegión",
+            "result4": "&cMesto",
+            "result5": "&cPSČ",
+            "result6": "&cAS",
+            "result7": "&cObrátená DNS",
+            "reverse": "&4[&cHO&f&lST&4]"
+        },
+            "dnslookup": {
+            "argument1": "doména",
+            "missingArgument1": "&cMusíte zadať doménu!",
+            "withoutResults": "&f&lŽiadne výsledky neboli nájdené."
+        },
+        "shodan": {
+            "argument1": "údaje",
+            "missingArgument1": "&cMusíte zadať údaje pre vyhľadávanie!",
+            "scanning": "&f&lVyhľadávanie serverov obsahujúcich nasledujúce údaje ►",
+            "serversNotFound": "&f&lNeboli nájdené servery s určenými údajmi.",
+            "ipsFound": "&f&lBoli nájdené &a[0] &f&lIP adresy obsahujúce nasledujúce údaje (&b[1]&f&l).",
+            "checkingServers": "&f&lKontrola, ktoré z týchto IP adries patria k serveru Minecraft.."
+        },
+        "websearch": {
+            "argument1": "tag",
+            "missingArgument1": "&cMusíte zadať štítok pre vyhľadávanie!",
+            "searching": "&f&lVyhľadávanie serverov so štítkom &a[0]&f&l na najpopulárnejších stránkach..",
+            "webSearch": "&f&lVyhľadávanie serverov na stránke &b[0]",
+            "serversNotFound": "&f&lNeboli nájdené servery so štítkom na určených stránkach.",
+            "checkingServers": "&f&lBoli získané &a[0] &f&lservery zo stránok."
+        },
+        "subdomains": {
+            "argument1": "doména",
+            "argument2": "súbor",
+            "missingArgument1": "&cMusíte zadať doménu!",
+            "missingArgument2": "&cMusíte zadať súbor obsahujúci zoznam subdomén!",
+            "lookingForSubdomains": "&f&lHľadanie subdomén pre [0]..",
+            "found": "&f&lNájdená subdoména: &a[0] &7(&f&l[1]&7)",
+            "subdomainsFound": "&f&lVyhľadávanie skončilo a bolo nájdených &a[0] &f&lsubdomén.",
+            "subdomainsNotFound": "&f&lNeboli nájdené žiadne subdomény..",
+            "checkingServers": "&a[0] &f&lservery získané zo stránky aternos.."
+        },
+        "scan": {
+            "argument1": "IP adresa/rozmedzie IP",
+            "argument2": "port/rozmedzie portov",
+            "argument3": "metóda skenovania",
+            "missingArgument1": "&cMusíte zadať IP adresu!",
+            "missingArgument2": "&cMusíte zadať rozmedzie portov!",
+            "missingArgument3": "&cMusíte zadať metódu skenovania!",
+            "scanningIpAddress": "&f&lSkenovanie IP adresy &a[0]&f&l..",
+            "scanningIpRange": "&f&lSkenovanie rozmedzia IP &a[0]&f&l..",
+            "scanningFile": "&f&lSkenovanie získaných IP adries zo súboru &a[0] &f&l(&a[1] &f&lIP adries).",
+            "scanFinished": "&f&lPríkaz sa skončil a bolo nájdených &a[0]&f&l Minecraft serverov!",
+            "noPortsFound": "&f&lSkenovanie skončilo a neboli nájdené Minecraft servery na danej IP adrese!",
+            "noIpsFound": "&f&lNeboli nájdené žiadne IP adresy v súbore!",
+            "javaNotInstalled": "&f&lMusíte nainštalovať &ajavu &f&lna použitie tejto metódy!",
+            "nmapNotInstalled": "&f&lMusíte nainštalovať &anmap &f&lna použitie tejto metódy!",
+            "masscanNotInstalled": "&f&lMusíte nainštalovať &amasscan &f&lna použitie tejto metódy!"
+        },
+        "listening": {
+            "argument1": "adresaIP:Port/domena",
+            "missingArgument1": "&cMusíte zadať server!",
+            "waitingForPlayers": "&f&lČakám na hráčov..",
+            "foundPlayers": "&f&lZachytení hráči:"
+        },
+        "playerlogs": {
+            "argument1": "adresaIP:Port/domena",
+            "missingArgument1": "&cMusíte zadať server!",
+            "waitingForPlayers": "&f&lČakám na hráčov..",
+            "connectedUser": "&4[&a[0]&4] &a▲ &f&lHráč &b&l[1] &f&lvstúpil na server.",
+            "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lHráč &b&l[1] &f&lodišiel zo servera."
+        },
+        "resolver": {
+            "argument1": "doména",
+            "missingArgument1": "&cMusíte zadať doménu!",
+            "subdomainsNotFound": "&f&lPre zadanú doménu neboli nájdené žiadne poddomény.",
+            "domain": "&f&lZoznam nájdených domén:",
+            "ip": "&f&lZoznam nájdených IP adries:"
+        },
+        "fakeproxy": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "režim",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať režim preposielania!",
+            "copyingData": "&f&lKopírujem údaje zo zadaného servera..",
+            "errorWhenCopying": "&f&lNepodarilo sa skopírovať údaje zo zadaného servera. Bol správne zadaný server?",
+            "ngrokStart": "&f&lSpúšťam ngrok server..",
+            "ipNgrokError": "&f&lNebolo možné získať IP adresu z ngrok. Možno nie je nadviazané konto na ngrok.",
+            "ngrokNotFound": "&f&lNGROK nie je nainštalovaný. (Nemôžete mať IP z ngrok!)",
+            "waitingForData": "&f&lČakám na údaje..",
+            "connecting": "[0] vstúpil na server.",
+            "disconnecting": "[0] sa odpojil zo servera.",
+            "messageCaptured": "[0] napísal správu:",
+            "commandCaptured": "[0] spustil príkaz:"
+        },
+        "login": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "používateľ",
+            "argument3": "verzia",
+            "argument4": "súbor",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľa!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte zadať súbor s heslami!",
+            "startingTheAttack": "&f&lPosielam bota na spustenie útoku..",
+            "emptyFile": "&f&lV súbore nie sú k dispozícii žiadne heslá."
+        },
+        "pinlogin": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "používateľ",
+            "argument3": "verzia",
+            "argument4": "súbor",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľa!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte zadať súbor s heslami!",
+            "startingTheAttack": "&f&lPosielam bota na spustenie útoku..",
+            "emptyFile": "&f&lV súbore nie sú k dispozícii žiadne heslá."
+        },
+        "sendcmd": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "používateľ",
+            "argument3": "verzia",
+            "argument4": "súbor",
+            "argument5": "smyčka",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľa!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte zadať súbor s príkazmi, ktoré bude bot vykonávať!",
+            "missingArgument5": "&cMusíte určiť, či má byť útok nekonečný!",
+            "emptyFile": "&f&lV súbore nie sú k dispozícii žiadne príkazy.",
+            "startingTheAttack": "&f&lOdosielam bota.."
+        },
+        "kick": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "používateľ",
+            "argument3": "verzia",
+            "argument4": "smyčka",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľa!",
+            "missingArgument3": "&cMusíte zadať verziu servera!",
+            "missingArgument4": "&cMusíte určiť, či má byť útok nekonečný!",
+            "startingTheAttack": "&f&lVyháňam používateľa.."
+        },
+        "kickall": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "verzia",
+            "argument3": "smyčka",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať verziu servera!",
+            "missingArgument3": "&cMusíte určiť, či má byť útok nekonečný!",
+            "noPlayers": "&f&lNebolo možné získať pripojených hráčov na serveri.",
+            "startingTheAttack": "&f&lVyháňam získaných používateľov.."
+        },
+        "rconbrute": {
+            "argument1": "adresaIP:portRcon",
+            "argument2": "súbor",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať súbor s heslami!",
+            "emptyFile": "&f&lV súbore nie sú k dispozícii žiadne heslá.",
+            "preparingTheAttack": "&f&lPríprava útoku hrubej sily (&cRCON&f&l)..",
+            "numberOfPasswords": "&f&lZvolený súbor: &a[0] &f&l(&a[1] hesiel&f&l)",
+            "startingTheAttack": "&f&lSpúšťam útok..",
+            "tryingPassword": "&f&lSkúšam heslo: &c[0]",
+            "passwordFound": "&aHeslo je: &b[0]",
+            "passwordNotFound": "&cHeslo sa nenašlo v zozname hesiel.",
+            "timeout": "&cUplynul dlhý čas a server neodpovedá",
+            "connectionRefused": "&f&lChyba pripojenia: &cPripojenie bolo odmietnuté.",
+            "stopping": "&f&lZastavujem útok..",
+            "error": "&f&lNeočakávaná chyba pri pokuse o pripojenie: &c[0]"
+        },
+        "checker": {
+            "argument1": "súbor",
+            "missingArgument1": "&cMusíte zadať súbor!",
+            "noServersInTheFile": "&f&lV súbore sa nenašli žiadne IP adresy!",
+            "foundServers": "&f&lNájdených serverov: &a[0]",
+            "checking": "&f&lKontrola serverov.."
+        },
+        "waterfall": {
+            "argument1": "adresaIP:Port/domena",
+            "missingArgument1": "&cMusíte zadať server!"
+        },
+        "velocity": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "režim",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať režim preposielania!"
+        },
+        "connect": {
+            "argument1": "adresaIP:Port/domena",
+            "argument2": "používateľ",
+            "argument3": "verzia",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať používateľa pre bota!",
+            "missingArgument3": "&cMusíte zadať verziu, ktorú bude bot používať na pripojenie k serveru!"
+        },
+        "rcon": {
+            "argument1": "adresaIP:portRcon",
+            "argument2": "heslo",
+            "missingArgument1": "&cMusíte zadať server!",
+            "missingArgument2": "&cMusíte zadať heslo pre RCON!",
+            "connecting": "&f&lPokus o pripojenie..",
+            "timeout": "&f&lServer neodpovedal včas. (Timeout)",
+            "refusedConnection": "&f&lServer zamietol pripojenie.",
+            "establishedConnection": "&f&lPripojenie k serveru bolo úspešné.",
+            "command": "&f&lPríkaz: ",
+            "stopping": "&f&lUkončujem pripojenie.."
+        },
+        "language": {
+            "argument1": "jazyk",
+            "missingArgument1": "&cMusíte zadať jazyk!",
+            "languageInUse": "&f&lZadaný jazyk je už vybraný!",
+            "languageList": "&f&lDostupné jazyky: &a[0]",
+            "changeOfLanguage": "&f&lJazyk bol úspešne zmenený na &a[0]&f&l."
+        }
+    },
+    "versionFileMessages": {
+        "updateFailed": "&c&lChyba pri hľadaní novej verzie. &f&lSpúšťam aktuálnu verziu..",
+        "updateCheck": "&f&lHľadám novú verziu &aVersions.json&f&l..",
+        "updateAvailable": "&aNájdená nová verzia!",
+        "downloadingUpdate": "&f&lSťahujem novú verziu..",
+        "updateCompleted": "&f&lNová verzia &bVersions.json&f&l bola nainštalovaná.",
+        "noUpdatesFound": "&f&lNeboli nájdené žiadne nové verzie."
+    },
+    "proxyMessages": {
+        "configuring": "&f&lNastavujem proxy server..",
+        "updateFailed": "&c&lChyba pri hľadaní novej verzie. &f&lSpúšťam aktuálnu verziu..",
+        "updateCheck": "&f&lHľadám novú verziu pre &a[0].jar&f&l..",
+        "updateAvailable": "&aNájdená nová verzia &b[0]!",
+        "downloadingUpdate": "&f&lSťahujem novú verziu..",
+        "updateCompleted": "&f&lNová verzia &b[0]&f&l bola nainštalovaná.",
+        "noUpdatesFound": "&f&lNeboli nájdené žiadne nové verzie.",
+        "starting": "&f&lSpúšťam proxy server..",
+        "stopping": "&f&lZastavujem proxy server..",
+        "proxyServerStarted": "&f&l[&a>&f&l] Proxy server bol úspešne spustený na &a[0]&f&l.",
+        "proxyServerNotStartup": "&f&l[&a>&f&l] Proxy server sa zdá, že sa neštartuje správne. Máte nainštalovaný Java 17 alebo novší? Ak áno a chyba pretrváva, nahlaste ju na našom Discord serveri."
+    }
+}
