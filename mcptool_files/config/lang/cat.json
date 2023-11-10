@@ -1,0 +1,323 @@
+{
+    "languageName": "Català",
+    "title": "MCPTool - @wrrulos",
+    "input": "&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+    "termux_input": "&croot@mcptool &8&r▶ &f&l",
+    "prefix": "&f&l[&c#&f&l] ",
+    "invalidCommand": "&cComanda no vàlida. &f&lUtilitza &ahelp&f&l per veure les comandes disponibles.",
+    "apiConnectionError": "&cNo he pogut establir connexió amb l'API. Torna-ho a intentar més tard.",
+    "stopping": "Aturant...",
+    "shodanInvalidApiKey": "&f&lLa clau d'API proporcionada no és vàlida! Comprova l'arxiu de configuració.",
+    "shodanApiKeyNoAccess": "&f&lLa clau d'API proporcionada no té accés a les cerques de Shodan!",
+    "credits": "Creat per &b@wrrulos",
+    "banners": {
+        "update": {
+            "title": "&5▶ &cMCP&f&lTool &8&r| &f&lActualització&5 ◀&f&l",
+            "checkingUpdates": "&a• &f&lCercant actualitzacions de &cMCP&f&lTool..",
+            "newVersion": "&a• &f&lS'ha trobat una nova versió del programa.",
+            "notFound": "&a• &f&lEstàs utilitzant l'última versió del programa.",
+            "url": "&a• &f&lDescarrega la nova versió des de:",
+            "error": "&c• &f&lS'ha produït un error inesperat. Iniciant &cMCP&f&lTool.."
+        },
+        "presentation": {
+            "message1": "Eina de Pentesting per Minecraft",
+            "message2": "Realitza proves de seguretat als teus servidors de &aMinecraft&f&l!"
+        },
+        "menu": {
+            "message1": "&f&lEina de Pentesting per &aMC &8&l| &f&lUtilitza &chelp &f&lper veure les comandes",
+            "message2": "&f&lUneix-te al servidor de Discord fent servir l'enllaç següent: &a&lwww.mcptool.net/discord"
+        },
+        "menu_termux": {
+            "message1": "&f&lEina de Pentesting per &aMC",
+            "message2": "&f&lUtilitza &chelp &f&lper veure les comandes",
+            "message3": "&f&lUneix-te al servidor de Discord: &a&lwww.mcptool.net/discord"
+        },
+        "discord": {
+            "message1": "Entra al meu servidor de Discord per a",
+            "message2": "Obtenir ajuda o informar d'un error del programa.",
+            "message3": "Mantenir-te al dia amb els meus projectes.",
+            "message4": "També pots parlar amb mi a través del servidor.",
+            "message5": "Enllaç del servidor:",
+            "termux_message": "Entra al meu servidor de Discord per a obtenir ajuda o mantenir-te al dia amb els meus projectes: &a&lwww.mcptool.net/discord"
+        }
+    },
+    "commands": {
+        "usage": "[&c!&f&l] Ús de la comanda: ",
+        "error": "&4[&cERR&f&lOR&r&4] ",
+        "ctrlC": "[&c!&f&l] La comanda s'ha aturat de forma forçada.",
+        "commandUsage": "&f&lÚs de la comanda:",
+        "gettingDataFromServer": "&f&lObtinguent dades del servidor...",
+        "errorBedrockServer": "&f&lAquesta comanda només es pot utilitzar amb servidors Java.",
+        "serversFound": "&f&lLa comanda ha finalitzat i s'han trobat &a&l[0]&f&l servidors.",
+        "serversNotFound": "&f&lLa comanda ha finalitzat i no s'han trobat servidors.",
+        "invalidArguments": {
+            "invalidServer": "&f&lEl servidor introduït està apagat o no existeix.",
+            "InvalidRconFormat": "&f&lEl servidor introduït no és vàlid. Has d'introduir la IP i el port RCON del servidor.",
+            "invalidIP": "&f&lLa direcció IP introduïda no és vàlida! (&c[0]&f&l)",
+            "invalidIpRange": "&f&lL'interval d'IP introduït no és vàlid! (&c[0]&f&l)",
+            "invalidPorts": "&f&lL'interval de ports introduïts no és vàlid! (&c[0]&f&l)",
+            "invalidDomain": "&f&lEl domini introduït no és vàlid.",
+            "invalidScanMethod": "&f&lEl mètode d'escaneig introduït no és vàlid.",
+            "invalidBotArgument": "&f&lHas d'introduir una opció vàlida per al comprovador! (&ay o n&f&l)",
+            "invalidProxyFile": "&f&lL'arxiu proxy introduït no existeix!",
+            "invalidFile": "&f&lL'arxiu &b[0] &f&lno existeix!",
+            "invalidPageArgument": "&f&lHas d'introduir un número vàlid de pàgines!",
+            "invalidVersion": "&f&lLa versió introduïda no és vàlida.",
+            "invalidDelay": "&f&lEl temps d'espera no és vàlid.",
+            "invalidLoopArgument": "&f&lHas d'introduir una opció vàlida per al bucle! (&ay o n&f&l)",
+            "invalidLanguage": "&f&lL'idioma introduït no és vàlid.",
+            "invalidRconPassword": "&f&lLa contrasenya de RCON no és correcta.",
+            "invalidForwardingMode": "&f&lHas d'introduir un mode de reenviament vàlid! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "message": "&f&lPer a més informació, visita la guia: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "argument1": "ip:port/domini",
+            "missingArgument1": "&cHas d'introduir un servidor!"
+        },
+        "uuid": {
+            "argument1": "usuari",
+            "missingArgument1": "&cHas d'introduir un usuari!",
+            "onlineUUID": "&f&lUUID &ePremium&f&l:&e",
+            "offlineUUID": "&f&lUUID &cNo-Premium&f&l:&c"
+        },
+        "ipinfo": {
+            "argument1": "adreçaIP",
+            "missingArgument1": "&cHas d'introduir una adreça IP!",
+            "result1": "&cContinuació",
+            "result2": "&cPaís",
+            "result3": "&cRegió",
+            "result4": "&cCiutat",
+            "result5": "&cISP",
+            "result6": "&cAS",
+            "result7": "&cDNS invers",
+            "reverse": "&4[&cHOST&f&l&4]"
+        },"dnslookup": {
+            "argument1": "domini",
+            "missingArgument1": "&cHas d'introduir un domini!",
+            "withoutResults": "&f&lNo s'han trobat resultats."
+        },
+        "shodan": {
+            "argument1": "dades",
+            "missingArgument1": "&cHas d'introduir dades per a la cerca!",
+            "scanning": "&f&lCercant servidors que contenen les següents dades ►",
+            "serversNotFound": "&f&lNo s'han trobat servidors amb les dades especificades.",
+            "ipsFound": "&f&lS'han trobat &a[0] &f&ladreces IP que contenen les següents dades (&b[1]&f&l).",
+            "checkingServers": "&f&lComprovant quines d'aquestes adreces IP pertanyen a un servidor de Minecraft."
+        },
+        "websearch": {
+            "argument1": "etiqueta",
+            "missingArgument1": "&cHas d'introduir l'etiqueta per a la cerca!",
+            "searching": "&f&lCercant servidors amb l'etiqueta &a[0]&f&l a les pàgines més populars..",
+            "webSearch": "&f&lCercant servidors a la pàgina &b[0]",
+            "serversNotFound": "&f&lNo s'han trobat servidors amb l'etiqueta especificada a les pàgines.",
+            "checkingServers": "&f&lS'han obtingut &a[0] &f&lservidors de les pàgines."
+        },
+        "subdomains": {
+            "argument1": "domini",
+            "argument2": "arxiu",
+            "missingArgument1": "&cHas d'introduir un domini!",
+            "missingArgument2": "&cHas d'introduir un arxiu que contingui la llista de subdominis!",
+            "lookingForSubdomains": "&f&lCercant subdominis de [0]..",
+            "found": "&f&lSubdomini trobat: &a[0] &7(&f&l[1]&7)",
+            "subdomainsFound": "&f&lLa cerca ha acabat i s'han trobat &a[0] &f&lsubdominis.",
+            "subdomainsNotFound": "&f&lNo s'han trobat subdominis..",
+            "checkingServers": "&a[0] &f&lservidors obtinguts des de la pàgina d'Aternos.."
+        },
+        "scan": {
+            "argument1": "adreçaIP/rangD'adrecesIP",
+            "argument2": "port/rangDePorts",
+            "argument3": "mètodeD'escaneig",
+            "missingArgument1": "&cHas d'introduir una adreça IP!",
+            "missingArgument2": "&cHas d'introduir un rang de ports!",
+            "missingArgument3": "&cHas d'introduir un mètode d'escaneig!",
+            "scanningIpAddress": "&f&lEscanejant l'adreça IP &a[0]&f&l..",
+            "scanningIpRange": "&f&lEscanejant el rang d'IP &a[0]&f&l..",
+            "scanningFile": "&f&lEscanejant les adreces IP trobades a l'arxiu &a[0] &f&l(&a[1] &f&ladreces IP).",
+            "scanFinished": "&f&lLa comanda ha acabat i s'han trobat &a[0]&f&l servidors de Minecraft!",
+            "noPortsFound": "&f&lL'escaneig ha acabat i no s'han trobat servidors de Minecraft a l'adreça IP!",
+            "noIpsFound": "&f&lNo s'han trobat adreces IP a l'arxiu!",
+            "javaNotInstalled": "&f&lHas d'instal·lar &ajava &f&lper a usar aquest mètode!",
+            "nmapNotInstalled": "&f&lHas d'instal·lar &anmap &f&lper a usar aquest mètode!",
+            "masscanNotInstalled": "&f&lHas d'instal·lar &amasscan &f&lper a usar aquest mètode!"
+        },
+        "listening": {
+            "argument1": "adreçaIP:Port/domini",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "waitingForPlayers": "&f&lEsperant jugadors..",
+            "foundPlayers": "&f&lJugadors capturats:"
+        },
+        "playerlogs": {
+            "argument1": "adreçaIP:Port/domini",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "waitingForPlayers": "&f&lEsperant jugadors..",
+            "connectedUser": "&4[&a[0]&4] &a▲ &f&lL'usuari &b&l[1] &f&lha entrat al servidor.",
+            "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lL'usuari &b&l[1] &f&lse'n va del servidor."
+        },
+        "resolver": {
+            "argument1": "domini",
+            "missingArgument1": "&cHas d'entrar un domini!",
+            "subdomainsNotFound": "&f&lNo s'han trobat subdominis per al domini especificat.",
+            "domain": "&f&lLlista de dominis trobats:",
+            "ip": "&f&lLlista d'adreces IP trobades:"
+        },
+        "fakeproxy": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "mode",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas de introduir un mode de reenviament!",
+            "copyingData": "&f&lCopiant dades del servidor especificat..",
+            "errorWhenCopying": "&f&lNo s'han pogut copiar les dades del servidor especificat. L'adreça IP del servidor és correcta?",
+            "ngrokStart": "&f&lIniciant el servidor de ngrok..",
+            "ipNgrokError": "&f&lNo s'ha pogut obtenir la IP de ngrok. Això pot ser degut a no haver vinculat un compte a ngrok.",
+            "ngrokNotFound": "&f&lNGROK no està instal·lat. (No pots obtenir una IP de Ngrok!)",
+            "waitingForData": "&f&lEsperant les dades..",
+            "connecting": "[0] ha entrat al servidor.",
+            "disconnecting": "[0] s'ha desconnectat del servidor.",
+            "messageCaptured": "[0] ha escrit un missatge:",
+            "commandCaptured": "[0] ha executat una ordre:"
+        },
+        "login": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "usuari",
+            "argument3": "versió",
+            "argument4": "fitxer",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas d'introduir un usuari!",
+            "missingArgument3": "&cHas d'introduir la versió del servidor!",
+            "missingArgument4": "&cHas d'introduir un fitxer de contrasenya!",
+            "startingTheAttack": "&f&lEnviant el bot per iniciar l'atac..",
+            "emptyFile": "&f&lNo s'han trobat contrasenyes disponibles al fitxer."
+        },
+        "pinlogin": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "usuari",
+            "argument3": "versió",
+            "argument4": "fitxer",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas d'introduir un usuari!",
+            "missingArgument3": "&cHas d'introduir la versió del servidor!",
+            "missingArgument4": "&cHas d'introduir un fitxer de contrasenya!",
+            "startingTheAttack": "&f&lEnviant el bot per iniciar l'atac..",
+            "emptyFile": "&f&lNo s'han trobat contrasenyes disponibles al fitxer."
+        },
+        "sendcmd": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "usuari",
+            "argument3": "versió",
+            "argument4": "fitxer",
+            "argument5": "bucle",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas d'introduir un usuari!",
+            "missingArgument3": "&cHas d'introduir la versió del servidor!",
+            "missingArgument4": "&cHas d'introduir un fitxer que contingui les ordres que executarà el bot!",
+            "missingArgument5": "&cHas de especificar si vols que l'atac sigui infinit!",
+            "emptyFile": "&f&lNo s'han trobat ordres disponibles al fitxer.",
+            "startingTheAttack": "&f&lEnviant el bot.."
+        },
+        "kick": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "usuari",
+            "argument3": "versió",
+            "argument4": "bucle",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas d'introduir un usuari!",
+            "missingArgument3": "&cHas d'introduir la versió del servidor!",
+            "missingArgument4": "&cHas de especificar si vols que l'atac sigui infinit!",
+            "startingTheAttack": "&f&lExpulsant l'usuari.."
+        },
+        "kickall": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "versió",
+            "argument3": "bucle",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas d'introduir la versió del servidor!",
+            "missingArgument3": "&cHas de especificar si vols que l'atac sigui infinit!",
+            "noPlayers": "&f&lNo s'han pogut obtenir jugadors connectats al servidor.",
+            "startingTheAttack": "&f&lExpulsant els usuaris obtinguts.."
+        },
+        "rconbrute": {
+            "argument1": "adreçaIP:portRcon",
+            "argument2": "fitxer",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas d'introduir un fitxer de contrasenya!",
+            "emptyFile": "&f&lNo s'han trobat contrasenyes disponibles al fitxer.",
+            "preparingTheAttack": "&f&lPreparant l'atac de força bruta (&cRCON&f&l)..",
+            "numberOfPasswords": "&f&lFitxer seleccionat: &a[0] &f&l(&a[1] contrasenyes&f&l)",
+            "startingTheAttack": "&f&lIniciant l'atac..",
+            "tryingPassword": "&f&lIntentant la contrasenya: &c[0]",
+            "passwordFound": "&aLa contrasenya és: &b[0]",
+            "passwordNotFound": "&cLa contrasenya no es troba a la llista de contrasenyes.",
+            "timeout": "&cHa passat massa temps i el servidor no respon",
+            "connectionRefused": "&f&lError en connectar: &cConnexió Rebutjada.",
+            "stopping": "&f&lAturant l'atac..",
+            "error": "&f&lError inesperat en intentar connectar: &c[0]"
+        },
+        "checker": {
+            "argument1": "fitxer",
+            "missingArgument1": "&cHas d'introduir un fitxer!",
+            "noServersInTheFile": "&f&lNo s'han trobat adreces IP al fitxer!",
+            "foundServers": "&f&lS'han trobat &a[0] &f&lservidors al fitxer.",
+            "checking": "&f&lComprovant servidors.."
+        },
+        "waterfall": {
+            "argument1": "adreçaIP:Port/domini",
+            "missingArgument1": "&cHas d'introduir un servidor!"
+        },
+        "velocity": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "mode",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas de introduir un mode de reenviament!"
+        },
+        "connect": {
+            "argument1": "adreçaIP:Port/domini",
+            "argument2": "usuari",
+            "argument3": "versió",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&cHas de introduir un nom d'usuari per al bot!",
+            "missingArgument3": "&cHas d'introduir la versió que usarà el bot per connectar-se al servidor!"
+        },
+        "rcon": {
+            "argument1": "adreçaIP:portRcon",
+            "argument2": "contrasenya",
+            "missingArgument1": "&cHas d'introduir un servidor!",
+            "missingArgument2": "&c¡Has d'introduir la contrasenya RCON!",
+            "connecting": "&f&lIntentant connectar..",
+            "timeout": "&f&lEl servidor no ha respost a temps. (Timeout)",
+            "refusedConnection": "&f&lEl servidor ha rebutjat la connexió.",
+            "establishedConnection": "&f&lLa connexió amb el servidor s'ha establert correctament.",
+            "command": "&f&lOrdre: ",
+            "stopping": "&f&lAturant la connexió.."
+        },
+        "language": {
+            "argument1": "idioma",
+            "missingArgument1": "&cHas de seleccionar un idioma!",
+            "languageInUse": "&f&lL'idioma seleccionat ja està en ús!",
+            "languageList": "&f&lLlista d'idiomes disponibles: &a[0]",
+            "changeOfLanguage": "&f&lL'idioma s'ha canviat correctament a &a[0]&f&l."
+        }
+    },
+    "versionFileMessages": {
+        "updateFailed": "&c&lS'ha produït un error en intentar trobar la nova versió. &f&lExecutant la versió actual..",
+        "updateCheck": "&f&lCercant una nova versió de &aVersions.json&f&l..",
+        "updateAvailable": "&aNova versió trobada!",
+        "downloadingUpdate": "&f&lDescarregant la nova versió..",
+        "updateCompleted": "&f&lS'ha instal·lat la nova versió de &bVersions.json&f&l.",
+        "noUpdatesFound": "&f&lNo s'han trobat noves versions disponibles."
+    },
+    "proxyMessages": {
+        "configuring": "&f&lConfigurant el servidor proxy..",
+        "updateFailed": "&c&lS'ha produït un error en intentar trobar la nova versió. &f&lExecutant la versió actual..",
+        "updateCheck": "&f&lCercant una nova versió de &a[0].jar&f&l..",
+        "updateAvailable": "&aNova versió de &b[0] &atrobada!",
+        "downloadingUpdate": "&f&lDescarregant la nova versió..",
+        "updateCompleted": "&f&lS'ha instal·lat la nova versió de &b[0]&f&l",
+        "noUpdatesFound": "&f&lNo s'han trobat noves versions disponibles.",
+        "starting": "&f&lIniciant servidor proxy..",
+        "stopping": "&f&lAturant servidor proxy..",
+        "proxyServerStarted": "&f&l[&a>&f&l] El servidor proxy s'ha iniciat correctament a &a[0]&f&l.",
+        "proxyServerNotStartup": "&f&l[&a>&f&l] El servidor proxy sembla que no s'inicia correctament. ¿Tens Java 17 o superior instal·lat al teu sistema? Si ho tens i l'error persisteix, informa'n al servidor de Discord."
+    }
+}
