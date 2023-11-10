@@ -124,11 +124,11 @@ class LocalFileUtilities:
             with open(f'./config/config.json', 'w') as f:
                 json.dump(data, f, indent=4)
 
-        if not os.path.exists(f'./mcptool_files/richPresence/richPresence.command'):
+        if not os.path.exists(f'./mcptool_files/presence/richPresence.command'):
             with open(f'./mcptool_files/richPresence/richPresence.command', 'w') as f:
                 f.write('Help')
 
-        if not os.path.exists(f'./mcptool_files/richPresence/richPresence.status'):
+        if not os.path.exists(f'./mcptool_files/presence/richPresence.status'):
             with open(f'./mcptool_files/richPresence/richPresence.status', 'w') as f:
                 f.write('True')
 
