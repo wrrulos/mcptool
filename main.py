@@ -6,10 +6,14 @@ import sys
 from src.startup import Startup
 from src.decoration.print_banner import print_banner
 from src.utilities.check_utilities import CheckUtilities
+from src.utilities.local_file_utilities import LocalFileUtilities
 
 
 if __name__ == '__main__':
     try:
+        # Check local files.
+        LocalFileUtilities.check_local_files()
+
         # Determine the banner name based on the configuration and environment.
         pickaxe_banner_name = f'pickaxe' if not CheckUtilities.check_termux() else 'pickaxe_termux'
 
