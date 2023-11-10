@@ -357,10 +357,10 @@ class MinecraftServerData:
 
         # Construct the command to run the bot checker script.
         if JsonManager.get(["minecraftServerOptions", "proxy"]):
-            command = f'node src/scripts/checker.js {ip} {port} {protocol} {JsonManager.get(["minecraftServerOptions", "proxyFileForTheBot"])}'
+            command = f'node mcptool_files/scripts/checker.js {ip} {port} {protocol} {JsonManager.get(["minecraftServerOptions", "proxyFileForTheBot"])}'
 
         else:
-            command = f'node src/scripts/checker.js {ip} {port} {protocol}'
+            command = f'node mcptool_files/scripts/checker.js {ip} {port} {protocol}'
 
         proxy_file = None  # You may specify a proxy file here if needed.
 
@@ -418,10 +418,10 @@ class MinecraftServerData:
 
         # Construct the command to run the bot checker script.
         if JsonManager.get(["minecraftServerOptions", "proxy"]):
-            command = f'node src/scripts/checker.js {ip} {port} {protocol} {JsonManager.get(["minecraftServerOptions", "proxyFileForTheBot"])}'
+            command = f'node mcptool_files/scripts/checker.js {ip} {port} {protocol} {JsonManager.get(["minecraftServerOptions", "proxyFileForTheBot"])}'
 
         else:
-            command = f'node src/scripts/checker.js {ip} {port} {protocol}'
+            command = f'node mcptool_files/scripts/checker.js {ip} {port} {protocol}'
 
         proxy_file = None  # You may specify a proxy file here if needed.
 
