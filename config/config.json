@@ -13,7 +13,7 @@
     },
     "scannerOptions": {
         "nmapCommand": "nmap -p [PORTS] -n -T5 -Pn -vvv -sS [TARGET]",
-        "quboscannerCommand": "cd ./src/scan && java -Dfile.encoding=UTF-8 -jar old_qubo.jar -range [TARGET] -ports [PORTS] -th 500 -ti 2000",
+        "quboscannerCommand": "cd ./mcptool_files/scanner && java -Dfile.encoding=UTF-8 -jar old_qubo.jar -range [TARGET] -ports [PORTS] -th 500 -ti 2000",
         "masscanCommand": "masscan -p [PORTS] [TARGET]",
         "showScanOutput": false
     },
@@ -28,7 +28,7 @@
         "fakeProxyPort": "33330",
         "fakeProxyUpdateDelay": "2",
         "fakeProxyCommandPrefix": ".",
-        "waterfallVersion": "https://api.papermc.io/v2/projects/waterfall/versions/1.20/builds/549/downloads/waterfall-1.20-549.jar",
+        "waterfallVersion": "https://api.papermc.io/v2/projects/waterfall/versions/1.20/builds/553/downloads/waterfall-1.20-553.jar",
         "velocityVersion": "https://api.papermc.io/v2/projects/velocity/versions/3.2.0-SNAPSHOT/builds/294/downloads/velocity-3.2.0-SNAPSHOT-294.jar"
     },
     "logs": true,
