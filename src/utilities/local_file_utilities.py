@@ -69,7 +69,7 @@ class LocalFileUtilities:
             './config/',
             './config/lang/',
             './mcptool_files/banners/',
-            './mcptool_files/richPresence/',
+            './mcptool_files/presence/',
             './mcptool_files/proxy/',
             './mcptool_files/proxy/settings/',
             './mcptool_files/proxy/jar/fakeproxy/plugins/',
@@ -125,11 +125,11 @@ class LocalFileUtilities:
                 json.dump(data, f, indent=4)
 
         if not os.path.exists(f'./mcptool_files/presence/richPresence.command'):
-            with open(f'./mcptool_files/richPresence/richPresence.command', 'w') as f:
+            with open(f'./mcptool_files/presence/richPresence.command', 'w') as f:
                 f.write('Help')
 
         if not os.path.exists(f'./mcptool_files/presence/richPresence.status'):
-            with open(f'./mcptool_files/richPresence/richPresence.status', 'w') as f:
+            with open(f'./mcptool_files/presence/richPresence.status', 'w') as f:
                 f.write('True')
 
         for path, url in LocalFileUtilities.url_and_paths:
