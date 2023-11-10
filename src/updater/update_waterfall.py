@@ -22,8 +22,8 @@ def update_waterfall(url):
         waterfall = requests.get(url)
         f.write(waterfall.content)
 
-    os.remove('src/proxy/jar/waterfall/waterfall.jar')
-    shutil.copy('mcptool_temp/waterfall.jar', 'src/proxy/jar/waterfall/waterfall.jar')
+    os.remove('mcptool_files/proxy/jar/waterfall/waterfall.jar')
+    shutil.copy('mcptool_temp/waterfall.jar', 'mcptool_files/proxy/jar/waterfall/waterfall.jar')
     os.remove('mcptool_temp/waterfall.jar')
     shutil.rmtree('mcptool_temp')
     paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["proxyMessages", "updateCompleted"]).replace("[0]", "waterfall")}')
