@@ -16,7 +16,7 @@ class RichPresenceUpdater:
             bool: RichPresence Status.
         """
 
-        with open('src/presence/richPresence.status', 'r') as f:
+        with open('mcptool_files/presence/richPresence.status', 'r') as f:
             if f.read() == 'True':
                 return True
 
@@ -31,7 +31,7 @@ class RichPresenceUpdater:
             str: Command
         """
 
-        with open('src/presence/richPresence.command', 'r') as f:
+        with open('mcptool_files/presence/richPresence.command', 'r') as f:
             return f.read()
 
     @staticmethod
@@ -43,7 +43,7 @@ class RichPresenceUpdater:
             status (str): RichPresence Status.
         """
 
-        with open('src/presence/richPresence.status', 'w+') as f:
+        with open('mcptool_files/presence/richPresence.status', 'w+') as f:
             f.truncate(0)
             f.write(status)
 
@@ -59,7 +59,7 @@ class RichPresenceUpdater:
             None
         """
 
-        with open('src/presence/richPresence.command', 'w+') as f:
+        with open('mcptool_files/presence/richPresence.command', 'w+') as f:
             f.truncate(0)
             f.write(command.capitalize())
 
