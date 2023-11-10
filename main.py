@@ -12,6 +12,7 @@ from src.utilities.local_file_utilities import LocalFileUtilities
 if __name__ == '__main__':
     try:
         # Check local files.
+        print('Downloading files necessary to use MCPTool...')
         LocalFileUtilities.check_local_files()
 
         # Determine the banner name based on the configuration and environment.
