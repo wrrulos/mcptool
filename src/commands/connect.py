@@ -1,0 +1,50 @@
+import subprocess
+
+from src.decoration.paint import paint
+from src.minecraft.get_minecraft_server_data import GetMinecraftServerData
+from src.managers.json_manager import JsonManager
+from src.utilities.get_utilities import GetUtilities 
+
+
+def connect_command(server, username, version, *args):
+    """
+    Connects to the specified Minecraft server and displays server information.
+
+    Args:
+        server (str): The IP address or domain of the server.
+        username (str): The Minecraft username to use for the connection.
+        version (str): The Minecraft version to use for the connection.
+        *args: Additional arguments.
+    """
+
+    try:
+        # Get information about the specified Minecraft server.
+        paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "gettingDataFromServer"])}')
+        server_data = GetMinecraftServerData.get_data(server, bot=False)
+
+        if server_data is None:
+            # Display an error message if the server information cannot be retrieved
+            paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "invalidArguments", "invalidServer"])}')
+            return
+        
+        if server_data['platform_type'] != 'Java':
+            # Display an error message if the server is Bedrock.
+            paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["prefix"])}{GetUtilities.get_translated_text(["commands", "errorBedrockServer"])}')
+            return
+
+        # Extract the server IP address and port from the server data.
+        server = server_data['ip_port']
+        ip, port = server.split(':')
+
+        if JsonManager.get(["minecraftServerOptions", "proxy"]):
+            command = f'{JsonManager.get(["minecraftServerOptions", "nodeCommand"])} ./mcptool_files/scripts/connect.js {ip} {port} {username} {version} {len(GetUtilities.get_spaces())} {JsonManager.get(["minecraftServerOptions", "proxyFileForTheBot"])}'
+
+        else:
+            command = f'{JsonManager.get(["minecraftServerOptions", "nodeCommand"])} ./mcptool_files/scripts/connect.js {ip} {port} {username} {version} {len(GetUtilities.get_spaces())}'
+
+        # Run the connection script to connect to the server.
+        subprocess.run(command, shell=True)
+
+    except KeyboardInterrupt:
+        # Handle keyboard interruption gracefully.
+        paint(f'\n{GetUtilities.get_spaces()}{GetUtilities.get_translated_text(["commands", "ctrlC"])}')
