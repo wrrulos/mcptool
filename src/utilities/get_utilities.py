@@ -28,7 +28,6 @@ class GetUtilities:
             spaces (str): The appropriate spacing based on the execution environment.
         """
          
-        #if check_termux():
         if CheckUtilities.check_termux():
             # Set the spacing to a single space for Termux
             spaces = '  '
