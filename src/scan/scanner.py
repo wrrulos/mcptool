@@ -6,6 +6,7 @@ from src.decoration.paint import paint
 from src.managers.json_manager import JsonManager
 from src.managers.log_manager import LogManager
 from src.utilities.get_utilities import GetUtilities
+from src.utilities.check_utilities import CheckUtilities
 from src.minecraft.show_minecraft_server import show_server
 from src.minecraft.get_minecraft_server_data import GetMinecraftServerData
 
@@ -24,7 +25,7 @@ class Scanner:
         first_line = True
 
         # Add sudo before the command if necessary.
-        if os.name != 'nt' and scan_method != 'quboscanner' and not check_termux():
+        if os.name != 'nt' and scan_method != 'quboscanner' and not CheckUtilities.check_termux():
             command = f'sudo {command}'
 
         if JsonManager.get(["scannerOptions", "showScanOutput"]):
