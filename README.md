@@ -62,7 +62,15 @@ See the command guide from this [link.](./docs/es/commands.MD).
 
 ## 🕹 Usage
 
-**python3 main.py**
+### Linux
+
+`chmod +x ./run.sh`
+
+`./run.sh`
+
+## Windows
+
+`./run.bat`
 
 ## 📸 Screenshots
 
@@ -97,5 +105,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
- 
