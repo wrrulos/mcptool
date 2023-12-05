@@ -64,11 +64,31 @@ See the command guide from this [link.](./docs/es/commands.MD).
 
 ### Linux
 
+### Option 1: Run manually.
+
+#### In case you need to start a virtual environment:
+
+`source .env/bin/activate`
+
+`python3 main.py`
+
+### Option 2: Use the run.sh script
+
 `chmod +x ./run.sh`
 
 `./run.sh`
 
 ## Windows
+
+### Option 1: Run manually.
+
+#### In case you need to start a virtual environment:
+
+`.env/bin/Activate.ps1`
+
+`python main.py`
+
+### Option 2: Use the run.bat script
 
 `./run.bat`
 
