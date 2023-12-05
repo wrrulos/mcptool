@@ -62,7 +62,7 @@ See the command guide from this [link.](./docs/es/commands.MD).
 
 ## 🕹 Usage
 
-## Linux
+## 🐧 Linux
 
 ### Option 1: Run manually.
 
@@ -78,7 +78,7 @@ See the command guide from this [link.](./docs/es/commands.MD).
 
 `./run.sh`
 
-## Windows
+## 🪟 Windows
 
 ### Option 1: Run manually.
 
