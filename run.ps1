@@ -40,6 +40,6 @@ if ($null -ne $pythonCommand) {
     & $pythonCommand main.py
 }
 '@
-# Codificar el script a Base64
+# Base64
 $encodedScript = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($script))
 $encodedScript
