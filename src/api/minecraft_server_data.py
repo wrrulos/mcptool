@@ -381,7 +381,6 @@ class MinecraftServerData:
         if stderr:
             # Handle any potential errors from the subprocess.
             error_message = stderr.decode('utf-8')
-            print(error_message)
 
             if 'Error: Cannot find module' in error_message:
                 return 'Error (Missing NodeJS modules!)'
@@ -440,12 +439,11 @@ class MinecraftServerData:
 
         # Capture the output and errors from the subprocess.
         stdout, stderr = process.communicate()
-        print(stdout, stderr)
 
         if stderr:
             # Handle any potential errors from the subprocess.
             error_message = stderr.decode('utf-8')
-            print(error_message)
+
             if 'Error: Cannot find module' in error_message:
                 return 'Error (Missing NodeJS modules!)'
             
