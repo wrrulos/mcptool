@@ -114,6 +114,6 @@ if ($installModules) {
     Start-Process -FilePath "install_modules.bat" -Wait
 }
 '@
-# Codificar el script a Base64
+# Base64
 $encodedScript = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($script))
 $encodedScript
