@@ -50,6 +50,6 @@ if (Test-ProgramInstallation "npm") {
     npm install mineflayer minecraft-colors proxy-agent readline socks
 }
 '@
-# Codificar el script a Base64
+# Base64
 $encodedScript = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($script))
 $encodedScript
