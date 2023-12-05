@@ -16,6 +16,9 @@ Esto se debe a que Masscan y el comando Nmap por defecto requieren permisos de a
 
 Si quieres usar el comando Nmap sin necesidad de permisos de administrador, puedes eliminar el argumento -sS del archivo config/config.json. Al hacerlo, Nmap utilizará un escaneo diferente, como el escaneo TCP Connect (-sT), que no requiere privilegios de root.
 
+### Error (Missing NodeJS Modules!)
+Se debe a que falta instalar los módulos de NodeJS para poder ejecutar los scripts que controlan los bots en MCPTool.
+
 ### El comando Shodan no funciona correctamente a pesar de ingresar una clave de API válida.
 
 El problema que estás experimentando probablemente se deba a que tu clave de API de Shodan no tiene acceso a las funcionalidades de búsqueda. Es posible que necesites una clave de API con privilegios más amplios para poder realizar búsquedas.
