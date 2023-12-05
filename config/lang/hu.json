@@ -1,0 +1,324 @@
+{
+   "languageName":"Magyar",
+   "title":"MCPTool - @wrrulos",
+   "input":"&f&l[&c&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+   "termux_input":"&croot@mcptool &8&r▶ &f&l",
+   "prefix":"&f&l[&c#&f&l] ",
+   "invalidCommand":"&cÉrvénytelen parancs. &f&lHasználd &asegítség&f&l a elérhető parancsok megtekintéséhez.",
+   "apiConnectionError":"&cNem sikerült kapcsolódni az API-hoz. Kérlek, próbáld újra később.",
+   "stopping":"Leállítás...",
+   "shodanInvalidApiKey":"&f&lA megadott API-kulcs érvénytelen! Ellenőrizd a konfigurációs fájlt.",
+   "shodanApiKeyNoAccess":"&f&lA megadott API-kulcsnak nincs hozzáférése a Shodan keresésekhez!",
+   "credits":"Készítette: &c@wrrulos",
+   "banners":{
+      "update":{
+         "title":"&5▶ &cMCP&f&lTool &8&r| &f&lFrissítés&5 ◀&f&l",
+         "checkingUpdates":"&a• &f&lFrissítések keresése a &cMCP&f&lTool-ból..",
+         "newVersion":"&a• &f&lA program új verzióját találtuk.",
+         "notFound":"&a• &f&lA program legújabb verzióját használod.",
+         "url":"&a• &f&lTöltsd le az új verziót innen:",
+         "error":"&c• &f&lVáratlan hiba történt. A &cMCP&f&lTool indítása..."
+      },
+      "presentation":{
+         "message1":"Pentesting eszköz a Minecraft számára",
+         "message2":"Végezzen biztonsági teszteket a &aMinecraft szerverein&f&l!"
+      },
+      "menu":{
+         "message1":"&f&lPentesting Teszteszköz a &aMC &8&l| &f&lHasználd a &csegítség &f&lparancsot a parancsok megtekintéséhez",
+         "message2":"&f&lCsatlakozz a Discord szerverhez a következő linken: &a&lwww.mcptool.net/discord"
+      },
+      "menu_termux":{
+         "message1":"&f&lPentesting Teszteszköz a &aMC",
+         "message2":"&f&lHasználd a &csegítség &f&lparancsot a parancsok megtekintéséhez",
+         "message3":"&f&lCsatlakozz a Discord szerverhez: &a&lwww.mcptool.net/discord"
+      },
+      "discord":{
+         "message1":"Csatlakozz a Discord szerveremhez a",
+         "message2":"Segítségért vagy programhiba bejelentéséhez.",
+         "message3":"Maradj naprakész a projekteimmel.",
+         "message4":"Szintén beszélhetsz velem a szerveren keresztül.",
+         "message5":"Szerver link:",
+         "termux_message":"Csatlakozz a Discord szerveremhez segítségért vagy maradj naprakész a projekteimmel: &a&lwww.mcptool.net/discord"
+      }
+   },
+   "commands":{
+      "usage":"[&c!&f&l] Parancs használata: ",
+      "error":"&4[&cHIBA&r&4] ",
+      "ctrlC":"[&c!&f&l] A parancsot erőszakkal leállították.",
+      "commandUsage":"&f&lParancs használata:",
+      "gettingDataFromServer":"&f&lAdatok lekérése a szerverről...",
+      "errorBedrockServer":"&f&lEzt a parancsot csak Java szerverekkel lehet használni.",
+      "serversFound":"&f&lA parancs befejeződött, és &a&l[0]&f&l szervert találtunk.",
+      "serversNotFound":"&f&lA parancs befejeződött, és nem találtunk szervereket.",
+      "invalidArguments":{
+         "invalidServer":"&f&lA megadott szerver offline vagy nem létezik.",
+         "InvalidRconFormat":"&f&lA megadott szerver érvénytelen. Meg kell adnod a szerver IP-címét és RCON portját!",
+         "invalidIP":"&f&lAz megadott IP-cím érvénytelen! (&c[0]&f&l)",
+         "invalidIpRange":"&f&lAz megadott IP-tartomány érvénytelen! (&c[0]&f&l)",
+         "invalidPorts":"&f&lAz megadott porttartomány érvénytelen! (&c[0]&f&l)",
+         "invalidDomain":"&f&lAz megadott domain érvénytelen!",
+         "invalidScanMethod":"&f&lAz megadott pásztázási módszer érvénytelen.",
+         "invalidBotArgument":"&f&lÉrvényes opciót kell megadnod a csekkernél! (&ai vagy n&f&l)",
+         "invalidProxyFile":"&f&lAz megadott proxy fájl nem létezik!",
+         "invalidFile":"&f&lA fájl &c[0] &f&lnem létezik!",
+         "invalidPageArgument":"&f&lÉrvényes oldalszámot kell megadnod!",
+         "invalidVersion":"&f&lAz megadott verzió érvénytelen.",
+         "invalidDelay":"&f&lAz időzítési idő érvénytelen.",
+         "invalidLoopArgument":"&f&lÉrvényes opciót kell megadnod a ciklushoz! (&ai vagy n&f&l)",
+         "invalidLanguage":"&f&lAz megadott nyelv érvénytelen.",
+         "invalidRconPassword":"&f&lAz RCON jelszó helytelen.",
+         "invalidForwardingMode":"&f&lÉrvényes továbbítási mód megadása kötelező! (&anone, legacy, bungeeguard, modern&f&l)"
+      },
+      "help":{
+         "message":"&f&lTovábbi információkért látogasd meg a vezérlőt: &ahttps://github.com/wrrulos/MCPTool/guide"
+      },
+      "server":{
+         "argument1":"ip:port/domain",
+         "missingArgument1":"&cMeg kell adnod egy szervert!"
+      },
+      "uuid":{
+         "argument1":"felhasználónév",
+         "missingArgument1":"&cMeg kell adnod egy felhasználónevet!",
+         "onlineUUID":"&f&lUUID &ePrémium&f&l:&e",
+         "offlineUUID":"&f&lUUID &cNem Prémium&f&l:&c"
+      },
+      "ipinfo":{
+         "argument1":"IP cím",
+         "missingArgument1":"&cMeg kell adnod egy IP-címet!",
+         "result1":"&cKontinens",
+         "result2":"&cOrszág",
+         "result3":"&cRégió",
+         "result4":"&cVáros",
+         "result5":"&cISP",
+         "result6":"&cAS",
+         "result7":"&cInverz DNS",
+         "reverse":"&4[&cHOST&f&l&4]"
+      },
+      "dnslookup":{
+         "argument1":"domain",
+         "missingArgument1":"&cMeg kell adnod egy domaint!",
+         "withoutResults":"&f&lNincsenek eredmények."
+      },
+      "shodan":{
+         "argument1":"adatok",
+         "missingArgument1":"&cMeg kell adnod adatokat a kereséshez!",
+         "scanning":"&f&lSzerverek keresése a következő adatokkal ►",
+         "serversNotFound":"&f&lNem találtunk szervereket a megadott adatokkal.",
+         "ipsFound":"&f&lMegtaláltuk &a[0] &f&lIP-címeket a következő adatokkal (&c[1]&f&l).",
+         "checkingServers":"&f&lEllenőrizzük, hogy ezek közül melyik IP-cím tartozik Minecraft szerverhez..."
+      },
+      "websearch":{
+         "argument1":"címke",
+         "missingArgument1":"&cMeg kell adnod a kereséshez a címkét!",
+         "searching":"&f&lSzerverek keresése a következő címkével &a[0]&f&l a legnépszerűbb oldalakon..",
+         "webSearch":"&f&lSzerverek keresése a(z) &c[0] &f&loldalon",
+         "serversNotFound":"&f&lNem találtunk szervereket a megadott címkével az oldalakon.",
+         "checkingServers":"&f&l[0] &f&lszervert kaptunk az oldalakról."
+      },
+      "subdomains":{
+         "argument1":"domain",
+         "argument2":"fájl",
+         "missingArgument1":"&cMeg kell adnod egy domaint!",
+         "missingArgument2":"&cMeg kell adnod egy fájlt, amely tartalmazza a szubdomainek listáját!",
+         "lookingForSubdomains":"&f&lKeresés a [0] szubdomainek között..",
+         "found":"&f&lSzubdomain találva: &a[0] &7(&f&l[1]&7)",
+         "subdomainsFound":"&f&lA keresés befejeződött, és &a[0] &f&l szubdomaint találtunk.",
+         "subdomainsNotFound":"&f&lNem találtunk szubdomaineket..",
+         "checkingServers":"&a[0] &f&lszerverek a Aternos oldalról származnak.."
+      },
+      "scan":{
+         "argument1":"IP-cím/IP tartomány",
+         "argument2":"port/port tartomány",
+         "argument3":"pásztázási módszer",
+         "missingArgument1":"&cMeg kell adnod egy IP-címet!",
+         "missingArgument2":"&cMeg kell adnod egy port tartományt!",
+         "missingArgument3":"&cMeg kell adnod egy pásztázási módszert!",
+         "scanningIpAddress":"&f&lIP-cím pásztázása &a[0]&f&l..",
+         "scanningIpRange":"&f&lIP tartomány pásztázása &a[0]&f&l..",
+         "scanningFile":"&f&lAz fájlban található &a[0] &f&lIP-cím pásztázása (&a[1] &f&lIP-cím).",
+         "scanFinished":"&f&lA parancs befejeződött, és &a[0]&f&l Minecraft szervert találtunk!",
+         "noPortsFound":"&f&lA pásztázás befejeződött, és nem találtunk Minecraft szervereket az IP-címen!",
+         "noIpsFound":"&f&lNem találtunk IP-címeket a fájlban!",
+         "javaNotInstalled":"&f&lA &ajava &f&ltelepítése szükséges ennek a módszernek a használatához!",
+         "nmapNotInstalled":"&f&lA &anmap &f&ltelepítése szükséges ennek a módszernek a használatához!",
+         "masscanNotInstalled":"&f&lA &amasscan &f&ltelepítése szükséges ennek a módszernek a használatához!"
+      },
+      "listening":{
+         "argument1":"IP-cím:Port/domain",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "waitingForPlayers":"&f&lVárakozás a játékosokra..",
+         "foundPlayers":"&f&lElkapott játékosok:"
+      },
+      "playerlogs":{
+         "argument1":"IP cím:Port/domain",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "waitingForPlayers":"&f&lVárakozás a játékosokra..",
+         "connectedUser":"&4[&a[0]&4] &a▲ &f&lUser &c&l[1] &f&lcsatlakozott a szerverhez.",
+         "disconnectedUser":"&4[&a[0]&4] &c▼ &f&lUser &c&l[1] &f&lelhagyta a szerveret."
+      },
+      "resolver":{
+         "argument1":"domain",
+         "missingArgument1":"&cMeg kell adnod egy domaint!",
+         "subdomainsNotFound":"&f&lNem találhatók aldomainek a megadott domain-hez.",
+         "domain":"&f&lTalált domainek listája:",
+         "ip":"&f&lTalált IP címek listája:"
+      },
+      "fakeproxy":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"mód",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy átirányítási módot!",
+         "copyingData":"&f&lAdatok másolása a megadott szervertől..",
+         "errorWhenCopying":"&f&lNem sikerült az adatok másolása a megadott szervertől. Helyes-e a megadott szerver?",
+         "ngrokStart":"&f&lNgrok szerver indítása..",
+         "ipNgrokError":"&f&lNem sikerült megszerezni az ngrok IP címét. Ez lehet, mert nem kötöttél össze egy fiókot az ngrok-kal.",
+         "ngrokNotFound":"&f&lAz NGROK nincs telepítve. (Nem lehet ngrok IP-d!)",
+         "waitingForData":"&f&lAdatokra várakozás..",
+         "connecting":"[0] csatlakozott a szerverhez.",
+         "disconnecting":"[0] szétkapcsolódott a szerverről.",
+         "messageCaptured":"[0] üzenetet írt:",
+         "commandCaptured":"[0] parancsot hajtott végre:"
+      },
+      "login":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"felhasználó",
+         "argument3":"verzió",
+         "argument4":"fájl",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy felhasználót!",
+         "missingArgument3":"&cMeg kell adnod a szerver verzióját!",
+         "missingArgument4":"&cMeg kell adnod egy jelszófájlt!",
+         "startingTheAttack":"&f&lA bot elküldése az attack elindításához..",
+         "emptyFile":"&f&lNincsenek elérhető jelszavak a fájlban."
+      },
+      "pinlogin":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"felhasználó",
+         "argument3":"verzió",
+         "argument4":"fájl",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy felhasználót!",
+         "missingArgument3":"&cMeg kell adnod a szerver verzióját!",
+         "missingArgument4":"&cMeg kell adnod egy jelszófájlt!",
+         "startingTheAttack":"&f&lA bot elküldése az attack elindításához..",
+         "emptyFile":"&f&lNincsenek elérhető jelszavak a fájlban."
+      },
+      "sendcmd":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"felhasználó",
+         "argument3":"verzió",
+         "argument4":"fájl",
+         "argument5":"loop",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy felhasználót!",
+         "missingArgument3":"&cMeg kell adnod a szerver verzióját!",
+         "missingArgument4":"&cMeg kell adnod egy fájlt, amely tartalmazza a bot által végrehajtandó parancsokat!",
+         "missingArgument5":"&cMeg kell adnod, hogy a támadás végtelen legyen vagy sem!",
+         "emptyFile":"&f&lNincsenek elérhető parancsok a fájlban.",
+         "startingTheAttack":"&f&lA bot elküldése.."
+      },
+      "kick":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"felhasználó",
+         "argument3":"verzió",
+         "argument4":"loop",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy felhasználót!",
+         "missingArgument3":"&cMeg kell adnod a szerver verzióját!",
+         "missingArgument4":"&cMeg kell adnod, hogy a támadás végtelen legyen vagy sem!",
+         "startingTheAttack":"&f&lA felhasználó kirúgása.."
+      },
+      "kickall":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"verzió",
+         "argument3":"loop",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod a szerver verzióját!",
+         "missingArgument3":"&cMeg kell adnod, hogy a támadás végtelen legyen vagy sem!",
+         "noPlayers":"&f&lNem sikerült lekérni a szerverre csatlakozott játékosokat.",
+         "startingTheAttack":"&f&lA szerzett felhasználók kirúgása.."
+      },
+      "rconbrute":{
+         "argument1":"IP cím:RCON port",
+         "argument2":"fájl",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy jelszófájlt!",
+         "emptyFile":"&f&lNincsenek elérhető jelszavak a fájlban.",
+         "preparingTheAttack":"&f&lRCON brute force támadás előkészítése (&cRCON&f&l)..",
+         "numberOfPasswords":"&f&lKiválasztott fájl: &a[0] &f&l(&a[1] jelszó&f&l)",
+         "startingTheAttack":"&f&lA támadás elindítása..",
+         "tryingPassword":"&f&lJelszó próbálkozás: &c[0]",
+         "passwordFound":"&aJelszó megtalálva: &c[0]",
+         "passwordNotFound":"&cA jelszó nem található a jelszólistában.",
+         "timeout":"&cTúl sok idő telt el, és a szerver nem válaszol",
+         "connectionRefused":"&f&lHiba a kapcsolódáskor: &cKapcsolat visszautasítva.",
+         "stopping":"&f&lA támadás leállítása..",
+         "error":"&f&lVáratlan hiba történt a kapcsolódás kísérletekor: &c[0]"
+      },
+      "checker":{
+         "argument1":"fájl",
+         "missingArgument1":"&cMeg kell adnod egy fájlt!",
+         "noServersInTheFile":"&f&lNem találhatók IP címek a fájlban!",
+         "foundServers":"&f&lMegtalált &a[0] &f&lszerver a fájlban.",
+         "checking":"&f&lSzerverek ellenőrzése.."
+      },
+      "waterfall":{
+         "argument1":"IP cím:Port/domain",
+         "missingArgument1":"&cMeg kell adnod egy szervert!"
+      },
+      "velocity":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"mód",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy átirányítási módot!"
+      },
+      "connect":{
+         "argument1":"IP cím:Port/domain",
+         "argument2":"felhasználó",
+         "argument3":"verzió",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod egy felhasználónevet a botnak!",
+         "missingArgument3":"&cMeg kell adnod azt a verziót, amelyet a bot használni fog a szerverhez való csatlakozáshoz!"
+      },
+      "rcon":{
+         "argument1":"IP cím:RCON port",
+         "argument2":"jelszó",
+         "missingArgument1":"&cMeg kell adnod egy szervert!",
+         "missingArgument2":"&cMeg kell adnod az RCON jelszót!",
+         "connecting":"&f&lKapcsolódás kísérlete..",
+         "timeout":"&f&lA szerver nem válaszolt időben. (Időtúllépés)",
+         "refusedConnection":"&f&lA szerver visszautasította a kapcsolatot.",
+         "establishedConnection":"&f&lSikeres kapcsolatfelépítés a szerverrel.",
+         "command":"&f&lParancs: ",
+         "stopping":"&f&lA kapcsolat leállítása.."
+      },
+      "language":{
+         "argument1":"nyelv",
+         "missingArgument1":"&cMeg kell adnod egy nyelvet!",
+         "languageInUse":"&f&lA megadott nyelv már kiválasztva van!",
+         "languageList":"&f&lElérhető nyelvek listája: &a[0]",
+         "changeOfLanguage":"&f&lA nyelv sikeresen megváltozott erre: &a[0]&f&l."
+      }
+   },
+   "versionFileMessages":{
+      "updateFailed":"&c&lHiba történt az új verzió keresésekor. &f&lFolytatás a jelenlegi verzióval..",
+      "updateCheck":"&f&lEllenőrzés az &aVersions.json&f&l új verziójáért..",
+      "updateAvailable":"&aÚj verzió található!",
+      "downloadingUpdate":"&f&lAz új verzió letöltése..",
+      "updateCompleted":"&f&lA &cVersions.json&f&l új verziója telepítve lett.",
+      "noUpdatesFound":"&f&lNem találhatók új verziók."
+   },
+   "proxyMessages":{
+      "configuring":"&f&lA proxy szerver konfigurálása..",
+      "updateFailed":"&b&lHiba történt az új verzió keresése közben. &f&lFolytatás a jelenlegi verzióval..",
+      "updateCheck":"&f&lFrissítés keresése &a[0].jar&f&l új verziójához..",
+      "updateAvailable":"&aNyit találtam &b[0] &aúj verzióját!",
+      "downloadingUpdate":"&f&lAz új verzió letöltése folyamatban..",
+      "updateCompleted":"&f&lAz &b[0]&f&l új verziója telepítve lett.",
+      "noUpdatesFound":"&f&lNincsenek új verziók.",
+      "starting":"&f&lA proxy szerver indítása..",
+      "stopping":"&f&lA proxy szerver leállítása..",
+      "proxyServerStarted":"&f&l[&a>&f&l] A proxy szerver sikeresen elindult itt: &a[0]&f&l.",
+      "proxyServerNotStartup":"&f&l[&a>&f&l] Úgy tűnik, a proxy szerver nem indult el megfelelően. Van telepítve Java 17 vagy újabb verziója a rendszerén? Ha igen, és a hiba továbbra is fennáll, kérjük, jelentse a Discord szerveren."
+   }
+}
