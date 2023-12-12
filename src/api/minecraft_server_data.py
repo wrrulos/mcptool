@@ -1,4 +1,4 @@
-import aiohttp
+import httpx
 import hashlib
 import uuid
 import dns
@@ -288,7 +288,7 @@ class MinecraftServerData:
         api = 'https://api.mojang.com/users/profiles/minecraft/'
 
         try:
-            async with aiohttp.ClientSession() as session:
+            async with httpx.AsyncClient() as session:
                 async with session.get(f'{api}{username}') as response:
                     response_json = await response.json()
 
