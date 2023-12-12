@@ -3,7 +3,7 @@ colorama
 dnspython
 flask
 waitress
-aiohttp
+httpx
 asyncio_dgram
 shodan
 pypresence
