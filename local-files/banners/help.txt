@@ -1,0 +1,15 @@
+
+    &c&l• &b&lInformation commands                
+      &b&l> &f&lserver uuid ipinfo dnslookup        ⠀⠀⠀⠀        ⠀           ⠀⠀⠀   &b⢀⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀
+                                                    ⠀⠀        ⠀⠀        &b⢀⣀⡿⠿⠿⠿⠿⠿⠿⢿⣀⣀⣀&f&l⣀⣀⡀⠀⠀
+    &c&l• &d&lDiscovery commands                    ⠀        ⠀⠀⠀            ⠀  ⠀&b⠸⠿⣇⣀⣀⣀⣀⣀⣀⣸⠿⢿⣿&f&l⣿⣿⡇
+      &d&l> &f&lshodan websearch subdomains scan    ⠀        ⠀⠀⠀⠀           ⠀⠀   ⠀&b⠻⠿⠿⠿⠿⠿⣿⣿⣀⡸⠿⢿⣿⡇⠀⠀
+      &f&llistening playerlogs resolver                 ⠀        ⠀⠀⠀⠀⠀        &f&l⠀⠀⠀⠀⣤⣤⣿⣿⣿&b⣧⣤⡼⠿⢧⣤⡀
+                                                    ⠀        ⠀⠀⠀⠀          ⠀&f&l⣤⣤⣿⣿⣿⣿⠛&b⢻⣿⡇⠀⢸⣿⡇
+    &c&l• &4&lAttack commands                       ⠀⠀        ⠀⠀⠀           ⠀⠀⠀   &f&l⣤⣤⣿⣿⣿⣿⠛⠛⠀&b⢸⣿⡇⠀⢸⣿⡇
+      &4&l> &f&lfakeproxy login pinlogin sendcmd   ⠀⠀        ⠀         ⠀  ⠀     &f&l⢠⣤⣿⣿⣿⣿⠛⠛⠀⠀⠀&b⢸⣿⡇⠀⢸⣿⡇
+      &f&lkick kickall rconbrute                         ⠀⠀       ⠀       &f&l⢰⣶⣾⣿⣿⣿⠛⠛⠀⠀⠀⠀⠀&b⠈⠛⢳⣶⡞⠛⠁
+                                                    ⠀               &f&l⢰⣶⣾⣿⣿⣿⡏⠉⠀⠀⠀⠀⠀⠀⠀&b⠀⠀⠈⠉⠁⠀⠀
+    &c&l• &6&lUtility commands                                            &f&l⢰⣶⡎⠉⢹⣿⡏⠉⠁⠀⠀
+      &6&l> &f&lchecker waterfall velocity connect                        &f&l⢸⣿⣷⣶⡎⠉⠁⠀⠀
+      &f&lrcon                                                         &f&l⠉⠉⠉⠁⠀⠀⠀⠀⠀

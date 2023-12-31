@@ -1,0 +1,10 @@
+                            
+    &c8888ba.88ba   a88888b.  888888ba  &f&ld888888P                   dP 
+    &c88  `8b  `8b d8'   `88  88    `8b    &f&l88                      88      &a&lVersion                &e&lBots
+    &c88   88   88 88        a88aaaa8P'    &f&l88    .d8888b. .d8888b. 88       &f&l↳ [2]                &f&l↳ &a[4]
+    &c88   88   88 88         88           &f&l88    88'  `88 88'  `88 88 
+    &c88   88   88 Y8.   .88  88           &f&l88    88.  .88 88.  .88 88      &d&lDiscord Presence       &b&lProxy
+    &cdP   dP   dP  Y88888P'  dP           &f&ldP    `88888P' `88888P' dP       &f&l↳ &a[3]                   &f&l↳ &a[5]
+
+    [0]
+    [1]

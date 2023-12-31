@@ -1,0 +1,15 @@
+
+  &c&l• &b&lInformation commands
+    &b&l> &f&lserver uuid ipinfo dnslookup
+
+  &c&l• &d&lDiscovery commands
+    &d&l> &f&lshodan websearch subdomains scan
+    listening playerlogs resolver
+
+  &c&l• &4&lAttack commands
+    &4&l> &f&lfakeproxy login pinlogin sendcmd   ⠀⠀
+    &f&lkick kickall rconbrute   
+
+  &c&l• &6&lUtility commands
+    &6&l> &f&lchecker waterfall velocity connect
+    rcon

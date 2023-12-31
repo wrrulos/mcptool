@@ -1,0 +1,36 @@
+{
+    "lang": "en",
+    "api": "mcsrvstat.us",
+    "discordPresence": true,
+    "local_api_port": 55455,
+    "shodanApiKey": "",
+    "virusTotalApiKey": "0a1f92cc877fb00875cf0fa6e856db8009fb322fce4b507a9ef40e22d63b7fa4",
+    "minecraftServerOptions": {
+        "checkServerLoginWithABot": true,
+        "proxy": false,
+        "proxyFileForTheBot": "./proxy.txt",
+        "nodeCommand": "node"
+    },
+    "scannerOptions": {
+        "nmapCommand": "nmap -p [PORTS] -n -T5 -Pn -vvv -sS [TARGET]",
+        "quboscannerCommand": "cd ./src/scan && java -Dfile.encoding=UTF-8 -jar old_qubo.jar -range [TARGET] -ports [PORTS] -th 500 -ti 2000",
+        "masscanCommand": "masscan -p [PORTS] [TARGET]",
+        "showScanOutput": false
+    },
+    "proxyConfig": {
+        "convertDomainToIP": true,
+        "updateProxy": true,
+        "ngrokCommand": "ngrok",
+        "waterfallPort": "25570",
+        "waterfallCommand": "java -Xms512M -Xmx512M -jar WaterFall.jar >nul 2>&1",
+        "velocityPort": "25580",
+        "velocityCommand": "java -Xms512M -Xmx512M -jar Velocity.jar >nul 2>&1",
+        "fakeProxyPort": "33330",
+        "fakeProxyUpdateDelay": "2",
+        "fakeProxyCommandPrefix": ".",
+        "waterfallVersion": "https://api.papermc.io/v2/projects/waterfall/versions/1.20/builds/553/downloads/waterfall-1.20-553.jar",
+        "velocityVersion": "https://api.papermc.io/v2/projects/velocity/versions/3.2.0-SNAPSHOT/builds/294/downloads/velocity-3.2.0-SNAPSHOT-294.jar"
+    },
+    "logs": true,
+    "currentVersion": "4.1.2"
+}
