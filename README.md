@@ -102,11 +102,11 @@ See the command guide from this [link.](./docs/es/commands.MD).
 
 [![Watch the video](https://img.youtube.com/vi/iGYlaFsikZE/maxresdefault.jpg)](https://youtu.be/iGYlaFsikZE?si=22L2sQ4GgckYL9ps)
 
-## Licencia 
+## Licence 
 
 MIT License
 
-Copyright (c) 2023 Pedro Vega
+Copyright (c) 2024 Pedro Vega
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
