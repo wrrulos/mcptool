@@ -1,0 +1,324 @@
+{
+    "languageName": "English",
+    "title": "MCPTool - @wrrulos",
+    "input": "&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+    "termux_input": "&croot@mcptool &8&r▶ &f&l",
+    "prefix": "&f&l[&c#&f&l] ",
+    "invalidCommand": "&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
+    "apiConnectionError": "&cWe couldn't connect to the API. Please try again later.",
+    "stopping": "Stopping..",
+    "shodanInvalidApiKey": "&f&lThe API key entered is invalid! Check the configuration file.",
+    "shodanApiKeyNoAccess": "&f&lThe entered API key does not have access to Shodan searches!",
+    "credits": "Created by &b@wrrulos",
+    "banners": {
+        "update": {
+            "title": "&5▶ &cMCP&f&lTool &8&r| &f&lUpdate&5 ◀&f&l",
+            "checkingUpdates": "&a• &f&lChecking for updates from &cMCP&f&lTool..",
+            "newVersion": "&a• &f&lA new version of the program was found.",
+            "notFound": "&a• &f&lYou are using the latest version of the program.",
+            "url": "&a• &f&lDownload the new version from:",
+            "error": "&c• &f&lThere was an unexpected error. Starting &cMCP&f&lTool.."
+        },
+        "presentation": {
+            "message1": "Pentesting tool for Minecraft",
+            "message2": "Perform security tests on your &aMinecraft servers&f&l!"
+        },
+        "menu": {
+            "message1": "&f&lPentesting Testing Tool for &aMC &8&l| &f&lUse &chelp &f&lto view commands",
+            "message2": "&f&lJoin the Discord server using the following link: &a&lwww.mcptool.net/discord"
+        },
+        "menu_termux": {
+            "message1": "&f&lPentesting Testing Tool for &aMC",
+            "message2": "&f&lUse &chelp &f&lto view commands",
+            "message3": "&f&lJoin the Discord server: &a&lwww.mcptool.net/discord"
+        },
+        "discord": {
+            "message1": "Join my Discord server to",
+            "message2": "Get help or report a program error.",
+            "message3": "Stay up to date with my projects.",
+            "message4": "You can also chat with me through the server.",
+            "message5": "Server link:",
+            "termux_message": "Join my Discord server to get help or stay up to date with my projects: &a&lwww.mcptool.net/discord"
+        }
+    },
+    "commands": {
+        "usage": "[&c!&f&l] Command usage: ",
+        "error": "&4[&cERROR&r&4] ",
+        "ctrlC": "[&c!&f&l] The command has been forcefully terminated.",
+        "commandUsage": "&f&lCommand Usage:",
+        "gettingDataFromServer": "&f&lGetting data from the server...",
+        "errorBedrockServer": "&f&lThis command can only be used with Java servers.",
+        "serversFound": "&f&lThe command completed, and &a&l[0]&f&l servers were found.",
+        "serversNotFound": "&f&lThe command completed, and no servers were found.",
+        "invalidArguments": {
+            "invalidServer": "&f&lThe entered server is offline or does not exist.",
+            "InvalidRconFormat": "&f&lThe entered server is invalid. You must enter the server's IP and RCON port!",
+            "invalidIP": "&f&lThe entered IP address is invalid! (&c[0]&f&l)",
+            "invalidIpRange": "&f&lThe entered IP range is not valid! (&c[0]&f&l)",
+            "invalidPorts": "&f&lThe entered port range is not valid! (&c[0]&f&l)",
+            "invalidDomain": "&f&lThe entered domain is not valid!",
+            "invalidScanMethod": "&f&lThe entered scan method is not valid.",
+            "invalidBotArgument": "&f&lYou must enter a valid option for the checker! (&ay or n&f&l)",
+            "invalidProxyFile": "&f&lThe entered proxy file does not exist!",
+            "invalidFile": "&f&lThe file &b[0] &f&ldoes not exist!",
+            "invalidPageArgument": "&f&lYou must enter a valid number of pages!",
+            "invalidVersion": "&f&lThe entered version is not valid.",
+            "invalidDelay": "&f&lThe delay time is not valid.",
+            "invalidLoopArgument": "&f&lYou must enter a valid option for the loop! (&ay or n&f&l)",
+            "invalidLanguage": "&f&lThe entered language is not valid.",
+            "invalidRconPassword": "&f&lThe RCON password is incorrect.",
+            "invalidForwardingMode": "&f&lYou must enter a valid forwarding mode! (&anone, legacy, bungeeguard, modern&f&l)"
+        },
+        "help": {
+            "message": "&f&lFor more information, visit the guide: &ahttps://github.com/wrrulos/MCPTool/guide"
+        },
+        "server": {
+            "argument1": "ip:port/domain",
+            "missingArgument1": "&cYou must enter a server!"
+        },
+        "uuid": {
+            "argument1": "username",
+            "missingArgument1": "&cYou must enter a username!",
+            "onlineUUID": "&f&lUUID &ePremium&f&l:&e",
+            "offlineUUID": "&f&lUUID &cNon-Premium&f&l:&c"
+        },
+        "ipinfo": {
+            "argument1": "IPAddress",
+            "missingArgument1": "&cYou must enter an IP address!",
+            "result1": "&cContinent",
+            "result2": "&cCountry",
+            "result3": "&cRegion",
+            "result4": "&cCity",
+            "result5": "&cISP",
+            "result6": "&cAS",
+            "result7": "&cReverse DNS",
+            "reverse": "&4[&cHOST&f&l&4]"
+        },
+        "dnslookup": {
+            "argument1": "domain",
+            "missingArgument1": "&cYou must enter a domain!",
+            "withoutResults": "&f&lNo results were found."
+        },
+        "shodan": {
+            "argument1": "data",
+            "missingArgument1": "&cYou must enter data for the search!",
+            "scanning": "&f&lSearching for servers containing the following data ►",
+            "serversNotFound": "&f&lNo servers were found with the specified data.",
+            "ipsFound": "&f&lFound &a[0] &f&lIP addresses containing the following data (&b[1]&f&l).",
+            "checkingServers": "&f&lChecking which of these IP addresses belong to a Minecraft server..."
+        },
+        "websearch": {
+            "argument1": "tag",
+            "missingArgument1": "&cYou must enter the tag for the search!",
+            "searching": "&f&lSearching for servers with the tag &a[0]&f&l on the most popular pages..",
+            "webSearch": "&f&lSearching for servers on page &b[0]",
+            "serversNotFound": "&f&lNo servers were found with the specified tag on the pages.",
+            "checkingServers": "&f&lObtained &a[0] &f&lservers from the pages."
+        },
+        "subdomains": {
+            "argument1": "domain",
+            "argument2": "file",
+            "missingArgument1": "&cYou must enter a domain!",
+            "missingArgument2": "&cYou must enter a file containing the list of subdomains!",
+            "lookingForSubdomains": "&f&lLooking for subdomains of [0]..",
+            "found": "&f&lSubdomain found: &a[0] &7(&f&l[1]&7)",
+            "subdomainsFound": "&f&lThe search has ended, and &a[0] &f&lsubdomains were found.",
+            "subdomainsNotFound": "&f&lNo subdomains were found..",
+            "checkingServers": "&a[0] &f&lservers obtained from the Aternos page.."
+        },
+        "scan": {
+            "argument1": "IPAddress/IP range",
+            "argument2": "port/port range",
+            "argument3": "scan method",
+            "missingArgument1": "&cYou must enter an IP address!",
+            "missingArgument2": "&cYou must enter a port range!",
+            "missingArgument3": "&cYou must enter a scan method!",
+            "scanningIpAddress": "&f&lScanning IP address &a[0]&f&l..",
+            "scanningIpRange": "&f&lScanning IP range &a[0]&f&l..",
+            "scanningFile": "&f&lScanning IP addresses found in the file &a[0] &f&l(&a[1] &f&lIP addresses).",
+            "scanFinished": "&f&lThe command has finished, and &a[0]&f&l Minecraft servers were found!",
+            "noPortsFound": "&f&lScanning finished, and no Minecraft servers were found at the IP address!",
+            "noIpsFound": "&f&lNo IP addresses were found in the file!",
+            "javaNotInstalled": "&f&lYou must install &ajava &f&lto use this method!",
+            "nmapNotInstalled": "&f&lYou must install &anmap &f&lto use this method!",
+            "masscanNotInstalled": "&f&lYou must install &amasscan &f&lto use this method!"
+        },
+        "listening": {
+            "argument1": "IPAddress:Port/domain",
+            "missingArgument1": "&cYou must enter a server!",
+            "waitingForPlayers": "&f&lWaiting for players..",
+            "foundPlayers": "&f&lCaptured players:"
+        },
+        "playerlogs": {
+            "argument1": "IPAddress:Port/domain",
+            "missingArgument1": "&cYou must enter a server!",
+            "waitingForPlayers": "&f&lWaiting for players..",
+            "connectedUser": "&4[&a[0]&4] &a▲ &f&lUser &b&l[1] &f&lhas joined the server.",
+            "disconnectedUser": "&4[&a[0]&4] &c▼ &f&lUser &b&l[1] &f&lhas left the server."
+        },
+        "resolver": {
+            "argument1": "domain",
+            "missingArgument1": "&cYou must enter a domain!",
+            "subdomainsNotFound": "&f&lNo domains were found for the specified domain.",
+            "domain": "&f&lList of domains found:",
+            "ip":  "&f&lList of IP addresses found:"
+        },
+        "fakeproxy": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "mode",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a forwarding mode!",
+            "copyingData": "&f&lCopying data from the specified server..",
+            "errorWhenCopying": "&f&lFailed to copy data from the specified server. Is the entered server correct?",
+            "ngrokStart": "&f&lStarting ngrok server..",
+            "ipNgrokError": "&f&lCould not obtain the ngrok IP. This may be because you haven't linked an account to ngrok.",
+            "ngrokNotFound": "&f&lNGROK is not installed. (You can't have an Ngrok IP!)",
+            "waitingForData": "&f&lWaiting for data..",
+            "connecting": "[0] has joined the server.",
+            "disconnecting": "[0] has disconnected from the server.",
+            "messageCaptured": "[0] has written a message:",
+            "commandCaptured": "[0] has executed a command:"
+        },
+        "login": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "user",
+            "argument3": "version",
+            "argument4": "file",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a user!",
+            "missingArgument3": "&cYou must enter the server version!",
+            "missingArgument4": "&cYou must enter a password file!",
+            "startingTheAttack": "&f&lSending the bot to initiate the attack..",
+            "emptyFile": "&f&lNo available passwords were found in the file."
+        },
+        "pinlogin": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "user",
+            "argument3": "version",
+            "argument4": "file",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a user!",
+            "missingArgument3": "&cYou must enter the server version!",
+            "missingArgument4": "&cYou must enter a password file!",
+            "startingTheAttack": "&f&lSending the bot to initiate the attack..",
+            "emptyFile": "&f&lNo available passwords were found in the file."
+        },
+        "sendcmd": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "user",
+            "argument3": "version",
+            "argument4": "file",
+            "argument5": "loop",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a user!",
+            "missingArgument3": "&cYou must enter the server version!",
+            "missingArgument4": "&cYou must enter a file containing the commands the bot will execute!",
+            "missingArgument5": "&cYou must specify if you want the attack to be infinite!",
+            "emptyFile": "&f&lNo available commands were found in the file.",
+            "startingTheAttack": "&f&lSending the bot.."
+        },
+        "kick": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "user",
+            "argument3": "version",
+            "argument4": "loop",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a user!",
+            "missingArgument3": "&cYou must enter the server version!",
+            "missingArgument4": "&cYou must specify if you want the attack to be infinite!",
+            "startingTheAttack": "&f&lKicking the user.."
+        },
+        "kickall": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "version",
+            "argument3": "loop",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter the server version!",
+            "missingArgument3": "&cYou must specify if you want the attack to be infinite!",
+            "noPlayers": "&f&lCould not retrieve connected players on the server.",
+            "startingTheAttack": "&f&lKicking the obtained users.."
+        },        
+        "rconbrute": {
+            "argument1": "IPAddress:RCON port",
+            "argument2": "file",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a password file!",
+            "emptyFile": "&f&lNo available passwords were found in the file.",
+            "preparingTheAttack": "&f&lPreparing the brute force attack (&cRCON&f&l)..",
+            "numberOfPasswords": "&f&lSelected file: &a[0] &f&l(&a[1] passwords&f&l)",
+            "startingTheAttack": "&f&lInitiating the attack..",
+            "tryingPassword": "&f&lTrying password: &c[0]",
+            "passwordFound": "&aPassword found: &b[0]",
+            "passwordNotFound": "&cPassword not found in the password list.",
+            "timeout": "&cToo much time has passed, and the server is not responding",
+            "connectionRefused": "&f&lError connecting: &cConnection Refused.",
+            "stopping": "&f&lStopping the attack..",
+            "error": "&f&lUnexpected error when attempting to connect: &c[0]"
+        },
+        "checker": {
+            "argument1": "file",
+            "missingArgument1": "&cYou must enter a file!",
+            "noServersInTheFile": "&f&lNo IP addresses were found in the file!",
+            "foundServers": "&f&lFound &a[0] &f&lservers in the file.",
+            "checking": "&f&lChecking servers.."
+        },
+        "waterfall": {
+            "argument1": "IPAddress:Port/domain",
+            "missingArgument1": "&cYou must enter a server!"
+        },
+        "velocity": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "mode",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a forwarding mode!"
+        },
+        "connect": {
+            "argument1": "IPAddress:Port/domain",
+            "argument2": "user",
+            "argument3": "version",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter a username for the bot!",
+            "missingArgument3": "&cYou must enter the version the bot will use to connect to the server!"
+        },        
+        "rcon": {
+            "argument1": "IPAddress:RCON port",
+            "argument2": "password",
+            "missingArgument1": "&cYou must enter a server!",
+            "missingArgument2": "&cYou must enter the RCON password!",
+            "connecting": "&f&lAttempting to connect..",
+            "timeout": "&f&lThe server didn't respond in time. (Timeout)",
+            "refusedConnection": "&f&lThe server refused the connection.",
+            "establishedConnection": "&f&lConnection to the server was successfully established.",
+            "command": "&f&lCommand: ",
+            "stopping": "&f&lStopping the connection.."
+        },
+        "language": {
+            "argument1": "language",
+            "missingArgument1": "&cYou must enter a language!",
+            "languageInUse": "&f&lThe entered language is already selected!",
+            "languageList": "&f&lList of available languages: &a[0]",
+            "changeOfLanguage": "&f&lThe language was successfully changed to &a[0]&f&l."
+        }        
+    },
+    "versionFileMessages": {
+        "updateFailed": "&c&lAn error occurred while attempting to find the new version. &f&lRunning the current version..",
+        "updateCheck": "&f&lChecking for a new version of &aVersions.json&f&l..",
+        "updateAvailable": "&aNew version found!",
+        "downloadingUpdate": "&f&lDownloading the new version..",
+        "updateCompleted": "&f&lThe new version of &bVersions.json&f&l has been installed.",
+        "noUpdatesFound": "&f&lNo new versions were found."
+    },
+    "proxyMessages": {
+        "configuring": "&f&lConfiguring the proxy server..",
+        "updateFailed": "&c&lAn error occurred while attempting to find the new version. &f&lRunning the current version..",
+        "updateCheck": "&f&lChecking for a new version of &a[0].jar&f&l..",
+        "updateAvailable": "&aNew version of &b[0] &afound!",
+        "downloadingUpdate": "&f&lDownloading the new version..",
+        "updateCompleted": "&f&lThe new version of &b[0]&f&l has been installed.",
+        "noUpdatesFound": "&f&lNo new versions were found.",
+        "starting": "&f&lStarting the proxy server..",
+        "stopping": "&f&lStopping the proxy server..",
+        "proxyServerStarted": "&f&l[&a>&f&l] The proxy server has started successfully on &a[0]&f&l.",
+        "proxyServerNotStartup": "&f&l[&a>&f&l] The proxy server doesn't seem to start correctly. Do you have Java 17 or higher installed on your system? If you do and the error persists, please report it on the Discord server."
+    }    
+}

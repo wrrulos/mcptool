@@ -2,7 +2,10 @@ import importlib.util
 import inspect
 import os
 
+from mccolors import mcwrite, mcreplace
+
 from app.logger import Logger
+from app.utilities.language_manager import LanguageManager as LM
 
 
 class MCPTool:
@@ -52,7 +55,6 @@ class MCPTool:
                 # Get the item from the module
                 item = getattr(module, item_name)
 
-
                 # Check if the item is a valid command class
                 if inspect.isclass(item) and hasattr(item, "execute"):
                     # Instantiate the command class
@@ -68,7 +70,7 @@ class MCPTool:
         
         while True:
             try:
-                arguments = input("Enter command: ").split()
+                arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
                 self.logger.info(f"Command entered: {arguments}")
 
                 if len(arguments) == 0:
@@ -80,13 +82,13 @@ class MCPTool:
                 if command_name == "exit":
                     break
 
-                if command_name in self.commands:
-                    # Execute the command
-                    command_instance = self.commands[command_name]
-                    command_instance.execute(arguments[1:])
+                if command_name not in self.commands:
+                    mcwrite(LM().get(['commands', 'invalid_command']))
+                    continue
 
-                else:
-                    print("Comando no encontrado.")
+                # Execute the command
+                command_instance = self.commands[command_name]
+                command_instance.execute(arguments[1:])
                     
             except (RuntimeError, EOFError):
                 pass
