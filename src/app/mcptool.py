@@ -5,7 +5,7 @@ import os
 from mccolors import mcwrite, mcreplace
 
 from app.logger import Logger
-from app.utilities.language_manager import LanguageManager as LM
+from app.utilities.managers.language_manager import LanguageManager as LM
 
 
 class MCPTool:
@@ -35,10 +35,10 @@ class MCPTool:
         commands_files = os.listdir(self.commands_folder_path)
 
         for file_name in commands_files:
-            if not file_name.endswith(".py"):
+            if not file_name.endswith('.py'):
                 continue
 
-            if file_name == "__init__.py":
+            if file_name == '__init__.py':
                 continue
             
             # # Get the module name without the extension
@@ -56,7 +56,7 @@ class MCPTool:
                 item = getattr(module, item_name)
 
                 # Check if the item is a valid command class
-                if inspect.isclass(item) and hasattr(item, "execute"):
+                if inspect.isclass(item) and hasattr(item, 'execute'):
                     # Instantiate the command class
                     command_instance = item()
 
@@ -71,7 +71,6 @@ class MCPTool:
         while True:
             try:
                 arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
-                self.logger.info(f"Command entered: {arguments}")
 
                 if len(arguments) == 0:
                     continue
@@ -83,13 +82,13 @@ class MCPTool:
                     break
 
                 if command_name not in self.commands:
-                    mcwrite(LM().get(['commands', 'invalid_command']))
+                    mcwrite(LM().get(['commands', 'invalidCommand']))
                     continue
 
                 # Execute the command
                 command_instance = self.commands[command_name]
                 command_instance.execute(arguments[1:])
-                    
+ 
             except (RuntimeError, EOFError):
                 pass
 
