@@ -5,6 +5,7 @@
     },
     "commands": {
         "input": "&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
-        "termux_input": "&croot@mcptool &8&r▶ &f&l"
+        "termuxInput": "&croot@mcptool &8&r▶ &f&l",
+        "invalidCommand": "&cНеизвестная команда. &f&lИспользуйте &ahelp&f&l для получения списка команд."
     }
 }
