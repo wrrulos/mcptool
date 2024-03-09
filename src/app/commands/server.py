@@ -1,9 +1,12 @@
+from app.minecraft.server.get_data import MCServerData
+
+
 class Command:
     def __init__(self):
         self.name = 'server'
         self.arguments_length = 1
 
-    def validate_arguments(self, arguments):
+    def validate_arguments(self, arguments: list) -> bool:
         """
         Method to validate the arguments
         """
@@ -14,7 +17,7 @@ class Command:
         
         return True
 
-    def execute(self, arguments):
+    def execute(self, arguments) -> None:
         """
         Method to execute the command
         """
@@ -23,3 +26,5 @@ class Command:
             return
         
         print(f'{self.name} {arguments}')
+        server = MCServerData(arguments[0]).get()
+        print(server)

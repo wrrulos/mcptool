@@ -2,6 +2,7 @@ import json
 import os
 
 from typing import Union
+from app.logger import Logger
 
 
 class JsonManager:
@@ -9,13 +10,30 @@ class JsonManager:
         self.json_file = json_file
 
     def read(self) -> dict:
+        """
+        Method to read the json file
+
+        Returns:
+            dict: The data in the json file
+        """
+
+        # Check if the json file exists
+        # If it does not exist, log an error and return an empty dictionary
         if not os.path.exists(self.json_file):
+            Logger().error(f'Json file {self.json_file} does not exist')
             return {}
         
         with open(self.json_file, 'r', encoding='utf8') as file:
             return json.load(file)
 
-    def write(self, data):
+    def write(self, data: dict):
+        """
+        Method to write data to the json file
+
+        Args:
+            data (dict): The data to write to the json file
+        """
+        
         with open(self.json_file, 'w', encoding='utf8') as file:
             json.dump(data, file, indent=4)
 
