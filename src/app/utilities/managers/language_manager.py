@@ -2,8 +2,8 @@ import os
 
 from typing import Union
 
-from app.utilities.managers.json_manager import JsonManager as JM
-from app.logger import Logger
+from src.app.logger import Logger
+from . import json_manager
 
 
 class LanguageManager:
@@ -15,6 +15,7 @@ class LanguageManager:
         Method to get the text in the current language
         """
 
+        # Get the language file
         language_file = self.get_language()
 
         # Check if the language file exists
@@ -22,8 +23,8 @@ class LanguageManager:
         if not os.path.exists(language_file):
             Logger().error(f'Language file {language_file} does not exist')
             return 'None'
-        
-        return JM(language_file).get(key)
+
+        return json_manager.JsonManager(language_file).get(key)
 
     def set_language(self, language):
         self.language = language

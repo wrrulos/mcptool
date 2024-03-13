@@ -8,24 +8,31 @@ class Logger:
         if not os.path.exists('logs'):
             os.makedirs('logs')
 
-        # Obtener la fecha y hora actual para nombrar el archivo de log
+        # Get the current date and time
         current_datetime = datetime.datetime.now()
+
+        # Create the log file
         log_file = f"logs/log_{current_datetime.strftime('%Y-%m-%d_%H-%M-%S')}.log"
 
-        # Configurar el registro en un archivo
+        # Configure the logging
         logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    def debug(self, message):
+    @staticmethod
+    def debug(message):
         logging.debug(message)
 
-    def info(self, message):
+    @staticmethod
+    def info(message):
         logging.info(message)
 
-    def warning(self, message):
+    @staticmethod
+    def warning(message):
         logging.warning(message)
 
-    def error(self, message):
+    @staticmethod
+    def error(message):
         logging.error(message)
 
-    def critical(self, message):
+    @staticmethod
+    def critical(message):
         logging.critical(message)

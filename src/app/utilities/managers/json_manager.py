@@ -2,12 +2,12 @@ import json
 import os
 
 from typing import Union
-from app.logger import Logger
+from src.app.logger import Logger
 
 
 class JsonManager:
-    def __init__(self, json_file):
-        self.json_file = json_file
+    def __init__(self, json_file_path: str):
+        self.json_file_path = json_file_path
 
     def read(self) -> dict:
         """
@@ -19,22 +19,22 @@ class JsonManager:
 
         # Check if the json file exists
         # If it does not exist, log an error and return an empty dictionary
-        if not os.path.exists(self.json_file):
-            Logger().error(f'Json file {self.json_file} does not exist')
+        if not os.path.exists(self.json_file_path):
+            Logger().error(f'Json file {self.json_file_path} does not exist')
             return {}
-        
-        with open(self.json_file, 'r', encoding='utf8') as file:
+
+        with open(self.json_file_path, 'r', encoding='utf8') as file:
             return json.load(file)
 
-    def write(self, data: dict):
+    def write(self, data: dict) -> None:
         """
         Method to write data to the json file
 
         Args:
             data (dict): The data to write to the json file
         """
-        
-        with open(self.json_file, 'w', encoding='utf8') as file:
+
+        with open(self.json_file_path, 'w', encoding='utf8') as file:
             json.dump(data, file, indent=4)
 
     def get(self, key: Union[str, list]) -> Union[dict, list, str, int, float, None]:
@@ -47,7 +47,7 @@ class JsonManager:
         Returns:
             Union[dict, list, str, int, float, None]: The value of the key
         """
-        
+
         # Read the json file
         data = self.read()
 
@@ -55,7 +55,7 @@ class JsonManager:
         if isinstance(key, list):
             for k in key:
                 data = data.get(k, 'None')
-                
+
             return data
-        
+
         return data.get(key, 'None')
