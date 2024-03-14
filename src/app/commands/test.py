@@ -11,7 +11,7 @@ class Command:
         if len(arguments) != self.arguments_length:
             print(f'Invalid number of arguments for {self.name}')
             return False
-        
+
         return True
 
     def execute(self, arguments):
@@ -21,5 +21,5 @@ class Command:
 
         if not self.validate_arguments(arguments):
             return
-        
+
         print(f'{self.name} {arguments}')

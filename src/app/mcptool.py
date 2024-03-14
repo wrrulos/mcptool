@@ -1,59 +1,78 @@
-import importlib.util
 import inspect
 import os
 
+from importlib.util import spec_from_file_location, module_from_spec
+from importlib.machinery import ModuleSpec
 from mccolors import mcwrite, mcreplace
+from typing import Union, Any
+from types import ModuleType
 
-from app.logger import Logger
-from app.utilities.managers.language_manager import LanguageManager as LM
+from .logger import Logger
+from .utilities.managers import language_manager
 
 
 class MCPTool:
-    def __init__(self) -> None:
+    def __init__(self, commands_folder_path: str = 'src/app/commands'):
         self.logger = Logger()
-        self.commands_folder_path = "src/app/commands"
-        self.commands = {}
+        self.commands_folder_path = commands_folder_path
+        self.commands: dict = {}
 
-    def start(self):
-        """
-        Method to start MCPTool
-        """
-        print("Starting MCPTool")
-
+    def run(self):
         # Load the commands
-        self.load_commands()
+        self._load_commands()
 
         # Start the command input
-        self.command_input()
+        self._command_input()
 
-    def load_commands(self):
+    def _load_commands(self) -> None:
         """
         Method to load the commands
         """
 
-        # Get the files in the commands folder
-        commands_files = os.listdir(self.commands_folder_path)
+        # Check if the commands folder exists
+        if not os.path.exists(self.commands_folder_path):
+            raise Exception('The commands folder does not exist')
 
+        # Get the files in the commands folder
+        commands_files: list = os.listdir(self.commands_folder_path)
+
+        # Check if there are any files in the commands folder
+        if len(commands_files) == 0:
+            raise Exception('The commands folder is empty')
+
+        # Iterate over the files in the commands folder
         for file_name in commands_files:
             if not file_name.endswith('.py'):
                 continue
 
             if file_name == '__init__.py':
                 continue
-            
-            # # Get the module name without the extension
-            module_name = os.path.splitext(file_name)[0]
+
+            # Get the module name without the extension
+            module_name: str = os.path.splitext(file_name)[0]
 
             # Create a module specification
-            spec = importlib.util.spec_from_file_location(module_name, os.path.join(self.commands_folder_path, file_name))
-            
+            spec: Union[ModuleSpec, None] = spec_from_file_location(module_name,
+                                                                    os.path.join(
+                                                                        self.commands_folder_path,
+                                                                        file_name))
+
+            # Check if the module specification is None
+            if spec is None:
+                continue
+
             # Load the module
-            module = importlib.util.module_from_spec(spec)
+            module: ModuleType = module_from_spec(spec)
+
+            # Check if the loader is None
+            if spec.loader is None:
+                continue
+
             spec.loader.exec_module(module)
 
             for item_name in dir(module):
                 # Get the item from the module
-                item = getattr(module, item_name)
+                item: Any = getattr(module, item_name)
 
                 # Check if the item is a valid command class
                 if inspect.isclass(item) and hasattr(item, 'execute'):
@@ -63,40 +82,35 @@ class MCPTool:
                     # Add the command instance to the commands dictionary
                     self.commands[command_instance.name] = command_instance
 
-    def command_input(self):
+    def _command_input(self) -> None:
         """
         Method to manage the command line input
         """
-        
+
         while True:
             try:
-                arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
+                # arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
+                arguments: list = input(mcreplace('Enter a command: ')).split()
 
                 if len(arguments) == 0:
                     continue
 
                 # Get the command
-                command_name = arguments[0].lower()
+                command_name: str = arguments[0].lower()
 
                 if command_name == "exit":
                     break
 
                 if command_name not in self.commands:
-                    mcwrite(LM().get(['commands', 'invalidCommand']))
+                    mcwrite(language_manager.LanguageManager().get(['commands', 'invalidCommand']))
                     continue
 
                 # Execute the command
                 command_instance = self.commands[command_name]
                 command_instance.execute(arguments[1:])
- 
+
             except (RuntimeError, EOFError):
                 pass
 
             except KeyboardInterrupt:
                 break
-
-    def manage_command(self, command, arguments):
-        """
-        Method to manage the commands
-        """
-        pass
