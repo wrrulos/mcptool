@@ -1,5 +1,6 @@
 import socket
 import dns
+import re
 
 from mcstatus import JavaServer, BedrockServer
 from mcstatus.status_response import JavaStatusResponse, BedrockStatusResponse
@@ -88,7 +89,7 @@ class MCServerData:
         """
 
         try:
-            data: Union[JavaStatusResponse, BedrockStatusResponse] = function.status()
+            data: Union[JavaStatusResponse, BedrockStatusResponse, None] = function.status()
 
             if data is None:
                 return None
@@ -106,8 +107,8 @@ class MCServerData:
                 return JavaServerData(
                     ip_address=str(self.ip_address),
                     port=int(self.port),
-                    motd=data.description,
-                    version=data.version.name,
+                    motd=MCServerData._clean_output(data.description),
+                    version=MCServerData._clean_output(data.version.name),
                     protocol=str(data.version.protocol),
                     connected_players=str(data.players.online),
                     max_players=str(data.players.max),
@@ -123,8 +124,8 @@ class MCServerData:
                 return BedrockServerData(
                     ip_address=str(self.ip_address),
                     port=int(self.port),
-                    motd=data.description,
-                    version=data.version.name,
+                    motd=MCServerData._clean_output(data.description),
+                    version=MCServerData._clean_output(data.version.name),
                     protocol=str(data.version.protocol),
                     connected_players=str(data.players.online),
                     max_players=str(data.players.max),
@@ -201,3 +202,17 @@ class MCServerData:
         """
 
         return [player.name for player in players] if players is not None else []
+
+    @staticmethod
+    def _clean_output(output: str) -> str:
+        """
+        Method to clean the bot output
+        """
+
+        # Remove newline characters.
+        output = output.replace('\n', '')
+
+        # Replace multiple spaces with a single space.
+        output = re.sub(' +', ' ', output)
+        return output
+

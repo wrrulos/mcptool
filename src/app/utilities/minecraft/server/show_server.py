@@ -1,6 +1,41 @@
 from typing import Union
+from mccolors import mcwrite
 
 from .get_server import JavaServerData, BedrockServerData
+
+
+class Messages:
+    def __init__(self) -> None:
+        pass
+
+    @staticmethod
+    def get_server_message(server_data: Union[JavaServerData, BedrockServerData]) -> str:
+        """
+        Method to get the server message
+        """
+
+        SERVER_MESSAGE: str = f'''
+&4[&c&lIP:&f&lPORT&4] &f&l{server_data.ip_address}:{server_data.port}
+&4[&c&lMO&f&lTD&4] &f&l{server_data.motd}
+&4[&c&lVers&f&lion&4] &f&l{server_data.version}
+&4[&c&lProto&f&lcol&4] &f&l{server_data.protocol}
+&4[&c&lPlay&f&lers&4] &6&l{server_data.connected_players}&8&r/&6&l{server_data.max_players}'''
+
+        if isinstance(server_data, JavaServerData):
+            SERVER_MESSAGE += f'''
+&4[&c&lPlayer List&4] &f&l{server_data.players}
+&4[&c&lMo&f&ld&4] &d&l{server_data.mod}
+&4[&c&lMo&f&lds&4] &f&l{server_data.mods}'''
+            
+        else:
+            SERVER_MESSAGE += f'''
+            '''
+
+        SERVER_MESSAGE += f'''
+&4[&c&lPi&f&lng&4] &f&l{server_data.ping}
+&4[&c&lBot Out&f&lput&4] &f&l{server_data.bot_output}'''
+
+        return SERVER_MESSAGE
 
 
 class ShowMinecraftServer:
@@ -8,24 +43,10 @@ class ShowMinecraftServer:
         pass
 
     @staticmethod
-    def show(self, server_data: Union[JavaServerData, BedrockServerData]) -> None:
+    def show(server_data: Union[JavaServerData, BedrockServerData]) -> None:
         """
         Method to show the server data
         """
 
-        print(f'Platform: {server_data.platform}')
-        print(f'IP Address: {server_data.ip_address}')
-        print(f'Port: {server_data.port}')
-        print(f'MOTD: {server_data.motd}')
-        print(f'Version: {server_data.version}')
-        print(f'Protocol: {server_data.protocol}')
-        print(f'Connected Players: {server_data.connected_players}')
-        print(f'Max Players: {server_data.max_players}')
-
-        if isinstance(server_data, JavaServerData):
-            print(f'Players: {server_data.players}')
-            print(f'Mod: {server_data.mod}')
-            print(f'Mods: {server_data.mods}')
-            print(f'Favicon: {server_data.favicon}')
-            print(f'Ping: {server_data.ping}')
-            print(f'Bot Output: {server_data.bot_output}')
+        server_message: str = Messages.get_server_message(server_data)
+        mcwrite(server_message)

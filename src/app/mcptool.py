@@ -8,7 +8,7 @@ from typing import Union, Any
 from types import ModuleType
 
 from .logger import Logger
-from .utilities.managers import language_manager
+from .utilities.managers.language_manager import LanguageManager as LM
 
 
 class MCPTool:
@@ -102,7 +102,7 @@ class MCPTool:
                     break
 
                 if command_name not in self.commands:
-                    mcwrite(language_manager.LanguageManager().get(['commands', 'invalidCommand']))
+                    mcwrite(LM().get(['commands', 'invalidCommand']))
                     continue
 
                 # Execute the command
