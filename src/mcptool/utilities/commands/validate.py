@@ -1,6 +1,6 @@
 from mccolors import mcwrite
 
-from src.app.utilities.managers.language_manager import LanguageManager as LM
+from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
 
 
 class ValidateArgument:

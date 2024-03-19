@@ -1,10 +1,10 @@
 from typing import Union
 from mccolors import mcwrite
 
-from src.app.utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
-from src.app.utilities.minecraft.server.show_server import ShowMinecraftServer
-from src.app.utilities.managers.language_manager import LanguageManager as LM
-from src.app.utilities.commands.validate import ValidateArgument
+from src.mcptool.utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
+from src.mcptool.utilities.minecraft.server.show_server import ShowMinecraftServer
+from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
+from src.mcptool.utilities.commands.validate import ValidateArgument
 
 
 class Command:

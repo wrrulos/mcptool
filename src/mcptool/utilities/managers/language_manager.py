@@ -2,7 +2,7 @@ import os
 
 from typing import Union
 
-from src.app.logger import Logger
+from src.mcptool.logger import Logger
 from . import json_manager
 
 

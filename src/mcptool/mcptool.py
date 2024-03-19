@@ -12,7 +12,7 @@ from .utilities.managers.language_manager import LanguageManager as LM
 
 
 class MCPTool:
-    def __init__(self, commands_folder_path: str = 'src/app/commands'):
+    def __init__(self, commands_folder_path: str = 'src/mcptool/commands'):
         self.logger = Logger()
         self.commands_folder_path = commands_folder_path
         self.commands: dict = {}
