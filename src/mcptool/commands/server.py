@@ -22,6 +22,12 @@ class Command:
 
         if not validate.validate_arguments_length():
             return False
+        
+        server: str = arguments[0]
+
+        if not validate.is_domain(server) and not validate.is_ip_and_port(server):
+            mcwrite(LM().get(['commands', 'server', 'invalidServer']))
+            return False
 
         return True
 

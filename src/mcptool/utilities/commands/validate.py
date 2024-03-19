@@ -41,4 +41,67 @@ class ValidateArgument:
         return True
     
     @staticmethod
-    def 
+    @staticmethod
+    def is_domain(domain: str) -> bool:
+        """
+        Method to validate if a string is a domain
+        """
+
+        if domain.count('.') < 1:
+            return False
+
+        # Split the domain into parts
+        domain_parts = domain.split('.')
+
+        # Check if each part is alphanumeric
+        for part in domain_parts:
+            if not part.isalnum():
+                return False
+
+        return True
+    
+    @staticmethod
+    def is_ip_and_port(ip: str) -> bool:
+        """
+        Method to validate if a string is an IP and port
+        """
+
+        if ':' not in ip:
+            return False
+
+        ip_parts: list = ip.split(':')
+
+        if len(ip_parts) != 2:
+            return False
+
+        ip_address: str = ip_parts[0]
+        port: str = ip_parts[1]
+
+        if not ip_address or not port:
+            return False
+
+        try:
+            port: int = int(port)
+
+            if port < 0 or port > 65535:
+                return False
+            
+        except ValueError:
+            return False
+
+        ip_parts: list = ip_address.split('.')
+
+        if len(ip_parts) != 4:
+            return False
+
+        for part in ip_parts:
+            try:
+                part: int = int(part)
+
+                if part < 0 or part > 255:
+                    return False
+                
+            except ValueError:
+                return False
+
+        return True
