@@ -3,15 +3,14 @@ import logging
 from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
-from src.mcptool.utilities.minecraft.server.show_server import ShowMinecraftServer
+from src.mcptool.utilities.minecraft.player.get_player_uuid import PlayerUUID
 from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
 from src.mcptool.utilities.commands.validate import ValidateArgument
 
 
 class Command:
     def __init__(self):
-        self.name: str = 'server'
+        self.name: str = 'ipinfo'
 
         try:
             self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
@@ -19,7 +18,7 @@ class Command:
         except AttributeError:
             logging.error(f'Error loading the language file for the command {self.name}')
             raise Exception(f'Error loading the language file for the command {self.name}')
-        
+
     def validate_arguments(self, arguments: list) -> bool:
         """
         Method to validate the arguments
@@ -36,12 +35,6 @@ class Command:
         if not validate.validate_arguments_length():
             return False
         
-        server: str = arguments[0]
-
-        if not validate.is_domain(server) and not validate.is_ip_and_port(server):
-            mcwrite(LM().get(['errors', 'invalidServerFormat']))
-            return False
-
         return True
 
     def execute(self, arguments: list) -> None:
@@ -56,14 +49,12 @@ class Command:
         if not self.validate_arguments(arguments):
             return
         
-        # Get the server data
-        mcwrite(LM().get(['commands', 'server', 'gettingServerData']))
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(arguments[0]).get()
+        # Get the player data
+        mcwrite(LM().get(['commands', 'uuid', 'gettingPlayerUuid']))
+        player_data = PlayerUUID(username=arguments[0]).get_uuid()
 
-        # Check if the server data is None
-        if server_data is None:
-            mcwrite(LM().get(['commands', 'server', 'serverOffline']))
-            return
+        # Print the player data
+        if player_data.online_uuid is not None:
+            mcwrite(LM().get(['commands', 'uuid', 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}'))
 
-        # Show the server data
-        ShowMinecraftServer().show(server_data=server_data)
+        mcwrite(LM().get(['commands', 'uuid', 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}'))
