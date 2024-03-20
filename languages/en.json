@@ -13,9 +13,10 @@
             "gettingServerData": "&f&lGetting data from the entered server...",
             "serverOffline": "&f&lCould not get data from the entered server. It's possibly turned off."
         },
-        "player": {
-            "arguments": ["player"],
-            "gettingPlayerData": "&f&lGetting data from the entered player..."
+        "uuid": {
+            "arguments": ["username"],
+            "gettingPlayerUuid": "&f&lGetting data from the entered player...",
+            "uuid": "&4[&cUU&f&lID] %uuid%"
         }
     },
     "errors": {

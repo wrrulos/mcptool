@@ -1,15 +1,14 @@
 from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
-from src.mcptool.utilities.minecraft.server.show_server import ShowMinecraftServer
+from src.mcptool.utilities.minecraft.player.get_player_uuid import PlayerUUID
 from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
 from src.mcptool.utilities.commands.validate import ValidateArgument
 
 
 class Command:
     def __init__(self):
-        self.name: str = 'player'
+        self.name: str = 'uuid'
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
 
     def validate_arguments(self, arguments: list) -> bool:
@@ -43,14 +42,11 @@ class Command:
             return
         
         # Get the player data
-        mcwrite(LM().get(['commands', 'player', 'gettingPlayerData']))
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(arguments[0]).get()
+        mcwrite(LM().get(['commands', 'uuid', 'gettingPlayerUuid']))
+        player_data = PlayerUUID(username=arguments[0]).get_uuid()
 
-        # Check if the server data is None
-        if server_data is None:
-            mcwrite(LM().get(['commands', 'server', 'serverOffline']))
-            return
+        # Print the player data
+        if player_data.online_uuid is not None:
+            mcwrite(LM().get(['commands', 'uuid', 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}'))
 
-        # Show the server data
-        ShowMinecraftServer().show(server_data=server_data)
-
+        mcwrite(LM().get(['commands', 'uuid', 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}'))
