@@ -1,17 +1,23 @@
+import logging
+
 from mccolors import mcwrite, mcreplace
 
-from src.mcptool.logger import Logger
 from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
 from src.mcptool.utilities.commands.loader import CommandLoader
 
 
 class MCPTool:
     def __init__(self, commands_folder_path: str = 'src/mcptool/commands'):
-        self.logger = Logger()
         self.commands_folder_path = commands_folder_path
         self.commands: dict = {}
 
     def run(self):
+        # Set the logging configuration
+        logging.basicConfig(filename='debug.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        
+        # Notify the user that the tool is starting
+        logging.info(LM().get(['logger', 'starting']))
+
         # Load the commands
         self.commands = CommandLoader(commands_folder_path=self.commands_folder_path).get_commands()
 

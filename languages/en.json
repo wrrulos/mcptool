@@ -20,5 +20,12 @@
     },
     "errors": {
         "invalidServerFormat": "&f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l."
+    },
+    "logger": {
+        "starting": "Starting MCPTool",
+        "loadingCommands": "Loading commands",
+        "commandsFolderDoesNotExist": "The commands folder does not exist",
+        "commandsFolderIsEmpty": "The commands folder is empty",
+        "commandsLoaded": "Commands loaded successfully"
     }
 }

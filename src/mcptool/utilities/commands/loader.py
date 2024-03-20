@@ -1,10 +1,13 @@
 import os
 import inspect
+import logging
 
 from importlib.util import spec_from_file_location, module_from_spec
 from importlib.machinery import ModuleSpec
 from types import ModuleType
 from typing import Union, Any
+
+from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
 
 
 class CommandLoader:
@@ -22,7 +25,11 @@ class CommandLoader:
         """
 
         # Load the commands
+        logging.info(LM().get(['logger', 'loadingCommands']))
         self._load_commands()
+
+        # Return the commands
+        logging.info(LM().get(['logger', 'commandsLoaded']))
         return self.commands
     
     def _load_commands(self) -> None:
@@ -32,6 +39,7 @@ class CommandLoader:
 
         # Check if the commands folder exists
         if not os.path.exists(self.commands_folder_path):
+            logging.error(LM().get(['logger', 'commandsFolderDoesNotExist']))
             raise Exception('The commands folder does not exist')
 
         # Get the files in the commands folder
@@ -39,6 +47,7 @@ class CommandLoader:
 
         # Check if there are any files in the commands folder
         if len(commands_files) == 0:
+            logging.error(LM().get(['logger', 'commandsFolderIsEmpty']))
             raise Exception('The commands folder is empty')
 
         # Iterate over the files in the commands folder
