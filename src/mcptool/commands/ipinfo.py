@@ -1,9 +1,6 @@
-import logging
-
-from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.utilities.minecraft.player.get_player_uuid import PlayerUUID
+from src.mcptool.utilities.ip.get_ip_info import IPInfo
 from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
 from src.mcptool.utilities.commands.validate import ValidateArgument
 
@@ -29,6 +26,10 @@ class Command:
         if not validate.validate_arguments_length():
             return False
         
+        if not ValidateArgument.is_ip_address(arguments[0]):
+            mcwrite(LM().get(['errors', 'invalidIpFormat']))
+            return False
+        
         return True
 
     def execute(self, arguments: list) -> None:
@@ -44,11 +45,13 @@ class Command:
             return
         
         # Get the player data
-        mcwrite(LM().get(['commands', 'uuid', 'gettingPlayerUuid']))
-        player_data = PlayerUUID(username=arguments[0]).get_uuid()
+        mcwrite(LM().get(['commands', 'ipinfo', 'gettingIpData']))
+        
+        # Get the IP address information
+        ip_info = IPInfo(ip_address=arguments[0]).get_info()
 
-        # Print the player data
-        if player_data.online_uuid is not None:
-            mcwrite(LM().get(['commands', 'uuid', 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}'))
-
-        mcwrite(LM().get(['commands', 'uuid', 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}'))
+        if ip_info is None:
+            mcwrite(LM().get(['commands', 'ipinfo', 'error']))
+            return
+        
+        mcwrite(ip_info.continent)

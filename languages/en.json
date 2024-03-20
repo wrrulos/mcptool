@@ -17,10 +17,17 @@
             "arguments": ["username"],
             "gettingPlayerUuid": "&f&lGetting data from the entered player...",
             "uuid": "&4[&cUU&f&lID] %uuid%"
+        },
+        "ipinfo": {
+            "arguments": ["ip"],
+            "gettingIpData": "&f&lGetting data from the entered IP...",
+            "error": "&f&lCould not get data from the entered IP. It's possibly invalid.",
+            "ipInfo": "&4[&cIP&f&lInfo] &f&lIP: &c%ip% &f&lCountry: &c%country% &f&lRegion: &c%region% &f&lCity: &c%city% &f&lISP: &c%isp%"
         }
     },
     "errors": {
-        "invalidServerFormat": "&f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l."
+        "invalidServerFormat": "&f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
+        "invalidIpFormat": "&f&lThe IP format entered is not valid. You have to enter a valid IP."
     },
     "logger": {
         "starting": "Starting MCPTool",

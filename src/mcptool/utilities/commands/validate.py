@@ -41,7 +41,6 @@ class ValidateArgument:
         return True
     
     @staticmethod
-    @staticmethod
     def is_domain(domain: str) -> bool:
         """
         Method to validate if a string is a domain
@@ -56,6 +55,29 @@ class ValidateArgument:
         # Check if each part is alphanumeric
         for part in domain_parts:
             if not part.isalnum():
+                return False
+
+        return True
+    
+    @staticmethod
+    def is_ip_address(ip: str) -> bool:
+        """
+        Method to validate if a string is an IP address
+        """
+
+        ip_parts: list = ip.split('.')
+
+        if len(ip_parts) != 4:
+            return False
+
+        for part in ip_parts:
+            try:
+                part: int = int(part)
+
+                if part < 0 or part > 255:
+                    return False
+                
+            except ValueError:
                 return False
 
         return True
