@@ -9,10 +9,12 @@
         "invalidCommand": "&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
-            "arguments": ["ip:port", "start"]
+            "arguments": ["ip:port", "start"],
+            "gettingServerData": "&f&lGetting data from the entered server...",
+            "serverOffline": "&f&lCould not get data from the entered server. It's possibly turned off."
         }
     },
     "errors": {
-
+        "invalidServerFormat": "&f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l."
     }
 }
