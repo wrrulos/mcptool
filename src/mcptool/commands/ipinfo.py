@@ -11,13 +11,7 @@ from src.mcptool.utilities.commands.validate import ValidateArgument
 class Command:
     def __init__(self):
         self.name: str = 'ipinfo'
-
-        try:
-            self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
-
-        except AttributeError:
-            logging.error(f'Error loading the language file for the command {self.name}')
-            raise Exception(f'Error loading the language file for the command {self.name}')
+        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
 
     def validate_arguments(self, arguments: list) -> bool:
         """

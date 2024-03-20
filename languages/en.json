@@ -27,6 +27,7 @@
         "loadingCommands": "Loading commands",
         "commandsFolderDoesNotExist": "The commands folder does not exist",
         "commandsFolderIsEmpty": "The commands folder is empty",
+        "commandsArgumentMissing": "The command %command% is missing the arguments",
         "commandsLoaded": "Commands loaded successfully"
     }
 }

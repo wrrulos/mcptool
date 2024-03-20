@@ -51,11 +51,15 @@ class JsonManager:
         # Read the json file
         data = self.read()
 
-        # Check if the key is a list
-        if isinstance(key, list):
-            for k in key:
-                data = data.get(k, 'None')
+        try:
+            # Check if the key is a list
+            if isinstance(key, list):
+                for k in key:
+                    data = data.get(k, 'None')
 
-            return data
+                return data
 
-        return data.get(key, 'None')
+            return data.get(key, 'None')
+            
+        except AttributeError:
+            return None
