@@ -49,9 +49,13 @@ class MCPTool:
                     mcwrite(LM().get(['commands', 'invalidCommand']))
                     continue
 
-                # Execute the command
-                command_instance = self.commands[command_name]
-                command_instance.execute(arguments[1:])
+                try:
+                    # Execute the command
+                    command_instance = self.commands[command_name]
+                    command_instance.execute(arguments[1:])
+
+                except KeyboardInterrupt:
+                    continue
 
             except (RuntimeError, EOFError):
                 pass
