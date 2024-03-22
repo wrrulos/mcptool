@@ -9,10 +9,32 @@
         "invalidCommand": "&cНеизвестная команда. &f&lИспользуйте &ahelp&f&l для получения списка команд."
         "missingArguments": "&cОтсутствуют аргументы. &f&lИспользование: &b&l%command% &c&l%arguments%",
         "server": {
-            "arguments": ["айпи:порт", "start"]
+            "arguments": ["ip:port", "start"],
+            "gettingServerData": "&f&lПолучаем данные о сервере...",
+            "serverOffline": "&f&lНе удалось получить данные о сервере. Возможно, он выключен."
+        },
+        "uuid": {
+            "arguments": ["username"],
+            "gettingPlayerUuid": "&f&lПолучаем данные об игроке...",
+            "uuid": "&4[&cUU&f&lID] %uuid%"
+        },
+        "ipinfo": {
+            "arguments": ["ip"],
+            "gettingIpData": "&f&lПолучаем данные об IP адресе...",
+            "error": "&f&lНе удалось получить данные об IP адресе. Возможно, он не существует.",
+            "ipInfo": "&4[&cIP&f&lInfo] &f&lIP: &c%ip% &f&lСтрана: &c%country% &f&lРегион: &c%region% &f&lГород: &c%city% &f&lПровайдер: &c%isp%"
         }
     },
     "errors": {
-
+        "invalidServerFormat": "&f&lНеверный формат сервера. Вы должны использовать &c&lip:порт &f&lили &c&lдомен&f&l.",
+        "invalidIpFormat": "&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес."
+    },
+    "logger": {
+        "starting": "Запуск MCPTool",
+        "loadingCommands": "Загрузка команд",
+        "commandsFolderDoesNotExist": "Папка с командами отсутствует",
+        "commandsFolderIsEmpty": "Папка с командами пустая",
+        "commandsArgumentMissing": "Отсутствуют аргументы команды %command%",
+        "commandsLoaded": "Команды успешно загружены"
     }
 }
