@@ -1,9 +1,10 @@
+from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.utilities.ip.get_ip_info import IPInfo
-from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
-from src.mcptool.utilities.commands.validate import ValidateArgument
 
+from src.mcptool.modules.utilities.commands.validate import ValidateArgument
+from src.mcptool.modules.utilities.managers.language_manager import LanguageManager as LM
+from src.mcptool.modules.utilities.ip.get_ip_info import IPInfo, IPInfoFormat
 
 class Command:
     def __init__(self):
@@ -48,10 +49,17 @@ class Command:
         mcwrite(LM().get(['commands', 'ipinfo', 'gettingIpData']))
         
         # Get the IP address information
-        ip_info = IPInfo(ip_address=arguments[0]).get_info()
+        ip_info: Union[IPInfoFormat, None] = IPInfo(ip_address=arguments[0]).get_info()
 
         if ip_info is None:
             mcwrite(LM().get(['commands', 'ipinfo', 'error']))
             return
         
-        mcwrite(ip_info.continent)
+        # Print the IP address information
+        mcwrite(LM().get(['commands', 'ipinfo', 'continent']).replace('%continent%', ip_info.continent).replace('%continentCode%', ip_info.continent_code))
+        mcwrite(LM().get(['commands', 'ipinfo', 'country']).replace('%country%', ip_info.country).replace('%countryCode%', ip_info.country_code))
+        mcwrite(LM().get(['commands', 'ipinfo', 'region']).replace('%region%', ip_info.region).replace('%regionName%', ip_info.region_name))
+        mcwrite(LM().get(['commands', 'ipinfo', 'city']).replace('%city%', ip_info.city))
+        mcwrite(LM().get(['commands', 'ipinfo', 'timezone']).replace('%timezone%', ip_info.timezone))
+        mcwrite(LM().get(['commands', 'ipinfo', 'isp']).replace('%isp%', ip_info.isp))
+        mcwrite(LM().get(['commands', 'ipinfo', 'organization']).replace('%organization%', ip_info.org))

@@ -3,9 +3,9 @@ import logging
 from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.utilities.minecraft.player.get_player_uuid import PlayerUUID
-from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
-from src.mcptool.utilities.commands.validate import ValidateArgument
+from src.mcptool.modules.utilities.minecraft.player.get_player_uuid import PlayerUUID
+from src.mcptool.modules.utilities.managers.language_manager import LanguageManager as LM
+from src.mcptool.modules.utilities.commands.validate import ValidateArgument
 
 
 class Command:

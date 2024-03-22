@@ -1,4 +1,4 @@
-from src.mcptool.mcptool import MCPTool
+from src.mcptool import MCPTool
 
 
 if __name__ == '__main__':

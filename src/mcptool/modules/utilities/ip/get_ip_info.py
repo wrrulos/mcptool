@@ -4,12 +4,6 @@ import socket
 from typing import Union
 
 
-"""
- paint(f'\n{GetUtilities.get_spaces()}&4[{GetUtilities.get_translated_text(["commands", "ipinfo", "result1"])}&4] &f&l{ip_address_information[0]["continent"]} (&c{ip_address_information[0]["continentCode"]}&f&l)')
-            paint(f'{GetUtilities.get_spaces()}&4[{GetUtilities.get_translated_text(["commands", "ipinfo", "result2"])}&4] &f&l{ip_address_information[0]["country"]} (&c{ip_address_information[0]["countryCode"]}&f&l)')
-            paint(f'{GetUtilities.get_spaces()}&4[{GetUtilities.get_translated_text(["commands", "ipinfo", "result3"])}&4] &f&l{ip_address_information[0]["regionName"]} (&c{ip_address_information[0]["region"]}&f&l)')
-            paint(f'{GetUtilities.get_spaces()}&4[{GetUtilities.get_translated_text(["commands", "ipinfo", "result4"])}&4] &f&l{ip_address_information[0]["city"]} (&c{ip_address_information[0]["timezone"]}&f&l)')
-            paint(f'{GetUtilities.get_spaces()}&4[{GetUtilities.get_translated_text(["commands", "ipinfo", "result5"])}&4] &f&l{ip_address_information[0]["isp"]} (&c{ip_address_information[0]["org"]}&f&l)')"""
 class IPInfoFormat:
     def __init__(self, continent: Union[str, None], continent_code: Union[str, None], country: Union[str, None], country_code: Union[str, None], region: Union[str, None], region_name: Union[str, None], city: Union[str, None], timezone: Union[str, None], isp: Union[str, None], org: Union[str, None], domains: list) -> None:
         self.continent: Union[str, None] = continent
@@ -59,8 +53,8 @@ class IPInfo:
                 continent_code=ip_address_information['continentCode'],
                 country=ip_address_information['country'],
                 country_code=ip_address_information['countryCode'],
-                region=ip_address_information['region'],
-                region_name=ip_address_information['regionName'],
+                region=ip_address_information['regionName'],
+                region_name=ip_address_information['region'],
                 city=ip_address_information['city'],
                 timezone=ip_address_information['timezone'],
                 isp=ip_address_information['isp'],

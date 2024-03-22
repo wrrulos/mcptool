@@ -4,30 +4,36 @@
         "title": "MCPTool - @wrrulos"
     },
     "commands": {
-        "input": "&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
-        "termuxInput": "&croot@mcptool &8&r▶ &f&l",
-        "invalidCommand": "&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
-        "missingArguments": "&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
+        "input": "%spaces%&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+        "termuxInput": "%spaces%&croot@mcptool &8&r▶ &f&l",
+        "invalidCommand": "%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
+        "missingArguments": "%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
             "arguments": ["ip:port", "start"],
-            "gettingServerData": "&f&lGetting data from the entered server...",
-            "serverOffline": "&f&lCould not get data from the entered server. It's possibly turned off."
+            "gettingServerData": "%spaces%&f&lGetting data from the entered server...",
+            "serverOffline": "%spaces%&f&lCould not get data from the entered server. It's possibly turned off."
         },
         "uuid": {
             "arguments": ["username"],
-            "gettingPlayerUuid": "&f&lGetting data from the entered player...",
-            "uuid": "&4[&cUU&f&lID] %uuid%"
+            "gettingPlayerUuid": "%spaces%&f&lGetting data from the entered player...",
+            "uuid": "%spaces%&4[&c&lUU&f&lID] %uuid%"
         },
         "ipinfo": {
             "arguments": ["ip"],
-            "gettingIpData": "&f&lGetting data from the entered IP...",
-            "error": "&f&lCould not get data from the entered IP. It's possibly invalid.",
-            "ipInfo": "&4[&cIP&f&lInfo] &f&lIP: &c%ip% &f&lCountry: &c%country% &f&lRegion: &c%region% &f&lCity: &c%city% &f&lISP: &c%isp%"
+            "gettingIpData": "%spaces%&f&lGetting data from the entered IP...",
+            "error": "%spaces%&f&lCould not get data from the entered IP. It's possibly invalid.",
+            "continent": "%spaces%&4[&c&lConti&f&lnent&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
+            "country": "%spaces%&4[&c&lCoun&f&ltry&4] &f&l%country% &8&l(&b&l+%countryCode%&8&l)",
+            "region": "%spaces%&4[&c&lReg&f&lion&4] &f&l%region% &8&l(&b&l+%regionName%&8&l)",
+            "city": "%spaces%&4[&c&lCi&f&lty&4] &f&l%city%",
+            "timezone": "%spaces%&4[&c&lTime&f&lzone&4] &f&l%timezone%",
+            "isp": "%spaces%&4[&c&lIS&f&lP&4] &f&l%isp%",
+            "organization": "%spaces%&4[&c&lOrgani&f&lzation&4] &f&l%organization%"
         }
     },
     "errors": {
-        "invalidServerFormat": "&f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
-        "invalidIpFormat": "&f&lThe IP format entered is not valid. You have to enter a valid IP."
+        "invalidServerFormat": "%spaces%&f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
+        "invalidIpFormat": "%spaces%&f&lThe IP format entered is not valid. You have to enter a valid IP."
     },
     "logger": {
         "starting": "Starting MCPTool",

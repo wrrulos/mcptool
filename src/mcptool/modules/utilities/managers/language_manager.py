@@ -3,7 +3,7 @@ import logging
 
 from typing import Union
 
-from src.mcptool.utilities.managers.json_manager import JsonManager
+from .json_manager import JsonManager
 
 
 class LanguageManager:

@@ -4,6 +4,7 @@ import os
 
 from typing import Union
 
+from .. import Utilities
 
 class JsonManager:
     def __init__(self, json_file_path: str):
@@ -57,7 +58,13 @@ class JsonManager:
                 for k in key:
                     data = data.get(k, 'None')
 
+                if '%spaces%' in data:
+                    data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
+
                 return data
+
+            if '%spaces%' in data:
+                data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
 
             return data.get(key, 'None')
             
