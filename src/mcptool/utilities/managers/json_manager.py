@@ -1,8 +1,8 @@
+import logging
 import json
 import os
 
 from typing import Union
-from src.app.logger import Logger
 
 
 class JsonManager:
@@ -20,7 +20,7 @@ class JsonManager:
         # Check if the json file exists
         # If it does not exist, log an error and return an empty dictionary
         if not os.path.exists(self.json_file_path):
-            Logger().error(f'Json file {self.json_file_path} does not exist')
+            logging.error(f'Json file {self.json_file_path} does not exist')
             return {}
 
         with open(self.json_file_path, 'r', encoding='utf8') as file:
@@ -51,11 +51,15 @@ class JsonManager:
         # Read the json file
         data = self.read()
 
-        # Check if the key is a list
-        if isinstance(key, list):
-            for k in key:
-                data = data.get(k, 'None')
+        try:
+            # Check if the key is a list
+            if isinstance(key, list):
+                for k in key:
+                    data = data.get(k, 'None')
 
-            return data
+                return data
 
-        return data.get(key, 'None')
+            return data.get(key, 'None')
+            
+        except AttributeError:
+            return None

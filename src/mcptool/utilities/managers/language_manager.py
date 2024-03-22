@@ -1,14 +1,14 @@
 import os
+import logging
 
 from typing import Union
 
-from src.app.logger import Logger
-from . import json_manager
+from src.mcptool.utilities.managers.json_manager import JsonManager
 
 
 class LanguageManager:
     def __init__(self):
-        self.language = json_manager.JsonManager('./settings.json').get('language')
+        self.language = JsonManager('./settings.json').get('language')
 
     def get(self, key: Union[list, str]) -> Union[dict, list, str, int, float, None]:
         """
@@ -21,10 +21,10 @@ class LanguageManager:
         # Check if the language file exists
         # If it does not exist, log an error and return 'None'
         if not os.path.exists(language_file):
-            Logger().critical(f'Language file {language_file} does not exist')
+            logging.critical(f'Language file {language_file} does not exist')
             return 'None'
 
-        return json_manager.JsonManager(language_file).get(key)
+        return JsonManager(language_file).get(key)
 
     def set_language(self, language):
         self.language = language

@@ -97,9 +97,11 @@ class MCServerData:
             if isinstance(data, JavaStatusResponse):
                 players: list = []
 
+                # Get the players
                 if hasattr(data.players, 'sample') and data.players.sample is not None:
                     players = [player.name for player in data.players.sample]
 
+                # Get the mod info
                 mod_info = data.raw.get('modinfo', {})
                 mod_type: str = mod_info.get('type', 'None') if isinstance(mod_info, dict) else 'None'
                 mod_list: list = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
