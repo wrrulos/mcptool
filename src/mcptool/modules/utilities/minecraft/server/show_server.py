@@ -1,7 +1,7 @@
 from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.utilities.minecraft.server.get_server import JavaServerData, BedrockServerData
+from .get_server import JavaServerData, BedrockServerData
 
 
 class Messages:

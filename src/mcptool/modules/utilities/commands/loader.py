@@ -7,7 +7,7 @@ from importlib.machinery import ModuleSpec
 from types import ModuleType
 from typing import Union, Any
 
-from src.mcptool.utilities.managers.language_manager import LanguageManager as LM
+from ..managers.language_manager import LanguageManager as LM
 
 
 class CommandLoader:
