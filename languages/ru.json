@@ -21,7 +21,7 @@
         "ipinfo": {
             "arguments": ["ip"],
             "gettingIpData": "&f&lПолучаем данные об IP адресе...",
-            "error": %spaces%"&f&lНе удалось получить данные об IP адресе. Возможно, он не существует.",
+            "error": "%spaces%"&f&lНе удалось получить данные об IP адресе. Возможно, он не существует.",
             "continent": "%spaces%&4[&c&lКонти&f&lнент&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
             "country": "%spaces%&4[&c&lСтра&f&lна&4] &f&l%country% &8&l(&b&l+%countryCode%&8&l)",
             "region": "%spaces%&4[&c&lРег&f&lион&4] &f&l%region% &8&l(&b&l+%regionName%&8&l)",
