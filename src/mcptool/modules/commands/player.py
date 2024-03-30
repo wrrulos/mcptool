@@ -1,11 +1,9 @@
-import logging
-
 from typing import Union
 from mccolors import mcwrite
 
-from src.mcptool.modules.utilities.minecraft.player.get_player_uuid import PlayerUUID
-from src.mcptool.modules.utilities.managers.language_manager import LanguageManager as LM
-from src.mcptool.modules.utilities.commands.validate import ValidateArgument
+from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
+from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.commands.validate import ValidateArgument
 
 
 class Command:
