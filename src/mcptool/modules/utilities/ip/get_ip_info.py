@@ -27,20 +27,22 @@ class IPInfo:
 
     def get_info(self) -> IPInfoFormat:
         """
-        Method to get the information of an IP address using the ip-api.com API
-        and reverse DNS lookup
+        Get the information of the IP address
 
         Returns:
             IPInfoFormat: The information of the IP address
         """
 
         try:
+            # Get the information of the IP address
             r = requests.get(f'http://ip-api.com/json/{self.ip_address}?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,timezone,isp,org,as,asname,reverse,query')
-            ip_address_information = r.json()
+            ip_address_information: dict = r.json()
 
+            # Check if the status is not success
             if ip_address_information['status'] != 'success':
                 return None
             
+            # Check if the reverse DNS lookup is enabled
             if self.reverse:
                 try:
                     self.domains: list = socket.gethostbyaddr(self.ip_address)[0]
