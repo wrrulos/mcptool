@@ -1,0 +1,12 @@
+[project]
+name = "mcptool"
+version = "1.0-alpha"
+dependencies = [
+    "mccolors",
+    "mcstatus",
+    "requests",
+    "loguru"
+]
+
+[project.scripts]
+mcptool = "mcptool.__main__:main"
