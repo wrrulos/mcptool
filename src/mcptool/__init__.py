@@ -46,7 +46,6 @@ class MCPTool:
         Method to manage the command line input
         """
         
-        print(MCPToolPath().get())
         while True:
             try:
                 arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
