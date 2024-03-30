@@ -4,8 +4,8 @@
         "title": "MCPTool - @wrrulos"
     },
     "commands": {
-        "input": "%spaces%&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
-        "termuxInput": "%spaces%&croot@mcptool &8&r▶ &f&l",
+        "input": "\n%spaces%&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
+        "termuxInput": "\n%spaces%&croot@mcptool &8&r▶ &f&l",
         "invalidCommand": "%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
@@ -15,8 +15,8 @@
         },
         "uuid": {
             "arguments": ["username"],
-            "gettingPlayerUuid": "%spaces%&f&lGetting data from the entered player...",
-            "uuid": "%spaces%&4[&c&lUU&f&lID] %uuid%"
+            "gettingPlayerUuid": "%spaces%&f&lGetting data from the entered player...\n",
+            "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
         },
         "ipinfo": {
             "arguments": ["ip"],
