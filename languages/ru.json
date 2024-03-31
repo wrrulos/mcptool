@@ -1,28 +1,28 @@
 {
     "languageName": "Russian",
     "app": {
-        "title": "MCPTool - @wrrulos"
+        "title": "MCPTool - @wrrulos",
+        "description": "%spaces%&f&l&oУтилита для проверки серверов Minecraft на безопасность &8&l(&a&l%version%&8&l)",
+        "newVersion": "\n%spaces%&a&lДоступна новая версия! &f&lЗакройте &f&lMCP&c&lTool &f&lи введите в терминал &b&lmcptool update &f&lдля обновления."
     },
     "commands": {
-        "input": "%spaces%&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
-        "termuxInput": "%spaces%&croot@mcptool &8&r▶ &f&l",
-        "invalidCommand": "%spaces%&cНеизвестная команда. &f&lИспользуйте &ahelp&f&l для получения списка команд."
-        "missingArguments": "%spaces%&cОтсутствуют аргументы. &f&lИспользование: &b&l%command% &c&l%arguments%",
+        "invalidCommand": "\n%spaces%&cНеизвестная команда. &f&lИспользуйте &ahelp&f&l для получения списка команд.",
+        "missingArguments": "\n%spaces%&cОтсутствуют аргументы. &f&lИспользование: &b&l%command% &c&l%arguments%",
         "server": {
             "arguments": ["ip:port", "start"],
-            "gettingServerData": "%spaces%&f&lПолучаем данные о сервере...",
-            "serverOffline": "%spaces%&f&lНе удалось получить данные о сервере. Возможно, он выключен."
+            "gettingServerData": "\n%spaces%%prefix%&f&lПолучаем данные о сервере...",
+            "serverOffline": "\n%spaces%%prefix%&f&lНе удалось получить данные о сервере. Возможно, он выключен."
         },
         "uuid": {
             "arguments": ["username"],
-            "gettingPlayerUuid": "%spaces%&f&lПолучаем данные об игроке...",
+            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lПолучаем данные об игроке...\n",
             "uuid": "%spaces%&4[&cUU&f&lID] %uuid%"
         },
         "ipinfo": {
             "arguments": ["ip"],
-            "gettingIpData": "&f&lПолучаем данные об IP адресе...",
-            "error": "%spaces%&f&lНе удалось получить данные об IP адресе. Возможно, он не существует.",
-            "continent": "%spaces%&4[&c&lКонти&f&lнент&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
+            "gettingIpData": "\n%spaces%%prefix% &f&lПолучаем данные об IP адресе...",
+            "error": "\n%spaces%%prefix% &f&lНе удалось получить данные об IP адресе. Возможно, он не существует.",
+            "continent": "\n%spaces%%&4[&c&lКонти&f&lнент&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
             "country": "%spaces%&4[&c&lСтра&f&lна&4] &f&l%country% &8&l(&b&l+%countryCode%&8&l)",
             "region": "%spaces%&4[&c&lРег&f&lион&4] &f&l%region% &8&l(&b&l+%regionName%&8&l)",
             "city": "%spaces%&4[&c&lГо&f&lрод&4] &f&l%city%",
@@ -32,8 +32,8 @@
         }
     },
     "errors": {
-        "invalidServerFormat": "%spaces%&f&lНеверный формат сервера. Вы должны использовать &c&lip:порт &f&lили &c&lдомен&f&l.",
-        "invalidIpFormat": "%spaces%&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес."
+        "invalidServerFormat": "\n%spaces%%prefix%&f&lНеверный формат сервера. Вы должны использовать &c&lip:порт &f&lили &c&lдомен&f&l.",
+        "invalidIpFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес."
     },
     "logger": {
         "starting": "Запуск MCPTool",
