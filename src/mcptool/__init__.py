@@ -24,10 +24,11 @@ from mccolors import mcwrite, mcreplace
 from .modules.utilities.managers.language_manager import LanguageManager as LM
 from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
 from .modules.utilities.banners.show_banner import ShowBanner
+from .modules.utilities.constants import VERSION
 
 
 class MCPTool:
-    __version__: str = '1.0-alpha'
+    __version__: str = VERSION
     
     def __init__(self, commands_folder_path: str = 'src/mcptool/modules/commands'):
         self.commands_folder_path = commands_folder_path

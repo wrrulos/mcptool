@@ -1,5 +1,7 @@
 from .constants_utilities import ConstantsUtilities
 
-PREFIX = ConstantsUtilities.get_prefix()
-SPACES = ConstantsUtilities.get_spaces()
-OS_NAME = ConstantsUtilities.get_os_name()
+
+VERSION: str = '1.0-alpha'  # This is the version of the local tool
+PREFIX: str = ConstantsUtilities.get_prefix()
+SPACES: int = ConstantsUtilities.get_spaces()
+OS_NAME: str = ConstantsUtilities.get_os_name()

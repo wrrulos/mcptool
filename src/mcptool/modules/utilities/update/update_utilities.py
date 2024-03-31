@@ -4,8 +4,7 @@ import os
 from loguru import logger
 
 from ..path.mcptool_path import MCPToolPath
-from ..managers.settings_manager import SettingsManager as SM
-
+from ..constants import VERSION
 
 class UpdateUtilities:
     @staticmethod
@@ -25,7 +24,7 @@ class UpdateUtilities:
                 return False
             
             settings = response.json()
-            return settings['version'] != SM().get('version')
+            return settings['version'] != VERSION
         
         except Exception as e:
             logger.warning(f'Error checking for updates: {e}')
