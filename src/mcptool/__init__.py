@@ -19,6 +19,8 @@ from mccolors import mcwrite, mcreplace
 
 # Utilities
 from .modules.utilities.managers.language_manager import LanguageManager as LM
+from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
+from .modules.utilities.banners.show_banner import ShowBanner
 
 
 class MCPTool:
@@ -45,10 +47,13 @@ class MCPTool:
         """
         Method to manage the command line input
         """
+
+        ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
         
         while True:
             try:
-                arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
+                #arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
+                arguments = input(mcreplace(InputBanners.INPUT_1)).split()
 
                 if len(arguments) == 0:
                     continue
