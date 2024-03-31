@@ -62,10 +62,16 @@ class JsonManager:
                 if '%spaces%' in data:
                     data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
 
+                if '%prefix%' in data:
+                    data = data.replace('%prefix%', Utilities.get_prefix())
+
                 return data
 
             if '%spaces%' in data:
                 data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
+
+            if '%prefix%' in data:
+                data = data.replace('%prefix%', Utilities.get_prefix())
 
             return data.get(key, 'None')
             

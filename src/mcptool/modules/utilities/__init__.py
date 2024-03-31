@@ -37,3 +37,14 @@ class Utilities:
             return 'mac'
         
         return 'unknown'
+    
+    @staticmethod
+    def get_prefix():
+        """
+        Method to get the prefix
+
+        Returns:
+            str: The prefix
+        """
+
+        return '&f&l[&c&l#&f&l]'
