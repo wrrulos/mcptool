@@ -12,7 +12,7 @@ logger.remove()
 logger.add(os.path.join(MCPToolPath().get(), 'debug.log'),
     level='INFO',
     format='[{time} {level} - {file}, {line}] ⮞ <level>{message}</level>', 
-    rotation="50 MB"
+    rotation="30 MB"
 )
 
 from mccolors import mcwrite, mcreplace
@@ -97,4 +97,3 @@ class MCPTool:
             'player': PlayerCommand(),
             'ipinfo': IPInfoCommand()
         }
-
