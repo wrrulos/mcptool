@@ -4,8 +4,8 @@
         "title": "MCPTool - @wrrulos"
     },
     "commands": {
-        "invalidCommand": "%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
-        "missingArguments": "%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
+        "invalidCommand": "\n%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
+        "missingArguments": "\n%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "%spaces%&f&lGetting data from the entered server...",
