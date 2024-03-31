@@ -6,12 +6,14 @@ from loguru import logger
 from mccolors import mcwrite
 
 from .json_manager import JsonManager
+from .settings_manager import SettingsManager
 from ..path.mcptool_path import MCPToolPath
+from ..termux.termux_utilities import TermuxUtilities
 
 
 class LanguageManager:
     def __init__(self):
-        self.language = JsonManager(os.path.join(MCPToolPath().get(), 'settings.json')).get(['language'])
+        self.language = SettingsManager().get('language')
 
     def get(self, key: Union[list, str]) -> Union[dict, list, str, int, float, None]:
         """
@@ -34,8 +36,13 @@ class LanguageManager:
             mcwrite(f'&8&l[&c&lCRITICAL ERROR&8&l] &c&lLanguage file does not exist &8&l(&f&lCheck the logs for more information (&b&l{MCPToolPath().get()}&f&l)&8&l)')
             sys.exit(1)
         
-        return JsonManager(language_file).get(key)
+        value: Union[dict, list, str, int, float, None] = JsonManager(language_file).get(key)
 
+        if value is None or value == 'None':
+            logger.error(f'Key {key} does not exist in the language file')
+
+        return value
+    
     def set_language(self, language: str):  #! Actually, this method is not used in the code
         """
         Method to set the language
@@ -54,3 +61,51 @@ class LanguageManager:
         """
 
         return os.path.join(MCPToolPath().get(), 'languages', f'{self.language}.json')
+    
+    @staticmethod
+    @logger.catch
+    def get_spaces():
+        """
+        Method to get the number of spaces in the current environment
+
+        Returns:
+            int: The number of spaces in the current environment
+        """
+
+        return 2 if TermuxUtilities.is_termux() else 4
+    
+    @staticmethod
+    @logger.catch
+    def get_os_name():
+        """
+        Method to get the OS name
+
+        Returns:
+            str: The OS name
+        """
+
+        if TermuxUtilities.is_termux():
+            return 'termux'
+        
+        if sys.platform.startswith('linux'):
+            return 'linux'
+        
+        if sys.platform.startswith('win'):
+            return 'windows'
+        
+        if sys.platform.startswith('darwin'):
+            return 'mac'
+        
+        return 'unknown'
+    
+    @staticmethod
+    @logger.catch
+    def get_prefix():
+        """
+        Method to get the prefix
+
+        Returns:
+            str: The prefix
+        """
+
+        return '&f&l[&c&l#&f&l]'

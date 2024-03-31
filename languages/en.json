@@ -1,7 +1,9 @@
 {
     "languageName": "English",
     "app": {
-        "title": "MCPTool - @wrrulos"
+        "title": "MCPTool - @wrrulos",
+        "description": "%spaces%&f&l&oAdvanced tool for pentesting Minecraft servers &8&l(&a&l%version%&8&l)",
+        "newVersion": "\n%spaces%&a&lNew version available! &f&lClose &f&lMCP&c&lTool &f&land use the command &b&lmcptool update &f&lin the terminal to update"
     },
     "commands": {
         "invalidCommand": "\n%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",

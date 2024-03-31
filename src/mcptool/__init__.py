@@ -15,6 +15,9 @@ logger.add(os.path.join(MCPToolPath().get(), 'debug.log'),
     rotation="30 MB"
 )
 
+# Check if the files exist
+MCPToolPath().check_files()
+
 from mccolors import mcwrite, mcreplace
 
 # Utilities
@@ -31,9 +34,6 @@ class MCPTool:
         self.commands: dict = {}
 
     def run(self):
-        # Check if the files exist
-        MCPToolPath().check_files()
-
         # Notify the user that the tool is starting
         logger.info(LM().get(['logger', 'starting']))
 

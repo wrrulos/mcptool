@@ -4,7 +4,7 @@ import os
 from typing import Union
 from loguru import logger
 
-from .. import Utilities
+from ..constants import PREFIX, SPACES
 
 
 class JsonManager:
@@ -60,18 +60,18 @@ class JsonManager:
                     data = data.get(k, 'None')
 
                 if '%spaces%' in data:
-                    data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
+                    data = data.replace('%spaces%', ' ' * SPACES)
 
                 if '%prefix%' in data:
-                    data = data.replace('%prefix%', Utilities.get_prefix())
+                    data = data.replace('%prefix%', PREFIX)
 
                 return data
 
             if '%spaces%' in data:
-                data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
+                data = data.replace('%spaces%', ' ' * SPACES)
 
             if '%prefix%' in data:
-                data = data.replace('%prefix%', Utilities.get_prefix())
+                data = data.replace('%prefix%', PREFIX)
 
             return data.get(key, 'None')
             
