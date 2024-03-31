@@ -9,7 +9,7 @@
         "invalidCommand": "%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
-            "arguments": ["ip:port", "start"],
+            "arguments": ["ip:port"],
             "gettingServerData": "%spaces%&f&lGetting data from the entered server...",
             "serverOffline": "%spaces%&f&lCould not get data from the entered server. It's possibly turned off."
         },
