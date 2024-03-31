@@ -1,3 +1,4 @@
+import subprocess
 import os
 
 from loguru import logger
@@ -31,7 +32,7 @@ class MCPTool:
     __version__: str = VERSION
     
     def __init__(self, commands_folder_path: str = 'src/mcptool/modules/commands'):
-        self.commands_folder_path = commands_folder_path
+        self.commands_folder_path: str = commands_folder_path
         self.commands: dict = {}
 
     def run(self):
@@ -53,14 +54,21 @@ class MCPTool:
         
         while True:
             try:
-                #arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
-                arguments = input(mcreplace(InputBanners.INPUT_1)).split()
+                # Get the user input
+                arguments: list = input(mcreplace(InputBanners.INPUT_1)).split()
 
+                # Check if the arguments are empty
                 if len(arguments) == 0:
                     continue
 
                 # Get the command
                 command_name: str = arguments[0].lower()
+
+                # Check if the command is clear
+                if command_name == 'clear':
+                    subprocess.run('clear || cls', shell=True)
+                    ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
+                    continue
 
                 # Check if the command is exit
                 if command_name == "exit":
