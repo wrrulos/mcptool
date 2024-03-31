@@ -8,19 +8,19 @@
         "missingArguments": "\n%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
             "arguments": ["ip:port"],
-            "gettingServerData": "%spaces%%prefix% &f&lGetting data from the entered server...",
-            "serverOffline": "%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off."
+            "gettingServerData": "\n%spaces%%prefix% &f&lGetting data from the entered server...",
+            "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off."
         },
         "uuid": {
             "arguments": ["username"],
-            "gettingPlayerUuid": "%spaces%%prefix% &f&lGetting data from the entered player...\n",
+            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...\n",
             "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
         },
         "ipinfo": {
             "arguments": ["ip"],
-            "gettingIpData": "%spaces%%prefix% &f&lGetting data from the entered IP...",
-            "error": "%spaces%%prefix% &f&lCould not get data from the entered IP. It's possibly invalid.",
-            "continent": "%spaces%&4[&c&lConti&f&lnent&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
+            "gettingIpData": "\n%spaces%%prefix% &f&lGetting data from the entered IP...",
+            "error": "\n%spaces%%prefix% &f&lCould not get data from the entered IP. It's possibly invalid.",
+            "continent": "\n%spaces%&4[&c&lConti&f&lnent&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
             "country": "%spaces%&4[&c&lCoun&f&ltry&4] &f&l%country% &8&l(&b&l+%countryCode%&8&l)",
             "region": "%spaces%&4[&c&lReg&f&lion&4] &f&l%region% &8&l(&b&l+%regionName%&8&l)",
             "city": "%spaces%&4[&c&lCi&f&lty&4] &f&l%city%",
@@ -30,8 +30,8 @@
         }
     },
     "errors": {
-        "invalidServerFormat": "%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
-        "invalidIpFormat": "%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP."
+        "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
+        "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP."
     },
     "logger": {
         "starting": "Starting MCPTool",
