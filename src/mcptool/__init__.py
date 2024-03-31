@@ -1,25 +1,46 @@
-import logging
+import subprocess
+import os
+
+from loguru import logger
+
+# Import the MCPToolPath class
+from .modules.utilities.path.mcptool_path import MCPToolPath
+
+# Remove the default logger
+logger.remove()
+
+# Set the logging configuration
+logger.add(os.path.join(MCPToolPath().get(), 'debug.log'),
+    level='INFO',
+    format='[{time} {level} - {file}, {line}] ⮞ <level>{message}</level>', 
+    rotation="30 MB"
+)
+
+# Check if the files exist
+MCPToolPath().check_files()
 
 from mccolors import mcwrite, mcreplace
 
+# Utilities
 from .modules.utilities.managers.language_manager import LanguageManager as LM
-from .modules.utilities.commands.loader import CommandLoader
+from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
+from .modules.utilities.banners.show_banner import ShowBanner
+from .modules.utilities.constants import VERSION
 
 
 class MCPTool:
+    __version__: str = VERSION
+    
     def __init__(self, commands_folder_path: str = 'src/mcptool/modules/commands'):
-        self.commands_folder_path = commands_folder_path
+        self.commands_folder_path: str = commands_folder_path
         self.commands: dict = {}
 
     def run(self):
-        # Set the logging configuration
-        logging.basicConfig(filename='debug.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-        
         # Notify the user that the tool is starting
-        logging.info(LM().get(['logger', 'starting']))
+        logger.info(LM().get(['logger', 'starting']))
 
         # Load the commands
-        self.commands = CommandLoader(commands_folder_path=self.commands_folder_path).get_commands()
+        self.commands = self._get_commands()
 
         # Start the command input
         self._command_input()
@@ -29,16 +50,25 @@ class MCPTool:
         Method to manage the command line input
         """
 
+        ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
+        
         while True:
             try:
-                # arguments = input(mcreplace(LM().get(['commands', 'input']))).split()
-                arguments: list = input(mcreplace('Enter a command: ')).split()
+                # Get the user input
+                arguments: list = input(mcreplace(InputBanners.INPUT_1)).split()
 
+                # Check if the arguments are empty
                 if len(arguments) == 0:
                     continue
 
                 # Get the command
                 command_name: str = arguments[0].lower()
+
+                # Check if the command is clear
+                if command_name == 'clear':
+                    subprocess.run('clear || cls', shell=True)
+                    ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
+                    continue
 
                 # Check if the command is exit
                 if command_name == "exit":
@@ -62,3 +92,22 @@ class MCPTool:
 
             except KeyboardInterrupt:
                 break
+
+    def _get_commands(self) -> dict:
+        """
+        Method to get the commands
+
+        Returns:
+            dict: The commands
+        """
+
+        # Commands
+        from .modules.commands.server import Command as ServerCommand
+        from .modules.commands.player import Command as PlayerCommand
+        from .modules.commands.ipinfo import Command as IPInfoCommand
+
+        return {
+            'server': ServerCommand(),
+            'player': PlayerCommand(),
+            'ipinfo': IPInfoCommand()
+        }

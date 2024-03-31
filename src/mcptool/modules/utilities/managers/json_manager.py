@@ -1,10 +1,11 @@
-import logging
 import json
 import os
 
 from typing import Union
+from loguru import logger
 
-from .. import Utilities
+from ..constants import PREFIX, SPACES
+
 
 class JsonManager:
     def __init__(self, json_file_path: str):
@@ -21,7 +22,7 @@ class JsonManager:
         # Check if the json file exists
         # If it does not exist, log an error and return an empty dictionary
         if not os.path.exists(self.json_file_path):
-            logging.error(f'Json file {self.json_file_path} does not exist')
+            logger.error(f'Json file {self.json_file_path} does not exist')
             return {}
 
         with open(self.json_file_path, 'r', encoding='utf8') as file:
@@ -59,12 +60,18 @@ class JsonManager:
                     data = data.get(k, 'None')
 
                 if '%spaces%' in data:
-                    data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
+                    data = data.replace('%spaces%', ' ' * SPACES)
+
+                if '%prefix%' in data:
+                    data = data.replace('%prefix%', PREFIX)
 
                 return data
 
             if '%spaces%' in data:
-                data = data.replace('%spaces%', ' ' * Utilities.get_spaces())
+                data = data.replace('%spaces%', ' ' * SPACES)
+
+            if '%prefix%' in data:
+                data = data.replace('%prefix%', PREFIX)
 
             return data.get(key, 'None')
             

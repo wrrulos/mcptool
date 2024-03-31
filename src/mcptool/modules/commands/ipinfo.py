@@ -1,10 +1,10 @@
 from typing import Union
 from mccolors import mcwrite
 
+from ..utilities.commands.validate import ValidateArgument
+from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.ip.get_ip_info import IPInfo, IPInfoFormat
 
-from src.mcptool.modules.utilities.commands.validate import ValidateArgument
-from src.mcptool.modules.utilities.managers.language_manager import LanguageManager as LM
-from src.mcptool.modules.utilities.ip.get_ip_info import IPInfo, IPInfoFormat
 
 class Command:
     def __init__(self):
