@@ -4,8 +4,6 @@
         "title": "MCPTool - @wrrulos"
     },
     "commands": {
-        "input": "\n%spaces%&f&l[&b&l▲&f&l] &croot@mcptool:~ &8&r> &f&l",
-        "termuxInput": "\n%spaces%&croot@mcptool &8&r▶ &f&l",
         "invalidCommand": "%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "server": {
