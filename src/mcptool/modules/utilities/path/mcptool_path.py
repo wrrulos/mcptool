@@ -1,3 +1,4 @@
+import subprocess
 import requests
 import os
 
@@ -40,6 +41,8 @@ class MCPToolPath:
             if not os.path.exists(url['path']):
                 logger.info(f'Downloading {url["path"]}')
                 self.download_file(url['url'], url['path'])
+
+        subprocess.run(f'cd {self.get()} && npm install', shell=True)
 
     def download_file(self, url: str, path: str) -> None:
         """
@@ -87,6 +90,16 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/languages/en.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'languages', 'en.json'))
             },
+            'bot_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/bot.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'bot.mjs'))
+            },
+            'sever_response_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/server_response.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'server_response.mjs'))
+            },
+            "package": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
+                "path": os.path.abspath(os.path.join(self.get(), "package.json"))
+            }
         }
-    
-    

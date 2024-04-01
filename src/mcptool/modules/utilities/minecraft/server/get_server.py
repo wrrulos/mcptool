@@ -97,16 +97,24 @@ class MCServerData:
                 return None
 
             if isinstance(data, JavaStatusResponse):
-                players: list = []
+                players: Union[list, str] = []
 
                 # Get the players
                 if hasattr(data.players, 'sample') and data.players.sample is not None:
                     players = [player.name for player in data.players.sample]
 
+                players = ', '.join(players) if isinstance(players, list) else ''
+
                 # Get the mod info
                 mod_info = data.raw.get('modinfo', {})
-                mod_type: str = mod_info.get('type', 'None') if isinstance(mod_info, dict) else 'None'
+                mod_type: str = mod_info.get('type', None) if isinstance(mod_info, dict) else None
                 mod_list: list = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
+
+                # Get the bot output
+                bot_output: str = self._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+
+                if bot_output == 'Connected':
+                    bot_output = '&a&lConnected'
 
                 return JavaServerData(
                     ip_address=str(self.ip_address),
@@ -121,7 +129,7 @@ class MCServerData:
                     mods=mod_list,
                     favicon=data.favicon,
                     ping=int(data.latency),
-                    bot_output=BotServerResponse(self.ip_address, self.port).connect()
+                    bot_output=bot_output
                 )
 
             if isinstance(data, BedrockStatusResponse):
@@ -219,4 +227,3 @@ class MCServerData:
         # Replace multiple spaces with a single space.
         output = re.sub(' +', ' ', output)
         return output
-

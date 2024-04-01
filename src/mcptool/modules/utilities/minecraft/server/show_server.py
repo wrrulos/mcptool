@@ -23,7 +23,10 @@ class Messages:
 
         if isinstance(server_data, JavaServerData):
             server_message += f'''
-&4[&c&lPlayer List&4] &f&l{server_data.players}
+&4[&c&lPlayer List&4] &f&l{server_data.players}'''
+            
+            if server_data.mod:
+                server_message += f'''
 &4[&c&lMo&f&ld&4] &d&l{server_data.mod}
 &4[&c&lMo&f&lds&4] &f&l{server_data.mods}'''
             
