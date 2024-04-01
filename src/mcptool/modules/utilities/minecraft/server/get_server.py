@@ -6,6 +6,8 @@ from mcstatus import JavaServer, BedrockServer
 from mcstatus.status_response import JavaStatusResponse, BedrockStatusResponse
 from typing import Union
 
+from ..bot.server_response import BotServerResponse
+
 
 class JavaServerData:
     def __init__(self, ip_address: str, port: int, motd: str, version: str, protocol: str, connected_players: str, max_players: str, players: list, mod: str, mods: list, favicon: Union[str, None], ping: int, bot_output: str) -> None:
@@ -119,7 +121,7 @@ class MCServerData:
                     mods=mod_list,
                     favicon=data.favicon,
                     ping=int(data.latency),
-                    bot_output=''
+                    bot_output=BotServerResponse(self.ip_address, self.port).connect()
                 )
 
             if isinstance(data, BedrockStatusResponse):

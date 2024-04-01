@@ -5,7 +5,8 @@ dependencies = [
     "mccolors",
     "mcstatus",
     "requests",
-    "loguru"
+    "loguru",
+    "javascript"
 ]
 
 [project.scripts]
