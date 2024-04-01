@@ -3,5 +3,4 @@ __pycache__/
 *.pyc
 *.egg-info
 package-lock.json
-package.json
 node_modules/
