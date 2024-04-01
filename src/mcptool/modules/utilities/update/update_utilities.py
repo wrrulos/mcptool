@@ -1,10 +1,9 @@
 import requests
-import os
 
 from loguru import logger
 
-from ..path.mcptool_path import MCPToolPath
 from ..constants import VERSION
+
 
 class UpdateUtilities:
     @staticmethod
