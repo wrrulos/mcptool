@@ -16,7 +16,7 @@
             "version": "%spaces%&4[&c&lVers&f&lion&4] &f&l%version%",
             "protocol": "%spaces%&4[&c&lProt&f&lcol&4] &f&l%protocol%",
             "connected": "%spaces%&4[&c&lConne&f&lcted&4] &f&l%connectedPlayers%&8&l/&f&l%maxPlayers%",
-            "playersList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l%playersList%",
+            "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l%playerList%",
             "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l%mod%",
             "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l%modList%",
             "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l%ping%ms",
