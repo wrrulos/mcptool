@@ -15,4 +15,4 @@ class MCPToolBanners:
 
 
 class InputBanners:
-    INPUT_1 = f'\n{" " * SPACES}&8&l{OS_NAME}@mcptool ~\n{" " * SPACES} &c&l↪ &f&l'
+    INPUT_1 = f'\n{SPACES}&8&l{OS_NAME}@mcptool ~\n{SPACES} &c&l↪ &f&l'

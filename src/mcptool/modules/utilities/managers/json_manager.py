@@ -60,7 +60,7 @@ class JsonManager:
                     data = data.get(k, 'None')
 
                 if '%spaces%' in data:
-                    data = data.replace('%spaces%', ' ' * SPACES)
+                    data = data.replace('%spaces%', SPACES)
 
                 if '%prefix%' in data:
                     data = data.replace('%prefix%', PREFIX)
@@ -68,7 +68,7 @@ class JsonManager:
                 return data
 
             if '%spaces%' in data:
-                data = data.replace('%spaces%', ' ' * SPACES)
+                data = data.replace('%spaces%', SPACES)
 
             if '%prefix%' in data:
                 data = data.replace('%prefix%', PREFIX)

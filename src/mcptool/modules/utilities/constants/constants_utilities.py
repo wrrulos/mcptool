@@ -53,8 +53,3 @@ class ConstantsUtilities:
         """
 
         return '&f&l[&c&l#&f&l]'
-
-
-PREFIX = ConstantsUtilities.get_prefix()
-SPACES = ConstantsUtilities.get_spaces()
-OS_NAME = ConstantsUtilities.get_os_name()
