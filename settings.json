@@ -1,4 +1,8 @@
 {
   "language": "en",
+  "seekerToken": "YOUR_SEEKER_TOKEN",
+  "endpoints": {
+    "seeker": "https://discord.com/oauth2/authorize?client_id=1087083964432404590&response_type=code&redirect_uri=https%3A%2F%2Fapi.serverseeker.net%2Flocal_redirect&scope=identify&state=MCPtool:7637"
+  },
   "version": "1.0-alpha"
 }

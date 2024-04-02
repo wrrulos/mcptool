@@ -127,3 +127,14 @@ class ValidateArgument:
                 return False
 
         return True
+
+    @staticmethod
+    def is_seeker_subcommand(subcommand: str) -> bool:
+        """
+        Method to validate if a string is a seeker subcommand
+        """
+
+        if subcommand not in ['token', 'servers']:
+            return False
+
+        return True

@@ -105,9 +105,11 @@ class MCPTool:
         from .modules.commands.server import Command as ServerCommand
         from .modules.commands.player import Command as PlayerCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
+        from .modules.commands.seeker import Command as SeekerCommand
 
         return {
             'server': ServerCommand(),
             'player': PlayerCommand(),
-            'ipinfo': IPInfoCommand()
+            'ipinfo': IPInfoCommand(),
+            'seeker': SeekerCommand()
         }

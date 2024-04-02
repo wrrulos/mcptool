@@ -42,7 +42,9 @@ class MCPToolPath:
                 logger.info(f'Downloading {url["path"]}')
                 self.download_file(url['url'], url['path'])
 
-        subprocess.run(f'cd {self.get()} && npm install', shell=True)
+        if not os.path.exists(os.path.join(self.get(), 'node_modules')):
+            logger.info('Installing node modules')
+            subprocess.run(f'cd {self.get()} && npm install', shell=True)
 
     def download_file(self, url: str, path: str) -> None:
         """

@@ -39,11 +39,18 @@
             "timezone": "%spaces%&4[&c&lTime&f&lzone&4] &f&l%timezone%",
             "isp": "%spaces%&4[&c&lIS&f&lP&4] &f&l%isp%",
             "organization": "%spaces%&4[&c&lOrgani&f&lzation&4] &f&l%organization%"
+        },
+        "seeker": {
+            "arguments": ["subcommand"],
+            "gettingToken": "\n%spaces%%prefix% &f&lGetting token...",
+            "tokenObtained": "\n%spaces%%prefix% &f&lToken obtained successfully.",
+            "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
         }
     },
     "errors": {
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
-        "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP."
+        "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
+        "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again."
     },
     "logger": {
         "starting": "Starting MCPTool",
@@ -51,6 +58,11 @@
         "commandsFolderDoesNotExist": "The commands folder does not exist",
         "commandsFolderIsEmpty": "The commands folder is empty",
         "commandsArgumentMissing": "The command %command% is missing the arguments",
-        "commandsLoaded": "Commands loaded successfully"
+        "commandsLoaded": "Commands loaded successfully",
+        "seeker": {
+            "invalidEndpoint": "Invalid Seeker Endpoint",
+            "invalidToken": "Invalid Seeker Token",
+            "tokenObtained": "Seeker Token obtained successfully"
+        }
     }
 }

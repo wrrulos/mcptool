@@ -4,3 +4,4 @@ __pycache__/
 *.egg-info
 package-lock.json
 node_modules/
+*.http
