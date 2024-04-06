@@ -83,7 +83,3 @@ class SeekerToken:
         token_received.wait()
   
         return TOKEN
-        
-        # Save the token in the settings
-        self.token = TOKEN
-        SM().set(key='seekerToken', value=self.token)
