@@ -1,4 +1,4 @@
-from typing import Union
+from loguru import logger
 from mccolors import mcwrite
 
 from ..utilities.minecraft.player.get_player_uuid import PlayerUUID

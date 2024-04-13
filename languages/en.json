@@ -42,15 +42,41 @@
         },
         "seeker": {
             "arguments": ["subcommand"],
-            "gettingToken": "\n%spaces%%prefix% &f&lGetting token...",
-            "tokenObtained": "\n%spaces%%prefix% &f&lToken obtained successfully.",
-            "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
+            "token": {
+                "arguments": ["token"],
+                "gettingToken": "\n%spaces%%prefix% &f&lGetting token...",
+                "tokenObtained": "\n%spaces%%prefix% &f&lToken obtained successfully.",
+                "invalidToken": "\n%spaces%%prefix% &f&lInvalid token. Use the command &b&lseeker token &f&lto get a new token.",
+                "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
+            },
+            "servers": {
+                "gettingServers": "\n%spaces%%prefix% &f&lGetting servers...",
+                "filterByData": "\n%spaces%%prefix% &f&lDo you want to filter servers by specific data? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCode": "\n%spaces%%prefix% &f&lDo you want to filter servers by country code? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCodeText": "\n%spaces%%prefix% &f&lEnter the country code to filter the servers. &8&l▶ &f&l",
+                "filterByCracked": "\n%spaces%%prefix% &f&lDo you want to filter servers by cracked status? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescription": "\n%spaces%%prefix% &f&lDo you want to filter servers by description? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescriptionText": "\n%spaces%%prefix% &f&lEnter the description to filter the servers. &8&l▶ &f&l",
+                "filterByOnlyBungeespoofable": "\n%spaces%%prefix% &f&lDo you want to filter servers by only bungeespoofable? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocol": "\n%spaces%%prefix% &f&lDo you want to filter servers by protocol? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocolText": "\n%spaces%%prefix% &f&lEnter the protocol to filter the servers. &8&l▶ &f&l",
+                "serversObtained": "\n%spaces%%prefix% &f&l%servers% servers obtained successfully.",
+                "gettingData": "\n%spaces%%prefix% &f&lGetting data from the servers...",
+                "noServers": "\n%spaces%%prefix% &f&lNo servers found. Try again later or change the filters."
+            }
+        },
+        "scan": {
+            "arguments": ["ip_address", "port_range", "method"],
+            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address (%ip%) with the port range %portRange% using the method %method%..."
         }
     },
     "errors": {
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
-        "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again."
+        "invalidPortFormat": "\n%spaces%%prefix% &f&lThe port format entered is not valid. You have to enter a valid port.",
+        "invalidScanMethod": "\n%spaces%%prefix% &f&lThe scan method entered is not valid. You have to enter %methods%.",
+        "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline."
     },
     "logger": {
         "starting": "Starting MCPTool",
@@ -59,6 +85,9 @@
         "commandsFolderIsEmpty": "The commands folder is empty",
         "commandsArgumentMissing": "The command %command% is missing the arguments",
         "commandsLoaded": "Commands loaded successfully",
+        "errors": {
+            "endpointConnectionError": "Endpoint (%endpoint%) connection error"
+        },
         "seeker": {
             "invalidEndpoint": "Invalid Seeker Endpoint",
             "invalidToken": "Invalid Seeker Token",

@@ -1,4 +1,5 @@
 from mccolors import mcwrite
+from loguru import logger
 
 from ..managers.language_manager import LanguageManager as LM
 
@@ -9,10 +10,13 @@ class ValidateArgument:
         self.command_arguments: list = command_arguments
         self.user_arguments: list = user_arguments
 
+    @logger.catch
     def validate_arguments_length(self) -> bool:
         """
         Method to validate the arguments length
         """
+
+        logger.info(f'Validating arguments for command: {self.command_name} with arguments: {self.user_arguments}')
 
         for i in range(0, len(self.command_arguments)):
             try:
@@ -40,6 +44,7 @@ class ValidateArgument:
         
         return True
     
+    @logger.catch
     @staticmethod
     def is_domain(domain: str) -> bool:
         """
@@ -59,12 +64,14 @@ class ValidateArgument:
 
         return True
     
+    @logger.catch 
     @staticmethod
     def is_ip_address(ip: str) -> bool:
         """
         Method to validate if a string is an IP address
         """
 
+        logger.info(f'Validating if the string is an IP address: {ip}')
         ip_parts: list = ip.split('.')
 
         if len(ip_parts) != 4:
@@ -82,11 +89,14 @@ class ValidateArgument:
 
         return True
     
+    @logger.catch
     @staticmethod
     def is_ip_and_port(ip: str) -> bool:
         """
         Method to validate if a string is an IP and port
         """
+
+        logger.info(f'Validating if the string is an IP and port: {ip}')
 
         if ':' not in ip:
             return False
@@ -127,14 +137,68 @@ class ValidateArgument:
                 return False
 
         return True
+    
+    @logger.catch
+    @staticmethod
+    def is_port_range_py_method(port_range: str) -> bool:
+        """
+        Method to validate if a string is a port range for the Python scanner
+        """
 
+        logger.info(f'Validating if the string is a port range for the Python scanner: {port_range}')
+
+        if '-' not in port_range:
+            if not port_range.isnumeric():
+                return False
+            
+            if int(port_range) < 0 or int(port_range) > 65535:
+                return False
+
+            return True
+
+        # Split the port range into start and end
+        start, end = port_range.split('-')
+
+        try:
+            start: int = int(start)
+            end: int = int(end)
+
+            if start < 0 or start > 65535 or end < 0 or end > 65535:
+                return False
+
+            if start > end:
+                return False
+    
+        except ValueError:
+            return False
+
+        return True
+
+    @logger.catch
     @staticmethod
     def is_seeker_subcommand(subcommand: str) -> bool:
         """
         Method to validate if a string is a seeker subcommand
         """
 
+        logger.info(f'Validating if the subcommand is a seeker subcommand: {subcommand}')
+
         if subcommand not in ['token', 'servers']:
             return False
 
         return True
+
+    @logger.catch
+    @staticmethod
+    def is_scan_method(method: str) -> bool:
+        """
+        Method to validate if a string is a scan method
+        """
+
+        logger.info(f'Validating if the method is a scan method: {method}')
+
+        if method not in ['nmap', 'qubo', 'masscan', 'py']:
+            return False
+
+        return True
+    
