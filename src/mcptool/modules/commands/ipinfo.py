@@ -25,9 +25,7 @@ class Command:
             bool: True if the arguments are valid, False otherwise
         """
 
-        validate = ValidateArgument(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments)
-
-        if not validate.validate_arguments_length():
+        if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
         
         if not ValidateArgument.is_ip_address(arguments[0]):

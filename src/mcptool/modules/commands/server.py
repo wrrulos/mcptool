@@ -26,14 +26,12 @@ class Command:
             bool: True if the arguments are valid, False otherwise
         """
 
-        validate = ValidateArgument(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments)
-
-        if not validate.validate_arguments_length():
+        if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
         
         server: str = arguments[0]
 
-        if not validate.is_domain(server) and not validate.is_ip_and_port(server):
+        if not ValidateArgument.is_domain(domain=server) and not ValidateArgument.is_ip_and_port(ip=server):
             mcwrite(LM().get(['errors', 'invalidServerFormat']))
             return False
 
@@ -61,5 +59,6 @@ class Command:
             mcwrite(LM().get(['commands', 'server', 'serverOffline']))
             return
 
+        print(server_data, type(server_data))
         # Show the server data
-        ShowMinecraftServer().show(server_data=server_data)
+        ShowMinecraftServer.show(server_data=server_data)

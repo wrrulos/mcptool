@@ -5,35 +5,31 @@ from ..managers.language_manager import LanguageManager as LM
 
 
 class ValidateArgument:
-    def __init__(self, command_name: str, command_arguments: list, user_arguments: list) -> None:
-        self.command_name: str = command_name
-        self.command_arguments: list = command_arguments
-        self.user_arguments: list = user_arguments
-
     @logger.catch
-    def validate_arguments_length(self) -> bool:
+    @staticmethod
+    def validate_arguments_length(command_name: str, command_arguments: list, user_arguments: list) -> bool:
         """
         Method to validate the arguments length
         """
 
-        logger.info(f'Validating arguments for command: {self.command_name} with arguments: {self.user_arguments}')
+        logger.info(f'Validating arguments for command: {command_name} with arguments: {user_arguments}')
 
-        for i in range(0, len(self.command_arguments)):
+        for i in range(0, len(command_arguments)):
             try:
-                self.user_arguments[i]
+                user_arguments[i]
 
             except IndexError:
                 error_message: str = LM().get(['commands', 'missingArguments'])
                 arguments_message: str = ''
 
-                for argument_valid in self.command_arguments[:i]:
+                for argument_valid in command_arguments[:i]:
                     arguments_message += f'&a{argument_valid} '
 
-                for argument_invalid in self.command_arguments[i:]:
+                for argument_invalid in command_arguments[i:]:
                     arguments_message += f'&c&n{argument_invalid}&r '
 
                 # Add the name of the command
-                error_message = error_message.replace('%command%', self.command_name)
+                error_message = error_message.replace('%command%', command_name)
 
                 # Add th arguments
                 error_message = error_message.replace('%arguments%', arguments_message)

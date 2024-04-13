@@ -45,9 +45,6 @@ class Messages:
 
 
 class ShowMinecraftServer:
-    def __init__(self) -> None:
-        pass
-
     @logger.catch
     @staticmethod
     def show(server_data: Union[JavaServerData, BedrockServerData]) -> None:
