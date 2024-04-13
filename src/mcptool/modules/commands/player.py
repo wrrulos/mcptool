@@ -7,10 +7,12 @@ from ..utilities.commands.validate import ValidateArgument
 
 
 class Command:
+    @logger.catch
     def __init__(self):
         self.name: str = 'uuid'
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
 
+    @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
         """
         Method to validate the arguments
@@ -29,6 +31,7 @@ class Command:
         
         return True
 
+    @logger.catch
     def execute(self, arguments: list) -> None:
         """
         Method to execute the command

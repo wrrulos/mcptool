@@ -13,13 +13,27 @@ class BotServerResponse:
         self.version = version
         self._response = None
 
-    def get_response(self):
+    @logger.catch
+    def get_response(self) -> str:
+        """
+        Method to get the response
+
+        Returns:
+            str: The response from the server
+        """
+
         self._send_command()
         return self._response
 
+    @logger.catch
     def _send_command(self):
+        """
+        Method to send the command to the server
+        """
+
         response: CompletedProcess = subprocess.run(self._get_command(), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
+        # Check if there is an error
         if response.stderr:
             error_message = response.stderr.decode('utf-8')
             logger.warning(f'Error sending command: {error_message}')
@@ -28,6 +42,14 @@ class BotServerResponse:
 
         self._response = response.stdout.decode('utf-8')
 
-    def _get_command(self):
+    @logger.catch
+    def _get_command(self) -> str:
+        """
+        Method to get the command to send to the server
+
+        Returns:
+            str: The command to send to the server
+        """
+        
         path: str = MCPToolPath().get()
         return f'cd {path} && node scripts/server_response.mjs {self.ip_address} {self.port} MCPToolBot {self.version}'

@@ -9,6 +9,7 @@ class GetInput:
         self.input_type: str = input_type
         self.user_input: str = ''
 
+    @logger.catch
     def get_input(self) -> tuple:
         """
         Method to get the user input and validate it
@@ -50,7 +51,8 @@ class GetInput:
 
             except KeyboardInterrupt:
                 return (None, False)
-            
+
+    @logger.catch    
     def _string_input(self) -> str:
         """
         Method to get the string input
@@ -58,6 +60,7 @@ class GetInput:
 
         return (self.user_input, True)
     
+    @logger.catch
     def _integer_input(self) -> int:
         """
         Method to get the integer input
@@ -69,7 +72,8 @@ class GetInput:
         except ValueError:
             mcwrite('Invalid input. Please enter a valid integer.')
             return None
-        
+
+    @logger.catch 
     def _boolean_input(self) -> bool:
         """
         Method to get the boolean input
@@ -81,6 +85,7 @@ class GetInput:
         mcwrite('Invalid input. Please enter either y or n.')
         return None
     
+    @logger.catch
     def _country_code_input(self) -> None:
         """
         Method to get the country code input
@@ -91,6 +96,3 @@ class GetInput:
         
         mcwrite('Invalid input. Please enter a valid country code.')
         return None
-    
-
-            

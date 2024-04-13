@@ -1,5 +1,6 @@
 from typing import Union
 from mccolors import mcwrite
+from loguru import logger
 
 from .get_server import JavaServerData, BedrockServerData
 from ...managers.language_manager import LanguageManager as LM
@@ -9,6 +10,7 @@ class Messages:
     def __init__(self) -> None:
         pass
 
+    @logger.catch
     @staticmethod
     def get_server_message(server_data: Union[JavaServerData, BedrockServerData]) -> str:
         """
@@ -46,6 +48,7 @@ class ShowMinecraftServer:
     def __init__(self) -> None:
         pass
 
+    @logger.catch
     @staticmethod
     def show(server_data: Union[JavaServerData, BedrockServerData]) -> None:
         """

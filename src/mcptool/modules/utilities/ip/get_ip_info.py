@@ -2,6 +2,7 @@ import requests
 import socket
 
 from typing import Union
+from loguru import logger
 
 
 class IPInfoFormat:
@@ -25,6 +26,7 @@ class IPInfo:
         self.reverse = reverse
         self.domains: list = []
 
+    @logger.catch
     def get_info(self) -> IPInfoFormat:
         """
         Get the information of the IP address

@@ -11,6 +11,7 @@ from ..utilities.minecraft.server.show_server import ShowMinecraftServer
 
 
 class Command:
+    @logger.catch
     def __init__(self):
         self.name: str = 'seeker'
         self.token: Union[str, None] = SM().get('seekerToken')

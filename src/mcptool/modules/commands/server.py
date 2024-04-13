@@ -1,5 +1,6 @@
 from typing import Union
 from mccolors import mcwrite
+from loguru import logger
 
 from ..utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
@@ -8,10 +9,12 @@ from ..utilities.commands.validate import ValidateArgument
 
 
 class Command:
+    @logger.catch
     def __init__(self):
         self.name: str = 'server'
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
 
+    @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
         """
         Method to validate the arguments
@@ -36,6 +39,7 @@ class Command:
 
         return True
 
+    @logger.catch
     def execute(self, arguments: list) -> None:
         """
         Method to execute the command

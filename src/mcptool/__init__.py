@@ -35,6 +35,7 @@ class MCPTool:
         self.commands_folder_path: str = commands_folder_path
         self.commands: dict = {}
 
+    @logger.catch
     def run(self):
         # Notify the user that the tool is starting
         logger.info(LM().get(['logger', 'starting']))
@@ -45,6 +46,7 @@ class MCPTool:
         # Start the command input
         self._command_input()
 
+    @logger.catch
     def _command_input(self) -> None:
         """
         Method to manage the command line input
@@ -93,6 +95,7 @@ class MCPTool:
             except KeyboardInterrupt:
                 break
 
+    @logger.catch
     def _get_commands(self) -> dict:
         """
         Method to get the commands

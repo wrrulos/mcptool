@@ -1,6 +1,7 @@
 import subprocess
 
 from mccolors import mcwrite
+from loguru import logger
 
 
 class ShowBanner:
@@ -8,6 +9,7 @@ class ShowBanner:
         self.banner: str = banner
         self.clear_screen: bool = clear_screen
 
+    @logger.catch
     def show(self) -> None:
         """
         Method to show the banner

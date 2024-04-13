@@ -5,6 +5,8 @@ import re
 from mcstatus import JavaServer, BedrockServer
 from mcstatus.status_response import JavaStatusResponse, BedrockStatusResponse
 from typing import Union
+from loguru import logger
+
 
 from ..bot.server_response import BotServerResponse
 
@@ -48,6 +50,7 @@ class MCServerData:
         self.ip_address: Union[str, None] = None
         self.port: Union[int, None] = None
 
+    @logger.catch
     def get(self) -> Union[JavaServerData, BedrockServerData, None]:
         """
         Method to get data from the server locally
@@ -79,6 +82,7 @@ class MCServerData:
 
         return data
 
+    @logger.catch
     def _get_data(self, function: Union[JavaServer, BedrockServer]) -> Union[JavaServerData, BedrockServerData, None]:
         """
         Method to get the server data from the server class.
@@ -149,6 +153,7 @@ class MCServerData:
         except (ConnectionRefusedError, TimeoutError, OSError, socket.gaierror):
             return None
 
+    @logger.catch
     def _get_server_address_and_port(self) -> None:
         """
         Method to get the server address and port
@@ -171,6 +176,7 @@ class MCServerData:
         # If the IP address is not numeric
         self._resolve_ip()
 
+    @logger.catch
     def _resolve_ip(self) -> None:
         """
         Method to resolve the IP address of the server
@@ -188,6 +194,7 @@ class MCServerData:
             except (socket.gaierror, OSError, UnicodeError):
                 self.ip_address = None
 
+    @logger.catch
     def _resolve_port(self) -> None:
         """
         Method to resolve the port of the server
@@ -207,6 +214,7 @@ class MCServerData:
         except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.NoNameservers, dns.exception.Timeout, dns.name.EmptyLabel):
             self.port = 25565
 
+    @logger.catch
     @staticmethod
     def _get_players(players: Union[list, None]) -> list:
         """
@@ -215,6 +223,7 @@ class MCServerData:
 
         return [player.name for player in players] if players is not None else []
 
+    @logger.catch
     @staticmethod
     def _clean_output(output: str) -> str:
         """
