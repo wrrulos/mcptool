@@ -115,7 +115,7 @@ class MCServerData:
                 mod_list: list = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
 
                 # Get the bot output
-                bot_output: str = self._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+                bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
 
                 if bot_output == 'Connected':
                     bot_output = '&a&lConnected'

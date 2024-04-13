@@ -62,6 +62,9 @@ class JsonManager:
                 for k in key:
                     data = data.get(k, 'None')
 
+                if not isinstance(data, str):
+                    return data
+
                 if '%spaces%' in data:
                     data = data.replace('%spaces%', SPACES)
 
@@ -70,13 +73,18 @@ class JsonManager:
 
                 return data
 
+            data = data.get(key, 'None')
+            
+            if not isinstance(data, str):
+                return data
+
             if '%spaces%' in data:
                 data = data.replace('%spaces%', SPACES)
 
             if '%prefix%' in data:
                 data = data.replace('%prefix%', PREFIX)
 
-            return data.get(key, 'None')
+            return data
             
         except AttributeError:
             return None
