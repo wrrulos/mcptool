@@ -100,4 +100,4 @@ class Command:
             if server_data is None:
                 continue
 
-            ShowMinecraftServer().show(server_data=server_data)
+            ShowMinecraftServer.show(server_data=server_data)

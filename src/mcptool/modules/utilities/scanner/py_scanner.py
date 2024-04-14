@@ -91,7 +91,7 @@ class PyScanner:
                 server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(f'{self.ip_address}:{port}').get()
 
                 if server_data is not None:
-                    ShowMinecraftServer().show(server_data)
+                    ShowMinecraftServer.show(server_data)
 
                 else:
                     pass

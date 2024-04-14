@@ -107,7 +107,7 @@ class MCServerData:
                 if hasattr(data.players, 'sample') and data.players.sample is not None:
                     players = [player.name for player in data.players.sample]
 
-                players = ', '.join(players) if isinstance(players, list) else ''
+                players: str = ', '.join(players) if isinstance(players, list) else ''
 
                 # Get the mod info
                 mod_info = data.raw.get('modinfo', {})
