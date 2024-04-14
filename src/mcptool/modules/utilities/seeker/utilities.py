@@ -171,6 +171,7 @@ Getting servers from the seeker API...
  ↪ URL: {url}
  ↪ Headers: {headers}
  ↪ Data: {data}''')
+            
             response = requests.post(url, headers=headers, json=data)
         
         except (requests.ConnectionError, requests.Timeout) as e:
@@ -184,6 +185,14 @@ Getting servers from the seeker API...
             return {}
 
         if response.status_code != 200:
+            # Check if the token is invalid
+            if 'error' in response.json():
+                if 'Invalid api_key' in response.json()['error']:
+                    mcwrite(LM().get(['commands', 'seeker', 'token', 'invalidToken']))
+                    logger.error(f'Invalid token: {token}')
+                    return {}
+            
+            # If the token is valid and there is an error
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.error(f'Error getting the servers from the seeker API (Status code: {response.status_code}): {response.json()}')
             return {}
