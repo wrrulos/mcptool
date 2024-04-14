@@ -12,8 +12,6 @@ class ValidateArgument:
         Method to validate the arguments length
         """
 
-        logger.info(f'Validating arguments for command: {command_name} with arguments: {user_arguments}')
-
         for i in range(0, len(command_arguments)):
             try:
                 user_arguments[i]
@@ -37,7 +35,7 @@ class ValidateArgument:
                 # Print the error message
                 mcwrite(error_message)
                 return False
-        
+
         return True
     
     @logger.catch

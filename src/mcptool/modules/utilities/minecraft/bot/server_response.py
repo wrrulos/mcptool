@@ -36,7 +36,7 @@ class BotServerResponse:
         # Check if there is an error
         if response.stderr:
             error_message = response.stderr.decode('utf-8')
-            logger.warning(f'Error sending command: {error_message}')
+            logger.warning(f'Error sending command: {self._get_command()} -> {error_message}')
             self._response = '&cError (Check the logs)'
             return
 
