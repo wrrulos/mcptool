@@ -12,6 +12,16 @@
             "arguments": ["ip:port", "start"],
             "gettingServerData": "\n%spaces%%prefix%&f&lПолучаем данные о сервере...",
             "serverOffline": "\n%spaces%%prefix%&f&lНе удалось получить данные о сервере. Возможно, он выключен."
+            "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lПорт&4] &f&l&o%ip%:%port%",
+            "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+            "version": "%spaces%&4[&c&lВер&f&lсия&4] &f&l%version%",
+            "protocol": "%spaces%&4[&c&lПро&f&lтокол&4] &f&l&o%protocol%",
+            "connected": "%spaces%&4[&c&lПодклю&f&lчено&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+            "playerList": "%spaces%&4[&c&lСписок &f&lигроков&4] &f&l&o%playerList%",
+            "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+            "modList": "%spaces%&4[&c&lМо&f&lды&4] &f&l&o%modList%",
+            "ping": "%spaces%&4[&c&lПи&f&lнг&4] &f&l&o%ping%ms",
+            "bot": "%spaces%&4[&c&lБо&f&lт&4] &f&l&o%bot%",
         },
         "uuid": {
             "arguments": ["username"],
@@ -31,9 +41,43 @@
             "organization": "%spaces%&4[&c&lОргани&f&lзация&4] &f&l%organization%"
         }
     },
+        "seeker": {
+            "arguments": ["subcommand"],
+            "token": {
+                "arguments": ["token"],
+                "gettingToken": "\n%spaces%%prefix% &f&lПолучение токена...",
+                "tokenObtained": "\n%spaces%%prefix% &f&lТокен получен успешно.",
+                "invalidToken": "\n%spaces%%prefix% &f&lНедействительный токен. Используйте &b&lseeker token &f&lдля получения нового токена.",
+                "restart": "\n%spaces%%prefix% &f&lПожалуйста, перезапустите MCPTool и попробуйте ещё раз."
+            },
+            "servers": {
+                "gettingServers": "\n%spaces%%prefix% &f&lПолучение списка серверов...",
+                "filterByData": "\n%spaces%%prefix% &f&lФильтровать сервера по данным? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCode": "\n%spaces%%prefix% &f&lФильтровать сервера по коду страны? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCodeText": "\n%spaces%%prefix% &f&lВведите код страны для фильтра. &8&l▶ &f&l",
+                "filterByCracked": "\n%spaces%%prefix% &f&lФильтровать пиратские сервера? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescription": "\n%spaces%%prefix% &f&lФильтровать сервера по описанию? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescriptionText": "\n%spaces%%prefix% &f&lВведите описание сервера для фильтрации. &8&l▶ &f&l",
+                "filterByOnlyBungeespoofable": "\n%spaces%%prefix% &f&lФильтровать сервера только по bungeespoofable? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocol": "\n%spaces%%prefix% &f&lФильтровать сервера по протоколу? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocolText": "\n%spaces%%prefix% &f&lВведите протокол для фильтрации. &8&l▶ &f&l",
+                "serversObtained": "\n%spaces%%prefix% &f&lСписок из %servers% серверов получен успешно.",
+                "gettingData": "\n%spaces%%prefix% &f&lПолучение данных с серверов...",
+                "noServers": "\n%spaces%%prefix% &f&lСервера не найдены. Попробуйте ещё раз или смените фильтры."
+            }
+        },
+        "scan": {
+            "arguments": ["ip_address", "port_range", "method"],
+            "scanning": "\n%spaces%%prefix% &f&lСканирование портов IP (%ip%) в радиусе %portRange% используя метод %method%..."
+        }
+    },
     "errors": {
         "invalidServerFormat": "\n%spaces%%prefix%&f&lНеверный формат сервера. Вы должны использовать &c&lip:порт &f&lили &c&lдомен&f&l.",
-        "invalidIpFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес."
+        "invalidIpFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес.",
+        "invalidPortFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный порт."
+        "invalidScanMethod": "\n%spaces%%prefix% &f&lНеверный метод. Вы должны использовать верный метод. %methods%.",
+        "invalidEndpoint": "\n%spaces%%prefix% &f&lНастройки конечной точки неверные. Проверьте файл с настройками и попробуйте снова.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lНе удалось подключиться к конечной точке. Возможно, конечная точка отключена."
     },
     "logger": {
         "starting": "Запуск MCPTool",
@@ -41,6 +85,14 @@
         "commandsFolderDoesNotExist": "Папка с командами отсутствует",
         "commandsFolderIsEmpty": "Папка с командами пустая",
         "commandsArgumentMissing": "Отсутствуют аргументы команды %command%",
-        "commandsLoaded": "Команды успешно загружены"
+        "commandsLoaded": "Команды успешно загружены",
+        "errors": {
+            "endpointConnectionError": "Ошибка подключения к конечной точке (%endpoint%)"
+        },
+        "seeker": {
+            "invalidEndpoint": "Неверная конечная точка Seeker",
+            "invalidToken": "Неверный токен Seeker",
+            "tokenObtained": "Токен Seeker получен успешно"
+        }
     }
 }
