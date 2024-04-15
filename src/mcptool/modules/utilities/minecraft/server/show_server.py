@@ -1,13 +1,16 @@
 from typing import Union
 from mccolors import mcwrite
+from loguru import logger
 
 from .get_server import JavaServerData, BedrockServerData
+from ...managers.language_manager import LanguageManager as LM
 
 
 class Messages:
     def __init__(self) -> None:
         pass
 
+    @logger.catch
     @staticmethod
     def get_server_message(server_data: Union[JavaServerData, BedrockServerData]) -> str:
         """
@@ -15,33 +18,34 @@ class Messages:
         """
 
         server_message: str = f'''
-&4[&c&lIP:&f&lPORT&4] &f&l{server_data.ip_address}:{server_data.port}
-&4[&c&lMO&f&lTD&4] &f&l{server_data.motd}
-&4[&c&lVers&f&lion&4] &f&l{server_data.version}
-&4[&c&lProto&f&lcol&4] &f&l{server_data.protocol}
-&4[&c&lPlay&f&lers&4] &6&l{server_data.connected_players}&8&r/&6&l{server_data.max_players}'''
+{LM().get(['commands', 'server', 'ip_and_port']).replace('%ip%', server_data.ip_address).replace('%port%', str(server_data.port))}
+{LM().get(['commands', 'server', 'motd']).replace('%motd%', server_data.motd)}
+{LM().get(['commands', 'server', 'version']).replace('%version%', server_data.version)}
+{LM().get(['commands', 'server', 'protocol']).replace('%protocol%', str(server_data.protocol))}
+{LM().get(['commands', 'server', 'connected']).replace('%connectedPlayers%', str(server_data.connected_players)).replace('%maxPlayers%', str(server_data.max_players))}'''
 
         if isinstance(server_data, JavaServerData):
             server_message += f'''
-&4[&c&lPlayer List&4] &f&l{server_data.players}
-&4[&c&lMo&f&ld&4] &d&l{server_data.mod}
-&4[&c&lMo&f&lds&4] &f&l{server_data.mods}'''
+{LM().get(['commands', 'server', 'playerList']).replace('%playerList%', server_data.players)}'''
+            
+            if server_data.mod:
+                server_message += f'''
+{LM().get(['commands', 'server', 'mod']).replace('%mod%', server_data.mod)}
+{LM().get(['commands', 'server', 'modList']).replace('%modList%', str(server_data.mods))}'''
             
         else:
             server_message += f'''
             '''
 
         server_message += f'''
-&4[&c&lPi&f&lng&4] &f&l{server_data.ping}
-&4[&c&lBot Out&f&lput&4] &f&l{server_data.bot_output}'''
+{LM().get(['commands', 'server', 'ping']).replace('%ping%', str(server_data.ping))}
+{LM().get(['commands', 'server', 'bot']).replace('%bot%', str(server_data.bot_output))}'''
 
         return server_message
 
 
 class ShowMinecraftServer:
-    def __init__(self) -> None:
-        pass
-
+    @logger.catch
     @staticmethod
     def show(server_data: Union[JavaServerData, BedrockServerData]) -> None:
         """

@@ -5,6 +5,10 @@ import re
 from mcstatus import JavaServer, BedrockServer
 from mcstatus.status_response import JavaStatusResponse, BedrockStatusResponse
 from typing import Union
+from loguru import logger
+
+
+from ..bot.server_response import BotServerResponse
 
 
 class JavaServerData:
@@ -46,6 +50,7 @@ class MCServerData:
         self.ip_address: Union[str, None] = None
         self.port: Union[int, None] = None
 
+    @logger.catch
     def get(self) -> Union[JavaServerData, BedrockServerData, None]:
         """
         Method to get data from the server locally
@@ -77,6 +82,7 @@ class MCServerData:
 
         return data
 
+    @logger.catch
     def _get_data(self, function: Union[JavaServer, BedrockServer]) -> Union[JavaServerData, BedrockServerData, None]:
         """
         Method to get the server data from the server class.
@@ -95,16 +101,24 @@ class MCServerData:
                 return None
 
             if isinstance(data, JavaStatusResponse):
-                players: list = []
+                players: Union[list, str] = []
 
                 # Get the players
                 if hasattr(data.players, 'sample') and data.players.sample is not None:
                     players = [player.name for player in data.players.sample]
 
+                players: str = ', '.join(players) if isinstance(players, list) else ''
+
                 # Get the mod info
                 mod_info = data.raw.get('modinfo', {})
-                mod_type: str = mod_info.get('type', 'None') if isinstance(mod_info, dict) else 'None'
+                mod_type: str = mod_info.get('type', None) if isinstance(mod_info, dict) else None
                 mod_list: list = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
+
+                # Get the bot output
+                bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+
+                if bot_output == 'Connected':
+                    bot_output = '&a&lConnected'
 
                 return JavaServerData(
                     ip_address=str(self.ip_address),
@@ -119,7 +133,7 @@ class MCServerData:
                     mods=mod_list,
                     favicon=data.favicon,
                     ping=int(data.latency),
-                    bot_output=''
+                    bot_output=bot_output
                 )
 
             if isinstance(data, BedrockStatusResponse):
@@ -139,6 +153,7 @@ class MCServerData:
         except (ConnectionRefusedError, TimeoutError, OSError, socket.gaierror):
             return None
 
+    @logger.catch
     def _get_server_address_and_port(self) -> None:
         """
         Method to get the server address and port
@@ -161,6 +176,7 @@ class MCServerData:
         # If the IP address is not numeric
         self._resolve_ip()
 
+    @logger.catch
     def _resolve_ip(self) -> None:
         """
         Method to resolve the IP address of the server
@@ -178,6 +194,7 @@ class MCServerData:
             except (socket.gaierror, OSError, UnicodeError):
                 self.ip_address = None
 
+    @logger.catch
     def _resolve_port(self) -> None:
         """
         Method to resolve the port of the server
@@ -197,6 +214,7 @@ class MCServerData:
         except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.NoNameservers, dns.exception.Timeout, dns.name.EmptyLabel):
             self.port = 25565
 
+    @logger.catch
     @staticmethod
     def _get_players(players: Union[list, None]) -> list:
         """
@@ -205,6 +223,7 @@ class MCServerData:
 
         return [player.name for player in players] if players is not None else []
 
+    @logger.catch
     @staticmethod
     def _clean_output(output: str) -> str:
         """
@@ -217,4 +236,3 @@ class MCServerData:
         # Replace multiple spaces with a single space.
         output = re.sub(' +', ' ', output)
         return output
-

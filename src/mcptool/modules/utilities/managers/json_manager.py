@@ -11,6 +11,7 @@ class JsonManager:
     def __init__(self, json_file_path: str):
         self.json_file_path = json_file_path
 
+    @logger.catch
     def read(self) -> dict:
         """
         Method to read the json file
@@ -28,6 +29,7 @@ class JsonManager:
         with open(self.json_file_path, 'r', encoding='utf8') as file:
             return json.load(file)
 
+    @logger.catch
     def write(self, data: dict) -> None:
         """
         Method to write data to the json file
@@ -39,6 +41,7 @@ class JsonManager:
         with open(self.json_file_path, 'w', encoding='utf8') as file:
             json.dump(data, file, indent=4)
 
+    @logger.catch
     def get(self, key: Union[str, list]) -> Union[dict, list, str, int, float, None]:
         """
         Method to get the value of a key in the json file
@@ -59,21 +62,29 @@ class JsonManager:
                 for k in key:
                     data = data.get(k, 'None')
 
+                if not isinstance(data, str):
+                    return data
+
                 if '%spaces%' in data:
-                    data = data.replace('%spaces%', ' ' * SPACES)
+                    data = data.replace('%spaces%', SPACES)
 
                 if '%prefix%' in data:
                     data = data.replace('%prefix%', PREFIX)
 
                 return data
 
+            data = data.get(key, 'None')
+            
+            if not isinstance(data, str):
+                return data
+
             if '%spaces%' in data:
-                data = data.replace('%spaces%', ' ' * SPACES)
+                data = data.replace('%spaces%', SPACES)
 
             if '%prefix%' in data:
                 data = data.replace('%prefix%', PREFIX)
 
-            return data.get(key, 'None')
+            return data
             
         except AttributeError:
             return None

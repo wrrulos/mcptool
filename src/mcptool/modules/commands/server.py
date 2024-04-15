@@ -1,5 +1,6 @@
 from typing import Union
 from mccolors import mcwrite
+from loguru import logger
 
 from ..utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
@@ -8,10 +9,12 @@ from ..utilities.commands.validate import ValidateArgument
 
 
 class Command:
+    @logger.catch
     def __init__(self):
         self.name: str = 'server'
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
 
+    @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
         """
         Method to validate the arguments
@@ -23,19 +26,18 @@ class Command:
             bool: True if the arguments are valid, False otherwise
         """
 
-        validate = ValidateArgument(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments)
-
-        if not validate.validate_arguments_length():
+        if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
         
         server: str = arguments[0]
 
-        if not validate.is_domain(server) and not validate.is_ip_and_port(server):
+        if not ValidateArgument.is_domain(domain=server) and not ValidateArgument.is_ip_and_port(ip=server):
             mcwrite(LM().get(['errors', 'invalidServerFormat']))
             return False
 
         return True
 
+    @logger.catch
     def execute(self, arguments: list) -> None:
         """
         Method to execute the command
@@ -57,5 +59,6 @@ class Command:
             mcwrite(LM().get(['commands', 'server', 'serverOffline']))
             return
 
+        print(server_data, type(server_data))
         # Show the server data
-        ShowMinecraftServer().show(server_data=server_data)
+        ShowMinecraftServer.show(server_data=server_data)

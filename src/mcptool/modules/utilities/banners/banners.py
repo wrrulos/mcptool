@@ -3,6 +3,7 @@ from ..managers.language_manager import LanguageManager as LM
 from ..update.update_utilities import UpdateUtilities as UU
 from ..constants import SPACES, OS_NAME
 
+
 class MCPToolBanners:
     BANNER_1 = f'''
 &f&l        dMMMMMMMMb  .aMMMb  dMMMMb&c&l dMMMMMMP .aMMMb  .aMMMb  dMP 
@@ -15,4 +16,4 @@ class MCPToolBanners:
 
 
 class InputBanners:
-    INPUT_1 = f'\n{" " * SPACES}&8&l{OS_NAME}@mcptool ~\n{" " * SPACES} &c&l↪ &f&l'
+    INPUT_1 = f'\n{SPACES}&8&l{OS_NAME}@mcptool ~\n{SPACES} &c&l↪ &f&l'

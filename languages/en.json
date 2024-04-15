@@ -11,6 +11,16 @@
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "\n%spaces%%prefix% &f&lGetting data from the entered server...",
+            "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lPort&4] &f&l&o%ip%:%port%",
+            "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+            "version": "%spaces%&4[&c&lVers&f&lion&4] &f&l%version%",
+            "protocol": "%spaces%&4[&c&lProt&f&lcol&4] &f&l&o%protocol%",
+            "connected": "%spaces%&4[&c&lConne&f&lcted&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+            "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l&o%playerList%",
+            "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+            "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
+            "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
+            "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%",
             "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off."
         },
         "uuid": {
@@ -29,11 +39,44 @@
             "timezone": "%spaces%&4[&c&lTime&f&lzone&4] &f&l%timezone%",
             "isp": "%spaces%&4[&c&lIS&f&lP&4] &f&l%isp%",
             "organization": "%spaces%&4[&c&lOrgani&f&lzation&4] &f&l%organization%"
+        },
+        "seeker": {
+            "arguments": ["subcommand"],
+            "token": {
+                "arguments": ["token"],
+                "gettingToken": "\n%spaces%%prefix% &f&lGetting token...",
+                "tokenObtained": "\n%spaces%%prefix% &f&lToken obtained successfully.",
+                "invalidToken": "\n%spaces%%prefix% &f&lInvalid token. Use the command &b&lseeker token &f&lto get a new token.",
+                "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
+            },
+            "servers": {
+                "gettingServers": "\n%spaces%%prefix% &f&lGetting servers...",
+                "filterByData": "\n%spaces%%prefix% &f&lDo you want to filter servers by specific data? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCode": "\n%spaces%%prefix% &f&lDo you want to filter servers by country code? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCodeText": "\n%spaces%%prefix% &f&lEnter the country code to filter the servers. &8&l▶ &f&l",
+                "filterByCracked": "\n%spaces%%prefix% &f&lDo you want to filter servers by cracked status? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescription": "\n%spaces%%prefix% &f&lDo you want to filter servers by description? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescriptionText": "\n%spaces%%prefix% &f&lEnter the description to filter the servers. &8&l▶ &f&l",
+                "filterByOnlyBungeespoofable": "\n%spaces%%prefix% &f&lDo you want to filter servers by only bungeespoofable? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocol": "\n%spaces%%prefix% &f&lDo you want to filter servers by protocol? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocolText": "\n%spaces%%prefix% &f&lEnter the protocol to filter the servers. &8&l▶ &f&l",
+                "serversObtained": "\n%spaces%%prefix% &f&l%servers% servers obtained successfully.",
+                "gettingData": "\n%spaces%%prefix% &f&lGetting data from the servers...",
+                "noServers": "\n%spaces%%prefix% &f&lNo servers found. Try again later or change the filters."
+            }
+        },
+        "scan": {
+            "arguments": ["ip_address", "port_range", "method"],
+            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address (%ip%) with the port range %portRange% using the method %method%..."
         }
     },
     "errors": {
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
-        "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP."
+        "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
+        "invalidPortFormat": "\n%spaces%%prefix% &f&lThe port format entered is not valid. You have to enter a valid port.",
+        "invalidScanMethod": "\n%spaces%%prefix% &f&lThe scan method entered is not valid. You have to enter %methods%.",
+        "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline."
     },
     "logger": {
         "starting": "Starting MCPTool",
@@ -41,6 +84,14 @@
         "commandsFolderDoesNotExist": "The commands folder does not exist",
         "commandsFolderIsEmpty": "The commands folder is empty",
         "commandsArgumentMissing": "The command %command% is missing the arguments",
-        "commandsLoaded": "Commands loaded successfully"
+        "commandsLoaded": "Commands loaded successfully",
+        "errors": {
+            "endpointConnectionError": "Endpoint (%endpoint%) connection error"
+        },
+        "seeker": {
+            "invalidEndpoint": "Invalid Seeker Endpoint",
+            "invalidToken": "Invalid Seeker Token",
+            "tokenObtained": "Seeker Token obtained successfully"
+        }
     }
 }

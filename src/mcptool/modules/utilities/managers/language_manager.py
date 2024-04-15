@@ -15,6 +15,7 @@ class LanguageManager:
     def __init__(self):
         self.language = SettingsManager().get('language')
 
+    @logger.catch
     def get(self, key: Union[list, str]) -> Union[dict, list, str, int, float, None]:
         """
         Method to get the language value
@@ -43,6 +44,7 @@ class LanguageManager:
 
         return value
     
+    @logger.catch
     def set_language(self, language: str):  #! Actually, this method is not used in the code
         """
         Method to set the language
@@ -52,6 +54,7 @@ class LanguageManager:
         """
         self.language: str = language
 
+    @logger.catch
     def get_language(self) -> str:
         """
         Method to get the language file path
@@ -62,9 +65,9 @@ class LanguageManager:
 
         return os.path.join(MCPToolPath().get(), 'languages', f'{self.language}.json')
     
-    @staticmethod
     @logger.catch
-    def get_spaces():
+    @staticmethod
+    def get_spaces():  #! Delete?
         """
         Method to get the number of spaces in the current environment
 
@@ -76,7 +79,7 @@ class LanguageManager:
     
     @staticmethod
     @logger.catch
-    def get_os_name():
+    def get_os_name():  #! Delete?
         """
         Method to get the OS name
 
@@ -100,7 +103,7 @@ class LanguageManager:
     
     @staticmethod
     @logger.catch
-    def get_prefix():
+    def get_prefix():  #! Delete?
         """
         Method to get the prefix
 

@@ -1,8 +1,11 @@
 import sys
 import os
 
+from loguru import logger
+
 
 class TermuxUtilities:
+    @logger.catch
     @staticmethod
     def is_termux() -> bool:
         """
@@ -13,6 +16,7 @@ class TermuxUtilities:
         """
         return 'ANDROID_ROOT' in os.environ
     
+    @logger.catch
     @staticmethod
     def fix_dnspython():
         """
@@ -25,6 +29,7 @@ class TermuxUtilities:
             filepath = f'/data/data/com.termux/files/usr/lib/python{sys.version_info.major}.{sys.version_info.minor}/site-packages/dns/resolver.py'
             TermuxUtilities.fix(filepath)
 
+    @logger.catch
     @staticmethod
     def _fix(filepath: str) -> bool:
         """

@@ -4,6 +4,7 @@ import uuid
 
 from typing import Union
 from json import JSONDecodeError
+from loguru import logger
 
 
 class PlayerUUIDFormat:
@@ -16,6 +17,7 @@ class PlayerUUID:
     def __init__(self, username: str):
         self.username = username
 
+    @logger.catch
     def get_uuid(self) -> PlayerUUIDFormat:
         """
         Method to get the online and offline UUID of the player
@@ -34,7 +36,8 @@ class PlayerUUID:
 
         except requests.exceptions.RequestException:
             return PlayerUUIDFormat(None, self._get_offline_uuid())
-        
+    
+    @logger.catch
     def _get_offline_uuid(self) -> str:
         """
         Method to get the offline UUID of the player
