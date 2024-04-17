@@ -4,6 +4,7 @@ from subprocess import CompletedProcess
 from loguru import logger
 
 from ...path.mcptool_path import MCPToolPath
+from ...constants import OS_NAME
 from .utilities import BotUtilities
 
 
@@ -54,4 +55,9 @@ class BotServerResponse:
         
         path: str = MCPToolPath().get()
         username: str = BotUtilities().get_bot_username()
-        return f'cd {path} && node scripts/server_response.mjs {self.ip_address} {self.port} {username} {self.version}'
+        command: str = f'cd {path} && node scripts/server_response.mjs {self.ip_address} {self.port} {username} {self.version}'
+
+        if OS_NAME == 'windows':
+            command = f'C: && {command}'
+        
+        return command
