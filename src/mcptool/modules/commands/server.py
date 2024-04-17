@@ -59,6 +59,5 @@ class Command:
             mcwrite(LM().get(['commands', 'server', 'serverOffline']))
             return
 
-        print(server_data, type(server_data))
         # Show the server data
         ShowMinecraftServer.show(server_data=server_data)

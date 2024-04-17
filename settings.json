@@ -6,8 +6,8 @@
       "nmap": {
         "command": "nmap -p %ports% -n -T5 -Pn -vvv -sS %target%"
       },
-      "old_qubo": {
-        "command": "java -Dfile.encoding=UTF-8 -jar old_qubo.jar -range %target% -ports %ports% -th 500 -ti 2000"
+      "qubo": {
+        "command": "java -Dfile.encoding=UTF-8 -jar qubo.jar -range %target% -ports %ports% -th 500 -ti 2000"
       },
       "masscan": {
         "command": "masscan -p %ports% %target%"
