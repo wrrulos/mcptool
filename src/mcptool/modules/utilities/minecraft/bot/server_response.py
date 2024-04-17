@@ -4,6 +4,7 @@ from subprocess import CompletedProcess
 from loguru import logger
 
 from ...path.mcptool_path import MCPToolPath
+from .utilities import BotUtilities
 
 
 class BotServerResponse:
@@ -26,7 +27,7 @@ class BotServerResponse:
         return self._response
 
     @logger.catch
-    def _send_command(self):
+    def _send_command(self) -> None:
         """
         Method to send the command to the server
         """
@@ -52,4 +53,5 @@ class BotServerResponse:
         """
         
         path: str = MCPToolPath().get()
-        return f'cd {path} && node scripts/server_response.mjs {self.ip_address} {self.port} MCPToolBot {self.version}'
+        username: str = BotUtilities().get_bot_username()
+        return f'cd {path} && node scripts/server_response.mjs {self.ip_address} {self.port} {username} {self.version}'

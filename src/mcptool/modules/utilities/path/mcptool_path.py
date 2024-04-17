@@ -103,5 +103,9 @@ class MCPToolPath:
             "package": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
                 "path": os.path.abspath(os.path.join(self.get(), "package.json"))
+            },
+            "usernames": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/usernames.txt",
+                "path": os.path.abspath(os.path.join(self.get(), 'txt', 'usernames.txt'))
             }
         }
