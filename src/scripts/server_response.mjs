@@ -5,20 +5,30 @@ class ServerResponse {
     constructor(host, port, username, version) {
         this.bot = new Bot(host, port, username, version);
 
-        this.bot.on('connect', () => {
+        this.bot.on('login', () => {
             console.log('Connected');
             process.exit(0);
         })
 
         this.bot.on('disconnect', (reason) => {
-            console.log('Kicked for:', reason);
+            console.log(reason['reason']);
             process.exit(0);
         })
 
         this.bot.on('end', (reason) => {
-            console.log('Connection closed', reason);
+            console.log(reason);
             process.exit(0);
         })
+
+        this.bot.on('error', (error) => {
+            console.log(error);
+            process.exit(0);
+        })
+
+        setTimeout(() => {
+            console.log('Timeout');
+            process.exit(0);
+        }, 10000);
     }
 }
 
