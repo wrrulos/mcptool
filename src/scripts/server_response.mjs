@@ -16,17 +16,17 @@ class ServerResponse {
         })
 
         this.bot.on('end', (reason) => {
-            console.log(reason);
+            console.log('&4&l*Timeout');  // This is a error reference
             process.exit(0);
         })
 
         this.bot.on('error', (error) => {
-            console.log(error);
+            console.log('&4&l*Timeout');  // This is a error reference
             process.exit(0);
         })
 
         setTimeout(() => {
-            console.log('Timeout');
+            console.log('&c&lTimeout');
             process.exit(0);
         }, 10000);
     }

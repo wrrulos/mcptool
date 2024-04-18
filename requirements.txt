@@ -1,3 +1,4 @@
 mccolors
 mcstatus
 requests
+loguru

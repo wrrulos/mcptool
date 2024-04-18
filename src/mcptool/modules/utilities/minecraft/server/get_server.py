@@ -9,6 +9,7 @@ from loguru import logger
 
 
 from ..bot.server_response import BotServerResponse
+from ..bot.utilities import BotUtilities
 
 
 class JavaServerData:
@@ -117,8 +118,8 @@ class MCServerData:
                 # Get the bot output
                 bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
 
-                if bot_output == 'Connected':
-                    bot_output = '&a&lConnected'
+                # Get the bot color response
+                bot_output = BotUtilities.get_bot_color_response(bot_output)
 
                 return JavaServerData(
                     ip_address=str(self.ip_address),

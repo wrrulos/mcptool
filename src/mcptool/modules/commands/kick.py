@@ -2,6 +2,7 @@ from loguru import logger
 from mccolors import mcwrite
 
 from ..utilities.minecraft.bot.server_response import BotServerResponse
+from ..utilities.minecraft.bot.utilities import BotUtilities
 from ..utilities.managers.language_manager import LanguageManager as LM
 from ..utilities.commands.validate import ValidateArgument
 
@@ -72,6 +73,9 @@ class Command:
             )
 
         else:
+            # Get the bot color response
+            bot_response: str = BotUtilities.get_bot_color_response(bot_response)
+
             mcwrite(LM().get(['commands', 'kick', 'playerNotKicked'])
                 .replace('%username%', arguments[2])
                 .replace('%reason%', bot_response)
