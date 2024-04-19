@@ -1,6 +1,7 @@
 {
   "language": "en",
   "seekerToken": "YOUR_SEEKER_TOKEN",
+  "bot_recconect_time": 4,
   "scannerOptions": {
     "externalScanners": {
       "nmap": {

@@ -3,6 +3,7 @@ import random
 from loguru import logger
 
 from ...path.mcptool_path import MCPToolPath
+from ...managers.settings_manager import SettingsManager as SM
 
 
 class BotUtilities:
@@ -70,3 +71,23 @@ class BotUtilities:
             response = response.replace(message, replacement)
 
         return response
+    
+
+    @logger.catch
+    @staticmethod
+    def get_bot_reconnect_time():
+        """
+        Method to get the bot reconnect time
+        """
+
+        # Get the reconnect time from the settings
+        time: int = SM().get('bot_reconnect_time')
+
+        # Check if the time is an integer
+        try:
+            return int(time)
+        
+        except ValueError:
+            return 4
+
+
