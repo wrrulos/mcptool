@@ -76,6 +76,11 @@
             "kickingPlayer": "\n%spaces%%prefix% &f&lKicking the player %username% from the server %ip% using the version %version%...",
             "playerKicked": "\n%spaces%%prefix% &f&lPlayer &a&l%username% &f&lkicked successfully from the server.",
             "playerNotKicked": "\n%spaces%%prefix% &f&lCould not kick the player %username% from the server. Reason: %reason%"
+        },
+        "kickall": {
+            "arguments": ["ip:port", "version", "loop"],
+            "gettingPlayers": "\n%spaces%%prefix% &f&lGetting players from the server &a&l%ip%&f&l...",
+            "noPlayers": "\n%spaces%%prefix% &f&lNo players found in the server &c&l%ip%&f&l."
         }
     },
     "errors": {

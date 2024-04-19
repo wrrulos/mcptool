@@ -10,7 +10,7 @@ from .utilities import BotUtilities
 
 
 class BotServerResponse:
-    def __init__(self, ip_address: str, port: int, version: str, username: str = BotUtilities().get_bot_username()) -> None:
+    def __init__(self, ip_address: str, port: int, version: str, username: str = BotUtilities.get_bot_username()) -> None:
         self.ip_address = ip_address
         self.port = port
         self.version = version

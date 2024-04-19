@@ -111,6 +111,7 @@ class MCPTool:
         from .modules.commands.seeker import Command as SeekerCommand
         from .modules.commands.scan import Command as ScanCommand
         from .modules.commands.kick import Command as KickCommand
+        from .modules.commands.kickall import Command as KickAllCommand
 
         return {
             'server': ServerCommand(),
@@ -118,5 +119,6 @@ class MCPTool:
             'ipinfo': IPInfoCommand(),
             'seeker': SeekerCommand(),
             'scan': ScanCommand(),
-            'kick': KickCommand()
+            'kick': KickCommand(),
+            'kickall': KickAllCommand()
         }
