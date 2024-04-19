@@ -1,3 +1,5 @@
+import time
+
 from loguru import logger
 from mccolors import mcwrite
 
@@ -80,3 +82,7 @@ class Command:
                 .replace('%username%', arguments[2])
                 .replace('%reason%', bot_response)
             )
+
+        if loop:
+            time.sleep(BotUtilities.get_bot_reconnect_time())
+            self.execute(arguments)
