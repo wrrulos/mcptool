@@ -25,8 +25,9 @@ class Messages:
 {LM().get(['commands', 'server', 'connected']).replace('%connectedPlayers%', str(server_data.connected_players)).replace('%maxPlayers%', str(server_data.max_players))}'''
 
         if isinstance(server_data, JavaServerData):
-            server_message += f'''
-{LM().get(['commands', 'server', 'playerList']).replace('%playerList%', server_data.players)}'''
+            if server_data.players:
+                server_message += f'''
+    {LM().get(['commands', 'server', 'playerList']).replace('%playerList%', server_data.players)}'''
             
             if server_data.mod:
                 server_message += f'''
