@@ -56,6 +56,7 @@ class BotUtilities:
             'multiplayer.disconnect.unverified_username': '§6§lServer in premium mode',
             'multiplayer.disconnect.not_whitelisted': '§bWhitelist',
             'multiplayer.disconnect.incompatible': '§cVersion Incompatible',
+            'multiplayer.disconnect.authservers_down': '§6Authentication servers are down. Please try again later, sorry!',
             'This server has mods that require FML/Forge to be installed on the client. Contact your server admin for more details.': '§dForge Server',
             'This server has mods that require Forge to be installed on the client. Contact your server admin for more details.': '§dForge Server',
             'If you wish to use IP forwarding, please enable it in your BungeeCord config as well!': '§cVulnerable to Bungee Exploit',
