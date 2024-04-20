@@ -112,6 +112,7 @@ class MCPTool:
         from .modules.commands.scan import Command as ScanCommand
         from .modules.commands.kick import Command as KickCommand
         from .modules.commands.kickall import Command as KickAllCommand
+        from .modules.commands.listening import Command as ListeningCommand
 
         return {
             'server': ServerCommand(),
@@ -120,5 +121,6 @@ class MCPTool:
             'seeker': SeekerCommand(),
             'scan': ScanCommand(),
             'kick': KickCommand(),
-            'kickall': KickAllCommand()
+            'kickall': KickAllCommand(),
+            'listening': ListeningCommand()
         }

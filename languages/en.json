@@ -86,10 +86,13 @@
         "listening": {
             "arguments": ["ip:port"],
             "connecting": "\n%spaces%%prefix% &f&lEstablishing connection with the &a&l%ip% &f&lserver",
-            "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections..."
+            "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections...",
+            "playersFound": "\n%spaces%%prefix% &f&lPlayers captured from the server:",
+            "playerFoundFormat": "\n%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
         }
     },
     "errors": {
+        "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off.",
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
         "invalidIpRange": "\n%spaces%%prefix% &f&lThe IP range entered is not valid. You have to enter a valid IP range.",
