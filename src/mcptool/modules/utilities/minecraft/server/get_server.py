@@ -237,7 +237,7 @@ class MCServerData:
         Method to get the players from the server data
         """
 
-        return [player.name for player in players] if players is not None else []
+        return [player['name'] for player in players] if players is not None else []
 
     @logger.catch
     @staticmethod
