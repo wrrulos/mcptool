@@ -29,7 +29,7 @@
             "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
         },
         "ipinfo": {
-            "arguments": ["ip"],
+            "arguments": ["ip_address"],
             "gettingIpData": "\n%spaces%%prefix% &f&lGetting data from the entered IP...",
             "error": "\n%spaces%%prefix% &f&lCould not get data from the entered IP. It's possibly invalid.",
             "continent": "\n%spaces%&4[&c&lConti&f&lnent&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
@@ -80,7 +80,13 @@
         "kickall": {
             "arguments": ["ip:port", "version", "loop"],
             "gettingPlayers": "\n%spaces%%prefix% &f&lGetting players from the server &a&l%ip%&f&l...",
-            "noPlayers": "\n%spaces%%prefix% &f&lNo players found in the server &c&l%ip%&f&l."
+            "noPlayers": "\n%spaces%%prefix% &f&lNo players found in the server &c&l%ip%&f&l.",
+            "allPlayersKicked": "\n%spaces%%prefix% &f&lAll players kicked successfully from the server."
+        },
+        "listening": {
+            "arguments": ["ip:port"],
+            "connecting": "\n%spaces%%prefix% &f&lEstablishing connection with the &a&l%ip% &f&lserver",
+            "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections..."
         }
     },
     "errors": {
@@ -97,6 +103,7 @@
         "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap is not installed. Install it and try again.",
         "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan is not installed. Install it and try again.",
         "javaNotInstalled": "\n%spaces%%prefix% &f&lJava is not installed. Install it and try again.",
-        "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information."
+        "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
+        "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers."
     }
 }

@@ -57,28 +57,32 @@ class Command:
         ip: str = arguments[0].split(':')[0]
         port: str = arguments[0].split(':')[1]
         version: str = arguments[1]
-        loop: str = arguments[2]
+        loop: bool = arguments[2].lower() == 'y'
 
         # Get the server data to get the player list
         mcwrite(LM().get(['commands', 'kickall', 'gettingPlayers']).replace('%ip%', arguments[0]))
-        server_data = MCServerData(target=arguments[0]).get()
+        server_data = MCServerData(target=arguments[0], bot=False).get()
 
         if server_data is None:
             mcwrite(LM().get(['errors', 'serverOffline']))
             return
         
+        # Check if there are no players
         if len(server_data.player_list) == 0:
             mcwrite(LM().get(['commands', 'kickall', 'noPlayers']).replace('%ip%', arguments[0]))
             return
         
+        # Loop through the players and kick them
         for player in server_data.player_list:
+            username: str = player['name']
+
             # Kick the player
-            bot_response: str = BotServerResponse(ip_address=ip, port=int(port), version=version, username=player).get_response()
+            bot_response: str = BotServerResponse(ip_address=ip, port=int(port), version=version, username=username).get_response()
 
             # Check if the player was kicked
             if bot_response == 'Connected':
                 mcwrite(LM().get(['commands', 'kick', 'playerKicked'])
-                    .replace('%username%', player)
+                    .replace('%username%', username)
                 )
 
             else:
@@ -86,11 +90,14 @@ class Command:
                 bot_response: str = BotUtilities.get_bot_color_response(bot_response)
 
                 mcwrite(LM().get(['commands', 'kick', 'playerNotKicked'])
-                    .replace('%username%', player)
+                    .replace('%username%', username)
                     .replace('%reason%', bot_response)
                 )
 
             time.sleep(BotUtilities.get_bot_reconnect_time())
 
+        mcwrite(LM().get(['commands', 'kickall', 'allPlayersKicked']))
+
+        # Check if the command should loop
         if loop:
             self.execute(arguments)
