@@ -36,6 +36,27 @@ class PlayerUUID:
 
         except requests.exceptions.RequestException:
             return PlayerUUIDFormat(None, self._get_offline_uuid())
+        
+    @logger.catch
+    def get_uuid_color(self, original_uuid: str) -> str:
+        """
+        Method to get the online and offline UUID of the player in color format
+
+        Returns:
+            str: The online and offline UUID of the player in color format
+        """
+
+        player_uuid: PlayerUUIDFormat = self.get_uuid()
+
+        if player_uuid.online_uuid is not None:
+            if original_uuid == player_uuid.online_uuid:
+                return f'&a&l'
+            
+        if original_uuid == player_uuid.offline_uuid:
+            return f'&c&l'
+        
+        # If neither the online nor offline UUIDs match, consider it modified.
+        return f'&5&l'
     
     @logger.catch
     def _get_offline_uuid(self) -> str:
