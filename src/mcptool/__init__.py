@@ -87,6 +87,7 @@ class MCPTool:
                     command_instance.execute(arguments[1:])
 
                 except KeyboardInterrupt:
+                    mcwrite(LM().get(['commands', 'ctrlC']))
                     continue
 
             except (RuntimeError, EOFError):
@@ -106,7 +107,7 @@ class MCPTool:
 
         # Commands
         from .modules.commands.server import Command as ServerCommand
-        from .modules.commands.player import Command as PlayerCommand
+        from .modules.commands.uuid import Command as UUIDCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
         from .modules.commands.seeker import Command as SeekerCommand
         from .modules.commands.scan import Command as ScanCommand
@@ -116,7 +117,7 @@ class MCPTool:
 
         return {
             'server': ServerCommand(),
-            'player': PlayerCommand(),
+            'uuid': UUIDCommand(),
             'ipinfo': IPInfoCommand(),
             'seeker': SeekerCommand(),
             'scan': ScanCommand(),

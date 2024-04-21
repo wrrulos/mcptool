@@ -171,7 +171,7 @@ Getting servers from the seeker API...
  ↪ URL: {url}
  ↪ Headers: {headers}
  ↪ Data: {data}''')
-            
+
             response = requests.post(url, headers=headers, json=data)
         
         except (requests.ConnectionError, requests.Timeout) as e:
@@ -238,5 +238,3 @@ Getting servers from the seeker API...
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.warning(f'Error connecting to the endpoint: {url} - {data} - {e}')
             return False
-        
-

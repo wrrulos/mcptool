@@ -8,6 +8,7 @@
     "commands": {
         "invalidCommand": "\n%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "\n%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
+        "ctrlC": "\n%spaces%%prefix% &f&lStopping the command...",
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "\n%spaces%%prefix% &f&lGetting data from the entered server...",
@@ -20,12 +21,11 @@
             "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
             "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
             "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
-            "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%",
-            "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off."
+            "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
         },
         "uuid": {
             "arguments": ["username"],
-            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...\n",
+            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...",
             "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
         },
         "ipinfo": {
@@ -87,8 +87,8 @@
             "arguments": ["ip:port"],
             "connecting": "\n%spaces%%prefix% &f&lEstablishing connection with the &a&l%ip% &f&lserver",
             "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections...",
-            "playersFound": "\n%spaces%%prefix% &f&lPlayers captured from the server:",
-            "playerFoundFormat": "\n%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
+            "playersFound": "\n%spaces%%prefix% &f&lPlayers captured from the server:\n",
+            "playerFoundFormat": "%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
         }
     },
     "errors": {
