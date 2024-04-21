@@ -1,4 +1,5 @@
 import mc from 'minecraft-protocol';
+import mc2 from 'mineflayer';
 
 
 class Bot {
@@ -20,4 +21,26 @@ class Bot {
     }
 }
 
-export default Bot;
+
+class BotMineflayer {
+    constructor(host, port, username, version) {
+        this.bot = mc2.createBot({
+            host: host,
+            port: port,
+            username: username,
+            version: version,
+            fakeHost: host
+        });
+    }
+
+    on(event, callback) {
+        this.bot.on(event, callback);
+    }
+
+    end() {
+        this.bot.end();
+    }
+}
+
+
+export { BotMineflayer, Bot };
