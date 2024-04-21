@@ -1,4 +1,18 @@
+import fs from 'fs';
+
+
 class Utilities {
+    static read_file(file) {
+        if (!fs.existsSync(file)) {
+            console.log(`§cFile not found: §c§l${file}`);
+            process.exit(1);
+        }
+
+        const data = fs.readFileSync(file, 'utf8');
+        const content = data.split('\n');
+        return content;
+    }
+
     static error_handler(error) {      
         let protocol = null;
           
