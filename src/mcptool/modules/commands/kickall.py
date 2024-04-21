@@ -67,6 +67,10 @@ class Command:
             mcwrite(LM().get(['errors', 'serverOffline']))
             return
         
+        if server_data.platform != 'Java':
+            mcwrite(LM().get(['errors', 'notJavaServer']))
+            return
+        
         # Check if there are no players
         if len(server_data.player_list) == 0:
             mcwrite(LM().get(['commands', 'kickall', 'noPlayers']).replace('%ip%', arguments[0]))

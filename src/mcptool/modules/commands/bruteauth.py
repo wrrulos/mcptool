@@ -63,12 +63,6 @@ class Command:
         username: str = arguments[2]
         password_file: str = arguments[3]
         
-        #server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
-
-        #if server_data is None:
-        #    mcwrite(LM().get(['errors', 'serverOffline']))
-        #    return
-        
         # Getting the passwords
         mcwrite(LM().get(['commands', self.name, 'gettingPasswords']).replace('%file%', arguments[1]))
         
@@ -77,6 +71,16 @@ class Command:
 
         if len(self.passwords) == 0:
             mcwrite(LM().get(['errors', 'passwordFileEmpty']))
+            return
+        
+        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
+
+        if server_data is None:
+            mcwrite(LM().get(['errors', 'serverOffline']))
+            return
+        
+        if server_data.platform != 'Java':
+            mcwrite(LM().get(['errors', 'notJavaServer']))
             return
         
         # Start brute forcing to the authentication plugin of the server
