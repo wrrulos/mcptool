@@ -84,28 +84,46 @@ class MCPToolPath:
         """
         
         return {
+            # Settings
             'settings': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'settings.json'))
             },
+            # Packages
+            "package": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
+                "path": os.path.abspath(os.path.join(self.get(), "package.json"))
+            },
+            # Languages
             'language_en': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/languages/en.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'languages', 'en.json'))
             },
+            # Scripts
             'bot_script': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/bot.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'bot.mjs'))
+            },
+            'utilities_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/utilities.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'utilities.mjs'))
             },
             'server_response_script': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/server_response.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'server_response.mjs'))
             },
-            "package": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
-                "path": os.path.abspath(os.path.join(self.get(), "package.json"))
+            'brute_auth_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/brute_auth.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'brute_auth.mjs'))
             },
+            # Txt files
             "usernames": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/usernames.txt",
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'usernames.txt'))
+            },
+            # Scanners
+            "qubo_scanner": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scanners/qubo.jar",
+                "path": os.path.abspath(os.path.join(self.get(), "scanners", "qubo.jar"))
             }
         }
