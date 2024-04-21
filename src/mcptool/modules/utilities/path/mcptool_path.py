@@ -96,7 +96,7 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/bot.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'bot.mjs'))
             },
-            'sever_response_script': {
+            'server_response_script': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/server_response.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'server_response.mjs'))
             },

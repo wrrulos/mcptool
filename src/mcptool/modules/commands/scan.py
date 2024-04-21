@@ -1,4 +1,3 @@
-from typing import Union
 from mccolors import mcwrite
 from loguru import logger
 

@@ -3,7 +3,6 @@ import socket
 
 from loguru import logger
 from typing import Union
-from mccolors import mcwrite
 
 from ..minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
