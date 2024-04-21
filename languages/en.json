@@ -89,6 +89,13 @@
             "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections...",
             "playersFound": "\n%spaces%%prefix% &f&lPlayers captured from the server:\n",
             "playerFoundFormat": "%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
+        },
+        "bruteauth": {
+            "arguments": ["ip:port", "version", "username", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the authentication plugin on server &a&l%ip% &f&lwith the user &b&l%username% &f&land the password list &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lPassword found: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lPassword not found in the file."
         }
     },
     "errors": {
@@ -102,11 +109,13 @@
         "invalidScanMethod": "\n%spaces%%prefix% &f&lThe scan method entered is not valid. You have to enter %methods%.",
         "invalidYesNo": "\n%spaces%%prefix% &f&lYou have to enter &b&ly &f&lor &b&ln&f&l.",
         "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
+        "invalidFile": "\n%spaces%%prefix% &f&lThe file entered is not valid. Check the file and try again.",
         "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline.",
         "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap is not installed. Install it and try again.",
         "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan is not installed. Install it and try again.",
         "javaNotInstalled": "\n%spaces%%prefix% &f&lJava is not installed. Install it and try again.",
         "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
-        "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers."
+        "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers.",
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again."
     }
 }

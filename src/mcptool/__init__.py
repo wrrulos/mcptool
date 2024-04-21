@@ -114,6 +114,7 @@ class MCPTool:
         from .modules.commands.kick import Command as KickCommand
         from .modules.commands.kickall import Command as KickAllCommand
         from .modules.commands.listening import Command as ListeningCommand
+        from .modules.commands.bruteauth import Command as BruteAuthCommand
 
         return {
             'server': ServerCommand(),
@@ -123,5 +124,6 @@ class MCPTool:
             'scan': ScanCommand(),
             'kick': KickCommand(),
             'kickall': KickAllCommand(),
-            'listening': ListeningCommand()
+            'listening': ListeningCommand(),
+            'bruteauth': BruteAuthCommand()
         }
