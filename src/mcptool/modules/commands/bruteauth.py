@@ -10,7 +10,7 @@ from ..utilities.managers.language_manager import LanguageManager as LM
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ..utilities.path.mcptool_path import MCPToolPath
-from ..utilities.constants import OS_NAME
+from ..utilities.constants import OS_NAME, SPACES
 
 class Command:
     @logger.catch
@@ -87,7 +87,7 @@ class Command:
         )
 
         path: str = MCPToolPath().get()
-        command: str = f'cd {path} && node scripts/brute_auth.mjs {ip_address} {port} {username} {version} {password_file}'
+        command: str = f'cd {path} && node scripts/brute_auth.mjs {ip_address} {port} {username} {version} {password_file} {SPACES}'
         
         if OS_NAME == 'windows':
             command = f'C: && {command}'
