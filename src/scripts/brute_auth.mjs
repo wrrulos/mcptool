@@ -1,4 +1,4 @@
-import Bot from "./bot.mjs";
+import { Bot } from "./bot.mjs";
 import Utilities from "./utilities.mjs"
 
 
