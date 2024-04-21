@@ -1,22 +1,39 @@
-import { Bot } from "./bot.mjs";
+import path from 'path';
+
+import { BotMineflayer } from "./bot.mjs";
 import Utilities from "./utilities.mjs"
+
+
+// Get the path of the MCPTool folder
+const mcptoolPath = Utilities.get_mcptool_path();
+// Read the configuration file
+const configPath = path.join(mcptoolPath, 'bruteforce_settings.json');
+const configContent = fs.readFileSync(configPath);
+
+// Parse the configuration file and get the settings
+const settings = JSON.parse(configContent);
+
+const loginCommand = settings.bruteauth.loginCommand;
+const reconnectDelay = settings.bruteauth.reconnect;
+const wordsToLogin = settings.bruteauth.wordsToLogin;
+const wordsAtLogin = settings.bruteauth.wordsAtLogin;
 
 
 class BruteAuth {
     constructor(host, port, username, version, passwords) {
         try {
-            this.bot = new Bot(host, port, username, version);
+            this.bot = new BotMineflayer(host, port, username, version);
 
             this.bot.on('login', () => {
                 console.log('Connected');
+                console.log(loginCommand)
                 //process.exit(0);
             })
 
-            this.bot.on('chat', (packet) => {
-                console.log(packet)
-                const jsonMsg = JSON.parse(packet.message);
-                console.log(1, jsonMsg)
-                console.log(jsonMsg.text);
+            this.bot.on('message', (message) => {
+                let serverMessage = message.toString().toLowerCase();
+
+                console.log(serverMessage);
             })
 
             this.bot.on('disconnect', (reason) => {

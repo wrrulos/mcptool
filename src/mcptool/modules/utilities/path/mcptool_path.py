@@ -96,6 +96,10 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'settings.json'))
             },
+            'bruteforce_settings': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/bruteforce_settings.json',
+                'path': os.path.abspath(os.path.join(self.get(), 'bruteforce_settings.json'))
+            },
             # Packages
             "package": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
