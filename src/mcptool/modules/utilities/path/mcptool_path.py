@@ -4,6 +4,8 @@ import os
 
 from loguru import logger
 
+from ..constants import OS_NAME
+
 
 class MCPToolPath:
     def __init__(self) -> None:
@@ -44,7 +46,12 @@ class MCPToolPath:
 
         if not os.path.exists(os.path.join(self.get(), 'node_modules')):
             logger.info('Installing node modules')
-            subprocess.run(f'cd {self.get()} && npm install', shell=True)
+            command: str = f'cd {self.get()} && npm install'
+
+            if OS_NAME == 'windows':
+                command = f'C: && {command}'
+
+            subprocess.run(command, shell=True)
 
     def download_file(self, url: str, path: str) -> None:
         """
