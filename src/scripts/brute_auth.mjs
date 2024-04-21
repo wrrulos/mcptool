@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 
 import { BotMineflayer } from "./bot.mjs";
@@ -13,10 +14,27 @@ const configContent = fs.readFileSync(configPath);
 // Parse the configuration file and get the settings
 const settings = JSON.parse(configContent);
 
-const loginCommand = settings.bruteauth.loginCommand;
-const reconnectDelay = settings.bruteauth.reconnect;
-const wordsToLogin = settings.bruteauth.wordsToLogin;
-const wordsAtLogin = settings.bruteauth.wordsAtLogin;
+let loginCommand = settings.bruteauth.loginCommand;
+let reconnectDelay = settings.bruteauth.reconnect;
+let wordsToLogin = settings.bruteauth.wordsToLogin;
+let wordsAtLogin = settings.bruteauth.wordsAtLogin;
+
+// Check if the settings are defined
+if (loginCommand === undefined) {
+    loginCommand = 'login';
+}
+
+if (reconnectDelay === undefined) {
+    reconnectDelay = 5000;
+}
+
+if (wordsToLogin === undefined) {
+    wordsToLogin = ['wrong password!', 'login failed!', '/login'];
+}
+
+if (wordsAtLogin === undefined) {
+    wordsAtLogin = ['successful login', 'successfully logged in.', 'logueado', 'el sistema de logeo ha sido todo un', 'cuenta iniciada correctamente'];
+}
 
 
 class BruteAuth {
