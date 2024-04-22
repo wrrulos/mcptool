@@ -127,6 +127,10 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/brute_auth.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'brute_auth.mjs'))
             },
+            'connect_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/connect.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'connect.mjs'))
+            },
             # Txt files
             "usernames": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/usernames.txt",
