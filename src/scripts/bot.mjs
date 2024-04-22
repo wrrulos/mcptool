@@ -39,10 +39,6 @@ class BotMineflayer {
     this.bot.end();
   }
 
-  chat(message) {
-    this.bot.chat(message);
-  }
-
   quit() {
     this.bot.quit();
   }

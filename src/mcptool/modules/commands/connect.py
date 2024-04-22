@@ -15,7 +15,7 @@ from ..utilities.constants import OS_NAME, SPACES
 class Command:
     @logger.catch
     def __init__(self):
-        self.name: str = 'bruteauth'
+        self.name: str = 'connect'
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
         self.passwords: list = []
 
@@ -37,10 +37,6 @@ class Command:
         if not ValidateArgument.is_ip_and_port(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
-        
-        if not os.path.exists(arguments[3]):
-            mcwrite(LM().get(['errors', 'invalidFile']))
-            return False
     
         return True
 
@@ -61,20 +57,7 @@ class Command:
         port: str = arguments[0].split(':')[1]
         version: str = arguments[1]
         username: str = arguments[2]
-        password_file: str = arguments[3]
-        
-        # Getting the passwords
-        mcwrite(LM().get(['commands', self.name, 'gettingPasswords']).replace('%file%', arguments[1]))
-        
-        with open(password_file, 'r') as file:
-            self.passwords = file.read().splitlines()
-
-        # Check if the password file is empty
-        if len(self.passwords) == 0:
-            mcwrite(LM().get(['errors', 'passwordFileEmpty']))
-            return
-        
-        # Check if the server is online and if it is a Java server
+                
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
 
         if server_data is None:
@@ -85,18 +68,15 @@ class Command:
             mcwrite(LM().get(['errors', 'notJavaServer']))
             return
         
-        # Start brute forcing to the authentication plugin of the server
-        mcwrite(LM().get(['commands', self.name, 'bruteForcing'])
-            .replace('%ip%', arguments[0])
-            .replace('%username%', username)
-            .replace('%passwordFile%', password_file)
-        )
-
-        # Prepare and run the command
         path: str = MCPToolPath().get()
-        command: str = f'cd {path} && node scripts/brute_auth.mjs {ip_address} {port} {username} {version} {password_file} {SPACES}'
+        command: str = f'cd {path} && node scripts/connect.mjs {ip_address} {port} {username} {version} {SPACES}'
         
         if OS_NAME == 'windows':
             command = f'C: && {command}'
-            
+        
+        # Connecting to the server
+        mcwrite(LM().get(['commands', self.name, 'connecting'])
+            .replace('%ip%', ip_address)
+            .replace('%username%', username)
+        )
         subprocess.run(command, shell=True)

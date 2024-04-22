@@ -71,6 +71,10 @@
             "noOpenPorts": "\n%spaces%%prefix% &f&lNo open ports found in the entered IP address.",
             "openPorts": "\n%spaces%%prefix% &a&l%openPorts% &f&lopen ports found in the entered IP address."
         },
+        "connect": {
+            "arguments": ["ip:port", "version", "username"],
+            "connecting": "\n%spaces%%prefix% &f&lConnecting to the entered server..."
+        },
         "kick": {
             "arguments": ["ip:port", "version", "username", "loop"],
             "kickingPlayer": "\n%spaces%%prefix% &f&lKicking the player %username% from the server %ip% using the version %version%...",

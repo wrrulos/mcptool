@@ -1,6 +1,8 @@
 import fs from "fs";
 import os from "os";
 import path from "path";
+import mccolors from "minecraft-colors";
+
 
 class Utilities {
   static read_file(file) {
@@ -95,7 +97,7 @@ class Utilities {
     return text.trim();
   }
 
-  static error_handler(error) {
+  static error_handler(error, spaces = "", color = false) {
     /**
      * Method to handle errors in Minecraft connections
      *
@@ -106,6 +108,16 @@ class Utilities {
 
     if (error.message.includes("is not supported")) {
       const version = error.message.match(/\d+\.\d+\.\d+/)[0];
+
+      if (color) {
+        console.log(
+          mccolors.translateColors(
+            `\n${spaces}§f[§c#§f] §cIncompatible Minecraft version: Version §c§l${version} §cis not currently supported.`
+          )
+        );
+        return;
+      }
+
       console.log(
         `§cIncompatible Minecraft version: Version §c§l${version} §cis not currently supported.`
       );
@@ -117,16 +129,67 @@ class Utilities {
       }
 
       if (protocol != null) {
+        if (color) {
+          console.log(
+            mccolors.translateColors(
+              `\n${spaces}§f[§c#§f] §cIncompatible Minecraft version: Protocol §c§l${protocol} §cis not supported`
+            )
+          );
+
+          return;
+        }
+
         console.log(
           `§cIncompatible Minecraft version: Protocol §c§l${protocol} §cis not supported`
         );
       } else {
+        if (color) {
+          console.log(
+            mccolors.translateColors(
+              `\n${spaces}§f[§c#§f] §cIncompatible Minecraft version: Protocol is not supported`
+            )
+          );
+
+          return;
+        }
+
         console.log(
           `§cIncompatible Minecraft version: Protocol is not supported`
         );
       }
     } else {
       console.log(`§4Error`);
+    }
+  }
+
+  static async get_tab(bot, text, spaces, returnResults = false) {
+    /**
+     * Method to get tab completion results
+     *
+     * @param {bot} bot Bot object
+     * @param {string} text Text to tab complete
+     * @param {string} spaces Spaces to add to the start of the message
+     * @param {boolean} returnResults If the results should be returned
+     * @returns {string[]} Tab completion results
+     * @throws {Error} If the tab completion fails
+     */
+
+    try {
+      // Get the tab completion results
+      let matches = await bot.tabComplete(text);
+
+      // If the results should be returned, return them
+      if (returnResults === true) {
+        return matches;
+      }
+
+      // If the results should not be returned, print them
+      matches = matches.join(", ");
+      console.log(mccolors.translateColors(`\n${spaces}§f[§c#§f] §a${matches}`));
+    } catch (err) {
+      if (returnResults) {
+        return [];
+      }
     }
   }
 }
