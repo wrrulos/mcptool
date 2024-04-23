@@ -198,3 +198,27 @@ class ValidateArgument:
             return False
 
         return True
+    
+    @logger.catch
+    @staticmethod
+    def is_proxy_type(proxy_type: str) -> bool:
+        """
+        Method to validate if a string is a proxy type
+        """
+
+        if proxy_type not in ['waterfall', 'velocity']:
+            return False
+
+        return True
+    
+    @logger.catch
+    @staticmethod
+    def is_velocity_forwading_mode(mode: str) -> bool:
+        """
+        Method to validate if a string is a velocity forwarding mode
+        """
+
+        if mode not in ['none', 'legacy', 'bungeeguard', 'modern']:
+            return False
+
+        return True

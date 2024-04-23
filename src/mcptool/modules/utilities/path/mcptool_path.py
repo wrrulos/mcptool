@@ -136,6 +136,18 @@ class MCPToolPath:
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/usernames.txt",
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'usernames.txt'))
             },
+            "fakeproxy": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/fakeproxy.config",
+                "path": os.path.abspath(os.path.join(self.get(), 'txt', 'fakeproxy.config'))
+            },
+            "waterfall_config": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/waterfall.config",
+                "path": os.path.abspath(os.path.join(self.get(), 'txt', 'waterfall.config'))
+            },
+            "velocity_config": {
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/velocity.config",
+                "path": os.path.abspath(os.path.join(self.get(), 'txt', 'velocity.config'))
+            },
             # Scanners
             "qubo_scanner": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scanners/qubo.jar",

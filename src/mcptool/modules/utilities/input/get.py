@@ -2,6 +2,8 @@ from loguru import logger
 from mccolors import mcwrite, mcreplace
 from typing import Union
 
+from ..commands.validate import ValidateArgument
+
 
 class GetInput:
     def __init__(self, input_message: str, input_type: str) -> None:
@@ -45,6 +47,12 @@ class GetInput:
                     
                 if self.input_type == 'country_code':
                     output: Union[tuple, None] = self._country_code_input()
+            
+                    if output is not None:
+                        return output
+                    
+                if self.input_type == 'velocity_forwarding_mode':
+                    output: Union[tuple, None] = self._velocity_forwarding_mode_input()
             
                     if output is not None:
                         return output
@@ -95,4 +103,16 @@ class GetInput:
             return (self.user_input, True)
         
         mcwrite('Invalid input. Please enter a valid country code.')
+        return None
+
+    @logger.catch
+    def _velocity_forwarding_mode_input(self) -> None:
+        """
+        Method to get the velocity forwarding mode input
+        """
+
+        if ValidateArgument.is_velocity_forwading_mode(self.user_input):
+            return (self.user_input, True)
+        
+        mcwrite('Invalid input. Please enter a valid velocity forwarding mode.')
         return None

@@ -100,6 +100,13 @@
             "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the authentication plugin on server &a&l%ip% &f&lwith the user &b&l%username% &f&land the password list &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l).",
             "passwordFound": "\n%spaces%%prefix% &f&lPassword found: &a&l%password%",
             "passwordNotFound": "\n%spaces%%prefix% &f&lPassword not found in the file."
+        },
+        "proxy": {
+            "arguments": ["ip:port", "proxy_type"],
+            "configuringProxy": "\n%spaces%%prefix% &f&lConfiguring the proxy server &8(&a&l%proxyType%&8)&f&l... ",
+            "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
+            "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
+            "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
         }
     },
     "errors": {
@@ -114,12 +121,14 @@
         "invalidYesNo": "\n%spaces%%prefix% &f&lYou have to enter &b&ly &f&lor &b&ln&f&l.",
         "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
         "invalidFile": "\n%spaces%%prefix% &f&lThe file entered is not valid. Check the file and try again.",
+        "invalidProxyType": "\n%spaces%%prefix% &f&lThe proxy type entered is not valid. You have to enter &c&lvelocity &f&lor &c&lwaterfall&f&l.",
         "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline.",
         "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap is not installed. Install it and try again.",
         "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan is not installed. Install it and try again.",
         "javaNotInstalled": "\n%spaces%%prefix% &f&lJava is not installed. Install it and try again.",
         "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
         "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers.",
-        "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again."
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again.",
+        "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again."
     }
 }
