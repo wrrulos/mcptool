@@ -113,8 +113,7 @@ class MCServerData:
 
                 if len(player_list) > 0:
                     players = MCServerData._get_players(player_list)
-
-                #players: str = ', '.join(players) if isinstance(players, list) else ''
+                    players: str = ', '.join(players)
 
                 # Get the mod info
                 mod_info = data.raw.get('modinfo', {})
