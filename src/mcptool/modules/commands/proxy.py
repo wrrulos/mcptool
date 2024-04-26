@@ -5,7 +5,7 @@ from loguru import logger
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.managers.language_manager import LanguageManager as LM
 from ..utilities.input.get import GetInput
-
+from ..utilities.minecraft.proxy.start import StartProxy
 
 class Command:
     @logger.catch
@@ -63,3 +63,4 @@ class Command:
             ).get_input()
         
         print(self.target, self.proxy, self.velocity_forwading_mode)
+        StartProxy(target=self.target, proxy=self.proxy, velocity_forwarding_mode=self.velocity_forwading_mode).setup()

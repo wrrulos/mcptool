@@ -27,7 +27,7 @@ class Messages:
         if isinstance(server_data, JavaServerData):
             if server_data.players:
                 server_message += f'''
-    {LM().get(['commands', 'server', 'playerList']).replace('%playerList%', server_data.players)}'''
+{LM().get(['commands', 'server', 'playerList']).replace('%playerList%', server_data.players)}'''
             
             if server_data.mod:
                 server_message += f'''

@@ -129,6 +129,8 @@
         "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
         "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers.",
         "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again.",
-        "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again."
+        "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again.",
+        "proxySettingsNotFound": "\n%spaces%%prefix% &f&lThe proxy settings were not found in the settings file. Check the logs and try again.",
+        "proxyJarNotFound": "\n%spaces%%prefix% &f&lThe proxy jar file was not found. See the logs for more information."
     }
 }
