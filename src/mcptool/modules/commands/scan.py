@@ -90,4 +90,4 @@ class Command:
             mcwrite(LM().get(['commands', self.name, 'noOpenPorts']))
             return
         
-        mcwrite(LM().get(['commands', self.name, 'openPorts']).replace('%ports%', len(open_ports)))
+        mcwrite(LM().get(['commands', self.name, 'openPorts']).replace('%openPorts%', str(len(open_ports))))

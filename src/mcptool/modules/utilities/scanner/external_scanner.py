@@ -83,8 +83,8 @@ class ExternalScanner:
 
                 # If the line contains an ip and a port.
                 if text_to_search in output_line:
-                    server = self._extract_server_info(output_line, pattern, self.scanner)
-                    
+                    server = self._extract_server_info(output_line=output_line, pattern=pattern)
+
                     if server is None:
                         continue
 
@@ -149,7 +149,7 @@ class ExternalScanner:
         return scan_params.get(self.scanner, ('', '', [], []))
     
     @logger.catch
-    def _extract_server_info(output_line: str, pattern: str, scan_method: str) -> Union[str, None]:
+    def _extract_server_info(self, output_line: str, pattern: str) -> Union[str, None]:
         """
         Extract the server information from the output line.
 
@@ -165,7 +165,7 @@ class ExternalScanner:
         match: re.Match = re.search(pattern, output_line)
 
         if match:
-            if scan_method in ('nmap', 'masscan'):
+            if self.scanner in ('nmap', 'masscan'):
                 server: str = f'{match.group(2)}:{match.group(1)}'
 
             else:
