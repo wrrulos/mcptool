@@ -145,6 +145,10 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/connect.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'connect.mjs'))
             },
+            'sendcmd_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/sendcmd.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'sendcmd.mjs'))
+            },
             # Txt files
             "usernames": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/usernames.txt",
