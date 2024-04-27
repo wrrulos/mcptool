@@ -155,19 +155,19 @@ class MCPToolPath:
             },
             # Proxies directory
             "proxies/waterfall": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/.directory",
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
                 "path": os.path.abspath(os.path.join(self.get(), "proxies", "waterfall", ".directory"))
             },
             "proxies/velocity": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/.directory",
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
                 "path": os.path.abspath(os.path.join(self.get(), "proxies", "velocity", ".directory"))
             },
             "proxies/fakeproxy": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/.directory",
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
                 "path": os.path.abspath(os.path.join(self.get(), "proxies", "fakeproxy", ".directory"))
             },
             "jar_directory": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/.directory",
-                "path": os.path.abspath(os.path.join(self.get(), "jars"))
+                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
+                "path": os.path.abspath(os.path.join(self.get(), "jars", '.directory'))
             },
         }
