@@ -117,6 +117,7 @@ class MCPTool:
         from .modules.commands.proxy import Command as ProxyCommand
         from .modules.commands.rcon import Command as RconCommand
         from .modules.commands.checker import Command as CheckerCommand
+        from .modules.commands.sendcmd import Command as SendCmdCommand
 
         return {
             'clear': ClearCommand(),
@@ -135,5 +136,6 @@ class MCPTool:
             'connect': ConnectCommand(),
             'proxy': ProxyCommand(),
             'rcon': RconCommand(),
-            'checker': CheckerCommand()
+            'checker': CheckerCommand(),
+            'sendcmd': SendCmdCommand()
         }
