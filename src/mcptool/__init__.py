@@ -38,7 +38,7 @@ class MCPTool:
     @logger.catch
     def run(self):
         # Notify the user that the tool is starting
-        logger.info(LM().get(['logger', 'starting']))
+        logger.info(f'MCPTool v{self.__version__} is starting...')
 
         # Load the commands
         self.commands = self._get_commands()

@@ -68,7 +68,11 @@ class StartProxy:
 
         # Review each line of the process output.
         for line in process.stdout:
-            output_line: str = line.decode('utf-8').strip()
+            try:
+                output_line: str = line.decode('utf-8').strip()
+
+            except UnicodeDecodeError:
+                continue
 
             # If the line contains an error, notify the user and log the error
             if 'this version of the Java Runtime' in output_line:
