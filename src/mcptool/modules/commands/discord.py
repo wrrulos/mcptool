@@ -1,16 +1,13 @@
-import subprocess
-
 from loguru import logger
-from mccolors import mcwrite
 
-from ...modules.utilities.banners.banners import HelpBanners
+from ...modules.utilities.banners.banners import DiscordBanners
 from ...modules.utilities.banners.show_banner import ShowBanner
 
 
 class Command:
     @logger.catch
     def __init__(self):
-        self.name: str = 'help'
+        self.name: str = 'discord'
 
     @logger.catch
     def execute(self, arguments: list = []) -> None:
@@ -21,4 +18,4 @@ class Command:
             arguments (list): The arguments to execute the command
         """
 
-        ShowBanner(HelpBanners.HELP_BANNER_1).show()
+        ShowBanner(DiscordBanners.DISCORD_BANNER_1).show()

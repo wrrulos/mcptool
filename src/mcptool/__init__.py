@@ -102,6 +102,7 @@ class MCPTool:
         # Commands
         from .modules.commands.clear import Command as ClearCommand
         from .modules.commands.help import Command as HelpCommand
+        from .modules.commands.discord import Command as DiscordCommand
         from .modules.commands.server import Command as ServerCommand
         from .modules.commands.uuid import Command as UUIDCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
@@ -119,6 +120,7 @@ class MCPTool:
         return {
             'clear': ClearCommand(),
             'help': HelpCommand(),
+            'discord': DiscordCommand(),
             'server': ServerCommand(),
             'uuid': UUIDCommand(),
             'ipinfo': IPInfoCommand(),
