@@ -1,11 +1,12 @@
 import json
 
-from typing import Union
+from loguru import logger
 
 
 class TextUtilities:
+    @logger.catch
     @staticmethod
-    def get_text_from_json(json_str) -> Union[str, None]:
+    def get_text_from_json(json_str) -> str:
         """
         Get text from json string
 
@@ -13,14 +14,14 @@ class TextUtilities:
             json_str (str): Json string
 
         Returns:
-            Union[str, None]: Text or None
+            str: The text from the json string
         """
 
         try:
             obj = json.loads(json_str)
 
-        except:
-            return None
+        except json.JSONDecodeError:
+            return json_str
 
         text: str = ''
 
@@ -47,13 +48,17 @@ class TextUtilities:
             elif 'translate' in extra:
                 text = extra['translate']
 
-        if isinstance(obj.get('extra'), list):
-            process_extra(obj['extra'])
+        try:
+            if isinstance(obj.get('extra'), list):
+                process_extra(obj['extra'])
 
-        elif 'text' in obj:
-            text = obj['text']
+            elif 'text' in obj:
+                text = obj['text']
 
-        elif 'translate' in obj:
-            text = obj['translate']
+            elif 'translate' in obj:
+                text = obj['translate']
 
-        return text.strip()
+            return text.strip()
+
+        except AttributeError:
+            return json_str

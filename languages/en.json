@@ -8,6 +8,7 @@
     "commands": {
         "invalidCommand": "\n%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "\n%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
+        "ctrlC": "\n%spaces%%prefix% &f&lStopping the command...",
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "\n%spaces%%prefix% &f&lGetting data from the entered server...",
@@ -20,16 +21,15 @@
             "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
             "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
             "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
-            "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%",
-            "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off."
+            "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
         },
         "uuid": {
             "arguments": ["username"],
-            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...\n",
+            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...",
             "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
         },
         "ipinfo": {
-            "arguments": ["ip"],
+            "arguments": ["ip_address"],
             "gettingIpData": "\n%spaces%%prefix% &f&lGetting data from the entered IP...",
             "error": "\n%spaces%%prefix% &f&lCould not get data from the entered IP. It's possibly invalid.",
             "continent": "\n%spaces%&4[&c&lConti&f&lnent&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
@@ -67,31 +67,90 @@
         },
         "scan": {
             "arguments": ["ip_address", "port_range", "method"],
-            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address (%ip%) with the port range %portRange% using the method %method%..."
+            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address &8&l(&a&l%ip%&8&l) &f&lwith the port range &a&l%portRange% &f&lusing the method &a&l%method%&f&l...",
+            "noOpenPorts": "\n%spaces%%prefix% &f&lNo open ports found in the entered IP address.",
+            "openPorts": "\n%spaces%%prefix% &a&l%openPorts% &f&lopen ports found in the entered IP address."
+        },
+        "connect": {
+            "arguments": ["ip:port", "version", "username"],
+            "connecting": "\n%spaces%%prefix% &f&lConnecting to the entered server..."
+        },
+        "kick": {
+            "arguments": ["ip:port", "version", "username", "loop"],
+            "kickingPlayer": "\n%spaces%%prefix% &f&lKicking the player %username% from the server %ip% using the version %version%...",
+            "playerKicked": "\n%spaces%%prefix% &f&lPlayer &a&l%username% &f&lkicked successfully from the server.",
+            "playerNotKicked": "\n%spaces%%prefix% &f&lCould not kick the player %username% from the server. Reason: %reason%"
+        },
+        "kickall": {
+            "arguments": ["ip:port", "version", "loop"],
+            "gettingPlayers": "\n%spaces%%prefix% &f&lGetting players from the server &a&l%ip%&f&l...",
+            "noPlayers": "\n%spaces%%prefix% &f&lNo players found in the server &c&l%ip%&f&l.",
+            "allPlayersKicked": "\n%spaces%%prefix% &f&lAll players kicked successfully from the server."
+        },
+        "listening": {
+            "arguments": ["ip:port"],
+            "connecting": "\n%spaces%%prefix% &f&lEstablishing connection with the &a&l%ip% &f&lserver",
+            "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections...",
+            "playersFound": "\n%spaces%%prefix% &f&lPlayers captured from the server:\n",
+            "playerFoundFormat": "%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
+        },
+        "bruteauth": {
+            "arguments": ["ip:port", "version", "username", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the authentication plugin on server &a&l%ip% &f&lwith the user &b&l%username% &f&land the password list &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lPassword found: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lPassword not found in the file."
+        },
+        "proxy": {
+            "arguments": ["ip:port", "proxy_type"],
+            "configuringProxy": "\n%spaces%%prefix% &f&lConfiguring the proxy server &8(&a&l%proxyType%&8)&f&l... ",
+            "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
+            "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
+            "downloadingJar": "\n%spaces%%prefix% &f&lDownloading the proxy jar file (%jarName%)...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded successfully.",
+            "replacingJar": "\n%spaces%%prefix% &f&lReplacing the proxy jar file...",
+            "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar file replaced successfully.",
+            "startingProxy": "\n%spaces%%prefix% &f&lStarting the proxy server...",
+            "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
+        },
+        "rcon": {
+            "arguments": ["ip:port", "password"],
+            "connecting": "\n%spaces%%prefix% &f&lConnecting to the RCON server &a&l%ip%&f&l...",
+            "connected": "\n%spaces%%prefix% &f&lConnected to the RCON server successfully.",
+            "commandInput": "\n%spaces%%prefix% &f&lEnter the command you want to execute on the RCON server. &8&l▶ &f&l",
+            "disconnected": "\n%spaces%%prefix% &f&lDisconnected from the RCON server."
         }
     },
     "errors": {
+        "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off.",
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
+        "invalidIpRange": "\n%spaces%%prefix% &f&lThe IP range entered is not valid. You have to enter a valid IP range.",
         "invalidPortFormat": "\n%spaces%%prefix% &f&lThe port format entered is not valid. You have to enter a valid port.",
+        "invalidPortRange": "\n%spaces%%prefix% &f&lThe port range entered is not valid. You have to enter a valid port range.",
+        "invalidIpAndPort": "\n%spaces%%prefix% &f&lThe IP and port entered are not valid. You have to enter a valid IP and port.",
         "invalidScanMethod": "\n%spaces%%prefix% &f&lThe scan method entered is not valid. You have to enter %methods%.",
+        "invalidYesNo": "\n%spaces%%prefix% &f&lYou have to enter &b&ly &f&lor &b&ln&f&l.",
         "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
-        "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline."
-    },
-    "logger": {
-        "starting": "Starting MCPTool",
-        "loadingCommands": "Loading commands",
-        "commandsFolderDoesNotExist": "The commands folder does not exist",
-        "commandsFolderIsEmpty": "The commands folder is empty",
-        "commandsArgumentMissing": "The command %command% is missing the arguments",
-        "commandsLoaded": "Commands loaded successfully",
-        "errors": {
-            "endpointConnectionError": "Endpoint (%endpoint%) connection error"
-        },
-        "seeker": {
-            "invalidEndpoint": "Invalid Seeker Endpoint",
-            "invalidToken": "Invalid Seeker Token",
-            "tokenObtained": "Seeker Token obtained successfully"
-        }
+        "invalidFile": "\n%spaces%%prefix% &f&lThe file entered is not valid. Check the file and try again.",
+        "invalidProxyType": "\n%spaces%%prefix% &f&lThe proxy type entered is not valid. You have to enter &c&lvelocity &f&lor &c&lwaterfall&f&l.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline.",
+        "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap is not installed. Install it and try again.",
+        "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan is not installed. Install it and try again.",
+        "javaNotInstalled": "\n%spaces%%prefix% &f&lJava is not installed. Install it and try again.",
+        "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
+        "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers.",
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again.",
+        "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again.",
+        "proxySettingsNotFound": "\n%spaces%%prefix% &f&lThe proxy settings were not found in the settings file. Check the logs and try again.",
+        "proxyNotConfigured": "\n%spaces%%prefix% &f&lThe proxy server is not configured. Check the logs and try again.",
+        "proxyJarNotFound": "\n%spaces%%prefix% &f&lThe proxy jar file was not found. See the logs for more information.",
+        "javaVersionNotSupported": "\n%spaces%%prefix% &f&lThe Java version is not supported. You have to use Java 19 or higher.",
+        "invalidJarFile": "\n%spaces%%prefix% &f&lThe jar file entered is not valid. Check the logs for more information.",
+        "velocityTomlError": "\n%spaces%%prefix% &f&lThere was an error in the velocity.toml file. Check the logs for more information.",
+        "rconTimeout": "\n%spaces%%prefix% &f&lThe RCON server connection timed out. Check the IP and port or the RCON password and try again.",
+        "rconConnectionRefused": "\n%spaces%%prefix% &f&lThe RCON server connection was refused. Check the IP and port or the RCON password and try again.",
+        "rconInvalidPassword": "\n%spaces%%prefix% &f&lThe RCON password entered is not valid. Check the password and try again.",
+        "rconUnknownError": "\n%spaces%%prefix% &f&lAn unknown error occurred while connecting to the RCON server. Check the logs for more information."
     }
 }

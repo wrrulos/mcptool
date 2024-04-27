@@ -50,7 +50,7 @@ class SeekerUtilities:
 
                         # Notify the user that the token has been obtained
                         mcwrite(LM().get(['commands', 'seeker', 'token', 'tokenObtained']))
-                        logger.info(LM().get(['logger', 'seeker', 'tokenObtained']))
+                        logger.info(f'Token obtained from the seeker')
 
                         # Activate the event
                         token_received.set()
@@ -171,7 +171,7 @@ Getting servers from the seeker API...
  ↪ URL: {url}
  ↪ Headers: {headers}
  ↪ Data: {data}''')
-            
+
             response = requests.post(url, headers=headers, json=data)
         
         except (requests.ConnectionError, requests.Timeout) as e:
@@ -226,7 +226,6 @@ Getting servers from the seeker API...
         }
 
         try:
-            logger.info(f'')
             response = requests.post(url, headers=headers, json=data)
         
             if response != 200:
@@ -238,5 +237,3 @@ Getting servers from the seeker API...
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.warning(f'Error connecting to the endpoint: {url} - {data} - {e}')
             return False
-        
-

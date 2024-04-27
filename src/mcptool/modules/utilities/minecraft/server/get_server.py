@@ -9,10 +9,11 @@ from loguru import logger
 
 
 from ..bot.server_response import BotServerResponse
+from ..bot.utilities import BotUtilities
 
 
 class JavaServerData:
-    def __init__(self, ip_address: str, port: int, motd: str, version: str, protocol: str, connected_players: str, max_players: str, players: list, mod: str, mods: list, favicon: Union[str, None], ping: int, bot_output: str) -> None:
+    def __init__(self, ip_address: str, port: int, motd: str, version: str, protocol: str, connected_players: str, max_players: str, players: str, player_list: list, mod: str, mods: list, favicon: Union[str, None], ping: int, bot_output: str) -> None:
         self.platform = 'Java'
         self.ip_address = ip_address
         self.port = port
@@ -22,6 +23,7 @@ class JavaServerData:
         self.connected_players = connected_players
         self.max_players = max_players
         self.players = players
+        self.player_list = player_list
         self.mod = mod
         self.mods = mods
         self.favicon = favicon
@@ -45,8 +47,9 @@ class BedrockServerData:
 
 
 class MCServerData:
-    def __init__(self, target: str) -> None:
+    def __init__(self, target: str, bot: bool = True) -> None:
         self.target = target
+        self.bot = bot
         self.ip_address: Union[str, None] = None
         self.port: Union[int, None] = None
 
@@ -101,24 +104,35 @@ class MCServerData:
                 return None
 
             if isinstance(data, JavaStatusResponse):
-                players: Union[list, str] = []
+                player_list: Union[list, str] = []
+                players: Union[str, None] = data.players.sample
 
                 # Get the players
                 if hasattr(data.players, 'sample') and data.players.sample is not None:
-                    players = [player.name for player in data.players.sample]
+                    player_list = [{'name': player.name, 'id': player.id} for player in data.players.sample]
 
-                players: str = ', '.join(players) if isinstance(players, list) else ''
+                if len(player_list) > 0:
+                    players = MCServerData._get_players(player_list)
+                    players: str = ', '.join(players)
 
                 # Get the mod info
                 mod_info = data.raw.get('modinfo', {})
                 mod_type: str = mod_info.get('type', None) if isinstance(mod_info, dict) else None
-                mod_list: list = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
+                mod_list: Union[list, str] = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
 
-                # Get the bot output
-                bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+                if len(mod_list) > 0:
+                    mod_list = [f'&f&l{mod['modid']} &8&l(&a&l{mod['version']}&8&l)' for mod in mod_list]
+                    mod_list = ', '.join(mod_list)
 
-                if bot_output == 'Connected':
-                    bot_output = '&a&lConnected'
+                if self.bot:
+                    # Get the bot output
+                    bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+
+                    # Get the bot color response
+                    bot_output = BotUtilities.get_bot_color_response(bot_output)
+
+                else:
+                    bot_output: str = ''
 
                 return JavaServerData(
                     ip_address=str(self.ip_address),
@@ -129,6 +143,7 @@ class MCServerData:
                     connected_players=str(data.players.online),
                     max_players=str(data.players.max),
                     players=players,
+                    player_list=player_list,
                     mod=mod_type,
                     mods=mod_list,
                     favicon=data.favicon,
@@ -221,7 +236,7 @@ class MCServerData:
         Method to get the players from the server data
         """
 
-        return [player.name for player in players] if players is not None else []
+        return [player['name'] for player in players] if players is not None else []
 
     @logger.catch
     @staticmethod

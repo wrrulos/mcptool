@@ -56,9 +56,8 @@ class Command:
 
         # Check if the server data is None
         if server_data is None:
-            mcwrite(LM().get(['commands', 'server', 'serverOffline']))
+            mcwrite(LM().get(['commands', 'errors', 'serverOffline']))
             return
 
-        print(server_data, type(server_data))
         # Show the server data
         ShowMinecraftServer.show(server_data=server_data)

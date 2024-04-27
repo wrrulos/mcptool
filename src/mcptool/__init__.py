@@ -38,7 +38,7 @@ class MCPTool:
     @logger.catch
     def run(self):
         # Notify the user that the tool is starting
-        logger.info(LM().get(['logger', 'starting']))
+        logger.info(f'MCPTool v{self.__version__} is starting...')
 
         # Load the commands
         self.commands = self._get_commands()
@@ -87,6 +87,7 @@ class MCPTool:
                     command_instance.execute(arguments[1:])
 
                 except KeyboardInterrupt:
+                    mcwrite(LM().get(['commands', 'ctrlC']))
                     continue
 
             except (RuntimeError, EOFError):
@@ -106,15 +107,29 @@ class MCPTool:
 
         # Commands
         from .modules.commands.server import Command as ServerCommand
-        from .modules.commands.player import Command as PlayerCommand
+        from .modules.commands.uuid import Command as UUIDCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
         from .modules.commands.seeker import Command as SeekerCommand
         from .modules.commands.scan import Command as ScanCommand
+        from .modules.commands.kick import Command as KickCommand
+        from .modules.commands.kickall import Command as KickAllCommand
+        from .modules.commands.listening import Command as ListeningCommand
+        from .modules.commands.bruteauth import Command as BruteAuthCommand
+        from .modules.commands.connect import Command as ConnectCommand
+        from .modules.commands.proxy import Command as ProxyCommand
+        from .modules.commands.rcon import Command as RconCommand
 
         return {
             'server': ServerCommand(),
-            'player': PlayerCommand(),
+            'uuid': UUIDCommand(),
             'ipinfo': IPInfoCommand(),
             'seeker': SeekerCommand(),
             'scan': ScanCommand(),
+            'kick': KickCommand(),
+            'kickall': KickAllCommand(),
+            'listening': ListeningCommand(),
+            'bruteauth': BruteAuthCommand(),
+            'connect': ConnectCommand(),
+            'proxy': ProxyCommand(),
+            'rcon': RconCommand()
         }

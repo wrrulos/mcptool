@@ -1,10 +1,11 @@
-from typing import Union
 from mccolors import mcwrite
 from loguru import logger
 
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.managers.language_manager import LanguageManager as LM
 from ..utilities.scanner.py_scanner import PyScanner
+from ..utilities.scanner.external_scanner import ExternalScanner
+from ..utilities.scanner.utilities import ScannerUtilities
 
 
 class Command:
@@ -63,10 +64,30 @@ class Command:
                 .replace('%portRange%', arguments[1])
                 .replace('%method%', arguments[2]))
         
+        # Scan the IP address using the Python scanner
         if arguments[2] == 'py':
             open_ports: list = PyScanner(ip_address=arguments[0], port_range=arguments[1]).scan()
-            print(123)
 
         else:
+            if arguments[2] == 'nmap':
+                if not ScannerUtilities.nmap_installed():
+                    mcwrite(LM().get(['errors', 'nmapNotInstalled']))
+                    return
+                
+            if arguments[2] == 'masscan':
+                if not ScannerUtilities.masscan_installed():
+                    mcwrite(LM().get(['errors', 'masscanNotInstalled']))
+                    return
+                
+            open_ports: list = ExternalScanner(target=arguments[0], port_range=arguments[1], scanner=arguments[2]).scan()
+
+        # If there are errors
+        if open_ports is None:
             return
-    
+
+        # If there are no open ports
+        if len(open_ports) == 0:
+            mcwrite(LM().get(['commands', self.name, 'noOpenPorts']))
+            return
+        
+        mcwrite(LM().get(['commands', self.name, 'openPorts']).replace('%openPorts%', str(len(open_ports))))

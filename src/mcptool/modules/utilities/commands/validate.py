@@ -65,7 +65,6 @@ class ValidateArgument:
         Method to validate if a string is an IP address
         """
 
-        logger.info(f'Validating if the string is an IP address: {ip}')
         ip_parts: list = ip.split('.')
 
         if len(ip_parts) != 4:
@@ -89,8 +88,6 @@ class ValidateArgument:
         """
         Method to validate if a string is an IP and port
         """
-
-        logger.info(f'Validating if the string is an IP and port: {ip}')
 
         if ':' not in ip:
             return False
@@ -139,8 +136,6 @@ class ValidateArgument:
         Method to validate if a string is a port range for the Python scanner
         """
 
-        logger.info(f'Validating if the string is a port range for the Python scanner: {port_range}')
-
         if '-' not in port_range:
             if not port_range.isnumeric():
                 return False
@@ -175,8 +170,6 @@ class ValidateArgument:
         Method to validate if a string is a seeker subcommand
         """
 
-        logger.info(f'Validating if the subcommand is a seeker subcommand: {subcommand}')
-
         if subcommand not in ['token', 'servers']:
             return False
 
@@ -189,10 +182,43 @@ class ValidateArgument:
         Method to validate if a string is a scan method
         """
 
-        logger.info(f'Validating if the method is a scan method: {method}')
-
         if method not in ['nmap', 'qubo', 'masscan', 'py']:
             return False
 
         return True
     
+    @logger.catch
+    @staticmethod
+    def is_yes_no(value: str) -> bool:
+        """
+        Method to validate if a string is a yes or no
+        """
+
+        if value not in ['y', 'n']:
+            return False
+
+        return True
+    
+    @logger.catch
+    @staticmethod
+    def is_proxy_type(proxy_type: str) -> bool:
+        """
+        Method to validate if a string is a proxy type
+        """
+
+        if proxy_type not in ['waterfall', 'velocity']:
+            return False
+
+        return True
+    
+    @logger.catch
+    @staticmethod
+    def is_velocity_forwading_mode(mode: str) -> bool:
+        """
+        Method to validate if a string is a velocity forwarding mode
+        """
+
+        if mode not in ['none', 'legacy', 'bungeeguard', 'modern']:
+            return False
+
+        return True

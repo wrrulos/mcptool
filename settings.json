@@ -1,13 +1,14 @@
 {
   "language": "en",
   "seekerToken": "YOUR_SEEKER_TOKEN",
+  "bot_recconect_time": 4,
   "scannerOptions": {
     "externalScanners": {
       "nmap": {
         "command": "nmap -p %ports% -n -T5 -Pn -vvv -sS %target%"
       },
-      "old_qubo": {
-        "command": "java -Dfile.encoding=UTF-8 -jar old_qubo.jar -range %target% -ports %ports% -th 500 -ti 2000"
+      "qubo": {
+        "command": "java -Dfile.encoding=UTF-8 -jar qubo.jar -range %target% -ports %ports% -th 500 -ti 2000"
       },
       "masscan": {
         "command": "masscan -p %ports% %target%"
@@ -19,9 +20,15 @@
     },
     "showScanOutput": false
   },
+  "proxyOptions": {
+    "waterfallPort": 25570,
+    "velocityPort": 25580
+  },
   "endpoints": {
     "seeker": "https://discord.com/oauth2/authorize?client_id=1087083964432404590&response_type=code&redirect_uri=https%3A%2F%2Fapi.serverseeker.net%2Flocal_redirect&scope=identify&state=MCPtool:7637",
     "seekerAPI": "https://api.serverseeker.net"
   },
-  "version": "1.0-alpha"
+  "version": "1.0-alpha",
+  "waterfallVersion": "",
+  "velocityVersion": ""
 }
