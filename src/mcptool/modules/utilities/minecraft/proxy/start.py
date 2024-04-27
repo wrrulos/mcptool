@@ -48,6 +48,10 @@ class StartProxy:
             mcwrite(LM().get(['errors', 'proxyNotConfigured']))
             return
         
+        mcwrite(LM().get(['commands', 'proxy', 'proxyConfigured']))
+        time.sleep(1)
+        mcwrite(LM().get(['commands', 'proxy', 'startingProxy']))
+        
         process: subprocess.Popen = self._start_proxy()
 
         if process is None:
