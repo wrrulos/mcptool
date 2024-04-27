@@ -12,7 +12,6 @@ class Command:
     def __init__(self):
         self.name: str = 'clear'
 
-
     @logger.catch
     def execute(self, arguments: list = []) -> None:
         """
@@ -22,5 +21,4 @@ class Command:
             arguments (list): The arguments to execute the command
         """
 
-        subprocess.run('clear || cls', shell=True)
         ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
