@@ -50,10 +50,15 @@ if (commandDelay === undefined) {
     commandDelay = 500;
 }
 
+// Index of the command
+let index = 0;
+let bot = null;
+
 class SendCMD {
   constructor(host, port, username, version) {
     try {
       this.bot = new BotMineflayer(host, port, username, version);
+      bot = this.bot.bot;
 
       this.bot.on("login", () => {
         console.log(
@@ -65,7 +70,7 @@ class SendCMD {
         function executeCommand(index) {
             return new Promise((resolve) => {
                 setTimeout(() => {
-                    utils.coloredText(`\n${spaces}§f[§c#§f] §fSending the command: §a${commands[index]}`);
+                    console.log(mccolors.translateColors(`\n${spaces}§f[§c#§f] §fSending the command: §a${commands[index]}`));
                     bot.chat(commands[index]);
                     resolve();
                 }, commandDelay);
@@ -80,7 +85,7 @@ class SendCMD {
                         executeNextCommand();
                     });
             } else {
-                utils.coloredText(`\n${spaces}§f[§c#§f] §fThe bot has finished sending all the commands.`);
+                console.log(mccolors.translateColors(`\n${spaces}§f[§c#§f] §fThe bot has finished sending all the commands.`));
                 bot.quit();
                 process.exit(1);
             }

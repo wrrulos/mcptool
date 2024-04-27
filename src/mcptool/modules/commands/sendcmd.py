@@ -75,6 +75,9 @@ class Command:
         
         mcwrite(LM().get(['commands', self.name, 'gettingCommands']).replace('%file%', commands_file))
 
+        # Get absolute path of the commands file
+        commands_file = os.path.abspath(commands_file)
+        
         # Check if the commands file is empty
         with open(commands_file, 'r') as file:
             commands = file.read().splitlines()
