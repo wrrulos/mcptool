@@ -66,12 +66,6 @@ class MCPTool:
                 # Get the command
                 command_name: str = arguments[0].lower()
 
-                # Check if the command is clear
-                if command_name == 'clear':
-                    subprocess.run('clear || cls', shell=True)
-                    ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
-                    continue
-
                 # Check if the command is exit
                 if command_name == "exit":
                     break
@@ -106,6 +100,7 @@ class MCPTool:
         """
 
         # Commands
+        from .modules.commands.clear import Command as ClearCommand
         from .modules.commands.server import Command as ServerCommand
         from .modules.commands.uuid import Command as UUIDCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
@@ -121,6 +116,7 @@ class MCPTool:
         from .modules.commands.checker import Command as CheckerCommand
 
         return {
+            'clear': ClearCommand(),
             'server': ServerCommand(),
             'uuid': UUIDCommand(),
             'ipinfo': IPInfoCommand(),
