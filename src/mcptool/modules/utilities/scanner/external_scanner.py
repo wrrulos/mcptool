@@ -9,6 +9,8 @@ from ..minecraft.server.get_server import MCServerData, JavaServerData, BedrockS
 from ..minecraft.server.show_server import ShowMinecraftServer
 from ...utilities.managers.language_manager import LanguageManager as LM
 from ..managers.settings_manager import SettingsManager as SM
+from ..path.mcptool_path import MCPToolPath
+from ..constants import OS_NAME
 
 
 class ExternalScanner:
@@ -128,6 +130,14 @@ class ExternalScanner:
         if command is None:
             return None
         
+        if self.scanner == 'qubo':
+            path: str = MCPToolPath().get()
+            qubo_jar_path: str = f'{path}/scanners'
+            command = f'cd {qubo_jar_path} && {command}'
+        
+        if OS_NAME == 'windows':
+            command = f'C: && {command}'
+
         command = command.replace('%target%', self.target).replace('%ports%', self.port_range)
         return command
     

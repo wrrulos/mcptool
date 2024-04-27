@@ -67,7 +67,7 @@
         },
         "scan": {
             "arguments": ["ip_address", "port_range", "method"],
-            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address (%ip%) with the port range %portRange% using the method %method%...",
+            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address (%ip%) with the port range %portRange% using the method &a&l%method%&f&l...",
             "noOpenPorts": "\n%spaces%%prefix% &f&lNo open ports found in the entered IP address.",
             "openPorts": "\n%spaces%%prefix% &a&l%openPorts% &f&lopen ports found in the entered IP address."
         },
