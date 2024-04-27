@@ -20,6 +20,7 @@ class JarManager:
         """
         Method to check if the jar file exists
         """
+        print(self.jar_name, self.jar_path)
 
         self._get_latest_version()
 
@@ -74,7 +75,7 @@ class JarManager:
             str: The download url
         """
         
-        if self.jar_name == 'velocity':
+        if self.jar_name == 'velocity' or self.jar_name == 'fakeproxy':
             return 'https://api.papermc.io/v2/projects/velocity'
 
         else:  # Waterfall
@@ -99,7 +100,6 @@ class JarManager:
         with open(jar_path, 'wb') as f:
             try:
                 f.truncate(0)
-                print(self.latest_version_url)
                 response = requests.get(self.latest_version_url)
                 f.write(response.content)
                 mcwrite(LM().get(['commands', 'proxy', 'jarDownloaded']))
@@ -127,20 +127,11 @@ class JarManager:
         mcwrite(LM().get(['commands', 'proxy', 'replacingJar']))
         
         try:
-            for proxy in ['waterfall', 'velocity', 'fakeproxy']:
-                if proxy == 'waterfall':
-                    jar = 'waterfall'
 
-                else:
-                    jar = 'velocity'
-
-                if not os.path.exists(f'{MCPToolPath().get()}/jars/{jar}.jar'):
-                    continue
-
-                os.replace(
-                    src=f'{MCPToolPath().get()}/jars/{jar}.jar', 
-                    dst=f'{MCPToolPath().get()}/proxies/{proxy}/{jar}.jar'
-                )
+            os.replace(
+                src=f'{MCPToolPath().get()}/jars/{self.jar_name}.jar', 
+                dst=f'{self.jar_path}/{self.jar_name}.jar'
+            )
 
             mcwrite(LM().get(['commands', 'proxy', 'jarReplaced']))
             logger.info(f'Jar file replaced successfully -> {self.jar_name}')

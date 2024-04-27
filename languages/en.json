@@ -105,10 +105,14 @@
             "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
             "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
             "downloadingJar": "\n%spaces%%prefix% &f&lDownloading the proxy jar file (%jarName%)...",
-            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded  le...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded successfully.",
+            "replacingJar": "\n%spaces%%prefix% &f&lReplacing the proxy jar file...",
             "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar file replaced successfully.",
             "startingProxy": "\n%spaces%%prefix% &f&lStarting the proxy server...",
             "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
+        },
+        "fakeproxy": {
+            "arguments": ["ip:port", "velocity_forwading_mode"]
         },
         "rcon": {
             "arguments": ["ip:port", "password"],
@@ -149,6 +153,7 @@
         "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
         "invalidFile": "\n%spaces%%prefix% &f&lThe file entered is not valid. Check the file and try again.",
         "invalidProxyType": "\n%spaces%%prefix% &f&lThe proxy type entered is not valid. You have to enter &c&lvelocity &f&lor &c&lwaterfall&f&l.",
+        "invalidVelocityMode": "\n%spaces%%prefix% &f&lThe velocity mode entered is not valid. You have to enter &c&lnone &f&lor &c&llegacy &f&lor &c&lbungeeguard &f&lor &c&lmodern&f&l.",
         "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline.",
         "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap is not installed. Install it and try again.",
         "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan is not installed. Install it and try again.",

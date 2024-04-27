@@ -188,6 +188,7 @@ class MCPToolPath:
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
                 "path": os.path.abspath(os.path.join(self.get(), "jars", '.directory'))
             },
+            # Forwarding secrets
             'forwarding.secret_velocity': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'forwarding.secret'))
@@ -196,4 +197,13 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'forwarding.secret'))
             },
+            # Jar plugins for the proxies
+            'mcptool_velocity_plugin': {
+                'url': 'https://github.com/wrrulos/mcptool-velocity/releases/download/v1.1/MCPTool-1.1-SNAPSHOT.jar',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'plugins', 'MCPTool-1.1-SNAPSHOT.jar'))
+            },
+            'mcptool_fakeproxy_plugin': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jars/RPoisoner-1.1-SNAPSHOT.jar',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
+            }
         }

@@ -115,6 +115,7 @@ class MCPTool:
         from .modules.commands.brutercon import Command as BruteRconCommand
         from .modules.commands.connect import Command as ConnectCommand
         from .modules.commands.proxy import Command as ProxyCommand
+        from .modules.commands.fakeproxy import Command as FakeProxyCommand
         from .modules.commands.rcon import Command as RconCommand
         from .modules.commands.checker import Command as CheckerCommand
         from .modules.commands.sendcmd import Command as SendCmdCommand
@@ -135,6 +136,7 @@ class MCPTool:
             'brutercon': BruteRconCommand(),
             'connect': ConnectCommand(),
             'proxy': ProxyCommand(),
+            'fakeproxy': FakeProxyCommand(),
             'rcon': RconCommand(),
             'checker': CheckerCommand(),
             'sendcmd': SendCmdCommand()

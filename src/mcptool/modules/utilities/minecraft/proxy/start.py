@@ -116,8 +116,8 @@ class StartProxy:
             self.proxy_settings_path = f'{mcptool_path}/txt/waterfall.config'
             config_file: str = f'{self.proxy_path}/config.yml'
 
-        if self.proxy == 'velocity':
-            self.proxy_settings_path = f'{mcptool_path}/txt/velocity.config'
+        if self.proxy == 'velocity' or self.proxy == 'fakeproxy':
+            self.proxy_settings_path = f'{mcptool_path}/txt/{self.proxy}.config'
             config_file: str = f'{self.proxy_path}/velocity.toml'
 
         try:  # Check if the proxy settings exist
@@ -148,16 +148,19 @@ class StartProxy:
         Method to start the proxy
         """
 
-        # Check if the proxy exists. If not, download it
-        JarManager(jar_name=self.proxy, jar_path=self.proxy_path).check()
+        # Set the proxy jar
+        proxy_jar: str = 'velocity' if self.proxy == 'fakeproxy' else self.proxy
 
-        if not os.path.exists(f'{self.proxy_path}/{self.proxy}.jar'):
+        # Check if the proxy exists. If not, download it
+        JarManager(jar_name=proxy_jar, jar_path=self.proxy_path).check()
+
+        if not os.path.exists(f'{self.proxy_path}/{proxy_jar}.jar'):
             mcwrite(LM().get(['errors', 'proxyJarNotFound']))
-            logger.critical(f'Proxy jar not found: {self.proxy_path}/{self.proxy}.jar')
+            logger.critical(f'Proxy jar not found: {self.proxy_path}/{proxy_jar}.jar')
             return None
         
         # Start the proxy
-        command: str = f'cd {self.proxy_path} && java -jar {self.proxy}.jar'
+        command: str = f'cd {self.proxy_path} && java -jar {proxy_jar}.jar'
 
         if OS_NAME == 'windows':
             command = f'C: && {command}'
