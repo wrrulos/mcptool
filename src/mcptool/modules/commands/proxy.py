@@ -14,7 +14,7 @@ class Command:
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
         self.target: str = ''
         self.proxy: str = ''
-        self.velocity_forwading_mode: str = ''
+        self.velocity_forwading_mode: tuple = ('', False)
 
     @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
@@ -62,4 +62,5 @@ class Command:
                 input_type='velocity_forwarding_mode'
             ).get_input()
         
+        print(self.target, self.proxy, self.velocity_forwading_mode, self.velocity_forwading_mode[0])
         StartProxy(target=self.target, proxy=self.proxy, velocity_forwarding_mode=self.velocity_forwading_mode[0]).setup()

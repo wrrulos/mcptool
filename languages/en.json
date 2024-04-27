@@ -106,6 +106,10 @@
             "configuringProxy": "\n%spaces%%prefix% &f&lConfiguring the proxy server &8(&a&l%proxyType%&8)&f&l... ",
             "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
             "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
+            "downloadingJar": "\n%spaces%%prefix% &f&lDownloading the proxy jar file (%jarName%)...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded successfully.",
+            "replacingJar": "\n%spaces%%prefix% &f&lReplacing the proxy jar file...",
+            "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar file replaced successfully.",
             "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
         }
     },
@@ -131,7 +135,10 @@
         "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again.",
         "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again.",
         "proxySettingsNotFound": "\n%spaces%%prefix% &f&lThe proxy settings were not found in the settings file. Check the logs and try again.",
+        "proxyNotConfigured": "\n%spaces%%prefix% &f&lThe proxy server is not configured. Check the logs and try again.",
         "proxyJarNotFound": "\n%spaces%%prefix% &f&lThe proxy jar file was not found. See the logs for more information.",
-        "javaVersionNotSupported": "\n%spaces%%prefix% &f&lThe Java version is not supported. You have to use Java 19 or higher."
+        "javaVersionNotSupported": "\n%spaces%%prefix% &f&lThe Java version is not supported. You have to use Java 19 or higher.",
+        "invalidJarFile": "\n%spaces%%prefix% &f&lThe jar file entered is not valid. Check the logs for more information.",
+        "velocityTomlError": "\n%spaces%%prefix% &f&lThere was an error in the velocity.toml file. Check the logs for more information."
     }
 }

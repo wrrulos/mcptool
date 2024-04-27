@@ -1,8 +1,10 @@
 import subprocess
 import requests
+import sys
 import os
 
 from loguru import logger
+from mccolors import mcwrite
 
 from ..constants import OS_NAME
 
@@ -39,19 +41,25 @@ class MCPToolPath:
         download them if they don't
         """
 
-        for url in self.urls.values():
-            if not os.path.exists(url['path']):
-                logger.info(f'Downloading {url["path"]}')
-                self.download_file(url['url'], url['path'])
+        try:
+            for url in self.urls.values():
+                if not os.path.exists(url['path']):
+                    mcwrite(f'&a&lDownloading {url["path"]}')
+                    logger.info(f'Downloading {url["path"]}')
+                    self.download_file(url['url'], url['path'])
 
-        if not os.path.exists(os.path.join(self.get(), 'node_modules')):
-            logger.info('Installing node modules')
-            command: str = f'cd {self.get()} && npm install'
+            if not os.path.exists(os.path.join(self.get(), 'node_modules')):
+                logger.info('Installing node modules')
+                mcwrite('&a&lInstalling node modules')
+                command: str = f'cd {self.get()} && npm install'
 
-            if OS_NAME == 'windows':
-                command = f'C: && {command}'
+                if OS_NAME == 'windows':
+                    command = f'C: && {command}'
 
-            subprocess.run(command, shell=True)
+                subprocess.run(command, shell=True)
+        
+        except KeyboardInterrupt:
+            sys.exit(0)
 
     def download_file(self, url: str, path: str) -> None:
         """
@@ -69,11 +77,13 @@ class MCPToolPath:
             response = requests.get(url)
 
             if response.status_code != 200:
+                mcwrite(f'&cError downloading file: {path}')
                 logger.error(f'Error downloading file: {response.status_code}')
                 return
 
             with open(path, 'wb') as file:
                 if response.content is None:
+                    mcwrite(f'&cError downloading file: {path}')
                     logger.error(f'Error downloading file: {response.content}')
                     return
 
@@ -169,5 +179,13 @@ class MCPToolPath:
             "jar_directory": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
                 "path": os.path.abspath(os.path.join(self.get(), "jars", '.directory'))
+            },
+            'forwarding.secret_velocity': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'forwarding.secret'))
+            },
+            'forwarding.secret_fakeproxy': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'forwarding.secret'))
             },
         }

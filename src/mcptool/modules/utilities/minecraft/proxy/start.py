@@ -43,24 +43,46 @@ class StartProxy:
 
         # If the proxy settings are empty, return because the proxy could not be configured
         if self.proxy_settings == '':
+            mcwrite(LM().get(['errors', 'proxyNotConfigured']))
             return
         
         process: subprocess.Popen = self._start_proxy()
-        stdout, stderr = process.communicate()
-        
-        time.sleep(2)
-        
-        if process.poll() is not None:
-            stderr = stderr.decode('utf-8')
 
-            if 'this version of the Java Runtime':
+        if process is None:
+            return
+        
+        mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyType%', self.proxy))
+        self._read_output(process)
+        
+    @logger.catch
+    def _read_output(self, process: subprocess.Popen) -> None:
+        """
+        Method to read the output of the proxy
+        """
+
+        # Review each line of the process output.
+        for line in process.stdout:
+            output_line: str = line.decode('utf-8').strip()
+
+            # If the line contains an error, notify the user and log the error
+            if 'this version of the Java Runtime' in output_line:
                 mcwrite(LM().get(['errors', 'javaVersionNotSupported']))
-                logger.error(f'Java version error: {stderr}')
+                logger.error(f'Java version error: {output_line}')
                 return
             
-            mcwrite(LM().get(['errors', 'proxyNotStartedUnkownError']))
-            logger.error(f'Proxy not started: {self.proxy}. Reason: {stderr}')
-            return
+            if 'Invalid or corrupt jarfile' in output_line:
+                mcwrite(LM().get(['errors', 'invalidJarFile']))
+                logger.error(f'Invalid or corrupt jarfile: {self.proxy}. Reason: {output_line}')
+                return
+            
+            if 'Unable to read/load/save your velocity.toml' in output_line:
+                mcwrite(LM().get(['errors', 'velocityTomlError']))
+                logger.error(f'Unable to read/load/save your velocity.toml: {output_line}')
+                return
+            
+            mcwrite(output_line)
+
+        process.wait()
 
     @logger.catch
     def _configure_proxy(self) -> None:
@@ -89,7 +111,7 @@ class StartProxy:
             config_file: str = f'{self.proxy_path}/velocity.toml'
 
         try:  # Check if the proxy settings exist
-            with open(self.proxy_settings_path, 'r') as file:
+            with open(self.proxy_settings_path, 'r', encoding='utf8') as file:
                 self.proxy_settings = file.read()
 
         except FileNotFoundError:
@@ -102,11 +124,12 @@ class StartProxy:
         self.proxy_settings = self.proxy_settings.replace('[[PORT]]', '25567')
 
         # In case of velocity, replace the forwarding mode
-        self.proxy_settings = self.proxy_settings.replace('[[MODE]]', self.velocity_forwarding_mode[0])
+        self.proxy_settings = self.proxy_settings.replace('[[MODE]]', self.velocity_forwarding_mode)
 
         # Clear the config file and write the new settings
-        with open(config_file, 'w+') as file:
+        with open(config_file, 'w+', encoding='utf8') as file:
             file.truncate(0)
+            print(self.proxy_settings)
             file.write(self.proxy_settings)
 
     @logger.catch
@@ -122,7 +145,7 @@ class StartProxy:
         if not os.path.exists(f'{self.proxy_path}/{self.proxy}.jar'):
             mcwrite(LM().get(['errors', 'proxyJarNotFound']))
             logger.critical(f'Proxy jar not found: {self.proxy_path}/{self.proxy}.jar')
-            return
+            return None
         
         # Start the proxy
         command: str = f'cd {self.proxy_path} && java -jar {self.proxy}.jar'
@@ -130,5 +153,5 @@ class StartProxy:
         if OS_NAME == 'windows':
             command = f'C: && {command}'
 
-        process: subprocess.Popen = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process: subprocess.Popen = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         return process

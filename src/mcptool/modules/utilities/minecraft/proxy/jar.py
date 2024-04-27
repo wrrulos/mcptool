@@ -3,9 +3,11 @@ import os
 
 from loguru import logger
 from typing import Union
+from mccolors import mcwrite
 
 from ...path.mcptool_path import MCPToolPath
 from ...managers.settings_manager import SettingsManager as SM
+from ...managers.language_manager import LanguageManager as LM
 
 
 class JarManager:
@@ -18,13 +20,18 @@ class JarManager:
         """
         Method to check if the jar file exists
         """
-        
+
+        self._get_latest_version()
+
         if not os.path.exists(self.jar_path):
             logger.error(f'Jar file not found: {self.jar_path}. Downloading it')
             self._download()
             self._replace_jar()
 
-        self._get_latest_version()
+        if not os.path.exists(f'{self.jar_path}/{self.jar_name}.jar'):
+            logger.error(f'Jar file not found: {self.jar_path}/{self.jar_name}.jar. Downloading it')
+            self._download()
+            self._replace_jar()
 
         if self.latest_version_url is None:
             logger.error(f'Error while getting the latest version of the jar file -> {self.jar_name}')
@@ -71,7 +78,7 @@ class JarManager:
             return 'https://api.papermc.io/v2/projects/velocity'
 
         else:  # Waterfall
-            return 'https://api.papermc.io/v2/projects/waterfal'
+            return 'https://api.papermc.io/v2/projects/waterfall'
         
     @logger.catch
     def _download(self) -> bool:
@@ -81,7 +88,8 @@ class JarManager:
         Returns:
             bool: True if the download was successful, False otherwise
         """
-        
+
+        mcwrite(LM().get(['commands', 'proxy', 'downloadingJar']).replace('%jarName%', self.jar_name))
         mcptool_path: str = MCPToolPath().get()
         jar_path: str = f'{mcptool_path}/jars/{self.jar_name}.jar'
 
@@ -94,6 +102,7 @@ class JarManager:
                 print(self.latest_version_url)
                 response = requests.get(self.latest_version_url)
                 f.write(response.content)
+                mcwrite(LM().get(['commands', 'proxy', 'jarDownloaded']))
                 logger.info(f'Jar file downloaded successfully -> {jar_path}')
 
             except requests.exceptions.RequestException as e:
@@ -114,6 +123,8 @@ class JarManager:
         Returns:
             bool: True if the jar file was replaced successfully, False otherwise
         """
+
+        mcwrite(LM().get(['commands', 'proxy', 'replacingJar']))
         
         try:
             for proxy in ['waterfall', 'velocity', 'fakeproxy']:
@@ -131,7 +142,9 @@ class JarManager:
                     dst=f'{MCPToolPath().get()}/proxies/{proxy}/{jar}.jar'
                 )
 
+            mcwrite(LM().get(['commands', 'proxy', 'jarReplaced']))
             logger.info(f'Jar file replaced successfully -> {self.jar_name}')
+            SM().set(f'{self.jar_name}Version', self.latest_version_url)
             return True
         
         except Exception as e:
