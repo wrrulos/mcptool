@@ -96,7 +96,7 @@
         },
         "bruteauth": {
             "arguments": ["ip:port", "version", "username", "passwords_file"],
-            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file...",
+            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file &8(&a&l%file%&8)&f&l...",
             "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the authentication plugin on server &a&l%ip% &f&lwith the user &b&l%username% &f&land the password list &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l).",
             "passwordFound": "\n%spaces%%prefix% &f&lPassword found: &a&l%password%",
             "passwordNotFound": "\n%spaces%%prefix% &f&lPassword not found in the file."
@@ -118,6 +118,13 @@
             "connected": "\n%spaces%%prefix% &f&lConnected to the RCON server successfully.",
             "commandInput": "\n%spaces%%prefix% &f&lEnter the command you want to execute on the RCON server. &8&l▶ &f&l",
             "disconnected": "\n%spaces%%prefix% &f&lDisconnected from the RCON server."
+        },
+        "brutercon": {
+            "arguments": ["ip:port", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file &8(&a&l%file%&8)&f&l...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the RCON server on server &a&l%ip% &f&lwith the password list &6&l%passwordFile% &f&l(&6&l%passwords% passwords&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lPassword found: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lPassword not found in the file."
         },
         "checker": {
             "arguments": ["file"],

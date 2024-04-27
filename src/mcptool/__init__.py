@@ -112,6 +112,7 @@ class MCPTool:
         from .modules.commands.kickall import Command as KickAllCommand
         from .modules.commands.listening import Command as ListeningCommand
         from .modules.commands.bruteauth import Command as BruteAuthCommand
+        from .modules.commands.brutercon import Command as BruteRconCommand
         from .modules.commands.connect import Command as ConnectCommand
         from .modules.commands.proxy import Command as ProxyCommand
         from .modules.commands.rcon import Command as RconCommand
@@ -130,6 +131,7 @@ class MCPTool:
             'kickall': KickAllCommand(),
             'listening': ListeningCommand(),
             'bruteauth': BruteAuthCommand(),
+            'brutercon': BruteRconCommand(),
             'connect': ConnectCommand(),
             'proxy': ProxyCommand(),
             'rcon': RconCommand(),
