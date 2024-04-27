@@ -4,6 +4,7 @@ version = "1.0-alpha"
 dependencies = [
     "mccolors",
     "mcstatus",
+    "mcrcon",
     "requests",
     "loguru"
 ]

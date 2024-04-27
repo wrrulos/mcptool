@@ -1,4 +1,3 @@
-from typing import Union
 from mccolors import mcwrite
 from loguru import logger
 
@@ -32,7 +31,7 @@ class Command:
             return False
         
         if not ValidateArgument.is_ip_and_port(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidIpFormat']))
+            mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
         
         if not ValidateArgument.is_proxy_type(arguments[1]):

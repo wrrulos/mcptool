@@ -117,6 +117,7 @@ class MCPTool:
         from .modules.commands.bruteauth import Command as BruteAuthCommand
         from .modules.commands.connect import Command as ConnectCommand
         from .modules.commands.proxy import Command as ProxyCommand
+        from .modules.commands.rcon import Command as RconCommand
 
         return {
             'server': ServerCommand(),
@@ -129,5 +130,6 @@ class MCPTool:
             'listening': ListeningCommand(),
             'bruteauth': BruteAuthCommand(),
             'connect': ConnectCommand(),
-            'proxy': ProxyCommand()
+            'proxy': ProxyCommand(),
+            'rcon': RconCommand()
         }

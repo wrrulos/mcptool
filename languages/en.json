@@ -112,6 +112,13 @@
             "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar file replaced successfully.",
             "startingProxy": "\n%spaces%%prefix% &f&lStarting the proxy server...",
             "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
+        },
+        "rcon": {
+            "arguments": ["ip:port", "password"],
+            "connecting": "\n%spaces%%prefix% &f&lConnecting to the RCON server &a&l%ip%&f&l...",
+            "connected": "\n%spaces%%prefix% &f&lConnected to the RCON server successfully.",
+            "commandInput": "\n%spaces%%prefix% &f&lEnter the command you want to execute on the RCON server. &8&l▶ &f&l",
+            "disconnected": "\n%spaces%%prefix% &f&lDisconnected from the RCON server."
         }
     },
     "errors": {
@@ -140,6 +147,10 @@
         "proxyJarNotFound": "\n%spaces%%prefix% &f&lThe proxy jar file was not found. See the logs for more information.",
         "javaVersionNotSupported": "\n%spaces%%prefix% &f&lThe Java version is not supported. You have to use Java 19 or higher.",
         "invalidJarFile": "\n%spaces%%prefix% &f&lThe jar file entered is not valid. Check the logs for more information.",
-        "velocityTomlError": "\n%spaces%%prefix% &f&lThere was an error in the velocity.toml file. Check the logs for more information."
+        "velocityTomlError": "\n%spaces%%prefix% &f&lThere was an error in the velocity.toml file. Check the logs for more information.",
+        "rconTimeout": "\n%spaces%%prefix% &f&lThe RCON server connection timed out. Check the IP and port or the RCON password and try again.",
+        "rconConnectionRefused": "\n%spaces%%prefix% &f&lThe RCON server connection was refused. Check the IP and port or the RCON password and try again.",
+        "rconInvalidPassword": "\n%spaces%%prefix% &f&lThe RCON password entered is not valid. Check the password and try again.",
+        "rconUnknownError": "\n%spaces%%prefix% &f&lAn unknown error occurred while connecting to the RCON server. Check the logs for more information."
     }
 }
