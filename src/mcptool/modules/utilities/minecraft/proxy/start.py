@@ -8,6 +8,7 @@ from loguru import logger
 
 from ....utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ....utilities.managers.language_manager import LanguageManager as LM
+from ...managers.settings_manager import SettingsManager as SM
 from ...path.mcptool_path import MCPToolPath
 from ...constants import OS_NAME
 from .jar import JarManager
@@ -19,6 +20,7 @@ class StartProxy:
         self.proxy: str = proxy
         self.velocity_forwarding_mode: Union[str, None] = velocity_forwarding_mode
         self.proxy_path: str = ''
+        self.proxy_port: int = SM().get(['proxyOptions', f'{self.proxy}Port'])
         self.proxy_settings: str = ''
         self.proxy_settings_path: str = ''
 
@@ -51,7 +53,7 @@ class StartProxy:
         if process is None:
             return
         
-        mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyType%', self.proxy))
+        mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyIp%', '127.0.0.1').replace('%proxyPort%', str(self.proxy_port)))
         self._read_output(process)
         
     @logger.catch
@@ -80,7 +82,7 @@ class StartProxy:
                 logger.error(f'Unable to read/load/save your velocity.toml: {output_line}')
                 return
             
-            mcwrite(output_line)
+            #mcwrite(output_line) #! Debugging
 
         process.wait()
 
@@ -121,7 +123,7 @@ class StartProxy:
         
         # Replace the placeholders with the target, port and forwarding mode
         self.proxy_settings = self.proxy_settings.replace('[[ADDRESS]]', self.target)
-        self.proxy_settings = self.proxy_settings.replace('[[PORT]]', '25567')
+        self.proxy_settings = self.proxy_settings.replace('[[PORT]]', str(self.proxy_port))
 
         # In case of velocity, replace the forwarding mode
         self.proxy_settings = self.proxy_settings.replace('[[MODE]]', self.velocity_forwarding_mode)
@@ -129,7 +131,6 @@ class StartProxy:
         # Clear the config file and write the new settings
         with open(config_file, 'w+', encoding='utf8') as file:
             file.truncate(0)
-            print(self.proxy_settings)
             file.write(self.proxy_settings)
 
     @logger.catch

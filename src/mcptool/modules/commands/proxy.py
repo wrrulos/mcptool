@@ -62,5 +62,4 @@ class Command:
                 input_type='velocity_forwarding_mode'
             ).get_input()
         
-        print(self.target, self.proxy, self.velocity_forwading_mode, self.velocity_forwading_mode[0])
         StartProxy(target=self.target, proxy=self.proxy, velocity_forwarding_mode=self.velocity_forwading_mode[0]).setup()
