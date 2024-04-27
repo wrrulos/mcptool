@@ -7,11 +7,11 @@
     },
     "commands": {
         "invalidCommand": "\n%spaces%&cНеизвестная команда. &f&lИспользуйте &ahelp&f&l для получения списка команд.",
+        "ctrlC": "\n%spaces%%prefix% &f&lОстановка выполнения...",
         "missingArguments": "\n%spaces%&cОтсутствуют аргументы. &f&lИспользование: &b&l%command% &c&l%arguments%",
         "server": {
             "arguments": ["ip:port", "start"],
             "gettingServerData": "\n%spaces%%prefix%&f&lПолучаем данные о сервере...",
-            "serverOffline": "\n%spaces%%prefix%&f&lНе удалось получить данные о сервере. Возможно, он выключен."
             "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lПорт&4] &f&l&o%ip%:%port%",
             "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
             "version": "%spaces%&4[&c&lВер&f&lсия&4] &f&l%version%",
@@ -39,8 +39,7 @@
             "timezone": "%spaces%&4[&c&lЧасовой &f&lпояс&4] &f&l%timezone%",
             "isp": "%spaces%&4[&c&lПровай&f&lдер&4] &f&l%isp%",
             "organization": "%spaces%&4[&c&lОргани&f&lзация&4] &f&l%organization%"
-        }
-    },
+        },
         "seeker": {
             "arguments": ["subcommand"],
             "token": {
@@ -68,31 +67,90 @@
         },
         "scan": {
             "arguments": ["ip_address", "port_range", "method"],
-            "scanning": "\n%spaces%%prefix% &f&lСканирование портов IP (%ip%) в радиусе %portRange% используя метод %method%..."
+            "scanning": "\n%spaces%%prefix% &f&lСканирование портов IP (%ip%) в радиусе %portRange% используя метод %method%...",
+            "noOpenPorts": "\n%spaces%%prefix% &f&lНе удалось найти открытые порты.",
+            "openPorts": "\n%spaces%%prefix% &a&l%openPorts% &f&lоткрытых портов."
+        },
+        "connect": {
+            "arguments": ["ip:port", "version", "username"],
+            "connecting": "\n%spaces%%prefix% &f&lПодключение к серверу..."
+        },
+        "kick": {
+            "arguments": ["ip:port", "version", "username", "loop"],
+            "kickingPlayer": "\n%spaces%%prefix% &f&lПопытка кика %username% с сервера %ip% используя версию %version%...",
+            "playerKicked": "\n%spaces%%prefix% &f&lИгрок &a&l%username% &f&lбыл успешно кикнут.",
+            "playerNotKicked": "\n%spaces%%prefix% &f&lНе удалось кикнуть игрока %username%. Причина: %reason%"
+        },
+        "kickall": {
+            "arguments": ["ip:port", "version", "loop"],
+            "gettingPlayers": "\n%spaces%%prefix% &f&lПолучение списка игроков с сервера &a&l%ip%&f&l...",
+            "noPlayers": "\n%spaces%%prefix% &f&lИгроки на сервере &c&l%ip%&f&l не обнаружены.",
+            "allPlayersKicked": "\n%spaces%%prefix% &f&lВсе игроки были успешно кикнуты."
+        },
+        "listening": {
+            "arguments": ["ip:port"],
+            "connecting": "\n%spaces%%prefix% &f&lУстановка соеденения с сервером &a&l%ip%...",
+            "waitingForConnections": "\n%spaces%%prefix% &f&lСлушаем соединения с сервера &a&l%ip%&f&l. Ожидание соединений...",
+            "playersFound": "\n%spaces%%prefix% &f&lОбнаруженные игроки:\n",
+            "playerFoundFormat": "%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
+        },
+        "bruteauth": {
+            "arguments": ["ip:port", "version", "username", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lПолучение паролей из файла...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lЗапуск брутфорса игрока &b&l%username% &f&lна сервере &a&l%ip% &f&l. Пасслист: &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lПароль: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lПароль не был найден."
+        },
+        "proxy": {
+            "arguments": ["ip:port", "proxy_type"],
+            "configuringProxy": "\n%spaces%%prefix% &f&Настройка прокси &8(&a&l%proxyType%&8)&f&l... ",
+            "proxyConfigured": "\n%spaces%%prefix% &f&lПрокси сервер был настроен успешно.",
+            "velocityForwardingMode": "\n%spaces%%prefix% &f&lВведите способ переадресовки Velocity. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
+            "downloadingJar": "\n%spaces%%prefix% &f&lСкачивание jar файла... (%jarName%)...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lJar файл прокси был скачан успешно..",
+            "replacingJar": "\n%spaces%%prefix% &f&lЗамена jar файла прокси...",
+            "jarReplaced": "\n%spaces%%prefix% &f&lJar файл прокси был заменён успешно.",
+            "startingProxy": "\n%spaces%%prefix% &f&lЗапуск прокси...",
+            "proxyStarted": "\n%spaces%%prefix% &f&lПрокси сервер был успешно запущен по пути &a&l%proxyIp%:%proxyPort%&f&l."
+        },
+        "rcon": {
+            "arguments": ["ip:port", "password"],
+            "connecting": "\n%spaces%%prefix% &f&lПодключение к RCON серверу &a&l%ip%&f&l...",
+            "connected": "\n%spaces%%prefix% &f&lПодключение к RCON серверу успешно.",
+            "commandInput": "\n%spaces%%prefix% &f&Введите команду для RCON. &8&l▶ &f&l",
+            "disconnected": "\n%spaces%%prefix% &f&lОтключение от RCON сервера успешно."
         }
     },
     "errors": {
+        "serverOffline": "\n%spaces%%prefix%&f&lНе удалось получить данные о сервере. Возможно, он выключен.",
         "invalidServerFormat": "\n%spaces%%prefix%&f&lНеверный формат сервера. Вы должны использовать &c&lip:порт &f&lили &c&lдомен&f&l.",
         "invalidIpFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес.",
-        "invalidPortFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный порт."
+        "invalidIpRange": "\n%spaces%%prefix% &f&lНеверный радиус IP адреса. Вы должны использовать верный радиус IP адреса.",
+        "invalidPortFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный порт.",
+        "invalidPortRange": "\n%spaces%%prefix% &f&lНеверный радиус порта. Вы должны использовать верный радиус порта",
+        "invalidIpAndPort": "\n%spaces%%prefix% &f&lНеверный IP и порт. Вы должны использовать верный IP и порт.",
+        "invalidYesNo": "\n%spaces%%prefix% &f&lВы должны ввести &b&ly &f&lили &b&ln&f&l.",
         "invalidScanMethod": "\n%spaces%%prefix% &f&lНеверный метод. Вы должны использовать верный метод. %methods%.",
         "invalidEndpoint": "\n%spaces%%prefix% &f&lНастройки конечной точки неверные. Проверьте файл с настройками и попробуйте снова.",
-        "endpointConnectionError": "\n%spaces%%prefix% &f&lНе удалось подключиться к конечной точке. Возможно, конечная точка отключена."
-    },
-    "logger": {
-        "starting": "Запуск MCPTool",
-        "loadingCommands": "Загрузка команд",
-        "commandsFolderDoesNotExist": "Папка с командами отсутствует",
-        "commandsFolderIsEmpty": "Папка с командами пустая",
-        "commandsArgumentMissing": "Отсутствуют аргументы команды %command%",
-        "commandsLoaded": "Команды успешно загружены",
-        "errors": {
-            "endpointConnectionError": "Ошибка подключения к конечной точке (%endpoint%)"
-        },
-        "seeker": {
-            "invalidEndpoint": "Неверная конечная точка Seeker",
-            "invalidToken": "Неверный токен Seeker",
-            "tokenObtained": "Токен Seeker получен успешно"
-        }
+        "invalidFile": "\n%spaces%%prefix% &f&lНеверный файл. Вы должны использовать верный файл.",
+        "invalidProxyType": "\n%spaces%%prefix% &f&lТип прокси неверный. Вы должны использовать &c&lvelocity &f&lили &c&lwaterfall&f&l.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lНе удалось подключиться к конечной точке. Возможно, конечная точка отключена.",
+        "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap не установлен. Установите его, а затем попробуйте снова.",
+        "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan не установлен. Установите его, а затем попробуйте снова.",
+        "javaNotInstalled": "\n%spaces%%prefix% &f&lJava не установлен. Установите её, а затем попробуйте снова..",
+        "quboJarNotFound": "\n%spaces%%prefix% &f&lJar файл Qubo был не найден. Проверьте логи для большей информации.",
+        "notJavaServer": "\n%spaces%%prefix% &f&lЭта команда работает только на серверах Java.",
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lФайл с паролями пуст. Добавьте туда пароли и попробуйте снова",
+        "proxyPathNotFound": "\n%spaces%%prefix% &f&lНеверный путь к прокси. Проверьте логи для большей информации.",
+        "proxySettingsNotFound": "\n%spaces%%prefix% &f&lНастройки прокси были не найдены. Проверьте логи для большей информации.",
+        "proxyNotConfigured": "\n%spaces%%prefix% &f&lПрокси сервер не настроен. Проверьте логи для большей информации.",
+        "proxyJarNotFound": "\n%spaces%%prefix% &f&lJar файл прокси не был найден. Проверьте логи для большей информации.",
+        "javaVersionNotSupported": "\n%spaces%%prefix% &f&lЭта версия Java не поддерживается. Используйте Java 19 или выше.",
+        "invalidJarFile": "\n%spaces%%prefix% &f&lНеверный jar файл. Проверьте логи для большей информации.",
+        "velocityTomlError": "\n%spaces%%prefix% &f&lОбнаружены ошибки в файле velocity.toml. Проверьте логи для большей информации.",
+        "rconTimeout": "\n%spaces%%prefix% &f&lВышло время ожидания подключения к RCON. Проверьте IP, порт и RCON пароль.",
+        "rconConnectionRefused": "\n%spaces%%prefix% &f&lRCON сервер отклонил подключение. Проверьте IP, порт и RCON пароль.",
+        "rconInvalidPassword": "\n%spaces%%prefix% &f&lНеверный пароль. Проверьте пароль.",
+        "rconUnknownError": "\n%spaces%%prefix% &f&lНе удалось подключиться к RCON серверу. Проверьте логи для большей информации.",
     }
 }
