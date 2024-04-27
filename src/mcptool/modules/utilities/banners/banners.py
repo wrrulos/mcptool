@@ -17,3 +17,20 @@ class MCPToolBanners:
 
 class InputBanners:
     INPUT_1 = f'\n{SPACES}&8&l{OS_NAME}@mcptool ~\n{SPACES} &c&l↪ &f&l'
+
+
+class HelpBanners:
+    HELP_BANNER_1 = f'''
+                                                                     &b⢀⣀⣀⣀⣀⣀⣀
+    &b&lInformation commands                                           &b⢀⣀⡿⠿⠿⠿⠿⠿⠿⢿⣀⣀⣀&f&l⣀⣀⡀
+     &c&l↪ &f&lserver uuid ipinfo                                          &b⠸⠿⣇⣀⣀⣀⣀⣀⣀⣸⠿⢿⣿&f&l⣿⣿⡇          
+                                                                     &b⠻⠿⠿⠿⠿⠿⣿⣿⣀⡸⠿⢿⣿⡇
+                                                                     &f&l    ⣤⣤⣿⣿⣿&b⣧⣤⡼⠿⢧⣤⡀         
+                                                                      &f&l⣤⣤⣿⣿⣿⣿⠛&b⢻⣿⡇ ⢸⣿⡇
+                                                                    &f&l⣤⣤⣿⣿⣿⣿⠛⠛ &b⢸⣿⡇ ⢸⣿⡇          
+                                                                  &f&l⢠⣤⣿⣿⣿⣿⠛⠛   &b⢸⣿⡇ ⢸⣿⡇
+                                                                &f&l⢰⣶⣾⣿⣿⣿⠛⠛     &b⠈⠛⢳⣶⡞⠛⠁   
+                                                              &f&l⢰⣶⣾⣿⣿⣿⡏⠉       &b  ⠈⠉⠁⠀
+                                                            &f&l⢰⣶⡎⠉⢹⣿⡏⠉⠁
+                                                            &f&l⢸⣿⣷⣶⡎⠉⠁
+                                                             &f&l⠉⠉⠉⠁'''
