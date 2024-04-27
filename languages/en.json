@@ -107,8 +107,7 @@
             "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
             "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
             "downloadingJar": "\n%spaces%%prefix% &f&lDownloading the proxy jar file (%jarName%)...",
-            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded successfully.",
-            "replacingJar": "\n%spaces%%prefix% &f&lReplacing the proxy jar file...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded  le...",
             "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar file replaced successfully.",
             "startingProxy": "\n%spaces%%prefix% &f&lStarting the proxy server...",
             "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
@@ -119,6 +118,12 @@
             "connected": "\n%spaces%%prefix% &f&lConnected to the RCON server successfully.",
             "commandInput": "\n%spaces%%prefix% &f&lEnter the command you want to execute on the RCON server. &8&l▶ &f&l",
             "disconnected": "\n%spaces%%prefix% &f&lDisconnected from the RCON server."
+        },
+        "checker": {
+            "arguments": ["file"],
+            "checking": "\n%spaces%%prefix% &f&lSearching servers in the file &a&l%file%&f&l...",
+            "noServersFound": "\n%spaces%%prefix% &f&lNo servers found in the file &c&l%file%&f&l.",
+            "serversFound": "\n%spaces%%prefix% &a&l%servers% &f&lservers found in the file &a&l%file%&f&l."
         }
     },
     "errors": {
