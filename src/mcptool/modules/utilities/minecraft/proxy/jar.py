@@ -51,7 +51,7 @@ class JarManager:
             last_version: str = requests.get(download_url).json()['versions'][-1]
             latest_build: dict = requests.get(f'{download_url}/versions/{last_version}/builds/').json()['builds'][-1]
             build, name = latest_build['build'], latest_build['downloads']['application']['name']
-            latest_version_url: str = f'https://api.papermc.io/v2/projects/waterfall/versions/{last_version}/builds/{build}/downloads/{name}'
+            latest_version_url: str = f'{download_url}/versions/{last_version}/builds/{build}/downloads/{name}'
             self.latest_version_url = latest_version_url
         
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
@@ -85,22 +85,23 @@ class JarManager:
         mcptool_path: str = MCPToolPath().get()
         jar_path: str = f'{mcptool_path}/jars/{self.jar_name}.jar'
 
-        if os.path.exists(self.jar_path):
-            os.remove(self.jar_path)
+        if os.path.exists(jar_path):
+            os.remove(jar_path)
 
         with open(jar_path, 'wb') as f:
             try:
                 f.truncate(0)
+                print(self.latest_version_url)
                 response = requests.get(self.latest_version_url)
                 f.write(response.content)
-                logger.info(f'Jar file downloaded successfully -> {self.jar_name}')
+                logger.info(f'Jar file downloaded successfully -> {jar_path}')
 
             except requests.exceptions.RequestException as e:
-                logger.error(f'Error while downloading the jar file -> {self.jar_name}. {e}')
+                logger.error(f'Error while downloading the jar file -> {jar_path}. {e}')
                 return False
             
             except Exception as e:
-                logger.error(f'Error while downloading the jar file -> {self.jar_name}. {e}')
+                logger.error(f'Error while downloading the jar file -> {jar_path}. {e}')
                 return False
             
         return True
@@ -121,6 +122,9 @@ class JarManager:
 
                 else:
                     jar = 'velocity'
+
+                if not os.path.exists(f'{MCPToolPath().get()}/jars/{jar}.jar'):
+                    continue
 
                 os.replace(
                     src=f'{MCPToolPath().get()}/jars/{jar}.jar', 

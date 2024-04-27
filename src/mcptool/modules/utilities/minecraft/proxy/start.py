@@ -45,7 +45,22 @@ class StartProxy:
         if self.proxy_settings == '':
             return
         
-        self._start_proxy()
+        process: subprocess.Popen = self._start_proxy()
+        stdout, stderr = process.communicate()
+        
+        time.sleep(2)
+        
+        if process.poll() is not None:
+            stderr = stderr.decode('utf-8')
+
+            if 'this version of the Java Runtime':
+                mcwrite(LM().get(['errors', 'javaVersionNotSupported']))
+                logger.error(f'Java version error: {stderr}')
+                return
+            
+            mcwrite(LM().get(['errors', 'proxyNotStartedUnkownError']))
+            logger.error(f'Proxy not started: {self.proxy}. Reason: {stderr}')
+            return
 
     @logger.catch
     def _configure_proxy(self) -> None:
@@ -66,11 +81,11 @@ class StartProxy:
             return
 
         if self.proxy == 'waterfall':
-            self.proxy_settings_path = f'{self.mcptool_path}/txt/waterfall.config'
+            self.proxy_settings_path = f'{mcptool_path}/txt/waterfall.config'
             config_file: str = f'{self.proxy_path}/config.yml'
 
         if self.proxy == 'velocity':
-            self.proxy_settings_path = f'{self.mcptool_path}/txt/velocity.config'
+            self.proxy_settings_path = f'{mcptool_path}/txt/velocity.config'
             config_file: str = f'{self.proxy_path}/velocity.toml'
 
         try:  # Check if the proxy settings exist
@@ -87,7 +102,7 @@ class StartProxy:
         self.proxy_settings = self.proxy_settings.replace('[[PORT]]', '25567')
 
         # In case of velocity, replace the forwarding mode
-        self.proxy_settings = self.proxy_settings.replace('[[MODE]]', self.velocity_forwarding_mode)
+        self.proxy_settings = self.proxy_settings.replace('[[MODE]]', self.velocity_forwarding_mode[0])
 
         # Clear the config file and write the new settings
         with open(config_file, 'w+') as file:
@@ -96,7 +111,7 @@ class StartProxy:
 
     @logger.catch
     @staticmethod
-    def _start_proxy(self) -> None:
+    def _start_proxy(self) -> subprocess.Popen:
         """
         Method to start the proxy
         """
@@ -115,4 +130,5 @@ class StartProxy:
         if OS_NAME == 'windows':
             command = f'C: && {command}'
 
-        return subprocess.Popen(command, shell=True)
+        process: subprocess.Popen = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return process
