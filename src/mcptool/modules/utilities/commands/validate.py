@@ -47,6 +47,9 @@ class ValidateArgument:
         Method to validate if a string is a domain
         """
 
+        if ValidateArgument.is_ip_address(domain):
+            return False
+
         try:
             socket.gethostbyname(domain)
             return True
