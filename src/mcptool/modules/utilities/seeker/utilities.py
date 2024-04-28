@@ -140,6 +140,12 @@ class SeekerUtilities:
             if filter_protocol[0]:
                 protocol = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByProtocolText']), 'integer').get_input()
 
+            # Filter by online players amount
+            filter_online_players: tuple = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByOnlinePlayers']), 'boolean').get_input()
+
+            if filter_online_players[0]:
+                online_players = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByOnlinePlayersText']), 'integer').get_input()
+        
         headers: dict = {
             "accept": "application/json",
             "Content-Type": "application/json"
@@ -163,6 +169,9 @@ class SeekerUtilities:
 
         if protocol is not None:
             data['protocol'] = protocol[0]
+
+        if online_players is not None:
+            data['online_players'] = [online_players[0], 'inf']
 
         try:
             logger.info(f'''

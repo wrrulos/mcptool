@@ -30,17 +30,21 @@ class TextUtilities:
             
             if isinstance(extra, list):
                 for item in extra:
-                    if 'text' in item:
-                        text += item['text']
+                    if isinstance(item, str):
+                        text += item
 
-                    if 'translate' in item:
-                        text += item['translate']
+                    elif isinstance(item, dict):
+                        if 'text' in item:
+                            text += item['text']
 
-                    if 'extra' in item:
-                        process_extra(item['extra'])
+                        if 'translate' in item:
+                            text += item['translate']
 
-                    if 'with' in item:
-                        text += TextUtilities.get_text_from_json(json.dumps(item['with']))
+                        if 'extra' in item:
+                            process_extra(item['extra'])
+
+                        if 'with' in item:
+                            text += TextUtilities.get_text_from_json(json.dumps(item['with']))
 
             elif 'text' in extra:
                 text = extra['text']

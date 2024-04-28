@@ -59,7 +59,7 @@
                 "arguments": ["token"],
                 "gettingToken": "\n%spaces%%prefix% &f&lGetting token...",
                 "tokenObtained": "\n%spaces%%prefix% &f&lToken obtained successfully.",
-                "invalidToken": "\n%spaces%%prefix% &f&lInvalid token. Use the command &b&lseeker token &f&lto get a new token.",
+                "invalidToken": "\n%spaces%%prefix% &c&lInvalid token. &f&lUse the command &b&lseeker token &f&lto get a new token.",
                 "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
             },
             "servers": {
@@ -73,6 +73,8 @@
                 "filterByOnlyBungeespoofable": "\n%spaces%%prefix% &f&lDo you want to filter servers by only bungeespoofable? (&b&ly or n&f&l) &8&l▶ &f&l",
                 "filterByProtocol": "\n%spaces%%prefix% &f&lDo you want to filter servers by protocol? (&b&ly or n&f&l) &8&l▶ &f&l",
                 "filterByProtocolText": "\n%spaces%%prefix% &f&lEnter the protocol to filter the servers. &8&l▶ &f&l",
+                "filterByOnlinePlayers": "\n%spaces%%prefix% &f&lDo you want to filter servers by online players? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByOnlinePlayersText": "\n%spaces%%prefix% &f&lEnter the minimum amount of online players to filter the servers. &8&l▶ &f&l",
                 "serversObtained": "\n%spaces%%prefix% &f&l%servers% servers obtained successfully.",
                 "gettingData": "\n%spaces%%prefix% &f&lGetting data from the servers...",
                 "noServers": "\n%spaces%%prefix% &f&lNo servers found. Try again later or change the filters."
