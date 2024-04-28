@@ -173,6 +173,7 @@ class MCPTool:
         try:
             # Connect to the Discord client
             rpc.connect()
+            logger.info('Connected to the Discord client')
 
             while True:
                rpc.update(
@@ -197,4 +198,5 @@ class MCPTool:
             self._update_rich_presence()
 
         except (KeyboardInterrupt, ValueError, RuntimeError, OSError):
+            logger.error('Failed to connect to the Discord client. Retrying in 30 seconds...')
             pass
