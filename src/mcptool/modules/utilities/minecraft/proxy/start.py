@@ -1,4 +1,5 @@
 import subprocess
+import datetime
 import base64
 import shutil
 import time
@@ -71,17 +72,20 @@ class Fakeproxy:
                         data_type: str = player_data[0]
                         username: str = player_data[1]
                         ip_address: str = player_data[2]
+                        current_time: str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
                         if data_type == '[CONNECTING]':
                             mcwrite(LM().get(['commands', 'fakeproxy', 'connected'])
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
+                                .replace('%time%', current_time)
                             )
 
                         if data_type == '[DISCONNECTING]':
                             mcwrite(LM().get(['commands', 'fakeproxy', 'disconnected'])
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
+                                .replace('%time%', current_time)
                             )
                         
                         if data_type == '[CHAT]':
@@ -92,6 +96,7 @@ class Fakeproxy:
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
                                 .replace('%message%', message)
+                                .replace('%time%', current_time)
                             )
 
                         if data_type == '[COMMAND]':
@@ -102,6 +107,7 @@ class Fakeproxy:
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
                                 .replace('%command%', command)
+                                .replace('%time%', current_time)
                             )
 
                         data_file_lines_number += 1
