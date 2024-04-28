@@ -205,5 +205,10 @@ class MCPToolPath:
             'mcptool_fakeproxy_plugin': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jar/RPoisoner-1.1-SNAPSHOT.jar',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
+            },
+            # Imgs
+            'server-icon': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/img/server-icon.png',
+                'path': os.path.abspath(os.path.join(self.get(), 'img', 'server-icon.png'))
             }
         }

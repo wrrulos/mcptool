@@ -112,7 +112,11 @@
             "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
         },
         "fakeproxy": {
-            "arguments": ["ip:port", "velocity_forwading_mode"]
+            "arguments": ["ip:port", "velocity_forwading_mode"],
+            "connected": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &f&lconnected to the fakeproxy server",
+            "disconnected": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &f&ldisconnected from the fakeproxy server",
+            "chat": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&l%message%",
+            "command": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&lused the command &b&l%command%"
         },
         "rcon": {
             "arguments": ["ip:port", "password"],

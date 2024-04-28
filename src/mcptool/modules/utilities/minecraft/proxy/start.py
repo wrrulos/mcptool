@@ -1,4 +1,6 @@
 import subprocess
+import base64
+import shutil
 import time
 import os
 
@@ -10,9 +12,153 @@ from ....utilities.minecraft.server.get_server import MCServerData, JavaServerDa
 from ....utilities.managers.language_manager import LanguageManager as LM
 from ...managers.settings_manager import SettingsManager as SM
 from ...path.mcptool_path import MCPToolPath
-from ...constants import OS_NAME
+from ...constants import OS_NAME, SPACES
 from .jar import JarManager
 
+
+class Fakeproxy:
+    def __init__(self, process: subprocess.Popen, server_data: JavaServerData) -> None:
+        self.process: subprocess.Popen = process
+        self.server_data: JavaServerData = server_data
+
+    @logger.catch
+    def configure(self) -> None:
+        """
+        Method to configure the fakeproxy
+        """
+
+        # Set the favicon of the fakeproxy if it exists or use the default one
+        self._set_favicon()
+        
+        # Set the command prefix for the rpoisoner plugin
+        self._set_command_prefix()
+
+        # Remove old data file if it exists
+        self._remove_data_file()
+
+        # Show the fakeproxy data
+        self._show_fakeproxy_data()
+
+    @logger.catch
+    def _show_fakeproxy_data(self) -> None:
+        """
+        Method to show the fakeproxy data
+        """
+
+        data_file_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/plugins/RPoisoner/data.txt'
+        data_file_lines_number: int = 0
+
+        while True:
+            time.sleep(1)
+
+            if not os.path.exists(data_file_path):
+                continue
+
+            with open(data_file_path, 'r', encoding='utf8') as file:
+                data_file_lines = file.readlines()
+
+                while True:
+                    try:
+                        # Get the last line of the data file
+                        line = data_file_lines[data_file_lines_number].replace('\n', '')
+
+                        player_data: list = line.split('/#-#/')
+                        data_type: str = player_data[0]
+                        username: str = player_data[1]
+                        ip_address: str = player_data[2]
+
+                        if data_type == '[CONNECTING]':
+                            mcwrite(LM().get(['commands', 'fakeproxy', 'connected'])
+                                .replace('%username%', username)
+                                .replace('%ipAddress%', ip_address)
+                            )
+
+                        if data_type == '[DISCONNECTING]':
+                            mcwrite(LM().get(['commands', 'fakeproxy', 'disconnected'])
+                                .replace('%username%', username)
+                                .replace('%ipAddress%', ip_address)
+                            )
+                        
+                        if data_type == '[CHAT]':
+                            # Get the message from the player data
+                            message: str = player_data[3]
+
+                            mcwrite(LM().get(['commands', 'fakeproxy', 'chat'])
+                                .replace('%username%', username)
+                                .replace('%ipAddress%', ip_address)
+                                .replace('%message%', message)
+                            )
+
+                        if data_type == '[COMMAND]':
+                            # Get the command from the player data
+                            command: str = player_data[3]
+
+                            mcwrite(LM().get(['commands', 'fakeproxy', 'command'])
+                                .replace('%username%', username)
+                                .replace('%ipAddress%', ip_address)
+                                .replace('%command%', command)
+                            )
+
+                        data_file_lines_number += 1
+
+                    except IndexError:
+                        break
+
+    @logger.catch
+    def _set_favicon(self) -> None:
+        """
+        Method to set the favicon of the fakeproxy
+        """
+
+        favicon_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/server-icon.png'
+
+        if self.server_data.favicon is not None:
+            try:
+                with open(favicon_path, 'wb') as file:
+                    file.truncate(0)
+                    icon: Union[str, bytes] = self.server_data.favicon.replace('data:image/png;base64,', '')
+                    icon = base64.b64decode(icon)
+                    file.write(icon)
+
+                return
+
+            except Exception as e:
+                logger.error(f'Error setting the favicon of the fakeproxy: {e}. Using the default favicon.')
+                
+        shutil.copy(f'{MCPToolPath().get()}/img/server-icon.png', favicon_path)
+
+    @logger.catch
+    def _set_command_prefix(self) -> None:
+        """
+        Method to set the command prefix for the rpoisoner plugin
+        """
+
+        command_prefix: str = SM().get(['proxyOptions', 'fakeproxyCommandPrefix'])
+
+        if command_prefix == '':  # If the command prefix is empty, use the default one
+            command_prefix = '..'
+
+        command_prefix_file_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/plugins/RPoisoner/config/commandPrefix'
+
+        if not os.path.exists(command_prefix_file_path):
+            return
+
+        with open(command_prefix_file_path, 'w+', encoding='utf8') as file:
+            file.truncate(0)
+            file.write(command_prefix)
+
+    @logger.catch
+    def _remove_data_file(self) -> None:
+        """
+        Method to remove the data file of the fakeproxy
+        """
+
+        data_file_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/plugins/RPoisoner/data.txt'
+
+        if not os.path.exists(data_file_path):
+            return
+
+        os.remove(data_file_path)
 
 class StartProxy:
     def __init__(self, target: str, proxy: str, velocity_forwarding_mode: Union[str, None]) -> None:
@@ -58,12 +204,26 @@ class StartProxy:
             return
         
         mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyIp%', '127.0.0.1').replace('%proxyPort%', str(self.proxy_port)))
-        self._read_output(process)
+        
+        proxy_started: bool = self._read_output(process)
+
+        if not proxy_started:
+            process.kill()
+            return
+        
+        if self.proxy == 'fakeproxy':
+            Fakeproxy(process=process, server_data=server_data).configure()
+
+        else:
+            process.wait()
         
     @logger.catch
-    def _read_output(self, process: subprocess.Popen) -> None:
+    def _read_output(self, process: subprocess.Popen) -> bool:
         """
         Method to read the output of the proxy
+
+        Returns:
+            bool: True if the proxy started successfully, False otherwise
         """
 
         # Review each line of the process output.
@@ -78,17 +238,20 @@ class StartProxy:
             if 'this version of the Java Runtime' in output_line:
                 mcwrite(LM().get(['errors', 'javaVersionNotSupported']))
                 logger.error(f'Java version error: {output_line}')
-                return
+                return False
             
             if 'Invalid or corrupt jarfile' in output_line:
                 mcwrite(LM().get(['errors', 'invalidJarFile']))
                 logger.error(f'Invalid or corrupt jarfile: {self.proxy}. Reason: {output_line}')
-                return
+                return False
             
             if 'Unable to read/load/save your velocity.toml' in output_line:
                 mcwrite(LM().get(['errors', 'velocityTomlError']))
                 logger.error(f'Unable to read/load/save your velocity.toml: {output_line}')
-                return
+                return False
+            
+            if 'Listening on' in output_line:
+                return True
             
             #mcwrite(output_line) #! Debugging
 
