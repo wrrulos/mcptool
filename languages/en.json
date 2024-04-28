@@ -20,6 +20,10 @@
             "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l&o%playerList%",
             "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
             "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
+            "brand": "%spaces%&4[&c&lBra&f&lnd&4] &f&l&o%brand%",
+            "software": "%spaces%&4[&c&lSof&f&ltware&4] &f&l&o%software%",
+            "map": "%spaces%&4[&c&lMa&f&lp&4] &f&l&o%map%",
+            "gamemode": "%spaces%&4[&c&lGam&f&leMode&4] &f&l&o%gamemode%",
             "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
             "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
         },

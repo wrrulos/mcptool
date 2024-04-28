@@ -35,7 +35,7 @@ class JavaServerData:
 
 
 class BedrockServerData:
-    def __init__(self, ip_address: str, port: int, motd: str, version: str, protocol: str, connected_players: str, max_players: str, players: list, ping: int, bot_output: str) -> None:
+    def __init__(self, ip_address: str, port: int, motd: str, version: str, protocol: str, connected_players: str, max_players: str, brand: str, map: str, gamemode: str, ping: int, bot_output: str) -> None:
         self.platform = 'Bedrock'
         self.ip_address = ip_address
         self.port = port
@@ -44,7 +44,9 @@ class BedrockServerData:
         self.protocol = protocol
         self.connected_players = connected_players
         self.max_players = max_players
-        self.players = players
+        self.brand = brand
+        self.map = map
+        self.gamemode = gamemode
         self.ping = ping
         self.bot_output = bot_output
 
@@ -157,6 +159,16 @@ class MCServerData:
                 )
 
             if isinstance(data, BedrockStatusResponse):
+                if False == True:  #! Change this for: self.bot
+                    # Get the bot output
+                    bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+
+                    # Get the bot color response
+                    bot_output = BotUtilities.get_bot_color_response(bot_output)
+
+                else:
+                    bot_output: str = ''
+
                 return BedrockServerData(
                     ip_address=str(self.ip_address),
                     port=int(self.port),
@@ -165,9 +177,11 @@ class MCServerData:
                     protocol=str(data.version.protocol),
                     connected_players=str(data.players.online),
                     max_players=str(data.players.max),
-                    players=[],
+                    brand=data.version.brand,
+                    map=MCServerData._clean_output(data.map),
+                    gamemode=MCServerData._clean_output(data.gamemode),
                     ping=int(data.latency),
-                    bot_output=''
+                    bot_output=bot_output
                 )
 
         except (ConnectionRefusedError, TimeoutError, OSError, socket.gaierror):
