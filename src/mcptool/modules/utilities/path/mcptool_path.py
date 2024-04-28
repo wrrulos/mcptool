@@ -78,7 +78,7 @@ class MCPToolPath:
 
             if response.status_code != 200:
                 mcwrite(f'&cError downloading file: {path}')
-                logger.error(f'Error downloading file: {response.status_code}')
+                logger.error(f'Error downloading file: {response.status_code} from {url}')
                 return
 
             with open(path, 'wb') as file:
@@ -110,6 +110,10 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/bruteforce_settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'bruteforce_settings.json'))
             },
+            'sendcmd_settings': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/sendcmd_settings.json',
+                'path': os.path.abspath(os.path.join(self.get(), 'sendcmd_settings.json'))
+            },
             # Packages
             "package": {
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
@@ -140,6 +144,10 @@ class MCPToolPath:
             'connect_script': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/connect.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'connect.mjs'))
+            },
+            'sendcmd_script': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/sendcmd.mjs',
+                'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'sendcmd.mjs'))
             },
             # Txt files
             "usernames": {
@@ -180,6 +188,7 @@ class MCPToolPath:
                 "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
                 "path": os.path.abspath(os.path.join(self.get(), "jars", '.directory'))
             },
+            # Forwarding secrets
             'forwarding.secret_velocity': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'forwarding.secret'))
@@ -188,4 +197,18 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'forwarding.secret'))
             },
+            # Jar plugins for the proxies
+            'mcptool_velocity_plugin': {
+                'url': 'https://github.com/wrrulos/mcptool-velocity/releases/download/v1.1/MCPTool-1.1-SNAPSHOT.jar',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'plugins', 'MCPTool-1.1-SNAPSHOT.jar'))
+            },
+            'mcptool_fakeproxy_plugin': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jar/RPoisoner-1.1-SNAPSHOT.jar',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
+            },
+            # Imgs
+            'server-icon': {
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/img/server-icon.png',
+                'path': os.path.abspath(os.path.join(self.get(), 'img', 'server-icon.png'))
+            }
         }

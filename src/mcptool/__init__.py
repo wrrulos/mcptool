@@ -66,12 +66,6 @@ class MCPTool:
                 # Get the command
                 command_name: str = arguments[0].lower()
 
-                # Check if the command is clear
-                if command_name == 'clear':
-                    subprocess.run('clear || cls', shell=True)
-                    ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
-                    continue
-
                 # Check if the command is exit
                 if command_name == "exit":
                     break
@@ -106,6 +100,9 @@ class MCPTool:
         """
 
         # Commands
+        from .modules.commands.clear import Command as ClearCommand
+        from .modules.commands.help import Command as HelpCommand
+        from .modules.commands.discord import Command as DiscordCommand
         from .modules.commands.server import Command as ServerCommand
         from .modules.commands.uuid import Command as UUIDCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
@@ -115,11 +112,19 @@ class MCPTool:
         from .modules.commands.kickall import Command as KickAllCommand
         from .modules.commands.listening import Command as ListeningCommand
         from .modules.commands.bruteauth import Command as BruteAuthCommand
+        from .modules.commands.brutercon import Command as BruteRconCommand
         from .modules.commands.connect import Command as ConnectCommand
         from .modules.commands.proxy import Command as ProxyCommand
+        from .modules.commands.fakeproxy import Command as FakeProxyCommand
         from .modules.commands.rcon import Command as RconCommand
+        from .modules.commands.checker import Command as CheckerCommand
+        from .modules.commands.sendcmd import Command as SendCmdCommand
+        from .modules.commands.subdomains import Command as SubdomainsCommand
 
         return {
+            'clear': ClearCommand(),
+            'help': HelpCommand(),
+            'discord': DiscordCommand(),
             'server': ServerCommand(),
             'uuid': UUIDCommand(),
             'ipinfo': IPInfoCommand(),
@@ -129,7 +134,12 @@ class MCPTool:
             'kickall': KickAllCommand(),
             'listening': ListeningCommand(),
             'bruteauth': BruteAuthCommand(),
+            'brutercon': BruteRconCommand(),
             'connect': ConnectCommand(),
             'proxy': ProxyCommand(),
-            'rcon': RconCommand()
+            'fakeproxy': FakeProxyCommand(),
+            'rcon': RconCommand(),
+            'checker': CheckerCommand(),
+            'sendcmd': SendCmdCommand(),
+            'subdomains': SubdomainsCommand()
         }

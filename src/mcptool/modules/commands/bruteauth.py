@@ -66,6 +66,9 @@ class Command:
         # Getting the passwords
         mcwrite(LM().get(['commands', self.name, 'gettingPasswords']).replace('%file%', arguments[1]))
         
+        # Get absolute path of the password file
+        password_file = os.path.abspath(password_file)
+        
         with open(password_file, 'r') as file:
             self.passwords = file.read().splitlines()
 

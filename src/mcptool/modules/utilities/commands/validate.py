@@ -1,3 +1,5 @@
+import socket
+
 from mccolors import mcwrite
 from loguru import logger
 
@@ -45,18 +47,12 @@ class ValidateArgument:
         Method to validate if a string is a domain
         """
 
-        if domain.count('.') < 1:
+        try:
+            socket.gethostbyname(domain)
+            return True
+        
+        except socket.gaierror:
             return False
-
-        # Split the domain into parts
-        domain_parts = domain.split('.')
-
-        # Check if each part is alphanumeric
-        for part in domain_parts:
-            if not part.isalnum():
-                return False
-
-        return True
     
     @logger.catch 
     @staticmethod

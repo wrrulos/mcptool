@@ -15,7 +15,7 @@ class Utilities {
      */
 
     if (!fs.existsSync(file)) {
-      console.log(`§cFile not found: §c§l${file}`);
+      console.log(mccolors.translateColors(`\n    §f[§c#§f] §cFile not found: §c§l${file}`));
       process.exit(1);
     }
 
