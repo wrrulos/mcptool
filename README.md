@@ -50,8 +50,9 @@
 - **PT** (Coming soon)
 
 ## 🔧 Installation 
+`pip install mcptool`
 
-Follow the steps in the [installation guide](./docs/instalation.MD).
+I recommend checking the [installation guide](./docs/instalation.MD) for more information.
 
 ## Commands
 
