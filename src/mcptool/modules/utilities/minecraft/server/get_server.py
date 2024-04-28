@@ -159,15 +159,7 @@ class MCServerData:
                 )
 
             if isinstance(data, BedrockStatusResponse):
-                if False == True:  #! Change this for: self.bot
-                    # Get the bot output
-                    bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
-
-                    # Get the bot color response
-                    bot_output = BotUtilities.get_bot_color_response(bot_output)
-
-                else:
-                    bot_output: str = ''
+                bot_output: str = '&c&lIncompatible'
 
                 return BedrockServerData(
                     ip_address=str(self.ip_address),
