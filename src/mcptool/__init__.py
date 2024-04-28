@@ -118,6 +118,7 @@ class MCPTool:
         from .modules.commands.server import Command as ServerCommand
         from .modules.commands.uuid import Command as UUIDCommand
         from .modules.commands.ipinfo import Command as IPInfoCommand
+        from .modules.commands.dnslookup import Command as DNSLookupCommand
         from .modules.commands.resolver import Command as ResolverCommand
         from .modules.commands.seeker import Command as SeekerCommand
         from .modules.commands.scan import Command as ScanCommand
@@ -141,6 +142,7 @@ class MCPTool:
             'server': ServerCommand(),
             'uuid': UUIDCommand(),
             'ipinfo': IPInfoCommand(),
+            'dnslookup': DNSLookupCommand(),
             'resolver': ResolverCommand(),
             'seeker': SeekerCommand(),
             'scan': ScanCommand(),

@@ -40,6 +40,19 @@
             "isp": "%spaces%&4[&c&lIS&f&lP&4] &f&l%isp%",
             "organization": "%spaces%&4[&c&lOrgani&f&lzation&4] &f&l%organization%"
         },
+        "resolver": {
+            "arguments": ["domain"],
+            "resolving": "\n%spaces%%prefix% &f&lResolving the entered domain &8&l(&a&l%domain%&8&l)&f&l...",
+            "gettingSubdomainsVirusTotal": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using VirusTotal API...",
+            "gettingSubdomainsHackerTarget": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using HackerTarget API...",
+            "done": "\n%spaces%%prefix% &f&lFinished resolving the entered domain &8&l(&a&l%domain%&8&l)&f&l. Found &a&l%subdomainsAmount% &f&lsubdomains."
+        },
+        "dnslookup": {
+            "arguments": ["domain"],
+            "lookingUp": "\n%spaces%%prefix% &f&lLooking up the entered domain &8&l(&a&l%domain%&8&l)&f&l...",
+            "noRecords": "\n%spaces%%prefix% &f&lNo records found in the entered domain.",
+            "done": "\n%spaces%%prefix% &f&lFinished looking up the entered domain &8&l(&a&l%domain%&8&l)&f&l. Found &a&l%recordsAmount% &f&lrecords."
+        },
         "seeker": {
             "arguments": ["subcommand"],
             "token": {
@@ -150,13 +163,6 @@
             "arguments": ["ip:port", "version", "username", "commands_file"],
             "gettingCommands": "\n%spaces%%prefix% &f&lGetting commands from the file &8(&a&l%file%&8)&f&l...",
             "sendingCommands": "\n%spaces%%prefix% &f&lSending commands to the server &a&l%ip% &f&lusing the user &b&l%username% &f&land the commands file &6&l%commandsFile% &f&l(&6&l%commands% commands&f&l)."
-        },
-        "resolver": {
-            "arguments": ["domain"],
-            "resolving": "\n%spaces%%prefix% &f&lResolving the entered domain &8&l(&a&l%domain%&8&l)&f&l...",
-            "gettingSubdomainsVirusTotal": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using VirusTotal API...",
-            "gettingSubdomainsHackerTarget": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using HackerTarget API...",
-            "done": "\n%spaces%%prefix% &f&lFinished resolving the entered domain &8&l(&a&l%domain%&8&l)&f&l. Found &a&l%subdomainsAmount% &f&lsubdomains."
         }
     },
     "errors": {
