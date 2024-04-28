@@ -3,3 +3,4 @@ mcstatus
 mcrcon
 requests
 loguru
+pypresence

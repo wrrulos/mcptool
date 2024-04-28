@@ -1,5 +1,6 @@
 {
   "language": "en",
+  "discordPresence": true,
   "seekerToken": "YOUR_SEEKER_TOKEN",
   "bot_recconect_time": 4,
   "subdomains_threads": 500,

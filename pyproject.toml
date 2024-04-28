@@ -6,7 +6,8 @@ dependencies = [
     "mcstatus",
     "mcrcon",
     "requests",
-    "loguru"
+    "loguru",
+    "pypresence"
 ]
 
 [project.scripts]

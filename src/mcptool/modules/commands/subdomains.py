@@ -148,7 +148,7 @@ class Command:
             )
             #results.append((host, ip))
 
-        except socket.gaierror:
+        except (socket.gaierror, UnicodeError):
             pass
 
     @logger.catch

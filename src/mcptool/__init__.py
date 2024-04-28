@@ -1,4 +1,9 @@
-import subprocess
+#!/usr/bin/env python3
+
+import pypresence
+import threading
+import struct
+import time
 import os
 
 from loguru import logger
@@ -25,7 +30,7 @@ from mccolors import mcwrite, mcreplace
 from .modules.utilities.managers.language_manager import LanguageManager as LM
 from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
 from .modules.utilities.banners.show_banner import ShowBanner
-from .modules.utilities.constants import VERSION
+from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK
 
 
 class MCPTool:
@@ -34,6 +39,7 @@ class MCPTool:
     def __init__(self, commands_folder_path: str = 'src/mcptool/modules/commands'):
         self.commands_folder_path: str = commands_folder_path
         self.commands: dict = {}
+        self.actual_command: str = f'Using MCPTool v{VERSION}'
 
     @logger.catch
     def run(self):
@@ -42,6 +48,11 @@ class MCPTool:
 
         # Load the commands
         self.commands = self._get_commands()
+
+        # Update the rich presence in another thread
+        rich_presence_thread = threading.Thread(target=self._update_rich_presence, args=([]))
+        rich_presence_thread.daemon = True
+        rich_presence_thread.start()
 
         # Start the command input
         self._command_input()
@@ -79,6 +90,7 @@ class MCPTool:
                     # Execute the command
                     command_instance = self.commands[command_name]
                     command_instance.execute(arguments[1:])
+                    self.actual_command = f'Using the {command_name} command'
 
                 except KeyboardInterrupt:
                     mcwrite(LM().get(['commands', 'ctrlC']))
@@ -143,3 +155,45 @@ class MCPTool:
             'sendcmd': SendCmdCommand(),
             'subdomains': SubdomainsCommand()
         }
+    
+    @logger.catch
+    def _update_rich_presence(self) -> None:
+        """
+        Method to update the rich presence
+        """
+
+        # Initialize the rich presence
+        rpc = pypresence.Presence(MCPTOOL_DISCORD_CLIENT_ID)
+
+        # Set the start time
+        start_time: int = int(time.time())
+
+        try:
+            # Connect to the Discord client
+            rpc.connect()
+
+            while True:
+               rpc.update(
+                    state=self.actual_command,
+                    details='Pentesting Tool for Minecraft',
+                    start=start_time,
+                    large_image='logo',
+                    large_text='Pentesting Tool for Minecraft',
+                    small_image='small_logo',
+                    small_text=f'Version: {VERSION}',
+                    buttons=[
+                        {'label': 'Website', 'url': 'https://www.mcptool.net'},
+                        {'label': 'Discord', 'url': f'https://{DISCORD_LINK}'}
+                    ]
+                )
+               
+               time.sleep(1)
+
+        except (pypresence.exceptions.DiscordNotFound, struct.error, pypresence.exceptions.ServerError, pypresence.exceptions.ResponseTimeout) as e:
+            logger.error(f'Failed to connect to the Discord client. Error: {e}. Retrying in 30 seconds...')
+            time.sleep(30)
+            self._update_rich_presence()
+
+        except (KeyboardInterrupt, ValueError, RuntimeError, OSError):
+            pass
+
