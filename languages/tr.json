@@ -1,0 +1,191 @@
+{
+    "languageName": "Türkçe",
+    "app": {
+        "title": "MCPTool - @wrrulos",
+        "description": "%spaces%&f&l&oMinecraft sunucularını pentest etmek için gelişmiş araç &8&l(&a&l%version%&8&l)",
+        "newVersion": "\n%spaces%&a&lYeni sürüm mevcut! &f&lMCP&c&lTool &f&lkapatın ve güncellemek için terminalde &b&lmcptool update &f&lkomutunu kullanın."
+    },
+    "commands": {
+        "invalidCommand": "\n%spaces%&cGeçersiz Komut. &f&lTüm kullanılabilir komutları görmek için &a&lyardım&f&l kullanın.",
+        "missingArguments": "\n%spaces%&cEksik argümanlar. &f&lDoğru kullanım: &b&l%command% &c&l%arguments%",
+        "ctrlC": "\n%spaces%%prefix% &f&lKomut durduruluyor...",
+        "server": {
+            "arguments": ["ip:port"],
+            "gettingServerData": "\n%spaces%%prefix% &f&lGirilen sunucudan veri alınıyor...",
+            "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lPort&4] &f&l&o%ip%:%port%",
+            "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+            "version": "%spaces%&4[&c&lSürüm&f&l&ion&4] &f&l%version%",
+            "protocol": "%spaces%&4[&c&lProtokol&f&l&4] &f&l&o%protocol%",
+            "connected": "%spaces%&4[&c&lBağlı&f&l&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+            "playerList": "%spaces%&4[&c&lOyuncu&f&lListesi&4] &f&l&o%playerList%",
+            "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+            "modList": "%spaces%&4[&c&lMo&f&ldlar&4] &f&l&o%modList%",
+            "ping": "%spaces%&4[&c&lPing&f&l&4] &f&l&o%ping%ms",
+            "bot": "%spaces%&4[&c&lBot&f&l&4] &f&l&o%bot%"
+        },
+        "uuid": {
+            "arguments": ["kullanıcı_adı"],
+            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGirilen oyuncudan veri alınıyor...",
+            "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
+        },
+        "ipinfo": {
+            "arguments": ["ip_adresi"],
+            "gettingIpData": "\n%spaces%%prefix% &f&lGirilen IP adresinden veri alınıyor...",
+            "error": "\n%spaces%%prefix% &f&lGirilen IP'den veri alınamadı. Muhtemelen geçersiz.",
+            "continent": "\n%spaces%&4[&c&lKıta&f&l&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
+            "country": "%spaces%&4[&c&lÜlke&f&l&4] &f&l%country% &8&l(&b&l+%countryCode%&8&l)",
+            "region": "%spaces%&4[&c&lBölge&f&l&4] &f&l%region% &8&l(&b&l+%regionName%&8&l)",
+            "city": "%spaces%&4[&c&lŞehir&f&l&4] &f&l%city%",
+            "timezone": "%spaces%&4[&c&lZaman Dilimi&f&l&4] &f&l%timezone%",
+            "isp": "%spaces%&4[&c&lİSP&f&l&4] &f&l%isp%",
+            "organization": "%spaces%&4[&c&lOrganizasyon&f&l&4] &f&l%organization%"
+        },
+        "seeker": {
+            "arguments": ["altkomut"],
+            "token": {
+                "arguments": ["token"],
+                "gettingToken": "\n%spaces%%prefix% &f&lToken alınıyor...",
+                "tokenObtained": "\n%spaces%%prefix% &f&lToken başarıyla alındı.",
+                "invalidToken": "\n%spaces%%prefix% &f&lGeçersiz token. Yeni bir token almak için &b&lseeker token &f&lkullanın.",
+                "restart": "\n%spaces%%prefix% &f&lLütfen, aracı yeniden başlatın ve tekrar deneyin."
+            },
+            "servers": {
+                "gettingServers": "\n%spaces%%prefix% &f&lSunucular alınıyor...",
+                "filterByData": "\n%spaces%%prefix% &f&lSunucuları belirli verilere göre filtrelemek ister misiniz? (&b&ly&f&l veya &b&ln&f&l) &8&l▶ &f&l",
+                "filterByCountryCode": "\n%spaces%%prefix% &f&lÜlke koduna göre sunucuları filtrelemek ister misiniz? (&b&ly&f&l veya &b&ln&f&l) &8&l▶ &f&l",
+                "filterByCountryCodeText": "\n%spaces%%prefix% &f&lSunucuları filtrelemek için ülke kodunu girin. &8&l▶ &f&l",
+                "filterByCracked": "\n%spaces%%prefix% &f&lSunucuları kırık durumuna göre filtrelemek ister misiniz? (&b&ly&f&l veya &b&ln&f&l) &8&l▶ &f&l",
+                "filterByDescription": "\n%spaces%%prefix% &f&lSunucuları açıklamaya göre filtrelemek ister misiniz? (&b&ly&f&l veya &b&ln&f&l) &8&l▶ &f&l",
+                "filterByDescriptionText": "\n%spaces%%prefix% &f&lSunucuları filtrelemek için açıklamayı girin. &8&l▶ &f&l",
+                "filterByOnlyBungeespoofable": "\n%spaces%%prefix% &f&lSadece bungeespoofable'a göre sunucuları filtrelemek ister misiniz? (&b&ly&f&l veya &b&ln&f&l) &8&l▶ &f&l",
+                "filterByProtocol": "\n%spaces%%prefix% &f&lSunucuları protokole göre filtrelemek ister misiniz? (&b&ly&f&l veya &b&ln&f&l) &8&l▶ &f&l",
+                "filterByProtocolText": "\n%spaces%%prefix% &f&lSunucuları filtrelemek için protokolü girin. &8&l▶ &f&l",
+                "serversObtained": "\n%spaces%%prefix% &f&l%servers% sunucuları başarıyla alındı.",
+                "gettingData": "\n%spaces%%prefix% &f&lSunuculardan veri alınıyor...",
+                "noServers": "\n%spaces%%prefix% &f&lSunucu bulunamadı. Daha sonra tekrar deneyin veya filtreleri değiştirin."
+            }
+        },
+        "scan": {
+            "arguments": ["ip_adresi", "port_aralığı", "method"],
+            "scanning": "\n%spaces%%prefix% &f&lGirilen IP adresi &8&l(&a&l%ip%&8&l) &f&lve port aralığı &a&l%portRange% &f&lile yöntem &a&l%method%&f&lile taranıyor...",
+            "noOpenPorts": "\n%spaces%%prefix% &f&lGirilen IP adresinde açık port bulunamadı.",
+            "openPorts": "\n%spaces%%prefix% &a&l%openPorts% &f&laçık portlar girilen IP adresinde bulundu."
+        },
+        "connect": {
+            "arguments": ["ip:port", "sürüm", "kullanıcı_adı"],
+            "connecting": "\n%spaces%%prefix% &f&lGirilen sunucuya bağlanılıyor..."
+        },
+        "kick": {
+            "arguments": ["ip:port", "sürüm", "kullanıcı_adı", "loop"],
+            "kickingPlayer": "\n%spaces%%prefix% &f&lOyuncu %username%'ı %version% sürümünü kullanarak %ip% sunucusundan atılıyor...",
+            "playerKicked": "\n%spaces%%prefix% &f&lOyuncu &a&l%username% &f&lbaşarıyla sunucudan atıldı.",
+            "playerNotKicked": "\n%spaces%%prefix% &f&lOyuncu %username% sunucudan atılamadı. Sebep: %reason%"
+        },
+        "kickall": {
+            "arguments": ["ip:port", "sürüm", "loop"],
+            "gettingPlayers": "\n%spaces%%prefix% &f&lSunucudan oyuncular alınıyor &a&l%ip%&f&l...",
+            "noPlayers": "\n%spaces%%prefix% &f&lSunucuda oyuncu bulunamadı &c&l%ip%&f&l.",
+            "allPlayersKicked": "\n%spaces%%prefix% &f&lTüm oyuncular sunucudan başarıyla atıldı."
+        },
+        "listening": {
+            "arguments": ["ip:port"],
+            "connecting": "\n%spaces%%prefix% &f&l&8&l%ip% &a&lile sunucuya bağlanılıyor",
+            "waitingForConnections": "\n%spaces%%prefix% &f&l&8&l%ip% sunucusundan bağlantılar dinleniyor. Bağlantılar bekleniyor...",
+            "playersFound": "\n%spaces%%prefix% &f&lSunucudan oyuncular yakalandı:\n",
+            "playerFoundFormat": "%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
+        },
+        "bruteauth": {
+            "arguments": ["ip:port", "sürüm", "kullanıcı_adı", "parolalar_dosyası"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lParolalar &8(&a&l%file%&8)&f&lden alınıyor...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lSunucudaki kimlik doğrulama eklentisine brute force saldırısı başlatılıyor &a&l%ip% &f&l%username% kullanıcısı ve parola listesi &6&l%passwordFile% &f&l(&6&l1000 parola&f&l)."
+        },
+        "proxy": {
+            "arguments": ["ip:port", "proxy_türü"],
+            "configuringProxy": "\n%spaces%%prefix% &f&lProxy sunucu yapılandırılıyor &8(&a&l%proxyType%&8)&f&l... ",
+            "proxyConfigured": "\n%spaces%%prefix% &f&lProxy sunucu başarıyla yapılandırıldı.",
+            "velocityForwardingMode": "\n%spaces%%prefix% &f&lKullanmak istediğiniz hız modunu yazın. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
+            "downloadingJar": "\n%spaces%%prefix% &f&lProxy jar dosyası (%jarName%) indiriliyor...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar dosyası başarıyla indirildi.",
+            "replacingJar": "\n%spaces%%prefix% &f&lProxy jar dosyası değiştiriliyor...",
+            "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar dosyası başarıyla değiştirildi.",
+            "startingProxy": "\n%spaces%%prefix% &f&lProxy sunucusu başlatılıyor...",
+            "proxyStarted": "\n%spaces%%prefix% &f&lProxy sunucusu başarıyla &a&l%proxyIp%:%proxyPort%&f&lda başlatıldı."
+        },
+        "fakeproxy": {
+            "arguments": ["ip:port", "hız_ilerleme_modu"],
+            "connected": "\n%spaces%%prefix% &b&l%time% 🟢 &f&l%username% &8(&a&l%ipAddress%&8) &f&lsahte proxy sunucusuna bağlandı",
+            "disconnected": "\n%spaces%%prefix% &b&l%time% 🔴 &f&l%username% &8(&a&l%ipAddress%&8) &f&lgerçek proxy sunucusundan ayrıldı",
+            "chat": "\n%spaces%%prefix% &b&l%time% ✉️ &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&l%message%",
+            "command": "\n%spaces%%prefix% &b&l%time% 💣 &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&lkomut kullanıldı &b&l%command%"
+        },
+        "rcon": {
+            "arguments": ["ip:port", "şifre"],
+            "connecting": "\n%spaces%%prefix% &f&lRCON sunucusuna bağlanılıyor &a&l%ip%&f&l...",
+            "connected": "\n%spaces%%prefix% &f&lRCON sunucusuna başarıyla bağlanıldı.",
+            "commandInput": "\n%spaces%%prefix% &f&lRCON sunucusunda çalıştırmak istediğiniz komutu girin. &8&l▶ &f&l",
+            "disconnected": "\n%spaces%%prefix% &f&lRCON sunucusundan bağlantı kesildi."
+        },
+        "brutercon": {
+            "arguments": ["ip:port", "şifreler_dosyası"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lŞifreler &8(&a&l%file%&8)&f&lden alınıyor...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lSunucudaki RCON sunucusuna brute force saldırısı başlatılıyor &a&l%ip% &f&lparola listesi &6&l%passwordFile% &f&l(&6&l%passwords% şifre&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lŞifre bulundu: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lŞifre dosyasında bulunamadı."
+        },
+        "checker": {
+            "arguments": ["dosya"],
+            "checking": "\n%spaces%%prefix% &f&lDosya &a&l%file%&f&l içinde sunucular aranıyor...",
+            "noServersFound": "\n%spaces%%prefix% &f&lDosya &c&l%file%&f&l içinde sunucu bulunamadı.",
+            "serversFound": "\n%spaces%%prefix% &a&l%servers% &f&lsunucu dosya &a&l%file%&f&l içinde bulundu."
+        },
+        "subdomains": {
+            "arguments": ["domain", "wordlist"],
+            "wordlist": "\n%spaces%%prefix% &f&lWordlist: &a&l%file% &8&l(&a&l%subdomains% alt alan adı&8&l)",
+            "gettingSubdomains": "\n%spaces%%prefix% &f&lGirilen alan adından alt alan adları alınıyor...",
+            "subdomainFound": "%spaces%%prefix% &f&lAlt alan adı bulundu: &a&l%subdomain% &8(&a&l%ip%&8)",
+            "noSubdomains": "\n%spaces%%prefix% &f&lGirilen alan adında wordlist &a&l%file%&f&l kullanarak alt alan adı bulunamadı.",
+            "subdomainsFound": "\n%spaces%%prefix% &a&l%subdomains% &f&lalt alan adı girilen alan adında bulundu."
+        },
+        "sendcmd": {
+            "arguments": ["ip:port", "sürüm", "kullanıcı_adı", "komutlar_dosyası"],
+            "gettingCommands": "\n%spaces%%prefix% &f&lKomutlar &8(&a&l%file%&8)&f&lden alınıyor...",
+            "sendingCommands": "\n%spaces%%prefix% &f&lSunucuya komutlar gönderiliyor &a&l%ip% &f&l%username% kullanıcısı ve komut dosyası &6&l%commandsFile% &f&l(&6&l%commands% komut&f&l)."
+        }
+    },
+    "errors": {
+        "serverOffline": "\n%spaces%%prefix% &f&lGirilen sunucudan veri alınamadı. Muhtemelen kapalı.",
+        "invalidServerFormat": "\n%spaces%%prefix% &f&lGirilen sunucu formatı geçerli değil. &c&lip:port &f&lya da &c&ldomain&f&l girmelisiniz.",
+        "invalidDomain": "\n%spaces%%prefix% &f&lGirilen domain geçerli değil. Domain'i kontrol edip tekrar deneyin.",
+        "invalidIpFormat": "\n%spaces%%prefix% &f&lGirilen IP formatı geçerli değil. Geçerli bir IP girmelisiniz.",
+        "invalidIpRange": "\n%spaces%%prefix% &f&lGirilen IP aralığı geçerli değil. Geçerli bir IP aralığı girmelisiniz.",
+        "invalidPortFormat": "\n%spaces%%prefix% &f&lGirilen port formatı geçerli değil. Geçerli bir port girmelisiniz.",
+        "invalidPortRange": "\n%spaces%%prefix% &f&lGirilen port aralığı geçerli değil. Geçerli bir port aralığı girmelisiniz.",
+        "invalidIpAndPort": "\n%spaces%%prefix% &f&lGirilen IP ve port geçerli değil. Geçerli bir IP ve port girmelisiniz.",
+        "invalidScanMethod": "\n%spaces%%prefix% &f&lGirilen tarama yöntemi geçerli değil. %methods% girmelisiniz.",
+        "invalidYesNo": "\n%spaces%%prefix% &f&lEvet için &b&ly &f&lya da &b&ln&f&l girmelisiniz.",
+        "invalidEndpoint": "\n%spaces%%prefix% &f&lAyarlar dosyasındaki endpoint geçerli değil. Ayarlar dosyasını kontrol edip tekrar deneyin.",
+        "invalidFile": "\n%spaces%%prefix% &f&lGirilen dosya geçerli değil. Dosyayı kontrol edip tekrar deneyin.",
+        "invalidProxyType": "\n%spaces%%prefix% &f&lGirilen proxy türü geçerli değil. &c&lvelocity &f&lya da &c&lwaterfall&f&l girmelisiniz.",
+        "invalidVelocityMode": "\n%spaces%%prefix% &f&lGirilen velocity modu geçerli değil. &c&lnone &f&lya da &c&llegacy &f&lya da &c&lbungeeguard &f&lya da &c&lmodern&f&l girmelisiniz.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lEndpoint'e bağlanılamadı. Endpoint muhtemelen çevrimdışı.",
+        "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap kurulu değil. Kurun ve tekrar deneyin.",
+        "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan kurulu değil. Kurun ve tekrar deneyin.",
+        "javaNotInstalled": "\n%spaces%%prefix% &f&lJava kurulu değil. Kurun ve tekrar deneyin.",
+        "quboJarNotFound": "\n%spaces%%prefix% &f&lQubo jar dosyası bulunamadı. Daha fazla bilgi için günlüklere bakın.",
+        "notJavaServer": "\n%spaces%%prefix% &f&lBu komut yalnızca Java sunucularında kullanılabilir.",
+        "subdomainsFileEmpty": "\n%spaces%%prefix% &f&lAlt alanlar dosyası boş. Dosyaya alt alanlar ekleyip tekrar deneyin.",
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lŞifreler dosyası boş. Dosyaya şifreler ekleyip tekrar deneyin.",
+        "proxyPathNotFound": "\n%spaces%%prefix% &f&lGirilen proxy yol geçerli değil. Günlüklere bakın ve tekrar deneyin.",
+        "proxySettingsNotFound": "\n%spaces%%prefix% &f&lAyarlar dosyasında proxy ayarları bulunamadı. Günlüklere bakın ve tekrar deneyin.",
+        "proxyNotConfigured": "\n%spaces%%prefix% &f&lProxy sunucusu yapılandırılmadı. Günlüklere bakın ve tekrar deneyin.",
+        "proxyJarNotFound": "\n%spaces%%prefix% &f&lProxy jar dosyası bulunamadı. Daha fazla bilgi için günlüklere bakın.",
+        "javaVersionNotSupported": "\n%spaces%%prefix% &f&lJava sürümü desteklenmiyor. Java 19 veya daha yüksek kullanmalısınız.",
+        "invalidJarFile": "\n%spaces%%prefix% &f&lGirilen jar dosyası geçerli değil. Daha fazla bilgi için günlüklere bakın.",
+        "velocityTomlError": "\n%spaces%%prefix% &f&lVelocity.toml dosyasında bir hata oluştu. Daha fazla bilgi için günlüklere bakın.",
+        "rconTimeout": "\n%spaces%%prefix% &f&lRCON sunucusuna bağlantı zaman aşımına uğradı. IP'yi ve portu ya da RCON şifresini kontrol edip tekrar deneyin.",
+        "rconConnectionRefused": "\n%spaces%%prefix% &f&lRCON sunucusuna bağlantı reddedildi. IP'yi ve portu ya da RCON şifresini kontrol edip tekrar deneyin.",
+        "rconInvalidPassword": "\n%spaces%%prefix% &f&lGirilen RCON şifresi geçerli değil. Şifreyi kontrol edip tekrar deneyin.",
+        "rconUnknownError": "\n%spaces%%prefix% &f&lRCON sunucusuna bağlanırken bilinmeyen bir hata oluştu. Daha fazla bilgi için günlüklere bakın.",
+        "commandsFileEmpty": "\n%spaces%%prefix% &f&lKomutlar dosyası boş. Komutları dosyaya ekleyip tekrar deneyin."
+    }
+}
