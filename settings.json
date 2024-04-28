@@ -21,6 +21,8 @@
     "showScanOutput": false
   },
   "proxyOptions": {
+    "fakeproxyCommandPrefix": "..",
+    "fakeproxyUpdateDelay": "2",
     "waterfallPort": 25570,
     "velocityPort": 25580,
     "fakeproxyPort": 33330
