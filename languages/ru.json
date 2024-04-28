@@ -96,10 +96,8 @@
         },
         "bruteauth": {
             "arguments": ["ip:port", "version", "username", "passwords_file"],
-            "gettingPasswords": "\n%spaces%%prefix% &f&lПолучение паролей из файла...",
-            "bruteForcing": "\n%spaces%%prefix% &f&lЗапуск брутфорса игрока &b&l%username% &f&lна сервере &a&l%ip% &f&l. Пасслист: &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l).",
-            "passwordFound": "\n%spaces%%prefix% &f&lПароль: &a&l%password%",
-            "passwordNotFound": "\n%spaces%%prefix% &f&lПароль не был найден."
+            "gettingPasswords": "\n%spaces%%prefix% &f&lПолучение паролей из файла &8(&a&l%file%&8)&f&l...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lЗапуск брутфорса игрока &b&l%username% &f&lна сервере &a&l%ip%&f&l. Пасслист: &6&l%passwordFile% &f&l(&6&l%passwords% паролей&f&l).",
         },
         "proxy": {
             "arguments": ["ip:port", "proxy_type"],
@@ -113,17 +111,51 @@
             "startingProxy": "\n%spaces%%prefix% &f&lЗапуск прокси...",
             "proxyStarted": "\n%spaces%%prefix% &f&lПрокси сервер был успешно запущен по пути &a&l%proxyIp%:%proxyPort%&f&l."
         },
+        "fakeproxy": {
+            "arguments": ["ip:port", "velocity_forwading_mode"],
+            "connected": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &f&lподключился к фейк-прокси",
+            "disconnected": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &f&lотключился от фейк-прокси",
+            "chat": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&l%message%",
+            "command": "\n%spaces%%prefix% &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&lввёл команду &b&l%command%"
+        },
         "rcon": {
             "arguments": ["ip:port", "password"],
             "connecting": "\n%spaces%%prefix% &f&lПодключение к RCON серверу &a&l%ip%&f&l...",
             "connected": "\n%spaces%%prefix% &f&lПодключение к RCON серверу успешно.",
             "commandInput": "\n%spaces%%prefix% &f&Введите команду для RCON. &8&l▶ &f&l",
             "disconnected": "\n%spaces%%prefix% &f&lОтключение от RCON сервера успешно."
+        },
+        "brutercon": {
+            "arguments": ["ip:port", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lПолучение паролей из файла &8(&a&l%file%&8)&f&l...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lЗапуск брутфорса RCON на сервере &a&l%ip%&f&l. Пасслист: &6&l%passwordFile% &f&l(&6&l%passwords% паролей&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lПароль найден: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lПароль не был найден в файле."
+        },
+        "checker": {
+            "arguments": ["file"],
+            "checking": "\n%spaces%%prefix% &f&lПоиск серверов в файле &a&l%file%&f&l...",
+            "noServersFound": "\n%spaces%%prefix% &a&l0 &f&lсерверов найдено в файле &c&l%file%&f&l.",
+            "serversFound": "\n%spaces%%prefix% &a&l%servers% &f&lсерверов найдено в файле &a&l%file%&f&l."
+        },
+        "subdomains": {
+            "arguments": ["domain", "wordlist"],
+            "wordlist": "\n%spaces%%prefix% &f&lВордлист: &a&l%file% &8&l(&a&l%subdomains% поддоменов&8&l)",
+            "gettingSubdomains": "\n%spaces%%prefix% &f&lПоиск поддоменов на домене...",
+            "subdomainFound": "\n%spaces%%prefix% &f&lПоддомен найден: &a&l%subdomain% &8(&a&l%ip%&8)",
+            "noSubdomains": "\n%spaces%%prefix% &f&lНе найдены поддомены с вордлистом &a&l%file%&f&l.",
+            "subdomainsFound": "\n%spaces%%prefix% &a&l%subdomains% &f&lподдоменов найдено на домене."
+        },
+        "sendcmd": {
+            "arguments": ["ip:port", "version", "username", "commands_file"],
+            "gettingCommands": "\n%spaces%%prefix% &f&lПолучение команд из файла &8(&a&l%file%&8)&f&l...",
+            "sendingCommands": "\n%spaces%%prefix% &f&lОтправка комманд на сервер &a&l%ip% &f&lиспользуя ник &b&l%username%. &f&lСписок комманд: &6&l%commandsFile% &f&l(&6&l%commands% команд&f&l)."
         }
     },
     "errors": {
         "serverOffline": "\n%spaces%%prefix%&f&lНе удалось получить данные о сервере. Возможно, он выключен.",
         "invalidServerFormat": "\n%spaces%%prefix%&f&lНеверный формат сервера. Вы должны использовать &c&lip:порт &f&lили &c&lдомен&f&l.",
+        "invalidDomain": "\n%spaces%%prefix% &f&lНеверный формат домена. Вы должны использовать верный домен.",
         "invalidIpFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный IP адрес.",
         "invalidIpRange": "\n%spaces%%prefix% &f&lНеверный радиус IP адреса. Вы должны использовать верный радиус IP адреса.",
         "invalidPortFormat": "\n%spaces%%prefix%&f&lНеверный формат IP адреса. Вы должны использовать верный порт.",
@@ -134,13 +166,15 @@
         "invalidEndpoint": "\n%spaces%%prefix% &f&lНастройки конечной точки неверные. Проверьте файл с настройками и попробуйте снова.",
         "invalidFile": "\n%spaces%%prefix% &f&lНеверный файл. Вы должны использовать верный файл.",
         "invalidProxyType": "\n%spaces%%prefix% &f&lТип прокси неверный. Вы должны использовать &c&lvelocity &f&lили &c&lwaterfall&f&l.",
+        "invalidVelocityMode": "\n%spaces%%prefix% &f&lТип Velocity неверный. Вы должны использовать &c&lnone &f&lили &c&llegacy &f&lили &c&lbungeeguard &f&lили &c&lmodern&f&l.",
         "endpointConnectionError": "\n%spaces%%prefix% &f&lНе удалось подключиться к конечной точке. Возможно, конечная точка отключена.",
         "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap не установлен. Установите его, а затем попробуйте снова.",
         "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan не установлен. Установите его, а затем попробуйте снова.",
         "javaNotInstalled": "\n%spaces%%prefix% &f&lJava не установлен. Установите её, а затем попробуйте снова..",
         "quboJarNotFound": "\n%spaces%%prefix% &f&lJar файл Qubo был не найден. Проверьте логи для большей информации.",
         "notJavaServer": "\n%spaces%%prefix% &f&lЭта команда работает только на серверах Java.",
-        "passwordFileEmpty": "\n%spaces%%prefix% &f&lФайл с паролями пуст. Добавьте туда пароли и попробуйте снова",
+        "subdomainsFileEmpty": "\n%spaces%%prefix% &f&lФайл с поддоменами пуст. Добавьте туда поддомены и попробуйте снова.",
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lФайл с паролями пуст. Добавьте туда пароли и попробуйте снова.",
         "proxyPathNotFound": "\n%spaces%%prefix% &f&lНеверный путь к прокси. Проверьте логи для большей информации.",
         "proxySettingsNotFound": "\n%spaces%%prefix% &f&lНастройки прокси были не найдены. Проверьте логи для большей информации.",
         "proxyNotConfigured": "\n%spaces%%prefix% &f&lПрокси сервер не настроен. Проверьте логи для большей информации.",
@@ -152,5 +186,6 @@
         "rconConnectionRefused": "\n%spaces%%prefix% &f&lRCON сервер отклонил подключение. Проверьте IP, порт и RCON пароль.",
         "rconInvalidPassword": "\n%spaces%%prefix% &f&lНеверный пароль. Проверьте пароль.",
         "rconUnknownError": "\n%spaces%%prefix% &f&lНе удалось подключиться к RCON серверу. Проверьте логи для большей информации.",
+        "commandsFileEmpty": "\n%spaces%%prefix% &f&lФайл с командами пуст. Добавьте туда команды и попробуйте снова."
     }
 }
