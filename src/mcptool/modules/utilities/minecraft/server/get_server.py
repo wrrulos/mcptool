@@ -10,15 +10,18 @@ from loguru import logger
 
 from ..bot.server_response import BotServerResponse
 from ..bot.utilities import BotUtilities
+from ..text.text_utilities import TextUtilities
 
 
 class JavaServerData:
-    def __init__(self, ip_address: str, port: int, motd: str, version: str, protocol: str, connected_players: str, max_players: str, players: str, player_list: list, mod: str, mods: list, favicon: Union[str, None], ping: int, bot_output: str) -> None:
+    def __init__(self, ip_address: str, port: int, motd: str, original_motd: str, version: str, original_version: str, protocol: str, connected_players: str, max_players: str, players: str, player_list: list, mod: str, mods: list, favicon: Union[str, None], ping: int, bot_output: str) -> None:
         self.platform = 'Java'
         self.ip_address = ip_address
         self.port = port
         self.motd = motd
+        self.original_motd = original_motd
         self.version = version
+        self.original_version = original_version
         self.protocol = protocol
         self.connected_players = connected_players
         self.max_players = max_players
@@ -138,7 +141,9 @@ class MCServerData:
                     ip_address=str(self.ip_address),
                     port=int(self.port),
                     motd=MCServerData._clean_output(data.description),
+                    original_motd=data.description,
                     version=MCServerData._clean_output(data.version.name),
+                    original_version=data.version.name,
                     protocol=str(data.version.protocol),
                     connected_players=str(data.players.online),
                     max_players=str(data.players.max),
@@ -250,4 +255,7 @@ class MCServerData:
 
         # Replace multiple spaces with a single space.
         output = re.sub(' +', ' ', output)
+
+        # Replace Minecraft color codes with MiniMessage colored characters.
+        output = TextUtilities.minecraft_colors(output)
         return output

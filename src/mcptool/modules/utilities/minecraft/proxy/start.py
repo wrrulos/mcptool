@@ -11,15 +11,17 @@ from loguru import logger
 from ....utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ....utilities.managers.language_manager import LanguageManager as LM
 from ...managers.settings_manager import SettingsManager as SM
+from ..text.text_utilities import TextUtilities
 from ...path.mcptool_path import MCPToolPath
-from ...constants import OS_NAME, SPACES
+from ...constants import OS_NAME
 from .jar import JarManager
 
 
 class Fakeproxy:
-    def __init__(self, process: subprocess.Popen, server_data: JavaServerData) -> None:
+    def __init__(self, process: subprocess.Popen, server_data: JavaServerData, target: str) -> None:
         self.process: subprocess.Popen = process
         self.server_data: JavaServerData = server_data
+        self.target = target
 
     @logger.catch
     def configure(self) -> None:
@@ -51,11 +53,14 @@ class Fakeproxy:
         while True:
             time.sleep(1)
 
+            # Update the data for the fakeproxy (motd, players, etc.)
+            self._update_fakeproxy_data()
+
             if not os.path.exists(data_file_path):
                 continue
 
             with open(data_file_path, 'r', encoding='utf8') as file:
-                data_file_lines = file.readlines()
+                data_file_lines: list = file.readlines()
 
                 while True:
                     try:
@@ -104,6 +109,63 @@ class Fakeproxy:
                     except IndexError:
                         break
 
+    @logger.catch
+    def _update_fakeproxy_data(self) -> None:
+        """
+        Method to update the fakeproxy data (motd, players, etc.)
+        """
+
+        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=self.target, bot=False).get()
+
+        if server_data is None:
+            return
+        
+        if server_data.platform != 'Java':
+            return
+        
+        rpoisoner_plugin_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/plugins/RPoisoner'
+        motd_file_path: str = f'{rpoisoner_plugin_path}/settings/motd'
+        version_file_path: str = f'{rpoisoner_plugin_path}/settings/version'
+        protocol_file_path: str = f'{rpoisoner_plugin_path}/settings/protocol'
+        online_players_file_path: str = f'{rpoisoner_plugin_path}/settings/onlinePlayers'
+        max_players_file_path: str = f'{rpoisoner_plugin_path}/settings/maximumPlayers'
+        samplePlayers_file_path: str = f'{rpoisoner_plugin_path}/settings/samplePlayers'
+        
+        # Set the motd of the fakeproxy
+        with open(motd_file_path, 'w+', encoding='utf8') as file:
+            file.truncate(0)
+            file.write(TextUtilities.minimessage_colors(server_data.original_motd))
+
+        # Set the version of the fakeproxy
+        with open(version_file_path, 'w+', encoding='utf8') as file:
+            file.truncate(0)
+            file.write(TextUtilities.minimessage_colors(server_data.original_version))
+
+        # Set the protocol of the fakeproxy
+        with open(protocol_file_path, 'w+', encoding='utf8') as file:
+            file.truncate(0)
+            file.write(server_data.protocol)
+            
+        # Set the online players of the fakeproxy
+        with open(online_players_file_path, 'w+', encoding='utf8') as file:
+            file.truncate(0)
+            file.write(server_data.connected_players)
+        
+        # Set the maximum players of the fakeproxy
+        with open(max_players_file_path, 'w+', encoding='utf8') as file:
+            file.truncate(0)
+            file.write(server_data.max_players)
+
+        # Set the sample players of the fakeproxy
+        if server_data.player_list is not None and len(server_data.player_list) > 0:
+            with open(samplePlayers_file_path, 'w+', encoding='utf8') as file:
+                file.truncate(0)
+
+                for player in server_data.player_list:
+                    username: str = player['name']
+                    uuid: str = player['id']
+                    file.write(f'{username}/#-#/{uuid}\n')
+        
     @logger.catch
     def _set_favicon(self) -> None:
         """
@@ -212,7 +274,7 @@ class StartProxy:
             return
         
         if self.proxy == 'fakeproxy':
-            Fakeproxy(process=process, server_data=server_data).configure()
+            Fakeproxy(process=process, server_data=server_data, target=self.target).configure()
 
         else:
             process.wait()
