@@ -78,7 +78,7 @@ class MCPToolPath:
 
             if response.status_code != 200:
                 mcwrite(f'&cError downloading file: {path}')
-                logger.error(f'Error downloading file: {response.status_code}')
+                logger.error(f'Error downloading file: {response.status_code} from {url}')
                 return
 
             with open(path, 'wb') as file:
@@ -203,7 +203,7 @@ class MCPToolPath:
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'plugins', 'MCPTool-1.1-SNAPSHOT.jar'))
             },
             'mcptool_fakeproxy_plugin': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jars/RPoisoner-1.1-SNAPSHOT.jar',
+                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jar/RPoisoner-1.1-SNAPSHOT.jar',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
             }
         }

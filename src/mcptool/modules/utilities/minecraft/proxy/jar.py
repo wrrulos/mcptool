@@ -2,7 +2,6 @@ import requests
 import os
 
 from loguru import logger
-from typing import Union
 from mccolors import mcwrite
 
 from ...path.mcptool_path import MCPToolPath
@@ -16,11 +15,10 @@ class JarManager:
         self.jar_path = jar_path
         
     @logger.catch
-    def check(self) -> bool:
+    def check(self) -> None:
         """
         Method to check if the jar file exists
         """
-        print(self.jar_name, self.jar_path)
 
         self._get_latest_version()
 
@@ -44,7 +42,7 @@ class JarManager:
             self._replace_jar()
 
     @logger.catch
-    def _get_latest_version(self) -> Union[str, None]:
+    def _get_latest_version(self) -> None:
         """
         Method to get the latest version of the jar file
 
