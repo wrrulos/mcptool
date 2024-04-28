@@ -119,6 +119,7 @@ class MCPTool:
         from .modules.commands.rcon import Command as RconCommand
         from .modules.commands.checker import Command as CheckerCommand
         from .modules.commands.sendcmd import Command as SendCmdCommand
+        from .modules.commands.subdomains import Command as SubdomainsCommand
 
         return {
             'clear': ClearCommand(),
@@ -139,5 +140,6 @@ class MCPTool:
             'fakeproxy': FakeProxyCommand(),
             'rcon': RconCommand(),
             'checker': CheckerCommand(),
-            'sendcmd': SendCmdCommand()
+            'sendcmd': SendCmdCommand(),
+            'subdomains': SubdomainsCommand()
         }

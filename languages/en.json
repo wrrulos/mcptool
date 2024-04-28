@@ -138,6 +138,14 @@
             "noServersFound": "\n%spaces%%prefix% &f&lNo servers found in the file &c&l%file%&f&l.",
             "serversFound": "\n%spaces%%prefix% &a&l%servers% &f&lservers found in the file &a&l%file%&f&l."
         },
+        "subdomains": {
+            "arguments": ["domain", "wordlist"],
+            "wordlist": "\n%spaces%%prefix% &f&lWordlist: &a&l%file% &8&l(&a&l%subdomains% subdomains&8&l)",
+            "gettingSubdomains": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain...",
+            "subdomainFound": "\n%spaces%%prefix% &f&lSubdomain found: &a&l%subdomain% &8(&a&l%ip%&8)",
+            "noSubdomains": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain using the wordlist &a&l%file%&f&l.",
+            "subdomainsFound": "\n%spaces%%prefix% &a&l%subdomains% &f&lsubdomains found in the entered domain."
+        },
         "sendcmd": {
             "arguments": ["ip:port", "version", "username", "commands_file"],
             "gettingCommands": "\n%spaces%%prefix% &f&lGetting commands from the file &8(&a&l%file%&8)&f&l...",
@@ -147,6 +155,7 @@
     "errors": {
         "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off.",
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
+        "invalidDomain": "\n%spaces%%prefix% &f&lThe domain entered is not valid. Check the domain and try again.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
         "invalidIpRange": "\n%spaces%%prefix% &f&lThe IP range entered is not valid. You have to enter a valid IP range.",
         "invalidPortFormat": "\n%spaces%%prefix% &f&lThe port format entered is not valid. You have to enter a valid port.",
@@ -164,6 +173,7 @@
         "javaNotInstalled": "\n%spaces%%prefix% &f&lJava is not installed. Install it and try again.",
         "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
         "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers.",
+        "subdomainsFileEmpty": "\n%spaces%%prefix% &f&lThe subdomains file is empty. Add subdomains to the file and try again.",
         "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again.",
         "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again.",
         "proxySettingsNotFound": "\n%spaces%%prefix% &f&lThe proxy settings were not found in the settings file. Check the logs and try again.",
