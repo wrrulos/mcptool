@@ -150,6 +150,13 @@
             "arguments": ["ip:port", "version", "username", "commands_file"],
             "gettingCommands": "\n%spaces%%prefix% &f&lGetting commands from the file &8(&a&l%file%&8)&f&l...",
             "sendingCommands": "\n%spaces%%prefix% &f&lSending commands to the server &a&l%ip% &f&lusing the user &b&l%username% &f&land the commands file &6&l%commandsFile% &f&l(&6&l%commands% commands&f&l)."
+        },
+        "resolver": {
+            "arguments": ["domain"],
+            "resolving": "\n%spaces%%prefix% &f&lResolving the entered domain &8&l(&a&l%domain%&8&l)&f&l...",
+            "gettingSubdomainsVirusTotal": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using VirusTotal API...",
+            "gettingSubdomainsHackerTarget": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using HackerTarget API...",
+            "done": "\n%spaces%%prefix% &f&lFinished resolving the entered domain &8&l(&a&l%domain%&8&l)&f&l. Found &a&l%subdomainsAmount% &f&lsubdomains."
         }
     },
     "errors": {
@@ -186,6 +193,7 @@
         "rconConnectionRefused": "\n%spaces%%prefix% &f&lThe RCON server connection was refused. Check the IP and port or the RCON password and try again.",
         "rconInvalidPassword": "\n%spaces%%prefix% &f&lThe RCON password entered is not valid. Check the password and try again.",
         "rconUnknownError": "\n%spaces%%prefix% &f&lAn unknown error occurred while connecting to the RCON server. Check the logs for more information.",
-        "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again."
+        "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again.",
+        "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain."
     }
 }

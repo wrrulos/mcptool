@@ -65,10 +65,10 @@ class Command:
         self.first_subdomain_found = False
 
         try:
-            num_threads: int = int(SM().get('subdomains_threads'))
+            num_threads: int = int(SM().get('subdomainsThreads'))
 
         except ValueError:
-            logger.warning(f'Invalid value for subdomains_threads. Using default value (500)')
+            logger.warning(f'Invalid value for subdomainsThreads. Using default value (500)')
             num_threads: int = 500
 
         with open(file_path, 'r') as file:
