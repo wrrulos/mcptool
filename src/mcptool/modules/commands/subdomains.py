@@ -17,6 +17,9 @@ class Command:
         self.name: str = 'subdomains'
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
         self.servers_found: int = 0
+        self.subdomain_found_message: str = LM().get(['commands', self.name, 'subdomainFound'])
+        self.first_subdomain_found: bool = False
+        self.stopped: bool = False
 
     @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
@@ -59,6 +62,7 @@ class Command:
         file_path: str = arguments[1]
         subdomains_found: int = 0
         results: list = []
+        self.first_subdomain_found = False
 
         try:
             num_threads: int = int(SM().get('subdomains_threads'))
@@ -92,32 +96,31 @@ class Command:
         # Create the threads
         threads: list = []
 
-        # Scan the subdomains
-        for chunk in chunks:
-            thread = threading.Thread(target=self._scan_chunk, args=(domain, chunk, results))
-            threads.append(thread)
-            thread.start()
+        try:
+            # Scan the subdomains
+            for chunk in chunks:
+                thread = threading.Thread(target=self._scan_chunk, args=(domain, chunk, results))
+                threads.append(thread)
+                thread.start()
 
-        # Wait for all threads to finishs
-        for thread in threads:
-            thread.join()
+            # Wait for all threads to finishs
+            for thread in threads:
+                thread.join()
+                
+            if subdomains_found == 0:
+                mcwrite(LM().get(['commands', self.name, 'noSubdomains'])
+                    .replace('%file%', file_path)
+                )
+                
+            else:
+                mcwrite(LM().get(['commands', self.name, 'subdomainsFound'])
+                    .replace('%subdomains%', str(subdomains_found))
+                )
 
-        for subdomain, ip in results:
-            mcwrite(LM().get(['commands', self.name, 'subdomainFound'])
-                .replace('%subdomain%', subdomain)
-                .replace('%ip%', ip)
-            )
-            subdomains_found += 1
+        except KeyboardInterrupt:
+            # Kill all threads
+            self.stopped = True
 
-        if subdomains_found == 0:
-            mcwrite(LM().get(['commands', self.name, 'noSubdomains'])
-                .replace('%file%', file_path)
-            )
-            
-        else:
-            mcwrite(LM().get(['commands', self.name, 'subdomainsFound'])
-                .replace('%subdomains%', str(subdomains_found))
-            )
 
     @logger.catch
     def _scan_subdomain(self, domain: str, subdomain: str, results: list) -> None:
@@ -132,9 +135,18 @@ class Command:
         """
 
         try:
-            host = f'{subdomain}.{domain}'
-            ip = socket.gethostbyname(host)
-            results.append((host, ip))
+            host: str = f'{subdomain}.{domain}'
+            ip: str = socket.gethostbyname(host)
+
+            if not self.first_subdomain_found:
+                print('')
+                self.first_subdomain_found = True
+
+            mcwrite(self.subdomain_found_message
+                .replace('%subdomain%', f'{subdomain}.{domain}')
+                .replace('%ip%', ip)
+            )
+            #results.append((host, ip))
 
         except socket.gaierror:
             pass
@@ -151,4 +163,7 @@ class Command:
         """
 
         for subdomain in chunk:
+            if self.stopped:
+                break
+            
             self._scan_subdomain(domain, subdomain, results)

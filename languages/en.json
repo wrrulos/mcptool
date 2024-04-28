@@ -142,7 +142,7 @@
             "arguments": ["domain", "wordlist"],
             "wordlist": "\n%spaces%%prefix% &f&lWordlist: &a&l%file% &8&l(&a&l%subdomains% subdomains&8&l)",
             "gettingSubdomains": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain...",
-            "subdomainFound": "\n%spaces%%prefix% &f&lSubdomain found: &a&l%subdomain% &8(&a&l%ip%&8)",
+            "subdomainFound": "%spaces%%prefix% &f&lSubdomain found: &a&l%subdomain% &8(&a&l%ip%&8)",
             "noSubdomains": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain using the wordlist &a&l%file%&f&l.",
             "subdomainsFound": "\n%spaces%%prefix% &a&l%subdomains% &f&lsubdomains found in the entered domain."
         },
