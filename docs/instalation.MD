@@ -7,5 +7,4 @@
 
 - NodeJS (It is necessary for bots)
 - Java 17 (It is necessary for proxies)
-- Nmap (Optional)
-- Masscan (Optional)
+- Nmap and Masscan (It is necessary for scan command)
