@@ -206,6 +206,10 @@ class MCPToolPath:
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jar/RPoisoner-1.1-SNAPSHOT.jar',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
             },
+            'mcptool_waterfall_plugin': {
+                'url': 'https://github.com/wrrulos/RBungeeExploit/releases/download/v1.0/RBungeeExploit-1.0.jar',
+                'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'waterfall', 'plugins', 'RBungeeExploit-1.0.jar'))
+            },
             # Imgs
             'server-icon': {
                 'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/img/server-icon.png',
