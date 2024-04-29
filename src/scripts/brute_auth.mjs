@@ -115,7 +115,7 @@ class BruteAuth {
         for (const word of wordsToLogin) {
           if (serverMessage.includes(word)) {
             // Send the login command
-            this.bot.chat(`${loginCommand} ${passwords[loginAttempts]}`);
+            this.bot.bot.chat(`${loginCommand} ${passwords[loginAttempts]}`);
 
             console.log(
               mccolors.translateColors(
@@ -123,6 +123,7 @@ class BruteAuth {
               )
             );
             loginAttempts += 1;
+            
           }
         }
       });
