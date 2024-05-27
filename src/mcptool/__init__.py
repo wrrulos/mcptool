@@ -29,7 +29,7 @@ MCPToolPath().check_files()
 from .modules.utilities.managers.language_manager import LanguageManager as LM
 from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
 from .modules.utilities.banners.show_banner import ShowBanner
-from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK
+from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK, MCPTOOL_WEBSITE, GITHUB_REPOSITORY
 from .modules.commands.clear import Command as ClearCommand
 from .modules.commands.help import Command as HelpCommand
 from .modules.commands.discord import Command as DiscordCommand
@@ -184,8 +184,8 @@ class MCPTool:
                     small_image='small_logo',
                     small_text=f'Version: {VERSION}',
                     buttons=[
-                        {'label': 'Website', 'url': 'https://www.mcptool.net'},
-                        {'label': 'Discord', 'url': f'https://{DISCORD_LINK}'}
+                        {'label': 'Website', 'url': MCPTOOL_WEBSITE},
+                        {'label': 'Discord', 'url': DISCORD_LINK}
                     ]
                 )
 

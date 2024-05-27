@@ -2,7 +2,7 @@ import requests
 
 from loguru import logger
 
-from ..constants import VERSION
+from ..constants import VERSION, GITHUB_REPOSITORY
 
 
 class UpdateUtilities:
@@ -17,7 +17,7 @@ class UpdateUtilities:
         """
 
         try:
-            response = requests.get(f'https://raw.githubusercontent.com/wrrulos/MCPTool/development/settings.json')
+            response = requests.get(f'{GITHUB_REPOSITORY}settings.json')
 
             if response.status_code != 200:
                 return False

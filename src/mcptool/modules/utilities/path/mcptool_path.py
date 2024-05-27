@@ -6,7 +6,7 @@ import os
 from loguru import logger
 from mccolors import mcwrite
 
-from ..constants import OS_NAME
+from ..constants import OS_NAME, GITHUB_REPOSITORY
 
 
 class MCPToolPath:
@@ -103,98 +103,98 @@ class MCPToolPath:
         return {
             # Settings
             'settings': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/settings.json',
+                'url': f'{GITHUB_REPOSITORY}settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'settings.json'))
             },
             'bruteforce_settings': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/bruteforce_settings.json',
+                'url': f'{GITHUB_REPOSITORY}bruteforce_settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'bruteforce_settings.json'))
             },
             'sendcmd_settings': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/sendcmd_settings.json',
+                'url': f'{GITHUB_REPOSITORY}sendcmd_settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'sendcmd_settings.json'))
             },
             # Packages
             "package": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/package.json",
+                "url": f"{GITHUB_REPOSITORY}package.json",
                 "path": os.path.abspath(os.path.join(self.get(), "package.json"))
             },
             # Languages
             'language_en': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/languages/en.json',
+                'url': f'{GITHUB_REPOSITORY}languages/en.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'languages', 'en.json'))
             },
             # Scripts
             'bot_script': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/bot.mjs',
+                'url': f'{GITHUB_REPOSITORY}src/scripts/bot.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'bot.mjs'))
             },
             'utilities_script': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/utilities.mjs',
+                'url': f'{GITHUB_REPOSITORY}src/scripts/utilities.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'utilities.mjs'))
             },
             'server_response_script': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/server_response.mjs',
+                'url': f'{GITHUB_REPOSITORY}src/scripts/server_response.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'server_response.mjs'))
             },
             'brute_auth_script': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/brute_auth.mjs',
+                'url': f'{GITHUB_REPOSITORY}src/scripts/brute_auth.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'brute_auth.mjs'))
             },
             'connect_script': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/connect.mjs',
+                'url': f'{GITHUB_REPOSITORY}src/scripts/connect.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'connect.mjs'))
             },
             'sendcmd_script': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scripts/sendcmd.mjs',
+                'url': f'{GITHUB_REPOSITORY}src/scripts/sendcmd.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'sendcmd.mjs'))
             },
             # Txt files
             "usernames": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/usernames.txt",
+                "url": f'{GITHUB_REPOSITORY}src/txt/usernames.txt',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'usernames.txt'))
             },
             "fakeproxy": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/fakeproxy.config",
+                "url": f'{GITHUB_REPOSITORY}src/txt/fakeproxy.config',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'fakeproxy.config'))
             },
             "waterfall_config": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/waterfall.config",
+                "url": f'{GITHUB_REPOSITORY}src/txt/waterfall.config',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'waterfall.config'))
             },
             "velocity_config": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/velocity.config",
+                "url": f'{GITHUB_REPOSITORY}src/txt/velocity.config',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'velocity.config'))
             },
             # Scanners
             "qubo_scanner": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/scanners/qubo.jar",
+                "url": f'{GITHUB_REPOSITORY}src/scanners/qubo.jar',
                 "path": os.path.abspath(os.path.join(self.get(), "scanners", "qubo.jar"))
             },
             # Proxies directory
             "proxies/waterfall": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
+                "url": f'{GITHUB_REPOSITORY}.directory',
                 "path": os.path.abspath(os.path.join(self.get(), "proxies", "waterfall", ".directory"))
             },
             "proxies/velocity": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
+                "url": f'{GITHUB_REPOSITORY}.directory',
                 "path": os.path.abspath(os.path.join(self.get(), "proxies", "velocity", ".directory"))
             },
             "proxies/fakeproxy": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
+                "url": f'{GITHUB_REPOSITORY}.directory',
                 "path": os.path.abspath(os.path.join(self.get(), "proxies", "fakeproxy", ".directory"))
             },
             "jar_directory": {
-                "url": "https://raw.githubusercontent.com/wrrulos/MCPTool/development/.directory",
+                "url": f'{GITHUB_REPOSITORY}.directory',
                 "path": os.path.abspath(os.path.join(self.get(), "jars", '.directory'))
             },
             # Forwarding secrets
             'forwarding.secret_velocity': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
+                'url': f'{GITHUB_REPOSITORY}src/txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'forwarding.secret'))
             },
             'forwarding.secret_fakeproxy': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/txt/forwarding.secret',
+                'url': f'{GITHUB_REPOSITORY}src/txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'forwarding.secret'))
             },
             # Jar plugins for the proxies
@@ -203,7 +203,7 @@ class MCPToolPath:
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'plugins', 'MCPTool-1.1-SNAPSHOT.jar'))
             },
             'mcptool_fakeproxy_plugin': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/jar/RPoisoner-1.1-SNAPSHOT.jar',
+                'url': f'{GITHUB_REPOSITORY}src/jar/RPoisoner-1.1-SNAPSHOT.jar',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
             },
             'mcptool_waterfall_plugin': {
@@ -212,7 +212,7 @@ class MCPToolPath:
             },
             # Imgs
             'server-icon': {
-                'url': 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/src/img/server-icon.png',
+                'url': f'{GITHUB_REPOSITORY}src/img/server-icon.png',
                 'path': os.path.abspath(os.path.join(self.get(), 'img', 'server-icon.png'))
             }
         }
