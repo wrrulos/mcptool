@@ -17,7 +17,7 @@ class SeekerUtilities:
     @staticmethod
     def get_token() -> None:
         """
-        Method to get the token from the user 
+        Method to get the token from the user
         and save it in the settings
         """
 
@@ -43,7 +43,7 @@ class SeekerUtilities:
             class TokenHandler(BaseHTTPRequestHandler):
                 def do_GET(self):
                     nonlocal TOKEN
-                    
+
                     if '?api_key=' in self.path:
                         # Get the token
                         TOKEN = self.path.split('=')[1]
@@ -83,10 +83,10 @@ class SeekerUtilities:
             # Open the browser to get the token
             webbrowser.open(SM().get(['endpoints', 'seeker']))
 
-        # Wait for the token 
+        # Wait for the token
         token_received.wait()
         return TOKEN
-    
+
     @logger.catch
     @staticmethod
     def get_servers(token: str) -> dict:
@@ -116,10 +116,10 @@ class SeekerUtilities:
         if filter[0]:
             # Filter by country code
             filter_country_code: tuple = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByCountryCode']), 'boolean').get_input()
-            
+
             if filter_country_code[0]:
                 country_code = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByCountryCodeText']), 'country_code').get_input()
-            
+
             # Filter by cracked servers
             filter_cracked: tuple = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByCracked']), 'boolean').get_input()
             cracked = filter_cracked[0]
@@ -133,7 +133,7 @@ class SeekerUtilities:
             # Filter by only bungeespoofable
             filter_only_bungeespoofable: tuple = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByOnlyBungeespoofable']), 'boolean').get_input()
             only_bungeespoofable = filter_only_bungeespoofable[0]
-            
+
             # Filter by protocol version
             filter_protocol: tuple = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByProtocol']), 'boolean').get_input()
 
@@ -145,12 +145,12 @@ class SeekerUtilities:
 
             if filter_online_players[0]:
                 online_players = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByOnlinePlayersText']), 'integer').get_input()
-        
+
         headers: dict = {
             "accept": "application/json",
             "Content-Type": "application/json"
         }
-                
+
         data: dict = {
             'api_key': token
         }
@@ -163,7 +163,7 @@ class SeekerUtilities:
 
         if description is not None:
             data['description'] = description[0]
-        
+
         if only_bungeespoofable is not None and only_bungeespoofable:
             data['only_bungeespoofable'] = only_bungeespoofable
 
@@ -176,18 +176,18 @@ class SeekerUtilities:
         try:
             logger.info(f'''
 Getting servers from the seeker API...
-                        
+
  ↪ URL: {url}
  ↪ Headers: {headers}
  ↪ Data: {data}''')
 
             response = requests.post(url, headers=headers, json=data)
-        
+
         except (requests.ConnectionError, requests.Timeout) as e:
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.warning(f'Error connecting to the endpoint: {url} - {data} - {e}')
             return {}
-        
+
         except Exception as e:
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.error(f'Error getting the servers from the seeker API: {e}')
@@ -200,12 +200,12 @@ Getting servers from the seeker API...
                     mcwrite(LM().get(['commands', 'seeker', 'token', 'invalidToken']))
                     logger.error(f'Invalid token: {token}')
                     return {}
-            
+
             # If the token is valid and there is an error
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.error(f'Error getting the servers from the seeker API (Status code: {response.status_code}): {response.json()}')
             return {}
-        
+
         if 'data' not in response.json():
             logger.error(f'No data in the response: {response.json()}')
             return {}
@@ -227,7 +227,7 @@ Getting servers from the seeker API...
             "accept": "application/json",
             "Content-Type": "application/json"
         }
-                
+
         data: dict = {
             "ip": "127.0.0.1",
             "port": 25565,
@@ -236,12 +236,12 @@ Getting servers from the seeker API...
 
         try:
             response = requests.post(url, headers=headers, json=data)
-        
+
             if response != 200:
                 return False
-            
+
             return True
-            
+
         except (requests.ConnectionError, requests.Timeout) as e:
             mcwrite(LM().get(['errors', 'endpointConnectionError']))
             logger.warning(f'Error connecting to the endpoint: {url} - {data} - {e}')

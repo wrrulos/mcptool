@@ -35,15 +35,15 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_domain(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidDomain']))
             return False
-        
+
         if not os.path.exists(arguments[1]):
             mcwrite(LM().get(['errors', 'invalidFile']))
             return False
-        
+
         return True
 
     @logger.catch
@@ -54,7 +54,7 @@ class Command:
         Args:
             arguments (list): The arguments to execute the command
         """
-        
+
         if not self.validate_arguments(arguments):
             return
 
@@ -77,7 +77,7 @@ class Command:
         if len(subdomain_list) == 0:
             mcwrite(LM().get(['errors', 'subdomainsFileEmpty']))
             return
-        
+
         mcwrite(LM().get(['commands', self.name, 'wordlist'])
             .replace('%file%', file_path)
             .replace('%subdomains%', str(len(subdomain_list)))
@@ -106,12 +106,12 @@ class Command:
             # Wait for all threads to finishs
             for thread in threads:
                 thread.join()
-                
+
             if subdomains_found == 0:
                 mcwrite(LM().get(['commands', self.name, 'noSubdomains'])
                     .replace('%file%', file_path)
                 )
-                
+
             else:
                 mcwrite(LM().get(['commands', self.name, 'subdomainsFound'])
                     .replace('%subdomains%', str(subdomains_found))
@@ -125,7 +125,7 @@ class Command:
     @logger.catch
     def _scan_subdomain(self, domain: str, subdomain: str, results: list) -> None:
         """
-        Method to scan a subdomain. 
+        Method to scan a subdomain.
         If the subdomain is valid, it will be added to the results list
 
         Args:
@@ -165,5 +165,5 @@ class Command:
         for subdomain in chunk:
             if self.stopped:
                 break
-            
+
             self._scan_subdomain(domain, subdomain, results)

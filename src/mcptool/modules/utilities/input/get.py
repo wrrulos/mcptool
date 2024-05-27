@@ -32,42 +32,42 @@ class GetInput:
 
                 if self.input_type == 'string':
                     return self._string_input()
-                
+
                 if self.input_type == 'integer':
                     output: Union[tuple, None] = self._integer_input()
-            
+
                     if output is not None:
                         return output
-                    
+
                 if self.input_type == 'boolean':
                     output: Union[tuple, None] = self._boolean_input()
-            
+
                     if output is not None:
                         return output
-                    
+
                 if self.input_type == 'country_code':
                     output: Union[tuple, None] = self._country_code_input()
-            
+
                     if output is not None:
                         return output
-                    
+
                 if self.input_type == 'velocity_forwarding_mode':
                     output: Union[tuple, None] = self._velocity_forwarding_mode_input()
-            
+
                     if output is not None:
                         return output
 
             except KeyboardInterrupt:
                 return (None, False)
 
-    @logger.catch    
+    @logger.catch
     def _string_input(self) -> str:
         """
         Method to get the string input
         """
 
         return (self.user_input, True)
-    
+
     @logger.catch
     def _integer_input(self) -> int:
         """
@@ -76,12 +76,12 @@ class GetInput:
 
         try:
             return (int(self.user_input), True)
-        
+
         except ValueError:
             mcwrite('Invalid input. Please enter a valid integer.')
             return None
 
-    @logger.catch 
+    @logger.catch
     def _boolean_input(self) -> bool:
         """
         Method to get the boolean input
@@ -89,10 +89,10 @@ class GetInput:
 
         if self.user_input.lower() == 'y' or self.user_input.lower() == 'n':
             return (self.user_input.lower() == 'y', True)
-        
+
         mcwrite('Invalid input. Please enter either y or n.')
         return None
-    
+
     @logger.catch
     def _country_code_input(self) -> None:
         """
@@ -101,7 +101,7 @@ class GetInput:
 
         if len(self.user_input) == 2:
             return (self.user_input, True)
-        
+
         mcwrite('Invalid input. Please enter a valid country code.')
         return None
 
@@ -113,6 +113,6 @@ class GetInput:
 
         if ValidateArgument.is_velocity_forwading_mode(self.user_input):
             return (self.user_input, True)
-        
+
         mcwrite('Invalid input. Please enter a valid velocity forwarding mode.')
         return None

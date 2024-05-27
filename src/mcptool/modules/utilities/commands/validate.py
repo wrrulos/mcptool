@@ -33,13 +33,13 @@ class ValidateArgument:
 
                 # Add th arguments
                 error_message = error_message.replace('%arguments%', arguments_message)
-                
+
                 # Print the error message
                 mcwrite(error_message)
                 return False
 
         return True
-    
+
     @logger.catch
     @staticmethod
     def is_domain(domain: str) -> bool:
@@ -53,11 +53,11 @@ class ValidateArgument:
         try:
             socket.gethostbyname(domain)
             return True
-        
+
         except socket.gaierror:
             return False
-    
-    @logger.catch 
+
+    @logger.catch
     @staticmethod
     def is_ip_address(ip: str) -> bool:
         """
@@ -75,12 +75,12 @@ class ValidateArgument:
 
                 if part < 0 or part > 255:
                     return False
-                
+
             except ValueError:
                 return False
 
         return True
-    
+
     @logger.catch
     @staticmethod
     def is_ip_and_port(ip: str) -> bool:
@@ -107,7 +107,7 @@ class ValidateArgument:
 
             if port < 0 or port > 65535:
                 return False
-            
+
         except ValueError:
             return False
 
@@ -122,12 +122,12 @@ class ValidateArgument:
 
                 if part < 0 or part > 255:
                     return False
-                
+
             except ValueError:
                 return False
 
         return True
-    
+
     @logger.catch
     @staticmethod
     def is_port_range_py_method(port_range: str) -> bool:
@@ -138,7 +138,7 @@ class ValidateArgument:
         if '-' not in port_range:
             if not port_range.isnumeric():
                 return False
-            
+
             if int(port_range) < 0 or int(port_range) > 65535:
                 return False
 
@@ -156,7 +156,7 @@ class ValidateArgument:
 
             if start > end:
                 return False
-    
+
         except ValueError:
             return False
 
@@ -185,7 +185,7 @@ class ValidateArgument:
             return False
 
         return True
-    
+
     @logger.catch
     @staticmethod
     def is_yes_no(value: str) -> bool:
@@ -197,7 +197,7 @@ class ValidateArgument:
             return False
 
         return True
-    
+
     @logger.catch
     @staticmethod
     def is_proxy_type(proxy_type: str) -> bool:
@@ -209,7 +209,7 @@ class ValidateArgument:
             return False
 
         return True
-    
+
     @logger.catch
     @staticmethod
     def is_velocity_forwading_mode(mode: str) -> bool:

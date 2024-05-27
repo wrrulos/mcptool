@@ -74,7 +74,7 @@ class JsonManager:
                 return data
 
             data = data.get(key, 'None')
-            
+
             if not isinstance(data, str):
                 return data
 
@@ -85,6 +85,6 @@ class JsonManager:
                 data = data.replace('%prefix%', PREFIX)
 
             return data
-            
+
         except AttributeError:
             return None

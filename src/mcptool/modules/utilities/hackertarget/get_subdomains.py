@@ -32,7 +32,7 @@ class GetSubdomains:
         except (KeyError, ValueError, requests.exceptions.RequestException):
             logger.warning(f'Error getting the subdomains of the domain {domain}. Hackertarget API error')
             return []
-        
+
         for line in response.iter_lines():
             line: str = str(line).split(',')
 

@@ -34,10 +34,10 @@ class MCPToolPath:
             os.makedirs(os.path.join(path), exist_ok=True)
 
         return path
-    
+
     def check_files(self) -> None:
         """
-        Method to check if the files exist and 
+        Method to check if the files exist and
         download them if they don't
         """
 
@@ -57,7 +57,7 @@ class MCPToolPath:
                     command = f'C: && {command}'
 
                 subprocess.run(command, shell=True)
-        
+
         except KeyboardInterrupt:
             sys.exit(0)
 
@@ -88,7 +88,7 @@ class MCPToolPath:
                     return
 
                 file.write(response.content)
-        
+
         except Exception as e:
             logger.error(f'Error downloading file: {e}')
 
@@ -99,7 +99,7 @@ class MCPToolPath:
         Returns:
             dict: URLs of the files
         """
-        
+
         return {
             # Settings
             'settings': {

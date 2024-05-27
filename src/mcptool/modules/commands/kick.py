@@ -29,15 +29,15 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_ip_and_port(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
-        
+
         if not ValidateArgument.is_yes_no(arguments[3]):
             mcwrite(LM().get(['errors', 'invalidYesNo']))
             return False
-        
+
         return True
 
     @logger.catch
@@ -52,13 +52,13 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         ip: str = arguments[0].split(':')[0]
         port: str = arguments[0].split(':')[1]
         version: str = arguments[1]
         username: str = arguments[2]
         loop: bool = arguments[3].lower() == 'y'
-        
+
         mcwrite(LM().get(['commands', 'kick', 'kickingPlayer'])
             .replace('%ip%', arguments[0])
             .replace('%version%', arguments[1])

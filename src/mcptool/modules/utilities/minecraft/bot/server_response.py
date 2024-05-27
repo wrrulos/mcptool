@@ -61,11 +61,11 @@ class BotServerResponse:
         Returns:
             str: The command to send to the server
         """
-        
+
         path: str = MCPToolPath().get()
         command: str = f'cd {path} && node scripts/server_response.mjs {self.ip_address} {self.port} {self.username} {self.version}'
 
         if OS_NAME == 'windows':
             command = f'C: && {command}'
-        
+
         return command

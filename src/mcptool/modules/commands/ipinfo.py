@@ -27,11 +27,11 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_ip_address(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpFormat']))
             return False
-        
+
         return True
 
     @logger.catch
@@ -46,17 +46,17 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         # Get the player data
         mcwrite(LM().get(['commands', 'ipinfo', 'gettingIpData']))
-        
+
         # Get the IP address information
         ip_info: Union[IPInfoFormat, None] = IPInfo(ip_address=arguments[0]).get_info()
 
         if ip_info is None:
             mcwrite(LM().get(['commands', 'ipinfo', 'error']))
             return
-        
+
         # Print the IP address information
         mcwrite(LM().get(['commands', 'ipinfo', 'continent']).replace('%continent%', ip_info.continent).replace('%continentCode%', ip_info.continent_code))
         mcwrite(LM().get(['commands', 'ipinfo', 'country']).replace('%country%', ip_info.country).replace('%countryCode%', ip_info.country_code))

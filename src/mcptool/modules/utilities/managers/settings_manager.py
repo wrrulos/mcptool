@@ -23,7 +23,7 @@ class SettingsManager:
         """
 
         return self.settings.get(key)
-    
+
     @logger.catch
     def set(self, key: str, value):
         """

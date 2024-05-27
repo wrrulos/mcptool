@@ -29,11 +29,11 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_ip_and_port(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
-    
+
         return True
 
     @logger.catch
@@ -48,7 +48,7 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         ip_address: str = arguments[0].split(':')[0]
         port: str = arguments[0].split(':')[1]
         rcon_password: str = arguments[1]
@@ -57,7 +57,7 @@ class Command:
         mcwrite(LM().get(['commands', self.name, 'connecting'])
             .replace('%ip%', f'{ip_address}:{port}')
         )
-                
+
         try:
             with MCRcon(host=ip_address, password=rcon_password, port=int(port), timeout=30) as mcr:
                 mcwrite(LM().get(['commands', self.name, 'connected']))
@@ -87,7 +87,7 @@ class Command:
                 mcr.disconnect()
 
             mcwrite(LM().get(['commands', self.name, 'disconnected']))
-        
+
         except Exception as e:
             mcwrite(LM().get(['errors', 'rconUnknownError']))
             logger.error(f'Error in rcon command: {e}')

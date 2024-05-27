@@ -30,15 +30,15 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_ip_and_port(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
-        
+
         if not os.path.exists(arguments[1]):
             mcwrite(LM().get(['errors', 'invalidFile']))
             return False
-    
+
         return True
 
     @logger.catch
@@ -53,14 +53,14 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         ip_address: str = arguments[0].split(':')[0]
         port: str = arguments[0].split(':')[1]
         password_file: str = arguments[1]
-        
+
         # Getting the passwords
         mcwrite(LM().get(['commands', self.name, 'gettingPasswords']).replace('%file%', arguments[1]))
-        
+
         with open(password_file, 'r') as file:
             self.passwords = file.read().splitlines()
 
@@ -68,7 +68,7 @@ class Command:
         if len(self.passwords) == 0:
             mcwrite(LM().get(['errors', 'passwordFileEmpty']))
             return
-        
+
         # Start brute forcing to the rcon
         mcwrite(LM().get(['commands', self.name, 'bruteForcing'])
             .replace('%ip%', f'{ip_address}:{port}')
@@ -85,7 +85,7 @@ class Command:
                         .replace('%password%', rcon_password)
                     )
                     return
-                    
+
             except TimeoutError:
                 mcwrite(LM().get(['errors', 'rconTimeout']))
 
@@ -94,7 +94,7 @@ class Command:
 
             except MCRconException:
                 pass
-            
+
             except Exception as e:
                 mcwrite(LM().get(['errors', 'rconUnknownError']))
                 logger.error(f'Error in brutercon command: {e}')

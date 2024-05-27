@@ -33,11 +33,11 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_ip_and_port(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
-    
+
         return True
 
     @logger.catch
@@ -52,28 +52,28 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         ip_address: str = arguments[0].split(':')[0]
         port: str = arguments[0].split(':')[1]
         version: str = arguments[1]
         username: str = arguments[2]
-                
+
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
 
         if server_data is None:
             mcwrite(LM().get(['errors', 'serverOffline']))
             return
-        
+
         if server_data.platform != 'Java':
             mcwrite(LM().get(['errors', 'notJavaServer']))
             return
-        
+
         path: str = MCPToolPath().get()
         command: str = f'cd {path} && node scripts/connect.mjs {ip_address} {port} {username} {version} {SPACES}'
-        
+
         if OS_NAME == 'windows':
             command = f'C: && {command}'
-        
+
         # Connecting to the server
         mcwrite(LM().get(['commands', self.name, 'connecting'])
             .replace('%ip%', ip_address)

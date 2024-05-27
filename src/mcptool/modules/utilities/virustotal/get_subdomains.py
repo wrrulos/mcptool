@@ -36,12 +36,12 @@ class GetSubdomains:
         except (KeyError, ValueError, requests.exceptions.RequestException):
             logger.warning(f'Error getting the subdomains of the domain {domain}. VirusTotal API error')
             return []
-        
+
         for subdomain in subdomains:
             if subdomain not in [item[0] for item in subdomains_found]:
                 try:
                     ip = socket.gethostbyname(subdomain)
-                    
+
                     if [subdomain, ip] not in subdomains_found:
                         subdomains_found.append([subdomain, ip])
 

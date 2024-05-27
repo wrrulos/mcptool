@@ -14,10 +14,10 @@ class ShowBanner:
         """
         Method to show the banner
         """
-        
+
         # Clear the screen
         if self.clear_screen:
             subprocess.run('clear || cls ', shell=True)
-                
+
         # Print the banner
         mcwrite(self.banner)

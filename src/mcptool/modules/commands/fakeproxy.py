@@ -30,15 +30,15 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_ip_and_port(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidIpAndPort']))
             return False
-        
+
         if not ValidateArgument.is_velocity_forwading_mode(arguments[1]):
             mcwrite(LM().get(['errors', 'invalidVelocityMode']))
             return False
-        
+
         return True
 
     @logger.catch
@@ -53,12 +53,12 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         self.target = arguments[0]
         self.velocity_forwading_mode = arguments[1]
-        
+
         StartProxy(
-            target=self.target, 
-            proxy=self.name, 
+            target=self.target,
+            proxy=self.name,
             velocity_forwarding_mode=self.velocity_forwading_mode
         ).setup()

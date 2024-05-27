@@ -13,7 +13,7 @@ class JarManager:
     def __init__(self, jar_name: str, jar_path: str):
         self.jar_name = jar_name
         self.jar_path = jar_path
-        
+
     @logger.catch
     def check(self) -> None:
         """
@@ -59,11 +59,11 @@ class JarManager:
             build, name = latest_build['build'], latest_build['downloads']['application']['name']
             latest_version_url: str = f'{download_url}/versions/{last_version}/builds/{build}/downloads/{name}'
             self.latest_version_url = latest_version_url
-        
+
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
             logger.error(f'Error while getting the latest version of the jar file -> {self.jar_name}. {e}')
             self.latest_version_url = None
-    
+
     @logger.catch
     def _get_download_url(self) -> str:
         """
@@ -72,13 +72,13 @@ class JarManager:
         Returns:
             str: The download url
         """
-        
+
         if self.jar_name == 'velocity' or self.jar_name == 'fakeproxy':
             return 'https://api.papermc.io/v2/projects/velocity'
 
         else:  # Waterfall
             return 'https://api.papermc.io/v2/projects/waterfall'
-        
+
     @logger.catch
     def _download(self) -> bool:
         """
@@ -106,13 +106,13 @@ class JarManager:
             except requests.exceptions.RequestException as e:
                 logger.error(f'Error while downloading the jar file -> {jar_path}. {e}')
                 return False
-            
+
             except Exception as e:
                 logger.error(f'Error while downloading the jar file -> {jar_path}. {e}')
                 return False
-            
+
         return True
-    
+
     @logger.catch
     def _replace_jar(self) -> bool:
         """
@@ -123,11 +123,11 @@ class JarManager:
         """
 
         mcwrite(LM().get(['commands', 'proxy', 'replacingJar']))
-        
+
         try:
 
             os.replace(
-                src=f'{MCPToolPath().get()}/jars/{self.jar_name}.jar', 
+                src=f'{MCPToolPath().get()}/jars/{self.jar_name}.jar',
                 dst=f'{self.jar_path}/{self.jar_name}.jar'
             )
 
@@ -135,7 +135,7 @@ class JarManager:
             logger.info(f'Jar file replaced successfully -> {self.jar_name}')
             SM().set(f'{self.jar_name}Version', self.latest_version_url)
             return True
-        
+
         except Exception as e:
             logger.error(f'Error while replacing the jar file -> {self.jar_name}. {e}')
             return False

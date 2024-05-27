@@ -28,17 +28,17 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_scan_method(arguments[2]):
             mcwrite(LM().get(['errors', 'invalidScanMethod']))
             return False
-        
+
         # Validate the IP address and port range if the method is Python scanner
         if arguments[2] == 'py':
             if not ValidateArgument.is_ip_address(arguments[0]):
                 mcwrite(LM().get(['errors', 'invalidIpFormat']))
                 return False
-            
+
             if not ValidateArgument.is_port_range_py_method(arguments[1]):
                 mcwrite(LM().get(['errors', 'invalidPortRange']))
                 return False
@@ -57,13 +57,13 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         # Scan the IP address
         mcwrite(LM().get(['commands', self.name, 'scanning'])
                 .replace('%ip%', arguments[0])
                 .replace('%portRange%', arguments[1])
                 .replace('%method%', arguments[2]))
-        
+
         # Scan the IP address using the Python scanner
         if arguments[2] == 'py':
             open_ports: list = PyScanner(ip_address=arguments[0], port_range=arguments[1]).scan()
@@ -73,12 +73,12 @@ class Command:
                 if not ScannerUtilities.nmap_installed():
                     mcwrite(LM().get(['errors', 'nmapNotInstalled']))
                     return
-                
+
             if arguments[2] == 'masscan':
                 if not ScannerUtilities.masscan_installed():
                     mcwrite(LM().get(['errors', 'masscanNotInstalled']))
                     return
-                
+
             open_ports: list = ExternalScanner(target=arguments[0], port_range=arguments[1], scanner=arguments[2]).scan()
 
         # If there are errors
@@ -89,5 +89,5 @@ class Command:
         if len(open_ports) == 0:
             mcwrite(LM().get(['commands', self.name, 'noOpenPorts']))
             return
-        
+
         mcwrite(LM().get(['commands', self.name, 'openPorts']).replace('%openPorts%', str(len(open_ports))))

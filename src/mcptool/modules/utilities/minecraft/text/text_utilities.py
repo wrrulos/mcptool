@@ -27,7 +27,7 @@ class TextUtilities:
 
         def process_extra(extra):
             nonlocal text
-            
+
             if isinstance(extra, list):
                 for item in extra:
                     if isinstance(item, str):
@@ -66,7 +66,7 @@ class TextUtilities:
 
         except AttributeError:
             return json_str
-        
+
     @logger.catch
     @staticmethod
     def minimessage_colors(text: str):
@@ -109,7 +109,7 @@ class TextUtilities:
         for code in codes.items():
             text = text.replace(f'&{code[0]}', code[1]).replace(f'§{code[0]}', code[1])
             text = text.replace(f'&{code[0].upper()}', code[1]).replace(f'§{code[0].upper()}', code[1])
-        
+
         text = text.replace('\n', '<newline>')
         return text
 

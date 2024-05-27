@@ -32,11 +32,11 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not os.path.exists(arguments[0]):
             mcwrite(LM().get(['errors', 'invalidFile']))
             return False
-        
+
         return True
 
     @logger.catch
@@ -51,12 +51,12 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         file: str = arguments[0]
 
         # Read the file
         with open(file, 'r') as f:
-            lines: list = f.readlines() 
+            lines: list = f.readlines()
 
         mcwrite(LM().get(['commands', self.name, 'checking'])
             .replace('%file%', file)
@@ -81,10 +81,10 @@ class Command:
                 .replace('%file%', file)
             )
             return
-        
+
         mcwrite(LM().get(['commands', self.name, 'serversFound'])
             .replace('%servers%', str(self.servers_found))
             .replace('%file%', file)
         )
 
-        
+

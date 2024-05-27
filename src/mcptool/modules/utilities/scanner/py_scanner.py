@@ -30,7 +30,7 @@ class PyScanner:
         if self.timeout is None:
             logger.warning('Invalid timeout for the scanner. Using the default value of 1 second.')
             self.timeout = 1
-    
+
     @logger.catch
     def scan(self) -> list:
         """
@@ -48,7 +48,7 @@ class PyScanner:
             start = end = self.port_range
 
         logger.info(f'Scanning {self.ip_address} from port {start} to port {end} (Python Scanner)')
-        
+
         # Scan the ports of the IP address
         for port in range(int(start), int(end) + 1):
             if self.stopped:  # Check if the user wants to stop the scan
@@ -68,7 +68,7 @@ class PyScanner:
             thread.join()
 
         return self.open_ports
-    
+
     @logger.catch
     def _scan_port(self, port: int) -> None:
         """
@@ -77,7 +77,7 @@ class PyScanner:
         Args:
             port (int): The port to scan
         """
-        
+
         try:
             # Try to connect to the port
             sock: socket.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

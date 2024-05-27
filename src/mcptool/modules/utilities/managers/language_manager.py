@@ -36,14 +36,14 @@ class LanguageManager:
             logger.critical(f'Language file {language_file} does not exist')
             mcwrite(f'&8&l[&c&lCRITICAL ERROR&8&l] &c&lLanguage file does not exist &8&l(&f&lCheck the logs for more information (&b&l{MCPToolPath().get()}&f&l)&8&l)')
             sys.exit(1)
-        
+
         value: Union[dict, list, str, int, float, None] = JsonManager(language_file).get(key)
 
         if value is None or value == 'None':
             logger.error(f'Key {key} does not exist in the language file')
 
         return value
-    
+
     @logger.catch
     def set_language(self, language: str):  #! Actually, this method is not used in the code
         """

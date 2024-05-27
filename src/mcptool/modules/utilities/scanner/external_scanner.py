@@ -38,12 +38,12 @@ class ExternalScanner:
         if command is None:
             logger.warning(f'Cannot scan target. Invalid command. {command}')
             return self.open_ports
-        
+
         text_to_search, pattern, invalid_ip_text, invalid_ports_text = self._get_scan_params()
 
         if text_to_search == '':
             return self.open_ports
-        
+
         try:
             process: subprocess.Popen = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 
@@ -51,7 +51,7 @@ class ExternalScanner:
             for line in process.stdout:
                 output_line: str = line.decode('latin-1').strip()
                 self.command_output += output_line
-        
+
                 if self.first_line:
                     if self.scanner == 'qubo':
                         # Java not installed.
@@ -59,13 +59,13 @@ class ExternalScanner:
                             logger.warning('Cannot scan target. Java is not installed.')
                             mcwrite(LM().get(['errors', 'javaNotInstalled']))
                             return
-                        
+
                         # Qubo.jar not found.
                         if 'qubo.jar' in output_line:
                             logger.warning('Cannot scan target. Qubo.jar not found.')
                             mcwrite(LM().get(['errors', 'quboJarNotFound']))
                             return
-                                    
+
                     self.first_line = False
 
                 if self.show_output:
@@ -91,7 +91,7 @@ class ExternalScanner:
                         continue
 
                     server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(server).get()
-        
+
                     if server_data is not None:
                         ShowMinecraftServer.show(server_data)
 
@@ -99,8 +99,8 @@ class ExternalScanner:
                         pass
                         # mcwrite(f'&aPort {port} is open')
 
-                    self.open_ports.append(server) 
-            
+                    self.open_ports.append(server)
+
             process.wait()
 
             if process.returncode != 0:
@@ -115,7 +115,7 @@ class ExternalScanner:
                 pass
 
         return self.open_ports
-    
+
     @logger.catch
     def _get_command(self) -> Union[str, None]:
         """
@@ -129,18 +129,18 @@ class ExternalScanner:
 
         if command is None:
             return None
-        
+
         if self.scanner == 'qubo':
             path: str = MCPToolPath().get()
             qubo_jar_path: str = f'{path}/scanners'
             command = f'cd {qubo_jar_path} && {command}'
-        
+
         if OS_NAME == 'windows':
             command = f'C: && {command}'
 
         command = command.replace('%target%', self.target).replace('%ports%', self.port_range)
         return command
-    
+
     @logger.catch
     def _get_scan_params(self) -> tuple:
         """
@@ -157,7 +157,7 @@ class ExternalScanner:
         }
 
         return scan_params.get(self.scanner, ('', '', [], []))
-    
+
     @logger.catch
     def _extract_server_info(self, output_line: str, pattern: str) -> Union[str, None]:
         """
@@ -182,5 +182,5 @@ class ExternalScanner:
                 server: str = match.group(0)
 
             return server
-        
+
         return None

@@ -30,13 +30,13 @@ class PlayerUUID:
             response = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{self.username}")
             response.raise_for_status()
             return PlayerUUIDFormat(response.json()['id'], self._get_offline_uuid())
-        
+
         except (JSONDecodeError, KeyError, requests.exceptions.HTTPError):
             return PlayerUUIDFormat(None, self._get_offline_uuid())
 
         except requests.exceptions.RequestException:
             return PlayerUUIDFormat(None, self._get_offline_uuid())
-        
+
     @logger.catch
     def get_uuid_color(self, original_uuid: str) -> str:
         """
@@ -51,13 +51,13 @@ class PlayerUUID:
         if player_uuid.online_uuid is not None:
             if original_uuid == player_uuid.online_uuid:
                 return f'&a&l'
-            
+
         if original_uuid == player_uuid.offline_uuid:
             return f'&c&l'
-        
+
         # If neither the online nor offline UUIDs match, consider it modified.
         return f'&5&l'
-    
+
     @logger.catch
     def _get_offline_uuid(self) -> str:
         """

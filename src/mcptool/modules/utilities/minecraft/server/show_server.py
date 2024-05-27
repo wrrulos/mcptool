@@ -28,21 +28,21 @@ class Messages:
             if server_data.players:
                 server_message += f'''
 {LM().get(['commands', 'server', 'playerList']).replace('%playerList%', server_data.players)}'''
-            
+
             if server_data.mod:
                 server_message += f'''
 {LM().get(['commands', 'server', 'mod']).replace('%mod%', server_data.mod)}
 {LM().get(['commands', 'server', 'modList']).replace('%modList%', str(server_data.mods))}'''
-            
+
         elif isinstance(server_data, BedrockServerData):
             if server_data.brand:
                 server_message += f'''
 {LM().get(['commands', 'server', 'brand']).replace('%brand%', server_data.brand)}'''
-                
+
             if server_data.map:
                 server_message += f'''
 {LM().get(['commands', 'server', 'map']).replace('%map%', server_data.map)}'''
-            
+
             if server_data.gamemode:
                 server_message += f'''
 {LM().get(['commands', 'server', 'gamemode']).replace('%gamemode%', server_data.gamemode)}'''

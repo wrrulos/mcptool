@@ -15,7 +15,7 @@ class TermuxUtilities:
             bool: True if the current environment is Termux, False otherwise
         """
         return 'ANDROID_ROOT' in os.environ
-    
+
     @logger.catch
     @staticmethod
     def fix_dnspython():
@@ -41,7 +41,7 @@ class TermuxUtilities:
         Returns:
             bool: True if the file was fixed successfully, False otherwise
         """
-        
+
         try:
             old_text: str = '/etc/resolv.conf'
             new_text: str = '/data/data/com.termux/files/usr/etc/resolv.conf'

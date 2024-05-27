@@ -26,7 +26,7 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         return True
 
     @logger.catch
@@ -41,11 +41,11 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         # Get the player data
         mcwrite(f"{LM().get(['commands', self.name, 'gettingPlayerUuid'])}")
         player_data = PlayerUUID(username=arguments[0]).get_uuid()
-        
+
         # Add a new line
         print('')
 

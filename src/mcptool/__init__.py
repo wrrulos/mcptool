@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
-import pypresence
 import threading
 import struct
 import time
 import os
+import pypresence
 
 from loguru import logger
+from mccolors import mcwrite, mcreplace
 
 # Import the MCPToolPath class
 from .modules.utilities.path.mcptool_path import MCPToolPath
@@ -17,25 +18,45 @@ logger.remove()
 # Set the logging configuration
 logger.add(os.path.join(MCPToolPath().get(), 'debug.log'),
     level='INFO',
-    format='[{time} {level} - {file}, {line}] ⮞ <level>{message}</level>', 
+    format='[{time} {level} - {file}, {line}] ⮞ <level>{message}</level>',
     rotation="30 MB"
 )
 
 # Check if the files exist
 MCPToolPath().check_files()
 
-from mccolors import mcwrite, mcreplace
-
 # Utilities
 from .modules.utilities.managers.language_manager import LanguageManager as LM
 from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
 from .modules.utilities.banners.show_banner import ShowBanner
 from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK
+from .modules.commands.clear import Command as ClearCommand
+from .modules.commands.help import Command as HelpCommand
+from .modules.commands.discord import Command as DiscordCommand
+from .modules.commands.server import Command as ServerCommand
+from .modules.commands.uuid import Command as UUIDCommand
+from .modules.commands.ipinfo import Command as IPInfoCommand
+from .modules.commands.dnslookup import Command as DNSLookupCommand
+from .modules.commands.resolver import Command as ResolverCommand
+from .modules.commands.seeker import Command as SeekerCommand
+from .modules.commands.scan import Command as ScanCommand
+from .modules.commands.kick import Command as KickCommand
+from .modules.commands.kickall import Command as KickAllCommand
+from .modules.commands.listening import Command as ListeningCommand
+from .modules.commands.bruteauth import Command as BruteAuthCommand
+from .modules.commands.brutercon import Command as BruteRconCommand
+from .modules.commands.connect import Command as ConnectCommand
+from .modules.commands.proxy import Command as ProxyCommand
+from .modules.commands.fakeproxy import Command as FakeProxyCommand
+from .modules.commands.rcon import Command as RconCommand
+from .modules.commands.checker import Command as CheckerCommand
+from .modules.commands.sendcmd import Command as SendCmdCommand
+from .modules.commands.subdomains import Command as SubdomainsCommand
 
 
 class MCPTool:
     __version__: str = VERSION
-    
+
     def __init__(self, commands_folder_path: str = 'src/mcptool/modules/commands'):
         self.commands_folder_path: str = commands_folder_path
         self.commands: dict = {}
@@ -64,7 +85,7 @@ class MCPTool:
         """
 
         ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
-        
+
         while True:
             try:
                 # Get the user input
@@ -111,30 +132,6 @@ class MCPTool:
             dict: The commands
         """
 
-        # Commands
-        from .modules.commands.clear import Command as ClearCommand
-        from .modules.commands.help import Command as HelpCommand
-        from .modules.commands.discord import Command as DiscordCommand
-        from .modules.commands.server import Command as ServerCommand
-        from .modules.commands.uuid import Command as UUIDCommand
-        from .modules.commands.ipinfo import Command as IPInfoCommand
-        from .modules.commands.dnslookup import Command as DNSLookupCommand
-        from .modules.commands.resolver import Command as ResolverCommand
-        from .modules.commands.seeker import Command as SeekerCommand
-        from .modules.commands.scan import Command as ScanCommand
-        from .modules.commands.kick import Command as KickCommand
-        from .modules.commands.kickall import Command as KickAllCommand
-        from .modules.commands.listening import Command as ListeningCommand
-        from .modules.commands.bruteauth import Command as BruteAuthCommand
-        from .modules.commands.brutercon import Command as BruteRconCommand
-        from .modules.commands.connect import Command as ConnectCommand
-        from .modules.commands.proxy import Command as ProxyCommand
-        from .modules.commands.fakeproxy import Command as FakeProxyCommand
-        from .modules.commands.rcon import Command as RconCommand
-        from .modules.commands.checker import Command as CheckerCommand
-        from .modules.commands.sendcmd import Command as SendCmdCommand
-        from .modules.commands.subdomains import Command as SubdomainsCommand
-
         return {
             'clear': ClearCommand(),
             'help': HelpCommand(),
@@ -159,7 +156,7 @@ class MCPTool:
             'sendcmd': SendCmdCommand(),
             'subdomains': SubdomainsCommand()
         }
-    
+
     @logger.catch
     def _update_rich_presence(self) -> None:
         """
@@ -191,7 +188,7 @@ class MCPTool:
                         {'label': 'Discord', 'url': f'https://{DISCORD_LINK}'}
                     ]
                 )
-               
+
                time.sleep(1)
 
         except (pypresence.exceptions.DiscordNotFound, struct.error, pypresence.exceptions.ServerError, pypresence.exceptions.ResponseTimeout) as e:

@@ -28,7 +28,7 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         server: str = arguments[0]
 
         if not ValidateArgument.is_domain(domain=server) and not ValidateArgument.is_ip_and_port(ip=server):
@@ -49,7 +49,7 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         # Get the server data
         mcwrite(LM().get(['commands', 'server', 'gettingServerData']))
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(arguments[0]).get()

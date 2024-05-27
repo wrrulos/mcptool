@@ -68,7 +68,7 @@ class Command:
         mcwrite(LM().get(['commands', self.name, 'waitingForConnections']).replace('%ip%', arguments[0]))
         
         while True:
-            server_data = MCServerData(target=arguments[0], bot=False).get()
+            server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
             
             # Check if the server is offline
             if server_data is None:

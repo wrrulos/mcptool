@@ -31,11 +31,11 @@ class Command:
 
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
-        
+
         if not ValidateArgument.is_seeker_subcommand(arguments[0]):
             print('invalid sub command')
             return False
-        
+
         return True
 
     @logger.catch
@@ -50,7 +50,7 @@ class Command:
         # Validate the arguments
         if not self.validate_arguments(arguments):
             return
-        
+
         if arguments[0] == 'token':
             self._get_token()
 
@@ -60,7 +60,7 @@ class Command:
     @logger.catch
     def _get_token(self) -> None:
         """
-        Method to get the token from the user 
+        Method to get the token from the user
         and save it in the settings
         """
 
@@ -68,7 +68,7 @@ class Command:
 
         if TOKEN == '':
             return
-        
+
         # Save the token in the settings
         self.token = TOKEN
         SM().set(key='seekerToken', value=self.token)

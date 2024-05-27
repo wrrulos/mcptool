@@ -31,4 +31,3 @@ class GetDNSRecords:
                 pass
 
         return dns_records
-        

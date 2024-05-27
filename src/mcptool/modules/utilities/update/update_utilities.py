@@ -18,13 +18,13 @@ class UpdateUtilities:
 
         try:
             response = requests.get(f'https://raw.githubusercontent.com/wrrulos/MCPTool/development/settings.json')
-            
+
             if response.status_code != 200:
                 return False
-            
+
             settings = response.json()
             return settings['version'] != VERSION
-        
+
         except Exception as e:
             logger.warning(f'Error checking for updates: {e}')
             return False

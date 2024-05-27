@@ -28,7 +28,7 @@ class BotUtilities:
 
         except FileNotFoundError:
             return 'MCPToolBot'
-        
+
     @logger.catch
     @staticmethod
     def get_bot_color_response(response: str) -> str:
@@ -41,11 +41,11 @@ class BotUtilities:
         Returns:
             str: The color response for the bot
         """
-        
+
         # If the bot connected to the server
         if response == 'Connected':
             return '&a&lConnected'
-        
+
         # If the bot failed to connect to the server
         messages: dict = {
             'http//Minecraft.netMinecraft.net': 'http//Minecraft.net',
@@ -72,7 +72,7 @@ class BotUtilities:
             response = response.replace(message, replacement)
 
         return response
-    
+
 
     @logger.catch
     @staticmethod
@@ -87,7 +87,7 @@ class BotUtilities:
         # Check if the time is an integer
         try:
             return int(time)
-        
+
         except ValueError:
             return 4
 

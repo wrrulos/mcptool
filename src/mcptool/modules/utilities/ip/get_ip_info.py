@@ -43,7 +43,7 @@ class IPInfo:
             # Check if the status is not success
             if ip_address_information['status'] != 'success':
                 return None
-            
+
             # Check if the reverse DNS lookup is enabled
             if self.reverse:
                 try:
