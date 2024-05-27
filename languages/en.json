@@ -122,7 +122,7 @@
             "arguments": ["ip:port", "proxy_type"],
             "configuringProxy": "\n%spaces%%prefix% &f&lConfiguring the proxy server &8(&a&l%proxyType%&8)&f&l... ",
             "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
-            "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern) &8&l▶ &f&l",
+            "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern&8) &8&l▶ &f&l",
             "downloadingJar": "\n%spaces%%prefix% &f&lDownloading the proxy jar file (%jarName%)...",
             "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded successfully.",
             "replacingJar": "\n%spaces%%prefix% &f&lReplacing the proxy jar file...",

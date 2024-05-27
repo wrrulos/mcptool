@@ -271,13 +271,13 @@ class StartProxy:
         if process is None:
             return
 
-        mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyIp%', '127.0.0.1').replace('%proxyPort%', str(self.proxy_port)))
-
         proxy_started: bool = self._read_output(process)
 
         if not proxy_started:
             process.kill()
             return
+
+        mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyIp%', '127.0.0.1').replace('%proxyPort%', str(self.proxy_port)))
 
         if self.proxy == 'fakeproxy':
             Fakeproxy(process=process, server_data=server_data, target=self.target).configure()
