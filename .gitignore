@@ -1,7 +1,8 @@
 .venv/
+venv/
 __pycache__/
+node_modules/
+*.http
 *.pyc
 *.egg-info
 package-lock.json
-node_modules/
-*.http
