@@ -235,7 +235,7 @@ Getting servers from the seeker API...
         }
 
         try:
-            response = requests.post(url, headers=headers, json=data)
+            response: requests.Response = requests.post(url, headers=headers, json=data)
 
             if response != 200:
                 return False

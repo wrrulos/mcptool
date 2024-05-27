@@ -17,7 +17,7 @@ class UpdateUtilities:
         """
 
         try:
-            response = requests.get(f'{GITHUB_REPOSITORY}settings.json')
+            response: requests.Response = requests.get(f'{GITHUB_REPOSITORY}settings.json')
 
             if response.status_code != 200:
                 return False

@@ -51,7 +51,7 @@ class BotServerResponse:
             self._response = '&cError (Check the logs)'
             return
 
-        self._response = response.stdout.decode('utf-8')
+        self._response: str = response.stdout.decode('utf-8')
 
     @logger.catch
     def _get_command(self) -> str:

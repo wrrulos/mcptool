@@ -74,7 +74,7 @@ class MCPToolPath:
             os.makedirs(os.path.dirname(path), exist_ok=True)
 
         try:
-            response = requests.get(url)
+            response: requests.Response = requests.get(url)
 
             if response.status_code != 200:
                 mcwrite(f'&cError downloading file: {path}')

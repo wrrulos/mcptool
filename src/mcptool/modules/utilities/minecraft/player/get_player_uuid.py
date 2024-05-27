@@ -27,7 +27,7 @@ class PlayerUUID:
         """
 
         try:
-            response = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{self.username}")
+            response: requests.Response = requests.get(f"https://api.mojang.com/users/profiles/minecraft/{self.username}")
             response.raise_for_status()
             return PlayerUUIDFormat(response.json()['id'], self._get_offline_uuid())
 
