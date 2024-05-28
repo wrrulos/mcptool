@@ -67,4 +67,4 @@ class PlayerUUID:
             str: The offline UUID of the player
         """
 
-        return str(uuid.UUID(bytes=hashlib.md5(bytes(f'OfflinePlayer:{self.username}', 'utf-8')).digest()[:16], version=3))
+        return str(uuid.UUID(bytes=hashlib.md5(bytes(f'OfflinePlayer:{self.username}', 'utf-8')).digest()[:16], version=3)).replace('-', '')

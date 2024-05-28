@@ -1,3 +1,5 @@
+import uuid
+
 from loguru import logger
 from typing import Union
 from mccolors import mcwrite
@@ -47,6 +49,10 @@ class Command:
         if not self.validate_arguments(arguments):
             return
 
+        # Check if the player is a UUID with dashes
+        if len(self.player) == 36:
+            self.player = self.player.replace('-', '')
+
         # Check if the player is a UUID
         if len(self.player) == 32:
             mcwrite(f"{LM().get(['commands', self.name, 'gettingPlayerUsername'])}")
@@ -68,6 +74,6 @@ class Command:
 
         # Print the player data
         if player_data.online_uuid is not None:
-            mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}'))
+            mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}')).replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.online_uuid)}')
 
-        mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}'))
+        mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}')).replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.offline_uuid)}')
