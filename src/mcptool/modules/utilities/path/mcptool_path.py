@@ -126,49 +126,49 @@ class MCPToolPath:
             },
             # Scripts
             'bot_script': {
-                'url': f'{GITHUB_REPOSITORY}src/scripts/bot.mjs',
+                'url': f'{GITHUB_REPOSITORY}scripts/bot.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'bot.mjs'))
             },
             'utilities_script': {
-                'url': f'{GITHUB_REPOSITORY}src/scripts/utilities.mjs',
+                'url': f'{GITHUB_REPOSITORY}scripts/utilities.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'utilities.mjs'))
             },
             'server_response_script': {
-                'url': f'{GITHUB_REPOSITORY}src/scripts/server_response.mjs',
+                'url': f'{GITHUB_REPOSITORY}scripts/server_response.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'server_response.mjs'))
             },
             'brute_auth_script': {
-                'url': f'{GITHUB_REPOSITORY}src/scripts/brute_auth.mjs',
+                'url': f'{GITHUB_REPOSITORY}scripts/brute_auth.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'brute_auth.mjs'))
             },
             'connect_script': {
-                'url': f'{GITHUB_REPOSITORY}src/scripts/connect.mjs',
+                'url': f'{GITHUB_REPOSITORY}scripts/connect.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'connect.mjs'))
             },
             'sendcmd_script': {
-                'url': f'{GITHUB_REPOSITORY}src/scripts/sendcmd.mjs',
+                'url': f'{GITHUB_REPOSITORY}scripts/sendcmd.mjs',
                 'path': os.path.abspath(os.path.join(self.get(), 'scripts', 'sendcmd.mjs'))
             },
             # Txt files
             "usernames": {
-                "url": f'{GITHUB_REPOSITORY}src/txt/usernames.txt',
+                "url": f'{GITHUB_REPOSITORY}txt/usernames.txt',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'usernames.txt'))
             },
             "fakeproxy": {
-                "url": f'{GITHUB_REPOSITORY}src/txt/fakeproxy.config',
+                "url": f'{GITHUB_REPOSITORY}txt/fakeproxy.config',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'fakeproxy.config'))
             },
             "waterfall_config": {
-                "url": f'{GITHUB_REPOSITORY}src/txt/waterfall.config',
+                "url": f'{GITHUB_REPOSITORY}txt/waterfall.config',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'waterfall.config'))
             },
             "velocity_config": {
-                "url": f'{GITHUB_REPOSITORY}src/txt/velocity.config',
+                "url": f'{GITHUB_REPOSITORY}txt/velocity.config',
                 "path": os.path.abspath(os.path.join(self.get(), 'txt', 'velocity.config'))
             },
             # Scanners
             "qubo_scanner": {
-                "url": f'{GITHUB_REPOSITORY}src/scanners/qubo.jar',
+                "url": f'{GITHUB_REPOSITORY}scanners/qubo.jar',
                 "path": os.path.abspath(os.path.join(self.get(), "scanners", "qubo.jar"))
             },
             # Proxies directory
@@ -190,11 +190,11 @@ class MCPToolPath:
             },
             # Forwarding secrets
             'forwarding.secret_velocity': {
-                'url': f'{GITHUB_REPOSITORY}src/txt/forwarding.secret',
+                'url': f'{GITHUB_REPOSITORY}txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'forwarding.secret'))
             },
             'forwarding.secret_fakeproxy': {
-                'url': f'{GITHUB_REPOSITORY}src/txt/forwarding.secret',
+                'url': f'{GITHUB_REPOSITORY}txt/forwarding.secret',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'forwarding.secret'))
             },
             # Jar plugins for the proxies
@@ -203,7 +203,7 @@ class MCPToolPath:
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'velocity', 'plugins', 'MCPTool-1.1-SNAPSHOT.jar'))
             },
             'mcptool_fakeproxy_plugin': {
-                'url': f'{GITHUB_REPOSITORY}src/jar/RPoisoner-1.1-SNAPSHOT.jar',
+                'url': f'{GITHUB_REPOSITORY}jar/RPoisoner-1.1-SNAPSHOT.jar',
                 'path': os.path.abspath(os.path.join(self.get(), 'proxies', 'fakeproxy', 'plugins', 'RPoisoner-1.1-SNAPSHOT.jar'))
             },
             'mcptool_waterfall_plugin': {
@@ -212,7 +212,7 @@ class MCPToolPath:
             },
             # Imgs
             'server-icon': {
-                'url': f'{GITHUB_REPOSITORY}src/img/server-icon.png',
+                'url': f'{GITHUB_REPOSITORY}img/server-icon.png',
                 'path': os.path.abspath(os.path.join(self.get(), 'img', 'server-icon.png'))
             }
         }

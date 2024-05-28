@@ -1,4 +1,4 @@
-import subprocess
+import random
 
 from loguru import logger
 from mccolors import mcwrite
@@ -21,4 +21,5 @@ class Command:
             arguments (list): The arguments to execute the command
         """
 
-        ShowBanner(MCPToolBanners.BANNER_1, clear_screen=True).show()
+        banner: str = MCPToolBanners.BANNERS[random.randint(0, len(MCPToolBanners.BANNERS) - 1)]
+        ShowBanner(banner, clear_screen=True).show()
