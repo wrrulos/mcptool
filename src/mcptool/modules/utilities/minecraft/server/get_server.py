@@ -129,6 +129,9 @@ class MCServerData:
                     mod_list = [f'&f&l{mod['modid']} &8&l(&a&l{mod['version']}&8&l)' for mod in mod_list]
                     mod_list = ', '.join(mod_list)
 
+                else:
+                    mod_list = 'No mods found'
+
                 if self.bot:
                     # Get the bot output
                     bot_output: str = MCServerData._clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
