@@ -3,10 +3,12 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mcptool"
-version = "0.1.1"
+name = "MCPTool"
+description = "A tool for Minecraft pentesting"
+version = "1.0.0"
 readme = "README.md"
 requires-python = ">=3.6"
+keywords = ["minecraft", "pentesting", "tool", "security"]
 authors = [
   {name = "Pedro Agustin Vega (wrrulos)", email = "vegapedroagustin2004@gmail.com"}
 ]
@@ -23,7 +25,12 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
+license = {text = "MIT License"}
 
+[project.urls]
+homepage = "https://mcptool.net"
+documentation = "https://mcptool.net/docs"
+repository = "https://github.com/wrrulos/MCPTool"
 
 [project.scripts]
 mcptool = "mcptool.__main__:main"
