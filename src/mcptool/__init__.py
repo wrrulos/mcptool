@@ -30,7 +30,6 @@ MCPToolPath().check_files()
 from .modules.utilities.managers.language_manager import LanguageManager as LM
 from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
 from .modules.utilities.banners.show_banner import ShowBanner
-from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK, MCPTOOL_WEBSITE, GITHUB_REPOSITORY
 from .modules.commands.clear import Command as ClearCommand
 from .modules.commands.help import Command as HelpCommand
 from .modules.commands.discord import Command as DiscordCommand
@@ -53,6 +52,7 @@ from .modules.commands.rcon import Command as RconCommand
 from .modules.commands.checker import Command as CheckerCommand
 from .modules.commands.sendcmd import Command as SendCmdCommand
 from .modules.commands.subdomains import Command as SubdomainsCommand
+from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK, MCPTOOL_WEBSITE
 
 
 class MCPTool:

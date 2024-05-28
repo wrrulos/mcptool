@@ -85,6 +85,7 @@ class SeekerUtilities:
 
         # Wait for the token
         token_received.wait()
+        server_thread.join()
         return TOKEN
 
     @logger.catch
@@ -108,6 +109,7 @@ class SeekerUtilities:
         description: Union[str, None] = None
         only_bungeespoofable: Union[bool, None] = None
         protocol: Union[int, None] = None
+        online_players: Union[int, None] = None
 
         # Ask the user if they want to filter the servers
         filter: tuple = GetInput(LM().get(['commands', 'seeker', 'servers', 'filterByData']), 'boolean').get_input()

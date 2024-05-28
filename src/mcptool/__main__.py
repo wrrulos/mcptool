@@ -8,7 +8,7 @@ import sys
 import subprocess
 
 from mccolors import mcwrite
-from mcptool import MCPTool
+from . import MCPTool
 
 
 def main():
@@ -34,7 +34,7 @@ def main():
             mcwrite(MCPTool.__version__)
 
         if sys.argv[1] == 'update':
-            subprocess.run('pip install -e . --upgrade', shell=True, check=True)
+            subprocess.run('pip install -e mcptool --upgrade', shell=True, check=True)
 
         sys.exit(0)
 
