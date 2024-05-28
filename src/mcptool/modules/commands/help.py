@@ -1,7 +1,6 @@
-import subprocess
+import random
 
 from loguru import logger
-from mccolors import mcwrite
 
 from ...modules.utilities.banners.banners import HelpBanners
 from ...modules.utilities.banners.show_banner import ShowBanner
@@ -21,4 +20,5 @@ class Command:
             arguments (list): The arguments to execute the command
         """
 
-        ShowBanner(HelpBanners.HELP_BANNER_1).show()
+        banner: str = HelpBanners.BANNERS[random.randint(0, len(HelpBanners.BANNERS) - 1)]
+        ShowBanner(banner).show()

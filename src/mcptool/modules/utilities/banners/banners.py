@@ -45,7 +45,24 @@ class MCPToolBanners:
 
 {LM().get(['app', 'description']).replace('%version%', SM().get('version'))}{LM().get(['app', 'newVersion']) if UU.update_available() else ''}'''
 
-    BANNERS: list = [BANNER_1, BANNER_2, BANNER_3, BANNER_4]
+    BANNER_5: str = rf'''
+&c&l                         __
+&c&l           ---_ ...... _/_ -
+&c&l          /  .      ./ .'*\ \
+&c&l          : '         /__-'   \.
+&c&l         /                      )     &c&l___  ________ ______ _____ _____  _____ _
+&c&l       _/                  >   .'     &c&l|  \/  /  __ \| ___ \_   _|  _  ||  _  | |
+&c&l     /   '   .       _.-" /  .'       &c&l| |\/| | |    |  __/  | | | | | || | | | |
+&f&l     \           __/"     /.'         &f&l| |  | | \__/\| |     | | \ \_/ /\ \_/ / |____
+&f&l       \ '--  .-" /     //'           &f&l\_|  |_/\____/\_|     \_/  \___/  \___/\_____/
+&f&l        \|  \ | /     //
+&f&l             \:     //
+&f&l          `\/     //              {LM().get(['app', 'description']).replace('%version%', SM().get('version'))}{LM().get(['app', 'newVersion']) if UU.update_available() else ''}
+&f&l           \__`\/ /
+&f&l               \_|
+'''
+
+    BANNERS: list = [BANNER_1, BANNER_2, BANNER_3, BANNER_4, BANNER_5]
 
 
 class InputBanners:
@@ -63,11 +80,40 @@ class HelpBanners:
                                                                     &f&l⣤⣤⣿⣿⣿⣿⠛⠛ &b⢸⣿⡇ ⢸⣿⡇
                                                                   &f&l⢠⣤⣿⣿⣿⣿⠛⠛   &b⢸⣿⡇ ⢸⣿⡇
                                                                 &f&l⢰⣶⣾⣿⣿⣿⠛⠛     &b⠈⠛⢳⣶⡞⠛⠁
-                                                              &f&l⢰⣶⣾⣿⣿⣿⡏⠉       &b  ⠈⠉⠁⠀
+                                                              &f&l⢰⣶⣾⣿⣿⣿⡏⠉       &b  ⠈⠉⠁
                                                             &f&l⢰⣶⡎⠉⢹⣿⡏⠉⠁
                                                             &f&l⢸⣿⣷⣶⡎⠉⠁
                                                              &f&l⠉⠉⠉⠁'''
 
+    HELP_BANNER_2 = f'''
+                                                                             &d      ⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀
+    &c• &f&lCommands:                                                          &d       ⢀⡴⠋⠁  ⠊         ⠉⠳⢦⡀
+                                                                         &d     ⢀⡴⠃⢀⡴⢳               ⠙⣆
+      &d► &f&lserver [ip:port/domain]                                          &d     ⡾⠁⣠⠋ ⠈⢧               ⠈⢧
+      &d► &f&lplayer [username]                                                &d    ⣸⠁⢰⠃   ⠈⢣⡀              ⠈⣇
+      &d► &f&lipinfo [ip]                                                      &d    ⡇ ⡾⡀    ⣀⣹⣆⡀             ⢹
+      &d► &f&lreverseip [ip]                                                   &d   ⢸⠃⢀⣇⡈      &d⢀⡑⢄⡀⢀⡀         ⢸⡇
+      &d► &f&ldnslookup [domain]                                               &d   ⢸ &f&l⢻⡟⡻⢶⡆   ⡼⠟⡳⢿⣦&d⡑⢄         ⢸⡇
+      &d► &f&lsearch [data]                                                    &d   ⣸ &f&l⢸⠃⡇⢀⠇     ⡼  ⠈⣿&d⡗⠂       ⢸⠁
+      &d► &f&lwebsearch [tag] [bot] <proxy>                                    &d   ⡏ &f&l⣼ ⢳⠊      ⠱⣀⣀⠔&d⣸⠁       ⢠⡟
+      &d► &f&laternos [pages] [bot] <proxy>                                    &d   ⡇&f&l⢀⡇           ⠠ &d⡇        ⢸⠃
+      &d► &f&lscan [ip] [ports] [method] [bot] <proxy>                         &d  ⢸⠃&f&l⠘⡇            &d⢸⠁  ⢀     ⣾
+      &d► &f&lchecker [file] [bot] <proxy>                                     &d  ⣸  &f&l⠹⡄  ⠈⠁       &d⡞   ⠸     ⡇
+      &d► &f&llistening [ip:port/domain]                                       &d  ⡏   &f&l⠙⣆       ⢀⣠⢶&d⡇  ⢰⡀     ⡇
+      &d► &f&lplayerlogs [ip:port/domain]                                      &d ⢰⠇⡄    &f&l⢣⣀⣀⣀⡤⠴⡞⠉ &d⢸   ⣿⡇     ⣧
+      &d► &f&lbungee [ip:port/domain]                                          &d ⣸ ⡇       &f&l   ⢹  &d⢸  ⢀⣿⠇   ⠁ ⢸
+      &d► &f&lvelocity [ip:port/domain] [forwarding-mode]                      &d ⣿ ⡇    &f&l ⢀⡤⠤⠶⠶⠾⠤⠄&d⢸ ⡀⠸⣿⣀     ⠈⣇
+      &d► &f&lfakeproxy [ip:port/domain] [forwarding-mode]                     &d ⡇ ⡇    &f&l⡴⠋       &d⠸⡌⣵⡀⢳⡇      ⢹⡀
+      &d► &f&lconnect [ip:port] [username] [version] <proxy>                   &d ⡇ ⠇   &f&l⡸⠁         &d⠙⠮⢧⣀⣻⢂      ⢧
+      &d► &f&lrconnect [ip:rconPort] [passwordFile]                            &d ⣇ ⢠   &f&l⠇            &d  ⠈⡎⣆     ⠘
+      &d► &f&lrcon [ip:rconPort] [passwordFile] <delay>                        &d ⢻ ⠈⠰ &f&l⢸             &d  ⠰⠘⢮⣧⡀
+      &d► &f&lauthme [ip:port] [username] [version] [passwordFile] <proxy>     &d ⠸⡆  ⠇&f&l⣾             &d     ⠙⠳⣄⡀⡀
+      &d► &f&lkick [ip:port] [username] [version] [loop] <proxy>               &d ⠸⡆  ⠇&f&l⣾             &d       ⠙⠳⢢
+      &d► &f&lkickall [ip:port] [version] [loop] <proxy>                       &d ⠸⡆  ⠇&f&l⣾             &d        ⠙⣄⢢
+      &d► &f&lsendcmd [ip:port] [username] [version] [file] [loop] <proxy>     &d ⠸⡆  ⠇&f&l⣾             &d         ⠙⡀⢢
+      &d► &f&llanguage [language]                                              &d ⠸⡆  ⠇&f&l⣾             &d         ⠙⡀⢢'''
+
+    BANNERS: list = [HELP_BANNER_1, HELP_BANNER_2]
 
 class DiscordBanners:
     DISCORD_BANNER_1 = f'''
