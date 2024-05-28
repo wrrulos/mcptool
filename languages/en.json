@@ -30,6 +30,9 @@
         "uuid": {
             "arguments": ["username"],
             "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...",
+            "gettingPlayerUsername": "\n%spaces%%prefix% &f&lGetting data from the entered UUID...",
+            "playerNotFound": "\n%spaces%%prefix% &f&lPlayer not found. Check the uuid and try again.",
+            "username": "%spaces%&4[&c&lUser&f&lname&4] &f&l%username%",
             "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid%"
         },
         "ipinfo": {

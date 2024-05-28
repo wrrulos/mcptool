@@ -1,7 +1,9 @@
 from loguru import logger
+from typing import Union
 from mccolors import mcwrite
 
 from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
+from ..utilities.minecraft.player.get_player_username import PlayerUsername
 from ..utilities.managers.language_manager import LanguageManager as LM
 from ..utilities.commands.validate import ValidateArgument
 
@@ -10,6 +12,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'uuid'
+        self.player: Union[str, None] = None
         self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
 
     @logger.catch
@@ -27,6 +30,8 @@ class Command:
         if not ValidateArgument.validate_arguments_length(command_name=self.name, command_arguments=self.arguments, user_arguments=arguments):
             return False
 
+        self.player = arguments[0]
+
         return True
 
     @logger.catch
@@ -40,6 +45,18 @@ class Command:
 
         # Validate the arguments
         if not self.validate_arguments(arguments):
+            return
+
+        # Check if the player is a UUID
+        if len(self.player) == 32:
+            mcwrite(f"{LM().get(['commands', self.name, 'gettingPlayerUsername'])}")
+            player_data = PlayerUsername(uuid=self.player).get_username()
+
+            if player_data is None:
+                mcwrite(f"{LM().get(['commands', self.name, 'playerNotFound'])}")
+                return
+
+            mcwrite(LM().get(['commands', self.name, 'username']).replace('%username%', f'&a&l{player_data}'))
             return
 
         # Get the player data

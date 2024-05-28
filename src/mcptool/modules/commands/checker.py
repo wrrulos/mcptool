@@ -86,5 +86,3 @@ class Command:
             .replace('%servers%', str(self.servers_found))
             .replace('%file%', file)
         )
-
-
