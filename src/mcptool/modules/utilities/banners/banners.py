@@ -45,24 +45,7 @@ class MCPToolBanners:
 
 {LM().get(['app', 'description']).replace('%version%', SM().get('version'))}{LM().get(['app', 'newVersion']) if UU.update_available() else ''}'''
 
-    BANNER_5: str = rf'''
-&c&l                         __
-&c&l           ---_ ...... _/_ -
-&c&l          /  .      ./ .'*\ \
-&c&l          : '         /__-'   \.
-&c&l         /                      )     &c&l___  ________ ______ _____ _____  _____ _
-&c&l       _/                  >   .'     &c&l|  \/  /  __ \| ___ \_   _|  _  ||  _  | |
-&c&l     /   '   .       _.-" /  .'       &c&l| |\/| | |    |  __/  | | | | | || | | | |
-&f&l     \           __/"     /.'         &f&l| |  | | \__/\| |     | | \ \_/ /\ \_/ / |____
-&f&l       \ '--  .-" /     //'           &f&l\_|  |_/\____/\_|     \_/  \___/  \___/\_____/
-&f&l        \|  \ | /     //
-&f&l             \:     //
-&f&l          `\/     //              {LM().get(['app', 'description']).replace('%version%', SM().get('version'))}{LM().get(['app', 'newVersion']) if UU.update_available() else ''}
-&f&l           \__`\/ /
-&f&l               \_|
-'''
-
-    BANNERS: list = [BANNER_1, BANNER_2, BANNER_3, BANNER_4, BANNER_5]
+    BANNERS: list = [BANNER_1, BANNER_2, BANNER_3, BANNER_4]
 
 
 class InputBanners:

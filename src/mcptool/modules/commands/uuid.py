@@ -74,6 +74,6 @@ class Command:
 
         # Print the player data
         if player_data.online_uuid is not None:
-            mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}')).replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.online_uuid)}')
+            mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}').replace('%uuidVariant%', f'&a&l{uuid.UUID(player_data.online_uuid)}'))
 
-        mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}')).replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.offline_uuid)}')
+        mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}').replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.offline_uuid)}'))
