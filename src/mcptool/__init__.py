@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import subprocess
 import threading
 import random
 import struct
@@ -84,6 +85,10 @@ class MCPTool:
         """
         Method to manage the command line input
         """
+
+        # Set the title on cmd
+        if os.name == 'nt':
+            subprocess.run('title MCPTool', shell=True, check=True)
 
         # Select and show a random banner
         banner: str = MCPToolBanners.BANNERS[random.randint(0, len(MCPToolBanners.BANNERS) - 1)]
