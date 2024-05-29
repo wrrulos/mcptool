@@ -84,8 +84,8 @@ class SeekerUtilities:
             webbrowser.open(SM().get(['endpoints', 'seeker']))
 
         # Wait for the token
+        print(123)
         token_received.wait()
-        server_thread.join()
         return TOKEN
 
     @logger.catch
@@ -183,6 +183,7 @@ Getting servers from the seeker API...
  ↪ Headers: {headers}
  ↪ Data: {data}''')
 
+            mcwrite(LM().get(['commands', 'seeker', 'servers', 'sendingRequest']))
             response = requests.post(url, headers=headers, json=data)
 
         except (requests.ConnectionError, requests.Timeout) as e:

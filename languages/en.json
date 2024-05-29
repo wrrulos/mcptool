@@ -70,6 +70,7 @@
                 "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
             },
             "servers": {
+                "sendingRequest": "\n%spaces%%prefix% &f&lSending request to the Seeker API...",
                 "gettingServers": "\n%spaces%%prefix% &f&lGetting servers...",
                 "filterByData": "\n%spaces%%prefix% &f&lDo you want to filter servers by specific data? (&b&ly or n&f&l) &8&l▶ &f&l",
                 "filterByCountryCode": "\n%spaces%%prefix% &f&lDo you want to filter servers by country code? (&b&ly or n&f&l) &8&l▶ &f&l",

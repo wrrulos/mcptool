@@ -90,6 +90,8 @@ class Command:
             mcwrite(LM().get(['commands', self.name, 'servers', 'noServers']))
             return
 
+        mcwrite(LM().get(['commands', self.name, 'servers', 'gettingServers']))
+
         # Print the servers
         for server in servers:
             if 'server' not in server:
