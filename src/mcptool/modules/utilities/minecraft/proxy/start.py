@@ -30,9 +30,6 @@ class Fakeproxy:
         Method to configure the fakeproxy
         """
 
-        # Set the favicon of the fakeproxy if it exists or use the default one
-        self._set_favicon()
-
         # Set the command prefix for the rpoisoner plugin
         self._set_command_prefix()
 
@@ -261,6 +258,10 @@ class StartProxy:
         if self.proxy_settings == '':
             mcwrite(LM().get(['errors', 'proxyNotConfigured']))
             return
+
+        if self.proxy == 'fakeproxy':
+            # Set the favicon of the fakeproxy
+            Fakeproxy(process=None, server_data=server_data, target=self.target)._set_favicon()
 
         mcwrite(LM().get(['commands', 'proxy', 'proxyConfigured']))
         time.sleep(1)
