@@ -14,7 +14,7 @@ class SendNotification:
         Send a notification to the user with the title and message
         """
 
-        if TermuxUtilities().is_termux():
+        if TermuxUtilities.is_termux():
             return
 
         notification.notify(
