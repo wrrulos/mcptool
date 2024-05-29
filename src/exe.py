@@ -9,6 +9,7 @@ import sys
 from mccolors import mcwrite
 from mcptool import MCPTool
 
+
 def main():
     """
     Main function to run the MCPTool
