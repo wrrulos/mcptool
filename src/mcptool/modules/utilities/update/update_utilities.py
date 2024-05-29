@@ -1,15 +1,15 @@
 import requests
 
 from loguru import logger
-from plyer import notification
 
-from ..path.mcptool_path import MCPToolPath
+from ..notificactions.send import SendNotification
+from ..constants import VERSION, GITHUB_REPOSITORY, MCPTOOL_WEBSITE
 
 
 class UpdateUtilities:
     @staticmethod
     @logger.catch
-    def update_available(VERSION: str, GITHUB_REPOSITORY: str):
+    def update_available():
         """
         Method to check if an update is available
 
@@ -26,13 +26,10 @@ class UpdateUtilities:
             settings = response.json()
 
             if settings['version'] != VERSION:
-                notification.notify(
+                SendNotification(
                     title='MCPTool Update Available',
-                    message=f'An update is available for MCPTool! Please visit the Website to download the latest version.',
-                    app_name='MCPTool',
-                    app_icon=f'{MCPToolPath().get()}/img/icon.ico',
-                    timeout=10
-                )
+                    message=f'An update is available for MCPTool. Current version: {VERSION}, new version: {settings["version"]} Download it from {MCPTOOL_WEBSITE}'
+                ).send()
 
             return settings['version'] != VERSION
 
