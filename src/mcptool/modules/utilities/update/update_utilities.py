@@ -1,8 +1,10 @@
 import requests
 
 from loguru import logger
+from plyer import notification
 
 from ..constants import VERSION, GITHUB_REPOSITORY
+from ..path.mcptool_path import MCPToolPath
 
 
 class UpdateUtilities:
@@ -23,6 +25,16 @@ class UpdateUtilities:
                 return False
 
             settings = response.json()
+
+            if settings['version'] != VERSION:
+                notification.notify(
+                    title='MCPTool Update Available',
+                    message=f'An update is available for MCPTool! Please visit the Website to download the latest version.',
+                    app_name='MCPTool',
+                    app_icon=f'{MCPToolPath().get()}/img/icon.ico',
+                    timeout=10
+                )
+
             return settings['version'] != VERSION
 
         except Exception as e:

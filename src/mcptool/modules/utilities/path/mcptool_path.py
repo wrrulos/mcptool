@@ -214,5 +214,9 @@ class MCPToolPath:
             'server-icon': {
                 'url': f'{GITHUB_REPOSITORY}img/server-icon.png',
                 'path': os.path.abspath(os.path.join(self.get(), 'img', 'server-icon.png'))
+            },
+            'icon': {
+                'url': f'{GITHUB_REPOSITORY}img/icon.ico',
+                'path': os.path.abspath(os.path.join(self.get(), 'img', 'icon.ico'))
             }
         }

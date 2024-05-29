@@ -10,7 +10,7 @@ class AppSettings:
     UPGRADE_CODE = '{2d2b8940-8bc9-41e6-b5d4-c4a51174c313}'
     AUTHOR_EMAIL = 'vegapedroagustin2004@gmail.com'
     COPYRIGHT = 'Copyright (C) 2024 cx_Freeze'
-    ICON = './icon.ico'
+    ICON = './img/icon.ico'
 
 # Executable settings
 executables = [

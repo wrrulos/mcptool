@@ -29,13 +29,10 @@
 - **CAT** (Coming soon)
 - **PT** (Coming soon)
 
-## 🔧 Installation 
-`pip install mcptool`
-
+## 🔧 Installation
 I recommend checking the [installation guide](./docs/instalation.MD) for more information.
 
 ## Commands
-
 See the command guide from this [link.](./docs/en/commands.MD).
 
 ## 🕹 Usage
