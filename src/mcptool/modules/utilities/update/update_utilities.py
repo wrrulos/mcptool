@@ -3,14 +3,13 @@ import requests
 from loguru import logger
 from plyer import notification
 
-from ..constants import VERSION, GITHUB_REPOSITORY
 from ..path.mcptool_path import MCPToolPath
 
 
 class UpdateUtilities:
     @staticmethod
     @logger.catch
-    def update_available():
+    def update_available(VERSION: str, GITHUB_REPOSITORY: str):
         """
         Method to check if an update is available
 

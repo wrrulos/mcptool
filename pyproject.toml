@@ -18,7 +18,8 @@ dependencies = [
     "mcrcon",
     "requests",
     "loguru",
-    "pypresence"
+    "pypresence",
+    "plyer"
 ]
 classifiers = [
   "Programming Language :: Python :: 3",
