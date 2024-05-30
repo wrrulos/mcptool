@@ -1,0 +1,40 @@
+{
+  "language": "en",
+  "discordPresence": true,
+  "seekerToken": "YOUR_SEEKER_TOKEN",
+  "bot_recconect_time": 4,
+  "subdomainsThreads": 500,
+  "virusTotalApiKey": "0a1f92cc877fb00875cf0fa6e856db8009fb322fce4b507a9ef40e22d63b7fa4",
+  "scannerOptions": {
+    "externalScanners": {
+      "nmap": {
+        "command": "nmap -p %ports% -n -T5 -Pn -vvv -sS %target%"
+      },
+      "qubo": {
+        "command": "java -Dfile.encoding=UTF-8 -jar qubo.jar -range %target% -ports %ports% -th 500 -ti 2000"
+      },
+      "masscan": {
+        "command": "masscan -p %ports% %target%"
+      }
+    },
+    "pyScanner": {
+      "threads": 500,
+      "timeout": 2
+    },
+    "showScanOutput": false
+  },
+  "proxyOptions": {
+    "fakeproxyCommandPrefix": "..",
+    "fakeproxyUpdateDelay": "2",
+    "waterfallPort": 25570,
+    "velocityPort": 25580,
+    "fakeproxyPort": 33330
+  },
+  "endpoints": {
+    "seeker": "https://discord.com/oauth2/authorize?client_id=1087083964432404590&response_type=code&redirect_uri=https%3A%2F%2Fapi.serverseeker.net%2Flocal_redirect&scope=identify&state=MCPtool:7637",
+    "seekerAPI": "https://api.serverseeker.net"
+  },
+  "version": "1.0",
+  "waterfallVersion": "",
+  "velocityVersion": ""
+}

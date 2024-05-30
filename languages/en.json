@@ -1,0 +1,219 @@
+{
+    "languageName": "English",
+    "app": {
+        "title": "MCPTool - @wrrulos",
+        "description": "%spaces%&f&l&oAdvanced tool for pentesting Minecraft servers &8&l(&a&l%version%&8&l)",
+        "newVersion": "\n%spaces%&a&lNew version available! &f&lClose &f&lMCP&c&lTool &f&land download the new version from &b&lhttps://mcptool.net"
+    },
+    "commands": {
+        "invalidCommand": "\n%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
+        "missingArguments": "\n%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
+        "ctrlC": "\n%spaces%%prefix% &f&lStopping the command...",
+        "server": {
+            "arguments": ["ip:port"],
+            "gettingServerData": "\n%spaces%%prefix% &f&lGetting data from the entered server...",
+            "ip_and_port": "%spaces%&4[&c&lIP&f&l&f&lPort&4] &f&l&o%ip%:%port%",
+            "motd": "%spaces%&4[&c&lMO&f&lTD&4] &f&l%motd%",
+            "version": "%spaces%&4[&c&lVers&f&lion&4] &f&l%version%",
+            "protocol": "%spaces%&4[&c&lProt&f&lcol&4] &f&l&o%protocol%",
+            "connected": "%spaces%&4[&c&lConne&f&lcted&4] &f&l&o%connectedPlayers%&8&l/&f&l&o%maxPlayers%",
+            "playerList": "%spaces%&4[&c&lPlayer&f&lList&4] &f&l&o%playerList%",
+            "mod": "%spaces%&4[&c&lMo&f&ld&4] &f&l&o%mod%",
+            "modList": "%spaces%&4[&c&lMo&f&lds&4] &f&l&o%modList%",
+            "brand": "%spaces%&4[&c&lBra&f&lnd&4] &f&l&o%brand%",
+            "software": "%spaces%&4[&c&lSof&f&ltware&4] &f&l&o%software%",
+            "map": "%spaces%&4[&c&lMa&f&lp&4] &f&l&o%map%",
+            "gamemode": "%spaces%&4[&c&lGam&f&leMode&4] &f&l&o%gamemode%",
+            "ping": "%spaces%&4[&c&lPi&f&lng&4] &f&l&o%ping%ms",
+            "bot": "%spaces%&4[&c&lBo&f&lt&4] &f&l&o%bot%"
+        },
+        "uuid": {
+            "arguments": ["username"],
+            "gettingPlayerUuid": "\n%spaces%%prefix% &f&lGetting data from the entered player...",
+            "gettingPlayerUsername": "\n%spaces%%prefix% &f&lGetting data from the entered UUID...",
+            "playerNotFound": "\n%spaces%%prefix% &f&lPlayer not found. Check the uuid and try again.",
+            "username": "\n%spaces%&4[&c&lUser&f&lname&4] &f&l%username%",
+            "uuid": "%spaces%&4[&c&lUU&f&lID&4] %uuid% &8&l(&b&l%uuidVariant%&8&l)"
+        },
+        "ipinfo": {
+            "arguments": ["ip_address"],
+            "gettingIpData": "\n%spaces%%prefix% &f&lGetting data from the entered IP...",
+            "error": "\n%spaces%%prefix% &f&lCould not get data from the entered IP. It's possibly invalid.",
+            "continent": "\n%spaces%&4[&c&lConti&f&lnent&4] &f&l%continent% &8&l(&b&l+%continentCode%&8&l)",
+            "country": "%spaces%&4[&c&lCoun&f&ltry&4] &f&l%country% &8&l(&b&l+%countryCode%&8&l)",
+            "region": "%spaces%&4[&c&lReg&f&lion&4] &f&l%region% &8&l(&b&l+%regionName%&8&l)",
+            "city": "%spaces%&4[&c&lCi&f&lty&4] &f&l%city%",
+            "timezone": "%spaces%&4[&c&lTime&f&lzone&4] &f&l%timezone%",
+            "isp": "%spaces%&4[&c&lIS&f&lP&4] &f&l%isp%",
+            "organization": "%spaces%&4[&c&lOrgani&f&lzation&4] &f&l%organization%"
+        },
+        "resolver": {
+            "arguments": ["domain"],
+            "resolving": "\n%spaces%%prefix% &f&lResolving the entered domain &8&l(&a&l%domain%&8&l)&f&l...",
+            "gettingSubdomainsVirusTotal": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using VirusTotal API...",
+            "gettingSubdomainsHackerTarget": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain using HackerTarget API...",
+            "done": "\n%spaces%%prefix% &f&lFinished resolving the entered domain &8&l(&a&l%domain%&8&l)&f&l. Found &a&l%subdomainsAmount% &f&lsubdomains."
+        },
+        "dnslookup": {
+            "arguments": ["domain"],
+            "lookingUp": "\n%spaces%%prefix% &f&lLooking up the entered domain &8&l(&a&l%domain%&8&l)&f&l...",
+            "noRecords": "\n%spaces%%prefix% &f&lNo records found in the entered domain.",
+            "done": "\n%spaces%%prefix% &f&lFinished looking up the entered domain &8&l(&a&l%domain%&8&l)&f&l. Found &a&l%recordsAmount% &f&lrecords."
+        },
+        "seeker": {
+            "arguments": ["subcommand"],
+            "token": {
+                "arguments": ["token"],
+                "gettingToken": "\n%spaces%%prefix% &f&lGetting token...",
+                "tokenObtained": "\n%spaces%%prefix% &f&lToken obtained successfully.",
+                "invalidToken": "\n%spaces%%prefix% &c&lInvalid token. &f&lUse the command &b&lseeker token &f&lto get a new token.",
+                "restart": "\n%spaces%%prefix% &f&lPlease, restart the tool and try again."
+            },
+            "servers": {
+                "sendingRequest": "\n%spaces%%prefix% &f&lSending request to the Seeker API...",
+                "gettingServers": "\n%spaces%%prefix% &f&lGetting servers...",
+                "filterByData": "\n%spaces%%prefix% &f&lDo you want to filter servers by specific data? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCode": "\n%spaces%%prefix% &f&lDo you want to filter servers by country code? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByCountryCodeText": "\n%spaces%%prefix% &f&lEnter the country code to filter the servers. &8&l▶ &f&l",
+                "filterByCracked": "\n%spaces%%prefix% &f&lDo you want to filter servers by cracked status? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescription": "\n%spaces%%prefix% &f&lDo you want to filter servers by description? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByDescriptionText": "\n%spaces%%prefix% &f&lEnter the description to filter the servers. &8&l▶ &f&l",
+                "filterByOnlyBungeespoofable": "\n%spaces%%prefix% &f&lDo you want to filter servers by only bungeespoofable? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocol": "\n%spaces%%prefix% &f&lDo you want to filter servers by protocol? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByProtocolText": "\n%spaces%%prefix% &f&lEnter the protocol to filter the servers. &8&l▶ &f&l",
+                "filterByOnlinePlayers": "\n%spaces%%prefix% &f&lDo you want to filter servers by online players? (&b&ly or n&f&l) &8&l▶ &f&l",
+                "filterByOnlinePlayersText": "\n%spaces%%prefix% &f&lEnter the minimum amount of online players to filter the servers. &8&l▶ &f&l",
+                "serversObtained": "\n%spaces%%prefix% &f&l%servers% servers obtained successfully.",
+                "gettingData": "\n%spaces%%prefix% &f&lGetting data from the servers...",
+                "noServers": "\n%spaces%%prefix% &f&lNo servers found. Try again later or change the filters."
+            }
+        },
+        "scan": {
+            "arguments": ["ip_address", "port_range", "method"],
+            "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address &8&l(&a&l%ip%&8&l) &f&lwith the port range &a&l%portRange% &f&lusing the method &a&l%method%&f&l...",
+            "noOpenPorts": "\n%spaces%%prefix% &f&lNo open ports found in the entered IP address.",
+            "openPorts": "\n%spaces%%prefix% &a&l%openPorts% &f&lopen ports found in the entered IP address."
+        },
+        "connect": {
+            "arguments": ["ip:port", "version", "username"],
+            "connecting": "\n%spaces%%prefix% &f&lConnecting to the entered server..."
+        },
+        "kick": {
+            "arguments": ["ip:port", "version", "username", "loop"],
+            "kickingPlayer": "\n%spaces%%prefix% &f&lKicking the player %username% from the server %ip% using the version %version%...",
+            "playerKicked": "\n%spaces%%prefix% &f&lPlayer &a&l%username% &f&lkicked successfully from the server.",
+            "playerNotKicked": "\n%spaces%%prefix% &f&lCould not kick the player %username% from the server. Reason: %reason%"
+        },
+        "kickall": {
+            "arguments": ["ip:port", "version", "loop"],
+            "gettingPlayers": "\n%spaces%%prefix% &f&lGetting players from the server &a&l%ip%&f&l...",
+            "noPlayers": "\n%spaces%%prefix% &f&lNo players found in the server &c&l%ip%&f&l.",
+            "allPlayersKicked": "\n%spaces%%prefix% &f&lAll players kicked successfully from the server."
+        },
+        "listening": {
+            "arguments": ["ip:port"],
+            "connecting": "\n%spaces%%prefix% &f&lEstablishing connection with the &a&l%ip% &f&lserver",
+            "waitingForConnections": "\n%spaces%%prefix% &f&lListening for connections from the &a&l%ip% &f&lserver. Waiting for connections...",
+            "playersFound": "\n%spaces%%prefix% &f&lPlayers captured from the server:\n",
+            "playerFoundFormat": "%spaces%&a&l• &f&l%username% &8&l(%uuid%&8&l)"
+        },
+        "bruteauth": {
+            "arguments": ["ip:port", "version", "username", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file &8(&a&l%file%&8)&f&l...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the authentication plugin on server &a&l%ip% &f&lwith the user &b&l%username% &f&land the password list &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l)."
+        },
+        "proxy": {
+            "arguments": ["ip:port", "proxy_type"],
+            "configuringProxy": "\n%spaces%%prefix% &f&lConfiguring the proxy server &8(&a&l%proxyType%&8)&f&l... ",
+            "proxyConfigured": "\n%spaces%%prefix% &f&lProxy server configured successfully.",
+            "velocityForwardingMode": "\n%spaces%%prefix% &f&lWrite the velocity mode you want to use. &8(&a&lnone legacy bungeeguard modern&8) &8&l▶ &f&l",
+            "downloadingJar": "\n%spaces%%prefix% &f&lDownloading the proxy jar file (%jarName%)...",
+            "jarDownloaded": "\n%spaces%%prefix% &f&lProxy jar file downloaded successfully.",
+            "replacingJar": "\n%spaces%%prefix% &f&lReplacing the proxy jar file...",
+            "jarReplaced": "\n%spaces%%prefix% &f&lProxy jar file replaced successfully.",
+            "startingProxy": "\n%spaces%%prefix% &f&lStarting the proxy server...",
+            "proxyStarted": "\n%spaces%%prefix% &f&lProxy server started successfully in &a&l%proxyIp%:%proxyPort%&f&l."
+        },
+        "fakeproxy": {
+            "arguments": ["ip:port", "velocity_forwading_mode"],
+            "connected": "\n%spaces%%prefix% &b&l%time% 🟢 &f&l%username% &8(&a&l%ipAddress%&8) &f&lconnected to the fakeproxy server",
+            "disconnected": "\n%spaces%%prefix% &b&l%time% 🔴 &f&l%username% &8(&a&l%ipAddress%&8) &f&ldisconnected from the fakeproxy server",
+            "chat": "\n%spaces%%prefix% &b&l%time% ✉️ &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&l%message%",
+            "command": "\n%spaces%%prefix% &b&l%time% 💣 &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&lused the command &b&l%command%"
+        },
+        "rcon": {
+            "arguments": ["ip:port", "password"],
+            "connecting": "\n%spaces%%prefix% &f&lConnecting to the RCON server &a&l%ip%&f&l...",
+            "connected": "\n%spaces%%prefix% &f&lConnected to the RCON server successfully.",
+            "commandInput": "\n%spaces%%prefix% &f&lEnter the command you want to execute on the RCON server. &8&l▶ &f&l",
+            "disconnected": "\n%spaces%%prefix% &f&lDisconnected from the RCON server."
+        },
+        "brutercon": {
+            "arguments": ["ip:port", "passwords_file"],
+            "gettingPasswords": "\n%spaces%%prefix% &f&lGetting passwords from the file &8(&a&l%file%&8)&f&l...",
+            "bruteForcing": "\n%spaces%%prefix% &f&lInitiating a brute force attack on the RCON server on server &a&l%ip% &f&lwith the password list &6&l%passwordFile% &f&l(&6&l%passwords% passwords&f&l).",
+            "passwordFound": "\n%spaces%%prefix% &f&lPassword found: &a&l%password%",
+            "passwordNotFound": "\n%spaces%%prefix% &f&lPassword not found in the file."
+        },
+        "checker": {
+            "arguments": ["file"],
+            "checking": "\n%spaces%%prefix% &f&lSearching servers in the file &a&l%file%&f&l...",
+            "noServersFound": "\n%spaces%%prefix% &f&lNo servers found in the file &c&l%file%&f&l.",
+            "serversFound": "\n%spaces%%prefix% &a&l%servers% &f&lservers found in the file &a&l%file%&f&l."
+        },
+        "subdomains": {
+            "arguments": ["domain", "wordlist"],
+            "wordlist": "\n%spaces%%prefix% &f&lWordlist: &a&l%file% &8&l(&a&l%subdomains% subdomains&8&l)",
+            "gettingSubdomains": "\n%spaces%%prefix% &f&lGetting subdomains from the entered domain...",
+            "subdomainFound": "%spaces%%prefix% &f&lSubdomain found: &a&l%subdomain% &8(&a&l%ip%&8)",
+            "noSubdomains": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain using the wordlist &a&l%file%&f&l.",
+            "subdomainsFound": "\n%spaces%%prefix% &a&l%subdomains% &f&lsubdomains found in the entered domain."
+        },
+        "sendcmd": {
+            "arguments": ["ip:port", "version", "username", "commands_file"],
+            "gettingCommands": "\n%spaces%%prefix% &f&lGetting commands from the file &8(&a&l%file%&8)&f&l...",
+            "sendingCommands": "\n%spaces%%prefix% &f&lSending commands to the server &a&l%ip% &f&lusing the user &b&l%username% &f&land the commands file &6&l%commandsFile% &f&l(&6&l%commands% commands&f&l)."
+        }
+    },
+    "errors": {
+        "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off.",
+        "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
+        "invalidDomain": "\n%spaces%%prefix% &f&lThe domain entered is not valid. Check the domain and try again.",
+        "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
+        "invalidIpRange": "\n%spaces%%prefix% &f&lThe IP range entered is not valid. You have to enter a valid IP range.",
+        "invalidPortFormat": "\n%spaces%%prefix% &f&lThe port format entered is not valid. You have to enter a valid port.",
+        "invalidPortRange": "\n%spaces%%prefix% &f&lThe port range entered is not valid. You have to enter a valid port range.",
+        "invalidIpAndPort": "\n%spaces%%prefix% &f&lThe IP and port entered are not valid. You have to enter a valid IP and port.",
+        "invalidScanMethod": "\n%spaces%%prefix% &f&lThe scan method entered is not valid. You have to enter %methods%.",
+        "invalidYesNo": "\n%spaces%%prefix% &f&lYou have to enter &b&ly &f&lor &b&ln&f&l.",
+        "invalidEndpoint": "\n%spaces%%prefix% &f&lThe endpoint in the settings file is not valid. Check the settings file and try again.",
+        "invalidFile": "\n%spaces%%prefix% &f&lThe file entered is not valid. Check the file and try again.",
+        "invalidProxyType": "\n%spaces%%prefix% &f&lThe proxy type entered is not valid. You have to enter &c&lvelocity &f&lor &c&lwaterfall&f&l.",
+        "invalidVelocityMode": "\n%spaces%%prefix% &f&lThe velocity mode entered is not valid. You have to enter &c&lnone &f&lor &c&llegacy &f&lor &c&lbungeeguard &f&lor &c&lmodern&f&l.",
+        "endpointConnectionError": "\n%spaces%%prefix% &f&lCould not connect to the endpoint. The endpoint is possibly offline.",
+        "nmapNotInstalled": "\n%spaces%%prefix% &f&lNmap is not installed. Install it and try again.",
+        "masscanNotInstalled": "\n%spaces%%prefix% &f&lMasscan is not installed. Install it and try again.",
+        "javaNotInstalled": "\n%spaces%%prefix% &f&lJava is not installed. Install it and try again.",
+        "quboJarNotFound": "\n%spaces%%prefix% &f&lThe Qubo jar file was not found. See the logs for more information.",
+        "notJavaServer": "\n%spaces%%prefix% &f&lThis command can only be used on Java servers.",
+        "subdomainsFileEmpty": "\n%spaces%%prefix% &f&lThe subdomains file is empty. Add subdomains to the file and try again.",
+        "passwordFileEmpty": "\n%spaces%%prefix% &f&lThe password file is empty. Add passwords to the file and try again.",
+        "proxyPathNotFound": "\n%spaces%%prefix% &f&lThe proxy path entered is not valid. Check the logs and try again.",
+        "proxySettingsNotFound": "\n%spaces%%prefix% &f&lThe proxy settings were not found in the settings file. Check the logs and try again.",
+        "proxyNotConfigured": "\n%spaces%%prefix% &f&lThe proxy server is not configured. Check the logs and try again.",
+        "proxyJarNotFound": "\n%spaces%%prefix% &f&lThe proxy jar file was not found. See the logs for more information.",
+        "javaVersionNotSupported": "\n%spaces%%prefix% &f&lThe Java version is not supported. You have to use Java 19 or higher.",
+        "invalidJarFile": "\n%spaces%%prefix% &f&lThe jar file entered is not valid. Check the logs for more information.",
+        "velocityTomlError": "\n%spaces%%prefix% &f&lThere was an error in the velocity.toml file. Check the logs for more information.",
+        "rconTimeout": "\n%spaces%%prefix% &f&lThe RCON server connection timed out. Check the IP and port or the RCON password and try again.",
+        "rconConnectionRefused": "\n%spaces%%prefix% &f&lThe RCON server connection was refused. Check the IP and port or the RCON password and try again.",
+        "rconInvalidPassword": "\n%spaces%%prefix% &f&lThe RCON password entered is not valid. Check the password and try again.",
+        "rconUnknownError": "\n%spaces%%prefix% &f&lAn unknown error occurred while connecting to the RCON server. Check the logs for more information.",
+        "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again.",
+        "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain.",
+        "invalidIntgerInput": "\n%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.\n",
+        "invalidBooleanInput": "\n%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.\n",
+        "invalidCountryCodeInput": "\n%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.\n",
+        "invalidVelocityForwardingModeInput": "\n%prefix% &f&lThe  input entered is not a valid velocity forwarding mode. Check the mode and try again.\n"
+    }
+}

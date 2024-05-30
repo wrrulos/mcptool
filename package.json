@@ -1,0 +1,17 @@
+{
+  "name": "mcptool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minecraft-colors": "^1.0.1",
+    "minecraft-protocol": "^1.47.0",
+    "mineflayer": "^4.20.1"
+  }
+}
