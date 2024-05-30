@@ -22,5 +22,5 @@ class SendNotification:
             message=self.message,
             app_name='MCPTool',
             app_icon=f'{MCPToolPath().get()}/img/icon.ico',
-            timeout=2
+            timeout=1
         )

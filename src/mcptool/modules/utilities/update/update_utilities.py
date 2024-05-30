@@ -24,13 +24,6 @@ class UpdateUtilities:
                 return False
 
             settings = response.json()
-
-            if settings['version'] != VERSION:
-                SendNotification(
-                    title='MCPTool Update Available',
-                    message=f'An update is available for MCPTool. Current version: {VERSION}, new version: {settings["version"]} Download it from {MCPTOOL_WEBSITE}'
-                ).send()
-
             return settings['version'] != VERSION
 
         except Exception as e:

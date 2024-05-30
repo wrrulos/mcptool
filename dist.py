@@ -3,7 +3,7 @@ from cx_Freeze import setup, Executable
 
 class AppSettings:
     PYTHON_SCRIPT = './src/exe.py'
-    UPDATER_SCRIPT = './src/updater.py'
+    UPDATER_SCRIPT = './src/updater_exe.py'
     PRODUCT_NAME = 'MCPTool'
     PRODUCT_VERSION = '1.0.0'
     COMPANY_NAME = 'MCPTool'
@@ -41,8 +41,8 @@ setup(
     executables=executables,
     options={
         'build_exe': {
-            'packages': ['mcptool'],
-            'includes': ['plyer.platforms.win.notification'],
+            'packages': ['mcptool', 'asyncio'],
+            'includes': ['plyer.platforms.win.notification', 'asyncio'],
             'include_files': [],
         },
         'bdist_msi': {
