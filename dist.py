@@ -3,6 +3,7 @@ from cx_Freeze import setup, Executable
 
 class AppSettings:
     PYTHON_SCRIPT = './src/exe.py'
+    UPDATER_SCRIPT = './src/updater.py'
     PRODUCT_NAME = 'MCPTool'
     PRODUCT_VERSION = '1.0.0'
     COMPANY_NAME = 'MCPTool'
@@ -21,6 +22,14 @@ executables = [
         icon=AppSettings.ICON,
         copyright=AppSettings.COPYRIGHT,
         shortcut_name=AppSettings.PRODUCT_NAME,
+    ),
+    Executable(
+        script=AppSettings.UPDATER_SCRIPT,
+        base=None,
+        target_name='MCPToolUpdater.exe',
+        icon=AppSettings.ICON,
+        copyright=AppSettings.COPYRIGHT,
+        shortcut_name='MCPToolUpdater',
     )
 ]
 
@@ -33,13 +42,14 @@ setup(
     options={
         'build_exe': {
             'packages': ['mcptool'],
+            'includes': ['plyer.platforms.win.notification'],
             'include_files': [],
         },
         'bdist_msi': {
             'upgrade_code': f'{AppSettings.UPGRADE_CODE}',
             'add_to_path': True,
             'all_users': True,
-            'initial_target_dir': r'[ProgramFilesFolder]\%s\%s' % (AppSettings.COMPANY_NAME, AppSettings.PRODUCT_NAME),
+            'initial_target_dir': r'[AppDataFolder]\%s' % AppSettings.COMPANY_NAME,
             'data': {
                 'Shortcut': [
                     ('DesktopShortcut', 'DesktopFolder', AppSettings.PRODUCT_NAME, 'TARGETDIR', '[TARGETDIR]MCPTool.exe', None, None, None, None, None, None, 'TARGETDIR'),
