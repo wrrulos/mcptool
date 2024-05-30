@@ -15,6 +15,12 @@ class Messages:
     def get_server_message(server_data: Union[JavaServerData, BedrockServerData]) -> str:
         """
         Method to get the server message
+
+        Args:
+            server_data (Union[JavaServerData, BedrockServerData]): The server data
+
+        Returns:
+            str: The server message
         """
 
         server_message: str = f'''
@@ -60,6 +66,9 @@ class ShowMinecraftServer:
     def show(server_data: Union[JavaServerData, BedrockServerData]) -> None:
         """
         Method to show the server data
+
+        Args:
+            server_data (Union[JavaServerData, BedrockServerData]): The server data
         """
 
         server_message: str = Messages.get_server_message(server_data)

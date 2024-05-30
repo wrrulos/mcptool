@@ -61,8 +61,10 @@ class MCServerData:
     @logger.catch
     def get(self) -> Union[JavaServerData, BedrockServerData, None]:
         """
-        Method to get data from the server locally
-        using the mcstatus library.
+        Method to get the server data from the server class.
+
+        Returns:
+            Union[JavaServerData, BedrockServerData, None]: The server data if the server is online, otherwise None
         """
 
         # mc.universocraft.com:25565
@@ -247,7 +249,13 @@ class MCServerData:
     @staticmethod
     def _get_players(players: Union[list, None]) -> list:
         """
-        Method to get the players from the server data
+        Method to get the players from the player list
+
+        Args:
+            players (Union[list, None]): The player list
+
+        Returns:
+            list: The list of players
         """
 
         return [player['name'] for player in players] if players is not None else []
@@ -256,7 +264,13 @@ class MCServerData:
     @staticmethod
     def _clean_output(output: str) -> str:
         """
-        Method to clean the bot output
+        Method to clean the output
+
+        Args:
+            output (str): The output
+
+        Returns:
+            str: The cleaned output
         """
 
         # Remove newline characters.

@@ -377,7 +377,10 @@ class StartProxy:
     @staticmethod
     def _start_proxy(self) -> subprocess.Popen:
         """
-        Method to start the proxy
+        Method to start the proxy process
+
+        Returns:
+            subprocess.Popen: The proxy process
         """
 
         # Set the proxy jar

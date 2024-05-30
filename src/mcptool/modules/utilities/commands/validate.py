@@ -11,7 +11,15 @@ class ValidateArgument:
     @staticmethod
     def validate_arguments_length(command_name: str, command_arguments: list, user_arguments: list) -> bool:
         """
-        Method to validate the arguments length
+        Method to validate the length of the arguments
+
+        Args:
+            command_name (str): The name of the command
+            command_arguments (list): Command arguments
+            user_arguments (list): User arguments
+
+        Returns:
+            bool: True if the arguments are valid, False otherwise
         """
 
         for i in range(0, len(command_arguments)):
@@ -45,6 +53,12 @@ class ValidateArgument:
     def is_domain(domain: str) -> bool:
         """
         Method to validate if a string is a domain
+
+        Args:
+            domain (str): The domain
+
+        Returns:
+            bool: True if the domain is valid, False otherwise
         """
 
         if ValidateArgument.is_ip_address(domain):
@@ -62,6 +76,12 @@ class ValidateArgument:
     def is_ip_address(ip: str) -> bool:
         """
         Method to validate if a string is an IP address
+
+        Args:
+            ip (str): The IP address
+
+        Returns:
+            bool: True if the IP is valid, False otherwise
         """
 
         ip_parts: list = ip.split('.')
@@ -86,6 +106,12 @@ class ValidateArgument:
     def is_ip_and_port(ip: str) -> bool:
         """
         Method to validate if a string is an IP and port
+
+        Args:
+            ip (str): The IP and port
+
+        Returns:
+            bool: True if the IP is valid, False otherwise
         """
 
         if ':' not in ip:
@@ -132,7 +158,13 @@ class ValidateArgument:
     @staticmethod
     def is_port_range_py_method(port_range: str) -> bool:
         """
-        Method to validate if a string is a port range for the Python scanner
+        Method to validate if a string is a port range for the py method
+
+        Args:
+            port_range (str): The port range
+
+        Returns:
+            bool: True if the port range is valid, False otherwise
         """
 
         if '-' not in port_range:
@@ -167,6 +199,12 @@ class ValidateArgument:
     def is_seeker_subcommand(subcommand: str) -> bool:
         """
         Method to validate if a string is a seeker subcommand
+
+        Args:
+            subcommand (str): The subcommand
+
+        Returns:
+            bool: True if the subcommand is valid, False otherwise
         """
 
         if subcommand not in ['token', 'servers']:
@@ -179,6 +217,12 @@ class ValidateArgument:
     def is_scan_method(method: str) -> bool:
         """
         Method to validate if a string is a scan method
+
+        Args:
+            method (str): The scan method
+
+        Returns:
+            bool: True if the scan method is valid, False otherwise
         """
 
         if method not in ['nmap', 'qubo', 'masscan', 'py']:
@@ -190,7 +234,13 @@ class ValidateArgument:
     @staticmethod
     def is_yes_no(value: str) -> bool:
         """
-        Method to validate if a string is a yes or no
+        Method to validate if a string is a yes or no value
+
+        Args:
+            value (str): The value
+
+        Returns:
+            bool: True if the value is valid, False otherwise
         """
 
         if value not in ['y', 'n']:
@@ -203,6 +253,12 @@ class ValidateArgument:
     def is_proxy_type(proxy_type: str) -> bool:
         """
         Method to validate if a string is a proxy type
+
+        Args:
+            proxy_type (str): The proxy type
+
+        Returns:
+            bool: True if the proxy type is valid, False otherwise
         """
 
         if proxy_type not in ['waterfall', 'velocity']:
@@ -214,7 +270,13 @@ class ValidateArgument:
     @staticmethod
     def is_velocity_forwading_mode(mode: str) -> bool:
         """
-        Method to validate if a string is a velocity forwarding mode
+        Method to validate if a string is a velocity forwading mode
+
+        Args:
+            mode (str): The mode
+
+        Returns:
+            bool: True if the mode is valid, False otherwise
         """
 
         if mode not in ['none', 'legacy', 'bungeeguard', 'modern']:

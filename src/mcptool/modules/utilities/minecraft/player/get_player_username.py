@@ -12,10 +12,10 @@ class PlayerUsername:
     @logger.catch
     def get_username(self) -> Union[str, None]:
         """
-        Method to get the username history of the player based on their UUID
+        Method to get the username of a player
 
         Returns:
-
+            Union[str, None]: The username of the player or None if the player does not exist
         """
 
         response: requests.Response = requests.get(f"https://sessionserver.mojang.com/session/minecraft/profile/{self.uuid}")
