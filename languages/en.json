@@ -210,6 +210,10 @@
         "rconInvalidPassword": "\n%spaces%%prefix% &f&lThe RCON password entered is not valid. Check the password and try again.",
         "rconUnknownError": "\n%spaces%%prefix% &f&lAn unknown error occurred while connecting to the RCON server. Check the logs for more information.",
         "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again.",
-        "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain."
+        "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain.",
+        "invalidIntgerInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.",
+        "invalidBooleanInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.",
+        "invalidCountryCodeInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.",
+        "invalidVelocityForwardingModeInput": "\n%spaces%%prefix% &f&lThe  input entered is not a valid velocity forwarding mode. Check the mode and try again."
     }
 }

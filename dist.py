@@ -13,6 +13,7 @@ class AppSettings:
     COPYRIGHT = 'Copyright (C) 2024 cx_Freeze'
     ICON = './img/icon.ico'
 
+
 # Executable settings
 executables = [
     Executable(

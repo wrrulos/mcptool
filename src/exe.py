@@ -5,17 +5,13 @@ This file is used to run the MCPTool from the command line
 """
 
 import subprocess
+import time
 import base64
 import shutil
-import time
 import sys
 import os
 
-from mccolors import mcwrite
-
-from mcptool.modules.utilities.constants import MCPTOOL_WEBSITE
-from mcptool.modules.utilities.constants.update_available import UPDATE_AVAILABLE
-from mcptool.modules.utilities.notificactions.send import SendNotification
+from mccolors import mcwrite, mcreplace
 
 
 class UpdateTool:
@@ -27,10 +23,29 @@ class UpdateTool:
         Check if there is an update available for the tool
         """
 
+        from mcptool.modules.utilities.constants import MCPTOOL_WEBSITE
+        from mcptool.modules.utilities.constants.update_available import UPDATE_AVAILABLE
+        from mcptool.modules.utilities.notificactions.send import SendNotification
+        from mcptool.modules.utilities.input.get import GetInput
+
         if not UPDATE_AVAILABLE:
             mcwrite('&8&l[&a&lINFO&8&l] &f&lNo updates are available for MCPTool. Starting the tool...')
             time.sleep(0.5)
             return
+
+        if GetInput(
+            input_message='&8&l[&a&lINFO&8&l] &f&lAn update is available for MCPTool. Do you want to update it? [y/n]: ',
+            input_type='boolean'
+        ).get_input()[0] is False:
+            mcwrite('&8&l[&a&lINFO&8&l] &f&lStarting the tool...')
+            time.sleep(0.5)
+            return
+
+        input(mcreplace(
+            "&8&l[&a&lINFO&8&l] &f&lThe update will delete the current "
+            "mcptool data folder (MCPToolData) located at %appdata%. "
+            "If you don't need to backup, press any key to continue updating."
+        ))
 
         mcwrite('&8&l[&a&lINFO&8&l] &f&lAn update is available for MCPTool. Starting the update process...')
         SendNotification(
@@ -89,7 +104,7 @@ class UpdateTool:
         shutil.copyfile(original_updater_path, updater_executable)
 
         # Run the updater
-        mcwrite(r'&8&l[&a&lINFO&8&l] &f&lThe updater has been copied to the %APPDATA% folder. Running the updater...')
+        mcwrite(f'&8&l[&a&lINFO&8&l] &f&lThe updater has been copied to the %APPDATA% folder. Running the updater...')
         subprocess.run(command, shell=True)
         sys.exit(0)
 
