@@ -5,6 +5,7 @@ This file is used to run the MCPTool from the command line
 """
 
 import subprocess
+import base64
 import shutil
 import time
 import sys
@@ -57,7 +58,13 @@ class UpdateTool:
         updater_executable = os.path.join(appdata_path, 'MCPToolUpdater.exe')  #* %appdata%/MCPToolUpdater.exe
 
         # Command to run the updater with elevated privileges
-        command = f'powershell -Command "Start-Process \'{updater_executable}\' -Verb runAs"'
+        command: str = f'Start-Process \'{updater_executable}\' -Verb runAs'
+
+        # Encode the command
+        encoded_command: bytes = base64.b64encode(command.encode('utf-16le')).decode('utf-8')
+
+        # Command to run the updater with elevated privileges and encoded command
+        command = f'powershell -EncodedCommand {encoded_command}'
 
         # Copy ./lib and *.dll python files to the %APPDATA% folder
         mcwrite(r'&8&l[&a&lINFO&8&l] &f&lCopying the lib folder and .dll files to the %APPDATA% folder...')

@@ -41,8 +41,8 @@ setup(
     executables=executables,
     options={
         'build_exe': {
-            'packages': ['mcptool', 'asyncio'],
-            'includes': ['plyer.platforms.win.notification', 'asyncio'],
+            'packages': ['mcptool', 'base64'],
+            'includes': ['plyer.platforms.win.notification'],
             'include_files': [],
         },
         'bdist_msi': {
