@@ -19,6 +19,8 @@ class Updater:
         msi_file_name: str = 'MCPTool-win64.msi'
         msi_file_path: str = os.path.join(appdata_path, msi_file_name)
 
+        mcwrite('&r')
+
         if os.path.exists(f'{appdata_path}/{msi_file_name}'):
             mcwrite('&8&l[&a&lINFO&8&l] &f&lOld installer found. Removing it...')
             os.remove(f'{appdata_path}/{msi_file_name}')

@@ -26,10 +26,10 @@ class MCPToolPath:
         folder_name: str = 'MCPToolData'
 
         if self.system == 'nt':
-            path = os.path.abspath(os.path.join(os.getenv('APPDATA'), folder_name))
+            path: str = os.path.abspath(os.path.join(os.getenv('APPDATA'), folder_name))
 
         else:
-            path = os.path.abspath(os.path.join(os.getenv('HOME'), '.config', folder_name))
+            path: str = os.path.abspath(os.path.join(os.getenv('HOME'), '.config', folder_name))
 
         if not os.path.exists(path):
             logger.info(f'Creating MCPTool folder in {path}')
@@ -46,13 +46,13 @@ class MCPToolPath:
         try:
             for url in self.urls.values():
                 if not os.path.exists(url['path']):
-                    mcwrite(f'&a&lDownloading {url["path"]}')
+                    mcwrite(f'&8&l[&a&lINFO&8&l] &f&lDownloading {url["path"]}')
                     logger.info(f'Downloading {url["path"]}')
                     self.download_file(url['url'], url['path'])
 
             if not os.path.exists(os.path.join(self.get(), 'node_modules')):
                 logger.info('Installing node modules')
-                mcwrite('&a&lInstalling node modules')
+                mcwrite('&8&l[&a&lINFO&8&l] &f&lInstalling node modules...')
                 command: str = f'cd {self.get()} && npm install'
 
                 if OS_NAME == 'windows':
@@ -79,13 +79,13 @@ class MCPToolPath:
             response: requests.Response = requests.get(url)
 
             if response.status_code != 200:
-                mcwrite(f'&cError downloading file: {path}')
+                mcwrite(f'&8&l[&c&lERROR&8&l] &f&lError downloading file: {path}')
                 logger.error(f'Error downloading file: {response.status_code} from {url}')
                 return
 
             with open(path, 'wb') as file:
                 if response.content is None:
-                    mcwrite(f'&cError downloading file: {path}')
+                    mcwrite(f'&8&l[&c&lERROR&8&l] &f&lError downloading file: {path}')
                     logger.error(f'Error downloading file: {response.content}')
                     return
 
