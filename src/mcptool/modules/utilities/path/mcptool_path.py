@@ -23,11 +23,13 @@ class MCPToolPath:
             str: Path of the MCPTool folder
         """
 
+        folder_name: str = 'MCPToolData'
+
         if self.system == 'nt':
-            path = os.path.abspath(os.path.join(os.getenv('APPDATA'), 'MCPTool'))
+            path = os.path.abspath(os.path.join(os.getenv('APPDATA'), folder_name))
 
         else:
-            path = os.path.abspath(os.path.join(os.getenv('HOME'), '.config', 'mcptool'))
+            path = os.path.abspath(os.path.join(os.getenv('HOME'), '.config', folder_name))
 
         if not os.path.exists(path):
             logger.info(f'Creating MCPTool folder in {path}')
