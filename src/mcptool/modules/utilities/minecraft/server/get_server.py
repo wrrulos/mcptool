@@ -126,11 +126,11 @@ class MCServerData:
                 mod_list: Union[list, str] = mod_info.get('modList', []) if isinstance(mod_info, dict) else []
 
                 if len(mod_list) > 0:
-                    mod_list = [f'&f&l{mod['modid']} &8&l(&a&l{mod['version']}&8&l)' for mod in mod_list]
-                    mod_list = ', '.join(mod_list)
+                    mod_list: list = [f'&f&l{mod["modid"]} &8&l(&a&l{mod["version"]}&8&l)' for mod in mod_list]
+                    mod_list: str = ', '.join(mod_list)
 
                 else:
-                    mod_list = 'No mods found'
+                    mod_list: str = 'No mods found'
 
                 if self.bot:
                     # Get the bot output
