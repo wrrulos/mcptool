@@ -55,21 +55,6 @@ class InputBanners:
 
 class HelpBanners:
     HELP_BANNER_1 = f'''
-                                                                     &b⢀⣀⣀⣀⣀⣀⣀
-    &f&l• &b&lInformation commands                                         &b⢀⣀⡿⠿⠿⠿⠿⠿⠿⢿⣀⣀⣀&f&l⣀⣀⡀
-     &c&l↪ &f&lserver uuid ipinfo                                          &b⠸⠿⣇⣀⣀⣀⣀⣀⣀⣸⠿⢿⣿&f&l⣿⣿⡇
-                                                                     &b⠻⠿⠿⠿⠿⠿⣿⣿⣀⡸⠿⢿⣿⡇
-                                                                     &f&l    ⣤⣤⣿⣿⣿&b⣧⣤⡼⠿⢧⣤⡀
-                                                                      &f&l⣤⣤⣿⣿⣿⣿⠛&b⢻⣿⡇ ⢸⣿⡇
-                                                                    &f&l⣤⣤⣿⣿⣿⣿⠛⠛ &b⢸⣿⡇ ⢸⣿⡇
-                                                                  &f&l⢠⣤⣿⣿⣿⣿⠛⠛   &b⢸⣿⡇ ⢸⣿⡇
-                                                                &f&l⢰⣶⣾⣿⣿⣿⠛⠛     &b⠈⠛⢳⣶⡞⠛⠁
-                                                              &f&l⢰⣶⣾⣿⣿⣿⡏⠉       &b  ⠈⠉⠁
-                                                            &f&l⢰⣶⡎⠉⢹⣿⡏⠉⠁
-                                                            &f&l⢸⣿⣷⣶⡎⠉⠁
-                                                             &f&l⠉⠉⠉⠁'''
-
-    HELP_BANNER_2 = f'''
                                                                              &d      ⣠⠤⠖⠚⢉⣩⣭⡭⠛⠓⠲⠦⣄⡀
     &c• &f&lCommands:                                                          &d       ⢀⡴⠋⠁  ⠊         ⠉⠳⢦⡀
                                                                          &d     ⢀⡴⠃⢀⡴⢳               ⠙⣆
@@ -92,10 +77,9 @@ class HelpBanners:
       &d► &f&lbruteauth [ip:port] [version] [username] [passwords_file]        &d ⣇ ⢠   &f&l⠇            &d  ⠈⡎⣆     ⠘
       &d► &f&lkick [ip:port] [version] [username] [loop]                       &d ⢻ ⠈⠰ &f&l⢸             &d  ⠰⠘⢮⣧⡀
       &d► &f&lkickall [ip:port] [version] [loop]                               &d ⠸⡆  ⠇&f&l⣾             &d     ⠙⠳⣄⡀⡀
-      &d► &f&llanguage [language]  (not available in beta)                     &d ⠸⡆  ⠇&f&l⣾             &d       ⠙⠳⢢
       &d► &f&lclear                                                            &d ⠸⡆  ⠇&f&l⣾             &d         ⠙⡀⢢'''
 
-    BANNERS: list = [HELP_BANNER_2, HELP_BANNER_2]
+    BANNERS: list = [HELP_BANNER_1]
 
 class DiscordBanners:
     DISCORD_BANNER_1 = f'''
