@@ -34,7 +34,7 @@
     "seeker": "https://discord.com/oauth2/authorize?client_id=1087083964432404590&response_type=code&redirect_uri=https%3A%2F%2Fapi.serverseeker.net%2Flocal_redirect&scope=identify&state=MCPtool:7637",
     "seekerAPI": "https://api.serverseeker.net"
   },
-  "version": "1.0.3",
+  "version": "1.0",
   "waterfallVersion": "",
   "velocityVersion": ""
 }
