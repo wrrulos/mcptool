@@ -9,4 +9,4 @@ MCPTOOL_DISCORD_CLIENT_ID: str = '1127920414383943801'
 # URLs
 MCPTOOL_WEBSITE: str = 'https://mcptool.net'
 DISCORD_LINK: str = 'https://discord.gg/TWKs6BWkR2'
-GITHUB_REPOSITORY: str = 'https://raw.githubusercontent.com/wrrulos/MCPTool/development/'
+GITHUB_REPOSITORY: str = 'https://raw.githubusercontent.com/wrrulos/MCPTool/main/'
