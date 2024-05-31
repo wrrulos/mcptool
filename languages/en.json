@@ -173,6 +173,11 @@
             "arguments": ["ip:port", "version", "username", "commands_file"],
             "gettingCommands": "\n%spaces%%prefix% &f&lGetting commands from the file &8(&a&l%file%&8)&f&l...",
             "sendingCommands": "\n%spaces%%prefix% &f&lSending commands to the server &a&l%ip% &f&lusing the user &b&l%username% &f&land the commands file &6&l%commandsFile% &f&l(&6&l%commands% commands&f&l)."
+        },
+        "language": {
+            "arguments": ["language"],
+            "sameLanguage": "\n%spaces%%prefix% &f&lThe language is already set to &a&l%language%&f&l.",
+            "languageChanged": "\n%spaces%%prefix% &f&lLanguage changed to &a&l%language%&f&l."
         }
     },
     "errors": {
@@ -211,6 +216,7 @@
         "rconUnknownError": "\n%spaces%%prefix% &f&lAn unknown error occurred while connecting to the RCON server. Check the logs for more information.",
         "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again.",
         "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain.",
+        "invalidLanguage": "\n%spaces%%prefix% &f&lThe language entered is not valid. Check the language and try again.",
         "invalidIntgerInput": "\n%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.\n",
         "invalidBooleanInput": "\n%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.\n",
         "invalidCountryCodeInput": "\n%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.\n",

@@ -173,6 +173,11 @@
             "arguments": ["ip:port", "version", "username", "commands_file"],
             "gettingCommands": "\n%spaces%%prefix% &f&lGirdiğiniz dosyadan komutlar alınıyor &8(&a&l%file%&8)&f&l...",
             "sendingCommands": "\n%spaces%%prefix% &f&lKomutlar bu sunucuya gönderiliyor &a&l%ip% &f&lbu kullanıcı adı ile &b&l%username% &f&lbu komut dosyasındaki &6&l%commandsFile% &f&l(&6&l%commands% commands&f&l)."
+        },
+        "language": {
+            "arguments": ["language"],
+            "sameLanguage": "\n%spaces%%prefix% &f&lBu dil zaten kullanılıyor &a&l%language%&f&l.",
+            "languageChanged": "\n%spaces%%prefix% &f&lDil başarıyla değiştirildi &a&l%language%&f&l."
         }
     },
     "errors": {
@@ -211,6 +216,7 @@
         "rconUnknownError": "\n%spaces%%prefix% &f&lRCON sunucusuna bağlanırken bilinmeyen bir hata oluştu. Daha fazla bilgi için log dosyasını kontrol edin.",
         "commandsFileEmpty": "\n%spaces%%prefix% &f&lKomut dosyası boş. Dosyaya komutları ekleyip tekrar deneyin.",
         "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lGirdiğiniz domain'de subdomain bulunamadı.",
+        "invalidLanguage": "\n%spaces%%prefix% &f&lGirdiğiniz dil geçersiz. Dil dosyasını kontrol edip tekrar deneyin.",
         "invalidIntgerInput": "\n%prefix% &f&lGirdiğiniz değer tam sayı değil. Girdinizi kontrol edip tekrar deneyin.\n",
         "invalidBooleanInput": "\n%prefix% &f&lGirdiğiniz değer geçerli bir boolean değil. Girdinizi knotrol edip tekrar deneyin.\n",
         "invalidCountryCodeInput": "\n%prefix% &f&lGirdiğiniz değer geçerli bir ülke kodu değil. Kodu kontrol edip tekrar deneyin.\n",
