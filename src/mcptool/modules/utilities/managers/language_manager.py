@@ -45,14 +45,23 @@ class LanguageManager:
         return value
 
     @logger.catch
-    def set_language(self, language: str):  #! Actually, this method is not used in the code
+    def set_language(self, language: str):
         """
         Method to set the language
 
         Args:
             language (str): _description_
         """
-        self.language: str = language
+
+        # Get the language path
+        language_path: str = os.path.join(MCPToolPath().get(), 'languages', f'{language}.json')
+
+        if not os.path.exists(language_path):
+            logger.critical(f'Language file {language_path} does not exist')
+            return
+
+        # Set the language
+        SettingsManager().set('language', language)
 
     @logger.catch
     def get_language(self) -> str:

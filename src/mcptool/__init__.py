@@ -54,6 +54,7 @@ from .modules.commands.rcon import Command as RconCommand
 from .modules.commands.checker import Command as CheckerCommand
 from .modules.commands.sendcmd import Command as SendCmdCommand
 from .modules.commands.subdomains import Command as SubdomainsCommand
+from .modules.commands.language import Command as LanguageCommand
 from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK, MCPTOOL_WEBSITE
 
 
@@ -164,7 +165,8 @@ class MCPTool:
             'rcon': RconCommand(),
             'checker': CheckerCommand(),
             'sendcmd': SendCmdCommand(),
-            'subdomains': SubdomainsCommand()
+            'subdomains': SubdomainsCommand(),
+            'language': LanguageCommand()
         }
 
     @logger.catch
@@ -224,6 +226,9 @@ class MCPTool:
             shutil.rmtree(lib_folder_path)
 
         for file in os.listdir(appdata_path):
-            if file.endswith('.py'):
+            if file == 'MCPToolUpdater.exe' or file == 'MCPTool-win64.msi':
+                os.remove(os.path.join(appdata_path, file))
+
+            if file.endswith('.dll'):
                 if 'python' in file:
                     os.remove(os.path.join(os.getenv('APPDATA'), file))

@@ -23,7 +23,6 @@ def main():
 
 &f&l  help &8- &f&lShow the help message
 &f&l  version &8- &f&lShow the version of the tool
-&f&l  update &8- &f&lUpdate the tool
 """
 
     if len(sys.argv) > 1:
@@ -32,9 +31,6 @@ def main():
 
         if sys.argv[1] == 'version':
             mcwrite(MCPTool.__version__)
-
-        if sys.argv[1] == 'update':
-            subprocess.run('pip install -e mcptool --upgrade', shell=True, check=True)
 
         return
 

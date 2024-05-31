@@ -283,3 +283,21 @@ class ValidateArgument:
             return False
 
         return True
+
+    @logger.catch
+    @staticmethod
+    def is_valid_language(language: str) -> bool:
+        """
+        Method to validate if a string is a valid language
+
+        Args:
+            language (str): The language
+
+        Returns:
+            bool: True if the language is valid, False otherwise
+        """
+
+        if language not in ['en', 'tr']:
+            return False
+
+        return True
