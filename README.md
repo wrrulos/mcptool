@@ -1,4 +1,4 @@
-<h1 align="center"> 🧨 MCPTool v1.0 (BETA)
+<h1 align="center"> 🧨 MCPTool v1.0.0
 <h3 align="center"> Pentesting tool for Minecraft </h2>
 <img align="center" src="https://i.imgur.com/GqkwN7v.png" alt="MCPTool" title="MCPTool" style="max-width: 100%; height: auto;">
 
@@ -55,6 +55,6 @@ Use the `mcptool` command in the terminal.
 Enter the discord server with this [link](https://discord.gg/TWKs6BWkR2)
 
 ## Minecraft Libraries Used
-* MCStatus ()
-* Mineflayer ()
-* Mcrcon ()
+* MCStatus [Github](https://github.com/py-mine/mcstatus)
+* Mineflayer [Github](https://github.com/PrismarineJS/mineflayer)
+* Mcrcon [Github](https://github.com/uncaught-exceptions/mcrcon)
