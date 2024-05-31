@@ -4,6 +4,7 @@ import subprocess
 import threading
 import random
 import struct
+import shutil
 import time
 import os
 import pypresence
@@ -89,6 +90,7 @@ class MCPTool:
         # Set the title on cmd
         if os.name == 'nt':
             subprocess.run('title MCPTool', shell=True, check=True)
+            self._remove_python_files()
 
         # Select and show a random banner
         banner: str = MCPToolBanners.BANNERS[random.randint(0, len(MCPToolBanners.BANNERS) - 1)]
@@ -172,7 +174,7 @@ class MCPTool:
         """
 
         # Initialize the rich presence
-        rpc = pypresence.Presence(MCPTOOL_DISCORD_CLIENT_ID)
+        rpc: pypresence.Presence = pypresence.Presence(MCPTOOL_DISCORD_CLIENT_ID)
 
         # Set the start time
         start_time: int = int(time.time())
@@ -207,3 +209,21 @@ class MCPTool:
         except (KeyboardInterrupt, ValueError, RuntimeError, OSError):
             logger.error('Failed to connect to the Discord client. Retrying in 30 seconds...')
             pass
+
+    @logger.catch
+    def _remove_python_files(self) -> None:
+        """
+        Remove the python files in the AppData directory after the update
+        """
+
+        # Remove python files and lib folder in the AppData directory
+        appdata_path: str = os.getenv('APPDATA')  #* %appdata%
+        lib_folder_path: str = os.path.abspath(os.path.join(appdata_path, 'lib'))  #* %appdata%/lib
+
+        if os.path.exists(lib_folder_path):
+            shutil.rmtree(lib_folder_path)
+
+        for file in os.listdir(os.getenv('APPDATA')):
+            if file.endswith('.py'):
+                if 'python' in file:
+                    os.remove(os.path.join(os.getenv('APPDATA'), file))
