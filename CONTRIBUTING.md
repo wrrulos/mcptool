@@ -6,7 +6,7 @@ Thank you for your interest in contributing to **mcptool**! Below are some ways 
 
 If you find a bug or have a suggestion to improve the project, please open an [issue](https://github.com/wrrulos/mcptool/issues) on GitHub.
 
-If you have an idea for a new feature, open an [issue](https://github.com/youruser/mcptool/issues) and tag it "feature request". Describe in detail how you would like the new functionality to work.
+If you have an idea for a new feature, open an [issue](https://github.com/wrrulos/mcptool/issues) and tag it "feature request". Describe in detail how you would like the new functionality to work.
 
 ## Pull requests
 
