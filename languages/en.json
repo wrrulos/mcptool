@@ -217,9 +217,9 @@
         "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again.",
         "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain.",
         "invalidLanguage": "\n%spaces%%prefix% &f&lThe language entered is not valid. Check the language and try again.",
-        "invalidIntgerInput": "\n%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.\n",
-        "invalidBooleanInput": "\n%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.\n",
-        "invalidCountryCodeInput": "\n%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.\n",
-        "invalidVelocityForwardingModeInput": "\n%prefix% &f&lThe  input entered is not a valid velocity forwarding mode. Check the mode and try again.\n"
+        "invalidIntgerInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.\n",
+        "invalidBooleanInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.\n",
+        "invalidCountryCodeInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.\n",
+        "invalidVelocityForwardingModeInput": "\n%spaces%%prefix% &f&lThe  input entered is not a valid velocity forwarding mode. Check the mode and try again.\n"
     }
 }
