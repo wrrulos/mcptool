@@ -5,7 +5,22 @@
 <h4 align="center">This project was created for educational purposes and should not be used in environments without legal authorization.</p>
 
 # 🛠 Features
-
+* Get information from servers
+* Get usernames or uuids from players
+* Get information about IP addresses
+* Get information about domains
+* Get random servers using Seeker API (Shodan and Web Scraping will be included soon)
+* Scan IP addresses (Nmap, Qubo, Masscan and others)
+* Save players connecting to servers
+* Easily create proxies (cascade and velocity)
+* Create a fake proxy to capture data.
+* Connect to a minecraft server using the terminal
+* Send commands to servers using a bot
+* Connect to the RCON of a server
+* Perform a brute force attack on the RCON service
+* Perform a brute force attack on the user of a non-premium/semi-premium server
+* Kick players with bots thanks to 'You are logged in from a different location'
+* Support for multiple languages.
 
 ## 💻 Supported operating systems:
 
@@ -29,11 +44,9 @@
 - **CAT** (Coming soon)
 - **PT** (Coming soon)
 
-## 🔧 Installation
-I recommend checking the [installation guide](./docs/instalation.MD) for more information.
+## Documentation
 
-## Commands
-See the command guide from this [link.](./docs/en/commands.MD).
+You can find the MCPTool documentation in the [docs folder](./docs).
 
 ## 🕹 Usage
 Use the `mcptool` command in the terminal.
@@ -41,3 +54,7 @@ Use the `mcptool` command in the terminal.
 ## 🔗 Discord Server
 Enter the discord server with this [link](https://discord.gg/TWKs6BWkR2)
 
+## Minecraft Libraries Used
+* MCStatus ()
+* Mineflayer ()
+* Mcrcon ()
