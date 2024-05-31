@@ -47,7 +47,7 @@ ${spaces}§a§l.serverip §7§l- §f§lShow the server IP.
 ${spaces}§a§l.players §7§l- §f§lShow information about all players connected to the server.
 ${spaces}§a§l.plugins §7§l- §f§lShows the server plugins. (Using the / tab)
 `;
-/* 
+/*
 Commands that are not yet implemented:
 
 ${spaces}§a§l.file §b§l<file> §7§l- §f§lSend a list of messages/commands that get from the specified file
@@ -155,7 +155,7 @@ class CommandManager {
         commands[command]();
       } else {
         try {
-          bot.chat(command);
+          bot.chat(text);
         } catch (error) {}
       }
 
