@@ -223,7 +223,7 @@ class MCPTool:
         if os.path.exists(lib_folder_path):
             shutil.rmtree(lib_folder_path)
 
-        for file in os.listdir(os.getenv('APPDATA')):
+        for file in os.listdir(appdata_path):
             if file.endswith('.py'):
                 if 'python' in file:
                     os.remove(os.path.join(os.getenv('APPDATA'), file))
