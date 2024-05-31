@@ -84,7 +84,6 @@ class SeekerUtilities:
             webbrowser.open(SM().get(['endpoints', 'seeker']))
 
         # Wait for the token
-        print(123)
         token_received.wait()
         return TOKEN
 
