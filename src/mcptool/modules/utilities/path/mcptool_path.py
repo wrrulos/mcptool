@@ -153,8 +153,8 @@ class MCPToolPath:
             },
             # Txt files
             "usernames": {
-                "url": f'{GITHUB_REPOSITORY}txt/usernames.txt',
-                "path": os.path.abspath(os.path.join(self.get(), 'txt', 'usernames.txt'))
+                "url": f'{GITHUB_REPOSITORY}txt/bot_username.txt',
+                "path": os.path.abspath(os.path.join(self.get(), 'txt', 'bot_username.txt'))
             },
             "fakeproxy": {
                 "url": f'{GITHUB_REPOSITORY}txt/fakeproxy.config',

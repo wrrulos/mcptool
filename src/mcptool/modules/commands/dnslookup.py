@@ -3,7 +3,7 @@ import time
 from loguru import logger
 from mccolors import mcwrite
 
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.dns.get_dns_records import GetDNSRecords
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.constants import SPACES
@@ -13,7 +13,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'dnslookup'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
 
     @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
@@ -31,7 +31,7 @@ class Command:
             return False
 
         if not ValidateArgument.is_domain(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidDomain']))
+            mcwrite(LM.get('errors.invalidDomain'))
             return False
 
         return True
@@ -50,13 +50,13 @@ class Command:
 
         domain: str = arguments[0]
 
-        mcwrite(LM().get(['commands', self.name, 'lookingUp']).replace('%domain%', domain))
+        mcwrite(LM.get(f'commands.{self.name}.lookingUp').replace('%domain%', domain))
         time.sleep(0.5)
 
         dns_records: list = GetDNSRecords(domain).get_dns_records()
 
         if len(dns_records) == 0:
-            mcwrite(LM().get(['commands', self.name, 'noRecords']))
+            mcwrite(LM.get(f'commands.{self.name}.noRecords'))
             return
 
         print('')
@@ -68,7 +68,7 @@ class Command:
         # Get the amount of DNS records found
         records_amount: int = len(dns_records)
 
-        mcwrite(LM().get(['commands', self.name, 'done'])
+        mcwrite(LM.get(f'commands.{self.name}.done')
             .replace('%domain%', domain)
             .replace('%recordsAmount%', str(records_amount)
         ))

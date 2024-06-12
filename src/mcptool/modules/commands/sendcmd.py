@@ -6,7 +6,7 @@ from typing import Union
 from mccolors import mcwrite
 
 from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ..utilities.path.mcptool_path import MCPToolPath
@@ -16,7 +16,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'sendcmd'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
         self.passwords: list = []
 
     @logger.catch
@@ -35,11 +35,11 @@ class Command:
             return False
 
         if not ValidateArgument.is_ip_and_port(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidIpAndPort']))
+            mcwrite(LM.get('errors.invalidIpAndPort'))
             return False
 
         if not os.path.exists(arguments[3]):
-            mcwrite(LM().get(['errors', 'invalidFile']))
+            mcwrite(LM.get('errors.invalidFile'))
             return False
 
         return True
@@ -66,14 +66,14 @@ class Command:
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
 
         if server_data is None:
-            mcwrite(LM().get(['errors', 'serverOffline']))
+            mcwrite(LM.get('errors.serverOffline'))
             return
 
         if server_data.platform != 'Java':
-            mcwrite(LM().get(['errors', 'notJavaServer']))
+            mcwrite(LM.get('errors.notJavaServer'))
             return
 
-        mcwrite(LM().get(['commands', self.name, 'gettingCommands']).replace('%file%', commands_file))
+        mcwrite(LM.get(f'commands.{self.name}.gettingCommands').replace('%file%', commands_file))
 
         # Get absolute path of the commands file
         commands_file = os.path.abspath(commands_file)
@@ -83,7 +83,7 @@ class Command:
             commands = file.read().splitlines()
 
         if len(commands) == 0:
-            mcwrite(LM().get(['errors', 'commandsFileEmpty']))
+            mcwrite(LM.get('errors.commandsFileEmpty'))
             return
 
         path: str = MCPToolPath().get()
@@ -93,7 +93,7 @@ class Command:
             command = f'C: && {command}'
 
         # Start sending the commands to the server
-        mcwrite(LM().get(['commands', self.name, 'sendingCommands'])
+        mcwrite(LM.get(f'commands.{self.name}.sendingCommands')
             .replace('%ip%', f'{ip_address}:{port}')
             .replace('%username%', username)
             .replace('%commandsFile%', commands_file)

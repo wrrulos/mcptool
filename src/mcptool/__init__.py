@@ -11,6 +11,7 @@ import pypresence
 
 from loguru import logger
 from mccolors import mcwrite, mcreplace
+from easyjsonpy import load_languages, set_language, translate_message, load_configuration, get_config_value
 
 # Import the MCPToolPath class
 from .modules.utilities.path.mcptool_path import MCPToolPath
@@ -25,11 +26,21 @@ logger.add(os.path.join(MCPToolPath().get(), 'debug.log'),
     rotation="30 MB"
 )
 
+# Load the languages
+load_languages([
+    {'name': 'en', 'path': os.path.join(MCPToolPath().get(), 'languages', 'en.json')},
+    {'name': 'tr', 'path': os.path.join(MCPToolPath().get(), 'languages', 'tr.json')}
+])
+
+# Load the configuration
+load_configuration('default', os.path.join(MCPToolPath().get(), 'settings.json'))
+set_language(get_config_value('language'))
+
 # Check if the files exist
 MCPToolPath().check_files()
 
 # Utilities
-from .modules.utilities.managers.language_manager import LanguageManager as LM
+from .modules.utilities.managers.language_utils import LanguageUtils as LM
 from .modules.utilities.banners.banners import MCPToolBanners, InputBanners
 from .modules.utilities.banners.show_banner import ShowBanner
 from .modules.commands.clear import Command as ClearCommand
@@ -115,7 +126,7 @@ class MCPTool:
 
                 # Check if the command exists
                 if command_name not in self.commands:
-                    mcwrite(LM().get(['commands', 'invalidCommand']))
+                    mcwrite(LM.get('commands.invalidCommand'))
                     continue
 
                 try:
@@ -125,7 +136,7 @@ class MCPTool:
                     self.actual_command = f'Using the {command_name} command'
 
                 except KeyboardInterrupt:
-                    mcwrite(LM().get(['commands', 'ctrlC']))
+                    mcwrite(LM.get('commands.ctrlC'))
                     continue
 
             except (RuntimeError, EOFError):

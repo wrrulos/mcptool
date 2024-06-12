@@ -5,9 +5,9 @@ import os
 
 from loguru import logger
 from mccolors import mcwrite
+from easyjsonpy import get_config_value
 
-from ..utilities.managers.language_manager import LanguageManager as LM
-from ..utilities.managers.settings_manager import SettingsManager as SM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 
 
@@ -15,9 +15,9 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'subdomains'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
         self.servers_found: int = 0
-        self.subdomain_found_message: str = LM().get(['commands', self.name, 'subdomainFound'])
+        self.subdomain_found_message: str = LM.get(f'commands.{self.name}.subdomainFound')
         self.first_subdomain_found: bool = False
         self.stopped: bool = False
 
@@ -37,11 +37,11 @@ class Command:
             return False
 
         if not ValidateArgument.is_domain(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidDomain']))
+            mcwrite(LM.get('errors.invalidDomain'))
             return False
 
         if not os.path.exists(arguments[1]):
-            mcwrite(LM().get(['errors', 'invalidFile']))
+            mcwrite(LM.get('errors.invalidFile'))
             return False
 
         return True
@@ -65,7 +65,7 @@ class Command:
         self.first_subdomain_found = False
 
         try:
-            num_threads: int = int(SM().get('subdomainsThreads'))
+            num_threads: int = int(get_config_value('subdomainsThreads'))
 
         except ValueError:
             logger.warning(f'Invalid value for subdomainsThreads. Using default value (500)')
@@ -75,15 +75,15 @@ class Command:
             subdomain_list = [line.strip() for line in file]
 
         if len(subdomain_list) == 0:
-            mcwrite(LM().get(['errors', 'subdomainsFileEmpty']))
+            mcwrite(LM.get('errors.subdomainsFileEmpty'))
             return
 
-        mcwrite(LM().get(['commands', self.name, 'wordlist'])
+        mcwrite(LM.get(f'commands.{self.name}.wordlist')
             .replace('%file%', file_path)
             .replace('%subdomains%', str(len(subdomain_list)))
         )
         time.sleep(0.5)
-        mcwrite(LM().get(['commands', self.name, 'gettingSubdomains']))
+        mcwrite(LM.get(f'commands.{self.name}.gettingSubdomains'))
 
         # Check if the number of threads is greater than the number of subdomains
         if len(subdomain_list) < num_threads:
@@ -108,12 +108,12 @@ class Command:
                 thread.join()
 
             if subdomains_found == 0:
-                mcwrite(LM().get(['commands', self.name, 'noSubdomains'])
+                mcwrite(LM.get(f'commands.{self.name}.noSubdomains')
                     .replace('%file%', file_path)
                 )
 
             else:
-                mcwrite(LM().get(['commands', self.name, 'subdomainsFound'])
+                mcwrite(LM.get(f'commands.{self.name}.subdomainsFound')
                     .replace('%subdomains%', str(subdomains_found))
                 )
 

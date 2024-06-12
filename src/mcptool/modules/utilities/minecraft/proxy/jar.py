@@ -3,10 +3,10 @@ import os
 
 from loguru import logger
 from mccolors import mcwrite
+from easyjsonpy import get_config_value, set_config_value
 
 from ...path.mcptool_path import MCPToolPath
-from ...managers.settings_manager import SettingsManager as SM
-from ...managers.language_manager import LanguageManager as LM
+from ...managers.language_utils import LanguageUtils as LM
 
 
 class JarManager:
@@ -36,7 +36,7 @@ class JarManager:
             logger.error(f'Error while getting the latest version of the jar file -> {self.jar_name}')
             return
 
-        if SM().get(f'{self.jar_name}Version') != self.latest_version_url:
+        if get_config_value(f'{self.jar_name}Version') != self.latest_version_url:
             logger.info(f'Jar file already up to date -> {self.jar_name}')
             self._download()
             self._replace_jar()
@@ -88,7 +88,7 @@ class JarManager:
             bool: True if the download was successful, False otherwise
         """
 
-        mcwrite(LM().get(['commands', 'proxy', 'downloadingJar']).replace('%jarName%', self.jar_name))
+        mcwrite(LM.get('commands.proxy.downloadingJar').replace('%jarName%', self.jar_name))
         mcptool_path: str = MCPToolPath().get()
         jar_path: str = f'{mcptool_path}/jars/{self.jar_name}.jar'
 
@@ -100,7 +100,7 @@ class JarManager:
                 f.truncate(0)
                 response = requests.get(self.latest_version_url)
                 f.write(response.content)
-                mcwrite(LM().get(['commands', 'proxy', 'jarDownloaded']))
+                mcwrite(LM.get('commands.proxy.jarDownloaded'))
                 logger.info(f'Jar file downloaded successfully -> {jar_path}')
 
             except requests.exceptions.RequestException as e:
@@ -122,7 +122,7 @@ class JarManager:
             bool: True if the jar file was replaced successfully, False otherwise
         """
 
-        mcwrite(LM().get(['commands', 'proxy', 'replacingJar']))
+        mcwrite(LM.get('commands.proxy.replacingJar'))
 
         try:
 
@@ -131,9 +131,9 @@ class JarManager:
                 dst=f'{self.jar_path}/{self.jar_name}.jar'
             )
 
-            mcwrite(LM().get(['commands', 'proxy', 'jarReplaced']))
+            mcwrite(LM.get('commands.proxy.jarReplaced'))
             logger.info(f'Jar file replaced successfully -> {self.jar_name}')
-            SM().set(f'{self.jar_name}Version', self.latest_version_url)
+            set_config_value(f'{self.jar_name}Version', self.latest_version_url)
             return True
 
         except Exception as e:

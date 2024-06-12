@@ -3,7 +3,7 @@ from mccolors import mcwrite, mcreplace
 from typing import Union
 
 from ..commands.validate import ValidateArgument
-from ...utilities.managers.language_manager import LanguageManager as LM
+from ..managers.language_utils import LanguageUtils as LM
 
 
 class GetInput:
@@ -79,7 +79,7 @@ class GetInput:
             return (int(self.user_input), True)
 
         except ValueError:
-            mcwrite(LM().get(['errors', 'invalidIntgerInput']))
+            mcwrite(LM.get('errors.invalidIntgerInput'))
             return None
 
     @logger.catch
@@ -91,7 +91,7 @@ class GetInput:
         if self.user_input.lower() == 'y' or self.user_input.lower() == 'n':
             return (self.user_input.lower() == 'y', True)
 
-        mcwrite(LM().get(['errors', 'invalidBooleanInput']))
+        mcwrite(LM.get('errors.invalidBooleanInput'))
         return None
 
     @logger.catch
@@ -103,7 +103,7 @@ class GetInput:
         if len(self.user_input) == 2:
             return (self.user_input, True)
 
-        mcwrite(LM().get(['errors', 'invalidCountryCodeInput']))
+        mcwrite(LM.get('errors.invalidCountryCodeInput'))
         return None
 
     @logger.catch
@@ -115,5 +115,5 @@ class GetInput:
         if ValidateArgument.is_velocity_forwading_mode(self.user_input):
             return (self.user_input, True)
 
-        mcwrite(LM().get(['errors', 'invalidVelocityForwardingModeInput']))
+        mcwrite(LM.get('errors.invalidVelocityForwardingModeInput'))
         return None

@@ -7,7 +7,7 @@ from mccolors import mcwrite
 
 from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 
 
@@ -15,7 +15,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'checker'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
         self.servers_found: int = 0
 
     @logger.catch
@@ -34,7 +34,7 @@ class Command:
             return False
 
         if not os.path.exists(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidFile']))
+            mcwrite(LM.get('errors.invalidFile'))
             return False
 
         return True
@@ -58,7 +58,7 @@ class Command:
         with open(file, 'r') as f:
             lines: list = f.readlines()
 
-        mcwrite(LM().get(['commands', self.name, 'checking'])
+        mcwrite(LM.get(f'commands.{self.name}.checking')
             .replace('%file%', file)
         )
 
@@ -77,12 +77,12 @@ class Command:
                     self.servers_found += 1
 
         if self.servers_found == 0:
-            mcwrite(LM().get(['commands', self.name, 'noServersFound'])
+            mcwrite(LM.get(f'commands.{self.name}.noServersFound')
                 .replace('%file%', file)
             )
             return
 
-        mcwrite(LM().get(['commands', self.name, 'serversFound'])
+        mcwrite(LM.get(f'commands.{self.name}.serversFound')
             .replace('%servers%', str(self.servers_found))
             .replace('%file%', file)
         )

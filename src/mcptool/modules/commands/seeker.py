@@ -1,10 +1,10 @@
 from typing import Union
 from mccolors import mcwrite
 from loguru import logger
+from easyjsonpy import get_config_value, set_config_value
 
 from ..utilities.seeker.utilities import SeekerUtilities
-from ..utilities.managers.language_manager import LanguageManager as LM
-from ..utilities.managers.settings_manager import SettingsManager as SM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
@@ -14,8 +14,8 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'seeker'
-        self.token: Union[str, None] = SM().get('seekerToken')
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.token: Union[str, None] = get_config_value('seekerToken')
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
 
     @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
@@ -71,7 +71,7 @@ class Command:
 
         # Save the token in the settings
         self.token = TOKEN
-        SM().set(key='seekerToken', value=self.token)
+        set_config_value('seekerToken', TOKEN)
 
     @logger.catch
     def _get_servers(self) -> None:
@@ -80,17 +80,17 @@ class Command:
         """
 
         if self.token is None:
-            mcwrite(LM().get(['commands', self.name, 'token', 'invalidToken']))
+            mcwrite(LM.get(f'commands.{self.name}.token.invalidToken'))
             return
 
         # Get the servers
         servers = SeekerUtilities.get_servers(self.token)
 
         if len(servers) == 0:
-            mcwrite(LM().get(['commands', self.name, 'servers', 'noServers']))
+            mcwrite(LM.get(f'commands.{self.name}.servers.noServers'))
             return
 
-        mcwrite(LM().get(['commands', self.name, 'servers', 'gettingServers']))
+        mcwrite(LM.get(f'commands.{self.name}.servers.gettingServers'))
 
         # Print the servers
         for server in servers:

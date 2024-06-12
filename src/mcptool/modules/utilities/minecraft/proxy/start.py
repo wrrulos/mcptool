@@ -8,10 +8,10 @@ import os
 from typing import Union
 from mccolors import mcwrite
 from loguru import logger
+from easyjsonpy import get_config_value
 
 from ....utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
-from ....utilities.managers.language_manager import LanguageManager as LM
-from ...managers.settings_manager import SettingsManager as SM
+from ...managers.language_utils import LanguageUtils as LM
 from ..text.text_utilities import TextUtilities
 from ...path.mcptool_path import MCPToolPath
 from ...constants import OS_NAME
@@ -72,14 +72,14 @@ class Fakeproxy:
                         current_time: str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
                         if data_type == '[CONNECTING]':
-                            mcwrite(LM().get(['commands', 'fakeproxy', 'connected'])
+                            mcwrite(LM.get('commands.fakeproxy.connected')
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
                                 .replace('%time%', current_time)
                             )
 
                         if data_type == '[DISCONNECTING]':
-                            mcwrite(LM().get(['commands', 'fakeproxy', 'disconnected'])
+                            mcwrite(LM.get('commands.fakeproxy.disconnected')
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
                                 .replace('%time%', current_time)
@@ -89,7 +89,7 @@ class Fakeproxy:
                             # Get the message from the player data
                             message: str = player_data[3]
 
-                            mcwrite(LM().get(['commands', 'fakeproxy', 'chat'])
+                            mcwrite(LM.get('commands.fakeproxy.chat')
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
                                 .replace('%message%', message)
@@ -100,7 +100,7 @@ class Fakeproxy:
                             # Get the command from the player data
                             command: str = player_data[3]
 
-                            mcwrite(LM().get(['commands', 'fakeproxy', 'command'])
+                            mcwrite(LM.get('commands.fakeproxy.command')
                                 .replace('%username%', username)
                                 .replace('%ipAddress%', ip_address)
                                 .replace('%command%', command)
@@ -198,7 +198,7 @@ class Fakeproxy:
         Method to set the command prefix for the rpoisoner plugin
         """
 
-        command_prefix: str = SM().get(['proxyOptions', 'fakeproxyCommandPrefix'])
+        command_prefix: str = get_config_value('proxyOptions.fakeproxyCommandPrefix')
 
         if command_prefix == '':  # If the command prefix is empty, use the default one
             command_prefix = '..'
@@ -231,7 +231,7 @@ class StartProxy:
         self.proxy: str = proxy
         self.velocity_forwarding_mode: Union[str, None] = velocity_forwarding_mode
         self.proxy_path: str = ''
-        self.proxy_port: int = SM().get(['proxyOptions', f'{self.proxy}Port'])
+        self.proxy_port: int = get_config_value(f'proxyOptions.{self.proxy}Port')
         self.proxy_settings: str = ''
         self.proxy_settings_path: str = ''
 
@@ -245,27 +245,27 @@ class StartProxy:
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=self.target, bot=False).get()
 
         if server_data is None:
-            mcwrite(LM().get(['errors', 'serverOffline']))
+            mcwrite(LM.get('errors.serverOffline'))
             return
 
         if server_data.platform != 'Java':
-            mcwrite(LM().get(['errors', 'notJavaServer']))
+            mcwrite(LM.get('errors.notJavaServer'))
             return
 
         self._configure_proxy()
 
         # If the proxy settings are empty, return because the proxy could not be configured
         if self.proxy_settings == '':
-            mcwrite(LM().get(['errors', 'proxyNotConfigured']))
+            mcwrite(LM.get('errors.proxyNotConfigured'))
             return
 
         if self.proxy == 'fakeproxy':
             # Set the favicon of the fakeproxy
             Fakeproxy(process=None, server_data=server_data, target=self.target)._set_favicon()
 
-        mcwrite(LM().get(['commands', 'proxy', 'proxyConfigured']))
+        mcwrite(LM.get('commands.proxy.proxyConfigured'))
         time.sleep(1)
-        mcwrite(LM().get(['commands', 'proxy', 'startingProxy']))
+        mcwrite(LM.get('commands.proxy.startingProxy'))
 
         process: subprocess.Popen = self._start_proxy()
 
@@ -278,7 +278,7 @@ class StartProxy:
             process.kill()
             return
 
-        mcwrite(LM().get(['commands', 'proxy', 'proxyStarted']).replace('%proxyIp%', '127.0.0.1').replace('%proxyPort%', str(self.proxy_port)))
+        mcwrite(LM.get('commands.proxy.proxyStarted').replace('%proxyIp%', '127.0.0.1').replace('%proxyPort%', str(self.proxy_port)))
 
         if self.proxy == 'fakeproxy':
             Fakeproxy(process=process, server_data=server_data, target=self.target).configure()
@@ -305,17 +305,17 @@ class StartProxy:
 
             # If the line contains an error, notify the user and log the error
             if 'this version of the Java Runtime' in output_line:
-                mcwrite(LM().get(['errors', 'javaVersionNotSupported']))
+                mcwrite(LM.get('errors.javaVersionNotSupported'))
                 logger.error(f'Java version error: {output_line}')
                 return False
 
             if 'Invalid or corrupt jarfile' in output_line:
-                mcwrite(LM().get(['errors', 'invalidJarFile']))
+                mcwrite(LM.get('errors.invalidJarFile'))
                 logger.error(f'Invalid or corrupt jarfile: {self.proxy}. Reason: {output_line}')
                 return False
 
             if 'Unable to read/load/save your velocity.toml' in output_line:
-                mcwrite(LM().get(['errors', 'velocityTomlError']))
+                mcwrite(LM.get('errors.velocityTomlError'))
                 logger.error(f'Unable to read/load/save your velocity.toml: {output_line}')
                 return False
 
@@ -332,7 +332,7 @@ class StartProxy:
         Method to configure the proxy
         """
 
-        mcwrite(LM().get(['commands', 'proxy', 'configuringProxy']).replace('%proxyType%', self.proxy))
+        mcwrite(LM.get('commands.proxy.configuringProxy').replace('%proxyType%', self.proxy))
         time.sleep(0.5)
 
         mcptool_path: str = MCPToolPath().get()
@@ -340,7 +340,7 @@ class StartProxy:
 
         # Check if the proxy exists
         if not os.path.exists(self.proxy_path):
-            mcwrite(LM().get(['errors', 'proxyPathNotFound']))
+            mcwrite(LM.get('errors.proxyPathNotFound'))
             logger.error(f'Proxy path not found: {self.proxy_path}')
             return
 
@@ -357,7 +357,7 @@ class StartProxy:
                 self.proxy_settings = file.read()
 
         except FileNotFoundError:
-            mcwrite(LM().get(['errors', 'proxySettingsNotFound']))
+            mcwrite(LM.get('errors.proxySettingsNotFound'))
             logger.error(f'Proxy settings not found: {self.proxy_settings_path}')
             return
 
@@ -390,7 +390,7 @@ class StartProxy:
         JarManager(jar_name=proxy_jar, jar_path=self.proxy_path).check()
 
         if not os.path.exists(f'{self.proxy_path}/{proxy_jar}.jar'):
-            mcwrite(LM().get(['errors', 'proxyJarNotFound']))
+            mcwrite(LM.get('errors.proxyJarNotFound'))
             logger.critical(f'Proxy jar not found: {self.proxy_path}/{proxy_jar}.jar')
             return None
 

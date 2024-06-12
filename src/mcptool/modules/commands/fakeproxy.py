@@ -2,7 +2,7 @@ from mccolors import mcwrite
 from loguru import logger
 
 from ..utilities.commands.validate import ValidateArgument
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.input.get import GetInput
 from ..utilities.minecraft.proxy.start import StartProxy
 
@@ -11,7 +11,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'fakeproxy'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
         self.target: str = ''
         self.velocity_forwading_mode: str = ''
         self.velocity_forwading_mode: tuple = ('', False)
@@ -32,11 +32,11 @@ class Command:
             return False
 
         if not ValidateArgument.is_ip_and_port(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidIpAndPort']))
+            mcwrite(LM.get('errors.invalidIpAndPort'))
             return False
 
         if not ValidateArgument.is_velocity_forwading_mode(arguments[1]):
-            mcwrite(LM().get(['errors', 'invalidVelocityMode']))
+            mcwrite(LM.get('errors.invalidVelocityMode'))
             return False
 
         return True

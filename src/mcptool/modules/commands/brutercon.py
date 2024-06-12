@@ -4,7 +4,7 @@ from loguru import logger
 from mccolors import mcwrite
 from mcrcon import MCRcon, MCRconException
 
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 
@@ -13,7 +13,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'brutercon'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
         self.passwords: list = []
 
     @logger.catch
@@ -32,11 +32,11 @@ class Command:
             return False
 
         if not ValidateArgument.is_ip_and_port(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidIpAndPort']))
+            mcwrite(LM.get('errors.invalidIpAndPort'))
             return False
 
         if not os.path.exists(arguments[1]):
-            mcwrite(LM().get(['errors', 'invalidFile']))
+            mcwrite(LM.get('errors.invalidFile'))
             return False
 
         return True
@@ -59,18 +59,18 @@ class Command:
         password_file: str = arguments[1]
 
         # Getting the passwords
-        mcwrite(LM().get(['commands', self.name, 'gettingPasswords']).replace('%file%', arguments[1]))
+        mcwrite(LM.get(f'commands.{self.name}.gettingPasswords').replace('%file%', arguments[1]))
 
         with open(password_file, 'r') as file:
             self.passwords = file.read().splitlines()
 
         # Check if the password file is empty
         if len(self.passwords) == 0:
-            mcwrite(LM().get(['errors', 'passwordFileEmpty']))
+            mcwrite(LM.get(f'errors.passwordFileEmpty'))
             return
 
         # Start brute forcing to the rcon
-        mcwrite(LM().get(['commands', self.name, 'bruteForcing'])
+        mcwrite(LM.get(f'commands.{self.name}.bruteForcing')
             .replace('%ip%', f'{ip_address}:{port}')
             .replace('%passwordFile%', password_file)
             .replace('%passwords%', str(len(self.passwords)))
@@ -81,22 +81,22 @@ class Command:
 
             try:
                 with MCRcon(host=ip_address, password=rcon_password, port=int(port), timeout=30) as mcr:
-                    mcwrite(LM().get(['commands', self.name, 'passwordFound'])
+                    mcwrite(LM.get(f'commands.{self.name}.passwordFound')
                         .replace('%password%', rcon_password)
                     )
                     return
 
             except TimeoutError:
-                mcwrite(LM().get(['errors', 'rconTimeout']))
+                mcwrite(LM.get('errors.rconTimeout'))
 
             except ConnectionRefusedError:
-                mcwrite(LM().get(['errors', 'rconConnectionRefused']))
+                mcwrite(LM.get('errors.rconConnectionRefused'))
 
             except MCRconException:
                 pass
 
             except Exception as e:
-                mcwrite(LM().get(['errors', 'rconUnknownError']))
+                mcwrite(LM.get('errors.rconUnknownError'))
                 logger.error(f'Error in brutercon command: {e}')
 
-        mcwrite(LM().get(['commands', self.name, 'passwordNotFound']))
+        mcwrite(LM.get(f'commands.{self.name}.passwordNotFound'))

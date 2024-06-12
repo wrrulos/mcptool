@@ -3,7 +3,7 @@ import socket
 from mccolors import mcwrite
 from loguru import logger
 
-from ..managers.language_manager import LanguageManager as LM
+from ..managers.language_utils import LanguageUtils as LM
 
 
 class ValidateArgument:
@@ -27,7 +27,7 @@ class ValidateArgument:
                 user_arguments[i]
 
             except IndexError:
-                error_message: str = LM().get(['commands', 'missingArguments'])
+                error_message: str = LM.get('commands.missingArguments')
                 arguments_message: str = ''
 
                 for argument_valid in command_arguments[:i]:

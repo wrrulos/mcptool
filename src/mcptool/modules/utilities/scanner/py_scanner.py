@@ -3,15 +3,15 @@ import socket
 
 from loguru import logger
 from typing import Union
+from easyjsonpy import get_config_value
 
 from ..minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
-from ..managers.settings_manager import SettingsManager as SM
 
 # Try to get the number of threads for the scanner
 try:
     # Semaphore to limit the number of active threads
-    thread_semaphore = threading.Semaphore(SM().get(['scannerOptions', 'pyScanner', 'threads']))
+    thread_semaphore = threading.Semaphore(get_config_value('scannerOptions.pyScanner.threads'))
 
 except (TypeError, ValueError, KeyError):
     logger.warning('Invalid number of threads for the scanner. Using the default value of 10 threads.')
@@ -23,7 +23,7 @@ class PyScanner:
         self.ip_address: str = ip_address
         self.port_range: str = port_range
         self.open_ports: list = []
-        self.timeout: Union[int, float, None] = SM().get(['scannerOptions', 'pyScanner', 'timeout'])
+        self.timeout: Union[int, float, None] = get_config_value('scannerOptions.pyScanner.timeout')
         self.stopped: bool = False
         self.threads: list = []
 

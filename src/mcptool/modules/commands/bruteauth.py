@@ -6,7 +6,7 @@ from typing import Union
 from mccolors import mcwrite
 
 from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ..utilities.path.mcptool_path import MCPToolPath
@@ -16,7 +16,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'bruteauth'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
         self.passwords: list = []
 
     @logger.catch
@@ -35,11 +35,11 @@ class Command:
             return False
 
         if not ValidateArgument.is_ip_and_port(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidIpAndPort']))
+            mcwrite(LM.get('errors.invalidIpAndPort'))
             return False
 
         if not os.path.exists(arguments[3]):
-            mcwrite(LM().get(['errors', 'invalidFile']))
+            mcwrite(LM.get('errors.invalidFile'))
             return False
 
         return True
@@ -64,7 +64,7 @@ class Command:
         password_file: str = arguments[3]
 
         # Getting the passwords
-        mcwrite(LM().get(['commands', self.name, 'gettingPasswords']).replace('%file%', arguments[1]))
+        mcwrite(LM.get(f'commands.{self.name}.gettingPasswords').replace('%file%', arguments[1]))
 
         # Get absolute path of the password file
         password_file = os.path.abspath(password_file)
@@ -74,22 +74,22 @@ class Command:
 
         # Check if the password file is empty
         if len(self.passwords) == 0:
-            mcwrite(LM().get(['errors', 'passwordFileEmpty']))
+            mcwrite(LM.get('errors.passwordFileEmpty'))
             return
 
         # Check if the server is online and if it is a Java server
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
 
         if server_data is None:
-            mcwrite(LM().get(['errors', 'serverOffline']))
+            mcwrite(LM.get('errors.serverOffline'))
             return
 
         if server_data.platform != 'Java':
-            mcwrite(LM().get(['errors', 'notJavaServer']))
+            mcwrite(LM.get('errors.notJavaServer'))
             return
 
         # Start brute forcing to the authentication plugin of the server
-        mcwrite(LM().get(['commands', self.name, 'bruteForcing'])
+        mcwrite(LM.get(f'commands.{self.name}.bruteForcing')
             .replace('%ip%', arguments[0])
             .replace('%username%', username)
             .replace('%passwordFile%', password_file)

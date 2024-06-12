@@ -6,7 +6,7 @@ from mccolors import mcwrite
 
 from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
 from ..utilities.minecraft.player.get_player_username import PlayerUsername
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 
 
@@ -15,7 +15,7 @@ class Command:
     def __init__(self):
         self.name: str = 'uuid'
         self.player: Union[str, None] = None
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
 
     @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
@@ -55,18 +55,18 @@ class Command:
 
         # Check if the player is a UUID
         if len(self.player) == 32:
-            mcwrite(f"{LM().get(['commands', self.name, 'gettingPlayerUsername'])}")
+            mcwrite(f"{LM.get(f'commands.{self.name}.gettingPlayerUsername')}")
             player_data = PlayerUsername(uuid=self.player).get_username()
 
             if player_data is None:
-                mcwrite(f"{LM().get(['commands', self.name, 'playerNotFound'])}")
+                mcwrite(f"{LM.get(f'commands.{self.name}.playerNotFound')}")
                 return
 
-            mcwrite(LM().get(['commands', self.name, 'username']).replace('%username%', f'&a&l{player_data}'))
+            mcwrite(LM.get(f'commands.{self.name}.username').replace('%username%', f'&a&l{player_data}'))
             return
 
         # Get the player data
-        mcwrite(f"{LM().get(['commands', self.name, 'gettingPlayerUuid'])}")
+        mcwrite(f"{LM.get(f'commands.{self.name}.gettingPlayerUuid')}")
         player_data = PlayerUUID(username=arguments[0]).get_uuid()
 
         # Add a new line
@@ -74,6 +74,6 @@ class Command:
 
         # Print the player data
         if player_data.online_uuid is not None:
-            mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&a&l{player_data.online_uuid}').replace('%uuidVariant%', f'&a&l{uuid.UUID(player_data.online_uuid)}'))
+            mcwrite(LM.get(f'commands.{self.name}.uuid').replace('%uuid%', f'&a&l{player_data.online_uuid}').replace('%uuidVariant%', f'&a&l{uuid.UUID(player_data.online_uuid)}'))
 
-        mcwrite(LM().get(['commands', self.name, 'uuid']).replace('%uuid%', f'&c&l{player_data.offline_uuid}').replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.offline_uuid)}'))
+        mcwrite(LM.get(f'commands.{self.name}.uuid').replace('%uuid%', f'&c&l{player_data.offline_uuid}').replace('%uuidVariant%', f'&c&l{uuid.UUID(player_data.offline_uuid)}'))

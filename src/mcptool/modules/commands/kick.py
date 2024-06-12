@@ -5,7 +5,7 @@ from mccolors import mcwrite
 
 from ..utilities.minecraft.bot.server_response import BotServerResponse
 from ..utilities.minecraft.bot.utilities import BotUtilities
-from ..utilities.managers.language_manager import LanguageManager as LM
+from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 
 
@@ -13,7 +13,7 @@ class Command:
     @logger.catch
     def __init__(self):
         self.name: str = 'kick'
-        self.arguments: list = [i for i in LM().get(['commands', self.name, 'arguments'])]
+        self.arguments: list = [i for i in LM.get(f'commands.{self.name}.arguments')]
 
     @logger.catch
     def validate_arguments(self, arguments: list) -> bool:
@@ -31,11 +31,11 @@ class Command:
             return False
 
         if not ValidateArgument.is_ip_and_port(arguments[0]):
-            mcwrite(LM().get(['errors', 'invalidIpAndPort']))
+            mcwrite(LM.get('errors.invalidIpAndPort'))
             return False
 
         if not ValidateArgument.is_yes_no(arguments[3]):
-            mcwrite(LM().get(['errors', 'invalidYesNo']))
+            mcwrite(LM.get('errors.invalidYesNo'))
             return False
 
         return True
@@ -59,7 +59,7 @@ class Command:
         username: str = arguments[2]
         loop: bool = arguments[3].lower() == 'y'
 
-        mcwrite(LM().get(['commands', 'kick', 'kickingPlayer'])
+        mcwrite(LM.get(f'commands.{self.name}.kickingPlayer')
             .replace('%ip%', arguments[0])
             .replace('%version%', arguments[1])
             .replace('%username%', arguments[2])
@@ -70,7 +70,7 @@ class Command:
 
         # Check if the player was kicked
         if bot_response == 'Connected':
-            mcwrite(LM().get(['commands', 'kick', 'playerKicked'])
+            mcwrite(LM.get(f'commands.{self.name}.playerKicked')
                 .replace('%username%', arguments[2])
             )
 
@@ -78,7 +78,7 @@ class Command:
             # Get the bot color response
             bot_response: str = BotUtilities.get_bot_color_response(bot_response)
 
-            mcwrite(LM().get(['commands', 'kick', 'playerNotKicked'])
+            mcwrite(LM.get(f'commands.{self.name}.playerNotKicked')
                 .replace('%username%', arguments[2])
                 .replace('%reason%', bot_response)
             )

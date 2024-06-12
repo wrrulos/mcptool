@@ -1,9 +1,9 @@
 import random
 
 from loguru import logger
+from easyjsonpy import get_config_value
 
 from ...path.mcptool_path import MCPToolPath
-from ...managers.settings_manager import SettingsManager as SM
 
 
 class BotUtilities:
@@ -82,7 +82,7 @@ class BotUtilities:
         """
 
         # Get the reconnect time from the settings
-        time: int = SM().get('bot_reconnect_time')
+        time: int = get_config_value('bot_reconnect_time')
 
         # Check if the time is an integer
         try:

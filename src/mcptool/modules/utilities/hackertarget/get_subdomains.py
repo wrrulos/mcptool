@@ -3,8 +3,6 @@ import socket
 
 from loguru import logger
 
-from ..managers.settings_manager import SettingsManager as SM
-
 
 class GetSubdomains:
     def __init__(self):

@@ -2,15 +2,14 @@ import requests
 import socket
 
 from loguru import logger
-
-from ..managers.settings_manager import SettingsManager as SM
+from easyjsonpy import get_config_value
 
 
 class GetSubdomains:
     def __init__(self):
         self.endpoint: str = 'https://www.virustotal.com/vtapi/v2/domain/report'
         self.params: dict = {
-            'apikey': SM().get('virusTotalApiKey'),
+            'apikey': get_config_value('virusTotalApiKey'),
             'domain': ''
         }
 

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "MCPTool"
 description = "A tool for Minecraft pentesting"
-version = "1.0.0"
+version = "1.0.1"
 readme = "README.md"
 requires-python = ">=3.6"
 keywords = ["minecraft", "pentesting", "tool", "security"]
@@ -13,6 +13,7 @@ authors = [
   {name = "Pedro Agustin Vega (wrrulos)", email = "vegapedroagustin2004@gmail.com"}
 ]
 dependencies = [
+    "easyjsonpy",
     "mccolors",
     "mcstatus",
     "mcrcon",

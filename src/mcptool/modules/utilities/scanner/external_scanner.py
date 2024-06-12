@@ -4,11 +4,11 @@ import re
 from loguru import logger
 from typing import Union
 from mccolors import mcwrite
+from easyjsonpy import get_config_value
 
 from ..minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
-from ...utilities.managers.language_manager import LanguageManager as LM
-from ..managers.settings_manager import SettingsManager as SM
+from ..managers.language_utils import LanguageUtils as LM
 from ..path.mcptool_path import MCPToolPath
 from ..constants import OS_NAME
 
@@ -22,7 +22,7 @@ class ExternalScanner:
         self.servers_found: int = 0
         self.first_line: bool = True
         self.command_output: str = ''
-        self.show_output: bool = SM().get(['scannerOptions', 'showScanOutput'])
+        self.show_output: bool = get_config_value('scannerOptions.showScanOutput')
 
     @logger.catch
     def scan(self) -> list:
@@ -57,13 +57,13 @@ class ExternalScanner:
                         # Java not installed.
                         if 'not found' in output_line or '"java"' in output_line:
                             logger.warning('Cannot scan target. Java is not installed.')
-                            mcwrite(LM().get(['errors', 'javaNotInstalled']))
+                            mcwrite(LM.get('errors.javaNotInstalled'))
                             return
 
                         # Qubo.jar not found.
                         if 'qubo.jar' in output_line:
                             logger.warning('Cannot scan target. Qubo.jar not found.')
-                            mcwrite(LM().get(['errors', 'quboJarNotFound']))
+                            mcwrite(LM.get('errors.quboJarNotFound'))
                             return
 
                     self.first_line = False
@@ -74,13 +74,13 @@ class ExternalScanner:
                 # If the line that refers to the IP entered as invalid.
                 if any(text in output_line for text in invalid_ip_text):
                     logger.warning(f'Invalid IP address: {self.target}. Cannot scan target.')
-                    mcwrite(LM().get(['errors', 'invalidIpRange']))
+                    mcwrite(LM.get('errors.invalidIpRange'))
                     return
 
                 # If the line that refers to the port range not being valid.
                 if any(text in output_line for text in invalid_ports_text):
                     logger.warning(f'Invalid port range: {self.port_range}. Cannot scan target.')
-                    mcwrite(LM().get(['errors', 'invalidPortRange']))
+                    mcwrite(LM.get('errors.invalidPortRange'))
                     return
 
                 # If the line contains an ip and a port.
@@ -125,7 +125,7 @@ class ExternalScanner:
             Union[str, None]: The command to scan the target.
         """
 
-        command: str = SM().get(['scannerOptions', 'externalScanners', self.scanner, 'command'])
+        command: str = get_config_value(f'scannerOptions.externalScanners.{self.scanner}.command')
 
         if command is None:
             return None
