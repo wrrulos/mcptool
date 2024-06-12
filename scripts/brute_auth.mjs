@@ -29,6 +29,11 @@ spaces = " ".repeat(spaces);
 // Read passwords from file
 const passwords = Utilities.read_file(passwordFile);
 
+// Remove '\n' and invalid characters from the passwords
+for (let i = 0; i < passwords.length; i++) {
+  passwords[i] = passwords[i].replace("\n", "").replace("\r", "");
+}
+
 // Get the path of the MCPTool folder
 const mcptoolPath = Utilities.get_mcptool_path();
 
@@ -86,24 +91,21 @@ class BruteAuth {
       this.bot.on("message", (message) => {
         let serverMessage = message.toString().toLowerCase();
 
-        if (loginAttempts === passwords.length[-1]) {
-          setTimeout(() => {
-            console.log(
-              mccolors.translateColors(
-                `\n${spaces}§f[§c#§f] &cThe password is not found in the password list.`
-              )
-            );
-            this.bot.quit();
-            process.exit(1);
-          }, 1000);
+        if (loginAttempts === passwords.length) {
+          console.log(
+            mccolors.translateColors(
+              `\n${spaces}§f[§c#§f] §cThe password is not found in the password list.`
+            )
+          );
+          this.bot.quit();
+          process.exit(1);
         }
 
         for (const word of wordsAtLogin) {
           if (serverMessage.includes(word)) {
             console.log(
               mccolors.translateColors(
-                `\n${spaces}§f[§c#§f] §fThe password of the §a${username} §fuser is: §a${
-                  passwords[loginAttempts - 1]
+                `\n${spaces}§f[§c#§f] §fThe password of the §a${username} §fuser is: §a${passwords[loginAttempts - 1]
                 }`
               )
             );
@@ -123,7 +125,7 @@ class BruteAuth {
               )
             );
             loginAttempts += 1;
-            
+
           }
         }
       });
@@ -168,7 +170,7 @@ class BruteAuth {
         }, reconnectDelay);
       });
     } catch (error) {
-      Utilities.error_handler(error);
+      Utilities.error_handler(error, spaces, true);
       process.exit(0);
     }
   }
