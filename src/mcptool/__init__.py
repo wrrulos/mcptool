@@ -26,6 +26,9 @@ logger.add(os.path.join(MCPToolPath().get(), 'debug.log'),
     rotation="30 MB"
 )
 
+# Check if the files exist
+MCPToolPath().check_files()
+
 # Load the languages
 load_languages([
     {'name': 'en', 'path': os.path.join(MCPToolPath().get(), 'languages', 'en.json')},
@@ -36,8 +39,6 @@ load_languages([
 load_configuration('default', os.path.join(MCPToolPath().get(), 'settings.json'))
 set_language(get_config_value('language'))
 
-# Check if the files exist
-MCPToolPath().check_files()
 
 # Utilities
 from .modules.utilities.managers.language_utils import LanguageUtils as LM
