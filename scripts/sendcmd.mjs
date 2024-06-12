@@ -29,6 +29,11 @@ spaces = " ".repeat(spaces);
 // Read commands from file
 const commands = Utilities.read_file(commandsFile);
 
+// Remove '\n' and invalid characters from the commands
+for (let i = 0; i < commands.length; i++) {
+  commands[i] = commands[i].replace("\n", "").replace("\r", "");
+}
+
 // Get the path of the MCPTool folder
 const mcptoolPath = Utilities.get_mcptool_path();
 
