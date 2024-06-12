@@ -1,3 +1,10 @@
+# 1.0.2 (Jun 12, 2024)
+
+## Hotfix
+Fixed files not found error when launching the tool after update.
+
+###
+
 # 1.0.1 (Jun 12, 2024)
 
 ## Changes

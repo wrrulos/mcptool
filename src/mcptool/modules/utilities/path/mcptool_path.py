@@ -126,6 +126,10 @@ class MCPToolPath:
                 'url': f'{GITHUB_REPOSITORY}languages/en.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'languages', 'en.json'))
             },
+            'language_tr': {
+                'url': f'{GITHUB_REPOSITORY}languages/tr.json',
+                'path': os.path.abspath(os.path.join(self.get(), 'languages', 'tr.json'))
+            },
             # Scripts
             'bot_script': {
                 'url': f'{GITHUB_REPOSITORY}scripts/bot.mjs',
