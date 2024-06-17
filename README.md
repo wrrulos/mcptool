@@ -48,6 +48,9 @@
 
 You can find the MCPTool documentation in the [docs folder](./docs).
 
+## Download
+All the information about the installation is [here](./docs/instalation.MD)
+
 ## 🕹 Usage
 Use the `mcptool` command in the terminal.
 
