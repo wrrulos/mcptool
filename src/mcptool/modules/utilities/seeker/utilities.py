@@ -27,7 +27,7 @@ class SeekerUtilities:
         # Check if the endpoint is valid
         if get_config_value('endpoints.seeker') is None:
             mcwrite(LM.get('errors.invalidEndpoint'))
-            logger.error(f'Invalid endpoint for seeker: {get_config_value('endpoints.seeker')}')
+            logger.error(f'Invalid endpoint for seeker: {get_config_value("endpoints.seeker")}')
             return
 
         # Event to indicate that the token has been received
