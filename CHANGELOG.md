@@ -1,3 +1,10 @@
+# 1.0.3 (Jun 13, 2024)
+## New language
+* **Spanish** - Language es added
+
+# Bug fixed
+* **Seeker bug fixed**
+
 # 1.0.2 (Jun 12, 2024)
 
 ## Hotfix

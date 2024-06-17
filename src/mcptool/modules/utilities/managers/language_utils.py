@@ -1,9 +1,5 @@
-import os
-import sys
-
 from typing import Union
 from loguru import logger
-from mccolors import mcwrite
 from easyjsonpy import translate_message
 
 

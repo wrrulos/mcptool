@@ -4,6 +4,7 @@ from mccolors import mcwrite
 from loguru import logger
 
 from ..managers.language_utils import LanguageUtils as LM
+from easyjsonpy import get_languages
 
 
 class ValidateArgument:
@@ -297,7 +298,7 @@ class ValidateArgument:
             bool: True if the language is valid, False otherwise
         """
 
-        if language not in ['en', 'tr']:
+        if language not in get_languages():
             return False
 
         return True

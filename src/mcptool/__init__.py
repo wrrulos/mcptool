@@ -32,6 +32,7 @@ MCPToolPath().check_files()
 # Load the languages
 load_languages([
     {'name': 'en', 'path': os.path.join(MCPToolPath().get(), 'languages', 'en.json')},
+    {'name': 'es', 'path': os.path.join(MCPToolPath().get(), 'languages', 'es.json')},
     {'name': 'tr', 'path': os.path.join(MCPToolPath().get(), 'languages', 'tr.json')}
 ])
 
