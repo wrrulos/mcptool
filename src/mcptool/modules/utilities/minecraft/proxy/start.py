@@ -241,6 +241,9 @@ class StartProxy:
         Method to start the proxy
         """
 
+        if self.proxy == 'fakeproxy':
+            mcwrite(LM.get('commands.proxy.copyingTargetServer'))
+
         # Get the server data
         server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=self.target, bot=False).get()
 
