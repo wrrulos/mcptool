@@ -120,7 +120,7 @@
         "bruteauth": {
             "arguments": ["ip:port", "version", "username", "passwords_file"],
             "gettingPasswords": "\n%spaces%%prefix% &f&lObteniendo contraseñas del archivo &8(&a&l%file%&8)&f&l...",
-            "bruteForcing": "\n%spaces%%prefix% &f&lIniciando un ataque de fuerza bruta en el plugin de autenticación del servidor &a&l%ip% &f&lcon el usuario &b&l%username% &f&ly la lista de contraseñas &6&l%passwordFile% &f&l(&6&l1000 contraseñas&f&l)."
+            "bruteForcing": "\n%spaces%%prefix% &f&lIniciando un ataque de fuerza bruta en el plugin de autenticación del servidor &a&l%ip% &f&lcon el usuario &b&l%username% &f&ly la lista de contraseñas &6&l%passwordFile% &f&l(&6&l%numberOfPasswords% contraseñas&f&l)."
         },
         "proxy": {
             "arguments": ["ip:port", "proxy_type"],
