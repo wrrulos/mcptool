@@ -47,6 +47,12 @@
             "isp": "%spaces%&4[&c&lIS&f&lP&4] &f&l%isp%",
             "organization": "%spaces%&4[&c&lOrgani&f&lzation&4] &f&l%organization%"
         },
+        "iphistory": {
+            "arguments": ["domain"],
+            "gettingIpHistory": "\n%spaces%%prefix% &f&lObteniendo historial de IP del dominio ingresado...",
+            "noIpHistory": "\n%spaces%%prefix% &f&lNo se encontró historial de IP en el dominio ingresado.",
+            "ipHistoryFound": "\n%spaces%%prefix% &f&lHistorial de IP encontrado en el dominio ingresado:\n"
+        },
         "resolver": {
             "arguments": ["domain"],
             "resolving": "\n%spaces%%prefix% &f&lResolviendo el dominio ingresado &8&l(&a&l%domain%&8&l)&f&l...",
