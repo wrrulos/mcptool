@@ -85,7 +85,7 @@ class ExternalScanner:
 
                 # If the line contains an ip and a port.
                 if text_to_search in output_line:
-                    server = self._extract_server_info(output_line=output_line, pattern=pattern)
+                    server: Union[str, None] = self._extract_server_info(output_line=output_line, pattern=pattern)
 
                     if server is None:
                         continue
@@ -125,7 +125,7 @@ class ExternalScanner:
             Union[str, None]: The command to scan the target.
         """
 
-        command: str = get_config_value(f'scannerOptions.externalScanners.{self.scanner}.command')
+        command: Union[str, None] = get_config_value(f'scannerOptions.externalScanners.{self.scanner}.command')
 
         if command is None:
             return None
