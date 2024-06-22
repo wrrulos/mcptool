@@ -136,6 +136,7 @@
         },
         "fakeproxy": {
             "arguments": ["ip:port", "velocity_forwading_mode"],
+            "copyingTargetServerData": "\n%spaces%%prefix% &f&lCopiando los datos del servidor objetivo...",
             "connected": "\n%spaces%%prefix% &b&l%time% 🟢 &f&l%username% &8(&a&l%ipAddress%&8) &f&lconectado al servidor fakeproxy",
             "disconnected": "\n%spaces%%prefix% &b&l%time% 🔴 &f&l%username% &8(&a&l%ipAddress%&8) &f&ldesconectado del servidor fakeproxy",
             "chat": "\n%spaces%%prefix% &b&l%time% ✉️ &f&l%username% &8(&a&l%ipAddress%&8) &8&l▶ &f&l%message%",
