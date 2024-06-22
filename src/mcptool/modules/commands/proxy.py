@@ -1,3 +1,5 @@
+import subprocess
+
 from mccolors import mcwrite
 from loguru import logger
 
@@ -53,6 +55,10 @@ class Command:
 
         # Validate the arguments
         if not self.validate_arguments(arguments):
+            return
+
+        if not subprocess.run(['java', '-version'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).returncode == 0:
+            mcwrite(LM.get('errors.javaNotInstalled'))
             return
 
         if self.proxy == 'velocity':
