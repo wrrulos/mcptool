@@ -120,7 +120,7 @@
         "bruteauth": {
             "arguments": ["ip:port", "version", "username", "passwords_file"],
             "gettingPasswords": "\n%spaces%%prefix% &f&lDosyadan şifreler çekiliyor &8(&a&l%file%&8)&f&l...",
-            "bruteForcing": "\n%spaces%%prefix% &f&lSunucunun auth plugin'ine bruteforce saldırısı başlatılıyor &a&l%ip% &f&lbu kullanıcı adı &b&l%username% &f&lve bu şifre dosyası ile &6&l%passwordFile% &f&l(&6&l1000 passwords&f&l)."
+            "bruteForcing": "\n%spaces%%prefix% &f&lSunucunun auth plugin'ine bruteforce saldırısı başlatılıyor &a&l%ip% &f&lbu kullanıcı adı &b&l%username% &f&lve bu şifre dosyası ile &6&l%passwordFile% &f&l(&6&l%numberOfPasswords% passwords&f&l)."
         },
         "proxy": {
             "arguments": ["ip:port", "proxy_type"],

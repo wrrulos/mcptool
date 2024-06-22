@@ -64,7 +64,7 @@ class Command:
         password_file: str = arguments[3]
 
         # Getting the passwords
-        mcwrite(LM.get(f'commands.{self.name}.gettingPasswords').replace('%file%', arguments[1]))
+        mcwrite(LM.get(f'commands.{self.name}.gettingPasswords').replace('%file%', password_file))
 
         # Get absolute path of the password file
         password_file = os.path.abspath(password_file)
@@ -93,6 +93,7 @@ class Command:
             .replace('%ip%', arguments[0])
             .replace('%username%', username)
             .replace('%passwordFile%', password_file)
+            .replace('%numberOfPasswords%', str(len(self.passwords)))
         )
 
         # Prepare and run the command
