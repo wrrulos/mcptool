@@ -29,7 +29,7 @@ class ServerResponse {
       setTimeout(() => {
         console.log("&c&lTimeout");
         process.exit(0);
-      }, 10000);
+      }, 5000);
     } catch (error) {
       Utilities.error_handler(error);
       process.exit(0);
