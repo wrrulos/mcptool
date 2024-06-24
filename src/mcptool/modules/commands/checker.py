@@ -5,7 +5,8 @@ from loguru import logger
 from typing import Union
 from mccolors import mcwrite
 
-from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..utilities.minecraft.server import JavaServerData, BedrockServerData
+from ..utilities.minecraft.server.get_server import ServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
@@ -70,7 +71,7 @@ class Command:
                 continue
 
             for ip_and_port in ips_and_ports:
-                server_data: Union[JavaServerData, BedrockServerData] = MCServerData(target=ip_and_port).get()
+                server_data: Union[JavaServerData, BedrockServerData] = ServerData(target=ip_and_port).get_data()
 
                 if server_data is not None:
                     ShowMinecraftServer.show(server_data=server_data)

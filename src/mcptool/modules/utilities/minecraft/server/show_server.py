@@ -2,7 +2,7 @@ from typing import Union
 from mccolors import mcwrite
 from loguru import logger
 
-from .get_server import JavaServerData, BedrockServerData
+from .get_server_mcstatus_lib import JavaServerData, BedrockServerData
 from ...managers.language_utils import LanguageUtils as LM
 
 
@@ -53,8 +53,11 @@ class Messages:
                 server_message += f'''
 {LM.get('commands.server.gamemode').replace('%gamemode%', server_data.gamemode)}'''
 
+        if server_data.ping:
+            server_message += f'''
+{LM.get('commands.server.ping').replace('%ping%', str(server_data.ping))}'''
+
         server_message += f'''
-{LM.get('commands.server.ping').replace('%ping%', str(server_data.ping))}
 {LM.get('commands.server.bot').replace('%bot%', str(server_data.bot_output))}'''
 
         return server_message

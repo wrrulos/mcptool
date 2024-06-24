@@ -5,10 +5,10 @@ from loguru import logger
 from typing import Union
 from mccolors import mcwrite
 
-from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
-from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..utilities.minecraft.server import JavaServerData, BedrockServerData
+from ..utilities.minecraft.server.get_server import ServerData
 from ..utilities.path.mcptool_path import MCPToolPath
 from ..utilities.constants import OS_NAME, SPACES
 
@@ -63,7 +63,7 @@ class Command:
         username: str = arguments[2]
         commands_file: str = arguments[3]
 
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
+        server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=arguments[0], bot=False).get_data()
 
         if server_data is None:
             mcwrite(LM.get('errors.serverOffline'))

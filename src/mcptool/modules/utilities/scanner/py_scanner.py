@@ -5,7 +5,8 @@ from loguru import logger
 from typing import Union
 from easyjsonpy import get_config_value
 
-from ..minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
+from ..minecraft.server import BedrockServerData, JavaServerData
+from ..minecraft.server.get_server import ServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
 
 # Try to get the number of threads for the scanner
@@ -87,7 +88,7 @@ class PyScanner:
             # If the result is 0, the port is open
             if result == 0:
                 # Check if the port is a Minecraft server
-                server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(f'{self.ip_address}:{port}').get()
+                server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(f'{self.ip_address}:{port}').get_data()
 
                 if server_data is not None:
                     ShowMinecraftServer.show(server_data)

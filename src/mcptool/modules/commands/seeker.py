@@ -6,8 +6,9 @@ from easyjsonpy import get_config_value, set_config_value
 from ..utilities.seeker.utilities import SeekerUtilities
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
-from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..utilities.minecraft.server import JavaServerData, BedrockServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
+from ..utilities.minecraft.server.get_server import ServerData
 
 
 class Command:
@@ -97,7 +98,7 @@ class Command:
             if 'server' not in server:
                 continue
 
-            server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=server['server']).get()
+            server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=server['server']).get_data()
 
             if server_data is None:
                 continue

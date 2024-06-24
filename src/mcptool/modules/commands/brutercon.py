@@ -6,7 +6,7 @@ from mcrcon import MCRcon, MCRconException
 
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
-from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..utilities.minecraft.server import JavaServerData, BedrockServerData
 
 
 class Command:

@@ -116,6 +116,10 @@ class MCPToolPath:
                 'url': f'{GITHUB_REPOSITORY}sendcmd_settings.json',
                 'path': os.path.abspath(os.path.join(self.get(), 'sendcmd_settings.json'))
             },
+            'mcserver-scrapper': {
+                'url': f'{GITHUB_REPOSITORY}mcserver-scrapper.json',
+                'path': os.path.abspath(os.path.join(self.get(), 'mcserver-scrapper.json'))
+            },
             # Packages
             "package": {
                 "url": f"{GITHUB_REPOSITORY}package.json",

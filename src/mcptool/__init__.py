@@ -55,6 +55,7 @@ from .modules.commands.iphistory import Command as IPHistoryCommand
 from .modules.commands.dnslookup import Command as DNSLookupCommand
 from .modules.commands.resolver import Command as ResolverCommand
 from .modules.commands.seeker import Command as SeekerCommand
+from .modules.commands.websearch import Command as WebSearchCommand
 from .modules.commands.scan import Command as ScanCommand
 from .modules.commands.kick import Command as KickCommand
 from .modules.commands.kickall import Command as KickAllCommand
@@ -69,6 +70,7 @@ from .modules.commands.checker import Command as CheckerCommand
 from .modules.commands.sendcmd import Command as SendCmdCommand
 from .modules.commands.subdomains import Command as SubdomainsCommand
 from .modules.commands.language import Command as LanguageCommand
+from .modules.utilities.scrapers.minecraftservers import MinecraftServerScrapper
 from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK, MCPTOOL_WEBSITE
 
 
@@ -79,6 +81,7 @@ class MCPTool:
         self.commands_folder_path: str = commands_folder_path
         self.commands: dict = {}
         self.actual_command: str = f'Using MCPTool v{VERSION}'
+        self.minecraft_scrapper: MinecraftServerScrapper = MinecraftServerScrapper()
 
     @logger.catch
     def run(self):
@@ -135,7 +138,12 @@ class MCPTool:
                 try:
                     # Execute the command
                     command_instance = self.commands[command_name]
-                    command_instance.execute(arguments[1:])
+
+                    if command_name == 'websearch':
+                        command_instance.execute(arguments[1:], scrapper=self.minecraft_scrapper)
+
+                    else:
+                        command_instance.execute(arguments[1:])
                     self.actual_command = f'Using the {command_name} command'
 
                 except KeyboardInterrupt:
@@ -146,6 +154,7 @@ class MCPTool:
                 pass
 
             except KeyboardInterrupt:
+                self.minecraft_scrapper.stop()
                 break
 
     @logger.catch
@@ -168,6 +177,7 @@ class MCPTool:
             'dnslookup': DNSLookupCommand(),
             'resolver': ResolverCommand(),
             'seeker': SeekerCommand(),
+            'websearch': WebSearchCommand(),
             'scan': ScanCommand(),
             'kick': KickCommand(),
             'kickall': KickAllCommand(),

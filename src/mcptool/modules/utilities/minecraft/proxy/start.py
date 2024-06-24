@@ -10,7 +10,8 @@ from mccolors import mcwrite
 from loguru import logger
 from easyjsonpy import get_config_value
 
-from ....utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..server import JavaServerData, BedrockServerData
+from ..server.get_server import ServerData
 from ...managers.language_utils import LanguageUtils as LM
 from ..text.text_utilities import TextUtilities
 from ...path.mcptool_path import MCPToolPath
@@ -118,7 +119,7 @@ class Fakeproxy:
         Method to update the fakeproxy data (motd, players, etc.)
         """
 
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=self.target, bot=False).get()
+        server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=self.target, bot=False).get_data()
 
         if server_data is None:
             return
@@ -245,7 +246,7 @@ class StartProxy:
             mcwrite(LM.get('commands.proxy.copyingTargetServer'))
 
         # Get the server data
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=self.target, bot=False).get()
+        server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=self.target, bot=False).get_data()
 
         if server_data is None:
             mcwrite(LM.get('errors.serverOffline'))

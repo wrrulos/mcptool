@@ -4,7 +4,8 @@ from loguru import logger
 from typing import Union
 from mccolors import mcwrite
 
-from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..utilities.minecraft.server import JavaServerData, BedrockServerData
+from ..utilities.minecraft.server.get_server import ServerData
 from ..utilities.minecraft.bot.server_response import BotServerResponse
 from ..utilities.minecraft.bot.utilities import BotUtilities
 from ..utilities.managers.language_utils import LanguageUtils as LM
@@ -62,7 +63,7 @@ class Command:
 
         # Get the server data to get the player list
         mcwrite(LM.get(f'commands.{self.name}.gettingPlayers').replace('%ip%', arguments[0]))
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
+        server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=arguments[0], bot=False).get_data()
 
         if server_data is None:
             mcwrite(LM.get('errors.serverOffline'))

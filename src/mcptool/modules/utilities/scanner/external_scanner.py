@@ -6,7 +6,8 @@ from typing import Union
 from mccolors import mcwrite
 from easyjsonpy import get_config_value
 
-from ..minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..minecraft.server import JavaServerData, BedrockServerData
+from ..minecraft.server.get_server import ServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
 from ..managers.language_utils import LanguageUtils as LM
 from ..path.mcptool_path import MCPToolPath
@@ -90,7 +91,7 @@ class ExternalScanner:
                     if server is None:
                         continue
 
-                    server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(server).get()
+                    server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(server).get_data()
 
                     if server_data is not None:
                         ShowMinecraftServer.show(server_data)

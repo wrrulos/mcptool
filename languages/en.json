@@ -94,6 +94,20 @@
                 "noServers": "\n%spaces%%prefix% &f&lNo servers found. Try again later or change the filters."
             }
         },
+        "websearch": {
+            "arguments": [],
+            "filterByData": "\n%spaces%%prefix% &f&lDo you want to filter the search results by specific data? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByOnlyBotCanJoin": "\n%spaces%%prefix% &f&lDo you want to filter the search results by only bot can join? (Offline Servers) (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByDescription": "\n%spaces%%prefix% &f&lDo you want to filter servers by description? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByDescriptionText": "\n%spaces%%prefix% &f&lEnter the description to filter the servers. &8&l▶ &f&l",
+            "filterByOnlinePlayers": "\n%spaces%%prefix% &f&lDo you want to filter servers by online players? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByOnlinePlayersText": "\n%spaces%%prefix% &f&lEnter the minimum amount of online players to filter the servers. &8&l▶ &f&l",
+            "filterByProtocol": "\n%spaces%%prefix% &f&lDo you want to filter servers by protocol? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByProtocolText": "\n%spaces%%prefix% &f&lEnter the protocol to filter the servers. &8&l▶ &f&l",
+            "searchingInWebs": "\n%spaces%%prefix% &f&lSearching minecraft servers in the web...",
+            "searchingInPage": "\n%spaces%%prefix% &f&lSearching in page &a&l%page%&f&l...",
+            "filterDataShow": "\n%spaces%%prefix% &f&lFilter data: \n%spaces% &8&l• &f&lOnly bot can join: &a&l%onlyBotCanJoin%\n%spaces%  &8&l• &f&lDescription: &a&l%description%\n%spaces%  &8&l• &f&lOnline players: &a&l%onlinePlayers%\n%spaces%  &8&l• &f&lProtocol: &a&l%protocol%"
+        },
         "scan": {
             "arguments": ["ip_address", "port_range", "method"],
             "scanning": "\n%spaces%%prefix% &f&lScanning the entered IP address &8&l(&a&l%ip%&8&l) &f&lwith the port range &a&l%portRange% &f&lusing the method &a&l%method%&f&l...",
@@ -189,6 +203,7 @@
     },
     "errors": {
         "serverOffline": "\n%spaces%%prefix% &f&lCould not get data from the entered server. It's possibly turned off.",
+        "serverDataApiNotSet": "\n%spaces%%prefix% &c&lThe server data API is not set in the settings file. Check the settings file and try again.",
         "invalidServerFormat": "\n%spaces%%prefix% &f&lThe server format entered is not valid. You have to enter &c&lip:port &f&lor &c&ldomain&f&l.",
         "invalidDomain": "\n%spaces%%prefix% &f&lThe domain entered is not valid. Check the domain and try again.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lThe IP format entered is not valid. You have to enter a valid IP.",
@@ -224,9 +239,9 @@
         "commandsFileEmpty": "\n%spaces%%prefix% &f&lThe commands file is empty. Add commands to the file and try again.",
         "noSubdomainsFoundResolver": "\n%spaces%%prefix% &f&lNo subdomains found in the entered domain.",
         "invalidLanguage": "\n%spaces%%prefix% &f&lThe language entered is not valid. Check the language and try again.",
-        "invalidIntgerInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.\n",
-        "invalidBooleanInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.\n",
-        "invalidCountryCodeInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.\n",
-        "invalidVelocityForwardingModeInput": "\n%spaces%%prefix% &f&lThe  input entered is not a valid velocity forwarding mode. Check the mode and try again.\n"
+        "invalidIntgerInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid integer. Check the input and try again.",
+        "invalidBooleanInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid boolean. Check the input and try again.",
+        "invalidCountryCodeInput": "\n%spaces%%prefix% &f&lThe input entered is not a valid country code. Check the code and try again.",
+        "invalidVelocityForwardingModeInput": "\n%spaces%%prefix% &f&lThe  input entered is not a valid velocity forwarding mode. Check the mode and try again."
     }
 }

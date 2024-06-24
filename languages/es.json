@@ -189,6 +189,7 @@
     },
     "errors": {
         "serverOffline": "\n%spaces%%prefix% &f&lNo se pudieron obtener datos del servidor ingresado. Posiblemente esté apagado.",
+        "serverDataApiNotSet": "\n%spaces%%prefix% &c&lLa API de datos del servidor no está configurada en el archivo de configuración. Revisa el archivo de configuración e intenta nuevamente.",
         "invalidServerFormat": "\n%spaces%%prefix% &f&lEl formato del servidor ingresado no es válido. Debes ingresar &c&lip:port &f&lo &c&ldominio&f&l.",
         "invalidDomain": "\n%spaces%%prefix% &f&lEl dominio ingresado no es válido. Revisa el dominio e intenta nuevamente.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lEl formato de la IP ingresada no es válido. Debes ingresar una IP válida.",

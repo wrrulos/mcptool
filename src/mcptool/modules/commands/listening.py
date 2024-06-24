@@ -5,7 +5,8 @@ from mccolors import mcwrite
 from typing import Union
 
 from ..utilities.minecraft.player.get_player_uuid import PlayerUUID
-from ..utilities.minecraft.server.get_server import MCServerData, JavaServerData, BedrockServerData
+from ..utilities.minecraft.server import JavaServerData, BedrockServerData
+from ..utilities.minecraft.server.get_server import ServerData
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 
@@ -55,7 +56,7 @@ class Command:
         mcwrite(LM.get(f'commands.{self.name}.connecting').replace('%ip%', arguments[0]))
 
         # Get the server data
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
+        server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=arguments[0], bot=False).get_data()
 
         if server_data is None:
             mcwrite(LM.get('errors.serverOffline'))
@@ -68,7 +69,7 @@ class Command:
         mcwrite(LM.get(f'commands.{self.name}.waitingForConnections').replace('%ip%', arguments[0]))
 
         while True:
-            server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(target=arguments[0], bot=False).get()
+            server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=arguments[0], bot=False).get_data()
 
             # Check if the server is offline
             if server_data is None:

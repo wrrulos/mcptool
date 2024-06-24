@@ -189,6 +189,7 @@
     },
     "errors": {
         "serverOffline": "\n%spaces%%prefix% &f&lGirdiğiniz sunucudan bilgiler alınamadı. Sunucu kapalı olabilir.",
+        "serverDataApiNotSet": "\n%spaces%%prefix% &c&lSunucu bilgileri alınırken bir hata oluştu. Daha fazla bilgi için log dosyasını inceleyin.",
         "invalidServerFormat": "\n%spaces%%prefix% &f&lGirdiğiniz sunucu formata geçersiz. Bu şekilde girmeniz lazım &c&lip:port &f&lor &c&ldomain&f&l.",
         "invalidDomain": "\n%spaces%%prefix% &f&lGirdiğiniz domain geçersiz. Domaini kontrol edip tekrar deneyin.",
         "invalidIpFormat": "\n%spaces%%prefix% &f&lGirdiğiniz ip formata geçersiz. Uygun bir ip girmeniz gerekiyor.",
