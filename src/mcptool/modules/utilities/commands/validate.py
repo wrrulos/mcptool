@@ -74,6 +74,47 @@ class ValidateArgument:
 
     @logger.catch
     @staticmethod
+    def is_domain_and_port(domain: str) -> bool:
+        """
+        Method to validate if a string is a domain and port
+
+        Args:
+            domain (str): The domain and port
+
+        Returns:
+            bool: True if the domain is valid, False otherwise
+        """
+
+        if ':' not in domain:
+            return False
+
+        domain_parts: list = domain.split(':')
+
+        if len(domain_parts) != 2:
+            return False
+
+        domain: str = domain_parts[0]
+        port: str = domain_parts[1]
+
+        if not domain or not port:
+            return False
+
+        if not ValidateArgument.is_domain(domain):
+            return False
+
+        try:
+            port: int = int(port)
+
+            if port < 0 or port > 65535:
+                return False
+
+        except ValueError:
+            return False
+
+        return True
+
+    @logger.catch
+    @staticmethod
     def is_ip_address(ip: str) -> bool:
         """
         Method to validate if a string is an IP address
