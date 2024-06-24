@@ -2,7 +2,8 @@ from typing import Union
 from mccolors import mcwrite
 from loguru import logger
 
-from ..utilities.minecraft.server.get_server import BedrockServerData, JavaServerData, MCServerData
+from ..utilities.minecraft.server import BedrockServerData, JavaServerData
+from ..utilities.minecraft.server.get_server import ServerData
 from ..utilities.minecraft.server.show_server import ShowMinecraftServer
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
@@ -31,7 +32,7 @@ class Command:
 
         server: str = arguments[0]
 
-        if not ValidateArgument.is_domain(domain=server) and not ValidateArgument.is_ip_and_port(ip=server):
+        if not ValidateArgument.is_domain(domain=server) and not ValidateArgument.is_ip_and_port(ip=server) and not ValidateArgument.is_domain_and_port(domain=server):
             mcwrite(LM.get('errors.invalidServerFormat'))
             return False
 
@@ -52,7 +53,7 @@ class Command:
 
         # Get the server data
         mcwrite(LM.get(f'commands.{self.name}.gettingServerData'))
-        server_data: Union[JavaServerData, BedrockServerData, None] = MCServerData(arguments[0]).get()
+        server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(arguments[0]).get_data()
 
         # Check if the server data is None
         if server_data is None:
