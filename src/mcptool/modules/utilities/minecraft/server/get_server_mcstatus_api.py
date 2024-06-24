@@ -97,7 +97,7 @@ class MCStatusIOAPI:
                     players_str: str = ', '.join(players)
 
                 ip_address: str = data['ip_address']
-                port: int = data['port']
+                port: int = data['srv_record']['port'] if data['srv_record'] is not None else data['port']
                 motd: str = clean_output(data['motd']['raw'])
                 original_motd: str = data['motd']['raw']
                 version: str = clean_output(data['version']['name_raw'])
