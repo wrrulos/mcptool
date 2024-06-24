@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Minecraft-Server-List.com",
+        "url": "https://minecraft-mp.com/servers/list/#/",
+        "find_all": {
+            "tag": "button",
+            "class": "btn btn-default btn-sm"
+        },
+        "find": {
+            "tag": "strong",
+            "class": null
+        },
+        "method": "text",
+        "pages": 200
+    },
+    {
+        "name": "MinecraftServer.org",
+        "url": "https://minecraftservers.org/index/#",
+        "find_all": {
+            "tag": "div",
+            "class": "col server"
+        },
+        "find": {
+            "tag": "div",
+            "class": null
+        },
+        "method": "text",
+        "pages": 500
+    }
+]
