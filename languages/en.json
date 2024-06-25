@@ -9,6 +9,14 @@
         "invalidCommand": "\n%spaces%&cInvalid Command. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "\n%spaces%&cMissing arguments. &f&lCorrect usage: &b&l%command% &c&l%arguments%",
         "ctrlC": "\n%spaces%%prefix% &f&lStopping the command...",
+        "addServersFoundToMinecraft": "\n%spaces%%prefix% &f&lDo you want to add the found servers to the Minecraft server list? (&b&ly or n&f&l) &8&l▶ &f&l",
+        "addBungeeExploitVulnerableServersOnly": "\n%spaces%%prefix% &f&lDo you want to add only the BungeeExploit vulnerable servers to the Minecraft server list? (&b&ly or n&f&l) &8&l▶ &f&l",
+        "commandFinishedIn": {
+            "seconds": "\n%spaces%%prefix% &f&lCommand finished in &a&l%seconds% &f&lseconds.",
+            "minutes": "\n%spaces%%prefix% &f&lCommand finished in &a&l%minutes% &f&lminutes and &a&l%seconds% &f&lseconds.",
+            "hours": "\n%spaces%%prefix% &f&lCommand finished in &a&l%hours% &f&lhours, &a&l%minutes% &f&lminutes and &a&l%seconds% &f&lseconds.",
+            "days": "\n%spaces%%prefix% &f&lCommand finished in &a&l%days% &f&ldays, &a&l%hours% &f&lhours, &a&l%minutes% &f&lminutes and &a&l%seconds% &f&lseconds."
+        },
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "\n%spaces%%prefix% &f&lGetting data from the entered server...",
@@ -199,6 +207,12 @@
             "arguments": ["language"],
             "sameLanguage": "\n%spaces%%prefix% &f&lThe language is already set to &a&l%language%&f&l.",
             "languageChanged": "\n%spaces%%prefix% &f&lLanguage changed to &a&l%language%&f&l."
+        },
+        "settings": {
+            "restartNeeded": "\n%spaces%%prefix% &f&lYou have to restart the tool to apply the changes."
+        },
+        "clearservers": {
+            "serversCleared": "\n%spaces%%prefix% &f&lMinecraft server list cleared successfully."
         }
     },
     "errors": {

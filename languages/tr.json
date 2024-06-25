@@ -9,6 +9,14 @@
         "invalidCommand": "\n%spaces%&cBilinmeyen komut. &f&lUse &ahelp&f&l for see all avaible commands.",
         "missingArguments": "\n%spaces%&cArgümanlar eksik. &f&lDoğru kullanımı: &b&l%command% &c&l%arguments%",
         "ctrlC": "\n%spaces%%prefix% &f&lKomut durduruluyor...",
+        "addServersFoundToMinecraft": "\n%spaces%%prefix% &f&lBulunan sunucuları Minecraft sunucu listesine eklemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+        "addBungeeExploitVulnerableServersOnly": "\n%spaces%%prefix% &f&lSadece BungeeExploit açığı olan sunucuları eklemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+        "commandFinishedIn": {
+            "seconds": "\n%spaces%%prefix% &f&lKomut &a&l%seconds% &f&lsaniyede bitti.",
+            "minutes": "\n%spaces%%prefix% &f&lKomut &a&l%minutes% &f&ldakikada bitti.",
+            "hours": "\n%spaces%%prefix% &f&lKomut &a&l%hours% &f&lsaate, &a&l%minutes% &f&ldakikada bitti.",
+            "days": "\n%spaces%%prefix% &f&lKomut &a&l%days% &f&lgünde, &a&l%hours% &f&lsaate, &a&l%minutes% &f&ldakikada bitti."
+        },
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "\n%spaces%%prefix% &f&lGirdiğiniz sunucunun bilgileri alınıyor...",
@@ -93,6 +101,20 @@
                 "gettingData": "\n%spaces%%prefix% &f&lSunuculardan bilgiler alınıyor...",
                 "noServers": "\n%spaces%%prefix% &f&lSunucu bulunamadı. Daha sonra deneyin veya filtreleri değiştirin."
             }
+        },
+        "websearch": {
+            "arguments": [],
+            "filterByData": "\n%spaces%%prefix% &f&LSunucuları bir bilgi üzerinden filtrelemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByOnlyBotCanJoin": "\n%spaces%%prefix% &f&LSunucuları sadece botların katılabilmesi üzerinden filtrelemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByDescription": "\n%spaces%%prefix% &f&LSunucuları açıklamaları üzerinden filtrelemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByDescriptionText": "\n%spaces%%prefix% &f&lFiltrelemek için açıklamayı girin. &8&l▶ &f&l",
+            "filterByOnlinePlayers": "\n%spaces%%prefix% &f&LSunucuları aktif oyuncular üzerinden filtrelemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByOnlinePlayersText": "\n%spaces%%prefix% &f&lFiltrelemek istediğiniz minimum oyuncu sayısını girin. &8&l▶ &f&l",
+            "filterByProtocol": "\n%spaces%%prefix% &f&LSunucuları protokol üzerinden filtrelemek ister misiniz? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByProtocolText": "\n%spaces%%prefix% &f&lFiltrelemek istediğiniz protoklu girin. &8&l▶ &f&l",
+            "searchingInWebs": "\n%spaces%%prefix% &f&lWeb'de aranıyor...",
+            "searchingInPage": "\n%spaces%%prefix% &f&lSayfada aranıyor...",
+            "filterDataShow": "\n%spaces%%prefix% &f&lFilter data: \n%spaces% &8&l• &f&lOnly bot can join: &a&l%onlyBotCanJoin%\n%spaces%  &8&l• &f&lDescription: &a&l%description%\n%spaces%  &8&l• &f&lOnline players: &a&l%onlinePlayers%\n%spaces%  &8&l• &f&lProtocol: &a&l%protocol%"
         },
         "scan": {
             "arguments": ["ip_address", "port_range", "method"],
@@ -185,6 +207,12 @@
             "arguments": ["language"],
             "sameLanguage": "\n%spaces%%prefix% &f&lBu dil zaten kullanılıyor &a&l%language%&f&l.",
             "languageChanged": "\n%spaces%%prefix% &f&lDil başarıyla değiştirildi &a&l%language%&f&l."
+        },
+        "settings": {
+            "restartNeeded": "\n%spaces%%prefix% &f&lAyarları değiştirmek için programı yeniden başlatmanız gerekiyor."
+        },
+        "clearservers": {
+            "serversCleared": "\n%spaces%%prefix% &f&lSunucu listesi başarıyla temizlendi."
         }
     },
     "errors": {

@@ -9,6 +9,14 @@
         "invalidCommand": "\n%spaces%&cComando inválido. &f&lUsa &ahelp&f&l para ver todos los comandos disponibles.",
         "missingArguments": "\n%spaces%&cFaltan argumentos. &f&lUso correcto: &b&l%command% &c&l%arguments%",
         "ctrlC": "\n%spaces%%prefix% &f&lDeteniendo el comando...",
+        "addServersFoundToMinecraft": "\n%spaces%%prefix% &f&l¿Quieres agregar los servidores encontrados a la lista de servidores de Minecraft? (&b&ly or n&f&l) &8&l▶ &f&l",
+        "addBungeeExploitVulnerableServersOnly": "\n%spaces%%prefix% &f&l¿Quieres agregar solo los servidores vulnerables a BungeeExploit a la lista de servidores de Minecraft? (&b&ly or n&f&l) &8&l▶ &f&l",
+        "commandFinishedIn": {
+            "seconds": "\n%spaces%%prefix% &f&lComando finalizado en &a&l%seconds% &f&lsegundos.",
+            "minutes": "\n%spaces%%prefix% &f&lComando finalizado en &a&l%minutes% &f&lminutos y &a&l%seconds% &f&lsegundos.",
+            "hours": "\n%spaces%%prefix% &f&lComando finalizado en &a&l%hours% &f&lhoras, &a&l%minutes% &f&lminutos y &a&l%seconds% &f&lsegundos.",
+            "days": "\n%spaces%%prefix% &f&lComando finalizado en &a&l%days% &f&ldías, &a&l%hours% &f&lhoras, &a&l%minutes% &f&lminutos y &a&l%seconds% &f&lsegundos."
+        },
         "server": {
             "arguments": ["ip:port"],
             "gettingServerData": "\n%spaces%%prefix% &f&lObteniendo datos del servidor ingresado...",
@@ -93,6 +101,20 @@
                 "gettingData": "\n%spaces%%prefix% &f&lObteniendo datos de los servidores...",
                 "noServers": "\n%spaces%%prefix% &f&lNo se encontraron servidores. Inténtalo más tarde o cambia los filtros."
             }
+        },
+        "websearch": {
+            "arguments": [],
+            "filterByData": "\n%spaces%%prefix% &f&lQuieres filtrar los servidores por datos específicos? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByOnlyBotCanJoin": "\n%spaces%%prefix% &f&lQuieres filtrar los servidores solo por donde solo los bots pueden unirse? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByDescription": "\n%spaces%%prefix% &f&lQuieres filtrar los servidores por MOTD? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByDescriptionText": "\n%spaces%%prefix% &f&lIntroduce la descripción para filtrar los servidores. &8&l▶ &f&l",
+            "filterByOnlinePlayers": "\n%spaces%%prefix% &f&lQuieres filtrar los servidores por jugadores en línea? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByOnlinePlayersText": "\n%spaces%%prefix% &f&lIntroduce la cantidad mínima de jugadores en línea para filtrar los servidores. &8&l▶ &f&l",
+            "filterByProtocol": "\n%spaces%%prefix% &f&lQuieres filtrar los servidores por protocolo? (&b&ly or n&f&l) &8&l▶ &f&l",
+            "filterByProtocolText": "\n%spaces%%prefix% &f&lIntroduce el protocolo para filtrar los servidores. &8&l▶ &f&l",
+            "searchingInWebs": "\n%spaces%%prefix% &f&lBuscando en la web...",
+            "searchingInPage": "\n%spaces%%prefix% &f&lBuscando en la página &a&l%page%&f&l...",
+            "filterDataShow": "\n%spaces%%prefix% &f&lFilter data: \n%spaces% &8&l• &f&lOnly bot can join: &a&l%onlyBotCanJoin%\n%spaces%  &8&l• &f&lDescription: &a&l%description%\n%spaces%  &8&l• &f&lOnline players: &a&l%onlinePlayers%\n%spaces%  &8&l• &f&lProtocol: &a&l%protocol%"
         },
         "scan": {
             "arguments": ["ip_address", "port_range", "method"],
@@ -185,6 +207,12 @@
             "arguments": ["language"],
             "sameLanguage": "\n%spaces%%prefix% &f&lEl idioma ya está configurado en &a&l%language%&f&l.",
             "languageChanged": "\n%spaces%%prefix% &f&lIdioma cambiado a &a&l%language%&f&l."
+        },
+        "settings": {
+            "restartNeeded": "\n%spaces%%prefix% &f&lPor favor, reinicia la herramienta para aplicar los cambios."
+        },
+        "clearservers": {
+            "serversCleared": "\n%spaces%%prefix% &f&lLista de servidores de Minecraft borrada con éxito."
         }
     },
     "errors": {
