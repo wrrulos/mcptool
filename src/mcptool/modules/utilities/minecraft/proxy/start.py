@@ -136,7 +136,6 @@ class Fakeproxy:
         if server_data.protocol == 0:
             server_data.protocol = 47
 
-        print(server_data.player_list)
         rpoisoner_plugin_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/plugins/RPoisoner'
         motd_file_path: str = f'{rpoisoner_plugin_path}/settings/motd'
         version_file_path: str = f'{rpoisoner_plugin_path}/settings/version'
