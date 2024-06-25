@@ -5,22 +5,27 @@ List of current MCPTool commands.
 - [Server](#server)
 - [Uuid](#uuid)
 - [IPInfo](#ipinfo)
+- [IPHistory](#iphistory)
 - [DNSLookup](#dnslookup)
+- [Checker](#checker)
+- [Resolver](#resolver)
+- [Seeker](#seeker)
+- [WebSearch](#websearch)
 - [Subdomains](#subdomains)
 - [Scan](#scan)
 - [Listening](#listening)
 - [FakeProxy](#fakeproxy)
-- [Resolver](#resolver)
-- [BruteAuth](#bruteauth)
+- [Connect](#connect)
 - [SendCMD](#sendcmd)
+- [Rcon](#rcon)
+- [BruteRcon](#brutercon)
+- [BruteAuth](#bruteauth)
 - [Kick](#kick)
 - [KickAll](#kickall)
-- [BruteRcon](#brutercon)
-- [Checker](#checker)
-- [Connect](#connect)
-- [Rcon](#rcon)
-
 - [Discord](#discord)
+- [Settings](#settings)
+- [ClearServers](#clearservers)
+- [Clear](#clear)
 
 ## Server
 The **server** command allows you to obtain information about a Minecraft server. Works on Java and Bedrock servers.
@@ -50,6 +55,11 @@ The **ipinfo** command allows you to obtain information about an IP address.
 To use this command you must enter:
 </br>
 `ipinfo <ip>`
+
+## IPHistory
+The **iphistory** command allows you to obtain the history of ipv4 addresses associated with a domain.
+
+![IPHistory1](../img/commands/iphistory.png)
 
 ## DNSLookup
 The **dnslookup** command allows you to obtain the DNS records for a specific domain.
