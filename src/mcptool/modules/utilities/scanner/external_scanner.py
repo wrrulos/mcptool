@@ -1,4 +1,5 @@
 import subprocess
+import threading
 import re
 
 from loguru import logger
@@ -11,7 +12,7 @@ from ..minecraft.server.get_server import ServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
 from ..managers.language_utils import LanguageUtils as LM
 from ..path.mcptool_path import MCPToolPath
-from ..constants import OS_NAME
+from ..constants import OS_NAME, BUUNGE_EXPLOIT_VULNERABLE_MESSAGE
 
 
 class ExternalScanner:
@@ -19,31 +20,41 @@ class ExternalScanner:
         self.target: str = target
         self.port_range: str = port_range
         self.scanner: str = scanner
-        self.open_ports: list = []
-        self.servers_found: int = 0
         self.first_line: bool = True
         self.command_output: str = ''
         self.show_output: bool = get_config_value('scannerOptions.showScanOutput')
+        self.output: dict = {
+            "open_ports": {
+                "other": [],
+                "minecraft": [],
+                "bungeeExploitVulnerable": [],
+                "count": 0
+            }
+        }
+        self.stopped: bool = False
+        self.threads: list = []
+        self.semaphore = threading.Semaphore(15)
 
     @logger.catch
-    def scan(self) -> list:
+    def scan(self) -> Union[dict, None]:
         """
         Scan the target for open ports.
 
         Returns:
-            list: A list of open ports.
+            Union[dict, None]: The open ports found.
         """
 
         command: str = self._get_command()
 
         if command is None:
             logger.warning(f'Cannot scan target. Invalid command. {command}')
-            return self.open_ports
+            return None
 
         text_to_search, pattern, invalid_ip_text, invalid_ports_text = self._get_scan_params()
 
         if text_to_search == '':
-            return self.open_ports
+            logger.warning(f'Cannot scan target. Invalid scan parameters. {text_to_search}')
+            return None
 
         try:
             process: subprocess.Popen = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
@@ -59,13 +70,15 @@ class ExternalScanner:
                         if 'not found' in output_line or '"java"' in output_line:
                             logger.warning('Cannot scan target. Java is not installed.')
                             mcwrite(LM.get('errors.javaNotInstalled'))
-                            return
+                            self.stopped = True
+                            return None
 
                         # Qubo.jar not found.
                         if 'qubo.jar' in output_line:
                             logger.warning('Cannot scan target. Qubo.jar not found.')
                             mcwrite(LM.get('errors.quboJarNotFound'))
-                            return
+                            self.stopped = True
+                            return None
 
                     self.first_line = False
 
@@ -76,13 +89,15 @@ class ExternalScanner:
                 if any(text in output_line for text in invalid_ip_text):
                     logger.warning(f'Invalid IP address: {self.target}. Cannot scan target.')
                     mcwrite(LM.get('errors.invalidIpRange'))
-                    return
+                    self.stopped = True
+                    return None
 
                 # If the line that refers to the port range not being valid.
                 if any(text in output_line for text in invalid_ports_text):
                     logger.warning(f'Invalid port range: {self.port_range}. Cannot scan target.')
                     mcwrite(LM.get('errors.invalidPortRange'))
-                    return
+                    self.stopped = True
+                    return None
 
                 # If the line contains an ip and a port.
                 if text_to_search in output_line:
@@ -91,31 +106,30 @@ class ExternalScanner:
                     if server is None:
                         continue
 
-                    server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(server).get_data()
-
-                    if server_data is not None:
-                        ShowMinecraftServer.show(server_data)
-
-                    else:
-                        pass
-                        # mcwrite(f'&aPort {port} is open')
-
-                    self.open_ports.append(server)
+                    # Start a thread to get the server data and show it.
+                    server_thread = threading.Thread(target=self.get_server_data, args=(server,))
+                    server_thread.start()
+                    self.threads.append(server_thread)
 
             process.wait()
 
             if process.returncode != 0:
                 logger.warning(f'Cannot scan target. Error occurred. {process.returncode} Command output: {self.command_output}')
-                return self.open_ports
+                return None
 
         except (KeyboardInterrupt, ValueError):
+            self.stopped = True
+
             try:
                 process.terminate()
 
             except UnboundLocalError:
                 pass
 
-        return self.open_ports
+        for thread in self.threads:
+            thread.join()
+
+        return self.output
 
     @logger.catch
     def _get_command(self) -> Union[str, None]:
@@ -185,3 +199,32 @@ class ExternalScanner:
             return server
 
         return None
+
+    @logger.catch
+    def get_server_data(self, server):
+        """
+        Get the server data and show it.
+
+        Args:
+            server (str): The server to get the data.
+        """
+
+        with self.semaphore:
+            server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(server).get_data()
+
+            if self.stopped:
+                return
+
+            if server_data is not None:
+                ShowMinecraftServer.show(server_data)
+
+                if BUUNGE_EXPLOIT_VULNERABLE_MESSAGE in server_data.bot_output:
+                    self.output['open_ports']['bungeeExploitVulnerable'].append(server)
+
+                else:
+                    self.output['open_ports']['minecraft'].append(server)
+
+            else:
+                self.output['open_ports']['other'].append(server)
+
+            self.output['open_ports']['count'] += 1

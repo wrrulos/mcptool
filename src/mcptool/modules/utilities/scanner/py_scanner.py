@@ -8,6 +8,8 @@ from easyjsonpy import get_config_value
 from ..minecraft.server import BedrockServerData, JavaServerData
 from ..minecraft.server.get_server import ServerData
 from ..minecraft.server.show_server import ShowMinecraftServer
+from ..constants import BUUNGE_EXPLOIT_VULNERABLE_MESSAGE
+
 
 # Try to get the number of threads for the scanner
 try:
@@ -23,10 +25,16 @@ class PyScanner:
     def __init__(self, ip_address: str, port_range: str) -> None:
         self.ip_address: str = ip_address
         self.port_range: str = port_range
-        self.open_ports: list = []
         self.timeout: Union[int, float, None] = get_config_value('scannerOptions.pyScanner.timeout')
         self.stopped: bool = False
         self.threads: list = []
+        self.output: dict = {
+            "open_ports": {
+                "other": [],
+                "minecraft": [],
+                "count": 0
+            }
+        }
 
         if self.timeout is None:
             logger.warning('Invalid timeout for the scanner. Using the default value of 1 second.')
@@ -68,7 +76,7 @@ class PyScanner:
         for thread in self.threads:
             thread.join()
 
-        return self.open_ports
+        return self.output
 
     @logger.catch
     def _scan_port(self, port: int) -> None:
@@ -87,17 +95,24 @@ class PyScanner:
 
             # If the result is 0, the port is open
             if result == 0:
+                server: str = f'{self.ip_address}:{port}'
+
                 # Check if the port is a Minecraft server
                 server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(f'{self.ip_address}:{port}').get_data()
 
                 if server_data is not None:
                     ShowMinecraftServer.show(server_data)
 
-                else:
-                    pass
-                    # mcwrite(f'&aPort {port} is open')
+                    if BUUNGE_EXPLOIT_VULNERABLE_MESSAGE in server_data.bot_output:
+                        self.output['open_ports']['bungeeExploitVulnerable'].append(server)
 
-                self.open_ports.append(port)
+                    else:
+                        self.output['open_ports']['minecraft'].append(server)
+
+                else:
+                    self.output['open_ports']['other'].append(port)
+
+                self.output['open_ports']['count'] += 1
 
             sock.close()
 

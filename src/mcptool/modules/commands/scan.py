@@ -1,3 +1,4 @@
+from typing import Union
 from mccolors import mcwrite
 from loguru import logger
 
@@ -6,6 +7,8 @@ from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.scanner.py_scanner import PyScanner
 from ..utilities.scanner.external_scanner import ExternalScanner
 from ..utilities.scanner.utilities import ScannerUtilities
+from ..utilities.minecraft.nbt.server_dat import ServersDAT
+from ..utilities.input.get import GetInput
 
 
 class Command:
@@ -66,7 +69,7 @@ class Command:
 
         # Scan the IP address using the Python scanner
         if arguments[2] == 'py':
-            open_ports: list = PyScanner(ip_address=arguments[0], port_range=arguments[1]).scan()
+            output: Union[dict, None] = PyScanner(ip_address=arguments[0], port_range=arguments[1]).scan()
 
         else:
             if arguments[2] == 'nmap':
@@ -79,15 +82,25 @@ class Command:
                     mcwrite(LM.get('errors.masscanNotInstalled'))
                     return
 
-            open_ports: list = ExternalScanner(target=arguments[0], port_range=arguments[1], scanner=arguments[2]).scan()
+            output: Union[dict, None] = ExternalScanner(target=arguments[0], port_range=arguments[1], scanner=arguments[2]).scan()
 
         # If there are errors
-        if open_ports is None:
+        if output is None:
             return
 
         # If there are no open ports
-        if len(open_ports) == 0:
+        if output['open_ports']['count'] == 0:
             mcwrite(LM.get(f'commands.{self.name}.noOpenPorts'))
             return
 
-        mcwrite(LM.get(f'commands.{self.name}.openPorts').replace('%openPorts%', str(len(open_ports))))
+        add_servers: bool = GetInput(LM.get(f'commands.addServersFoundToMinecraft'), 'boolean').get_input()
+
+        if add_servers[0]:
+            add_vulnerable_servers_only: bool = GetInput(LM.get(f'commands.addBungeeExploitVulnerableServersOnly'), 'boolean').get_input()
+
+            ServersDAT().add_servers_dat_file(servers=output['open_ports']['bungeeExploitVulnerable'], vulnerables=True)
+
+            if not add_vulnerable_servers_only[0]:
+                ServersDAT().add_servers_dat_file(servers=output['open_ports']['minecraft'])
+
+        mcwrite(LM.get(f'commands.{self.name}.openPorts').replace('%openPorts%', str(output['open_ports']['count'])))
