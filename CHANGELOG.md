@@ -1,3 +1,25 @@
+# 1.0.4 (Jun 25, 2024)
+## New Commands
+* **IPHistory** - Obtain the history of IPv4 addresses associated with a domain
+* **WebSearch** - Get Minecraft servers found on web pages
+* **Settings** - Open the configuration file (Windows only)
+* **ClearServers** - Clear your Minecraft client's server list
+
+## New API to get data from the servers
+You can now get data from Minecraft servers using the mcstatus.io API. This API is chosen by default. You can change it in the configuration file to the value "local"
+
+## Aternos Servers
+Now you can get data from Aternos servers without problems. If you are using "local" mode on serverDataApi and the Aternos server says it is down, add it to your Minecraft client and try again.
+
+## Changes
+The scan, seeker, and web search commands now use threads, so their completion time is much faster.
+
+There are now commands that show the time it took to execute.
+
+Now you can export the servers obtained with the 'scan' command to your Minecraft client.
+
+Now the server command allows you to enter domain:port
+
 # 1.0.3 (Jun 13, 2024)
 ## New language
 * **Spanish** - Language es added

@@ -65,7 +65,7 @@ class HelpBanners:
       &d► &f&lchecker [file]                                                   &d   ⣸ &f&l⢸⠃⡇⢀⠇     ⡼  ⠈⣿&d⡗⠂       ⢸⠁
       &d► &f&lresolver [domain]                                                &d   ⡏ &f&l⣼ ⢳⠊      ⠱⣀⣀⠔&d⣸⠁       ⢠⡟
       &d► &f&lseeker [token/servers]                                           &d   ⡇&f&l⢀⡇           ⠠ &d⡇        ⢸⠃
-      &d► &f&lwebsearch [query]                                                &d  ⢸⠃&f&l⠘⡇            &d⢸⠁  ⢀     ⣾
+      &d► &f&lwebsearch                                                        &d  ⢸⠃&f&l⠘⡇            &d⢸⠁  ⢀     ⣾
       &d► &f&lsubdomains [domain] [wordlist]                                   &d  ⣸  &f&l⠹⡄  ⠈⠁       &d⡞   ⠸     ⡇
       &d► &f&lscan [ip_address/ip_range] [port/port_range] [method]            &d  ⡏   &f&l⠙⣆       ⢀⣠⢶&d⡇  ⢰⡀     ⡇
       &d► &f&llistening [ip:port]                                              &d ⢰⠇⡄    &f&l⢣⣀⣀⣀⡤⠴⡞⠉ &d⢸   ⣿⡇     ⣧
