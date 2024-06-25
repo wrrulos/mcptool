@@ -8,6 +8,7 @@ from ..utilities.minecraft.server.show_server import ShowMinecraftServer
 from ..utilities.managers.language_utils import LanguageUtils as LM
 from ..utilities.commands.validate import ValidateArgument
 
+from ..utilities.minecraft.nbt.server_dat import ServersDAT
 
 class Command:
     @logger.catch

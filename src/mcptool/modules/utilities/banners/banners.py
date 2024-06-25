@@ -60,23 +60,26 @@ class HelpBanners:
       &d► &f&lserver [ip:port/domain]                                          &d     ⡾⠁⣠⠋ ⠈⢧               ⠈⢧
       &d► &f&luuid [username/UUID]                                             &d    ⣸⠁⢰⠃   ⠈⢣⡀              ⠈⣇
       &d► &f&lipinfo [ip]                                                      &d    ⡇ ⡾⡀    ⣀⣹⣆⡀             ⢹
-      &d► &f&ldnslookup [domain]                                               &d   ⢸⠃⢀⣇⡈      &d⢀⡑⢄⡀⢀⡀         ⢸⡇
-      &d► &f&lchecker [file]                                                   &d   ⢸ &f&l⢻⡟⡻⢶⡆   ⡼⠟⡳⢿⣦&d⡑⢄         ⢸⡇
-      &d► &f&lresolver [domain]                                                &d   ⣸ &f&l⢸⠃⡇⢀⠇     ⡼  ⠈⣿&d⡗⠂       ⢸⠁
-      &d► &f&lseeker [token/servers]                                           &d   ⡏ &f&l⣼ ⢳⠊      ⠱⣀⣀⠔&d⣸⠁       ⢠⡟
-      &d► &f&lsubdomains [domain] [wordlist]                                   &d   ⡇&f&l⢀⡇           ⠠ &d⡇        ⢸⠃
-      &d► &f&lscan [ip_address/ip_range] [port/port_range] [method             &d  ⢸⠃&f&l⠘⡇            &d⢸⠁  ⢀     ⣾
-      &d► &f&llistening [ip:port]                                              &d  ⣸  &f&l⠹⡄  ⠈⠁       &d⡞   ⠸     ⡇
-      &d► &f&lproxy [ip:port] [proxy_type]                                     &d  ⡏   &f&l⠙⣆       ⢀⣠⢶&d⡇  ⢰⡀     ⡇
-      &d► &f&lfakeproxy [ip:port] [velocity_forwading_mode]                    &d ⢰⠇⡄    &f&l⢣⣀⣀⣀⡤⠴⡞⠉ &d⢸   ⣿⡇     ⣧
-      &d► &f&lconnect [ip:port] [version] [username]                           &d ⣸ ⡇       &f&l   ⢹  &d⢸  ⢀⣿⠇   ⠁ ⢸
-      &d► &f&lsendcmd [ip:port] [version] [username] [commands_file]           &d ⣿ ⡇    &f&l ⢀⡤⠤⠶⠶⠾⠤⠄&d⢸ ⡀⠸⣿⣀     ⠈⣇
-      &d► &f&lrcon [ip:port] [password]                                        &d ⡇ ⡇    &f&l⡴⠋       &d⠸⡌⣵⡀⢳⡇      ⢹⡀
-      &d► &f&lbrutercon [ip:port] [passwords_file]                             &d ⡇ ⠇   &f&l⡸⠁         &d⠙⠮⢧⣀⣻⢂      ⢧
-      &d► &f&lbruteauth [ip:port] [version] [username] [passwords_file]        &d ⣇ ⢠   &f&l⠇            &d  ⠈⡎⣆     ⠘
-      &d► &f&lkick [ip:port] [version] [username] [loop]                       &d ⢻ ⠈⠰ &f&l⢸             &d  ⠰⠘⢮⣧⡀
-      &d► &f&lkickall [ip:port] [version] [loop]                               &d ⠸⡆  ⠇&f&l⣾             &d     ⠙⠳⣄⡀⡀
-      &d► &f&lclear                                                            &d ⠸⡆  ⠇&f&l⣾             &d         ⠙⡀⢢'''
+      &d► &f&liphistory [domain]                                               &d   ⢸⠃⢀⣇⡈      &d⢀⡑⢄⡀⢀⡀         ⢸⡇
+      &d► &f&ldnslookup [domain]                                               &d   ⢸ &f&l⢻⡟⡻⢶⡆   ⡼⠟⡳⢿⣦&d⡑⢄         ⢸⡇
+      &d► &f&lchecker [file]                                                   &d   ⣸ &f&l⢸⠃⡇⢀⠇     ⡼  ⠈⣿&d⡗⠂       ⢸⠁
+      &d► &f&lresolver [domain]                                                &d   ⡏ &f&l⣼ ⢳⠊      ⠱⣀⣀⠔&d⣸⠁       ⢠⡟
+      &d► &f&lseeker [token/servers]                                           &d   ⡇&f&l⢀⡇           ⠠ &d⡇        ⢸⠃
+      &d► &f&lwebsearch [query]                                                &d  ⢸⠃&f&l⠘⡇            &d⢸⠁  ⢀     ⣾
+      &d► &f&lsubdomains [domain] [wordlist]                                   &d  ⣸  &f&l⠹⡄  ⠈⠁       &d⡞   ⠸     ⡇
+      &d► &f&lscan [ip_address/ip_range] [port/port_range] [method]            &d  ⡏   &f&l⠙⣆       ⢀⣠⢶&d⡇  ⢰⡀     ⡇
+      &d► &f&llistening [ip:port]                                              &d ⢰⠇⡄    &f&l⢣⣀⣀⣀⡤⠴⡞⠉ &d⢸   ⣿⡇     ⣧
+      &d► &f&lproxy [ip:port] [proxy_type]                                     &d ⣸ ⡇       &f&l   ⢹  &d⢸  ⢀⣿⠇   ⠁ ⢸
+      &d► &f&lfakeproxy [ip:port] [velocity_forwading_mode]                    &d ⣿ ⡇    &f&l ⢀⡤⠤⠶⠶⠾⠤⠄&d⢸ ⡀⠸⣿⣀     ⠈⣇
+      &d► &f&lconnect [ip:port] [version] [username]                           &d ⡇ ⡇    &f&l⡴⠋       &d⠸⡌⣵⡀⢳⡇      ⢹⡀
+      &d► &f&lsendcmd [ip:port] [version] [username] [commands_file]           &d ⡇ ⠇   &f&l⡸⠁         &d⠙⠮⢧⣀⣻⢂      ⢧
+      &d► &f&lrcon [ip:port] [password]                                        &d ⣇ ⢠   &f&l⠇            &d  ⠈⡎⣆     ⠘
+      &d► &f&lbrutercon [ip:port] [passwords_file]                             &d ⢻ ⠈⠰ &f&l⢸             &d  ⠰⠘⢮⣧⡀
+      &d► &f&lbruteauth [ip:port] [version] [username] [passwords_file]        &d ⠸⡆  ⠇&f&l⣾             &d     ⠙⠳⣄⡀⡀
+      &d► &f&lkick [ip:port] [version] [username] [loop]                       &d ⠸⡆  ⠇&f&l⣾             &d         ⠙⡀⢢
+      &d► &f&lkickall [ip:port] [version] [loop]                               &d ⠸⡆  ⠇&f&l⣾             &d          ⠙⡀⢢
+
+    &b• &f&lOther commands: &f&ldiscord settings clearservers clear'''
 
     BANNERS: list = [HELP_BANNER_1]
 

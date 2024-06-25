@@ -58,7 +58,8 @@ class GetInput:
                     if output is not None:
                         return output
 
-            except KeyboardInterrupt:
+            except (KeyboardInterrupt, EOFError):
+                print('')  # Print a new line
                 return (None, False)
 
     @logger.catch

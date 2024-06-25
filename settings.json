@@ -1,6 +1,6 @@
 {
   "language": "en",
-  "serverDataApi": "local",
+  "serverDataApi": "mcstatus.io",
   "discordPresence": true,
   "seekerToken": "YOUR_SEEKER_TOKEN",
   "bot_recconect_time": 4,

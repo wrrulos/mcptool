@@ -20,7 +20,8 @@ dependencies = [
     "requests",
     "loguru",
     "pypresence",
-    "plyer"
+    "plyer",
+    "nbtlib"
 ]
 classifiers = [
   "Programming Language :: Python :: 3",

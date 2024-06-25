@@ -70,8 +70,11 @@ from .modules.commands.checker import Command as CheckerCommand
 from .modules.commands.sendcmd import Command as SendCmdCommand
 from .modules.commands.subdomains import Command as SubdomainsCommand
 from .modules.commands.language import Command as LanguageCommand
+from .modules.commands.settings import Command as SettingsCommand
+from .modules.commands.clearservers import Command as ClearServersCommand
 from .modules.utilities.scrapers.minecraftservers import MinecraftServerScrapper
 from .modules.utilities.constants import VERSION, MCPTOOL_DISCORD_CLIENT_ID, DISCORD_LINK, MCPTOOL_WEBSITE
+from .modules.utilities.time.command_finished_message import CommandFinishedMessage
 
 
 class MCPTool:
@@ -82,6 +85,7 @@ class MCPTool:
         self.commands: dict = {}
         self.actual_command: str = f'Using MCPTool v{VERSION}'
         self.minecraft_scrapper: MinecraftServerScrapper = MinecraftServerScrapper()
+        self.commands_with_time_available: list = ['seeker', 'scan', 'bruteauth', 'brutercon', 'rcon', 'sendcmd']
 
     @logger.catch
     def run(self):
@@ -136,6 +140,12 @@ class MCPTool:
                     continue
 
                 try:
+                    # Start the timer for the command
+                    start_time: float = time.time()
+
+                    # Set the actual command to show in the rich presence
+                    self.actual_command = f'Using the {command_name} command'
+
                     # Execute the command
                     command_instance = self.commands[command_name]
 
@@ -144,11 +154,18 @@ class MCPTool:
 
                     else:
                         command_instance.execute(arguments[1:])
-                    self.actual_command = f'Using the {command_name} command'
 
                 except KeyboardInterrupt:
                     mcwrite(LM.get('commands.ctrlC'))
+
+                # Stop the timer for the command
+                if command_name not in self.commands_with_time_available:
                     continue
+
+                stop_time: float = time.time()
+                command_time: float = stop_time - start_time
+                command_finished_message: str = CommandFinishedMessage(command_time=command_time).get_message()
+                mcwrite(command_finished_message)
 
             except (RuntimeError, EOFError):
                 pass
@@ -191,7 +208,9 @@ class MCPTool:
             'checker': CheckerCommand(),
             'sendcmd': SendCmdCommand(),
             'subdomains': SubdomainsCommand(),
-            'language': LanguageCommand()
+            'language': LanguageCommand(),
+            'settings': SettingsCommand(),
+            'clearservers': ClearServersCommand()
         }
 
     @logger.catch

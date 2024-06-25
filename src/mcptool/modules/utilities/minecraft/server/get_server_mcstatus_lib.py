@@ -97,8 +97,11 @@ class MCServerData:
                     mod_list: str = 'No mods found'
 
                 if self.bot:
-                    # Get the bot output
-                    bot_output: str = clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+                    if ':' in self.target:
+                        bot_output: str = clean_output(BotServerResponse(self.ip_address, self.port, data.version.protocol).get_response())
+
+                    else:
+                        bot_output: str = clean_output(BotServerResponse(self.target, 25565, data.version.protocol).get_response())
 
                     # Get the bot color response
                     bot_output = BotUtilities.get_bot_color_response(bot_output)

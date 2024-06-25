@@ -3,7 +3,7 @@ from loguru import logger
 from easyjsonpy import translate_message
 
 
-from ..constants import PREFIX, SPACES
+from ..constants import PREFIX, SPACES, TIME_EMOJI
 
 
 class LanguageUtils:
@@ -30,5 +30,8 @@ class LanguageUtils:
 
         if '%prefix%' in value:
             value = value.replace('%prefix%', PREFIX)
+
+        if '%timeEmoji%' in value:
+            value = value.replace('%timeEmoji%', TIME_EMOJI)
 
         return value

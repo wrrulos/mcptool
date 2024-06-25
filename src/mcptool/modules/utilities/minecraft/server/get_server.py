@@ -15,8 +15,15 @@ class ServerData:
         self.bot = bot
 
     @logger.catch
-    def get_data(self):
-        if get_config_value('serverDataApi') == 'serverDataApi':  # :TODO: Replace with None after testing
+    def get_data(self) -> Union[JavaServerData, BedrockServerData, None]:
+        """
+        Method to get the server data from the server class.
+
+        Returns:
+            Union[JavaServerData, BedrockServerData, None]: The server data if the server is online, otherwise None
+        """
+
+        if get_config_value('serverDataApi') == 'serverDataApi' or get_config_value('serverDataApi') not in ['local', 'mcstatus.io']:  # :TODO: Replace with None after testing
             logger.error('The serverDataApi is not set in the configuration file')
             mcwrite(LM.get('errors.serverDataApiNotSet'))
             return None

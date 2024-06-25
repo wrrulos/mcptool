@@ -90,7 +90,12 @@ class MCStatusIOAPI:
 
         if server_type == 'java':
             if data['players']['list'] is not None:
-                player_list = [{'name_clean': player['name_clean'], 'uuid': player['uuid']} for player in data['players']['list']]
+                player_list: list = [{'name_raw': player['name_raw'], 'uuid': player['uuid']} for player in data['players']['list']]
+
+                # Replace 'name_raw' for 'name' and 'uuid for 'id
+                for player in player_list:
+                    player['name'] = player.pop('name_raw')
+                    player['id'] = player.pop('uuid')
 
                 if len(player_list) > 0:
                     players = self._get_players(player_list)
@@ -106,15 +111,17 @@ class MCStatusIOAPI:
                 connected_players: str = data['players']['online']
                 max_players: str = data['players']['max']
                 players: str = players_str
-                player_list: list = data['players']['list']
                 mod: Union[str, None] = None
                 mods: list = []
                 favicon: Union[str, None] = data['icon']
                 ping: Union[int, None] = None
 
                 if self.bot:
-                    # Get the bot output
-                    bot_output: str = clean_output(BotServerResponse(ip_address, port, protocol).get_response())
+                    if ':' in self.target:
+                        bot_output: str = clean_output(BotServerResponse(ip_address, port, protocol).get_response())
+
+                    else:
+                        bot_output: str = clean_output(BotServerResponse(self.target, 25565, protocol).get_response())
 
                     # Get the bot color response
                     bot_output = BotUtilities.get_bot_color_response(bot_output)
@@ -184,4 +191,4 @@ class MCStatusIOAPI:
             list: The list of players
         """
 
-        return [player['name_clean'] for player in players] if players is not None else []
+        return [player['name'] for player in players] if players is not None else []

@@ -127,6 +127,16 @@ class Fakeproxy:
         if server_data.platform != 'Java':
             return
 
+        if len(server_data.original_motd) == 0:
+            server_data.original_motd = ' '
+
+        if len(server_data.original_version) == 0:
+            server_data.original_version = ' '
+
+        if server_data.protocol == 0:
+            server_data.protocol = 47
+
+        print(server_data.player_list)
         rpoisoner_plugin_path: str = f'{MCPToolPath().get()}/proxies/fakeproxy/plugins/RPoisoner'
         motd_file_path: str = f'{rpoisoner_plugin_path}/settings/motd'
         version_file_path: str = f'{rpoisoner_plugin_path}/settings/version'
@@ -148,17 +158,17 @@ class Fakeproxy:
         # Set the protocol of the fakeproxy
         with open(protocol_file_path, 'w+', encoding='utf8') as file:
             file.truncate(0)
-            file.write(server_data.protocol)
+            file.write(str(server_data.protocol))
 
         # Set the online players of the fakeproxy
         with open(online_players_file_path, 'w+', encoding='utf8') as file:
             file.truncate(0)
-            file.write(server_data.connected_players)
+            file.write(str(server_data.connected_players))
 
         # Set the maximum players of the fakeproxy
         with open(max_players_file_path, 'w+', encoding='utf8') as file:
             file.truncate(0)
-            file.write(server_data.max_players)
+            file.write(str(server_data.max_players))
 
         # Set the sample players of the fakeproxy
         if server_data.player_list is not None and len(server_data.player_list) > 0:
@@ -169,6 +179,10 @@ class Fakeproxy:
                     username: str = player['name']
                     uuid: str = player['id']
                     file.write(f'{username}/#-#/{uuid}\n')
+
+        else:
+            with open(samplePlayers_file_path, 'w+', encoding='utf8') as file:
+                file.truncate(0)
 
     @logger.catch
     def _set_favicon(self) -> None:
@@ -243,7 +257,7 @@ class StartProxy:
         """
 
         if self.proxy == 'fakeproxy':
-            mcwrite(LM.get('commands.proxy.copyingTargetServer'))
+            mcwrite(LM.get('commands.fakeproxy.copyingTargetServerData'))
 
         # Get the server data
         server_data: Union[JavaServerData, BedrockServerData, None] = ServerData(target=self.target, bot=False).get_data()
