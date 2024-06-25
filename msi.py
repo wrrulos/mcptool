@@ -42,7 +42,7 @@ setup(
     executables=executables,
     options={
         'build_exe': {
-            'packages': ['mcptool', 'base64'],
+            'packages': ['mcptool', 'base64', 'numpy'],
             'includes': ['plyer.platforms.win.notification'],
             'include_files': [],
         },
